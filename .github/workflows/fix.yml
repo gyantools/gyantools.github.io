@@ -1,0 +1,31 @@
+name: Site ko sahi folders me lagao
+on: push
+permissions:
+  contents: write
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip dhoondo aur sahi folders me kholo
+        run: |
+          ZIPFILE=$(ls *.zip 2>/dev/null | head -1)
+          if [ -n "$ZIPFILE" ]; then
+            echo "Zip mili: $ZIPFILE"
+            unzip -Z1 "$ZIPFILE" | grep '/' | while read f; do rm -f "$(basename "$f")"; done
+            unzip -o "$ZIPFILE"
+            rm -f *.zip
+          else
+            echo "Koi zip nahi mili, skip"
+          fi
+      - name: Commit karke push karo
+        run: |
+          git config user.name "gyantools"
+          git config user.email "gyantools@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Koi change nahi"
+          else
+            git commit -m "Site sahi folders me set ho gayi"
+            git push
+          fi
