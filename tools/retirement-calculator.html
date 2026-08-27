@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>रिटायरमेंट कॉर्पस कैलकुलेटर in Hindi – Retirement Calculator (कितना फंड चाहिए)</title>
+<meta name="description" content="रिटायरमेंट कॉर्पस कैलकुलेटर हिंदी में – आज का खर्च, महंगाई और उम्र डालकर जानें रिटायरमेंट पर कितना फंड चाहिए होगा और हर महीने कितनी बचत करनी होगी। महंगाई समेत पूरा गणित।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="रिटायरमेंट कॉर्पस कैलकुलेटर (हिंदी में)">
+<meta property="og:description" content="रिटायरमेंट पर कितना फंड चाहिए? तुरंत जानें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Retirement Corpus Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"रिटायरमेंट कॉर्पस कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › रिटायरमेंट कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>🏖️ रिटायरमेंट कॉर्पस कैलकुलेटर</h1>
+    <p>आराम की रिटायरमेंट के लिए कितना फंड चाहिए होगा – महंगाई समेत पूरा सच।</p>
+    <div class="row">
+      <div>
+        <label for="age">आपकी उम्र (साल)</label>
+        <input type="number" id="age" placeholder="जैसे: 30" min="18" max="59" step="1">
+      </div>
+      <div>
+        <label for="rage">रिटायरमेंट की उम्र</label>
+        <input type="number" id="rage" placeholder="जैसे: 60" min="40" max="70" step="1">
+      </div>
+    </div>
+    <label for="exp">आज का महीने का खर्च (₹)</label>
+    <input type="number" id="exp" placeholder="जैसे: 50000" min="1000" step="any">
+    <div class="row">
+      <div>
+        <label for="inf">महंगाई दर (% सालाना)</label>
+        <input type="number" id="inf" placeholder="जैसे: 6" min="1" max="15" step="any">
+      </div>
+      <div>
+        <label for="ret">रिटायरमेंट के बाद रिटर्न (% सालाना)</label>
+        <input type="number" id="ret" placeholder="जैसे: 7" min="1" max="20" step="any">
+      </div>
+    </div>
+    <label for="yrs">रिटायरमेंट के बाद फंड कितने साल चले?</label>
+    <input type="number" id="yrs" placeholder="जैसे: 25" min="10" max="40" step="1">
+    <button onclick="calcRet()">मेरा रिटायरमेंट फंड निकालो</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>रिटायरमेंट का गणित कैसे बनता है?</h2>
+    <p>तीन चीज़ें मिलकर आपका रिटायरमेंट फंड तय करती हैं:</p>
+    <ol>
+      <li><strong>आज का खर्च + महंगाई:</strong> आज ₹50,000/महीने का खर्च 6% महंगाई पर 30 साल में लगभग <strong>₹2.86 लाख/महीने</strong> हो जाएगा! इसीलिए "मेरा खर्च कम है" बोलना काफी नहीं। (देखें: <a href="inflation-calculator.html" style="color:#1a73e8">महंगाई कैलकुलेटर</a>)</li>
+      <li><strong>रिटायरमेंट के बाद का रिटर्न:</strong> बुढ़ापे में पैसा सुरक्षित जगह रखते हैं (FD, पेंशन योजनाएं, debt funds – औसतन 7%)। यह रिटर्न महंगाई से थोड़ा ऊपर रहना चाहिए ताकि फंड खत्म न हो।</li>
+      <li><strong>उम्र:</strong> आज की उम्र जितनी कम, निवेश का समय उतना ज़्यादा – और ज़रूरत की किश्त उतनी छोटी।</li>
+    </ol>
+    <h2>उदाहरण: 30 साल का व्यक्ति, ₹50,000/महीने खर्च</h2>
+    <table>
+      <tr><th>बात</th><th>आंकड़ा</th></tr>
+      <tr><td>रिटायरमेंट तक (30 साल, 6% महंगाई)</td><td>खर्च बनेगा ~₹2.86 लाख/महीना</td></tr>
+      <tr><td>ज़रूरी फंड (25 साल चले, 7% रिटर्न)</td><td><strong>~₹7.2 करोड़</strong> 🤯</td></tr>
+      <tr><td>12% रिटर्न वाली SIP से बनाना हो तो</td><td>~₹20,400/महीने (30 साल)</td></tr>
+    </table>
+    <p>बड़ा नंबर देखकर घबराएं नहीं – <strong>समय और compound ब्याज</strong> आपका सबसे बड़ा साथी हैं। 30 की उम्र में शुरुआत करने वाले को 40 की उम्र वाले से <strong>आधी से भी कम</strong> मासिक किश्त चाहिए होती है। शुरुआत आज से करें! 💪</p>
+    <div class="note">⚠️ यह अनुमानित गणना है – टैक्स, सेहत के खर्च, और बदलती दरें नतीजे बदल सकते हैं। बड़े फैसलों से पहले विशेषज्ञ से सलाह लें।</div>
+    <h2>रिटायरमेंट के लिए कहां निवेश करें?</h2>
+    <ul>
+      <li><strong>NPS:</strong> पेंशन + ₹50,000 extra टैक्स छूट – <a href="../blog/nps-pension-guide.html" style="color:#1a73e8">NPS गाइड</a></li>
+      <li><strong>PPF (7.1%):</strong> 15 साल की टैक्स-फ्री बचत – <a href="ppf-calculator.html" style="color:#1a73e8">PPF कैलकुलेटर</a></li>
+      <li><strong>इक्विटी SIP:</strong> लंबी अवधि का इंजन – <a href="sip-calculator.html" style="color:#1a73e8">SIP</a> और <a href="stepup-sip-calculator.html" style="color:#1a73e8">स्टेप-अप SIP</a></li>
+      <li><strong>SCSS (8.2%):</strong> 60+ के लिए – <a href="../blog/post-office-schemes.html" style="color:#1a73e8">डाकघर योजनाएं</a></li>
+      <li><strong>टेम इंश्योरेंस:</strong> परिवार की सुरक्षा पहले – <a href="../blog/term-insurance-guide.html" style="color:#1a73e8">टर्म इंश्योरेंस गाइड</a></li>
+    </ul>
+    <h2>अक्सर पूछे जाने वाले सवाल</h2>
+    <p><strong>प्र. महंगाई 6% क्यों?</strong><br>भारत का दीर्घकालिक औसत ~5–6% रहा है (जुलाई 2026 में 4.45%, RBI लक्ष्य 4%)। सेहत/पढ़ाई के खर्च ज़्यादा तेज़ बढ़ते हैं – इसलिए 6–7% लेना समझदारी है।</p>
+    <p><strong>प्र. रिटर्न महंगाई से कम क्यों नहीं चलेगा?</strong><br>तो फंड की ताकत महंगाई खाती जाएगी और पैसा बीच में खत्म हो जाएगा – कैलकुलेटर आपको यही बताएगा।</p>
+    <p><strong>प्र. EPF/ग्रेच्युटी भी तो है?</strong><br>बिल्कुल – उन्हें जोड़कर बाकी ज़रूरत इस कैलकुलेटर से पता करें। ग्रेच्युटी की गणना <a href="gratuity-calculator.html" style="color:#1a73e8">ग्रेच्युटी कैलकुलेटर</a> से।</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function retCore(E, INF, R, N, T){
+  var g = INF/100, r = R/100;
+  var expRet = E * Math.pow(1 + g, N);
+  var corpus = expRet * 12 * (1 - Math.pow((1 + g)/(1 + r), T)) / (r - g);
+  return { expRet: expRet, corpus: corpus };
+}
+function calcRet(){
+  var A = parseInt(document.getElementById('age').value);
+  var RA = parseInt(document.getElementById('rage').value);
+  var E = parseFloat(document.getElementById('exp').value);
+  var INF = parseFloat(document.getElementById('inf').value);
+  var R = parseFloat(document.getElementById('ret').value);
+  var T = parseInt(document.getElementById('yrs').value);
+  var out = document.getElementById('out');
+  if(!A || A < 18 || !RA || RA <= A || RA > 70 || !E || E < 1000 || isNaN(INF) || INF < 1 || INF > 15 || isNaN(R) || R < 1 || R > 20 || !T || T < 10 || T > 40){
+    out.style.display='block';
+    out.innerHTML = '⚠️ कृपया सही values भरें (उम्र 18–59, रिटायरमेंट उम्र ज़्यादा, खर्च ≥ ₹1,000, महंगाई 1–15%, रिटर्न 1–20%, फंड अवधि 10–40 साल)।';
+    return;
+  }
+  if(R <= INF){
+    out.style.display='block';
+    out.innerHTML = '⚠️ रिटायरमेंट के बाद का रिटर्न महंगाई से ज़्यादा होना चाहिए (जैसे महंगाई 6% हो तो रिटर्न 7%+) – वरना फंड खत्म हो जाएगा।';
+    return;
+  }
+  var N = RA - A;
+  var res = retCore(E, INF, R, N, T);
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  var cr = function(x){ return (x/10000000).toFixed(2) + ' करोड़'; };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">ज़रूरी रिटायरमेंट फंड: ' + f(res.corpus) + ' (' + cr(res.corpus) + ')</div>'
+    + '<p>आज का ' + f(E) + '/महीने का खर्च ' + N + ' साल बाद (रिटायरमेंट पर) बन जाएगा: <strong>' + f(res.expRet) + '/महीना</strong> 😮</p>'
+    + '<p>यह फंड रिटायरमेंट के बाद ' + T + ' साल तक चलेगा (महंगाई के साथ बढ़ते खर्च को भी संभालते हुए)।</p>'
+    + '<p>💡 अब यह फंड कैसे बनाएं? गणना करें <a href="goal-planner-calculator.html" style="color:#1a73e8">लक्ष्य प्लानर</a> या <a href="stepup-sip-calculator.html" style="color:#1a73e8">स्टेप-अप SIP कैलकुलेटर</a> से।</p>';
+}
+</script>
+</body>
+</html>

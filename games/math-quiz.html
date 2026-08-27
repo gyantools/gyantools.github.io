@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>गणित क्विज़ गेम in Hindi – Math Quiz (Unlimited सवाल, 3 Level)</title>
+<meta name="description" content="गणित क्विज़ गेम हिंदी में – जोड़, घटाव, गुणा की unlimited practice! 3 level (आसान/मध्यम/कठिन), हर बार नए सवाल, स्कोर और बेस्ट स्कोर। बच्चों-बड़ों सबके लिए फ्री ब्रेन गेम।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="गणित क्विज़ – दिमाग तेज़ करो! ➗">
+<meta property="og:description" content="Unlimited गणित सवाल – level चुनो, स्कोर बनाओ!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"गणित क्विज़ गेम (Math Quiz Hindi)","applicationCategory":"GameApplication","operatingSystem":"Web","description":"गणित की unlimited practice वाला फ्री क्विज़ गेम","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.score-bar{display:flex;justify-content:space-between;font-weight:600;margin-bottom:16px;font-size:.95rem;color:#5f6368}
+.qcard{background:#e8f0fe;border-radius:12px;padding:22px;margin:14px 0}
+.qnum{font-size:.85rem;color:#5f6368;font-weight:600;margin-bottom:6px}
+.qtext{font-size:1.5rem;font-weight:700;color:#202124}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+@media(max-width:600px){.opts{grid-template-columns:1fr}}
+.opt{background:#fff;border:2px solid #dadce0;border-radius:10px;padding:12px;font-size:1.15rem;font-family:inherit;cursor:pointer;font-weight:700;color:#202124}
+.opt:hover:not(:disabled){border-color:#1a73e8;background:#f8faff}
+.opt:disabled{cursor:not-allowed;opacity:.85}
+.opt.right{background:#e6f4ea;border-color:#137333;color:#137333}
+.opt.wrong{background:#fce8e6;border-color:#c5221f;color:#c5221f}
+.feedback{margin-top:14px;font-weight:700;min-height:1.6rem}
+.nextbtn{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:14px}
+.nextbtn:hover{background:#1557b0}
+.bigbtn{background:#e8710a;color:#fff;border:none;padding:14px 32px;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;margin:10px 6px 0}
+.bigbtn:hover{background:#c5600a}
+.final{font-size:1.3rem;color:#1a73e8;font-weight:700}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › गणित क्विज़</p>
+
+  <div class="game-box">
+    <h1>➗ गणित क्विज़ (Math Quiz)</h1>
+    <p>जोड़-घटाव-गुणा की unlimited practice — दिमाग की असली तेज़ी यहीं परखो!</p>
+
+    <div id="levels">
+      <p style="font-weight:600;margin-bottom:10px">अपना level चुनो:</p>
+      <button class="bigbtn" onclick="startGame(1)">🟢 आसान<br><small>2-अंक जोड़-घटाव</small></button>
+      <button class="bigbtn" onclick="startGame(2)">🟡 मध्यम<br><small>गुणा + 3-अंक</small></button>
+      <button class="bigbtn" onclick="startGame(3)">🔴 कठिन<br><small>बड़ा गुणा + वर्ग</small></button>
+      <p id="lvlbest" style="margin-top:14px;color:#5f6368"></p>
+    </div>
+
+    <div id="game" style="display:none">
+      <div class="score-bar">
+        <span id="counter">सवाल 1/20</span>
+        <span id="score">स्कोर: 0</span>
+        <span id="best">बेस्ट: 0</span>
+      </div>
+      <div class="qcard">
+        <div class="qnum" id="qnum"></div>
+        <div class="qtext" id="qtext"></div>
+        <div class="opts" id="opts"></div>
+        <div class="feedback" id="fb"></div>
+      </div>
+      <button class="nextbtn" id="nextbtn" onclick="nextQ()">अगला सवाल →</button>
+    </div>
+
+    <div id="end" style="display:none">
+      <p class="final" id="finalmsg"></p>
+      <p id="endbest" style="color:#5f6368"></p>
+      <button class="bigbtn" onclick="restart()">🔄 फिर से खेलें</button>
+      <button class="bigbtn" onclick="changeLevel()">📊 Level बदलें</button>
+    </div>
+  </div>
+
+  <article>
+    <h2>गणित क्विज़ क्यों खेलें?</h2>
+    <p>गणित वो ताकत है जो दुकान से लेकर नौकरी के interview तक हर जगह काम आती है। यह गेम <strong>calculation की speed और accuracy</strong> दोनों बढ़ाता है – बिना किताब, बिना झंझट। खास बात: <strong>सवाल कभी खत्म नहीं होंगे</strong> – हर बार नए सवाल खुद बनते हैं, इसलिए रटने की जगह समझने की आदत पड़ेगी! 🧠</p>
+    <h2>कैसे खेलें?</h2>
+    <ul>
+      <li>तीन level – <strong>आसान</strong> (शुरुआती/बच्चों के लिए), <strong>मध्यम</strong> (स्कूल level), <strong>कठिन</strong> (मास्टर बनने वालों के लिए)।</li>
+      <li>हर round में 20 सवाल – चार options में से सही जवाब चुनो।</li>
+      <li>हर level का <strong>बेस्ट स्कोर अलग से save</strong> होता है – अपना record तोड़ते जाओ!</li>
+    </ul>
+    <h2>और भी चुनौतियां?</h2>
+    <p>गणित के बाद try करो: <a href="gk-quiz.html" style="color:#1a73e8">भारत GK क्विज़ (unlimited)</a>, <a href="paheli-game.html" style="color:#1a73e8">हिंदी पहेलियां</a>, <a href="2048.html" style="color:#1a73e8">2048 पहेली</a>, <a href="memory-game.html" style="color:#1a73e8">मेमोरी मैच</a>। और गणित के ही टूल्स: <a href="../tools/simple-calculator.html" style="color:#1a73e8">कैलकुलेटर</a>, <a href="../tools/scientific-calculator.html" style="color:#1a73e8">वैज्ञानिक कैलकुलेटर</a>, <a href="../tools/number-system-converter.html" style="color:#1a73e8">नंबर सिस्टम कन्वर्टर</a>, <a href="../tools/typing-speed-test.html" style="color:#1a73e8">टाइपिंग स्पीड टेस्ट</a>।</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var LEVEL_NAMES = {1: 'आसान', 2: 'मध्यम', 3: 'कठिन'};
+var TOTAL = 20;
+var level = 1, cur = 0, score = 0, answered = false, curQ = null;
+
+function rnd(a, b){ return Math.floor(Math.random() * (b - a + 1)) + a; }
+function genQ(lv){
+  var a, b, op, ans;
+  if(lv === 1){
+    a = rnd(10, 99); b = rnd(10, 99);
+    if(Math.random() < 0.5){ op = '+'; ans = a + b; } else { op = '−'; if(b > a){ var t = a; a = b; b = t; } ans = a - b; }
+  } else if(lv === 2){
+    var k = Math.random();
+    if(k < 0.4){ a = rnd(2, 12); b = rnd(11, 99); op = '×'; ans = a * b; }
+    else if(k < 0.7){ a = rnd(100, 999); b = rnd(100, 999); op = '+'; ans = a + b; }
+    else { a = rnd(200, 999); b = rnd(100, 199); op = '−'; ans = a - b; }
+  } else {
+    var k2 = Math.random();
+    if(k2 < 0.4){ a = rnd(11, 25); b = rnd(11, 99); op = '×'; ans = a * b; }
+    else if(k2 < 0.7){ a = rnd(12, 40); op = '²'; ans = a * a; b = ''; }
+    else { a = rnd(1000, 9999); b = rnd(1000, 9999); op = '+'; ans = a + b; }
+  }
+  return { text: a + ' ' + op + ' ' + (b === '' ? '' : b) + ' = ?', ans: ans };
+}
+function makeOpts(ans){
+  var spread = Math.max(2, Math.round(Math.abs(ans) * 0.1));
+  var set = [ans];
+  var guard = 0;
+  while(set.length < 4 && guard < 100){
+    guard++;
+    var d = ans + (Math.random() < 0.5 ? -1 : 1) * rnd(1, spread);
+    if(d !== ans && set.indexOf(d) === -1 && d >= 0){ set.push(d); }
+  }
+  var k = 1;
+  while(set.length < 4){
+    var d2 = ans + k;
+    if(set.indexOf(d2) === -1){ set.push(d2); }
+    k++;
+  }
+  for(var i = set.length - 1; i > 0; i--){
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = set[i]; set[i] = set[j]; set[j] = t;
+  }
+  return { opts: set, ansIdx: set.indexOf(ans) };
+}
+function key(lv){ return 'mathquizBest' + lv; }
+function getBest(lv){ try { return parseInt(localStorage.getItem(key(lv)) || '0'); } catch(e){ return 0; } }
+function setBest(lv, v){ try { localStorage.setItem(key(lv), String(v)); } catch(e){} }
+function showBests(){
+  var s = '';
+  for(var lv = 1; lv <= 3; lv++){ s += (lv > 1 ? ' · ' : '') + LEVEL_NAMES[lv] + ': ' + getBest(lv) + '/' + TOTAL; }
+  document.getElementById('lvlbest').textContent = 'बेस्ट स्कोर — ' + s;
+}
+function startGame(lv){
+  level = lv; cur = 0; score = 0;
+  document.getElementById('levels').style.display = 'none';
+  document.getElementById('end').style.display = 'none';
+  document.getElementById('game').style.display = 'block';
+  showQ();
+}
+function showQ(){
+  curQ = genQ(level);
+  var m = makeOpts(curQ.ans);
+  curQ.opts = m.opts; curQ.ansIdx = m.ansIdx;
+  answered = false;
+  document.getElementById('qnum').textContent = 'सवाल ' + (cur+1) + ' / ' + TOTAL + ' (Level: ' + LEVEL_NAMES[level] + ')';
+  document.getElementById('qtext').textContent = curQ.text;
+  document.getElementById('fb').textContent = '';
+  document.getElementById('nextbtn').style.display = 'none';
+  document.getElementById('counter').textContent = 'सवाल ' + (cur+1) + '/' + TOTAL;
+  document.getElementById('score').textContent = 'स्कोर: ' + score;
+  document.getElementById('best').textContent = 'बेस्ट: ' + getBest(level);
+  var h = '';
+  for(var i = 0; i < curQ.opts.length; i++){
+    h += '<button class="opt" onclick="pick(' + i + ')" id="opt' + i + '">' + curQ.opts[i] + '</button>';
+  }
+  document.getElementById('opts').innerHTML = h;
+}
+function pick(i){
+  if(answered) return;
+  answered = true;
+  var btns = document.querySelectorAll('.opt');
+  for(var j = 0; j < btns.length; j++){ btns[j].disabled = true; }
+  document.getElementById('opt' + curQ.ansIdx).classList.add('right');
+  if(i === curQ.ansIdx){
+    score++;
+    document.getElementById('fb').style.color = '#137333';
+    document.getElementById('fb').textContent = '✅ सही! ' + curQ.text + ' ' + curQ.ans;
+  } else {
+    document.getElementById('opt' + i).classList.add('wrong');
+    document.getElementById('fb').style.color = '#c5221f';
+    document.getElementById('fb').textContent = '❌ सही जवाब: ' + curQ.ans;
+  }
+  document.getElementById('score').textContent = 'स्कोर: ' + score;
+  document.getElementById('nextbtn').style.display = 'inline-block';
+  document.getElementById('nextbtn').textContent = (cur === TOTAL - 1) ? 'नतीजा देखें 🏁' : 'अगला सवाल →';
+}
+function nextQ(){
+  if(cur < TOTAL - 1){ cur++; showQ(); } else { endGame(); }
+}
+function endGame(){
+  document.getElementById('game').style.display = 'none';
+  document.getElementById('end').style.display = 'block';
+  var best = getBest(level);
+  if(score > best){ best = score; setBest(level, best); }
+  var msg;
+  if(score >= 18){ msg = '🏆 गणित मास्टर! ' + score + '/' + TOTAL + ' — शाबाश!'; }
+  else if(score >= 12){ msg = '👏 बहुत बढ़िया! ' + score + '/' + TOTAL + ' — थोड़ी और practice!'; }
+  else if(score >= 6){ msg = '🙂 ठीक-ठाक! ' + score + '/' + TOTAL + ' — रोज़ खेलो, तेज़ हो जाओगे!'; }
+  else { msg = '😅 ' + score + '/' + TOTAL + ' — आसान level से दोबारा शुरुआत करो!'; }
+  document.getElementById('finalmsg').textContent = msg;
+  document.getElementById('endbest').textContent = 'Level (' + LEVEL_NAMES[level] + ') का बेस्ट स्कोर: ' + best + '/' + TOTAL;
+}
+function restart(){ startGame(level); }
+function changeLevel(){
+  document.getElementById('end').style.display = 'none';
+  document.getElementById('game').style.display = 'none';
+  document.getElementById('levels').style.display = 'block';
+  showBests();
+}
+showBests();
+</script>
+</body>
+</html>

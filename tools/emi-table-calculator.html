@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>EMI टेबल कैलकुलेटर in Hindi – Loan Amortization (महीने-दर-महीने ब्याज-मूल)</title>
+<meta name="description" content="EMI अमॉर्टाइज़ेशन टेबल कैलकुलेटर हिंदी में – लोन की हर किस्त में कितना ब्याज और कितना मूल राशि जाती है, महीने-दर-महीने पूरी table। लोन समझने का सबसे ईमानदार तरीका।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="EMI टेबल कैलकुलेटर (हिंदी में)">
+<meta property="og:description" content="हर किस्त में ब्याज कितना? महीने-दर-महीने टेबल देखें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EMI Table (Amortization) Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"EMI अमॉर्टाइज़ेशन टेबल कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:8px 8px;text-align:left;font-size:.95rem}
+th{background:#e8f0fe;color:#1a73e8}
+.tblwrap{overflow-x:auto;margin-top:18px}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › EMI टेबल कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>📊 EMI टेबल (Amortization) कैलकुलेटर</h1>
+    <p>हर किस्त में ब्याज कितना और मूल राशि कितनी – महीने-दर-महीने पूरा सच।</p>
+    <label for="amt">लोन की राशि (₹)</label>
+    <input type="number" id="amt" placeholder="जैसे: 1000000" min="10000" step="any">
+    <div class="row">
+      <div>
+        <label for="ret">ब्याज दर (% सालाना)</label>
+        <input type="number" id="ret" placeholder="जैसे: 9" min="0.1" max="36" step="any">
+      </div>
+      <div>
+        <label for="yrs">अवधि (साल)</label>
+        <input type="number" id="yrs" placeholder="जैसे: 10" min="1" max="30" step="1">
+      </div>
+    </div>
+    <button onclick="calcEmiTbl()">EMI और पूरी टेबल निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+    <div class="tblwrap" id="tbl"></div>
+  </div>
+
+  <article>
+    <h2>यह टेबल क्यों ज़रूरी है?</h2>
+    <p>EMI का मतलब <strong>Equated Monthly Installment</strong> है – हर महीने एक जैसी किस्त। लेकिन उस किस्त के अंदर दो हिस्से होते हैं: <strong>ब्याज</strong> और <strong>मूल राशि (principal)</strong>। शुरुआती सालों में ब्याज का हिस्सा बहुत बड़ा होता है और मूल राशि बहुत छोटा – यही लोन का सबसे कड़वा सच है जो बैंक का कैलकुलेटर अक्सर नहीं दिखाता!</p>
+    <h2>उदाहरण: ₹10 लाख का लोन, 9%, 10 साल</h2>
+    <ul>
+      <li>EMI: लगभग <strong>₹12,668</strong></li>
+      <li>पहली किस्त में: ब्याज ₹7,500 + मूल ₹5,168</li>
+      <li>आखिरी किस्त में: ब्याज सिर्फ ~₹95 + मूल ~₹12,573</li>
+      <li>10 साल में कुल ब्याज: लगभग <strong>₹5.2 लाख</strong> – यानी आधे लोन के बराबर ब्याज!</li>
+    </ul>
+    <div class="note">⚠️ इसीलिए <strong>prepayment (पहले से भुगतान)</strong> शुरुआती सालों में सबसे फायदेमंद होता है – तब मूल राशि पर सीधा हमला होता है। गणना हमारे <a href="loan-prepayment-calculator.html" style="color:#1a73e8">Loan Prepayment कैलकुलेटर</a> से करें।</div>
+    <h2>कैसे काम करता है?</h2>
+    <p>मानक फॉर्मूला: EMI = P × i × (1+i)ⁿ ÷ ((1+i)ⁿ − 1), जहां i = मासिक दर, n = कुल महीने। हर महीने: ब्याज = बाकी बैलेंस × i; मूल = EMI − ब्याज; बैलेंस घटता जाता है।</p>
+    <h2>लोन लेने से पहले 4 सलाह</h2>
+    <ul>
+      <li>EMI आपकी महीने की आमदनी का <strong>40% से ज़्यादा न हो</strong> ( eligibility जानने के लिए <a href="loan-eligibility-calculator.html" style="color:#1a73e8">Loan Eligibility कैलकुलेटर</a>)</li>
+      <li>लोन की तुलना करें – ब्याज दर + processing fee दोनों देखें (<a href="emi-calculator.html" style="color:#1a73e8">EMI कैलकुलेटर</a>)</li>
+      <li>होम लोन की पूरी समझ – <a href="../blog/home-loan-guide.html" style="color:#1a73e8">होम लोन गाइड</a>; गाड़ी का लोन – <a href="../blog/gaadi-bima-guide.html" style="color:#1a73e8">गाड़ी गाइड</a></li>
+      <li>टैक्स बचत देखें – होम लोन का ब्याज 80C/24(b) में छूट दे सकता है (<a href="../blog/income-tax-guide.html" style="color:#1a73e8">इनकम टैक्स गाइड</a>)</li>
+    </ul>
+    <h2>अक्सर पूछे जाने वाले सवाल</h2>
+    <p><strong>प्र. शुरू की किस्तों में ब्याज ही क्यों ज़्यादा?</strong><br>क्योंकि बैलेंस अभी पूरा बाकी है – ब्याज तो बैलेंस पर लगता है, किस्त पर नहीं!</p>
+    <p><strong>प्र. क्या किस्त हर महीने बदलती है?</strong><br>नहीं – EMI same रहती है, बस उसके अंदर ब्याज-मूल का अनुपात बदलता है (floating rate बदलने पर EMI बदल सकती है)।</p>
+    <p><strong>प्र. टेबल इतनी लंबी है, क्या करूं?</strong><br>सिर्फ पहली 12 किस्तें देखिए – आपको साल भर का पूरा गणित मिल जाएगा।</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function amortCore(P, R, Y){
+  var i = R/1200, n = Y*12;
+  var emi;
+  if(i === 0){ emi = P/n; }
+  else { emi = P * i * Math.pow(1+i, n) / (Math.pow(1+i, n) - 1); }
+  var rows = [], bal = P;
+  for(var m = 1; m <= n; m++){
+    var int_ = bal * i;
+    var prin = emi - int_;
+    if(m === n){ prin = bal; emi = int_ + prin; }
+    bal = bal - prin;
+    if(bal < 0.5) bal = 0;
+    rows.push({m: m, emi: emi, interest: int_, principal: prin, balance: bal});
+  }
+  var totalInt = 0;
+  for(var k = 0; k < rows.length; k++){ totalInt += rows[k].interest; }
+  return {emi: P * i * Math.pow(1+i, n) / (Math.pow(1+i, n) - 1), rows: rows, totalInterest: totalInt};
+}
+function calcEmiTbl(){
+  var P = parseFloat(document.getElementById('amt').value);
+  var R = parseFloat(document.getElementById('ret').value);
+  var Y = parseInt(document.getElementById('yrs').value);
+  var out = document.getElementById('out');
+  var tbl = document.getElementById('tbl');
+  if(!P || P < 10000 || isNaN(R) || R < 0.1 || R > 36 || !Y || Y < 1 || Y > 30){
+    out.style.display='block'; tbl.innerHTML='';
+    out.innerHTML = '⚠️ कृपया सही values भरें (लोन ≥ ₹10,000, दर 0.1–36%, अवधि 1–30 साल)।';
+    return;
+  }
+  var r = amortCore(P, R, Y);
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">मासिक EMI: ' + f(r.emi) + '</div>'
+    + '<p>कुल चुकाना होगा: <strong>' + f(P + r.totalInterest) + '</strong> · इसमें ब्याज: <strong>' + f(r.totalInterest) + '</strong> (' + (r.totalInterest/P*100).toFixed(0) + '% of loan)</p>';
+  var h = '<table><tr><th>महीना</th><th>किस्त</th><th>ब्याज</th><th>मूल राशि</th><th>बाकी बैलेंस</th></tr>';
+  for(var j = 0; j < r.rows.length; j++){
+    var rw = r.rows[j];
+    h += '<tr><td>' + rw.m + '</td><td>' + f(rw.emi) + '</td><td>' + f(rw.interest) + '</td><td>' + f(rw.principal) + '</td><td>' + f(rw.balance) + '</td></tr>';
+  }
+  h += '</table>';
+  tbl.innerHTML = h;
+}
+</script>
+</body>
+</html>

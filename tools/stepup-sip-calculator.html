@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>स्टेप-अप SIP कैलकुलेटर in Hindi – Step Up SIP Calculator (हर साल SIP बढ़ाओ)</title>
+<meta name="description" content="स्टेप-अप SIP कैलकुलेटर हिंदी में – हर साल बढ़ती SIP से कितना फंड बनेगा? तनख्वाह बढ़ने के साथ SIP बढ़ाकर करोड़पति बनने का गणित, साल-दर-साल table के साथ।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="स्टेप-अप SIP कैलकुलेटर (हिंदी में)">
+<meta property="og:description" content="हर साल SIP बढ़ाओ – करोड़ का फंड बनाओ। तुरंत गणना करें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Step Up SIP Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"स्टेप-अप SIP कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › स्टेप-अप SIP कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>🚀 स्टेप-अप SIP कैलकुलेटर</h1>
+    <p>जैसे-जैसे तनख्वाह बढ़े, वैसे-वैसे SIP भी – देखें यह जादू कितना बड़ा फंड बनाता है।</p>
+    <label for="sip">हर महीने की SIP राशि (₹)</label>
+    <input type="number" id="sip" placeholder="जैसे: 10000" min="100" step="any">
+    <div class="row">
+      <div>
+        <label for="step">हर साल SIP बढ़ाने का % (Step-up)</label>
+        <input type="number" id="step" placeholder="जैसे: 10" min="0" max="50" step="any">
+      </div>
+      <div>
+        <label for="ret">अपेक्षित सालाना रिटर्न (%)</label>
+        <input type="number" id="ret" placeholder="जैसे: 12" min="1" max="30" step="any">
+      </div>
+    </div>
+    <label for="yrs">निवेश अवधि (साल)</label>
+    <input type="number" id="yrs" placeholder="जैसे: 20" min="1" max="40" step="1">
+    <button onclick="calcStep()">मैच्योरिटी राशि निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+    <div id="tbl"></div>
+  </div>
+
+  <article>
+    <h2>स्टेप-अप SIP क्या है?</h2>
+    <p><strong>स्टेप-अप (Top-up) SIP</strong> में आप हर साल अपनी SIP राशि एक तय प्रतिशत बढ़ा देते हैं। जैसे – ₹10,000 की SIP शुरू की, हर साल 10% बढ़ाया तो दूसरे साल ₹11,000/महीना, तीसरे साल ₹12,100/महीना... और आगे। सोचिए – जब तनख्वाह हर साल बढ़ती है, तो SIP क्यों न बढ़े?</p>
+    <h2>आम SIP से कितना ज़्यादा बनता है?</h2>
+    <p>उदाहरण: <strong>₹10,000/महीना, 20 साल, 12% रिटर्न</strong> पर –</p>
+    <table>
+      <tr><th>तरीका</th><th>कुल निवेश</th><th>मैच्योरिटी</th></tr>
+      <tr><td>आम SIP (बढ़त नहीं)</td><td>₹24 लाख</td><td>लगभग ₹99.9 लाख</td></tr>
+      <tr><td>10% स्टेप-अप SIP</td><td>लगभग ₹75.6 लाख</td><td><strong>लगभग ₹2.12 करोड़</strong> 🤯</td></tr>
+    </table>
+    <p>वही रिटर्न, वही समय – बस बढ़ती SIP ने नतीजा <strong>2 गुना से भी ऊपर</strong> कर दिया। इसीलिए फाइनेंस के जानकार स्टेप-अप SIP को "आम आदमी का करोड़पति बनने का रास्ता" कहते हैं। आम SIP की गणना <a href="sip-calculator.html" style="color:#1a73e8">SIP कैलकुलेटर</a> से करें।</p>
+    <h2>कैसे काम करता है यह कैलकुलेटर?</h2>
+    <p>हर महीने की किश्त जमा होकर महीने के अंत में ब्याज से बढ़ती है – महीने का रिटर्न = सालाना रिटर्न ÷ 12। हर साल के बाद SIP राशि step-up % से बढ़ जाती है। नीचे दी गई table में हर साल आपकी SIP, निवेश और फंड की वैल्यू दिखती है।</p>
+    <div class="note">⚠️ रिटर्न का अनुमान है, गारंटी नहीं – म्यूचुअल फंड market से जुड़े हैं। लंबी अवधि में equity फंडों का औसत लगभग 10–14% रहा है। पूरी समझ <a href="../blog/mutual-fund-guide.html" style="color:#1a73e8">म्यूचुअल फंड गाइड</a> में पढ़ें।</div>
+    <h2>स्टेप-अप SIP के 3 फायदे</h2>
+    <ul>
+      <li><strong>महंगाई से लड़ाई:</strong> 10 साल पहले की ₹5,000 SIP आज की ज़रूरतों के हिसाब से छोटी पड़ जाती है – बढ़ती SIP इसे संतुलित रखती है (महंगाई का असर <a href="inflation-calculator.html" style="color:#1a73e8">महंगाई कैलकुलेटर</a> से देखें)।</li>
+      <li><strong>जेब पर बोझ नहीं:</strong> शुरुआत कम रकम से होती है, बढ़त धीरे-धीरे – तनख्वाह बढ़ने के साथ आसान लगती है।</li>
+      <li><strong>लक्ष्य जल्दी पूरा:</strong> घर, बच्चों की पढ़ाई, रिटायरमेंट – बड़े लक्ष्य छोटी शुरुआत से भी पूरे होते हैं।</li>
+    </ul>
+    <h2>अक्सर पूछे जाने वाले सवाल</h2>
+    <p><strong>प्र. कितना step-up सही रहता है?</strong><br>आमतौर पर 5–10% – तनख्वाह की औसत बढ़त के बराबर। ज़्यादा बढ़ा सकते हैं तो और बढ़ा लें!</p>
+    <p><strong>प्र. पुरानी SIP में step-up जोड़ सकते हैं?</strong><br>हाँ – नया SIP रजिस्टर कराएं या AMC/ऐप में "Step-up/Top-up" विकल्प चुनें।</p>
+    <p><strong>प्र. गारंटीड रिटर्न चाहिए तो?</strong><br>PPF (7.1%), SSY (8.2%) जैसी सरकारी योजनाएं देखें – <a href="../blog/post-office-schemes.html" style="color:#1a73e8">डाकघर योजनाएं गाइड</a> और <a href="ppf-calculator.html" style="color:#1a73e8">PPF कैलकुलेटर</a>।</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function stepupCore(P, S, Y, R){
+  var i = R/1200, bal = 0, invested = 0, rows = [];
+  for(var y = 0; y < Y; y++){
+    var m = P * Math.pow(1 + S/100, y);
+    for(var k = 0; k < 12; k++){ bal = (bal + m) * (1 + i); }
+    invested += m * 12;
+    rows.push({year: y+1, monthly: Math.round(m), invested: Math.round(invested), value: Math.round(bal)});
+  }
+  return {fv: bal, invested: invested, rows: rows};
+}
+function calcStep(){
+  var P = parseFloat(document.getElementById('sip').value);
+  var S = parseFloat(document.getElementById('step').value);
+  var R = parseFloat(document.getElementById('ret').value);
+  var Y = parseInt(document.getElementById('yrs').value);
+  var out = document.getElementById('out');
+  var tbl = document.getElementById('tbl');
+  if(!P || P < 100 || isNaN(S) || S < 0 || S > 50 || isNaN(R) || R < 1 || R > 30 || !Y || Y < 1 || Y > 40){
+    out.style.display='block'; tbl.innerHTML='';
+    out.innerHTML = '⚠️ कृपया सही values भरें (SIP ≥ ₹100, step-up 0–50%, रिटर्न 1–30%, अवधि 1–40 साल)।';
+    return;
+  }
+  var r = stepupCore(P, S, Y, R);
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  var cr = function(x){ return (x/10000000).toFixed(2) + ' करोड़'; };
+  var lk = function(x){ return (x/100000).toFixed(1) + ' लाख'; };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">मैच्योरिटी राशि: ' + f(r.fv) + (r.fv >= 10000000 ? ' (' + cr(r.fv) + ')' : ' (' + lk(r.fv) + ')') + '</div>'
+    + '<p>कुल निवेश: <strong>' + f(r.invested) + '</strong> · अर्जित रिटर्न: <strong>' + f(r.fv - r.invested) + '</strong></p>'
+    + '<p>रिटर्न निवेश का <strong>' + (r.invested > 0 ? ((r.fv - r.invested)/r.invested*100).toFixed(0) : 0) + '%</strong> — बढ़ती SIP की शक्ति!</p>';
+  var h = '<table style="margin-top:18px"><tr><th>साल</th><th>मासिक SIP</th><th>कुल निवेश (अब तक)</th><th>फंड की वैल्यू</th></tr>';
+  for(var j = 0; j < r.rows.length; j++){
+    h += '<tr><td>' + r.rows[j].year + '</td><td>' + f(r.rows[j].monthly) + '</td><td>' + f(r.rows[j].invested) + '</td><td><strong>' + f(r.rows[j].value) + '</strong></td></tr>';
+  }
+  h += '</table>';
+  tbl.innerHTML = h;
+}
+</script>
+</body>
+</html>

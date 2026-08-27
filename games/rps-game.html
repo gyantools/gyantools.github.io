@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>पत्थर-कागज़-कैंची गेम in Hindi – Computer के खिलाफ खेलो (पहले 5 तक)</title>
+<meta name="description" content="पत्थर-कागज़-कैंची (Rock Paper Scissors) गेम हिंदी में – computer के खिलाफ खेलो, पहले 5 जीत वाला मैच, स्कोर और मैच जीत का record। फ्री फन गेम!">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="पत्थर-कागज़-कैंची – Computer के खिलाफ! 🪨📄✂️">
+<meta property="og:description" content="पहले 5 जीत वाला मैच खेलो!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"पत्थर-कागज़-कैंची गेम (Rock Paper Scissors Hindi)","applicationCategory":"GameApplication","operatingSystem":"Web","description":"पत्थर-कागज़-कैंची फ्री गेम","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.score-bar{display:flex;justify-content:space-between;font-weight:600;margin-bottom:16px;font-size:1rem}
+.arena{background:#e8f0fe;border-radius:12px;padding:22px;margin:14px 0}
+.hands{display:flex;justify-content:space-around;align-items:center;font-size:3rem;margin-bottom:8px}
+.vs{font-size:1.2rem;font-weight:700;color:#5f6368}
+.msg{font-weight:700;min-height:1.8rem}
+.choices{display:flex;justify-content:center;gap:12px;margin-top:16px;flex-wrap:wrap}
+.choice{background:#fff;border:2px solid #dadce0;border-radius:12px;padding:14px 22px;font-size:2rem;cursor:pointer;font-family:inherit}
+.choice:hover:not(:disabled){border-color:#1a73e8;background:#f8faff}
+.choice:disabled{opacity:.5;cursor:not-allowed}
+.bigbtn{background:#e8710a;color:#fff;border:none;padding:14px 32px;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;margin-top:14px}
+.bigbtn:hover{background:#c5600a}
+.final{font-size:1.3rem;color:#1a73e8;font-weight:700}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › पत्थर-कागज़-कैंची</p>
+
+  <div class="game-box">
+    <h1>🪨📄✂️ पत्थर-कागज़-कैंची</h1>
+    <p>Computer के खिलाफ मैच – <strong>पहले 5 जीत</strong> वाला चैंपियन!</p>
+    <div class="score-bar">
+      <span id="you">आप: 0</span>
+      <span id="tally">मैच जीत: 0</span>
+      <span id="cpu">Computer: 0</span>
+    </div>
+    <div class="arena" id="arena">
+      <div class="hands">
+        <span id="youHand">❔</span>
+        <span class="vs">बनाम</span>
+        <span id="cpuHand">❔</span>
+      </div>
+      <div class="msg" id="msg">नीचे से अपना हथियार चुनो!</div>
+    </div>
+    <div class="choices">
+      <button class="choice" onclick="play(0)" id="c0">🪨<br><small>पत्थर</small></button>
+      <button class="choice" onclick="play(1)" id="c1">📄<br><small>कागज़</small></button>
+      <button class="choice" onclick="play(2)" id="c2">✂️<br><small>कैंची</small></button>
+    </div>
+    <button class="bigbtn" id="resetbtn" style="display:none" onclick="newMatch()">🔄 नया मैच</button>
+    <p id="hint" style="color:#5f6368;font-size:.9rem;margin-top:10px">याद रखो: पत्थर कैंची को तोड़ता है · कागज़ पत्थर को लपेटता है · कैंची कागज़ को काटती है</p>
+  </div>
+
+  <article>
+    <h2>पत्थर-कागज़-कैंची क्यों खेलें?</h2>
+    <p>दुनिया का सबसे पुराना और सबसे आसान फैसला-गेम! दोस्तों के साथ तो खेलते ही आता है – अब computer के खिलाफ अपनी किस्मत और दिमाग आज़माओ। छोटे बच्चों के लिए तो यह <strong>जीतने-हारने की भावना समझने की पहली सीढ़ी</strong> है 😄</p>
+    <h2>नियम (30 सेकंड में)</h2>
+    <ul>
+      <li>दोनों एक साथ चुनते हैं – 🪨 पत्थर, 📄 कागज़ या ✂️ कैंची</li>
+      <li>🪨 ✂️ को हराता है · 📄 🪨 को हराता है · ✂️ 📄 को हराता है</li>
+      <li>एक जैसा निकले तो बराबरी (draw)</li>
+      <li>जो पहले <strong>5 अंक</strong> जीत ले, मैच उसका!</li>
+    </ul>
+    <h2>और भी गेम्स खेलो</h2>
+    <p><a href="gk-quiz.html" style="color:#1a73e8">भारत GK क्विज़</a> · <a href="math-quiz.html" style="color:#1a73e8">गणित क्विज़</a> · <a href="paheli-game.html" style="color:#1a73e8">हिंदी पहेलियां</a> · <a href="2048.html" style="color:#1a73e8">2048</a> · <a href="snake-game.html" style="color:#1a73e8">सांप गेम</a> · <a href="memory-game.html" style="color:#1a73e8">मेमोरी मैच</a> · <a href="tic-tac-toe.html" style="color:#1a73e8">टिक-टैक-टो</a></p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var HANDS = ['🪨', '📄', '✂️'];
+var NAMES = ['पत्थर', 'कागज़', 'कैंची'];
+var WINSCORE = 5;
+var you = 0, cpu = 0, over = false;
+
+function rpsResult(u, c){
+  if(u === c) return 'draw';
+  if((u === 0 && c === 2) || (u === 1 && c === 0) || (u === 2 && c === 1)) return 'win';
+  return 'lose';
+}
+function getMatches(){ try { return parseInt(localStorage.getItem('rpsMatchWins') || '0'); } catch(e){ return 0; } }
+function addMatch(){ try { localStorage.setItem('rpsMatchWins', String(getMatches() + 1)); } catch(e){} }
+function updBar(){
+  document.getElementById('you').textContent = 'आप: ' + you;
+  document.getElementById('cpu').textContent = 'Computer: ' + cpu;
+  document.getElementById('tally').textContent = 'मैच जीत: ' + getMatches();
+}
+function lockChoices(v){
+  for(var i = 0; i < 3; i++){ document.getElementById('c' + i).disabled = v; }
+}
+function play(u){
+  if(over) return;
+  var c = Math.floor(Math.random() * 3);
+  document.getElementById('youHand').textContent = HANDS[u];
+  document.getElementById('cpuHand').textContent = HANDS[c];
+  var res = rpsResult(u, c);
+  var msgEl = document.getElementById('msg');
+  if(res === 'win'){
+    you++;
+    msgEl.style.color = '#137333';
+    msgEl.textContent = '✅ वाह! ' + NAMES[u] + ' ने ' + NAMES[c] + ' को हराया!';
+  } else if(res === 'lose'){
+    cpu++;
+    msgEl.style.color = '#c5221f';
+    msgEl.textContent = '❌ उफ़! ' + NAMES[c] + ' ने ' + NAMES[u] + ' को हरा दिया!';
+  } else {
+    msgEl.style.color = '#5f6368';
+    msgEl.textContent = '🤝 बराबरी! दोनों ने ' + NAMES[u] + ' चुना!';
+  }
+  updBar();
+  if(you >= WINSCORE || cpu >= WINSCORE){
+    over = true;
+    lockChoices(true);
+    document.getElementById('resetbtn').style.display = 'inline-block';
+    if(you > cpu){ addMatch(); msgEl.style.color = '#1a73e8'; msgEl.textContent = '🏆 मैच आपका! ' + you + ' – ' + cpu + '। शाबाश!'; }
+    else { msgEl.style.color = '#c5221f'; msgEl.textContent = '💻 मैच computer का! ' + cpu + ' – ' + you + '। दोबारा try करो!'; }
+    updBar();
+  }
+}
+function newMatch(){
+  you = 0; cpu = 0; over = false;
+  document.getElementById('youHand').textContent = '❔';
+  document.getElementById('cpuHand').textContent = '❔';
+  document.getElementById('msg').textContent = 'नीचे से अपना हथियार चुनो!';
+  document.getElementById('msg').style.color = '#202124';
+  document.getElementById('resetbtn').style.display = 'none';
+  lockChoices(false);
+  updBar();
+}
+updBar();
+</script>
+</body>
+</html>

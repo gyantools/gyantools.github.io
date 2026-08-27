@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>हिंदी पहेलियां गेम – 20 मज़ेदार Paheli Quiz (Guess karo!)</title>
+<meta name="description" content="हिंदी पहेलियां गेम – 20 मज़ेदार पहेलियों का quiz! दिमाग तेज़ करो, 4 options में से सही जवाब चुनो, स्कोर बनाओ और अपना बेस्ट स्कोर तोड़ो। बच्चों-बड़ों सबके लिए फ्री ब्रेन गेम।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="हिंदी पहेलियां – दिमाग तेज़ करो! 🧩">
+<meta property="og:description" content="20 मज़ेदार पहेलियां – सही जवाब चुनो, स्कोर बनाओ!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"हिंदी पहेलियां गेम (Hindi Paheli Game)","applicationCategory":"GameApplication","operatingSystem":"Web","description":"हिंदी पहेलियों का फ्री क्विज़ गेम","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.score-bar{display:flex;justify-content:space-between;font-weight:600;margin-bottom:16px;font-size:.95rem;color:#5f6368}
+.qcard{background:#e8f0fe;border-radius:12px;padding:22px;margin:14px 0}
+.qnum{font-size:.85rem;color:#5f6368;font-weight:600;margin-bottom:6px}
+.qtext{font-size:1.25rem;font-weight:700;color:#202124}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+@media(max-width:600px){.opts{grid-template-columns:1fr}}
+.opt{background:#fff;border:2px solid #dadce0;border-radius:10px;padding:12px;font-size:1.05rem;font-family:inherit;cursor:pointer;font-weight:600;color:#202124}
+.opt:hover:not(:disabled){border-color:#1a73e8;background:#f8faff}
+.opt:disabled{cursor:not-allowed;opacity:.85}
+.opt.right{background:#e6f4ea;border-color:#137333;color:#137333}
+.opt.wrong{background:#fce8e6;border-color:#c5221f;color:#c5221f}
+.feedback{margin-top:14px;font-weight:700;min-height:1.6rem}
+.nextbtn{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:14px}
+.nextbtn:hover{background:#1557b0}
+.bigbtn{background:#e8710a;color:#fff;border:none;padding:14px 36px;border-radius:8px;font-size:1.05rem;font-weight:700;cursor:pointer;margin-top:14px}
+.bigbtn:hover{background:#c5600a}
+.final{font-size:1.3rem;color:#1a73e8;font-weight:700}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › हिंदी पहेलियां</p>
+
+  <div class="game-box">
+    <h1>🧩 हिंदी पहेलियां</h1>
+    <p>सोचो, चुनो, स्कोर बनाओ — दिमाग की असली कसरत!</p>
+    <div class="score-bar">
+      <span id="counter">पहेली 1/20</span>
+      <span id="score">स्कोर: 0</span>
+      <span id="best">बेस्ट: 0</span>
+    </div>
+    <div id="game">
+      <div class="qcard">
+        <div class="qnum" id="qnum"></div>
+        <div class="qtext" id="qtext"></div>
+        <div class="opts" id="opts"></div>
+        <div class="feedback" id="fb"></div>
+      </div>
+      <button class="nextbtn" id="nextbtn" onclick="nextQ()">अगली पहेली →</button>
+    </div>
+    <div id="end" style="display:none">
+      <p class="final" id="finalmsg"></p>
+      <p id="endbest" style="color:#5f6368"></p>
+      <button class="bigbtn" onclick="restart()">🔄 फिर से खेलें</button>
+    </div>
+  </div>
+
+  <article>
+    <h2>पहेलियां क्यों खेलें?</h2>
+    <p>पहेलियां (riddles) सिर्फ मज़ाक नहीं — ये <strong>दिमाग की असली exercise</strong> हैं। ये सोचने का नज़रिया बदलती हैं, शब्दों के पीछे छुपे मतलब समझना सिखाती हैं, और बच्चों की reasoning तेज़ करती हैं। पूरे भारत में दादी-नानी की पहेलियां सदियों से चली आ रही हैं — हमने उन्हें गेम बना दिया! 🎉</p>
+    <h2>कैसे खेलें?</h2>
+    <ul>
+      <li>20 पहेलियां एक-एक करके आएंगी — चार options में से सही जवाब चुनो।</li>
+      <li>सही जवाब पर हरा ✅, गलत पर लाल ❌ — और सही जवाब तुरंत दिख जाता है।</li>
+      <li>आपका <strong>बेस्ट स्कोर</strong> browser में सेव रहता है — अगली बार उसे तोड़ने आओ!</li>
+    </ul>
+    <h2>और भी गेम्स?</h2>
+    <p>पहेलियों के बाद हमारे और ब्रेन गेम्स भी खेलें — <a href="gk-quiz.html" style="color:#1a73e8">भारत GK क्विज़ (unlimited)</a>, <a href="memory-game.html" style="color:#1a73e8">मेमोरी मैच</a>, <a href="2048.html" style="color:#1a73e8">2048 पहेली</a>, <a href="snake-game.html" style="color:#1a73e8">सांप गेम</a> और <a href="tic-tac-toe.html" style="color:#1a73e8">टिक-टैक-टो</a>। दिमाग चलाने वाले टूल्स भी देखें — <a href="../tools/typing-speed-test.html" style="color:#1a73e8">टाइपिंग स्पीड टेस्ट</a> और <a href="../tools/number-system-converter.html" style="color:#1a73e8">नंबर सिस्टम कन्वर्टर</a>।</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var PAHELIS = [
+ {q:"वो क्या है जो सुबह चार पैर पर चलता है, दोपहर में दो पैर पर, और रात में तीन पैर पर?", o:["इंसान","भालू","बंदर","हाथी"], a:0, x:"शिशु रेंगता है, जवान दो पैर चलता है, बूढ़ा छड़ी (तीसरा पैर) टेकता है!"},
+ {q:"ऐसी कौन सी चीज़ है जो जितनी ज़्यादा उठाओ, उतनी ही बड़ी हो जाती है?", o:["पहाड़","गड्ढा","नदी","बादल"], a:1, x:"गड्ढा! मिट्टी जितनी खोदोगे (उठाओगे), वह उतना ही बड़ा होता जाएगा।"},
+ {q:"ऐसा कौन सा कमरा है जिसमें न दरवाज़ा होता है, न खिड़की?", o:["अंडा","तालाब","गुफा","डिब्बा"], a:0, x:"अंडा — सुनहरे पिंजरे जैसा कमरा, बिना दरवाज़ा-खिड़की!"},
+ {q:"ऐसी कौन सी चीज़ है जिसकी एक आँख होती है, फिर भी वो कुछ देख नहीं सकती?", o:["सुई","तारा","मोती","कलम"], a:0, x:"सुई की आँख (पोत) होती है, पर वो कभी देख नहीं सकती!"},
+ {q:"वो क्या है जो आपके पास है, पर दूसरे लोग उसे आपसे ज़्यादा इस्तेमाल करते हैं?", o:["पैसा","आपका नाम","घड़ी","किताब"], a:1, x:"आपका नाम — जितना दूसरे बोलते हैं, उतना आप खुद नहीं!"},
+ {q:"वो कौन है जो पहाड़ के ऊपर रहता है, पर खुद पहाड़ नहीं है?", o:["घास","चील","बादल","पत्थर"], a:0, x:"घास — पहाड़ के ऊपर भी घास ही रहती है, पहाड़ नहीं!"},
+ {q:"वो क्या है जो गिरता बहुत है, पर कभी चोट नहीं खाता?", o:["पत्ता","पानी","पक्षी","तारा"], a:1, x:"पानी (बारिश की बूँदें) — दिन-रात गिरता है, पर चोट किसे?"},
+ {q:"कौन सा जानवर है जिसके नाम में ही 'घड़ी' बैठी है?", o:["घड़ियाल","हाथी","शेर","गैंडा"], a:0, x:"घड़ियाल! घड़ी + आल — नाम में ही समय बैठा है।"},
+ {q:"कुएँ में क्या है जो समुद्र में नहीं?", o:["अक्षर 'क'","मछली","पानी","कमल"], a:0, x:"अक्षर 'क'! क-उ-आँ... कुएँ में 'क' है, समुद्र में नहीं!"},
+ {q:"वो क्या है जो एक बार गया, तो फिर कभी वापस नहीं आता?", o:["समय","नदी","हवा","रेलगाड़ी"], a:0, x:"समय! इसीलिए कहते हैं — 'वक़्त किसी का इंतज़ार नहीं करता'।"},
+ {q:"नदी किनारे खड़ा रहता है, पर उसे कभी प्यास नहीं लगती?", o:["पेड़","मछुआरा","पत्थर","नाव"], a:0, x:"पेड़! जड़ों से पानी पीता रहता है, फिर भी प्यास कभी नहीं।"},
+ {q:"लाल-लाल गोल दुर्ग में जवाहरात के दाने — वो क्या है?", o:["अनार","टमाटर","चेरी","अंगूर"], a:0, x:"अनार! छिलका खोलो तो रूबी जैसे दाने निकलते हैं।"},
+ {q:"दो बहनें हैं जो साथ रहती हैं, पर एक-दूसरे को कभी नहीं देख पातीं?", o:["आँखें","कान","हाथ","पैर"], a:0, x:"आँखें — आपस में मिलती हैं सिर्फ आईने में!"},
+ {q:"रात को आसमान में मोतियों जैसे जगमगाते हैं, दिन में सब गायब?", o:["तारे","जुगनू","चाँद","बादल"], a:0, x:"तारे! दिन में सूरज की रोशनी में उनकी चमक दिखती ही नहीं।"},
+ {q:"धागे में बंधी है, हवा में उड़ती है, पर खुद उड़ना नहीं जानती?", o:["पतंग","परिंदा","गुब्बारा","पंछी"], a:0, x:"पतंग! धागे की डोर पकड़े बिना उड़ नहीं सकती।"},
+ {q:"बाहर से हरा, अंदर से लाल, और पेट भरा हुआ पानी का?", o:["तरबूज़","खीरा","सेब","नारियल"], a:0, x:"तरबूज़ — गर्मी की सबसे मीठी छतरी!"},
+ {q:"बारह भाई हैं, सबके नाम अलग-अलग, और एक के बाद एक आते हैं?", o:["बारह महीने","राशियाँ","घंटे की सुइयाँ","बारह अंगूठे"], a:0, x:"बारह महीने — जनवरी से दिसंबर, कोई पीछे नहीं रहता!"},
+ {q:"दाँत हैं पर कुछ नहीं खाती, और दरवाज़ा खोलने का काम करती है?", o:["चाबी","कैंची","कंघी","चम्मच"], a:0, x:"चाबी! दाँतों जैसे कट होते हैं और ताला खोलती है।"},
+ {q:"जेब में रहने वाला जादूगर — कान नहीं पर सबकी बात सुनता है, आवाज़ नहीं पर बात करता है?", o:["मोबाइल फोन","रेडियो","घड़ी","बटुआ"], a:0, x:"मोबाइल फोन — आज के ज़माने का सबसे बड़ा जादूगर!"},
+ {q:"बादलों में चमकती है, बिन तार की लालटेन — कभी कड़कती है, कभी दमकती?", o:["बिजली","सूरज","तारा","जुगनू"], a:0, x:"बिजली — आसमान की बिन बत्ती वाली लालटेन!"}
+];
+var cur = 0, score = 0, answered = false;
+function getBest(){ try { return parseInt(localStorage.getItem('paheliBest') || '0'); } catch(e){ return 0; } }
+function setBest(v){ try { localStorage.setItem('paheliBest', String(v)); } catch(e){} }
+function showQ(){
+  var p = PAHELIS[cur];
+  answered = false;
+  document.getElementById('qnum').textContent = 'पहेली ' + (cur+1) + ' / ' + PAHELIS.length;
+  document.getElementById('qtext').textContent = p.q;
+  document.getElementById('fb').textContent = '';
+  document.getElementById('nextbtn').style.display = 'none';
+  document.getElementById('counter').textContent = 'पहेली ' + (cur+1) + '/' + PAHELIS.length;
+  document.getElementById('score').textContent = 'स्कोर: ' + score;
+  document.getElementById('best').textContent = 'बेस्ट: ' + getBest();
+  var opts = '';
+  for(var i = 0; i < p.o.length; i++){
+    opts += '<button class="opt" onclick="pick(' + i + ')" id="opt' + i + '">' + p.o[i] + '</button>';
+  }
+  document.getElementById('opts').innerHTML = opts;
+}
+function pick(i){
+  if(answered) return;
+  answered = true;
+  var p = PAHELIS[cur];
+  var btns = document.querySelectorAll('.opt');
+  for(var j = 0; j < btns.length; j++){ btns[j].disabled = true; }
+  document.getElementById('opt' + p.a).classList.add('right');
+  if(i === p.a){
+    score++;
+    document.getElementById('fb').style.color = '#137333';
+    document.getElementById('fb').textContent = '✅ वाह! सही जवाब — ' + p.o[p.a] + '. ' + p.x;
+  } else {
+    document.getElementById('opt' + i).classList.add('wrong');
+    document.getElementById('fb').style.color = '#c5221f';
+    document.getElementById('fb').textContent = '❌ अरे! सही जवाब था — ' + p.o[p.a] + '. ' + p.x;
+  }
+  document.getElementById('score').textContent = 'स्कोर: ' + score;
+  document.getElementById('nextbtn').style.display = 'inline-block';
+  document.getElementById('nextbtn').textContent = (cur === PAHELIS.length - 1) ? 'नतीजा देखें 🏁' : 'अगली पहेली →';
+}
+function nextQ(){
+  if(cur < PAHELIS.length - 1){
+    cur++;
+    showQ();
+  } else {
+    endGame();
+  }
+}
+function endGame(){
+  document.getElementById('game').style.display = 'none';
+  document.getElementById('end').style.display = 'block';
+  var best = getBest();
+  if(score > best){ best = score; setBest(best); }
+  var msg;
+  if(score >= 18){ msg = '🏆 कमाल! ' + score + '/' + PAHELIS.length + ' — आप पहेली उस्ताद हैं!'; }
+  else if(score >= 12){ msg = '👏 बहुत बढ़िया! ' + score + '/' + PAHELIS.length + ' — दिमाग तेज़ है आपका!'; }
+  else if(score >= 6){ msg = '🙂 अच्छा प्रयास! ' + score + '/' + PAHELIS.length + ' — थोड़ी और कसरत करो!'; }
+  else { msg = '😅 ' + score + '/' + PAHELIS.length + ' — गर्म दूध जैसा दिमाग, फिर से try कaro!'; }
+  document.getElementById('finalmsg').textContent = msg;
+  document.getElementById('endbest').textContent = 'आपका बेस्ट स्कोर: ' + best + '/' + PAHELIS.length;
+}
+function restart(){
+  cur = 0; score = 0;
+  document.getElementById('end').style.display = 'none';
+  document.getElementById('game').style.display = 'block';
+  showQ();
+}
+showQ();
+</script>
+</body>
+</html>
