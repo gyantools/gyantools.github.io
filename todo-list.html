@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>To-Do List in Hindi – काम की सूची (मुफ़्त, आपके browser में सेव)</title>
+<meta name="description" content="मुफ़्त To-Do list हिंदी में – रोज़ के काम लिखो, tick करो, हटाओ। आपके browser में सेव होती है, कोई login नहीं, कोई data कहीं नहीं जाता।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="To-Do List – काम की सूची in Hindi">
+<meta property="og:description" content="लिखो, tick करो, खत्म करो!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"To-Do List Hindi","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","description":"काम की सूची – browser में सेव होने वाली To-Do list","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;max-width:560px;margin-left:auto;margin-right:auto}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;margin-bottom:6px;text-align:center}
+.addrow{display:flex;gap:10px;margin:14px 0}
+.addrow input{flex:1;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+.addrow input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 22px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer}
+button:hover{background:#1557b0}
+button.gray{background:#fff;color:#1a73e8;border:1px solid #dadce0;font-size:.85rem;padding:8px 16px}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0;font-size:.9rem;font-weight:600;color:#5f6368}
+.stats span{background:#f1f3f4;padding:6px 14px;border-radius:20px}
+.stats b{color:#1a73e8}
+ul#list{list-style:none;margin-top:10px}
+ul#list li{background:#f8f9fa;border:1px solid #e8eaed;border-radius:10px;padding:12px 14px;margin:8px 0;display:flex;align-items:center;gap:12px}
+ul#list li.done{opacity:.55;text-decoration:line-through}
+ul#list li input[type=checkbox]{width:20px;height:20px;cursor:pointer;accent-color:#1a73e8}
+ul#list li .txt{flex:1;word-break:break-word}
+ul#list li .del{background:#fce8e6;color:#d93025;border:none;border-radius:6px;padding:4px 10px;cursor:pointer;font-size:.85rem;font-weight:700}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › To-Do List</p>
+
+  <div class="tool-box">
+    <h1>✅ काम की सूची (To-Do List)</h1>
+    <p style="text-align:center">लिखो → tick करो → खत्म। इसी browser में सेव रहेगी।</p>
+    <div class="stats">
+      <span>कुल: <b id="total">0</b></span>
+      <span>✅ हो गए: <b id="done">0</b></span>
+      <span>⏳ बाक़ी: <b id="pending">0</b></span>
+    </div>
+    <div class="addrow">
+      <input type="text" id="inp" placeholder="नया काम लिखो और Enter दबाओ..." onkeydown="if(event.key==='Enter')add()">
+      <button onclick="add()">+ जोड़ो</button>
+    </div>
+    <div style="text-align:center">
+      <button class="gray" onclick="clearDone()">🧹 हो गए हटाओ</button>
+      <button class="gray" onclick="clearAll()">🗑️ सब साफ़ करो</button>
+    </div>
+    <ul id="list"></ul>
+  </div>
+
+  <article>
+    <h2>काम की सूची क्यों ज़रूरी है?</h2>
+    <p>दिमाग़ की याददाश्त काम रखने के लिए नहीं बनी — काम करने के लिए बनी है। जो काम लिख लिए जाते हैं उनका होना <strong>कई गुना बढ़ जाता है</strong> — यह न केवल कहावत, productivity की बुनियादी सच्चाई है। सुबह 5 मिनट में दिन की सूची बनाओ, रात को देखो कितना हुआ।</p>
+    <h2>बढ़िया सूची बनाने की 5 आदतें</h2>
+    <ul>
+      <li><strong>एक साथ 3-5 बड़े काम</strong> — 20 की list डराती है, मार देती है</li>
+      <li><strong>छोटे टुकड़ों में तोड़ो</strong> — "पढ़ाई" नहीं, "अध्याय 3 के 10 सवाल"</li>
+      <li><strong>कल के काम आज रात लिखो</strong> — सुबह की शुरुआत तेज़</li>
+      <li><strong>Tick का मज़ा लो</strong> — छोटा जीत भी दिमाग़ को पुरस्कार देता है</li>
+      <li>रोज़ रात सफ़ाई — जो नहीं हुआ, जान-बूझकर आगे या हटाओ</li>
+    </ul>
+    <div class="note">🔒 <strong>Privacy:</strong> सूची आपके browser के storage में सेव होती है — कोई account नहीं, कोई server नहीं। Browser का data साफ़ करने पर सूची भी जाएगी।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var KEY = 'gyantools_todo';
+var todos = [];
+var canStore = true;
+try { todos = JSON.parse(localStorage.getItem(KEY) || '[]'); if(!Array.isArray(todos)) todos = []; } catch(e){ canStore = false; todos = []; }
+function save(){ if(canStore){ try { localStorage.setItem(KEY, JSON.stringify(todos)); } catch(e){} } }
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function render(){
+  var ul = document.getElementById('list');
+  ul.innerHTML = '';
+  todos.forEach(function(t, i){
+    var li = document.createElement('li');
+    if(t.done) li.className = 'done';
+    li.innerHTML = '<input type="checkbox"' + (t.done ? ' checked' : '') + ' onchange="toggle(' + i + ')">'
+      + '<span class="txt">' + esc(t.text) + '</span>'
+      + '<button class="del" onclick="del(' + i + ')">✕</button>';
+    ul.appendChild(li);
+  });
+  var done = todos.filter(function(t){ return t.done; }).length;
+  document.getElementById('total').textContent = todos.length;
+  document.getElementById('done').textContent = done;
+  document.getElementById('pending').textContent = todos.length - done;
+}
+function add(){
+  var inp = document.getElementById('inp');
+  var v = inp.value.trim();
+  if(!v) return;
+  todos.unshift({text: v, done: false});
+  inp.value = '';
+  save(); render();
+}
+function toggle(i){ todos[i].done = !todos[i].done; save(); render(); }
+function del(i){ todos.splice(i, 1); save(); render(); }
+function clearDone(){ todos = todos.filter(function(t){ return !t.done; }); save(); render(); }
+function clearAll(){ if(confirm('पूरी सूची हटानी है?')){ todos = []; save(); render(); } }
+render();
+</script>
+</body>
+</html>

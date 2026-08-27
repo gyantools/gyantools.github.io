@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Scientific Calculator in Hindi – वैज्ञानिक कैलकुलेटर (sin, cos, log, √)</title>
+<meta name="description" content="मुफ़्त scientific calculator हिंदी में – sin, cos, tan, log, ln, √, x², π, डिग्री/रेडियन। छात्रों के लिए ऑनलाइन वैज्ञानिक कैलकुलेटर, बिना लॉगिन।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Scientific Calculator in Hindi">
+<meta property="og:description" content="sin, cos, log, √, π – पूरा वैज्ञानिक कैलकुलेटर।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Scientific Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"वैज्ञानिक कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;max-width:480px;margin-left:auto;margin-right:auto}
+.tool-box h1{font-size:1.5rem;color:#1a73e8;margin-bottom:6px;text-align:center}
+.display{background:#202124;color:#fff;border-radius:10px;padding:14px 18px;text-align:right;margin-bottom:14px}
+.display .mode{color:#8ab4f8;font-size:.8rem;text-align:left}
+.display .expr{color:#9aa0a6;font-size:.95rem;min-height:1.3em;word-break:break-all}
+.display .val{font-size:1.9rem;font-weight:700;word-break:break-all}
+.keys{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.keys button{padding:12px 0;font-size:1rem;font-weight:600;border:none;border-radius:8px;cursor:pointer;background:#f1f3f4;color:#202124;font-family:inherit}
+.keys button:hover{background:#e8eaed}
+.keys .op{background:#e8f0fe;color:#1a73e8}
+.keys .fn{background:#fef7e0;color:#b06000;font-size:.9rem}
+.keys .eq{background:#1a73e8;color:#fff;grid-column:span 2}
+.keys .eq:hover{background:#1557b0}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › वैज्ञानिक कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>🔬 वैज्ञानिक कैलकुलेटर</h1>
+    <div class="display">
+      <div class="mode" id="mode">DEG (डिग्री)</div>
+      <div class="expr" id="expr">&nbsp;</div>
+      <div class="val" id="val">0</div>
+    </div>
+    <div class="keys">
+      <button class="fn" onclick="clearAll()">C</button>
+      <button class="fn" onclick="backspace()">⌫</button>
+      <button class="fn" onclick="press('(')">(</button>
+      <button class="fn" onclick="press(')')">)</button>
+      <button class="fn" onclick="toggleMode()">DEG/RAD</button>
+      <button class="fn" onclick="press('sin(')">sin</button>
+      <button class="fn" onclick="press('cos(')">cos</button>
+      <button class="fn" onclick="press('tan(')">tan</button>
+      <button class="fn" onclick="press('log(')">log</button>
+      <button class="fn" onclick="press('ln(')">ln</button>
+      <button class="fn" onclick="press('sqrt(')">√</button>
+      <button class="fn" onclick="press('^2')">x²</button>
+      <button class="fn" onclick="press('^')">xʸ</button>
+      <button class="fn" onclick="press('pi')">π</button>
+      <button class="fn" onclick="press('e')">e</button>
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button class="op" onclick="press('÷')">÷</button>
+      <button class="op" onclick="press('%')">%</button>
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button class="op" onclick="press('×')">×</button>
+      <button class="fn" onclick="press('!')">n!</button>
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button class="op" onclick="press('-')">−</button>
+      <button class="fn" onclick="press('1/x')">1/x</button>
+      <button onclick="press('0')">0</button>
+      <button onclick="press('.')">.</button>
+      <button class="eq" onclick="equals()">=</button>
+      <button class="op" onclick="press('+')">+</button>
+    </div>
+  </div>
+
+  <article>
+    <h2>कैसे इस्तेमाल करें?</h2>
+    <ul>
+      <li><strong>DEG/RAD बटन</strong> – त्रिकोणमिति (sin/cos/tan) डिग्री में या रेडियन में</li>
+      <li><strong>sin(30)</strong> जैसे लिखने के लिए: sin दबाओ → 30 दबाओ → ) दबाओ → =</li>
+      <li><strong>x²</strong> वर्ग के लिए (5 x² = 25), <strong>xʸ</strong> घात के लिए (2 xʸ 10 = 1024)</li>
+      <li><strong>n!</strong> भागफल (factorial): 5! = 120</li>
+      <li><strong>log</strong> आधार 10 वाला, <strong>ln</strong> natural log (आधार e)</li>
+    </ul>
+    <h2>छात्रों के लिए ज़रूरी मान</h2>
+    <table>
+      <tr><th>मान</th><th>अंक</th></tr>
+      <tr><td>π (pi)</td><td>≈ 3.14159</td></tr>
+      <tr><td>e</td><td>≈ 2.71828</td></tr>
+      <tr><td>sin 30°</td><td>0.5</td></tr>
+      <tr><td>cos 60°</td><td>0.5</td></tr>
+      <tr><td>tan 45°</td><td>1</td></tr>
+      <tr><td>log 100</td><td>2</td></tr>
+    </table>
+    <div class="note">💡 बेसिक जोड़-घटाव के लिए <a href="simple-calculator.html" style="color:#1a73e8">साधारण कैलकुलेटर</a>, ब्याज-EMI के लिए <a href="emi-calculator.html" style="color:#1a73e8">EMI कैलकुलेटर</a> देखें।</div>
+    <div class="note">🔒 सब कुछ आपके ब्राउज़र में – कोई data कहीं नहीं जाता।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var expr = '', degMode = true;
+function update(){
+  document.getElementById('val').textContent = expr === '' ? '0' : expr;
+  document.getElementById('expr').innerHTML = '&nbsp;';
+}
+function press(c){
+  var last = expr.slice(-1);
+  if('+-×÷^'.indexOf(c) >= 0 && '+-×÷^('.indexOf(last) >= 0 && last !== '('){
+    expr = expr.slice(0, -1);
+  }
+  expr += c;
+  update();
+}
+function fact(n){
+  if(n < 0 || n > 170 || n !== Math.floor(n)) return NaN;
+  var r = 1;
+  for(var i = 2; i <= n; i++) r *= i;
+  return r;
+}
+function safeEval(e, deg){
+  // identifiers को safe helpers से बदलो
+  var map = {
+    'sin': function(x){ return Math.sin(deg ? x*Math.PI/180 : x); },
+    'cos': function(x){ return Math.cos(deg ? x*Math.PI/180 : x); },
+    'tan': function(x){ return Math.tan(deg ? x*Math.PI/180 : x); },
+    'log': function(x){ return Math.log10(x); },
+    'ln':  function(x){ return Math.log(x); },
+    'sqrt': Math.sqrt,
+    'pi': Math.PI,
+    'e': Math.E
+  };
+  var js = '';
+  var i = 0;
+  while(i < e.length){
+    var ch = e[i];
+    if(/[a-z]/.test(ch)){
+      var word = '';
+      while(i < e.length && /[a-z0-9]/.test(e[i])){ word += e[i]; i++; }
+      if(word === 'sin' || word === 'cos' || word === 'tan' || word === 'log' || word === 'ln' || word === 'sqrt'){
+        js += 'F.' + word + '(';
+      } else if(word === 'pi'){ js += 'F.pi'; }
+      else if(word === 'e'){ js += 'F.e'; }
+      else { return null; }
+    } else if(ch === '×'){ js += '*'; i++; }
+    else if(ch === '÷'){ js += '/'; i++; }
+    else if(ch === '^'){ js += '**'; i++; }
+    else if(ch === '%'){
+      // a % b को a mod b नहीं — percent: पिछली संख्या/100
+      js += '/100'; i++;
+    }
+    else if(ch === '!'){
+      // पिछली संख्या पर factorial — बदलाव: जोड़ो "F.fact(" नहीं लग सकता आसानी से; इसके लिए pre-process करेंगे नीचे
+      js += '!'; i++; return null;
+    }
+    else { js += ch; i++; }
+  }
+  return js;
+}
+function preprocessFactorial(e){
+  // "5!" → "(F.fact(5))" — संख्या के आख़िर में ! को बदलो
+  return e.replace(/(\d+(?:\.\d+)?)!/g, '(F.fact($1))');
+}
+function preprocessInv(e){
+  // "1/x" बटन — "÷x" नहीं हो सकता; हम "1/x" को "(1/" + आगे की संख्या... सरल: इसे "(1/(" बना देंगे press में ही
+  return e;
+}
+function equals(){
+  var e = expr;
+  e = preprocessFactorial(e);
+  e = e.split('1/x').join('1/');
+  var js = safeEval(e, degMode);
+  if(js === null){ document.getElementById('expr').textContent = 'गलत समीकरण'; return; }
+  try {
+    var F = {
+      sin: function(x){ return Math.sin(degMode ? x*Math.PI/180 : x); },
+      cos: function(x){ return Math.cos(degMode ? x*Math.PI/180 : x); },
+      tan: function(x){ return Math.tan(degMode ? x*Math.PI/180 : x); },
+      log: Math.log10, ln: Math.log, sqrt: Math.sqrt, fact: fact,
+      pi: Math.PI, e: Math.E
+    };
+    var v = Function('F', '"use strict"; return (' + js + ')')(F);
+    if(typeof v !== 'number' || !isFinite(v)){ document.getElementById('expr').textContent = 'गणित की सीमा के बाहर'; return; }
+    document.getElementById('expr').textContent = expr + ' =';
+    expr = String(Math.round(v * 1e10) / 1e10);
+    update();
+  } catch(err){
+    document.getElementById('expr').textContent = 'गलत समीकरण';
+  }
+}
+function clearAll(){ expr = ''; update(); }
+function backspace(){ expr = expr.slice(0, -1); update(); }
+function toggleMode(){
+  degMode = !degMode;
+  document.getElementById('mode').textContent = degMode ? 'DEG (डिग्री)' : 'RAD (रेडियन)';
+}
+document.addEventListener('keydown', function(e){
+  if(e.key >= '0' && e.key <= '9') press(e.key);
+  else if(e.key === '.') press('.');
+  else if(e.key === '+') press('+');
+  else if(e.key === '-') press('-');
+  else if(e.key === '*') press('×');
+  else if(e.key === '/') { press('÷'); e.preventDefault(); }
+  else if(e.key === '(' || e.key === ')') press(e.key);
+  else if(e.key === 'Enter' || e.key === '=') equals();
+  else if(e.key === 'Backspace') backspace();
+  else if(e.key === 'Escape') clearAll();
+});
+</script>
+</body>
+</html>

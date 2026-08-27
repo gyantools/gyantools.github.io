@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Water Intake Calculator in Hindi – रोज़ कितना पानी पिएं? (वज़न के हिसाब से)</title>
+<meta name="description" content="पानी की मात्रा कैलकुलेटर हिंदी में – अपना वज़न, व्यायाम और मौसम डालकर जानें रोज़ कितना पानी पीना चाहिए। वैज्ञानिक 35 ml/kg formula + गिलासों में हिसाब। फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Water Intake Calculator – रोज़ कितना पानी?">
+<meta property="og:description" content="वज़न के हिसाब से अपनी रोज़ की पानी की ज़रूरत जानें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Water Intake Calculator Hindi","applicationCategory":"HealthApplication","operatingSystem":"Web","description":"रोज़ कितना पानी पिएं – कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;max-width:480px;margin-left:auto;margin-right:auto}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;margin-bottom:6px;text-align:center}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px;width:100%}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:18px;margin-top:16px;text-align:center}
+.result .big{font-size:2.2rem;font-weight:700;color:#1a73e8}
+.result p{margin-top:6px}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › पानी की मात्रा कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>💧 रोज़ कितना पानी पिएं?</h1>
+    <p style="text-align:center">अपनी जानकारी डालें – वैज्ञानिक formula से हिसाब।</p>
+    <label for="wt">आपका वज़न (kg)</label>
+    <input type="number" id="wt" placeholder="जैसे: 70" min="10" max="200" step="any">
+    <label for="age">उम्र का दायरा</label>
+    <select id="age">
+      <option value="35">18–55 साल</option>
+      <option value="30">56–65 साल</option>
+      <option value="25">66 साल से ऊपर</option>
+    </select>
+    <label for="ex">रोज़ का व्यायाम/पसीना (मिनट – नहीं तो 0)</label>
+    <input type="number" id="ex" placeholder="जैसे: 30" min="0" max="300" step="any">
+    <label for="cl">मौसम</label>
+    <select id="cl">
+      <option value="0">सामान्य</option>
+      <option value="400">गर्मी / भारी पसीना</option>
+    </select>
+    <button onclick="calc()">मेरी ज़रूरत निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>पीछे का विज्ञान</h2>
+    <p>दुनिया भर में मान्य clinical guideline है: <strong>~35 ml पानी प्रति kg शरीर के वज़न</strong> (कम चलने वाले वयस्क)। सक्रिय लोगों के लिए 40–45 ml/kg तक। व्यायाम पर हर 30 मिनट में लगभग <strong>350–500 ml अतिरिक्त</strong>। उम्र बढ़ने पर ज़रूरत घटती है (56–65: ~30 ml/kg, 66+: ~25 ml/kg) — प्यास का एहसास भी कम महसूस होता है, इसलिए बुज़ुर्गों को जानबूझकर पानी पीना चाहिए।</p>
+    <p>अमेरिकी राष्ट्रीय अकादमियों (NASEM) का आँकड़ा: कुल तरल (खाने समेत) पुरुषों को ~3.7 L, महिलाओं को ~2.7 L — इसमें खाने से मिलने वाला पानी (~500-700 ml) शामिल है, इसलिए "पीने" वाला पानी थोड़ा कम लगता है।</p>
+    <h2>"8 गिलास" का सच</h2>
+    <p>8 गिलास (~2 L) एक आसान याद रखने वाली rule है — पर हर किसी के लिए सही नहीं। 45 kg वाले और 95 kg वाले की ज़रूरत एक जैसी कैसे होगी? वज़न आधारित हिसाब ज़्यादा सही है।</p>
+    <h2>पानी की जांच – बिना कैलकुलेटर</h2>
+    <ul>
+      <li>पेशाब का रंग <strong>हल्का पीला/पारदर्शी</strong> = पानी पर्याप्त</li>
+      <li>गहरा पीला = पानी कम पी रहे हो</li>
+      <li>बार-बार साफ़ पेशाब + सिरदर्द/जी मिचलाना = शायद बहुत ज़्यादा — आराम से</li>
+    </ul>
+    <table>
+      <tr><th>वज़न</th><th>बेसिक ज़रूरत (~35 ml/kg)</th><th>गिलास (250 ml)</th></tr>
+      <tr><td>50 kg</td><td>~1.75 L</td><td>7</td></tr>
+      <tr><td>60 kg</td><td>~2.1 L</td><td>8-9</td></tr>
+      <tr><td>70 kg</td><td>~2.45 L</td><td>10</td></tr>
+      <tr><td>80 kg</td><td>~2.8 L</td><td>11</td></tr>
+      <tr><td>90 kg</td><td>~3.15 L</td><td>13</td></tr>
+    </table>
+    <div class="note">⚠️ <strong>खास परेशानी वाले सावधान:</strong> गुर्दे (kidney) या दिल की बीमारी, डॉक्टर की तय liquid limit वाले लोग यह calculator न मानें — अपने डॉक्टर की सलाह ही आख़िरी है।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function calc(){
+  var wt = parseFloat(document.getElementById('wt').value);
+  var perKg = parseFloat(document.getElementById('age').value);
+  var ex = parseFloat(document.getElementById('ex').value) || 0;
+  var climate = parseFloat(document.getElementById('cl').value);
+  var out = document.getElementById('out');
+  if(!wt || wt < 10){ out.style.display='block'; out.innerHTML='⚠️ कृपया अपना वज़न भरें।'; return; }
+  var ml = wt * perKg;
+  ml += Math.floor(ex / 30) * 400;        // हर 30 मिनट व्यायाम पर ~400 ml
+  ml += climate;                          // गर्मी में अतिरिक्त
+  var L = (ml / 1000).toFixed(1);
+  var glasses = Math.round(ml / 250);
+  out.style.display='block';
+  out.innerHTML = '<div class="big">' + L + ' लीटर</div>'
+    + '<p>लगभग <strong>' + glasses + ' गिलास</strong> (250 ml वाले) — दिन भर में</p>'
+    + '<p style="font-size:.85rem;color:#5f6368">हिसाब: ' + wt + ' kg × ' + perKg + ' ml' + (ex > 0 ? ' + व्यायाम ' + Math.floor(ex/30)*400 + ' ml' : '') + (climate > 0 ? ' + गर्मी +400 ml' : '') + '</p>';
+}
+</script>
+</body>
+</html>

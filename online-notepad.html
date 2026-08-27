@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Online Notepad in Hindi – नोटपैड (बिना लॉगिन, आपके browser में सेव)</title>
+<meta name="description" content="फ्री online notepad हिंदी में – तुरंत नोट लिखें, browser में सेव होता है, .txt डाउनलोड करें। कोई लॉगिन नहीं, कोई server नहीं – आपके नोट्स आपकी device में ही रहते हैं।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Online Notepad in Hindi – बिना लॉगिन नोटपैड">
+<meta property="og:description" content="तुरंत नोट लिखें – पूरी प्राइवेसी के साथ।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Online Notepad Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"बिना लॉगिन का नोटपैड हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+textarea{width:100%;min-height:380px;padding:16px;border:1px solid #dadce0;border-radius:8px;font-size:1.05rem;font-family:inherit;line-height:1.8;background:#fff;resize:vertical}
+textarea:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:14px;margin-right:8px}
+button:hover{background:#1557b0}
+.btn2{background:#fff;color:#1a73e8;border:1px solid #dadce0}
+.stats{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0;font-weight:600;color:#5f6368}
+.stats span{background:#e8f0fe;padding:6px 14px;border-radius:20px;font-size:.9rem}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+.msg{background:#e6f4ea;color:#137333;padding:10px 16px;border-radius:8px;margin-top:12px;display:none}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › ऑनलाइन नोटपैड</p>
+
+  <div class="tool-box">
+    <h1>🗒️ ऑनलाइन नोटपैड</h1>
+    <p>तुरंत लिखना शुरू करें – नोट आपके ब्राउज़र में सेव होते हैं, किसी server पर नहीं जाते।</p>
+    <div class="stats">
+      <span>📝 शब्द: <span id="w">0</span></span>
+      <span>🔤 अक्षर: <span id="c">0</span></span>
+      <span>🕘 अंतिम सेव: <span id="sv">—</span></span>
+    </div>
+    <textarea id="txt" placeholder="यहाँ लिखें… (जो भी लिखेंगे इसी browser में सेव रहेगा)" oninput="count()"></textarea>
+    <button onclick="save()">💾 सेव करें</button>
+    <button class="btn2" onclick="dl()">⬇️ .txt डाउनलोड करें</button>
+    <button class="btn2" onclick="cpy()">📋 कॉपी करें</button>
+    <button class="btn2" onclick="clr()">🗑️ साफ़ करें</button>
+    <div class="msg" id="msg"></div>
+    <div class="note" id="warn" style="display:none">⚠️ यह ब्राउज़र storage की सुविधा नहीं दे रहा – लिखा हुआ सिर्फ इसी page खुले रहने तक रहेगा। ज़रूरी नोट <strong>डाउनलोड</strong> या <strong>कॉपी</strong> करके रखें।</div>
+  </div>
+
+  <article>
+    <h2>यह नोटपैड खास क्यों है?</h2>
+    <ul>
+      <li><strong>कोई लॉगिन नहीं</strong> – नाम, email, OTP कुछ नहीं मांगता</li>
+      <li><strong>आपके नोट्स आपकी device में ही रहते हैं</strong> – कोई server नहीं, कोई account नहीं, कोई tracking नहीं</li>
+      <li><strong>डाउनलोड</strong> करके कहीं भी रखें – फाइल आपकी</li>
+      <li>कभी भी खोलें, लिखें, सेव करें – बिल्कुल मुफ़्त</li>
+    </ul>
+    <h2>किन कामों के लिए?</h2>
+    <ul>
+      <li>बातचीत/फोन कॉल के बीच झटपट नोट</li>
+      <li>लिस्ट बनाना – खरीदारी, काम, यात्रा का सामान</li>
+      <li>OTP/password से दूर रहते हुए जन्मतिथि-पते जैसी बातें नोट करना</li>
+      <li>कोई भी लंबा टेक्स्ट जल्दी से लिखकर डाउनलोड करना</li>
+    </ul>
+    <h2>ज़रूरी बातें</h2>
+    <ul>
+      <li>नोट सिर्फ <strong>उसी browser और उसी device</strong> में लौटेंगे (दूसरे कंप्यूटर/फोन से नहीं)</li>
+      <li>browser का data साफ़ करने (clear browsing data) पर नोट भी हट जाएंगे</li>
+      <li>बहुत ज़रूरी लिखा हुआ <strong>डाउनलोड</strong> करके बैकअप रखें</li>
+      <li>पासवर्ड या बैंक जैसी संवेदनशील चीज़ें किसी भी नोटपैड में न लिखें – पासवर्ड manager के लिए बने tool का इस्तेमाल करें</li>
+    </ul>
+    <div class="note">🔒 <strong>प्राइवेसी:</strong> यह page कोई network request नहीं करता – आपका लिखा हुआ कभी किसी server पर नहीं जाता।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var KEY = 'gyantools_notepad';
+var canStore = true;
+try { localStorage.setItem(KEY+'_t','1'); localStorage.removeItem(KEY+'_t'); }
+catch(e){ canStore = false; document.getElementById('warn').style.display = 'block'; }
+if(canStore){
+  var saved = localStorage.getItem(KEY);
+  if(saved !== null) document.getElementById('txt').value = saved;
+}
+function count(){
+  var t = document.getElementById('txt').value;
+  document.getElementById('w').textContent = t.trim() ? t.trim().split(/\s+/).length : 0;
+  document.getElementById('c').textContent = t.length;
+}
+function showMsg(s){
+  var m = document.getElementById('msg');
+  m.textContent = s; m.style.display = 'block';
+  setTimeout(function(){ m.style.display = 'none'; }, 2500);
+}
+function save(){
+  if(canStore){
+    try { localStorage.setItem(KEY, document.getElementById('txt').value); } catch(e){}
+    document.getElementById('sv').textContent = new Date().toLocaleTimeString('hi-IN');
+    showMsg('✅ सेव हो गया – आपके browser में');
+  } else {
+    showMsg('⚠️ इस browser में सेव उपलब्ध नहीं – डाउनलोड करें');
+  }
+}
+function dl(){
+  var blob = new Blob([document.getElementById('txt').value], {type:'text/plain;charset=utf-8'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'gyantools-note.txt';
+  a.click();
+  showMsg('⬇️ डाउनलोड शुरू – gyantools-note.txt');
+}
+function cpy(){
+  navigator.clipboard && navigator.clipboard.writeText(document.getElementById('txt').value);
+  showMsg('📋 पूरा टेक्स्ट कॉपी हो गया');
+}
+function clr(){
+  if(confirm('पूरा लिखा हुआ हटाना है? यह वापस नहीं आएगा।')){
+    document.getElementById('txt').value = '';
+    if(canStore){ try { localStorage.removeItem(KEY); } catch(e){} }
+    count();
+    showMsg('🗑️ साफ़ हो गया');
+  }
+}
+count();
+</script>
+</body>
+</html>

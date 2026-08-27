@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Excel Formulas in Hindi – शुरुआती गाइड: SUM से VLOOKUP तक (2026)</title>
+<meta name="description" content="Excel और Google Sheets के ज़रूरी formulas हिंदी में – SUM, AVERAGE, IF, COUNT, VLOOKUP/XLOOKUP और Pivot Table आसान उदाहरणों के साथ। नौकरी, दुकान और पढ़ाई के लिए फ्री गाइड।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Excel Formulas in Hindi – शुरुआती गाइड">
+<meta property="og:description" content="SUM से VLOOKUP तक – उदाहरणों के साथ आसान समझ।">
+<meta property="og:type" content="article">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Excel Formulas in Hindi – शुरुआती गाइड: SUM से VLOOKUP तक","description":"Excel formulas की शुरुआती गाइड हिंदी में","inLanguage":"hi","datePublished":"2026-08-26","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.8}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:36px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h1{font-size:1.9rem;color:#1a73e8;margin-bottom:8px}
+article h2{margin:30px 0 12px;color:#1a73e8;font-size:1.35rem}
+article h3{margin:20px 0 8px;color:#174ea6}
+article p{margin-bottom:12px}
+article li{margin-bottom:8px}
+article ul,article ol{padding-left:26px;margin-bottom:14px}
+.meta{color:#5f6368;font-size:.9rem;margin-bottom:18px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:18px 0}
+.tip{background:#e6f4ea;border-left:4px solid #137333;padding:12px 16px;border-radius:4px;margin:18px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin:14px 0}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+code{background:#f1f3f4;padding:2px 8px;border-radius:6px;font-family:monospace;font-size:.95em;color:#0b57d0}
+.toc{background:#f1f3f4;border-radius:10px;padding:18px 22px;margin:0 0 10px}
+.toc a{color:#1a73e8;text-decoration:none}
+.toc li{margin-bottom:4px}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Excel Formulas गाइड</p>
+
+  <article>
+    <h1>📊 Excel Formulas in Hindi – शुरुआती की पूरी गाइड</h1>
+    <p class="meta">26 अगस्त 2026 · GyanTools · पढ़ने का समय: ~14 मिनट</p>
+
+    <div class="toc">
+      <strong>इस गाइड में (Excel और Google Sheets दोनों में चलते हैं):</strong>
+      <ol>
+        <li><a href="#start">शुरुआत – = का जादू और cell की भाषा</a></li>
+        <li><a href="#basic">जोड़-घटाव वाले 5 बेसिक formulas</a></li>
+        <li><a href="#if">IF – शर्त वाला फैसला</a></li>
+        <li><a href="#lookup">VLOOKUP/XLOOKUP – खोजखबर वाला formula</a></li>
+        <li><a href="#useful">रोज़ काम के 6 छोटे-मोटे जादूगर</a></li>
+        <li><a href="#pivot">Pivot Table – बिना formula की summary</a></li>
+        <li><a href="#shortcuts">8 शॉर्टकट और 3 आदतें</a></li>
+        <li><a href="#practice">सीखने का 7 दिन का तरीका</a></li>
+        <li><a href="#faq">अक्सर पूछे जाने वाले सवाल</a></li>
+      </ol>
+    </div>
+
+    <h2 id="start">1. शुरूआत – "=" का जादू और cell की भाषा</h2>
+    <p>Excel/Sheets में कोई भी गणित <strong>=</strong> चिह्न से शुरू होता है। सेल में <code>=2+3</code> लिखकर Enter दबाओ – जवाब 5। बस इतना समझ लिया तो आधी जंग जीत गए।</p>
+    <p>अब खानों (cells) की भाषा: ऊपर <strong>A, B, C</strong> कॉलम और बाईं ओर <strong>1, 2, 3</strong> पंक्तियां। दोनों का मेल ही cell का नाम है – <strong>B5</strong> यानी B कॉलम की 5वीं पंक्ति। Formula में नंबर की जगह cell का नाम लिखो तो गणित खुद अपडेट होता रहता है – B5 की वैल्यू बदलो, जवाब खुद बदल जाएगा। यही Excel की असली ताकत है।</p>
+    <p>रेंज लिखने का तरीका भी सीख लो: <strong>A1:A10</strong> यानी A1 से A10 तक के सारे cell। यही रेंज वाली भाषा आगे हर formula में काम आएगी।</p>
+
+    <h2 id="basic">2. जोड़-घटाव वाले 5 बेसिक formulas</h2>
+    <table>
+      <tr><th>Formula</th><th>क्या करता है</th><th>उदाहरण</th></tr>
+      <tr><td><code>=SUM(A1:A10)</code></td><td>A1 से A10 तक सब जोड़ो</td><td>महीने का कुल खर्च</td></tr>
+      <tr><td><code>=AVERAGE(A1:A10)</code></td><td>औसत निकालो</td><td>रोज़ की बिक्री का औसत</td></tr>
+      <tr><td><code>=MAX(A1:A10)</code></td><td>सबसे बड़ा नंबर</td><td>सबसे बड़ी बिक्री</td></tr>
+      <tr><td><code>=MIN(A1:A10)</code></td><td>सबसे छोटा नंबर</td><td>सबसे सस्ता रेट</td></tr>
+      <tr><td><code>=COUNT(A1:A10)</code></td><td>कितने खानों में नंबर है</td><td>कुल कितने बिल भरे</td></tr>
+    </table>
+    <p>मोटा अंदाज़ा बांध लो: दुकान का हिसाब हो या घर का बजट – इन 5 से 80% काम हो जाता है। SUM का शॉर्टकट भी याद रखो: <strong>Alt + =</strong> (Excel में) – ऊपर वाला कुल अपने आप लग जाता है।</p>
+
+    <h2 id="if">3. IF – शर्त वाला फैसला</h2>
+    <p>असली कमाल तब शुरू होता है जब Excel खुद फैसला ले। <strong>IF</strong> का ढांचा: <code>=IF(शर्त, शर्त सही तो यह, गलत तो यह)</code></p>
+    <p><strong>उदाहरण 1 – पास/फेल:</strong> <code>=IF(B2&gt;=33,"पास","फिर से")</code> – B2 में नंबर 33+ हैं तो "पास" लिखेगा, नहीं तो "फिर से"।</p>
+    <p><strong>उदाहरण 2 – बोनस:</strong> <code>=IF(B2&gt;100000,B2*0.05,0)</code> – बिक्री 1 लाख पार की तो 5% बोनस वरना 0।</p>
+    <p><strong>उदाहरण 3 – कई शर्तें (nested):</strong> <code>=IF(B2&gt;=75,"A",IF(B2&gt;=60,"B","C"))</code> – ग्रेड खुद लगा देगा। ऐसे ही हमारे <a href="../tools/marks-percentage-calculator.html" style="color:#1a73e8">नंबर कैलकुलेटर</a> के पीछे की गणित काम करती है।</p>
+
+    <h2 id="lookup">4. VLOOKUP/XLOOKUP – खोजखबर वाला formula</h2>
+    <p>सबसे ज़्यादा नौकरी वाला formula! मिसाल: बड़ी list में नाम से पता करना कि उसकी बिक्री/शहर/रेट क्या है।</p>
+    <p><strong>VLOOKUP:</strong> <code>=VLOOKUP(क्या_ढूंढना_है, कहां_ढूंढना_है, कौन-सा_कॉलम_लेना_है, 0)</code></p>
+    <p>जैसे <code>=VLOOKUP("राम", A2:C100, 3, 0)</code> – A2 से C100 की तालिका में "राम" की पंक्ति ढूंढकर उसका 3rd कॉलम (सैलरी वगैरह) लाओ। आखिरी 0 का मतलब "बिल्कुल वही नाम"।</p>
+    <p><strong>XLOOKUP</strong> (नए Excel और Google Sheets में) और भी आसान है: <code>=XLOOKUP("राम", A2:A100, C2:C100)</code> – नाम A में ढूंढो, जवाब C से लाओ। बस! VLOOKUP की सीमाएं (बाईं ओर नहीं देख सकना वगैरह) XLOOKUP ने हटा दीं – जहां मिले वहीं इस्तेमाल करो।</p>
+    <div class="tip">💡 सीखने का तरीका: दो कॉलम बनाओ – नाम और शहर। फिर तीसरी जगह नाम डालकर उसका शहर XLOOKUP से निकालो। 10 बार करोगे तो formula उंगलियों में बैठ जाएगा।</div>
+
+    <h2 id="useful">5. रोज़ काम के 6 छोटे-मोटे जादूगर</h2>
+    <table>
+      <tr><th>Formula</th><th>काम</th></tr>
+      <tr><td><code>=TODAY()</code></td><td>आज की तारीख़ (खुद अपडेट होती है)</td></tr>
+      <tr><td><code>=CONCAT(A2," ",B2)</code></td><td>दो नाम जोड़ो (या <code>&amp;</code> से: <code>=A2&amp;" "&amp;B2</code>)</td></tr>
+      <tr><td><code>=LEN(A2)</code></td><td>cell में कितने अक्षर हैं</td></tr>
+      <tr><td><code>=LEFT(A2,3)</code></td><td>बाएं से 3 अक्षर काटो (मोबाइल कोड वगैरह)</td></tr>
+      <tr><td><code>=COUNTIF(B2:B50,"&gt;1000")</code></td><td>1000 से बड़ी कितनी entries हैं</td></tr>
+      <tr><td><code>=SUMIF(A:A,"राम",B:B)</code></td><td>सिर्फ राम की बिक्री जोड़ो</td></tr>
+    </table>
+    <p>ये सब मिलाकर जैसे-तैसे का सारा हिसाब – किसने कितना लिया, कौन-सा नाम कितनी बार, कितनी बड़ी entries – बिना आँख मारे निकल आता है।</p>
+
+    <h2 id="pivot">6. Pivot Table – बिना formula की summary</h2>
+    <p>जिस दिन Pivot Table सीख जाओ, उस दिन बड़ा दिन मानना। एक 1000 पंक्तियों की बिक्री list से – कौन-सा शहर कितना बेचता है, कौन-सा महीना सबसे तेज़ – बिना कोई formula लिखे:</p>
+    <ol>
+      <li>पूरी data चुनो (एक cell क्लिक करके Ctrl+A)</li>
+      <li><strong>Insert → PivotTable</strong> (Sheets में: Insert → Pivot table)</li>
+      <li>Rows में शहर डालो, Values में बिक्री – सारांश तैयार!</li>
+      <li>और Filters से महीना तक छान सकते हो</li>
+    </ol>
+    <p>यही तरीका बड़ी कंपनियों की reports की रीढ़ है। हमारी <a href="google-docs-sheets-tips.html" style="color:#1a73e8">Google Docs/Sheets tips गाइड</a> में Sheets के और भी कमाल देखो।</p>
+
+
+    <h2 id="shortcuts">जो लोग तेज़ चलते हैं – 8 शॉर्टकट और 3 आदतें</h2>
+    <h3>शॉर्टकट (Excel; Sheets में भी लगभग सब चलते हैं)</h3>
+    <table>
+      <tr><th>शॉर्टकट</th><th>काम</th></tr>
+      <tr><td><code>Ctrl + C / V</code></td><td>कॉपी/पेस्ट (बुनियादी पर जान)</td></tr>
+      <tr><td><code>Ctrl + Z</code></td><td>गलती वापस (जीवन रेखा!)</td></tr>
+      <tr><td><code>Ctrl + Arrow</code></td><td>डेटा के किनारे तक उड़ान भरो</td></tr>
+      <tr><td><code>Ctrl + Shift + Arrow</code></td><td>पूरा डेटा एक साथ चुनो</td></tr>
+      <tr><td><code>Alt + =</code></td><td>अपने आप SUM लगाओ</td></tr>
+      <tr><td><code>Ctrl + ;</code></td><td>आज की तारीख़ डालो (जमी हुई)</td></tr>
+      <tr><td><code>F2</code></td><td>cell को एडिट मोड में लाओ</td></tr>
+      <tr><td><code>F4</code></td><td>formula में cell को lock ($A$1) करो</td></tr>
+    </table>
+    <h3>तीन आदतें जो बड़ा फर्क डालती हैं</h3>
+    <ol>
+      <li><strong>डेटा साफ़ रखो:</strong> एक जानकारी एक कॉलम में – "नाम और शहर एक साथ" लिखने से हर formula मर जाता है</li>
+      <li><strong>खाली पंक्ति मत छोड़ो:</strong> बीच-बीच में खाली पंक्तियां sort/filter/pivot सब तोड़ती हैं</li>
+      <li><strong>Format as Table:</strong> डेटा चुनकर Ctrl+T – filter, रंग और बढ़ती-अपने-आप-वाली तालिका एक साथ</li>
+    </ol>
+    <p>ये आदतें आधे गलत formulas और आधी गलती से पहले ही खत्म कर देती हैं – अनुभवी लोग डेटा देखने से पहले यही जांचते हैं।</p>
+
+    <h2 id="practice">7. सीखने का 7 दिन का तरीका</h2>
+    <ol>
+      <li><strong>दिन 1:</strong> = से जोड़-घटाव, cell के नाम, रेंज</li>
+      <li><strong>दिन 2:</strong> SUM, AVERAGE, MAX, MIN – अपने महीने के खर्च की sheet बनाओ</li>
+      <li><strong>दिन 3:</strong> COUNT, COUNTIF, SUMIF</li>
+      <li><strong>दिन 4-5:</strong> IF और nested IF – ग्रेड/पास-फेल वाली sheet</li>
+      <li><strong>दिन 6:</strong> VLOOKUP/XLOOKUP – नाम-शहर वाली practice</li>
+      <li><strong>दिन 7:</strong> Pivot Table से अपनी ही data का सारांश</li>
+    </ol>
+    <p>हर दिन 30 मिनट ठहराकर। एक हफ़्ते में आप अपने दफ़्तर/दुकान के 90% लोगों से आगे निकल जाओगे। रोज़ की practice के लिए <a href="../tools/word-counter.html" style="color:#1a73e8">शब्द गिनती</a> और <a href="../tools/typing-speed-test.html" style="color:#1a73e8">टाइपिंग टेस्ट</a> भी देखें।</p>
+
+    <h2 id="faq">8. अक्सर पूछे जाने वाले सवाल</h2>
+    <p><strong>प्र. Excel और Google Sheets में क्या फर्क?</strong><br>Formulas लगभग एक जैसे। Excel ज़्यादा ताकतवर और ऑफ़लाइन; Sheets फ्री, बादल पर और साझा करने में सबसे आसान।</p>
+    <p><strong>प्र. Formula की जगह नतीजा (text) ही दिख रहा है?</strong><br>शायद = लिखना भूल गए, या cell "Text" फॉर्मेट में है – cell पर राइट क्लिक करके Format → Number करो।</p>
+    <p><strong>प्र. #REF! या #VALUE! क्या है?</strong><br>गलती का इशारा – #REF! मतलब कोई cell मिट गया जिसका formula में ज़िक्र था; #VALUE! मतलब गणित में text घुस गया। सेल का formula दोबारा देखो।</p>
+    <p><strong>प्र. डॉलर वाला निशान ($A$1) क्या है?</strong><br>"Locking" – formula कहीं भी खींचो, वह cell वही रहेगा। किसी cell को lock करने के लिए उस पर F4 दबाओ (Excel में)। सारे नंबर एक ही दर से गुणा करने जैसे कामों में बहुत काम आता है।</p>
+    <p><strong>प्र. एक ही formula पूरे कॉलम में कैसे लगाऊं?</strong><br>पहले cell में formula लिखो, फिर cell के कोने वाले छोटे बिंदु पकड़कर नीचे खींचो (fill handle) – या डबल-क्लिक कर दो, पूरा कॉलम अपने आप भर जाएगा।</p>
+    <p><strong>प्र. Sheets में formula ऊपर के सारे लोग देख सकते हैं?</strong><br>हाँ – साझा sheet में formula सब देख सकते हैं (View शेयरिंग सेटिंग से सिर्फ-देखने वाला access देकर बच सकते हैं)। गोपनीय हिसाब अलग file में रखो।</p>
+
+    <div class="note">🎯 <strong>आज का काम:</strong> अपने पिछले महीने के खर्चों की छोटी list बनाओ और उस पर SUM, AVERAGE, MAX चलाकर देखो। सीखने से बढ़िया तरीका कोई नहीं!</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Electricity Bill Calculator in Hindi – बिजली बिल का हिसाब (Units से)</title>
+<meta name="description" content="बिजली बिल कैलकुलेटर हिंदी में – मीटर की रीडिंग और दर से units, बिजली खर्च और कुल बिल निकालें। 1 unit में कितनी बिजली और बचत के टिप्स समेत। फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Electricity Bill Calculator in Hindi – बिजली बिल">
+<meta property="og:description" content="मीटर रीडिंग से बिजली बिल का अंदाज़ा निकालें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Electricity Bill Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"बिजली बिल कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › बिजली बिल कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>⚡ बिजली बिल कैलकुलेटर</h1>
+    <p>मीटर की दो रीडिंग और अपने बिल की दर डालें – खर्च का अंदाज़ा तैयार।</p>
+    <div class="row">
+      <div>
+        <label for="prev">पिछली मीटर रीडिंग (units)</label>
+        <input type="number" id="prev" placeholder="जैसे: 12500" min="0" step="any">
+      </div>
+      <div>
+        <label for="curr">मौजूदा मीटर रीडिंग (units)</label>
+        <input type="number" id="curr" placeholder="जैसे: 12750" min="0" step="any">
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="rate">दर प्रति यूनिट (₹) – अपने बिल से देखें</label>
+        <input type="number" id="rate" placeholder="जैसे: 7.5" min="0" step="any">
+      </div>
+      <div>
+        <label for="fixed">फिक्स्ड/सेवा चार्ज (₹)</label>
+        <input type="number" id="fixed" placeholder="जैसे: 90" min="0" step="any" value="0">
+      </div>
+    </div>
+    <button onclick="calcBill()">बिल निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>1 यूनिट (unit/kWh) बिजली कितनी होती है?</h2>
+    <p><strong>1 unit = 1000 वाट का उपकरण 1 घंटा चलना</strong> (या 100 वाट का 10 घंटे)। मीटर पर यही गिनता है। उदाहरण:</p>
+    <table>
+      <tr><th>उपकरण</th><th>खपत</th><th>रोज़ 8 घंटे चले तो/दिन</th></tr>
+      <tr><td>LED बल्ब (9W)</td><td>9 वाट</td><td>0.07 unit</td></tr>
+      <tr><td>पंखा (75W)</td><td>75 वाट</td><td>0.6 unit</td></tr>
+      <tr><td>टीवी (100W)</td><td>100 वाट</td><td>0.8 unit</td></tr>
+      <tr><td>फ्रिज (1.5 किलो वाट/दिन)</td><td>~1500W-घंटे</td><td>1.5 unit</td></tr>
+      <tr><td>AC 1.5 टन (1.5kW)</td><td>1500 वाट</td><td>12 unit</td></tr>
+      <tr><td>गीज़र (2kW)</td><td>2000 वाट</td><td>2 unit (1 घंटा)</td></tr>
+    </table>
+    <p>यानी सिर्फ AC की वजह से महीने के 200–360 units हो सकते हैं! ऊपर के उदाहरण से अपने घर का रोज़ का अंदाज़ा खुद बना सकते हैं।</p>
+    <h2>दरें राज्य-राज्य में अलग – और स्लैब में बंटी होती हैं</h2>
+    <p>हर राज्य का बिजली बोर्ड (जैसे राजस्थान में RVPN/वितरण कंपनियां, दिल्ली में BSES/Tata Power) अपनी दरें तय करता है। ज़्यादातर जगह <strong>स्लैब दरें</strong> होती हैं – पहले 100 units सस्ते, फिर बढ़ती दरें (जैसे 0–100 में ₹4, 101–200 में ₹5.5, ऊपर ₹7)। सटीक दर अपने आख़िरी बिल या विभाग की website पर देखें। यह calculator एक दर (average) से अंदाज़ा देता है – बिल थोड़ा ऊपर-नीचे हो सकता है।</p>
+    <h2>बिजली बचाने के 7 तरीके</h2>
+    <ul>
+      <li>AC को 24–26°C पर चलाएं – हर डिग्री कम करने पर खपत ~6% बढ़ती है</li>
+      <li><strong>5-स्टार</strong> रेटिंग वाले उपकरण लें – बिजली 20–30% कम खाते हैं</li>
+      <li>पुराने बल्बों की जगह LED – 10 गुना कम बिजली</li>
+      <li>फ्रिज को दीवार से थोड़ी दूर और गर्म चीज़ें ठंडी करके ही रखें</li>
+      <li>स्टैंडबाय में पड़े टीवी/चार्जर भी बिजली खाते हैं – बिना इस्तेमाल में switch बंद</li>
+      <li>दिन में सूखे कपड़े – ड्रायर सबसे बड़ा बिजली खाने वाला है</li>
+      <li>घर की छत पर गर्मी रोकने का इंतज़ाम (रंग, छत वाला इन्सुलेशन) से AC का बोझ घटता है</li>
+    </ul>
+    <div class="note">🔒 आपकी रीडिंग कहीं नहीं जाती – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function calcBill(){
+  var prev = parseFloat(document.getElementById('prev').value);
+  var curr = parseFloat(document.getElementById('curr').value);
+  var rate = parseFloat(document.getElementById('rate').value);
+  var fixed = parseFloat(document.getElementById('fixed').value) || 0;
+  var out = document.getElementById('out');
+  if(isNaN(prev) || isNaN(curr) || isNaN(rate)){ out.style.display='block'; out.innerHTML='⚠️ कृपया रीडिंग और दर भरें।'; return; }
+  if(curr < prev){ out.style.display='block'; out.innerHTML='⚠️ मौजूदा रीडिंग पिछली से कम नहीं हो सकती।'; return; }
+  var units = curr - prev;
+  var energy = units * rate;
+  var total = energy + fixed;
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">अनुमानित बिल: ' + f(total) + '</div>'
+    + '<p>खपत: <strong>' + units + ' units</strong> (' + prev + ' → ' + curr + ')</p>'
+    + '<p>बिजली खर्च: ' + f(energy) + ' (' + units + ' × ₹' + rate + ')' + (fixed > 0 ? ' + फिक्स्ड: ' + f(fixed) : '') + '</p>'
+    + '<p>रोज़ाना औसत: <strong>' + (units/30).toFixed(1) + ' units/दिन</strong> · रोज़ का खर्च ~' + f(total/30) + '</p>';
+}
+</script>
+</body>
+</html>

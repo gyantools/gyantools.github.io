@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>EMI Calculator in Hindi – लोन की मासिक किश्त निकालें (Home, Car, Personal Loan)</title>
+<meta name="description" content="फ्री EMI कैलकुलेटर हिंदी में – लोन राशि, ब्याज दर और समय डालकर मासिक किश्त, कुल ब्याज और कुल भुगतान जानें। Home Loan, Car Loan, Personal Loan सबके लिए।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="EMI Calculator in Hindi – लोन किश्त कैलकुलेटर">
+<meta property="og:description" content="लोन की मासिक EMI, कुल ब्याज और कुल भुगतान सेकंडों में निकालें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EMI Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"लोन की मासिक किश्त (EMI) कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › EMI कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>💰 EMI कैलकुलेटर – मासिक किश्त निकालें</h1>
+    <p>लोन की राशि, ब्याज दर और समय भरें – आपकी EMI तुरंत निकल आएगी।</p>
+    <label for="amount">लोन राशि (₹)</label>
+    <input type="number" id="amount" placeholder="जैसे: 500000" min="1">
+    <label for="rate">सालाना ब्याज दर (%)</label>
+    <input type="number" id="rate" placeholder="जैसे: 9.5" step="0.01" min="0">
+    <label for="years">लोन अवधि (साल में)</label>
+    <input type="number" id="years" placeholder="जैसे: 20" min="0.5" step="0.5">
+    <button onclick="calcEMI()">EMI निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>EMI क्या होती है?</h2>
+    <p>EMI का पूरा नाम <strong>Equated Monthly Installment</strong> (समान मासिक किश्त) है। जब आप बैंक या किसी finance कंपनी से लोन लेते हैं – जैसे Home Loan, Car Loan, Personal Loan या Education Loan – तो वह राशि ब्याज समेत बराबर-बराबर महीनों में लौटाई जाती है। यही मासिक किश्त EMI कहलाती है।</p>
+    <h2>EMI का फॉर्मूला</h2>
+    <p>EMI = <strong>P × R × (1+R)^N ÷ ((1+R)^N − 1)</strong></p>
+    <ul>
+      <li><strong>P</strong> = मूल लोन राशि (Principal)</li>
+      <li><strong>R</strong> = मासिक ब्याज दर (सालाना दर ÷ 12 ÷ 100)</li>
+      <li><strong>N</strong> = कुल महीने (साल × 12)</li>
+    </ul>
+    <h2>EMI घटाने के 5 तरीके</h2>
+    <ul>
+      <li><strong>अवधि बढ़ाएं</strong> – समय ज़्यादा होगा तो किश्त कम होगी (लेकिन कुल ब्याज बढ़ेगा)</li>
+      <li><strong>Down payment ज़्यादा दें</strong> – लोन की राशि कम होगी</li>
+      <li><strong>ब्याज दर तुलना करें</strong> – अलग-अलग बैंकों की rates अलग होती हैं</li>
+      <li><strong>क्रेडिट स्कोर बढ़ाएं</strong> – CIBIL score 750+ होने पर सस्ती दर मिलती है</li>
+      <li><strong>Prepayment करें</strong> – बीच में ज़्यादा पैसा जमा कर EMI जल्दी खत्म करें</li>
+    </ul>
+    <h2>किश्तों का हिसाब कैसे बनता है?</h2>
+    <p>शुरुआती किश्तों में ब्याज का हिस्सा ज़्यादा होता है और मूल राशि (principal) कम। समय के साथ यह उलट जाता है। इसीलिए लोन के शुरुआती सालों में prepayment सबसे ज़्यादा फायदेमंद होता है।</p>
+    <div class="note">💡 <strong>उदाहरण:</strong> ₹5,00,000 का लोन, 9.5% ब्याज, 5 साल में → EMI लगभग ₹10,501, कुल ब्याज ₹1,30,056, कुल भुगतान ₹6,30,056।</div>
+    <div class="note">🔒 आपकी जानकारी कहीं नहीं जाती – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function calcEMI(){
+  var P = parseFloat(document.getElementById('amount').value);
+  var R = parseFloat(document.getElementById('rate').value);
+  var Y = parseFloat(document.getElementById('years').value);
+  var out = document.getElementById('out');
+  if(!P || P<=0 || isNaN(R) || isNaN(Y) || Y<=0){ out.style.display='block'; out.innerHTML='⚠️ कृपया सभी जानकारी सही भरें।'; return; }
+  var r = R/1200, n = Math.round(Y*12), emi;
+  if(r === 0){ emi = P/n; }
+  else { emi = P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1); }
+  var total = emi*n, interest = total-P;
+  out.style.display='block';
+  out.innerHTML = '<div class="big">मासिक EMI: ₹' + emi.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</div>'
+    + '<p>कुल ब्याज: <strong>₹' + interest.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</strong></p>'
+    + '<p>कुल भुगतान (ब्याज समेत): <strong>₹' + total.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</strong></p>'
+    + '<p>कुल किश्तें: <strong>' + n + '</strong> (' + Y + ' साल)</p>';
+}
+</script>
+</body>
+</html>

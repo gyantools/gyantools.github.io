@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Number System Converter in Hindi – Binary, Decimal, Octal, Hex बदलें</title>
+<meta name="description" content="नंबर सिस्टम कन्वर्टर हिंदी में – Decimal, Binary, Octal, Hexadecimal एक-दूसरे में तुरंत बदलें। CS/IT छात्रों के लिए tables और उदाहरण समेत फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Number System Converter – Binary/Decimal/Hex">
+<meta property="og:description" content="चारों नंबर सिस्टम एक साथ बदलें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Number System Converter Hindi","applicationCategory":"EducationalApplication","operatingSystem":"Web","description":"Binary, Decimal, Octal, Hex कन्वर्टर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;max-width:520px;margin-left:auto;margin-right:auto}
+.tool-box h1{font-size:1.5rem;color:#1a73e8;margin-bottom:6px;text-align:center}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1.05rem;font-family:monospace;background:#fff}
+input:focus{outline:2px solid #1a73e8;border-color:transparent}
+.hint{font-size:.8rem;color:#5f6368;margin-top:2px}
+.err{color:#d93025;font-weight:600;margin-top:8px;min-height:1.4em}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Number System Converter</p>
+
+  <div class="tool-box">
+    <h1>🔢 नंबर सिस्टम कन्वर्टर</h1>
+    <p style="text-align:center">किसी भी एक में लिखो – बाकी तीन अपने आप बदलेंगे।</p>
+    <label for="dec">Decimal (आधार 10 – 0-9)</label>
+    <input type="text" id="dec" placeholder="जैसे: 255" oninput="fromDec()">
+    <div class="hint">रोज़मर्रा के नंबर</div>
+    <label for="bin">Binary (आधार 2 – 0,1)</label>
+    <input type="text" id="bin" placeholder="जैसे: 11111111" oninput="fromBin()">
+    <div class="hint">कंप्यूटर की भाषा</div>
+    <label for="oct">Octal (आधार 8 – 0-7)</label>
+    <input type="text" id="oct" placeholder="जैसे: 377" oninput="fromOct()">
+    <div class="hint">पुराने कंप्यूटर सिस्टम</div>
+    <label for="hex">Hexadecimal (आधार 16 – 0-9, A-F)</label>
+    <input type="text" id="hex" placeholder="जैसे: FF" oninput="fromHex()">
+    <div class="hint">रंग कोड, मेमोरी एड्रेस</div>
+    <div class="err" id="err"></div>
+  </div>
+
+  <article>
+    <h2>चारों नंबर सिस्टम क्या हैं?</h2>
+    <table>
+      <tr><th>सिस्टम</th><th>अंक</th><th>उदाहरण (255)</th><th>कहां इस्तेमाल</th></tr>
+      <tr><td>Decimal</td><td>0-9</td><td>255</td><td>रोज़मर्रा की गिनती</td></tr>
+      <tr><td>Binary</td><td>0, 1</td><td>11111111</td><td>कंप्यूटर की अंदरूनी भाषा</td></tr>
+      <tr><td>Octal</td><td>0-7</td><td>377</td><td>Unix file permissions (chmod)</td></tr>
+      <tr><td>Hexadecimal</td><td>0-9, A-F</td><td>FF</td><td>रंग कोड (#FF5733), मेमोरी एड्रेस</td></tr>
+    </table>
+    <h2>हाथ से बदलने का तरीका</h2>
+    <p><strong>Decimal → Binary:</strong> 2 से लगातार भाग दो, शेषफल उल्टे पढ़ो। जैसे 13: 13÷2=शेष 1 → 6÷2=शेष 0 → 3÷2=शेष 1 → 1÷2=शेष 1 → उल्टा पढ़ो = <strong>1101</strong></p>
+    <p><strong>Binary → Decimal:</strong> हर अंक को उसकी जगह की घात (2 की) से गुणा करके जोड़ो। 1101 = 8+4+0+1 = <strong>13</strong></p>
+    <p><strong>Decimal → Hex:</strong> 16 से भाग दो। 255 = 15×16 + 15 = <strong>FF</strong> (10=A, 11=B … 15=F)</p>
+    <h2>याद रखने लायक बड़े नंबर</h2>
+    <table>
+      <tr><th>Decimal</th><th>Binary</th><th>Hex</th></tr>
+      <tr><td>16</td><td>10000</td><td>10</td></tr>
+      <tr><td>64</td><td>1000000</td><td>40</td></tr>
+      <tr><td>128</td><td>10000000</td><td>80</td></tr>
+      <tr><td>256</td><td>100000000</td><td>100</td></tr>
+      <tr><td>1024 (1 KB)</td><td>10000000000</td><td>400</td></tr>
+    </table>
+    <div class="note">💡 <strong>मज़ेदार बात:</strong> कंप्यूटर की दुनिया का "किलो" 1000 नहीं, 1024 है (2¹⁰) — इसीलिए 1 KB = 1024 bytes!</div>
+    <div class="note">🔒 सब कुछ आपके ब्राउज़र में – कोई data कहीं नहीं जाता।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var ids = {10:'dec', 2:'bin', 8:'oct', 16:'hex'};
+function setAll(base, val){
+  var n = parseInt(val, base);
+  var err = document.getElementById('err');
+  if(isNaN(n)){
+    err.textContent = '⚠️ इस सिस्टम में ये अंक मान्य नहीं हैं';
+    return;
+  }
+  if(n > Number.MAX_SAFE_INTEGER){ err.textContent = '⚠ी बहुत बड़ा नंबर'; return; }
+  err.textContent = '';
+  document.getElementById('dec').value = n.toString(10);
+  document.getElementById('bin').value = n.toString(2);
+  document.getElementById('oct').value = n.toString(8);
+  document.getElementById('hex').value = n.toString(16).toUpperCase();
+}
+function clearOthers(except){
+  Object.keys(ids).forEach(function(b){
+    if(ids[b] !== except) document.getElementById(ids[b]).value = '';
+  });
+}
+function fromDec(){
+  var v = document.getElementById('dec').value.trim();
+  if(v === ''){ clearOthers('dec'); document.getElementById('err').textContent=''; return; }
+  if(!/^[0-9]+$/.test(v)){ document.getElementById('err').textContent = '⚠ी Decimal में सिर्फ 0-9'; return; }
+  clearOthers('dec');
+  setAll(10, v);
+}
+function fromBin(){
+  var v = document.getElementById('bin').value.trim();
+  if(v === ''){ clearOthers('bin'); document.getElementById('err').textContent=''; return; }
+  if(!/^[01]+$/.test(v)){ document.getElementById('err').textContent = '⚠ी Binary में सिर्फ 0 और 1'; return; }
+  clearOthers('bin');
+  setAll(2, v);
+}
+function fromOct(){
+  var v = document.getElementById('oct').value.trim();
+  if(v === ''){ clearOthers('oct'); document.getElementById('err').textContent=''; return; }
+  if(!/^[0-7]+$/.test(v)){ document.getElementById('err').textContent = '⚠ी Octal में सिर्फ 0-7'; return; }
+  clearOthers('oct');
+  setAll(8, v);
+}
+function fromHex(){
+  var v = document.getElementById('hex').value.trim();
+  if(v === ''){ clearOthers('hex'); document.getElementById('err').textContent=''; return; }
+  if(!/^[0-9a-fA-F]+$/.test(v)){ document.getElementById('err').textContent = '⚠ी Hex में सिर्फ 0-9 और A-F'; return; }
+  clearOthers('hex');
+  setAll(16, v);
+}
+</script>
+</body>
+</html>

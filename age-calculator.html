@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Age Calculator in Hindi – उम्र कैलकुलेटर (साल, महीने, दिन में)</title>
+<meta name="description" content="जन्म तारीख से अपनी सटीक उम्र कैलकुलेट करें – साल, महीने और दिन में। अगले जन्मदिन तक दिन गिनें। फ्री हिंदी उम्र कैलकुलेटर, बिना लॉगिन।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Age Calculator in Hindi – उम्र कैलकुलेटर">
+<meta property="og:description" content="जन्म तारीख डालें और सटीक उम्र जानें – साल, महीने, दिन में।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Age Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"जन्म तारीख से सटीक उम्र कैलकुलेटर – साल, महीने, दिन में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › उम्र कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>🎂 उम्र कैलकुलेटर (Age Calculator)</h1>
+    <p>अपनी जन्म तारीख डालें और सटीक उम्र पाएं – साल, महीने और दिन में।</p>
+    <label for="dob">जन्म तारीख (Date of Birth)</label>
+    <input type="date" id="dob">
+    <label for="asof">उम्र किस तारीख तक निकालें</label>
+    <input type="date" id="asof">
+    <button onclick="calcAge()">उम्र निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>उम्र कैलकुलेटर कैसे काम करता है?</h2>
+    <p>यह tool आपकी जन्म तारीख और आज की तारीख (या कोई भी चुनी हुई तारीख) के बीच का फर्क निकालकर बताता है कि आपकी उम्र कितने <strong>साल, महीने और दिन</strong> की है। साथ ही यह कुल दिन, कुल हफ़्ते और कुल घंटे भी बताता है।</p>
+    <h2>उम्र की गिनती क्यों ज़रूरी है?</h2>
+    <ul>
+      <li><strong>फॉर्म भरने के लिए</strong> – सरकारी नौकरी, परीक्षा (जैसे UPSC, SSC), पासपोर्ट आदि में सटीक उम्र मांगी जाती है</li>
+      <li><strong>परीक्षा की eligibility</strong> जांचने के लिए – कई exams में age limit 18–30 साल जैसी होती है</li>
+      <li><strong>शादी, बीमा, पेंशन, वोटर ID</strong> जैसे कामों में उम्र का प्रमाण चाहिए</li>
+      <li><strong>स्कूल प्रवेश</strong> – बच्चों के admission में age criteria देखने के लिए</li>
+    </ul>
+    <h2>उम्र निकालने का तरीका</h2>
+    <p>अगर आप मैन्युअल रूप से उम्र निकालना चाहें तो जन्म तारीख से आज की तारीख घटाई जाती है। अगर दिन का नंबर कम पड़ जाए तो पिछले महीने से उधार लेकर 30/31 दिन जोड़े जाते हैं। हमारा calculator यही गणित सेकंडों में सटीक तरीके से कर देता है।</p>
+    <div class="note">🔒 <strong>प्राइवेसी:</strong> आपकी तारीख किसी server पर नहीं जाती – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var today = new Date().toISOString().split('T')[0];
+document.getElementById('asof').value = today;
+document.getElementById('asof').max = today;
+function calcAge(){
+  var dob = document.getElementById('dob').value;
+  var asof = document.getElementById('asof').value;
+  var out = document.getElementById('out');
+  if(!dob || !asof){ out.style.display='block'; out.innerHTML='⚠️ कृपया जन्म तारीख चुनें।'; return; }
+  var b = new Date(dob), t = new Date(asof);
+  if(b > t){ out.style.display='block'; out.innerHTML='⚠️ जन्म तारीख, दूसरी तारीख से बड़ी नहीं हो सकती।'; return; }
+  var y = t.getFullYear() - b.getFullYear();
+  var m = t.getMonth() - b.getMonth();
+  var d = t.getDate() - b.getDate();
+  if(d < 0){ m--; d += new Date(t.getFullYear(), t.getMonth(), 0).getDate(); }
+  if(m < 0){ y--; m += 12; }
+  var totalDays = Math.floor((t - b) / 86400000);
+  var totalHours = Math.floor((t - b) / 3600000);
+  // अगला जन्मदिन
+  var nb = new Date(t.getFullYear(), b.getMonth(), b.getDate());
+  if(nb <= t) nb = new Date(t.getFullYear()+1, b.getMonth(), b.getDate());
+  var nbDays = Math.ceil((nb - t) / 86400000);
+  var nbDate = nb.toLocaleDateString('hi-IN', {day:'numeric', month:'long', year:'numeric'});
+  out.style.display = 'block';
+  out.innerHTML = '<div class="big">आपकी उम्र: ' + y + ' साल, ' + m + ' महीने, ' + d + ' दिन</div>'
+    + '<p>कुल दिन: <strong>' + totalDays.toLocaleString('hi-IN') + '</strong> दिन · कुल हफ़्ते: <strong>' + Math.floor(totalDays/7).toLocaleString('hi-IN') + '</strong> · कुल घंटे: <strong>' + totalHours.toLocaleString('hi-IN') + '</strong></p>'
+    + '<p>🎂 अगला जन्मदिन: <strong>' + nbDate + '</strong> (' + nbDays + ' दिन बाद)</p>';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Word Counter in Hindi – शब्द, अक्षर, वाक्य गिनने वाला टूल (Free)</title>
+<meta name="description" content="फ्री Word Counter हिंदी में – टेक्स्ट में शब्द, अक्षर (characters), वाक्य, पैराग्राफ और पढ़ने का समय गिनें। Students, bloggers और writers के लिए।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Word Counter in Hindi – शब्द गिनती टूल">
+<meta property="og:description" content="शब्द, अक्षर, वाक्य और पैराग्राफ एक साथ गिनें – बिना लॉगिन।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Word Counter Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"शब्द, अक्षर और वाक्य गिनने का फ्री टूल","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+textarea{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff;min-height:220px;resize:vertical}
+textarea:focus{outline:2px solid #1a73e8;border-color:transparent}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:18px}
+.stat{background:#e8f0fe;border-radius:10px;padding:14px;text-align:center}
+.stat .num{font-size:1.6rem;font-weight:700;color:#1a73e8;display:block}
+.stat .lbl{font-size:.85rem;color:#3c4043}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › शब्द गिनती (Word Counter)</p>
+
+  <div class="tool-box">
+    <h1>📝 शब्द गिनती – Word Counter</h1>
+    <p>नीचे अपना टेक्स्ट लिखें या पेस्ट करें – शब्द, अक्षर, वाक्य सब लाइव गिने जाएंगे।</p>
+    <textarea id="txt" placeholder="यहाँ अपना टेक्स्ट लिखें या पेस्ट करें..." oninput="count()"></textarea>
+    <div class="stats">
+      <div class="stat"><span class="num" id="w">0</span><span class="lbl">शब्द (Words)</span></div>
+      <div class="stat"><span class="num" id="c">0</span><span class="lbl">अक्षर (Characters)</span></div>
+      <div class="stat"><span class="num" id="cns">0</span><span class="lbl">अक्षर (बिना space)</span></div>
+      <div class="stat"><span class="num" id="s">0</span><span class="lbl">वाक्य (Sentences)</span></div>
+      <div class="stat"><span class="num" id="p">0</span><span class="lbl">पैराग्राफ</span></div>
+      <div class="stat"><span class="num" id="t">0 मिनट</span><span class="lbl">पढ़ने का समय</span></div>
+    </div>
+  </div>
+
+  <article>
+    <h2>Word Counter किस-किस काम आता है?</h2>
+    <ul>
+      <li><strong>Students</strong> – essay, assignment और exam के जवाब की word limit पालन के लिए</li>
+      <li><strong>Bloggers और content writers</strong> – SEO के लिए article की लंबाई जांचने के लिए (अच्छे article आमतौर पर 800+ शब्द होते हैं)</li>
+      <li><strong>Social media</strong> – Twitter/X की 280 characters की limit और meta description की 160 characters की limit जांचने के लिए</li>
+      <li><strong>Translation और typing काम</strong> – काम का हिसाब रखने के लिए</li>
+      <li><strong>Speech और script लेखन</strong> – बोलने का समय अंदाज़ा लगाने के लिए</li>
+    </ul>
+    <h2>पढ़ने का समय कैसे निकलते हैं?</h2>
+    <p>आमतौर पर एक इंसान <strong>200–250 शब्द प्रति मिनट</strong> पढ़ता है। हमारा tool 200 शब्द/मिनट के हिसाब से अनुमान देता है। यानी 1000 शब्द का article लगभग 5 मिनट में पढ़ा जा सकता है।</p>
+    <h2>हिंदी टेक्स्ट भी गिनेगा?</h2>
+    <p>जी हाँ! यह tool हिंदी, English दोनों के साथ-साथ किसी भी भाषा का टेक्स्ट गिनता है। देवनागरी, अरबी, चीनी – सभी characters एक जैसे गिने जाते हैं।</p>
+    <div class="note">🔒 आपका टेक्स्ट किसी server पर नहीं जाता – गिनती आपके ब्राउज़र में ही होती है। इसलिए निजी दस्तावेज़ भी बेफिक्र होकर पेस्ट कर सकते हैं।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function count(){
+  var t = document.getElementById('txt').value;
+  var words = t.trim() ? t.trim().split(/\s+/).length : 0;
+  var chars = t.length;
+  var cns = t.replace(/\s/g, '').length;
+  var sentences = (t.match(/[।.!?\n]+/g) || []).filter(function(x){return x;}).length;
+  var paras = t.trim() ? t.trim().split(/\n\s*\n/).filter(function(x){return x.trim();}).length : 0;
+  var mins = Math.ceil(words/200);
+  document.getElementById('w').textContent = words;
+  document.getElementById('c').textContent = chars;
+  document.getElementById('cns').textContent = cns;
+  document.getElementById('s').textContent = sentences;
+  document.getElementById('p').textContent = paras;
+  document.getElementById('t').textContent = mins + ' मिनट';
+}
+</script>
+</body>
+</html>

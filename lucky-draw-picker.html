@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Lucky Draw &amp; Random Picker in Hindi – नाम/नंबर चुनो (Spin Wheel जैसा)</title>
+<meta name="description" content="लकी ड्रा/Random पिकर हिंदी में – नामों की list से विजेता चुनो, या 1-100 में से random नंबर। शाला, कार्यालय, लकी ड्रा के लिए फ्री टूल। बिना लॉगिन।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Lucky Draw पिकर – नाम/नंबर चुनो">
+<meta property="og:description" content="सूची से random विजेता चुनो।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Lucky Draw Random Picker Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"नाम/नंबर random चुनने वाला टूल","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;max-width:520px;margin-left:auto;margin-right:auto}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;margin-bottom:6px;text-align:center}
+.mode{margin:12px 0;text-align:center}
+.mode button{background:#fff;color:#1a73e8;border:1px solid #dadce0;padding:8px 20px;border-radius:20px;font-size:.95rem;cursor:pointer;margin:4px;font-weight:600;width:auto}
+.mode button.active{background:#1a73e8;color:#fff;border-color:#1a73e8}
+label{display:block;font-weight:600;margin:12px 0 6px}
+textarea,input{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+textarea{min-height:140px;resize:vertical}
+textarea:focus,input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button.play{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px;width:100%}
+button.play:hover{background:#1557b0}
+.winner{background:#e6f4ea;border:3px solid #137333;border-radius:12px;padding:20px;margin-top:16px;text-align:center}
+.winner .big{font-size:2rem;font-weight:700;color:#137333}
+.winner .sub{font-size:.9rem;color:#5f6368}
+.spin{animation:spin 0.6s ease}
+@keyframes spin{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Lucky Draw पिकर</p>
+
+  <div class="tool-box">
+    <h1>🎰 लकी ड्रा पिकर</h1>
+    <p style="text-align:center">सूची से random विजेता चुनो — कक्षा, कार्यालय, घर के लिए।</p>
+    <div class="mode">
+      <button id="m1" class="active" onclick="setMode('names')">👥 नाम से चुनो</button>
+      <button id="m2" onclick="setMode('nums')">🔢 नंबर से चुनो</button>
+    </div>
+    <div id="namesBox">
+      <label for="names">नामों की list — हर नाम नई लाइन में</label>
+      <textarea id="names" placeholder="राम&#10;श्याम&#10;सीता&#10;गीता&#10;अमित"></textarea>
+    </div>
+    <div id="numsBox" style="display:none">
+      <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <label for="min">से (From)</label>
+          <input type="number" id="min" value="1" min="0" step="1">
+        </div>
+        <div>
+          <label for="max">तक (To)</label>
+          <input type="number" id="max" value="100" min="1" step="1">
+        </div>
+      </div>
+      <label for="count">कितने नंबर चुनने हैं?</label>
+      <input type="number" id="count" value="1" min="1" max="20" step="1">
+    </div>
+    <button class="play" onclick="draw()">🎲 चुनो!</button>
+    <div class="winner" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>किन कामों में?</h2>
+    <ul>
+      <li><strong>कक्षा में</strong> — अगला प्रश्न किससे पूछें, presentation का क्रम</li>
+      <li><strong>लकी ड्रा</strong> — दुकान/कार्यालय के prize वितरण</li>
+      <li><strong>खेल</strong> — teams बनाने, पहला player चुनना</li>
+      <li><strong>टिचिंग</strong> — रोल नंबर से बुलाना</li>
+      <li><strong>निर्णय</strong> — कौन पानी लाएगा 😄</li>
+    </ul>
+    <h2>सच्चाई — कैसे चुनता है?</h2>
+    <p>Browser का built-in <strong>crypto.getRandomValues()</strong> — यही वही random generator है जो security में इस्तेमाल होता है। नाम पहले से तय नहीं, कोई पक्षपात नहीं। बीच में जोड़-घटाओ जब तक चाहो, हर बार नतीजा नया।</p>
+    <div class="note">💡 एक साथ कई विजेता चाहिए? नामों को दो बार पिकर चलाओ, या नंबर मोड में "कितने" बढ़ाओ।</div>
+    <div class="note">🔒 कोई data सेव नहीं होता — बंद करो तो सब साफ़।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var mode = 'names';
+function setMode(m){
+  mode = m;
+  document.getElementById('m1').className = m === 'names' ? 'active' : '';
+  document.getElementById('m2').className = m === 'nums' ? 'active' : '';
+  document.getElementById('namesBox').style.display = m === 'names' ? 'block' : 'none';
+  document.getElementById('numsBox').style.display = m === 'nums' ? 'block' : 'none';
+  document.getElementById('out').style.display = 'none';
+}
+function secureRandom(max){
+  var a = new Uint32Array(1);
+  crypto.getRandomValues(a);
+  return a[0] % max;
+}
+function draw(){
+  var out = document.getElementById('out');
+  out.className = 'winner spin';
+  setTimeout(function(){ out.className = 'winner'; }, 650);
+  if(mode === 'names'){
+    var raw = document.getElementById('names').value;
+    var names = raw.split('\n').map(function(s){ return s.trim(); }).filter(Boolean);
+    if(names.length < 2){ out.style.display='block'; out.innerHTML='<p style="color:#d93025;font-weight:600">⚠️ कम से कम 2 नाम डालो।</p>'; return; }
+    var i = secureRandom(names.length);
+    out.style.display='block';
+    out.innerHTML = '<p style="font-size:1.2rem">🎉 विजेता...</p><div class="big">' + names[i].replace(/</g,'&lt;') + '</div>'
+      + '<div class="sub">' + names.length + ' नामों में से चुना गया</div>';
+  } else {
+    var min = parseInt(document.getElementById('min').value);
+    var max = parseInt(document.getElementById('max').value);
+    var count = parseInt(document.getElementById('count').value);
+    if(isNaN(min) || isNaN(max) || max <= min){ out.style.display='block'; out.innerHTML='<p style="color:#d93025;font-weight:600">⚠️ "तक" संख्या "से" से बड़ी हो।</p>'; return; }
+    var range = max - min + 1;
+    count = Math.min(count || 1, range, 20);
+    var pool = [];
+    for(var i = min; i <= max; i++) pool.push(i);
+    var picks = [];
+    for(var j = 0; j < count; j++){
+      var idx = secureRandom(pool.length);
+      picks.push(pool.splice(idx, 1)[0]);
+    }
+    out.style.display='block';
+    out.innerHTML = '<p style="font-size:1.2rem">🎲 चुने गए नंबर:</p><div class="big">' + picks.join(' · ') + '</div>'
+      + '<div class="sub">' + min + ' से ' + max + ' के बीच से' + (count > 1 ? ' (' + count + ' अनोखे)' : '') + '</div>';
+  }
+}
+</script>
+</body>
+</html>

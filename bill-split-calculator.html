@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Bill Split Calculator in Hindi – बिल बांटो कैलकुलेटर (Tip सहित)</title>
+<meta name="description" content="बिल बांटो कैलकुलेटर हिंदी में – कुल बिल, लोगों की संख्या और tip % से हर व्यक्ति का हिस्सा तुरंत निकालें। दोस्तों के साथ खाने/ट्रिप के खर्च का हिसाब। फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Bill Split Calculator in Hindi – बिल बांटो">
+<meta property="og:description" content="कुल बिल और tip से हर व्यक्ति का हिस्सा निकालें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Bill Split Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"बिल बांटो कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.6rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › बिल बांटो कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>🍽️ बिल बांटो (Bill Split) कैलकुलेटर</h1>
+    <p>खाने का बिल, ट्रिप का खर्च – हर व्यक्ति का हिस्सा एक क्लिक में।</p>
+    <label for="bill">कुल बिल (₹)</label>
+    <input type="number" id="bill" placeholder="जैसे: 2400" min="0" step="any">
+    <div class="row">
+      <div>
+        <label for="people">कितने लोग?</label>
+        <input type="number" id="people" placeholder="जैसे: 4" min="1" max="50" step="1">
+      </div>
+      <div>
+        <label for="tip">Tip / सेवा शुल्क (%) – नहीं तो 0</label>
+        <input type="number" id="tip" placeholder="जैसे: 10" min="0" max="30" step="any">
+      </div>
+    </div>
+    <button onclick="split()">हिसाब लगाएं</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>बिल बांटने के तरीके</h2>
+    <ul>
+      <li><strong>बराबर बांटना (सबसे आम):</strong> कुल ÷ लोग – इसी से यह tool बना है</li>
+      <li><strong>जो जितना खाया:</strong> items गिनकर अलग-अलग – थोड़ी मेहनत पर सबसे न्यायोचित</li>
+      <li><strong>शराब/महंगी चीज़ें अलग:</strong> बाकी बिल बराबर, महंगे items खाने वाले अलग से</li>
+    </ul>
+    <h2>टिप्स</h2>
+    <ul>
+      <li>कई रेस्टोरेंट में bill में service charge पहले से जुड़ा होता है – फिर tip देने से पहले देख लें</li>
+      <li>UPI से पैसे मांगने के लिए request का इस्तेमाल करें – "किसने कितना दिया" का झगड़ा खत्म (<a href="../blog/upi-guide.html" style="color:#1a73e8">UPI गाइड</a> देखें)</li>
+      <li>ट्रिप के लिए: fuel का हिसाब <a href="fuel-cost-calculator.html" style="color:#1a73e8">ईंधन खर्च कैलकुलेटर</a> से और बिल का यहाँ से – पूरा खर्च बराबर बांटें</li>
+    </ul>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function split(){
+  var bill = parseFloat(document.getElementById('bill').value);
+  var people = parseInt(document.getElementById('people').value);
+  var tip = parseFloat(document.getElementById('tip').value) || 0;
+  var out = document.getElementById('out');
+  if(isNaN(bill) || bill < 0 || !people || people < 1){ out.style.display='block'; out.innerHTML='⚠️ कृपया बिल और लोगों की संख्या भरें।'; return; }
+  var tipAmt = bill * tip / 100;
+  var total = bill + tipAmt;
+  var per = total / people;
+  var f = function(x){ return '₹' + (Math.round(x*100)/100).toLocaleString('en-IN', {maximumFractionDigits:2}); };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">हर व्यक्ति का हिस्सा: ' + f(per) + '</div>'
+    + '<p>बिल: ' + f(bill) + (tip > 0 ? ' + tip (' + tip + '%): ' + f(tipAmt) : '') + ' = कुल ' + f(total) + '</p>'
+    + (people > 1 ? '<p>' + people + ' लोगों में बराबर बांटा गया</p>' : '');
+}
+</script>
+</body>
+</html>

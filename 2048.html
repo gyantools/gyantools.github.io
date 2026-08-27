@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>2048 Game in Hindi – मुफ़्त पहेली गेम खेलें (2048 तक पहुंचो!)</title>
+<meta name="description" content="क्लासिक 2048 पहेली गेम हिंदी में – संख्याओं को मिलाकर 2048 तक पहुंचो! कीबोर्ड, स्वाइप और बटन तीनों से खेलें। PAWANGAMINGSTUDIO की पेशकश।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="2048 Game in Hindi – पहेली गेम">
+<meta property="og:description" content="संख्या मिलाओ, 2048 बनाओ!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"2048 Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"2048 पहेली गेम हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.stats span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.stats b{color:#1a73e8}
+#grid{display:grid;grid-template-columns:repeat(4,78px);grid-template-rows:repeat(4,78px);gap:10px;background:#c3cbd6;border-radius:12px;padding:10px;width:max-content;margin:16px auto;touch-action:none;-webkit-user-select:none;user-select:none}
+.cell{background:#e8eaed;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:700;color:#202124}
+.t2{background:#eee4da;color:#776e65}.t4{background:#ede0c8;color:#776e65}
+.t8{background:#f2b179;color:#fff}.t16{background:#f59563;color:#fff}
+.t32{background:#f67c5f;color:#fff}.t64{background:#f65e3b;color:#fff}
+.t128{background:#edcf72;color:#fff;font-size:1.3rem}.t256{background:#edcc61;color:#fff;font-size:1.3rem}
+.t512{background:#edc850;color:#fff;font-size:1.3rem}.t1024{background:#edc53f;color:#fff;font-size:1.1rem}
+.t2048{background:#edc22e;color:#fff;font-size:1.1rem;box-shadow:0 0 12px rgba(237,194,46,.8)}
+button.play{background:#1a73e8;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin:6px}
+button.play:hover{background:#1557b0}
+.pad{display:grid;grid-template-columns:60px 60px 60px;gap:8px;justify-content:center;margin:12px auto;width:max-content}
+.pad button{width:60px;height:52px;font-size:1.3rem;background:#e8f0fe;color:#1a73e8;border:none;border-radius:10px;cursor:pointer;font-weight:700;touch-action:manipulation}
+.pad button:hover{background:#d2e3fc}
+#msg{font-weight:600;min-height:1.6em;margin-top:8px}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › 2048 Game</p>
+
+  <div class="game-box">
+    <h1>🔢 2048 पहेली गेम</h1>
+    <p>एक जैसी संख्याएं मिलाओ – <strong>2048</strong> तक पहुंचो!</p>
+    <div class="stats">
+      <span>⭐ स्कोर: <b id="score">0</b></span>
+      <span>🏆 बेस्ट: <b id="best">0</b></span>
+    </div>
+    <div id="grid"></div>
+    <div class="pad">
+      <span></span><button onclick="move('up')">▲</button><span></span>
+      <button onclick="move('left')">◀</button><button onclick="move('down')">▼</button><button onclick="move('right')">▶</button>
+    </div>
+    <button class="play" onclick="newGame()">🔄 नया गेम</button>
+    <p id="msg"></p>
+  </div>
+
+  <article>
+    <h2>कैसे खेलें?</h2>
+    <ul>
+      <li>तीर कीजिए (↑↓←→), W-A-S-D, नीचे बटन या grid पर swipe – जो चाहे</li>
+      <li>सभी टाइलें एक साथ उस दिशा में खिसकती हैं; <strong>एक जैसी संख्याएं टकराकर मिल जाती हैं</strong> (2+2=4, 4+4=8…)</li>
+      <li>हर चाल पर एक नई टाइल (2 या 4) आती है</li>
+      <li>Grid भर जाए और कोई चाल न बचे = गेम खत्म</li>
+    </ul>
+    <h2>जीतने की 3 चालें</h2>
+    <ul>
+      <li><strong>एक कोना चुनकर वहीं बड़ी संख्या रखें</strong> (जैसे नीचे-बाएं) – बड़ी संख्या बीच में न आने दें</li>
+      <li>सिर्फ 2 दिशाओं में खेलें (जैसे ← और ↓) – उलट-पुलट चालें board बिखेरती हैं</li>
+      <li>धैर्य! जल्दबाज़ी में बड़ी संख्या की जगह छोटी आ जाती है</li>
+    </ul>
+    <p>🎮 यह गेम <strong>PAWANGAMINGSTUDIO</strong> की पेशकश है। Snake, Tic-Tac-Toe और जोड़ी मिलाओ भी खेलें!</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var g, score, best = 0, over, won;
+try { best = parseInt(localStorage.getItem('gyantools_2048_best')) || 0; } catch(e){}
+document.getElementById('best').textContent = best;
+
+function newGame(){
+  g = Array.from({length:4}, function(){ return [0,0,0,0]; });
+  score = 0; over = false; won = false;
+  document.getElementById('score').textContent = 0;
+  document.getElementById('msg').textContent = '';
+  addTile(); addTile();
+  draw();
+}
+function addTile(){
+  var empty = [];
+  for(var r=0;r<4;r++) for(var c=0;c<4;c++) if(!g[r][c]) empty.push([r,c]);
+  if(!empty.length) return;
+  var p = empty[Math.floor(Math.random()*empty.length)];
+  g[p[0]][p[1]] = Math.random() < 0.9 ? 2 : 4;
+}
+function slide(row){
+  var a = row.filter(function(v){ return v; });
+  var gained = 0;
+  for(var i=0;i<a.length-1;i++){
+    if(a[i] === a[i+1]){ a[i] *= 2; gained += a[i]; a.splice(i+1,1); }
+  }
+  while(a.length < 4) a.push(0);
+  return {row:a, gained:gained};
+}
+function move(dir){
+  if(over) return;
+  var moved = false, gained = 0;
+  var rotated = (dir === 'left' || dir === 'right');
+  for(var i=0;i<4;i++){
+    var line = [];
+    for(var j=0;j<4;j++){
+      line.push(rotated ? g[i][j] : g[j][i]);
+    }
+    if(dir === 'right' || dir === 'down') line.reverse();
+    var res = slide(line);
+    gained += res.gained;
+    var out = res.row;
+    if(dir === 'right' || dir === 'down') out.reverse();
+    for(var j=0;j<4;j++){
+      if(rotated){ if(g[i][j] !== out[j]) moved = true; g[i][j] = out[j]; }
+      else { if(g[j][i] !== out[j]) moved = true; g[j][i] = out[j]; }
+    }
+  }
+  if(moved){
+    score += gained;
+    document.getElementById('score').textContent = score;
+    if(score > best){
+      best = score;
+      document.getElementById('best').textContent = best;
+      try { localStorage.setItem('gyantools_2048_best', best); } catch(e){}
+    }
+    addTile();
+    draw();
+    check();
+  }
+}
+function check(){
+  for(var r=0;r<4;r++) for(var c=0;c<4;c++){
+    if(g[r][c] === 2048 && !won){
+      won = true;
+      document.getElementById('msg').textContent = '🎉 2048 बन गया! आप जीत गए – खेलते रहें!';
+    }
+  }
+  for(var r=0;r<4;r++) for(var c=0;c<4;c++){
+    if(!g[r][c]) return;
+    if(c < 3 && g[r][c] === g[r][c+1]) return;
+    if(r < 3 && g[r][c] === g[r+1][c]) return;
+  }
+  over = true;
+  document.getElementById('msg').textContent = '💀 कोई चाल नहीं बची – स्कोर ' + score + '। नया गेम खेलें!';
+}
+function draw(){
+  var el = document.getElementById('grid');
+  el.innerHTML = '';
+  for(var r=0;r<4;r++) for(var c=0;c<4;c++){
+    var d = document.createElement('div');
+    var v = g[r][c];
+    d.className = 'cell' + (v ? ' t' + v : '');
+    d.textContent = v || '';
+    el.appendChild(d);
+  }
+}
+document.addEventListener('keydown', function(e){
+  var map = {ArrowLeft:'left', ArrowRight:'right', ArrowUp:'up', ArrowDown:'down',
+             a:'left', d:'right', w:'up', s:'down', A:'left', D:'right', W:'up', S:'down'};
+  if(map[e.key]){ move(map[e.key]); e.preventDefault(); }
+});
+var tx = null, ty = null, tMoved = false;
+var gridEl = document.getElementById('grid');
+gridEl.addEventListener('touchstart', function(e){
+  tx = e.touches[0].clientX; ty = e.touches[0].clientY; tMoved = false;
+}, {passive:true});
+gridEl.addEventListener('touchmove', function(e){
+  e.preventDefault();            // पेज scroll रोकें – swipe game में रहे
+  tMoved = true;
+}, {passive:false});
+gridEl.addEventListener('touchend', function(e){
+  if(tx === null) return;
+  var dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+  tx = null;
+  if(Math.abs(dx) < 24 && Math.abs(dy) < 24) return;   // बहुत छोटा swipe = टap, चाल नहीं
+  if(Math.abs(dx) > Math.abs(dy)) move(dx > 0 ? 'right' : 'left');
+  else move(dy > 0 ? 'down' : 'up');
+}, {passive:true});
+newGame();
+</script>
+</body>
+</html>

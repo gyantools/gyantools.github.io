@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Number to Words in Hindi – संख्या को शब्दों में बदलें (Lakh, Crore)</title>
+<meta name="description" content="संख्या को शब्दों में बदलें – हिंदी और English दोनों में। चेक लिखने और बैंक फॉर्म भरने के लिए रुपये के आंकड़े शब्दों में (करोड़-लाख प्रणाली)। फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Number to Words in Hindi – संख्या शब्दों में">
+<meta property="og:description" content="कोई भी संख्या हिंदी और English शब्दों में बदलें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Number to Words Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"संख्या को हिंदी और English शब्दों में बदलने वाला टूल","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.25rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+.copy{background:#fff;border:1px solid #dadce0;border-radius:8px;padding:12px;margin-top:10px;cursor:pointer;font-size:.9rem}
+.copy:hover{background:#f1f3f4}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › संख्या को शब्दों में</p>
+
+  <div class="tool-box">
+    <h1>🔢 संख्या को शब्दों में बदलें (Number to Words)</h1>
+    <p>कोई भी संख्या डालें – हिंदी और English दोनों में शब्द मिलेंगे (करोड़-लाख प्रणाली)।</p>
+    <label for="num">संख्या (अधिकतम 99,99,99,999)</label>
+    <input type="number" id="num" placeholder="जैसे: 1234567" min="0" max="99999999999" step="1">
+    <button onclick="convert()">शब्दों में बदलें</button>
+    <div class="result" id="out" style="display:none"></div>
+    <button class="copy" id="copybtn" onclick="copyWords()" style="display:none">📋 शब्द कॉपी करें</button>
+  </div>
+
+  <article>
+    <h2>यह tool किस काम आता है?</h2>
+    <ul>
+      <li><strong>चेक लिखने में</strong> – चेक पर राशि अंकों के साथ शब्दों में भी लिखनी होती है ("रुपये पाँच लाख छियासठ हज़ार चार सौ बत्तीस पैसे")</li>
+      <li><strong>बैंक और सरकारी फॉर्म</strong> – आय, राशि या मात्रा शब्दों में भरनी होती है</li>
+      <li><strong>पढ़ाई में</strong> – बड़ी संख्याओं को करोड़-लाख में पढ़ना सीखना</li>
+      <li><strong>कागज़ात तैयार करने में</strong> – बिल, करार, receipt में गलती से बचने के लिए</li>
+    </ul>
+    <h2>भारतीय प्रणाली (करोड़-लाख) vs अंग्रेज़ी प्रणाली (मिलियन-बिलियन)</h2>
+    <p>भारत में संख्याएं <strong>हज़ार → लाख → करोड़</strong> में गिनी जाती हैं, जबकि अमेरिका/यूरोप में <strong>हज़ार → मिलियन → बिलियन</strong>। इसलिए:</p>
+    <ul>
+      <li>10,00,000 = <strong>दस लाख</strong> = 1 million</li>
+      <li>1,00,00,000 = <strong>एक करोड़</strong> = 10 million</li>
+      <li>100 करोड़ = <strong>एक अरब</strong> = 1 billion</li>
+    </ul>
+    <p>चेक पर हमेशा भारतीय प्रणाली (लाख/करोड़) ही इस्तेमाल होती है, इसलिए यह tool उसी में शब्द बनाता है।</p>
+    <h2>सुरक्षा की बात</h2>
+    <p>चेक में शब्दों के बाद खाली जगह पर <strong>एक लाइन खींच दें</strong> ताकि कोई और अंक न जोड़ सके, और "only/मात्र" लिखना न भूलें।</p>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – conversion आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var HI = ['शून्य','एक','दो','तीन','चार','पाँच','छह','सात','आठ','नौ','दस','ग्यारह','बारह','तेरह','चौदह','पंद्रह','सोलह','सत्रह','अठारह','उन्नीस','बीस','इक्कीस','बाईस','तेईस','चौबीस','पच्चीस','छब्बीस','सत्ताईस','अट्ठाईस','उनतीस','तीस','इकतीस','बत्तीस','तैंतीस','चौंतीस','पैंतीस','छत्तीस','सैंतीस','अड़तीस','उनतालीस','चालीस','इकतालीस','बयालीस','तैंतालीस','चौवालीस','पैंतालीस','छियालीस','सैंतालीस','अड़तालीस','उनचास','पचास','इक्यावन','बावन','तिरपन','चौवन','पचपन','छप्पन','सत्तावन','अट्ठावन','उनसठ','साठ','इकसठ','बासठ','तिरसठ','चौंसठ','पैंसठ','छियासठ','सड़सठ','अड़सठ','उनहत्तर','सत्तर','इकहत्तर','बहत्तर','तिहत्तर','चौहत्तर','पचहत्तर','छिहत्तर','सतहत्तर','अठहत्तर','उन्यासी','अस्सी','इक्यासी','बयासी','तिरासी','चौरासी','पचासी','छियासी','सत्तासी','अट्ठासी','नवासी','नब्बे','इक्यानबे','बानबे','तिरानबे','चौरानबे','पंचानबे','छियानबे','सत्तानबे','अट्ठानबे','निन्यानबे'];
+var EN_ONES = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+var EN_TENS = ['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+function en99(n){
+  if(n < 20) return EN_ONES[n];
+  return EN_TENS[Math.floor(n/10)] + (n%10 ? '-' + EN_ONES[n%10] : '');
+}
+function en999(n){
+  var s = '';
+  var h = Math.floor(n/100);
+  if(h) s += EN_ONES[h] + ' Hundred';
+  var r = n%100;
+  if(r) s += (s ? ' ' : '') + en99(r);
+  return s;
+}
+function hi999(n){
+  var s = '';
+  var h = Math.floor(n/100);
+  if(h) s += HI[h] + ' सौ';
+  var r = n%100;
+  if(r) s += (s ? ' ' : '') + HI[r];
+  return s;
+}
+function toWords(n, lang){
+  if(n === 0) return lang === 'hi' ? 'शून्य' : 'Zero';
+  var crore = Math.floor(n/10000000), lakh = Math.floor(n%10000000/100000), thou = Math.floor(n%100000/1000), rest = n%1000;
+  var parts = [];
+  var f999 = lang === 'hi' ? hi999 : en999;
+  var CR = lang === 'hi' ? 'करोड़' : 'Crore', LH = lang === 'hi' ? 'लाख' : 'Lakh', TH = lang === 'hi' ? 'हज़ार' : 'Thousand';
+  if(crore) parts.push(f999(crore) + ' ' + CR);
+  if(lakh) parts.push(f999(lakh) + ' ' + LH);
+  if(thou) parts.push(f999(thou) + ' ' + TH);
+  if(rest) parts.push(f999(rest));
+  return parts.join(' ');
+}
+var lastWords = '';
+function convert(){
+  var n = Math.floor(parseFloat(document.getElementById('num').value));
+  var out = document.getElementById('out');
+  var copyBtn = document.getElementById('copybtn');
+  if(isNaN(n) || n < 0 || n > 99999999999){ out.style.display='block'; out.innerHTML='⚠️ कृपया 0 से 99,99,99,999 के बीच की संख्या डालें।'; copyBtn.style.display='none'; return; }
+  var hi = toWords(n,'hi'), en = toWords(n,'en');
+  lastWords = hi;
+  out.style.display='block';
+  out.innerHTML = '<p>संख्या: <strong>' + n.toLocaleString('en-IN') + '</strong></p>'
+    + '<div class="big">हिंदी: ' + hi + '</div>'
+    + '<p style="margin-top:8px"><strong>English:</strong> ' + en + '</p>'
+    + '<p style="margin-top:8px">चेक के लिए: <strong>रुपये ' + hi + ' मात्र</strong></p>';
+  copyBtn.style.display='block';
+}
+function copyWords(){
+  navigator.clipboard && navigator.clipboard.writeText('रुपये ' + lastWords + ' मात्र');
+  document.getElementById('copybtn').textContent = '✅ कॉपी हो गया!';
+}
+</script>
+</body>
+</html>

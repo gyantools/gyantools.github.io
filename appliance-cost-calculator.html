@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Appliance Electricity Cost Calculator in Hindi – AC/फ्रिज/गीज़र का बिजली खर्च</title>
+<meta name="description" content="बिजली उपकरण खर्च कैलकुलेटर हिंदी में – AC, फ्रिज, गीज़र, पंखा जैसे उपकरण का रोज़ के इस्तेमाल से महीने का बिल कितना बनेगा? Watt, घंटे और दर डालो। फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Appliance Cost Calculator – बिजली खर्च">
+<meta property="og:description" content="हर उपकरण का महीने का बिल निकालो।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Appliance Cost Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"बिजली उपकरण का खर्च कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;max-width:520px;margin-left:auto;margin-right:auto}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;margin-bottom:6px;text-align:center}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px;width:100%}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:18px;margin-top:16px;text-align:center}
+.result .big{font-size:2rem;font-weight:700;color:#1a73e8}
+.result p{margin-top:6px}
+.presets{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0}
+.presets button{background:#e8f0fe;color:#1a73e8;border:1px solid #d2e3fc;padding:8px 14px;font-size:.85rem;width:auto;margin:0;border-radius:20px}
+.presets button:hover{background:#d2e3fc}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › उपकरण बिजली खर्च</p>
+
+  <div class="tool-box">
+    <h1>⚡ उपकरण का बिजली खर्च</h1>
+    <p style="text-align:center">कौन-सा उपकरण महीने का कितना बिल बनाता है?</p>
+    <div class="presets">
+      <button onclick="preset('AC 1.5 टन', 1500, 8)">AC 1.5 टन</button>
+      <button onclick="preset('फ्रिज', 180, 24)">फ्रिज</button>
+      <button onclick="preset('गीज़र', 2000, 1)">गीज़र</button>
+      <button onclick="preset('पंखा', 75, 12)">पंखा</button>
+      <button onclick="preset('LED बल्ब', 9, 6)">LED बल्ब</button>
+      <button onclick="preset('टीवी', 100, 5)">टीवी</button>
+      <button onclick="preset('वॉशिंग मशीन', 500, 1)">वॉशिंग</button>
+      <button onclick="preset('आयरन', 1000, 0.5)">आयरन</button>
+    </div>
+    <label for="name">उपकरण का नाम (optional)</label>
+    <input type="text" id="name" placeholder="जैसे: AC">
+    <label for="watt">पावर (Watt में)</label>
+    <input type="number" id="watt" placeholder="जैसे: 1500" min="1" step="any">
+    <div class="row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div>
+        <label for="hours">रोज़ कितने घंटे चलता है?</label>
+        <input type="number" id="hours" placeholder="जैसे: 8" min="0.1" max="24" step="any">
+      </div>
+      <div>
+        <label for="rate">बिजली दर (₹ प्रति unit)</label>
+        <input type="number" id="rate" placeholder="जैसे: 7.5" min="1" step="any">
+      </div>
+    </div>
+    <button onclick="calcCost()">खर्च निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>1 unit (यूनिट) कितनी बिजली होती है?</h2>
+    <p><strong>1 unit = 1 kWh</strong> = 1000 वाट का उपकरण 1 घंटा चलना। जैसे 100W का बल्ब 10 घंटे चले = 1 unit। बिल में यही units गिने जाते हैं।</p>
+    <h2>आम उपकरणों की खपत (मोटा अंदाज़ा)</h2>
+    <table>
+      <tr><th>उपकरण</th><th>वाट</th><th>रोज़ 8 घंटे पर units/महीना</th><th>₹7.5/unit पर महीना</th></tr>
+      <tr><td>AC 1.5 टन (non-inverter)</td><td>~1500</td><td>~360</td><td>~₹2,700</td></tr>
+      <tr><td>गीज़र (रोज़ 1 घंटा)</td><td>~2000</td><td>~60</td><td>~₹450</td></tr>
+      <tr><td>फ्रिज (24 घंटे, compressor on/off)</td><td>~180</td><td>~55-70</td><td>~₹450-550</td></tr>
+      <tr><td>टीवी LED</td><td>~100</td><td>~24</td><td>~₹180</td></tr>
+      <tr><td>पंखा</td><td>~75</td><td>~18</td><td>~₹135</td></tr>
+      <tr><td>LED बल्ब</td><td>~9</td><td>~2</td><td>~₹16</td></tr>
+    </table>
+    <div class="note">⚠️ AC/फ्रिज का actual खर्च तापमान, star rating, और compressor के on/off पर बदलता है — यह अंदाज़ा है। असली दरें राज्य/स्लैब से अलग (देखें <a href="electricity-bill-calculator.html" style="color:#1a73e8">बिजली बिल कैलकुलेटर</a>)।</div>
+    <h2>बचत की 5 आदतें</h2>
+    <ul>
+      <li>AC को <strong>24-26°C</strong> पर + फैन साथ में — हर डिग्री पर ~6% बचत</li>
+      <li><strong>5-स्टार</strong> रेटिंग वाले उपकरण — 20-30% कम बिजली</li>
+      <li>गीज़र को सिर्फ ज़रूरत के 15 मिनट पहले on करो</li>
+      <li>बिना काम वाले standby उपकरण switch से बंद</li>
+      <li>पुराने बल्ब → LED (10 गुना कम खाता है)</li>
+    </ul>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function preset(name, watt, hours){
+  document.getElementById('name').value = name;
+  document.getElementById('watt').value = watt;
+  document.getElementById('hours').value = hours;
+  if(!document.getElementById('rate').value) document.getElementById('rate').value = 7.5;
+  calcCost();
+}
+function calcCost(){
+  var name = document.getElementById('name').value || 'उपकरण';
+  var watt = parseFloat(document.getElementById('watt').value);
+  var hours = parseFloat(document.getElementById('hours').value);
+  var rate = parseFloat(document.getElementById('rate').value);
+  var out = document.getElementById('out');
+  if(!watt || !hours || !rate){ out.style.display='block'; out.innerHTML='⚠️ कृपया watt, घंटे और दर भरें।'; return; }
+  var unitsDay = watt * hours / 1000;
+  var unitsMonth = unitsDay * 30;
+  var costMonth = unitsMonth * rate;
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">' + f(costMonth) + '/महीना</div>'
+    + '<p>' + name + ' (' + watt + 'W × ' + hours + ' घंटे/दिन)</p>'
+    + '<p>रोज़: <strong>' + unitsDay.toFixed(2) + ' units</strong> · महीने: <strong>' + unitsMonth.toFixed(1) + ' units</strong> × ₹' + rate + '</p>'
+    + '<p>सालाना अनुमान: <strong>' + f(costMonth * 12) + '</strong></p>';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Date Difference Calculator in Hindi – दो तारीखों के बीच के दिन गिनें</title>
+<meta name="description" content="Date difference calculator हिंदी में – दो तारीखों के बीच कितने दिन, सप्ताह, महीने, साल और वीकेंड हैं, तुरंत गिनें। Deadline, छुट्टी और उम्र के हिसाब के लिए फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Date Difference Calculator in Hindi – दिन गिनती">
+<meta property="og:description" content="दो तारीखों के बीच के दिन, हफ़्ते और महीने तुरंत गिनें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Date Difference Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"दो तारीखों के बीच के दिन गिनने का टूल हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › तारीखों के बीच दिन गिनती</p>
+
+  <div class="tool-box">
+    <h1>📅 दो तारीखों के बीच के दिन गिनें</h1>
+    <p>शुरुआती और अंतिम तारीख चुनें – दिन, हफ़्ते, महीने और वीकेंड सब गिन आएंगे।</p>
+    <label for="d1">शुरुआती तारीख</label>
+    <input type="date" id="d1">
+    <label for="d2">अंतिम तारीख</label>
+    <input type="date" id="d2">
+    <button onclick="diff()">गिनती करें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>किस-किस काम में लगता है?</h2>
+    <ul>
+      <li><strong>Deadline का हिसाब</strong> – परीक्षा, project, EMI या किश्त की तारीख तक कितने दिन बचे</li>
+      <li><strong>छुट्टी की योजना</strong> – छुट्टियों में कितने दिन मिलेंगे, कितने वीकेंड</li>
+      <li><strong>काम के अनुबंध</strong> – notice period, rent, interest की अवधि नापने में</li>
+      <li><strong>यादें</strong> – शादी, सगाई या किसी खास दिन को कितना समय बीत गया</li>
+    </ul>
+    <h2>गिनती के नियम</h2>
+    <p>शुरुआती तारीख के <strong>अगले दिन</strong> से गिनती शुरू होती है (जैसे बैंक/सरकारी अवधि नापते समय)। "कुल दिन" में दोनों तारीखों के बीच का पूरा समय आता है। वीकेंड में उन शनिवार-रविवार को गिना गया है जो दोनों तारीखों के बीच पड़ते हैं।</p>
+    <h2>जल्दी अनुमान लगाने की ट्रिक</h2>
+    <ul>
+      <li>एक महीना ≈ 30.44 दिन, एक साल ≈ 365.25 दिन (लीप वर्ष के हिसाब से)</li>
+      <li>100 दिन ≈ 3 महीने 10 दिन · 1000 दिन ≈ 2 साल 9 महीने</li>
+      <li>लीप वर्ष (जैसे 2028) में फरवरी 29 दिन का होता है – यह tool उसे अपने आप समझता है</li>
+    </ul>
+    <div class="note">🔒 आपकी तारीखें कहीं नहीं जातीं – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('d1').value = new Date().toISOString().split('T')[0];
+document.getElementById('d2').value = new Date(Date.now() + 30*86400000).toISOString().split('T')[0];
+function diff(){
+  var a = document.getElementById('d1').value;
+  var b = document.getElementById('d2').value;
+  var out = document.getElementById('out');
+  if(!a || !b){ out.style.display='block'; out.innerHTML='⚠️ कृपया दोनों तारीखें चुनें।'; return; }
+  var d1 = new Date(a), d2 = new Date(b);
+  if(d2 < d1){ var t = d1; d1 = d2; d2 = t; }
+  var y = d2.getFullYear() - d1.getFullYear();
+  var m = d2.getMonth() - d1.getMonth();
+  var d = d2.getDate() - d1.getDate();
+  if(d < 0){ m--; d += new Date(d2.getFullYear(), d2.getMonth(), 0).getDate(); }
+  if(m < 0){ y--; m += 12; }
+  var totalDays = Math.round((d2 - d1) / 86400000);
+  var weekends = 0;
+  for(var i = 1; i <= totalDays; i++){
+    var wd = new Date(d1.getTime() + i*86400000).getDay();
+    if(wd === 0 || wd === 6) weekends++;
+  }
+  var f = function(x){ return x.toLocaleString('hi-IN'); };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">' + f(totalDays) + ' दिन</div>'
+    + '<p>यानी: <strong>' + y + ' साल, ' + m + ' महीने, ' + d + ' दिन</strong></p>'
+    + '<p>कुल हफ़्ते: <strong>' + f(Math.floor(totalDays/7)) + '</strong> · कुल घंटे: <strong>' + f(totalDays*24) + '</strong></p>'
+    + '<p>इस अवधि में वीकेंड (शनि-रवि): <strong>' + f(weekends) + ' दिन</strong> · काम के दिन: <strong>' + f(totalDays - weekends) + '</strong></p>';
+}
+</script>
+</body>
+</html>

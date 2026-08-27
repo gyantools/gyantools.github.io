@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Loan Eligibility Calculator in Hindi – मैं कितना लोन ले सकता हूँ?</title>
+<meta name="description" content="Loan eligibility कैलकुलेटर हिंदी में – अपनी मासिक आय से जानें आप कितना home loan / personal loan ले सकते हैं। FOIR नियम (EMI आय का 40-60%) के हिसाब से। फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Loan Eligibility Calculator – कितना लोन मिलेगा?">
+<meta property="og:description" content="आय से अनुमानित लोन राशि तुरंत निकालें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Loan Eligibility Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"लोन पात्रता कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Loan Eligibility कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>🏦 Loan Eligibility कैलकुलेटर</h1>
+    <p>अपनी आय से जानें – आप कितना लोन ले सकते हैं।</p>
+    <label for="income">मासिक आय (₹) – salary या व्यवसाय की औसत आय</label>
+    <input type="number" id="income" placeholder="जैसे: 80000" min="1000" step="any">
+    <div class="row">
+      <div>
+        <label for="exist">पहले से चल रही EMI (₹/महीना)</label>
+        <input type="number" id="exist" placeholder="जैसे: 5000 (नहीं तो 0)" min="0" step="any">
+      </div>
+      <div>
+        <label for="rate">सालाना ब्याज दर (%)</label>
+        <input type="number" id="rate" placeholder="जैसे: 8.5" min="1" max="30" step="any">
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="yrs">लोन अवधि (साल)</label>
+        <input type="number" id="yrs" placeholder="जैसे: 20" min="1" max="30" step="1">
+      </div>
+      <div>
+        <label for="foir">बैंक आपकी कितनी आय तक EMI मानता है? (FOIR)</label>
+        <select id="foir">
+          <option value="0.4">40% – सख्त बैंक</option>
+          <option value="0.5" selected>50% – आम नियम</option>
+          <option value="0.6">60% – उदार बैंक/उच्च आय</option>
+        </select>
+      </div>
+    </div>
+    <button onclick="calc()">कितना लोन मिलेगा निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>बैंक कितना लोन देगा – पीछे का गणित</h2>
+    <p>बैंक सबसे पहले देखता है कि आपकी <strong>सारी EMI मिलाकर आय का 40–60% से ज़्यादा न हो</strong> (इस नियम को FOIR कहते हैं)। फिर बची हुई EMI क्षमता से उल्टा हिसाब लगाकर बताता है कि कितनी राशि का लोन उतनी EMI बना सकता है।</p>
+    <p><strong>उदाहरण:</strong> ₹80,000 मासिक आय, पुरानी EMI ₹5,000, दर 8.5%, 20 साल, FOIR 50% → उपलब्ध EMI ₹35,000 → अनुमानित लोन <strong>~₹40 लाख</strong>।</p>
+    <h2>पात्रता बढ़ाने के 5 तरीके</h2>
+    <ul>
+      <li><strong>सह-आवेदक जोड़ें</strong> – पति/पत्नी की आय जुड़ते ही क्षमता बढ़ जाती है</li>
+      <li><strong>पुराने कर्ज़ बंद करें</strong> – छोटी-छोटी EMI जोड़कर क्षमता घटाती हैं</li>
+      <li><strong>CIBIL स्कोर सुधारें</strong> – 750+ पर बैंक उदार बनता है (<a href="../blog/cibil-credit-score-guide.html" style="color:#1a73e8">CIBIL गाइड</a> देखें)</li>
+      <li><strong>अवधि बढ़ाएं</strong> – 15 की जगह 25 साल पर वही EMI ज़्यादा लोन देती है (पर कुल ब्याज बढ़ता है)</li>
+      <li><strong>आय का प्रमाण मज़बूत रखें</strong> – ITR, salary slips, बैंक statement साफ़ रखें</li>
+    </ul>
+    <div class="note">💡 EMI और ब्याज का पूरा हिसाब <a href="emi-calculator.html" style="color:#1a73e8">EMI कैलकुलेटर</a> से, प्रीपेमेंट बचत <a href="loan-prepayment-calculator.html" style="color:#1a73e8">Prepayment कैलकुलेटर</a> से, पूरी समझ <a href="../blog/home-loan-guide.html" style="color:#1a73e8">होम लोन गाइड</a> से।</div>
+    <div class="note">⚠️ यह अनुमान है – बैंक आय की गिनती, उम्र, काम और नीति के हिसाब से अलग रकम दे सकता है।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function calc(){
+  var inc = parseFloat(document.getElementById('income').value);
+  var exist = parseFloat(document.getElementById('exist').value) || 0;
+  var R = parseFloat(document.getElementById('rate').value);
+  var Y = parseFloat(document.getElementById('yrs').value);
+  var foir = parseFloat(document.getElementById('foir').value);
+  var out = document.getElementById('out');
+  if(!inc || inc < 1000 || isNaN(R) || !Y || Y < 1){ out.style.display='block'; out.innerHTML='⚠️ कृपया आय, दर और अवधि सही भरें।'; return; }
+  var capacity = inc * foir;
+  var emi = capacity - exist;
+  if(emi <= 0){
+    out.style.display='block';
+    out.innerHTML = '⚠️ आपकी पुरानी EMI आपकी EMI क्षमता (' + Math.round(capacity).toLocaleString('en-IN') + ') खा चुकी है – पहले पुराने कर्ज़ घटाएं।';
+    return;
+  }
+  var i = R/1200, n = Y*12, P;
+  if(i === 0){ P = emi * n; }
+  else { P = emi * (Math.pow(1+i,n) - 1) / (i * Math.pow(1+i,n)); }
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">अनुमानित लोन: ' + f(P) + '</div>'
+    + '<p>EMI क्षमता: <strong>' + f(capacity) + '</strong> (' + Math.round(foir*100) + '% of ' + f(inc) + ') − पुरानी EMI ' + f(exist) + ' = <strong>' + f(emi) + '</strong> उपलब्ध</p>'
+    + '<p>यह ' + f(emi) + ' की EMI, ' + R + '% दर पर, ' + Y + ' साल में उठा सकती है</p>'
+    + '<p>हर महीने का EMI अनुमानित लोन ब्याज सहित: <strong>' + f(P*Math.pow(1+i,n)/n) + '</strong> कुल ब्याज ~' + f(P*Math.pow(1+i,n)-P) + '</p>';
+}
+</script>
+</body>
+</html>

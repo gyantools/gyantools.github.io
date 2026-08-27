@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Loan Prepayment Calculator in Hindi – अतिरिक्त EMI से कितनी बचत?</title>
+<meta name="description" content="Loan prepayment कैलकुलेटर हिंदी में – हर महीने अतिरिक्त किश्त जोड़कर देखें कितने महीने पहले लोन खत्म होगा और कितना ब्याज बचेगा। Home loan, car loan के लिए फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Loan Prepayment Calculator – अतिरिक्त EMI से बचत">
+<meta property="og:description" content="थोड़ी अतिरिक्त किश्त से लाखों की बचत देखें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Loan Prepayment Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"लोन प्रीपेमेंट कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.45rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Loan Prepayment कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>💸 Loan Prepayment कैलकुलेटर</h1>
+    <p>हर महीने थोड़ा अतिरिक्त जोड़ें – देखें लोन कितना पहले खत्म होगा और कितना ब्याज बचेगा।</p>
+    <label for="bal">बाकी लोन राशि (₹)</label>
+    <input type="number" id="bal" placeholder="जैसे: 5000000" min="10000" step="any">
+    <div class="row">
+      <div>
+        <label for="rate">सालाना ब्याज दर (%)</label>
+        <input type="number" id="rate" placeholder="जैसे: 8.5" min="1" max="30" step="any">
+      </div>
+      <div>
+        <label for="mon">बाकी अवधि (महीने)</label>
+        <input type="number" id="mon" placeholder="जैसे: 240" min="1" max="360" step="1">
+      </div>
+    </div>
+    <label for="extra">हर महीने अतिरिक्त भुगतान (₹) – अपनी EMI के ऊपर</label>
+    <input type="number" id="extra" placeholder="जैसे: 5000" min="0" step="any">
+    <button onclick="calc()">बचत निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>Prepayment का जादू – उदाहरण से समझें</h2>
+    <p>लोन की शुरुआती किश्तों में <strong>ब्याज का हिस्सा सबसे बड़ा</strong> होता है। इसीलिए शुरुआती सालों में अतिरिक्त भुगतान सबसे ज़्यादा असर करता है – वह रकम सीधे मूलधन से कटती है, और उस पर आगे का पूरा ब्याज हमेशा के लिए बच जाता है।</p>
+    <p>मोटा उदाहरण (test किया हुआ): ₹50 लाख बाकी, 8.5% दर, 20 साल बाकी (EMI ~₹43,391) – सिर्फ <strong>₹5,000/महीना अतिरिक्त</strong> जोड़ने से लोन <strong>54 महीने (~साढ़े चार साल) पहले</strong> खत्म और <strong>₹13.9 लाख</strong> तक ब्याज की बचत! अपना हिसाब ऊपर निकालकर देखें!</p>
+    <h2>पहले या बाद में?</h2>
+    <ul>
+      <li><strong>जितना जल्दी, उतना फायदा</strong> – पहले साल का ₹1 लाख अतिरिक्त, आख़िरी साल के ₹2 लाख से ज़्यादा बचाता है</li>
+      <li>बोनस/पुरस्कार (bonus) मिलने पर एकमुश्त राशि भी जोड़ें – ऊपर के calculator में उसे 12 से भागकर मासिक अनुमान की तरह डाल सकते हैं</li>
+      <li>Emergency fund (3–6 महीने का खर्च) पहले जुटा लें – सारी बचत लोन में डुबोकर फिर कर्ज़ पर न आएं</li>
+    </ul>
+    <h2>किन लोनों पर सबसे पहले?</h2>
+    <ul>
+      <li>Personal loan / credit card का कर्ज़ (सबसे महंगा – पहले खत्म करें)</li>
+      <li>Car loan</li>
+      <li>Home loan (सस्ता और टैक्स फायदे वाला हो सकता है – पुरानी रजिम की छूट देखकर तय करें)</li>
+    </ul>
+    <div class="note">💡 कई बैंक floating rate home loan पर prepayment free लेते हैं – charge के बारे में बैंक से पूछकर ही बड़ी रकम जमा करें।</div>
+    <div class="note">⚠️ यह tool अनुमान देता है – बैंक की गिनती (खुली तारीखें, शुल्क) से थोड़ा अंतर हो सकता है।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function simulate(P, r, pay){
+  var months = 0, total = 0;
+  while(P > 0 && months < 1200){
+    P = P*(1+r) - pay;
+    total += pay;
+    months++;
+    if(P < 0){ total += P; P = 0; }
+  }
+  return {months:months, paid:total};
+}
+function calc(){
+  var P = parseFloat(document.getElementById('bal').value);
+  var R = parseFloat(document.getElementById('rate').value);
+  var N = parseInt(document.getElementById('mon').value);
+  var extra = parseFloat(document.getElementById('extra').value) || 0;
+  var out = document.getElementById('out');
+  if(!P || P < 10000 || isNaN(R) || !N || N < 1 || N > 360){ out.style.display='block'; out.innerHTML='⚠️ कृपया सभी जानकारी सही भरें।'; return; }
+  var r = R/1200;
+  var emi = P*r*Math.pow(1+r,N)/(Math.pow(1+r,N)-1);
+  if(r === 0) emi = P/N;
+  if(emi <= P*r){ out.style.display='block'; out.innerHTML='⚠️ EMI ही ब्याज से कम है – ये लोन इस दर से खत्म नहीं होगा।'; return; }
+  var base = simulate(P, r, emi);
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  if(extra <= 0){
+    out.style.display='block';
+    out.innerHTML = '<p>आपकी EMI: <strong>' + f(emi) + '</strong> · बाकी ' + base.months + ' महीने (' + (base.months/12).toFixed(1) + ' साल) · कुल भुगतान: ' + f(base.paid) + '</p><p>💡 ऊपर "अतिरिक्त भुगतान" में राशि डालकर बचत देखें!</p>';
+    return;
+  }
+  var fast = simulate(P, r, emi + extra);
+  var saveInterest = base.paid - fast.paid;
+  var saveMonths = base.months - fast.months;
+  out.style.display='block';
+  out.innerHTML = '<p>आपकी EMI: <strong>' + f(emi) + '</strong> · नई कुल किश्त: <strong>' + f(emi+extra) + '</strong></p>'
+    + '<div class="big">ब्याज की बचत: ' + f(saveInterest) + '</div>'
+    + '<p>लोन <strong>' + saveMonths + ' महीने (' + (saveMonths/12).toFixed(1) + ' साल) पहले</strong> खत्म होगा</p>'
+    + '<p>अब: ' + base.months + ' महीने · अतिरिक्त के साथ: ' + fast.months + ' महीने</p>';
+}
+</script>
+</body>
+</html>

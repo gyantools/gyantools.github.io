@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Sleep Cycle Calculator in Hindi – कब सोएं, कब उठें? (नींद का हिसाब)</title>
+<meta name="description" content="नींद का हिसाब कैलकुलेटर हिंदी में – उठने का समय डालकर जानें कब सोना चाहिए, या अभी सोएं तो कब उठें। 90-मिनट के sleep cycles का विज्ञान। फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Sleep Cycle Calculator – कब सोएं, कब उठें?">
+<meta property="og:description" content="90-मिनट के चक्रों के हिसाब से सही सोने का समय।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sleep Cycle Calculator Hindi","applicationCategory":"HealthApplication","operatingSystem":"Web","description":"नींद का समय कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;max-width:520px;margin-left:auto;margin-right:auto}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;margin-bottom:6px;text-align:center}
+.mode{margin:12px 0;text-align:center}
+.mode button{background:#fff;color:#1a73e8;border:1px solid #dadce0;padding:8px 20px;border-radius:20px;font-size:.95rem;cursor:pointer;margin:4px;font-weight:600;width:auto}
+.mode button.active{background:#1a73e8;color:#fff;border-color:#1a73e8}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1.1rem;font-family:inherit;background:#fff}
+input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button.play{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px;width:100%}
+button.play:hover{background:#1557b0}
+.results{margin-top:14px}
+.slot{background:#f1f3f4;border-radius:10px;padding:12px 16px;margin:8px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.slot b{color:#1a73e8;font-size:1.2rem}
+.slot .cyc{font-size:.85rem;color:#5f6368}
+.slot.best{background:#e6f4ea;border:2px solid #137333}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Sleep Cycle Calculator</p>
+
+  <div class="tool-box">
+    <h1>😴 कब सोएं, कब उठें?</h1>
+    <div class="mode">
+      <button id="m1" class="active" onclick="setMode('wake')">⏰ मुझे ___ बजे उठना है</button>
+      <button id="m2" onclick="setMode('now')">🌙 अभी सो रहा हूँ</button>
+    </div>
+    <div id="wakeBox">
+      <label for="wtime">उठने का समय</label>
+      <input type="time" id="wtime" value="06:00">
+    </div>
+    <div id="nowBox" style="display:none">
+      <p style="font-weight:600">अभी का समय लिया जाएगा + सोने में ~15 मिनट</p>
+    </div>
+    <button class="play" onclick="calc()">समय निकालें</button>
+    <div class="results" id="out"></div>
+  </div>
+
+  <article>
+    <h2>90-मिनट का चक्र क्या है?</h2>
+    <p>नींद चक्रों में चलती है — हर चक्र लगभग <strong>90 मिनट</strong> का होता है। चक्र के बीच में आँख खुलने वाली हल्की नींद का दौर आता है। अगर अलार्म गहरी नींद में बजे तो उठते ही सिर भारी और आलस्य — वही "नींद टूट गई" वाला एहसास। <strong>चक्र पूरा होने पर उठो</strong> — तो तरोताज़ा लगता है। इसलिए ऊपर के समय 90 के गुणज में हैं (+ सोने में लगने वाले ~15 मिनट)।</p>
+    <h2>कितनी नींद ज़रूरी है? (आधिकारिक सिफ़ारिश)</h2>
+    <table>
+      <tr><th>उम्र</th><th>सिफ़ारिश की गई नींद</th></tr>
+      <tr><td>नवजात (0–3 महीना)</td><td>14–17 घंटे</td></tr>
+      <tr><td>शिशु (4–11 महीना)</td><td>12–15 घंटे</td></tr>
+      <tr><td>छोटे बच्चे (1–2 साल)</td><td>11–14 घंटे</td></tr>
+      <tr><td>प्री-स्कूल (3–5 साल)</td><td>10–13 घंटे</td></tr>
+      <tr><td>स्कूली बच्चे (6–13)</td><td>9–11 घंटे</td></tr>
+      <tr><td>किशोर (14–17)</td><td>8–10 घंटे</td></tr>
+      <tr><td>वयस्क (18–64)</td><td><strong>7–9 घंटे</strong></td></tr>
+      <tr><td>बुज़ुर्ग (65+)</td><td>7–8 घंटे</td></tr>
+    </table>
+    <p>ये रेंज National Sleep Foundation के expert panel की सिफ़ारिशें हैं — हर इंसान थोड़ा अलग है, पर लगातार 6 घंटे से कम नींद लंबे समय में सेहत के लिए ठीक नहीं।</p>
+    <h2>नींद अच्छी करने की 6 आदतें</h2>
+    <ul>
+      <li><strong>एक ही समय</strong> पर सोना-उठना — छुट्टी के दिनों में भी (±1 घंटा)</li>
+      <li>सोने से 1 घंटा पहले <strong>मोबाइल/टीवी बंद</strong> — नीली रोशनी नींद धोखे से देर करती है</li>
+      <li>दोपहर की नींद <strong>20-30 मिनट</strong> से ज़्यादा नहीं, और 3 बजे के बाद नहीं</li>
+      <li>शाम के बाद <strong>चाय/कॉफ़ी नहीं</strong> (caffeine 6+ घंटे असर करता है)</li>
+      <li>कमरा <strong>अंधेरा, ठंडा और शांत</strong></li>
+      <li>भूख लगी हो तो हल्का (दूध/केला), भारी खाना नहीं</li>
+    </ul>
+    <div class="note">💡 नींद से जुड़ी पढ़ाई के लिए हमारी <a href="../blog/roz-ki-sehat-guide.html" style="color:#1a73e8">रोज़ की सेहत गाइड</a> और पढ़ाई के लिए <a href="../blog/exam-tips-guide.html" style="color:#1a73e8">परीक्षा तैयारी गाइड</a> पढ़ें।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता। लगातार नींद की दिक्कत हो तो डॉक्टर से मिलें।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var mode = 'wake';
+var FALL_ASLEEP = 15; // मिनट
+function setMode(m){
+  mode = m;
+  document.getElementById('m1').className = m === 'wake' ? 'active' : '';
+  document.getElementById('m2').className = m === 'now' ? 'active' : '';
+  document.getElementById('wakeBox').style.display = m === 'wake' ? 'block' : 'none';
+  document.getElementById('nowBox').style.display = m === 'now' ? 'block' : 'none';
+  document.getElementById('out').innerHTML = '';
+}
+function fmt(mins){
+  mins = ((mins % 1440) + 1440) % 1440;
+  var h = Math.floor(mins / 60), m = mins % 60;
+  var ampm = h < 12 ? 'AM' : 'PM';
+  var h12 = h % 12 === 0 ? 12 : h % 12;
+  return h12 + ':' + (m < 10 ? '0' : '') + m + ' ' + ampm;
+}
+function calc(){
+  var out = document.getElementById('out');
+  var html = '';
+  if(mode === 'wake'){
+    var t = document.getElementById('wtime').value;
+    if(!t){ out.innerHTML = '<p style="color:#d93025;font-weight:600">⚠️ समय चुनें</p>'; return; }
+    var parts = t.split(':');
+    var wakeMins = parseInt(parts[0]) * 60 + parseInt(parts[1]);
+    html += '<p style="font-weight:600;margin-bottom:4px">🌙 इनमें से किसी एक समय पर सो जाओ (उठने के लिए ' + fmt(wakeMins) + '):</p>';
+    var cycles = [6, 5, 4, 3];
+    cycles.forEach(function(c, i){
+      var bed = wakeMins - c * 90 - FALL_ASLEEP;
+      html += '<div class="slot' + (i === 0 ? ' best' : '') + '"><span>' + (i === 0 ? '⭐ सबसे बढ़िया: ' : '') + 'सोओ <b>' + fmt(bed) + '</b></span><span class="cyc">' + c + ' चक्र = ' + (c * 1.5) + ' घंटे नींद</span></div>';
+    });
+  } else {
+    var now = new Date();
+    var nowMins = now.getHours() * 60 + now.getMinutes() + FALL_ASLEEP;
+    html += '<p style="font-weight:600;margin-bottom:4px">⏰ अभी सो जाओ तो इन समयों पर उठो (तरोताज़ा उठने के लिए):</p>';
+    var cycles2 = [3, 4, 5, 6];
+    cycles2.forEach(function(c, i){
+      var wake = nowMins + c * 90;
+      html += '<div class="slot' + (i === cycles2.length - 1 ? ' best' : '') + '"><span>' + (i === cycles2.length - 1 ? '⭐ वयस्कों के लिए बेहतर: ' : '') + 'उठो <b>' + fmt(wake) + '</b></span><span class="cyc">' + c + ' चक्र = ' + (c * 1.5) + ' घंटे नींद</span></div>';
+    });
+  }
+  out.innerHTML = html;
+}
+</script>
+</body>
+</html>

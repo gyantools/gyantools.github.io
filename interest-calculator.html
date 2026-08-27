@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Simple & Compound Interest Calculator in Hindi – ब्याज कैलकुलेटर</title>
+<meta name="description" content="ब्याज कैलकुलेटर हिंदी में – साधारण ब्याज (Simple Interest) और चक्रवृद्धि ब्याज (Compound Interest) दोनों एक साथ निकालें। FD, लोन और निवेश के हिसाब के लिए फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="ब्याज कैलकुलेटर – Simple & Compound Interest">
+<meta property="og:description" content="साधारण और चक्रवृद्धि ब्याज दोनों एक साथ निकालें – हिंदी में।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Interest Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"साधारण और चक्रवृद्धि ब्याज कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.3rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › ब्याज कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>💰 ब्याज कैलकुलेटर – Simple &amp; Compound</h1>
+    <p>मूलधन, दर और समय डालें – साधारण और चक्रवृद्धि ब्याज दोनों साथ में निकलेंगे।</p>
+    <label for="p">मूलधन / Principal (₹)</label>
+    <input type="number" id="p" placeholder="जैसे: 100000" min="1" step="any">
+    <div class="row">
+      <div>
+        <label for="r">सालाना ब्याज दर (%)</label>
+        <input type="number" id="r" placeholder="जैसे: 7" min="0" step="any">
+      </div>
+      <div>
+        <label for="t">समय (साल)</label>
+        <input type="number" id="t" placeholder="जैसे: 5" min="0.25" step="any">
+      </div>
+    </div>
+    <label for="n">चक्रवृद्धि ब्याज कब-कब जुड़े? (Compounding)</label>
+    <select id="n">
+      <option value="1">सालाना</option>
+      <option value="2">छमाही (Half-Yearly)</option>
+      <option value="4" selected>तिमाही (Quarterly – FD में आम)</option>
+      <option value="12">मासिक</option>
+    </select>
+    <button onclick="calc()">ब्याज निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>साधारण ब्याज (Simple Interest) क्या है?</h2>
+    <p>साधारण ब्याज सिर्फ मूलधन पर लगता है। फॉर्मूला: <strong>SI = P × R × T ÷ 100</strong></p>
+    <p>जैसे ₹1,00,000 पर 7% दर से 5 साल में SI = ₹35,000। हर साल एक जैसा ₹7,000 ब्याज बनता है। साधारण ब्याज आमतौर पर personal loan के पहले हिस्से या कुछ छोटी लेन-देन में देखा जाता है।</p>
+    <h2>चक्रवृद्धि ब्याज (Compound Interest) क्या है?</h2>
+    <p>चक्रवृद्धि ब्याज में <strong>ब्याज पर भी ब्याज</strong> लगता है! फॉर्मूला: <strong>A = P × (1 + R/100n)^(n×T)</strong> जहां n = साल में कितनी बार ब्याज जुड़ता है।</p>
+    <p>वही ₹1,00,000 पर 7% से 5 साल, <strong>तिमाही compounding</strong> में = ₹41,480 ब्याज – साधारण ब्याज से <strong>₹6,480 ज़्यादा</strong>! बैंक के FD और PPF में यही चक्रवृद्धि जादू काम करता है।</p>
+    <h2>Compounding जितनी जल्दी, फायदा उतना ज़्यादा</h2>
+    <ul>
+      <li>सालाना compounding से छमाही और छमाही से तिमाही बेहतर</li>
+      <li>भारत के ज़्यादातर बैंक FD में ब्याज <strong>तिमाही (quarterly)</strong> जुड़ता है</li>
+      <li>PPF में सालाना compounding होता है</li>
+    </ul>
+    <h2>Rule of 72 – अपने पैसे के दोगुना होने का हिसाब</h2>
+    <p>72 को ब्याज दर से भाग दें – जो आए, उतने सालों में पैसा लगभग दोगुना होता है। जैसे 8% दर पर: 72 ÷ 8 = <strong>9 साल</strong> में पैसा दोगुना।</p>
+    <div class="note">💡 <strong>निवेश समझते हुए:</strong> FD की तुलना में PPF, SIP जैसे options लंबे समय में ज़्यादा चक्रवृद्धि फायदा देते हैं। निवेश से पहले अपनी ज़रूरत और risk समझें – यह tool गणित सिखाता है, सलाह नहीं देता।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function calc(){
+  var P = parseFloat(document.getElementById('p').value);
+  var R = parseFloat(document.getElementById('r').value);
+  var T = parseFloat(document.getElementById('t').value);
+  var n = parseInt(document.getElementById('n').value);
+  var out = document.getElementById('out');
+  if(!P || P<=0 || isNaN(R) || isNaN(T) || T<=0){ out.style.display='block'; out.innerHTML='⚠️ कृपया सभी जानकारी सही भरें।'; return; }
+  var si = P*R*T/100;
+  var amt = P*Math.pow(1+R/(100*n), n*T);
+  var ci = amt - P;
+  var f = function(x){ return '₹' + (+x.toFixed(0)).toLocaleString('en-IN'); };
+  out.style.display='block';
+  out.innerHTML = '<p class="big">साधारण ब्याज (SI): ' + f(si) + ' · चक्रवृद्धि ब्याज (CI): ' + f(ci) + '</p>'
+    + '<p>SI में कुल मिलेगा: <strong>' + f(P+si) + '</strong> · CI में कुल मिलेगा: <strong>' + f(amt) + '</strong></p>'
+    + '<p>CI का फायदा SI पर: <strong>' + f(ci-si) + '</strong></p>'
+    + '<p>Rule of 72: इस दर पर पैसा लगभग <strong>' + (R>0 ? (72/R).toFixed(1) : '—') + ' साल</strong> में दोगुना</p>';
+}
+</script>
+</body>
+</html>

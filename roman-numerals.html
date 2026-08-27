@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Roman Numerals Converter in Hindi – रोमन अंक बदलें (1 से 3999)</title>
+<meta name="description" content="Roman numerals converter हिंदी में – कोई भी नंबर रोमन अंकों में (XIV) और रोमन अंकों को नंबर में बदलें। नियम, टेबल और उदाहरण समेत फ्री टूल। परीक्षा के लिए।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Roman Numerals Converter – रोमन अंक कैलकुलेटर">
+<meta property="og:description" content="नंबर ↔ रोमन अंक, दोनों दिशा में बदलें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Roman Numerals Converter Hindi","applicationCategory":"EducationalApplication","operatingSystem":"Web","description":"रोमन अंक कन्वर्टर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1.1rem;font-family:inherit;background:#fff}
+input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.3rem;font-weight:700;color:#1a73e8;word-break:break-all}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul,article ol{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Roman Numerals Converter</p>
+
+  <div class="tool-box">
+    <h1>🏛️ रोमन अंक कन्वर्टर (Roman Numerals)</h1>
+    <p>दोनों दिशा में बदलें – नंबर → रोमन, और रोमन → नंबर।</p>
+    <label for="in">नंबर (1–3999) या रोमन अंक (जैसे MMXXVI) डालें</label>
+    <input type="text" id="in" placeholder="जैसे: 2026 या MMXXVI" oninput="convert()">
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>रोमन अंकों की बुनियादी टेबल</h2>
+    <table>
+      <tr><th>रोमन</th><td>I</td><td>V</td><td>X</td><td>L</td><td>C</td><td>D</td><td>M</td></tr>
+      <tr><th>मान</th><td>1</td><td>5</td><td>10</td><td>50</td><td>100</td><td>500</td><td>1000</td></tr>
+    </table>
+    <h2>नियम – दो नियम याद रखो, सब बन जाएगा</h2>
+    <ol>
+      <li><strong>जोड़ने का नियम:</strong> छोटा या बराबर अंक दाईं ओर हो तो जुड़ता है – VI = 5+1 = 6, XX = 20</li>
+      <li><strong>घटाने का नियम:</strong> छोटा अंक बड़े के बाईं ओर हो तो घटता है – IV = 5−1 = 4, IX = 10−1 = 9, XL = 50−10 = 40, CM = 1000−100 = 900</li>
+    </ol>
+    <p>इसीलिए 2026 = MM (2000) + XX (20) + VI (6) = <strong>MMXXVI</strong>। और 1994 = M (1000) + CM (900) + XC (90) + IV (4) = <strong>MCMXCIV</strong>।</p>
+    <h2>आज कहां मिलते हैं रोमन अंक?</h2>
+    <ul>
+      <li>घड़ियों के डायल पर (III, VI, IX, XII)</li>
+      <li>किताबों के अध्याय (Chapter IV) और इंट्रो पेज (i, ii, iii)</li>
+      <li>फिल्मों के नाम और सीक्वल (Rocky II, Star Wars Episode IV)</li>
+      <li>राजा/पोप के नाम (अकबर… नहीं, Louis XIV, Henry VIII)</li>
+      <li>स्पोर्ट्स इवेंट (Super Bowl LX, ओलंपिक Games of the XXXII Olympiad)</li>
+    </ul>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – conversion आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function toRoman(n){
+  var map = [[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];
+  var out = '';
+  for(var i = 0; i < map.length; i++){
+    while(n >= map[i][0]){ out += map[i][1]; n -= map[i][0]; }
+  }
+  return out;
+}
+function fromRoman(r){
+  var val = {I:1,V:5,X:10,L:50,C:100,D:500,M:1000};
+  var total = 0;
+  for(var i = 0; i < r.length; i++){
+    var c = val[r[i]], n = val[r[i+1]];
+    if(n && c < n) total -= c; else total += c;
+  }
+  return total;
+}
+function isValidRoman(r){
+  if(!/^[MDCLXVI]+$/.test(r)) return false;
+  return toRoman(fromRoman(r)) === r;  // round-trip से वैधता
+}
+function convert(){
+  var v = document.getElementById('in').value.trim().toUpperCase();
+  var out = document.getElementById('out');
+  if(v === ''){ out.style.display='none'; return; }
+  out.style.display='block';
+  if(/^\d+$/.test(v)){
+    var n = parseInt(v);
+    if(n < 1 || n > 3999){ out.textContent = '⚠️ 1 से 3999 के बीच का नंबर डालें'; return; }
+    out.textContent = n + ' = ' + toRoman(n);
+  } else {
+    if(!isValidRoman(v)){ out.textContent = '⚠️ यह वैध रोमन अंक नहीं है'; return; }
+    out.textContent = v + ' = ' + fromRoman(v);
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>ज़मीन क्षेत्रफल कन्वर्टर in Hindi – बीघा, एकड़, हेक्टेयर, वर्ग फीट बदलें</title>
+<meta name="description" content="ज़मीन का क्षेत्रफल कन्वर्टर हिंदी में – बीघा (राजस्थान पक्का/कच्चा), एकड़, हेक्टेयर, वर्ग फीट, वर्ग गज, बिस्वा आपस में बदलें। खरीद-बिक्री और कागज़ात के लिए फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="ज़मीन क्षेत्रफल कन्वर्टर – बीघा/एकड़/हेक्टेयर">
+<meta property="og:description" content="बीघा, एकड़, हेक्टेयर, वर्ग फीट – एक ही जगह बदलें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Land Area Converter Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"ज़मीन क्षेत्रफल कन्वर्टर हिंदी में – बीघा, एकड़, हेक्टेयर","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.3rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › ज़मीन क्षेत्रफल कन्वर्टर</p>
+
+  <div class="tool-box">
+    <h1>🌾 ज़मीन क्षेत्रफल कन्वर्टर</h1>
+    <p>बीघा, एकड़, हेक्टेयर, वर्ग फीट – सब आपस में बदलें।</p>
+    <label for="val">क्षेत्रफल (मान)</label>
+    <input type="number" id="val" placeholder="जैसे: 5" min="0" step="any">
+    <div class="row">
+      <div>
+        <label for="from">से (From)</label>
+        <select id="from"></select>
+      </div>
+      <div>
+        <label for="to">में (To)</label>
+        <select id="to"></select>
+      </div>
+    </div>
+    <button onclick="convert()">बदलें (Convert)</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>राजस्थान की ज़मीन की इकाइयां (कन्वर्ज़न टेबल)</h2>
+    <table>
+      <tr><th>इकाई</th><th>वर्ग फीट (sq ft)</th><th>एकड़ में</th></tr>
+      <tr><td>1 बीघा पक्का (राजस्थान – जयपुर/पूर्वी क्षेत्र)</td><td>27,225</td><td>≈ 0.625</td></tr>
+      <tr><td>1 बीघा कच्चा (राजस्थान – पश्चिमी क्षेत्र)</td><td>17,424</td><td>0.4</td></tr>
+      <tr><td>1 बिस्वा (पक्का)</td><td>≈ 1,361</td><td>—</td></tr>
+      <tr><td>1 बिस्वा (कच्चा)</td><td>≈ 871</td><td>—</td></tr>
+      <tr><td>1 एकड़</td><td>43,560</td><td>1</td></tr>
+      <tr><td>1 हेक्टेयर</td><td>1,07,639</td><td>≈ 2.47</td></tr>
+    </table>
+    <p>यानी राजस्थान में <strong>1 एकड़ ≈ 1.6 पक्का बीघा ≈ 2.5 कच्चा बीघा</strong>, और <strong>1 हेक्टेयर ≈ 3.95 पक्का बीघा ≈ 6.18 कच्चा बीघा</strong>। 1 बीघा = 20 बिस्वा।</p>
+    <h2>एकड़ और हेक्टेयर क्या हैं?</h2>
+    <p><strong>एकड़ (Acre)</strong> ज़मीन की सबसे पुरानी और दुनिया भर में एक जैसी मानी जाने वाली इकाई है – 1 एकड़ = 43,560 वर्ग फीट। <strong>हेक्टेयर</strong> मीट्रिक प्रणाली की इकाई है – 1 हेक्टेयर = 10,000 वर्ग मीटर ≈ 2.47 एकड़। सरकारी कागज़ात में ज़्यादातर हेक्टेयर/एकड़, और गांव-बाज़ार की बातचीत में बीघा-बिस्वा चलता है – इसलिए यह conversion रोज़ काम आता है।</p>
+    <h2>ज़रूरी सावधानी</h2>
+    <ul>
+      <li><strong>बीघा हर इलाके में अलग होता है</strong> – राजस्थान में भी पक्का/कच्चा, और तहसील-तहसील के रिकॉर्ड में फर्क हो सकता है (UP में बीघा ≈ 27,000 वर्ग फीट माना जाता है, पंजाब-हरियाणा में कुछ और)</li>
+      <li>खरीद-बिक्री, बंधक या मुकदमे में हमेशा <strong>जमाबंदी/गिरदावरी (revenue record)</strong> और नाप के आधिकारिक आंकड़े ही मानें</li>
+      <li>यह tool मानक (accepted) गुणांक से तुरंत अंदाज़ा देता है – कानूनी काम में पटवारी/तहसील से पुष्टि करें</li>
+    </ul>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var UNITS = [
+  ['sqft','वर्ग फीट (Square Feet)',1],
+  ['sqm','वर्ग मीटर (Square Meter)',10.7639],
+  ['sqyd','वर्ग गज (Square Gaj)',9],
+  ['biswaP','बिस्वा – पक्का (राजस्थान)',1361.25],
+  ['biswaK','बिस्वा – कच्चा (राजस्थान)',871.2],
+  ['bighaP','बीघा – पक्का (राजस्थान)',27225],
+  ['bighaK','बीघा – कच्चा (राजस्थान)',17424],
+  ['bighaUP','बीघा (UP आदि, ~27,000)',27000],
+  ['acre','एकड़ (Acre)',43560],
+  ['hectare','हेक्टेयर (Hectare)',107639.104]
+];
+var from = document.getElementById('from'), to = document.getElementById('to');
+UNITS.forEach(function(u){
+  from.options.add(new Option(u[1], u[0]));
+  to.options.add(new Option(u[1], u[0]));
+});
+from.value = 'bighaP'; to.value = 'acre';
+function convert(){
+  var v = parseFloat(document.getElementById('val').value);
+  var fu = from.value, tu = to.value;
+  var out = document.getElementById('out');
+  if(isNaN(v) || v < 0){ out.style.display='block'; out.innerHTML='⚠️ कृपया मान भरें।'; return; }
+  var f = UNITS.find(function(u){return u[0]===fu;});
+  var t = UNITS.find(function(u){return u[0]===tu;});
+  var res = v*f[2]/t[2];
+  out.style.display='block';
+  out.innerHTML = '<div class="big">' + v + ' ' + f[1].split('(')[0].trim() + ' = ' + (+res.toFixed(4)) + ' ' + t[1].split('(')[0].trim() + '</div>'
+    + '<p>(' + f[1] + ' → ' + t[1] + ')</p>'
+    + '<p>वर्ग फीट में: <strong>' + (v*f[2]).toLocaleString('en-IN', {maximumFractionDigits:2}) + ' sq ft</strong></p>';
+}
+</script>
+</body>
+</html>

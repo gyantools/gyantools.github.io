@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>पासा और सिक्का in Hindi – Dice Roller &amp; Coin Flip (मुफ़्त)</title>
+<meta name="description" content="पासा रोल करो और सिक्का उछालो – बोर्ड गेम, लोगों का फैसला और पढ़ाई के लिए। एक साथ 1-6 पासे, बिल्कुल random (crypto-grade)। बिना लॉगिन फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="पासा और सिक्का – Dice &amp; Coin">
+<meta property="og:description" content="रोल करो, उछालो, फैसला करो!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Dice and Coin Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"पासा रोलर और सिक्का उछालने वाला टूल","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;max-width:560px;margin-left:auto;margin-right:auto}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;margin-bottom:6px;text-align:center}
+label{display:block;font-weight:600;margin:12px 0 6px}
+select{width:130px;padding:10px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+button{background:#1a73e8;color:#fff;border:none;padding:14px 32px;border-radius:8px;font-size:1.1rem;font-weight:600;cursor:pointer;margin:10px}
+button:hover{background:#1557b0}
+.dice{display:inline-block;width:72px;height:72px;background:#fff;border:2px solid #dadce0;border-radius:14px;font-size:2.6rem;line-height:68px;text-align:center;margin:8px;box-shadow:0 2px 6px rgba(0,0,0,.12);font-weight:700}
+.coin{width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd54f,#e8a200);display:flex;align-items:center;justify-content:center;margin:20px auto;font-size:3.4rem;box-shadow:0 4px 14px rgba(0,0,0,.22);border:6px solid #c78f00;animation:pop .45s ease}
+@keyframes pop{0%{transform:scale(.6) rotate(-30deg)}70%{transform:scale(1.12)}100%{transform:scale(1)}}
+.out{text-align:center;font-size:1.2rem;font-weight:700;color:#1a73e8;min-height:1.6em;margin-top:8px}
+.histo{font-size:.85rem;color:#5f6368;text-align:center;margin-top:8px}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › पासा &amp; सिक्का</p>
+
+  <div class="tool-box">
+    <h1>🎲 पासा &amp; 🪙 सिक्का</h1>
+    <div style="text-align:center">
+      <label style="display:inline-block;margin-right:8px">कितने पासे?</label>
+      <select id="n" onchange="roll()">
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+      </select>
+    </div>
+    <div style="text-align:center;margin-top:14px">
+      <button onclick="roll()">🎲 रोल करो</button>
+      <button onclick="flip()">🪙 सिक्का उछालो</button>
+    </div>
+    <div id="diceOut" style="text-align:center"></div>
+    <div id="diceSum" class="out"></div>
+    <div id="diceHist" class="histo"></div>
+    <div id="coinOut"></div>
+    <div id="coinHist" class="histo"></div>
+  </div>
+
+  <article>
+    <h2>कब काम आता है?</h2>
+    <ul>
+      <li><strong>बोर्ड गेम</strong> (Ludo, Snakes &amp; Ladders) — पासा गुम हो गया? यहीं रोल करो</li>
+      <li><strong>दो बराबर विकल्प</strong> में फैसला — सिक्का सबसे पुराना तरीका</li>
+      <li><strong>पढ़ाई में</strong> — कौन-सा topic पहले? पासा बताएगा</li>
+      <li><strong>कक्षा में</strong> — छोटे games और गतिविधियों के लिए</li>
+      <li><strong>Probability समझना</strong> — देखो हर नंबर कितनी बार आया (ऊपर हिसाब दिखता है)</li>
+    </ul>
+    <h2>कैसे random है?</h2>
+    <p>Browser का <strong>crypto.getRandomValues()</strong> — वही generator जो security में इस्तेमाल होता है। हर नतीजा आज़ाद — इसलिए 6 बार रोल करने पर 6 आना ज़रूरी नहीं (यही तो probability का मज़ा है)।</p>
+    <div class="note">💡 सिक्का और पासे का हर नतीजा अलग — कोई जानकारी सेव नहीं होती।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var FACE = ['','⚀','⚁','⚂','⚃','⚄','⚅'];
+var diceCounts = [0,0,0,0,0,0,0], coinCounts = [0,0];
+function rnd(max){ var a = new Uint32Array(1); crypto.getRandomValues(a); return a[0] % max; }
+function roll(){
+  var n = parseInt(document.getElementById('n').value);
+  var out = [], sum = 0;
+  for(var i = 0; i < n; i++){
+    var v = 1 + rnd(6);
+    out.push(v); sum += v; diceCounts[v]++;
+  }
+  document.getElementById('diceOut').innerHTML = out.map(function(v){ return '<span class="dice">' + FACE[v] + '</span>'; }).join('');
+  document.getElementById('diceSum').textContent = n > 1 ? ('कुल: ' + sum + ' (औसत ' + (sum/n).toFixed(1) + ')') : ('आया: ' + sum);
+  var rolls = diceCounts.reduce(function(a,b){ return a+b; }, 0);
+  document.getElementById('diceHist').textContent = 'अब तक ' + rolls + ' रोल — ' + FACE.slice(1).map(function(f,i){ return f + ':' + diceCounts[i+1]; }).join(' ');
+}
+function flip(){
+  var v = rnd(2);
+  coinCounts[v]++;
+  var el = document.getElementById('coinOut');
+  el.innerHTML = '<div class="coin">' + (v === 0 ? '🪙' : '॰') + '</div>';
+  document.getElementById('coinOut').lastChild.textContent = '';
+  el.innerHTML = '<div class="coin" style="color:#5d4037;font-family:serif">' + (v === 0 ? 'ह' : 'प') + '</div>';
+  document.getElementById('coinHist').textContent = '';
+  document.getElementById('diceHist').textContent = document.getElementById('diceHist').textContent;
+  var total = coinCounts[0] + coinCounts[1];
+  document.getElementById('coinHist').textContent = 'नतीजा: ' + (v === 0 ? 'हेड (Heads)' : 'टेल (Tails)') + ' — अब तक ' + total + ' उछाल: हेड ' + coinCounts[0] + ' / टेल ' + coinCounts[1];
+}
+roll();
+</script>
+</body>
+</html>

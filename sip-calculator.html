@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>SIP Calculator in Hindi – SIP कैलकुलेटर (म्यूचुअल फंड निवेश की मैच्योरिटी)</title>
+<meta name="description" content="SIP कैलकुलेटर हिंदी में – हर महीने की रकम, अपेक्षित रिटर्न और समय डालकर जानें कितना निवेश करना है और कितना बनेगा। म्यूचुअल फंड SIP की पूरी समझ समेत फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="SIP Calculator in Hindi – SIP कैलकुलेटर">
+<meta property="og:description" content="महीने की SIP से कितना फंड बनेगा – तुरंत जानें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SIP Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"SIP कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › SIP कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>📈 SIP कैलकुलेटर</h1>
+    <p>हर महीने की SIP से कितना फंड बनेगा – तुरंत जानें।</p>
+    <label for="sip">हर महीने की SIP राशि (₹)</label>
+    <input type="number" id="sip" placeholder="जैसे: 5000" min="100" step="any">
+    <div class="row">
+      <div>
+        <label for="ret">अपेक्षित सालाना रिटर्न (%)</label>
+        <input type="number" id="ret" placeholder="जैसे: 12" min="1" max="30" step="any">
+      </div>
+      <div>
+        <label for="yrs">निवेश अवधि (साल)</label>
+        <input type="number" id="yrs" placeholder="जैसे: 15" min="1" max="40" step="1">
+      </div>
+    </div>
+    <button onclick="calcSIP()">मैच्योरिटी राशि निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>SIP क्या है?</h2>
+    <p><strong>SIP (Systematic Investment Plan)</strong> म्यूचुअल फंड में हर महीने एक तय रकम लगाने का तरीका है। एक ही बार में बड़ा निवेश करने की जगह छोटे-छोटे किश्तों में निवेश – जैसे बचत का RD, पर market से जुड़ा।</p>
+    <h2>SIP क्यों अच्छी मानी जाती है?</h2>
+    <ul>
+      <li><strong>चक्रवृद्धि का जादू</strong> – लंबी अवधि में रिटर्न पर भी रिटर्न लगता है (हमारा ब्याज कैलकुलेटर देखें)</li>
+      <li><strong>आदत और अनुशासन</strong> – महीने की शुरुआत में बचत पहले, खर्च बाद में</li>
+      <li><strong>Market का उतार-चढ़ाव औसत हो जाता है</strong> – NAV ऊंचा हो तो कम units, नीचा हो तो ज़्यादा units (rupee cost averaging)</li>
+      <li>₹100–500 से शुरुआत हो सकती है – पैसा कम होना बहाना नहीं</li>
+    </ul>
+    <h2>उदाहरण से समझें (12% औसत रिटर्न मानकर)</h2>
+    <table>
+      <tr><th>मासिक SIP</th><th>10 साल</th><th>15 साल</th><th>20 साल</th></tr>
+      <tr><td>₹2,000</td><td>₹4.6 लाख</td><td>₹10 लाख</td><td>₹20 लाख</td></tr>
+      <tr><td>₹5,000</td><td>₹11.6 लाख</td><td>₹25.2 लाख</td><td>₹50 लाख</td></tr>
+      <tr><td>₹10,000</td><td>₹23.2 लाख</td><td>₹50.5 लाख</td><td>₹1 करोड़</td></tr>
+    </table>
+    <p>देखिए – समय और धैर्य ही असली फंड बनाते हैं। 15 साल में जितना पैसा लगता है, उसका दोगुना से ज़्यादा रिटर्न बन जाता है।</p>
+    <div class="note">⚠️ <strong>ज़रूरी:</strong> म्यूचुअल फंड के रिटर्न तय नहीं होते – market जोखिम रहता है। 12% एक लंबी अवधि का ऐतिहासिक औसत जैसा अनुमान है, गारंटी नहीं। निवेश से पहले scheme-related documents पढ़ें; ज़रूरत हो तो SEBI-registered advisor से सलाह लें। यह tool गणित सिखाता है, सलाह नहीं देता।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function calcSIP(){
+  var P = parseFloat(document.getElementById('sip').value);
+  var R = parseFloat(document.getElementById('ret').value);
+  var Y = parseInt(document.getElementById('yrs').value);
+  var out = document.getElementById('out');
+  if(!P || P < 100 || isNaN(R) || !Y || Y < 1 || Y > 40){ out.style.display='block'; out.innerHTML='⚠️ कृपया सही SIP राशि, रिटर्न और अवधि भरें (अवधि 1–40 साल)।'; return; }
+  var i = R/1200, n = Y*12, fv;
+  if(i === 0){ fv = P*n; }
+  else { fv = P * ((Math.pow(1+i,n) - 1)/i) * (1+i); }
+  var invested = P*n, gains = fv - invested;
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  var lakh = function(x){ return (x/100000).toFixed(1) + ' लाख'; };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">मैच्योरिटी राशि: ' + f(fv) + ' (' + lakh(fv) + ')</div>'
+    + '<p>आपका निवेश: <strong>' + f(invested) + '</strong> · अर्जित रिटर्न: <strong>' + f(gains) + '</strong></p>'
+    + '<p>रिटर्न निवेश का <strong>' + (invested>0 ? (gains/invested*100).toFixed(0) : 0) + '%</strong> — समय की शक्ति देखिए!</p>';
+}
+</script>
+</body>
+</html>

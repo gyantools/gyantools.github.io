@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Stopwatch &amp; Timer in Hindi – स्टॉपवॉच और टाइमर (मुफ़्त ऑनलाइन)</title>
+<meta name="description" content="मुफ़्त online stopwatch और countdown timer हिंदी में – पढ़ाई, व्यायाम, खाना और परीक्षा की तैयारी के लिए। लैप्स के साथ स्टॉपवॉच, अलार्म वाला टाइमर। बिना लॉगिन।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Stopwatch &amp; Timer in Hindi">
+<meta property="og:description" content="स्टॉपवॉच (लैप्स सहित) और अलार्म वाला टाइमर।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Stopwatch and Timer Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"स्टॉपवॉच और टाइमर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.mode{margin:12px 0}
+.mode button{background:#fff;color:#1a73e8;border:1px solid #dadce0;padding:8px 20px;border-radius:20px;font-size:.95rem;cursor:pointer;margin:4px;font-weight:600}
+.mode button.active{background:#1a73e8;color:#fff;border-color:#1a73e8}
+.clock{font-size:3.4rem;font-weight:700;color:#1a73e8;font-variant-numeric:tabular-nums;margin:18px 0;font-family:monospace}
+.clock.warn{color:#d93025}
+button.play{background:#1a73e8;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin:6px}
+button.play:hover{background:#1557b0}
+button.gray{background:#fff;color:#1a73e8;border:1px solid #dadce0}
+.timein{display:flex;gap:10px;justify-content:center;margin:10px 0;flex-wrap:wrap}
+.timein input{width:110px;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1.2rem;text-align:center;font-family:inherit}
+.timein label{font-weight:600;display:block;margin-bottom:4px}
+.laps{max-width:340px;margin:16px auto;text-align:left}
+.laps div{background:#f1f3f4;padding:8px 14px;border-radius:8px;margin:6px 0;font-variant-numeric:tabular-nums}
+#msg{font-weight:600;min-height:1.6em;margin-top:8px}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › स्टॉपवॉच &amp; टाइमर</p>
+
+  <div class="tool-box">
+    <h1>⏱️ स्टॉपवॉच &amp; टाइमर</h1>
+    <div class="mode">
+      <button id="swTab" class="active" onclick="tab('sw')">⏱️ स्टॉपवॉच</button>
+      <button id="tmTab" onclick="tab('tm')">⏳ टाइमर</button>
+    </div>
+
+    <div id="swBox">
+      <div class="clock" id="swDisp">00:00.00</div>
+      <div>
+        <button class="play" id="swStart" onclick="swToggle()">▶ शुरू</button>
+        <button class="play gray" onclick="swLap()">🚩 लैप</button>
+        <button class="play gray" onclick="swReset()">🔄 रीसेट</button>
+      </div>
+      <div class="laps" id="laps"></div>
+    </div>
+
+    <div id="tmBox" style="display:none">
+      <div class="timein">
+        <div><label>मिनट</label><input type="number" id="tmin" value="5" min="0" max="180"></div>
+        <div><label>सेकंड</label><input type="number" id="tsec" value="0" min="0" max="59"></div>
+      </div>
+      <div class="clock" id="tmDisp">05:00</div>
+      <div>
+        <button class="play" onclick="tmToggle()">▶ शुरू</button>
+        <button class="play gray" onclick="tmReset()">🔄 रीसेट</button>
+      </div>
+      <p id="msg"></p>
+    </div>
+  </div>
+
+  <article>
+    <h2>किन कामों में लगता है?</h2>
+    <ul>
+      <li><strong>पढ़ाई:</strong> 25 मिनट पढ़ो + 5 मिनट आराम (Pomodoro तरीका) – ध्यान बढ़ाने का सिद्ध तरीका</li>
+      <li><strong>व्यायाम:</strong> प्लैंक/स्क्वाट के सेट, दौड़ की टाइमिंग</li>
+      <li><strong>खाना:</strong> चाय उबलने, सब्ज़ी भूनने का उल्टा गिनती टाइमर</li>
+      <li><strong>परीक्षा की तैयारी:</strong> प्रश्नों को समय में हल करने की प्रैक्टिस</li>
+      <li><strong>खेल:</strong> दोस्तों के साथ चुनौतियाँ – किसका लैप तेज़?</li>
+    </ul>
+    <h2>तेज़ इस्तेमाल की ट्रिक्स</h2>
+    <ul>
+      <li>टाइमर में सेट की तारीख़ें रीसेट होती हैं रीसेट दबाने पर – बार-बार वही समय चाहिए तो रीसेट के बाद शुरू दबाते रहें</li>
+      <li>स्क्रीन पर रखकर इस्तेमाल करें – यह पूरा tool offline भी चलता है</li>
+      <li>अलार्म के लिए फोन का मेहरबान/साइलेंट मोड देख लें</li>
+    </ul>
+    <div class="note">🔒 कोई लॉगिन नहीं, कोई data सेव नहीं – यह tool पूरी तरह आपके ब्राउज़र में चलता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function tab(t){
+  document.getElementById('swBox').style.display = t === 'sw' ? 'block' : 'none';
+  document.getElementById('tmBox').style.display = t === 'tm' ? 'block' : 'none';
+  document.getElementById('swTab').className = t === 'sw' ? 'active' : '';
+  document.getElementById('tmTab').className = t === 'tm' ? 'active' : '';
+}
+
+/* ===== स्टॉपवॉच ===== */
+var swRun = false, swBase = 0, swElapsed = 0, swT = null, lapCount = 0;
+function fmt(ms){
+  var m = Math.floor(ms/60000), s = Math.floor(ms%60000/1000), cs = Math.floor(ms%1000/10);
+  return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s + '.' + (cs < 10 ? '0' : '') + cs;
+}
+function swNow(){ return swElapsed + (swRun ? Date.now() - swBase : 0); }
+function swTick(){
+  document.getElementById('swDisp').textContent = fmt(swNow());
+}
+function swToggle(){
+  if(swRun){
+    swElapsed = swNow(); swRun = false; clearInterval(swT);
+    document.getElementById('swStart').textContent = '▶ शुरू';
+  } else {
+    swBase = Date.now(); swRun = true;
+    swT = setInterval(swTick, 33);
+    document.getElementById('swStart').textContent = '⏸ रोकें';
+  }
+}
+function swLap(){
+  if(!swRun && swNow() === 0) return;
+  lapCount++;
+  var d = document.createElement('div');
+  d.innerHTML = '🚩 लैप ' + lapCount + ' — <strong>' + fmt(swNow()) + '</strong>';
+  document.getElementById('laps').prepend(d);
+}
+function swReset(){
+  swRun = false; clearInterval(swT); swElapsed = 0; lapCount = 0;
+  document.getElementById('swDisp').textContent = '00:00.00';
+  document.getElementById('laps').innerHTML = '';
+  document.getElementById('swStart').textContent = '▶ शुरू';
+}
+
+/* ===== टाइमर ===== */
+var tmRun = false, tmEnd = 0, tmLeft = 0, tmT = null;
+function tmTotal(){
+  var m = parseInt(document.getElementById('tmin').value) || 0;
+  var s = parseInt(document.getElementById('tsec').value) || 0;
+  if(m === 0 && s === 0) s = 5;
+  return m*60000 + s*1000;
+}
+function tmDisp(ms){
+  var m = Math.floor(ms/60000), s = Math.ceil(ms%60000/1000);
+  if(s === 60){ m++; s = 0; }
+  document.getElementById('tmDisp').textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  document.getElementById('tmDisp').className = 'clock' + (ms <= 10000 ? ' warn' : '');
+}
+function beep(){
+  try {
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    for(var i = 0; i < 3; i++){
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.connect(g); g.connect(ctx.destination);
+      o.frequency.value = 880;
+      g.gain.setValueAtTime(0.001, ctx.currentTime + i*0.4);
+      g.gain.exponentialRampToValueAtTime(0.3, ctx.currentTime + i*0.4 + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i*0.4 + 0.35);
+      o.start(ctx.currentTime + i*0.4);
+      o.stop(ctx.currentTime + i*0.4 + 0.4);
+    }
+  } catch(e){}
+}
+function tmToggle(){
+  if(tmRun){
+    tmLeft = tmEnd - Date.now(); tmRun = false; clearInterval(tmT);
+    document.getElementById('msg').textContent = '⏸ टाइमर रुका है';
+    return;
+  }
+  if(tmLeft <= 0) tmLeft = tmTotal();
+  tmEnd = Date.now() + tmLeft; tmRun = true;
+  document.getElementById('msg').textContent = '';
+  tmT = setInterval(function(){
+    var left = tmEnd - Date.now();
+    if(left <= 0){
+      clearInterval(tmT); tmRun = false; tmLeft = 0;
+      tmDisp(0); beep();
+      document.getElementById('msg').textContent = '⏰ समय पूरा हुआ!';
+      return;
+    }
+    tmDisp(left);
+  }, 200);
+}
+function tmReset(){
+  tmRun = false; clearInterval(tmT); tmLeft = 0;
+  tmDisp(tmTotal());
+  document.getElementById('msg').textContent = '';
+}
+tmDisp(tmTotal());
+</script>
+</body>
+</html>

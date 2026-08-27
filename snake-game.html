@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Snake Game in Hindi – साँप वाला गेम खेलें (मुफ़्त)</title>
+<meta name="description" content="क्लासिक Snake गेम हिंदी में – फल खाओ, लंबा होओ, दीवार और खुद से बचो! मोबाइल बटन + कीबोर्ड दोनों से खेलें। PAWANGAMINGSTUDIO की पेशकश।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Snake Game – साँप वाला गेम in Hindi">
+<meta property="og:description" content="फल खाओ, हाई स्कोर बनाओ!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Snake Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"साँप वाला क्लासिक गेम हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+canvas{background:#174ea6;border-radius:12px;display:block;margin:16px auto;max-width:100%;touch-action:none}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.stats span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.stats b{color:#1a73e8}
+button.play{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:10px}
+button.play:hover{background:#1557b0}
+.pad{display:grid;grid-template-columns:60px 60px 60px;gap:8px;justify-content:center;margin:14px auto;width:max-content}
+.pad button{width:60px;height:52px;font-size:1.3rem;background:#e8f0fe;color:#1a73e8;border:none;border-radius:10px;cursor:pointer;font-weight:700}
+.pad button:hover{background:#d2e3fc}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Snake Game</p>
+
+  <div class="game-box">
+    <h1>🐍 साँप वाला गेम (Snake)</h1>
+    <p>🍎 फल खाओ, लंबे होओ – दीवार और अपनी ही देह से बचो!</p>
+    <div class="stats">
+      <span>🍎 स्कोर: <b id="score">0</b></span>
+      <span>🏆 हाई स्कोर: <b id="high">0</b></span>
+    </div>
+    <canvas id="cv" width="400" height="400"></canvas>
+    <div class="pad">
+      <span></span><button onclick="setDir(0,-1)">▲</button><span></span>
+      <button onclick="setDir(-1,0)">◀</button><button onclick="setDir(0,1)">▼</button><button onclick="setDir(1,0)">▶</button>
+    </div>
+    <div>
+      <button class="play" onclick="startGame()">▶ शुरू करें</button>
+      <button class="play" onclick="pauseGame()">⏸ रोकें</button>
+    </div>
+    <p id="msg" style="margin-top:12px;font-weight:600;min-height:1.6em"></p>
+  </div>
+
+  <article>
+    <h2>कैसे खेलें?</h2>
+    <ul>
+      <li><strong>कंप्यूटर:</strong> arrow keys (↑↓←→) या W-A-S-D</li>
+      <li><strong>मोबाइल:</strong> नीचे दिए बटन या canvas पर उंगली खींचकर (swipe)</li>
+      <li>हर फल ₹10… यानी 1 अंक 🙂 और हर फल के बाद साँप थोड़ा तेज़ हो जाता है!</li>
+      <li>दीवार या खुद से टकराने पर गेम खत्म</li>
+    </ul>
+    <p>🎮 यह गेम <strong>PAWANGAMINGSTUDIO</strong> की एक पेशकश है। Tic-Tac-Toe और जोड़ी मिलाओ भी खेलें!</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+var CELL = 20, GRID = 20;
+var snake, dir, nextDir, food, score, high = 0, timer = null, speed, running = false, over = false;
+try { high = parseInt(localStorage.getItem('gyantools_snake_high')) || 0; } catch(e){}
+document.getElementById('high').textContent = high;
+
+function startGame(){
+  snake = [{x:10,y:10},{x:9,y:10},{x:8,y:10}];
+  dir = {x:1,y:0}; nextDir = dir;
+  score = 0; over = false; speed = 150;
+  placeFood();
+  document.getElementById('score').textContent = 0;
+  document.getElementById('msg').textContent = '';
+  clearInterval(timer);
+  timer = setInterval(tick, speed);
+  running = true;
+  draw();
+}
+function pauseGame(){
+  if(!running) return;
+  clearInterval(timer); running = false;
+  document.getElementById('msg').textContent = '⏸ रुका हुआ – "शुरू करें" दबाकर जारी रखें… नहीं, "शुरू" नए गेम से शुरू करेगा, इसलिए नीचे ⏸ ही रखें';
+  document.getElementById('msg').textContent = '⏸ गेम रुका है (नया गेम = शुरू करें)';
+}
+function placeFood(){
+  do {
+    food = {x: Math.floor(Math.random()*GRID), y: Math.floor(Math.random()*GRID)};
+  } while(snake.some(function(s){ return s.x === food.x && s.y === food.y; }));
+}
+function setDir(x, y){
+  if(dir.x === -x && dir.y === -y) return;   // उलटी दिशा मना
+  nextDir = {x:x, y:y};
+}
+function tick(){
+  dir = nextDir;
+  var head = {x: snake[0].x + dir.x, y: snake[0].y + dir.y};
+  if(head.x < 0 || head.y < 0 || head.x >= GRID || head.y >= GRID || snake.some(function(s){ return s.x === head.x && s.y === head.y; })){
+    gameOver();
+    return;
+  }
+  snake.unshift(head);
+  if(head.x === food.x && head.y === food.y){
+    score++;
+    document.getElementById('score').textContent = score;
+    placeFood();
+    if(score % 5 === 0 && speed > 70){
+      speed -= 10;
+      clearInterval(timer);
+      timer = setInterval(tick, speed);
+    }
+  } else {
+    snake.pop();
+  }
+  draw();
+}
+function gameOver(){
+  clearInterval(timer); running = false; over = true;
+  if(score > high){
+    high = score;
+    document.getElementById('high').textContent = high;
+    try { localStorage.setItem('gyantools_snake_high', high); } catch(e){}
+    document.getElementById('msg').textContent = '🏆 नया हाई स्कोर: ' + score + '! शाबाश!';
+  } else {
+    document.getElementById('msg').textContent = '💀 गेम खत्म! स्कोर: ' + score + ' – फिर से "शुरू करें" दबाएं';
+  }
+  draw(true);
+}
+function draw(dead){
+  ctx.fillStyle = '#174ea6';
+  ctx.fillRect(0, 0, cv.width, cv.height);
+  // फल
+  if(food){
+    ctx.fillStyle = '#ea4335';
+    ctx.beginPath();
+    ctx.arc(food.x*CELL + CELL/2, food.y*CELL + CELL/2, CELL/2 - 2, 0, Math.PI*2);
+    ctx.fill();
+  }
+  // साँप
+  snake.forEach(function(s, i){
+    ctx.fillStyle = i === 0 ? '#ffffff' : (dead ? '#9aa0a6' : '#8ab4f8');
+    ctx.fillRect(s.x*CELL + 1, s.y*CELL + 1, CELL - 2, CELL - 2);
+  });
+  if(dead){
+    ctx.fillStyle = 'rgba(32,33,36,.6)';
+    ctx.fillRect(0, 0, cv.width, cv.height);
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 26px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('💀 गेम खत्म', cv.width/2, cv.height/2 - 10);
+    ctx.font = '16px sans-serif';
+    ctx.fillText('स्कोर: ' + score, cv.width/2, cv.height/2 + 20);
+  }
+}
+// कीबोर्ड
+document.addEventListener('keydown', function(e){
+  var k = e.key;
+  if(k === 'ArrowUp' || k === 'w' || k === 'W') { setDir(0,-1); e.preventDefault(); }
+  else if(k === 'ArrowDown' || k === 's' || k === 'S') { setDir(0,1); e.preventDefault(); }
+  else if(k === 'ArrowLeft' || k === 'a' || k === 'A') { setDir(-1,0); e.preventDefault(); }
+  else if(k === 'ArrowRight' || k === 'd' || k === 'D') { setDir(1,0); e.preventDefault(); }
+});
+// स्वाइप
+var tx = null, ty = null;
+cv.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, {passive:true});
+cv.addEventListener('touchend', function(e){
+  if(tx === null) return;
+  var dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+  if(Math.abs(dx) > Math.abs(dy)) setDir(dx > 0 ? 1 : -1, 0);
+  else setDir(0, dy > 0 ? 1 : -1);
+  tx = null;
+}, {passive:true});
+// शुरुआती स्क्रीन
+snake = [{x:10,y:10},{x:9,y:10},{x:8,y:10}];
+dir = {x:1,y:0}; nextDir = dir; score = 0;
+placeFood();
+draw();
+document.getElementById('msg').textContent = '▶ "शुरू करें" दबाकर खेलना शुरू करें';
+</script>
+</body>
+</html>

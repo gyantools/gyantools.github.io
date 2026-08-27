@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Marks Percentage Calculator in Hindi – नंबर, प्रतिशत और ग्रेड कैलकुलेटर (CGPA)</title>
+<meta name="description" content="नंबर कैलकुलेटर हिंदी में – सभी विषयों के नंबर डालें और कुल प्रतिशत, ग्रेड (CBSE शैली) निकालें। CGPA ↔ Percentage कन्वर्टर (×9.5) समेत। Students के लिए फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Marks Percentage Calculator in Hindi">
+<meta property="og:description" content="नंबर से प्रतिशत और ग्रेड निकालें – CGPA कन्वर्टर सहित।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Marks Percentage Calculator Hindi","applicationCategory":"EducationalApplication","operatingSystem":"Web","description":"नंबर से प्रतिशत और ग्रेड कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.btn2{background:#fff;color:#1a73e8;border:1px solid #dadce0;padding:8px 18px;font-size:.9rem}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.srow{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;margin-bottom:8px}
+.srow input{width:100%}
+@media(max-width:600px){.srow{grid-template-columns:1fr 1fr}.srow input:first-child{grid-column:1/3}}
+.hrow{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;font-weight:600;color:#5f6368;font-size:.9rem}
+@media(max-width:600px){.hrow{display:none}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+.cgpa{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:end;margin-top:8px}
+@media(max-width:600px){.cgpa{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › नंबर/प्रतिशत कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>🎓 नंबर और प्रतिशत कैलकुलेटर</h1>
+    <p>हर विषय के नंबर भरें – कुल प्रतिशत और ग्रेड तुरंत निकलेंगे।</p>
+    <div class="hrow"><span>विषय (नाम optional)</span><span>प्राप्त नंबर</span><span>कुल नंबर</span></div>
+    <div id="rows"></div>
+    <div>
+      <button class="btn2" onclick="addRow()">+ विषय जोड़ें</button>
+      <button class="btn2" onclick="removeRow()">− विषय हटाएं</button>
+    </div>
+    <button onclick="calc()">प्रतिशत निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <div class="tool-box">
+    <h1>🔄 CGPA ↔ Percentage कन्वर्टर (CBSE)</h1>
+    <p>CBSE नियम: <strong>Percentage = CGPA × 9.5</strong> — किसी भी एक में डालें, दूसरा अपने आप निकलेगा।</p>
+    <div class="cgpa">
+      <div>
+        <label for="cgpa">CGPA</label>
+        <input type="number" id="cgpa" placeholder="जैसे: 8" step="any" min="0" max="10" oninput="cgpa2pct()" style="width:100%">
+      </div>
+      <div style="text-align:center;font-size:1.5rem;color:#5f6368;padding-bottom:10px">⇄</div>
+      <div>
+        <label for="pct">Percentage (%)</label>
+        <input type="number" id="pct" placeholder="जैसे: 76" step="any" min="0" max="100" oninput="pct2cgpa()" style="width:100%">
+      </div>
+    </div>
+    <div class="result" id="out2" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>प्रतिशत का फॉर्मूला</h2>
+    <p><strong>Percentage = (प्राप्त नंबर ÷ कुल नंबर) × 100</strong> — जैसे 5 विषयों में 415 नंबर 500 में से आए तो (415÷500)×100 = <strong>83%</strong>।</p>
+    <h2>CBSE शैली की ग्रेडिंग</h2>
+    <table>
+      <tr><th>प्रतिशत</th><th>ग्रेड</th><th>ग्रेड पॉइंट</th></tr>
+      <tr><td>91 – 100</td><td>A1</td><td>10</td></tr>
+      <tr><td>81 – 90</td><td>A2</td><td>9</td></tr>
+      <tr><td>71 – 80</td><td>B1</td><td>8</td></tr>
+      <tr><td>61 – 70</td><td>B2</td><td>7</td></tr>
+      <tr><td>51 – 60</td><td>C1</td><td>6</td></tr>
+      <tr><td>41 – 50</td><td>C2</td><td>5</td></tr>
+      <tr><td>33 – 40</td><td>C3</td><td>4</td></tr>
+      <tr><td>33 से कम</td><td>F (फिर से)</td><td>—</td></tr>
+    </table>
+    <p>पास होने के लिए हर विषय में कम से कम <strong>33%</strong> नंबर चाहिए।</p>
+    <h2>CGPA × 9.5 का रहस्य</h2>
+    <p>CBSE ने पाया कि A1 (91–100) वाले students का औसत 95 निकलता है। 95 ÷ 10 (A1 का grade point) = <strong>9.5</strong>। इसीलिए CGPA को 9.5 से गुणा करने पर अनुमानित percentage आता है। उदाहरण: ग्रेड पॉइंट 9+8+8+7+8 = 40 → CGPA = 40÷5 = 8 → Percentage = 8 × 9.5 = <strong>76%</strong>।</p>
+    <div class="note">💡 <strong>ध्यान दें:</strong> कई बोर्ड अब सीधे नंबर और प्रतिशत देते हैं। अपने बोर्ड/स्कूल के नियम ही अंतिम मानें – यह tool गणित का अंदाज़ा देता है।</div>
+    <div class="note">🔒 आपके नंबर कहीं नहीं जाते – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function grade(p){
+  if(p>=91) return 'A1'; if(p>=81) return 'A2'; if(p>=71) return 'B1';
+  if(p>=61) return 'B2'; if(p>=51) return 'C1'; if(p>=41) return 'C2';
+  if(p>=33) return 'C3'; return 'F (फिर से)';
+}
+function addRow(){
+  var d = document.createElement('div');
+  d.className = 'srow';
+  d.innerHTML = '<input type="text" placeholder="विषय"><input type="number" class="obt" placeholder="प्राप्त" min="0" step="any"><input type="number" class="max" placeholder="कुल" min="1" step="any">';
+  document.getElementById('rows').appendChild(d);
+}
+function removeRow(){
+  var r = document.getElementById('rows');
+  if(r.children.length > 1) r.removeChild(r.lastChild);
+}
+function calc(){
+  var rows = document.querySelectorAll('#rows .srow');
+  var tObt = 0, tMax = 0, lines = '', bad = false;
+  rows.forEach(function(r){
+    var name = r.children[0].value || 'विषय';
+    var o = parseFloat(r.children[1].value), m = parseFloat(r.children[2].value);
+    if(isNaN(o) || isNaN(m) || m <= 0){ bad = true; return; }
+    tObt += o; tMax += m;
+    lines += '<li>' + name + ': ' + o + '/' + m + ' = <strong>' + (o/m*100).toFixed(2) + '%</strong> (' + grade(o/m*100) + ')</li>';
+  });
+  var out = document.getElementById('out');
+  if(bad || tMax === 0){ out.style.display='block'; out.innerHTML='⚠️ कृपया हर पंक्ति में प्राप्त और कुल नंबर सही भरें।'; return; }
+  var pct = tObt/tMax*100;
+  out.style.display='block';
+  out.innerHTML = '<div class="big">कुल प्रतिशत: ' + pct.toFixed(2) + '%</div>'
+    + '<p>कुल नंबर: <strong>' + tObt + ' / ' + tMax + '</strong> · ग्रेड: <strong>' + grade(pct) + '</strong>' + (pct >= 33 ? ' · ✅ पास' : ' · ❌ सुधार चाहिए') + '</p>'
+    + '<ul style="padding-left:20px;margin-top:8px">' + lines + '</ul>';
+}
+function cgpa2pct(){
+  var c = parseFloat(document.getElementById('cgpa').value), out = document.getElementById('out2');
+  if(isNaN(c) || c < 0 || c > 10){ out.style.display='block'; out.innerHTML='⚠️ CGPA 0 से 10 के बीच डालें।'; return; }
+  out.style.display='block';
+  out.innerHTML = 'CGPA ' + c + ' = <strong>' + (c*9.5).toFixed(2) + '%</strong> (approx)';
+  document.getElementById('pct').value = '';
+}
+function pct2cgpa(){
+  var p = parseFloat(document.getElementById('pct').value), out = document.getElementById('out2');
+  if(isNaN(p) || p < 0 || p > 100){ out.style.display='block'; out.innerHTML='⚠️ प्रतिशत 0 से 100 के बीच डालें।'; return; }
+  out.style.display='block';
+  out.innerHTML = p + '% = <strong>CGPA ' + (p/9.5).toFixed(2) + '</strong> (approx)';
+  document.getElementById('cgpa').value = '';
+}
+addRow(); addRow(); addRow(); addRow(); addRow(); addRow();
+</script>
+</body>
+</html>

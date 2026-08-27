@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>BMI Calculator in Hindi – बीएमआई कैलकुलेटर (भारतीय मानक सहित)</title>
+<meta name="description" content="BMI कैलकुलेटर हिंदी में – लंबाई और वजन से अपना BMI निकालें। WHO और भारतीय/एशियाई मानक दोनों से जानें कि वजन सही है या नहीं। फ्री, बिना लॉगिन।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="BMI Calculator in Hindi – बीएमआई कैलकुलेटर">
+<meta property="og:description" content="लंबाई-वजन से BMI निकालें – WHO + भारतीय मानक दोनों में।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"BMI Calculator Hindi","applicationCategory":"HealthApplication","operatingSystem":"Web","description":"BMI कैलकुलेटर हिंदी में – WHO और भारतीय मानक सहित","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › BMI कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>⚖️ BMI कैलकुलेटर (बीएमआई)</h1>
+    <p>लंबाई और वजन डालें – BMI दोनों मानकों (WHO और भारतीय) में निकलेगा।</p>
+    <label for="hunit">लंबाई किसमें बताएंगे?</label>
+    <select id="hunit" onchange="toggleH()">
+      <option value="cm">सेंटीमीटर (cm) में</option>
+      <option value="ft">फीट-इंच में</option>
+    </select>
+    <div id="cmbox">
+      <label for="hcm">लंबाई (cm)</label>
+      <input type="number" id="hcm" placeholder="जैसे: 170" min="1" step="any">
+    </div>
+    <div id="ftbox" style="display:none">
+      <label>लंबाई</label>
+      <div class="row">
+        <input type="number" id="hft" placeholder="फीट (जैसे: 5)" min="0" step="1">
+        <input type="number" id="hin" placeholder="इंच (जैसे: 6)" min="0" max="11" step="any">
+      </div>
+    </div>
+    <label for="wt">वजन (kg)</label>
+    <input type="number" id="wt" placeholder="जैसे: 65" min="1" step="any">
+    <button onclick="calcBMI()">BMI निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>BMI क्या होता है?</h2>
+    <p><strong>BMI (Body Mass Index)</strong> एक सीधा-सादा हिसाब है जो बताता है कि आपका वजन, आपकी लंबाई के हिसाब से कितना है। फॉर्मूला:</p>
+    <p><strong>BMI = वजन (kg) ÷ [लंबाई (m)]²</strong> — जैसे 65 kg वजन और 1.70 m लंबाई पर BMI = 65 ÷ (1.70×1.70) = 22.5</p>
+
+    <h2>भारतीय/एशियाई मानक क्यों अलग हैं?</h2>
+    <p>रिसर्च में पाया गया है कि <strong>एक ही BMI पर भारतीयों के शरीर में ज़्यादा चर्बी</strong> (खासकर पेट के आस-पास) जमती है और डायबिटीज़, ब्लड प्रेशर व दिल की बीमारी का खतरा कम BMI पर ही शुरू हो जाता है। इसीलिए WHO और भारतीय गाइडलाइन्स में भारतीयों के लिए कट-ऑफ कम रखे गए हैं:</p>
+    <table>
+      <tr><th>श्रेणी</th><th>WHO मानक</th><th>भारतीय/एशियाई मानक</th></tr>
+      <tr><td>कम वजन</td><td>18.5 से कम</td><td>18.5 से कम</td></tr>
+      <tr><td>सामान्य</td><td>18.5 – 24.9</td><td><strong>18.5 – 22.9</strong></td></tr>
+      <tr><td>अधिक वजन (at risk)</td><td>25.0 – 29.9</td><td><strong>23.0 – 24.9</strong></td></tr>
+      <tr><td>मोटापा</td><td>30 और ऊपर</td><td><strong>25 और ऊपर</strong></td></tr>
+    </table>
+    <p>यानी BMI 24 पर अंग्रेज़ी चार्ट आपको "normal" बताएगा, लेकिन भारतीय मानक में आप "at risk" में आ जाते हैं।</p>
+
+    <h2>BMI की सीमाएं</h2>
+    <ul>
+      <li>BMI muscle और चर्बी में फर्क नहीं करता – bodybuilders का BMI ऊंचा आता है जबकि वजन मोटापे से नहीं होता</li>
+      <li>बच्चों, गर्भवती महिलाओं और बहुत बूढ़े लोगों के लिए BMI सही पैमाना नहीं</li>
+      <li>BMI सिर्फ एक शुरुआती संकेत है – पूरी जांच के लिए डॉक्टर से मिलें</li>
+    </ul>
+    <div class="note">⚕️ <strong>सूचना:</strong> यह tool सिर्फ जानकारी के लिए है, यह medical सलाह नहीं है। सेहत से जुड़े फैसले डॉक्टर की सलाह से लें।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function toggleH(){
+  var u = document.getElementById('hunit').value;
+  document.getElementById('cmbox').style.display = u==='cm' ? 'block' : 'none';
+  document.getElementById('ftbox').style.display = u==='ft' ? 'block' : 'none';
+}
+function catWHO(b){ return b<18.5?'कम वजन (Underweight)': b<25?'सामान्य (Normal)': b<30?'अधिक वजन (Overweight)':'मोटापा (Obese)'; }
+function catIN(b){ return b<18.5?'कम वजन': b<23?'सामान्य': b<25?'अधिक वजन (at risk)':'मोटापा (Obese)'; }
+function calcBMI(){
+  var out = document.getElementById('out');
+  var u = document.getElementById('hunit').value, cm;
+  if(u==='cm'){ cm = parseFloat(document.getElementById('hcm').value); }
+  else {
+    var ft = parseFloat(document.getElementById('hft').value)||0;
+    var inch = parseFloat(document.getElementById('hin').value)||0;
+    cm = ft*30.48 + inch*2.54;
+  }
+  var kg = parseFloat(document.getElementById('wt').value);
+  if(!cm || cm<50 || cm>250 || !kg || kg<10 || kg>300){ out.style.display='block'; out.innerHTML='⚠️ कृपया सही लंबाई और वजन भरें।'; return; }
+  var m = cm/100, bmi = kg/(m*m);
+  var lo = 18.5*m*m, hi = 22.9*m*m;
+  out.style.display='block';
+  out.innerHTML = '<div class="big">आपका BMI: ' + bmi.toFixed(1) + '</div>'
+    + '<p>🇮🇳 <strong>भारतीय मानक:</strong> ' + catIN(bmi) + '</p>'
+    + '<p>🌍 <strong>WHO मानक:</strong> ' + catWHO(bmi) + '</p>'
+    + '<p>💡 आपकी लंबाई के हिसाब से सेहतमंद वजन: <strong>' + lo.toFixed(1) + ' – ' + hi.toFixed(1) + ' kg</strong> (भारतीय मानक)</p>';
+}
+</script>
+</body>
+</html>

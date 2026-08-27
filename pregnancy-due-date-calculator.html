@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Pregnancy Due Date Calculator in Hindi – डिलीवरी की तारीख (Naegele's Rule)</title>
+<meta name="description" content="प्रेग्नेंसी ड्यू डेट कैलकुलेटर हिंदी में – आख़िरी पीरियड (LMP) की तारीख से डिलीवरी की अनुमानित तारीख, अभी कौन-सा हफ़्ता और trimester चल रहा है। Naegele's rule (280 दिन)।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Pregnancy Due Date Calculator in Hindi">
+<meta property="og:description" content="LMP से डिलीवरी की तारीख और चल रहा हफ़्ता।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pregnancy Due Date Calculator Hindi","applicationCategory":"HealthApplication","operatingSystem":"Web","description":"प्रेग्नेंसी ड्यू डेट कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;max-width:520px;margin-left:auto;margin-right:auto}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;margin-bottom:6px;text-align:center}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px;width:100%}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:18px;margin-top:16px}
+.result .big{font-size:1.7rem;font-weight:700;color:#1a73e8;text-align:center}
+.result p{margin-top:8px}
+.progress{background:#f1f3f4;border-radius:20px;height:24px;margin-top:12px;overflow:hidden}
+.progress .bar{background:linear-gradient(90deg,#1a73e8,#137333);height:100%;border-radius:20px;transition:.3s}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Pregnancy Due Date कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>🤰 डिलीवरी की तारीख कैलकुलेटर</h1>
+    <p style="text-align:center">आख़िरी पीरियड की पहली तारीख से अनुमान (Naegele's rule)।</p>
+    <label for="lmp">आख़िरी पीरियड की पहली तारीख (LMP)</label>
+    <input type="date" id="lmp">
+    <label for="cycle">पीरियड साइकिल कितने दिन का है?</label>
+    <select id="cycle">
+      <option value="28">28 दिन (सामान्य)</option>
+      <option value="24">24 दिन</option>
+      <option value="26">26 दिन</option>
+      <option value="30">30 दिन</option>
+      <option value="32">32 दिन</option>
+      <option value="35">35 दिन</option>
+    </select>
+    <button onclick="calc()">ड्यू डेट निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>Naegele's rule क्या है?</h2>
+    <p>दुनिया भर के डॉक्टर इसी standard तरीके से अनुमान लगाते हैं: <strong>ड्यू डेट = LMP + 280 दिन</strong> (यानी 40 हफ़्ते)। चूंकि गणना पीरियड की तारीख से होती है, इसलिए पहले सप्ताह में ही "1 हफ़्ता प्रेग्नेंट" गिना जाता है। अगर साइकिल 28 दिन से लंबा/छोटा है तो उतना दिन जोड़/घटा दें — यह calculator अपने आप करता है।</p>
+    <h2>तीनों trimester</h2>
+    <table>
+      <tr><th>Trimester</th><th>हफ़्ते</th><th>क्या होता है</th></tr>
+      <tr><td>पहला</td><td>1–12</td><td>सबसे नाज़ुक — दिल, दिमाग़, अंग बनते हैं; सावधानी सबसे ज़्यादा</td></tr>
+      <tr><td>दूसरा</td><td>13–27</td><td>सुनवाई/हलचल शुरू; आमतौर पर सबसे आराम वाला दौर</td></tr>
+      <tr><td>तीसरा</td><td>28–40</td><td>बच्चा तेज़ी से बढ़ता है; तैयारी और जांचें</td></tr>
+    </table>
+    <h2>याद रखने वाली बातें</h2>
+    <ul>
+      <li>सिर्फ <strong>~5% बच्चे</strong> exact due date पर आते हैं — 37 से 42 हफ़्ते तक कोई भी दिन normal</li>
+      <li>अनियमित साइकिल हो तो <strong>पहली ultrasound</strong> की तारीख ज़्यादा सही मानी जाती है</li>
+      <li>यह अनुमान है — डॉक्टर की तारीख ही आख़िरी सच</li>
+    </ul>
+    <div class="note">⚕️ <strong>सूचना:</strong> यह tool शिक्षा के लिए है, medical सलाह नहीं। गर्भावस्था की हर जांच और फैसला अपने डॉक्टर की निगरानी में करें।</div>
+    <div class="note">🔒 आपकी तारीख कहीं नहीं जाती – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function calc(){
+  var lmp = document.getElementById('lmp').value;
+  var cycle = parseInt(document.getElementById('cycle').value);
+  var out = document.getElementById('out');
+  if(!lmp){ out.style.display='block'; out.innerHTML='⚠️ कृपया LMP की तारीख चुनें।'; return; }
+  var d = new Date(lmp);
+  var adj = cycle - 28;
+  var due = new Date(d.getTime() + (280 + adj) * 86400000);
+  var today = new Date();
+  today.setHours(0,0,0,0);
+  var daysPreg = Math.floor((today - d) / 86400000);
+  var week = Math.floor(daysPreg / 7);
+  var daysLeft = Math.floor((due - today) / 86400000);
+  var fmt = function(x){ return x.toLocaleDateString('hi-IN', {day:'numeric', month:'long', year:'numeric'}); };
+  var trimester = week < 13 ? 'पहला trimester (1–12 हफ़्ते)' : week < 28 ? 'दूसरा trimester (13–27 हफ़्ते)' : 'तीसरा trimester (28–40 हफ़्ते)';
+  var pct = Math.max(0, Math.min(100, Math.round(daysPreg / 280 * 100)));
+  var html;
+  if(daysPreg < 0){
+    html = '<div class="big">ड्यू डेट: ' + fmt(due) + '</div><p style="text-align:center">(अभी पीरियड की तारीख आनी बाक़ी है)</p>';
+  } else if(daysPreg > 300){
+    html = '<div class="big">ड्यू डेट: ' + fmt(due) + '</div><p style="text-align:center">यह तारीख पार हो चुकी है — डॉक्टर से मिलें।</p>';
+  } else {
+    html = '<div class="big">ड्यू डेट: ' + fmt(due) + '</div>'
+      + '<p>अभी चल रहा है: <strong>' + week + ' हफ़्ते ' + (daysPreg % 7) + ' दिन</strong> (' + trimester + ')</p>'
+      + '<p>बच्चे के आने में लगभग: <strong>' + daysLeft + ' दिन</strong></p>'
+      + '<div class="progress"><div class="bar" style="width:' + pct + '%"></div></div>'
+      + '<p style="text-align:center;font-size:.85rem;color:#5f6368">' + pct + '% पूरा — साइकिल ' + cycle + ' दिन का मानकर</p>';
+  }
+  out.style.display='block';
+  out.innerHTML = html;
+}
+</script>
+</body>
+</html>

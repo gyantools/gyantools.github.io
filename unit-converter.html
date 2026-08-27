@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Unit Converter in Hindi – लंबाई, वजन, तापमान कन्वर्टर (KM to Mile, KG to Pound)</title>
+<meta name="description" content="फ्री यूनिट कन्वर्टर हिंदी में – लंबाई (KM, मील, फीट), वजन (KG, पाउंड, क्विंटल) और तापमान (Celsius, Fahrenheit) आपस में बदलें। बिना लॉगिन।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Unit Converter in Hindi – इकाई कन्वर्टर">
+<meta property="og:description" content="लंबाई, वजन और तापमान की इकाइयां मुफ़्त में बदलें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Unit Converter Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"लंबाई, वजन और तापमान कन्वर्टर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:end}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › यूनिट कन्वर्टर</p>
+
+  <div class="tool-box">
+    <h1>📐 यूनिट कन्वर्टर</h1>
+    <p>लंबाई, वजन और तापमान की इकाइयां आपस में बदलें।</p>
+    <label for="cat">श्रेणी चुनें</label>
+    <select id="cat" onchange="fillUnits()">
+      <option value="length">📏 लंबाई (Length)</option>
+      <option value="weight">⚖️ वजन (Weight)</option>
+      <option value="temp">🌡️ तापमान (Temperature)</option>
+    </select>
+    <label for="val">मान (Value)</label>
+    <input type="number" id="val" placeholder="जैसे: 10" step="any">
+    <div class="row">
+      <div>
+        <label for="from">से (From)</label>
+        <select id="from"></select>
+      </div>
+      <div>
+        <label for="to">में (To)</label>
+        <select id="to"></select>
+      </div>
+    </div>
+    <button onclick="convert()">बदलें (Convert)</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>यूनिट कन्वर्टर क्यों ज़रूरी है?</h2>
+    <p>भारत में हम मीटर-किलोग्राम (metric) system इस्तेमाल करते हैं, लेकिन अंग्रेज़ी दुनिया (America, UK) मील, फीट, पाउंड जैसी इकाइयों में सोचती है। ऐसे में अक्सर confusion होता है:</p>
+    <ul>
+      <li>गाड़ी की speed 100 km/h में कितने mile/h हुए?</li>
+      <li>अमेरिकी recipe में 5 पाउंड कितने किलो हुआ?</li>
+      <li>मौसम ऐप में 95°F कितने डिग्री सेल्सियस हुआ?</li>
+      <li>ज़मीन का 1 एकड़ कितने वर्ग मीटर होता है?</li>
+    </ul>
+    <h2>कुछ ज़रूरी रूपांतरण (याद रखने लायक)</h2>
+    <ul>
+      <li>1 मील (mile) = 1.609 किलोमीटर</li>
+      <li>1 इंच (inch) = 2.54 सेंटीमीटर</li>
+      <li>1 फीट (feet) = 30.48 सेंटीमीटर</li>
+      <li>1 पाउंड (pound) = 453.6 ग्राम</li>
+      <li>1 क्विंटल = 100 किलोग्राम · 1 टन = 1000 किलोग्राम</li>
+      <li>तापमान: °F = (°C × 9/5) + 32 और °C = (°F − 32) × 5/9</li>
+    </ul>
+    <h2>किसानों के लिए खास</h2>
+    <p>मंडी में फसल अक्सर क्विंटल में बिकती है और खाद-बीज के बैग पाउंड या किलो में आते हैं। इस tool से आप तुरंत क्विंटल ↔ किलो ↔ पाउंड का हिसाब लगा सकते हैं।</p>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – conversion आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var units = {
+  length: [['mm','मिलीमीटर (mm)',0.001],['cm','सेंटीमीटर (cm)',0.01],['m','मीटर (m)',1],['km','किलोमीटर (km)',1000],['inch','इंच (inch)',0.0254],['ft','फीट (feet)',0.3048],['yd','गज (yard)',0.9144],['mile','मील (mile)',1609.344]],
+  weight: [['mg','मिलीग्राम (mg)',0.000001],['g','ग्राम (g)',0.001],['kg','किलोग्राम (kg)',1],['quintal','क्विंटल',100],['ton','टन (metric ton)',1000],['lb','पाउंड (pound)',0.45359237],['oz','औंस (ounce)',0.0283495]],
+  temp: [['C','सेल्सियस (°C)',1],['F','फेरनहाइट (°F)',1],['K','केल्विन (K)',1]]
+};
+function fillUnits(){
+  var cat = document.getElementById('cat').value;
+  var from = document.getElementById('from'), to = document.getElementById('to');
+  from.innerHTML = ''; to.innerHTML = '';
+  units[cat].forEach(function(u,i){
+    from.options.add(new Option(u[1], u[0]));
+    to.options.add(new Option(u[1], u[0]));
+  });
+  if(cat==='length'){ from.value='km'; to.value='mile'; }
+  if(cat==='weight'){ from.value='kg'; to.value='lb'; }
+  if(cat==='temp'){ from.value='C'; to.value='F'; }
+}
+function toC(v,u){ return u==='C'? v : u==='F'? (v-32)*5/9 : v-273.15; }
+function fromC(v,u){ return u==='C'? v : u==='F'? v*9/5+32 : v+273.15; }
+function convert(){
+  var cat = document.getElementById('cat').value;
+  var v = parseFloat(document.getElementById('val').value);
+  var fu = document.getElementById('from').value, tu = document.getElementById('to').value;
+  var out = document.getElementById('out');
+  if(isNaN(v)){ out.style.display='block'; out.innerHTML='⚠️ कृपया मान (value) भरें।'; return; }
+  var res;
+  if(cat==='temp'){ res = fromC(toC(v,fu), tu); }
+  else {
+    var f = units[cat].find(function(u){return u[0]===fu;})[2];
+    var t = units[cat].find(function(u){return u[0]===tu;})[2];
+    res = v*f/t;
+  }
+  var fname = units[cat].find(function(u){return u[0]===fu;})[1];
+  var tname = units[cat].find(function(u){return u[0]===tu;})[1];
+  out.style.display='block';
+  out.innerHTML = '<div class="big">' + v + ' ' + fname.split('(')[0].trim() + ' = ' + (+res.toFixed(6)) + ' ' + tname.split('(')[0].trim() + '</div><p>(' + fname + ' → ' + tname + ')</p>';
+}
+fillUnits();
+</script>
+</body>
+</html>

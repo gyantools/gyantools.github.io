@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Online Calculator in Hindi – मुफ़्त बेसिक कैलकुलेटर (+ − × ÷ %)</title>
+<meta name="description" content="मुफ़्त online calculator हिंदी में – जोड़, घटाव, गुणा, भाग, प्रतिशत और decimal सब कुछ। बटन या कीबोर्ड से चलाएं। बिना लॉगिन, तुरंत इस्तेमाल करें।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Online Calculator in Hindi – बेसिक कैलकुलेटर">
+<meta property="og:description" content="जोड़-घटाव-गुणा-भाग और % एक क्लिक में।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Basic Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"मुफ़्त ऑनलाइन बेसिक कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;max-width:420px;margin-left:auto;margin-right:auto}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;margin-bottom:6px;text-align:center}
+.display{background:#202124;color:#fff;border-radius:10px;padding:16px 20px;text-align:right;margin-bottom:16px}
+.display .expr{color:#9aa0a6;font-size:1rem;min-height:1.4em;word-break:break-all}
+.display .val{font-size:2.2rem;font-weight:700;word-break:break-all}
+.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.keys button{padding:16px 0;font-size:1.25rem;font-weight:600;border:none;border-radius:10px;cursor:pointer;background:#f1f3f4;color:#202124}
+.keys button:hover{background:#e8eaed}
+.keys .op{background:#e8f0fe;color:#1a73e8}
+.keys .op:hover{background:#d2e3fc}
+.keys .eq{background:#1a73e8;color:#fff}
+.keys .eq:hover{background:#1557b0}
+.keys .fn{background:#fef7e0;color:#b06000}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>🧮 ऑनलाइन कैलकुलेटर</h1>
+    <div class="display">
+      <div class="expr" id="expr">&nbsp;</div>
+      <div class="val" id="val">0</div>
+    </div>
+    <div class="keys">
+      <button class="fn" onclick="clearAll()">C</button>
+      <button class="fn" onclick="backspace()">⌫</button>
+      <button class="fn" onclick="press('%')">%</button>
+      <button class="op" onclick="press('÷')">÷</button>
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button class="op" onclick="press('×')">×</button>
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button class="op" onclick="press('-')">−</button>
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button class="op" onclick="press('+')">+</button>
+      <button onclick="press('00')">00</button>
+      <button onclick="press('0')">0</button>
+      <button onclick="press('.')">.</button>
+      <button class="eq" onclick="equals()">=</button>
+    </div>
+  </div>
+
+  <article>
+    <h2>कीबोर्ड से भी चलता है</h2>
+    <ul>
+      <li>सीधे <strong>अंक (0-9)</strong> टाइप करें</li>
+      <li><strong>+ − * /</strong> = जोड़, घटाव, गुणा, भाग · <strong>Enter</strong> = बराबर · <strong>Backspace</strong> = पिछला अक्षर हटाएं · <strong>Esc</strong> = साफ़</li>
+    </ul>
+    <h2>% का इस्तेमाल समझें</h2>
+    <p>यहाँ <strong>%</strong> प्रतिशत की गणना के लिए है – जैसे <strong>250 × 20 %</strong> दबाकर = करने पर 250 का 20% यानी <strong>50</strong> मिलेगा। छूट का हिसाब लगाने के लिए हमारा <a href="discount-calculator.html" style="color:#1a73e8">छूत कैलकुलेटर</a> और ब्याज के लिए <a href="interest-calculator.html" style="color:#1a73e8">ब्याज कैलकुलेटर</a> भी देखें।</p>
+    <h2>पूरी बात</h2>
+    <p>यह कैलकुलेटर आपके ब्राउज़र में ही चलता है – internet की ज़रूरत नहीं, कुछ भी record नहीं होता।</p>
+    <div class="note">💡 रोज़ के बड़े हिसाबों के लिए हमारे खास calculators ज़्यादा काम के हैं: <a href="emi-calculator.html" style="color:#1a73e8">EMI</a>, <a href="gst-calculator.html" style="color:#1a73e8">GST</a>, <a href="income-tax-calculator.html" style="color:#1a73e8">Income Tax</a>, <a href="sip-calculator.html" style="color:#1a73e8">SIP</a>।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var expr = '';
+function update(){
+  document.getElementById('val').textContent = expr === '' ? '0' : expr;
+}
+function press(c){
+  var last = expr.slice(-1);
+  if('+-×÷'.indexOf(c) >= 0 && '+-×÷'.indexOf(last) >= 0){
+    expr = expr.slice(0, -1);
+  }
+  if(c === '.'){
+    var lastNum = expr.split(/[-+×÷]/).pop();
+    if(lastNum.indexOf('.') >= 0) return;
+    if(lastNum === '') c = '0.';
+  }
+  if(c === '%'){
+    var m = expr.match(/(\d+\.?\d*)$/);
+    if(!m) return;
+    var num = parseFloat(m[1]);
+    expr = expr.slice(0, m.index) + '(' + (num/100) + ')';
+    update();
+    return;
+  }
+  expr += c;
+  update();
+}
+function safeEval(e){
+  var clean = e.replace(/×/g, '*').replace(/÷/g, '/');
+  if(!/^[0-9+\-*/(). ]+$/.test(clean)) return null;
+  try {
+    var v = Function('"use strict"; return (' + clean + ')')();
+    if(typeof v !== 'number' || !isFinite(v)) return null;
+    return v;
+  } catch(err){ return null; }
+}
+function equals(){
+  var v = safeEval(expr);
+  if(v === null){
+    document.getElementById('expr').textContent = 'गलत समीकरण';
+    return;
+  }
+  document.getElementById('expr').textContent = expr + ' =';
+  expr = String(Math.round(v * 1e10) / 1e10);
+  update();
+}
+function clearAll(){
+  expr = '';
+  document.getElementById('expr').innerHTML = '&nbsp;';
+  update();
+}
+function backspace(){
+  expr = expr.slice(0, -1);
+  update();
+}
+document.addEventListener('keydown', function(e){
+  if((e.key >= '0' && e.key <= '9')) press(e.key);
+  else if(e.key === '.') press('.');
+  else if(e.key === '+') press('+');
+  else if(e.key === '-') press('-');
+  else if(e.key === '*') press('×');
+  else if(e.key === '/') { press('÷'); e.preventDefault(); }
+  else if(e.key === 'Enter' || e.key === '=') equals();
+  else if(e.key === 'Backspace') backspace();
+  else if(e.key === 'Escape') clearAll();
+});
+</script>
+</body>
+</html>

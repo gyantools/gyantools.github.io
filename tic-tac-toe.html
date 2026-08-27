@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Tic Tac Toe Game in Hindi – X-O गेम (2 खिलाड़ी + Computer दोनों मोड)</title>
+<meta name="description" content="मुफ़्त Tic Tac Toe (X-O) गेम हिंदी में – दो खिलाड़ी एक ही फोन पर खेलें या computer के खिलाफ (आसान/मुश्किल)। PAWANGAMINGSTUDIO की पेशकश – बिना लॉगिन, तुरंत खेलें।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Tic Tac Toe – X-O गेम in Hindi (2 खिलाड़ी मोड सहित)">
+<meta property="og:description" content="दोस्त के साथ या computer के खिलाफ – X-O खेलें!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Tic Tac Toe Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"X-O गेम हिंदी में – 2 खिलाड़ी और computer मोड","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.board{display:grid;grid-template-columns:repeat(3,92px);gap:10px;justify-content:center;margin:22px auto}
+@media(max-width:420px){.board{grid-template-columns:repeat(3,80px)}.cell{width:80px;height:80px;font-size:2.2rem}}
+.cell{width:92px;height:92px;background:#e8f0fe;border:none;border-radius:12px;font-size:2.6rem;font-weight:700;color:#1a73e8;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s}
+.cell:hover:not(:disabled){background:#d2e3fc}
+.cell.o{color:#e8710a}
+.cell:disabled{cursor:default}
+.status{font-size:1.15rem;font-weight:600;min-height:1.8em;margin:8px 0}
+.score{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.score span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.score b{color:#1a73e8}
+.mode{margin:12px 0}
+.mode button{background:#fff;color:#1a73e8;border:1px solid #dadce0;padding:8px 18px;border-radius:20px;font-size:.95rem;cursor:pointer;margin:4px;font-weight:600}
+.mode button.active{background:#1a73e8;color:#fff;border-color:#1a73e8}
+button.play{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:10px}
+button.play:hover{background:#1557b0}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Tic Tac Toe (X-O)</p>
+
+  <div class="game-box">
+    <h1>🎮 Tic Tac Toe (X-O)</h1>
+    <p>दो खिलाड़ी एक ही फोन पर खेलें, या computer के खिलाफ टक्कर लें!</p>
+    <div class="mode">
+      <button id="pvp" class="active" onclick="setMode('pvp')">👤👤 2 खिलाड़ी</button>
+      <button id="easy" onclick="setMode('easy')">🤖 Computer आसान</button>
+      <button id="hard" onclick="setMode('hard')">😈 Computer मुश्किल</button>
+    </div>
+    <div class="status" id="status">खिलाड़ी 1 (X) की बारी</div>
+    <div class="board" id="board"></div>
+    <div class="score">
+      <span id="l1">👤 खिलाड़ी 1 (X): <b id="w">0</b></span>
+      <span id="l2">👤 खिलाड़ी 2 (O): <b id="l">0</b></span>
+      <span>🤝 बराबरी: <b id="d">0</b></span>
+    </div>
+    <button class="play" onclick="newGame()">🔄 नया गेम</button>
+  </div>
+
+  <article>
+    <h2>तीन मोड – अपने हिसाब से खेलें</h2>
+    <ul>
+      <li><strong>👤👤 2 खिलाड़ी:</strong> दो दोस्त/भाई-बहन एक ही फोन पर बारी-बारी से खेलें – खिलाड़ी 1 <strong>X</strong>, खिलाड़ी 2 <strong>O</strong></li>
+      <li><strong>🤖 Computer आसान:</strong> बच्चों और सीखने वालों के लिए</li>
+      <li><strong>😈 Computer मुश्किल:</strong> computer पूरी गणितीय चाल (minimax algorithm) से खेलता है – उसे हराना लगभग नामुमकिन, बराबरी ही आपकी जीत!</li>
+    </ul>
+    <h2>जीतने की चालें</h2>
+    <ul>
+      <li><strong>केंद्र या कोना पहले लें</strong> – केंद्र सबसे ज़्यादा जीतने वाली लाइनें खोलता है</li>
+      <li>ऐसी दो लाइनें एक साथ बनाएं जिन्हें विरोधी एक ही चाल से न रोक सके</li>
+      <li>विरोधी की दो-वाली लाइन हमेशा पहले रोकें</li>
+    </ul>
+    <p>🎮 यह गेम <strong>PAWANGAMINGSTUDIO</strong> की एक पेशकश है। और गेम आ रहे हैं!</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var board = [], gameOver = false, mode = 'pvp', turn = 'X';
+var score = {w:0, l:0, d:0};
+var LINES = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+function winner(b){
+  for(var i=0;i<LINES.length;i++){
+    var l = LINES[i];
+    if(b[l[0]] && b[l[0]]===b[l[1]] && b[l[1]]===b[l[2]]) return b[l[0]];
+  }
+  return b.indexOf('') === -1 ? 'D' : null;
+}
+function minimax(b, isMax, depth){
+  var w = winner(b);
+  if(w === 'O') return {score: 10 - depth};
+  if(w === 'X') return {score: depth - 10};
+  if(w === 'D') return {score: 0};
+  var best = null;
+  for(var i=0;i<9;i++){
+    if(b[i]) continue;
+    b[i] = isMax ? 'O' : 'X';
+    var s = minimax(b, !isMax, depth+1).score;
+    b[i] = '';
+    if(isMax){ if(!best || s > best.score) best = {score:s, move:i}; }
+    else { if(!best || s < best.score) best = {score:s, move:i}; }
+  }
+  return best;
+}
+function label(who){
+  if(mode === 'pvp') return who === 'X' ? 'खिलाड़ी 1 (X)' : 'खिलाड़ी 2 (O)';
+  return who === 'X' ? 'आप (X)' : 'computer (O)';
+}
+function draw(){
+  var el = document.getElementById('board');
+  el.innerHTML = '';
+  var humanTurn = (mode === 'pvp') || (turn === 'X');
+  board.forEach(function(v,i){
+    var b = document.createElement('button');
+    b.className = 'cell' + (v === 'O' ? ' o' : '');
+    b.textContent = v;
+    b.disabled = !!v || gameOver || !humanTurn;
+    b.onclick = function(){ move(i); };
+    el.appendChild(b);
+  });
+}
+function move(i){
+  if(gameOver || board[i]) return;
+  if(mode !== 'pvp' && turn !== 'X') return;
+  board[i] = turn;
+  var w = winner(board);
+  if(w){ turn = turn; draw(); end(w); return; }
+  turn = turn === 'X' ? 'O' : 'X';
+  draw();
+  if(mode === 'pvp'){
+    document.getElementById('status').textContent = label(turn) + ' की बारी';
+  } else if(turn === 'O'){
+    document.getElementById('status').textContent = 'computer सोच रहा है…';
+    setTimeout(compMove, 400);
+  } else {
+    document.getElementById('status').textContent = 'आपकी बारी (X)';
+  }
+}
+function compMove(){
+  if(gameOver) return;
+  var i;
+  if(mode === 'hard'){
+    i = minimax(board.slice(), true, 0).move;
+  } else {
+    var e = [];
+    board.forEach(function(v,idx){ if(!v) e.push(idx); });
+    i = e[Math.floor(Math.random()*e.length)];
+  }
+  board[i] = 'O';
+  var w = winner(board);
+  if(w){ turn = 'O'; draw(); end(w); return; }
+  turn = 'X';
+  draw();
+  document.getElementById('status').textContent = 'आपकी बारी (X)';
+}
+function end(w){
+  gameOver = true;
+  var s = document.getElementById('status');
+  if(w === 'D'){ score.d++; s.textContent = '🤝 बराबरी!'; }
+  else if(mode === 'pvp'){
+    if(w === 'X'){ score.w++; s.textContent = '🎉 ' + label('X') + ' जीत गए!'; }
+    else { score.l++; s.textContent = '🎉 ' + label('O') + ' जीत गए!'; }
+  } else {
+    if(w === 'X'){ score.w++; s.textContent = '🎉 आप जीत गए!'; }
+    else { score.l++; s.textContent = '🤖 computer जीत गया – फिर कोशिश करें!'; }
+  }
+  document.getElementById('w').textContent = score.w;
+  document.getElementById('l').textContent = score.l;
+  document.getElementById('d').textContent = score.d;
+  draw();
+}
+function newGame(){
+  board = Array(9).fill('');
+  gameOver = false; turn = 'X';
+  document.getElementById('status').textContent = label('X') + ' की बारी';
+  draw();
+}
+function setMode(m){
+  mode = m;
+  ['pvp','easy','hard'].forEach(function(x){
+    document.getElementById(x).className = x === m ? 'active' : '';
+  });
+  var s1 = document.getElementById('l1'), s2 = document.getElementById('l2');
+  if(m === 'pvp'){
+    s1.innerHTML = '👤 खिलाड़ी 1 (X): <b id="w">' + score.w + '</b>';
+    s2.innerHTML = '👤 खिलाड़ी 2 (O): <b id="l">' + score.l + '</b>';
+  } else {
+    s1.innerHTML = '😊 आप जीते: <b id="w">' + score.w + '</b>';
+    s2.innerHTML = '🤖 Computer: <b id="l">' + score.l + '</b>';
+  }
+  newGame();
+}
+newGame();
+</script>
+</body>
+</html>

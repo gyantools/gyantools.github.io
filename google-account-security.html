@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Google Account Security पूरी गाइड in Hindi – Passkey, 2-Step Verification (2026)</title>
+<meta name="description" content="Google account को hack होने से बचाने की पूरी गाइड हिंदी में – Security Checkup, 2-Step Verification, passkey (फिंगरप्रिंट से लॉगिन), recovery plan, backup codes और आम गलतियाँ।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Google Account Security पूरी गाइड in Hindi">
+<meta property="og:description" content="Passkey, 2SV, recovery – account को किले जैसा मज़बूत बनाएं।">
+<meta property="og:type" content="article">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Google Account Security पूरी गाइड in Hindi","description":"Google account सुरक्षा गाइड हिंदी में","inLanguage":"hi","datePublished":"2026-08-26","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.8}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:36px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h1{font-size:1.9rem;color:#1a73e8;margin-bottom:8px}
+article h2{margin:30px 0 12px;color:#1a73e8;font-size:1.35rem}
+article h3{margin:20px 0 8px;color:#174ea6}
+article p{margin-bottom:12px}
+article li{margin-bottom:8px}
+article ul,article ol{padding-left:26px;margin-bottom:14px}
+.meta{color:#5f6368;font-size:.9rem;margin-bottom:18px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:18px 0}
+.tip{background:#e6f4ea;border-left:4px solid #137333;padding:12px 16px;border-radius:4px;margin:18px 0}
+.alert{background:#fce8e6;border-left:4px solid #d93025;padding:12px 16px;border-radius:4px;margin:18px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin:14px 0}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+.toc{background:#f1f3f4;border-radius:10px;padding:18px 22px;margin:0 0 10px}
+.toc a{color:#1a73e8;text-decoration:none}
+.toc li{margin-bottom:4px}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Google Account Security</p>
+
+  <article>
+    <h1>🔐 Google Account Security पूरी गाइड in Hindi</h1>
+    <p class="meta">26 अगस्त 2026 · GyanTools · पढ़ने का समय: ~13 मिनट</p>
+
+    <div class="toc">
+      <strong>इस गाइड में:</strong>
+      <ol>
+        <li><a href="#why">एक account सब कुछ है – इसलिए यह गाइड ज़रूरी है</a></li>
+        <li><a href="#checkup">कदम 1: Security Checkup – पूरी जांच एक जगह</a></li>
+        <li><a href="#2sv">कदम 2: 2-Step Verification चालू करें</a></li>
+        <li><a href="#passkey">कदम 3: Passkey – फिंगरप्रिंट से लॉगिन</a></li>
+        <li><a href="#recovery">कदम 4: Recovery की पूरी योजना</a></li>
+        <li><a href="#password">कदम 5: पासवर्ड की सही आदतें</a></li>
+        <li><a href="#apps">कदम 6: पुरानी apps की सफाई</a></li>
+        <li><a href="#phish">फ़िशिंग पहचानना – 5 लाल झंडे</a></li>
+        <li><a href="#lost">खोया account वापस पाना + बुज़ुर्गों की सुरक्षा</a></li>
+        <li><a href="#faq">अक्सर पूछे जाने वाले सवाल</a></li>
+      </ol>
+    </div>
+
+    <h2 id="why">1. एक account सब कुछ है – इसलिए यह गाइड ज़रूरी है</h2>
+    <p>सोचिए आपका Google account किन-किन चीज़ों की चाबी है: <strong>Gmail, Photos (यादों की तस्वीरें), Drive (कागज़), Pay/UPI की ऐप्स, YouTube, contacts, calendar</strong> – और अक्सर बैंक के statements और दूसरी साइटों के reset links भी उसी Gmail में आते हैं। एक account हैक होने का मतलब सारे दरवाज़े एक साथ खुल जाना।</p>
+    <p>अच्छी खबर: आधे घंटे की मेहनत से account इतना मज़बूत हो जाता है कि ज़्यादातर हमले (टूटे हुए पासवर्ड, फ़िशिंग) बेअसर हो जाते हैं। नीचे वही छह कदम हैं, सही क्रम में।</p>
+
+    <h2 id="checkup">2. कदम 1: Security Checkup – पूरी जांच एक जगह</h2>
+    <p>Google खुद एक जांच का इंतज़ाम रखता है: <strong>g.co/securitycheckup</strong> खोलें (या account → Security)। यह एक ही स्क्रीन पर दिखाता है कि कौन-सी चीज़ कमज़ोर है – पुराने devices जिनसे लॉगिन पड़ा है, कमज़ोर या लीक हुए पासवर्ड, recovery की जानकारी जो अब वाली नहीं रही। <strong>हर महीने या हर तीन महीने में एक बार यह 5 मिनट की जांच कर लीजिए</strong> – यही सबसे आसान आदत है।</p>
+
+    <h2 id="2sv">3. कदम 2: 2-Step Verification (2SV) चालू करें</h2>
+    <p>सिर्फ पासवर्ड पर भरोसा करना ताले में सिर्फ एक छड़ी डालने जैसा है। <strong>2-Step Verification</strong> में पासवर्ड के बाद दूसरा सबूत चाहिए – तब पासवर्ड चोरी हो जाए तब भी चोर अंदर नहीं घुस पाता। दूसरा सबूत कौन-सा रखें? ताकत का क्रम यह है:</p>
+    <table>
+      <tr><th>तरीका</th><th>कैसे</th><th>राय</th></tr>
+      <tr><td><strong>Passkey / Security key</strong></td><td>फिंगरप्रिंट, फेस, या USB key</td><td>⭐⭐⭐⭐⭐ सबसे मज़बूत – फ़िशिंग से भी बचाता है</td></tr>
+      <tr><td><strong>Authenticator ऐप</strong></td><td>Google Authenticator में बदलता कोड</td><td>⭐⭐⭐⭐ बहुत अच्छा</td></tr>
+      <tr><td><strong>Google Prompt</strong></td><td>फोन पर "हां, मैं हूं" वाला संदेश</td><td>⭐⭐⭐⭐ आसान और भरोसेमंद</td></tr>
+      <tr><td><strong>SMS कोड</strong></td><td>टेक्स्ट में आने वाला नंबर</td><td>⭐⭐ चलेगा – पर SIM swap जैसे छल संभव हैं</td></tr>
+    </table>
+    <div class="tip">💡 चालू करना: myaccount.google.com → Security → 2-Step Verification। पुराने फोन वालों के लिए SMS भी ठीक है – <strong>कोई भी दूसरा कदम, कोई नहीं</strong> से हमेशा बेहतर है।</div>
+
+    <h2 id="passkey">4. कदम 3: Passkey – फिंगरप्रिंट से लॉगिन का नया ज़माना</h2>
+    <p><strong>Passkey</strong> पासवर्ड की जगह ले रहा नया तरीका है: लॉगिन के लिए उंगली का निशान, चेहरा या फोन का screen lock। इसकी खासियतें:</p>
+    <ul>
+      <li><strong>फ़िशिंग-प्रूफ:</strong> passkey किसी से साझा, कॉपी, लिखा या धोखे से उगलवा नहीं सकता – वह आपके device में ही रहता है</li>
+      <li>Google कहता है – आपका बायोमेट्रिक डेटा (फिंगरप्रिंट/फेस) device से बाहर कभी नहीं जाता</li>
+      <li>2SV वाले account पर भी passkey दूसरे कदम की जगह ले लेता है – लॉगिन एक छूकर हो जाता है</li>
+      <li>पुराने तरीके (पासवर्ड, recovery phone) बंद नहीं होते – passkey जोड़ने से कुछ हटता नहीं, इसलिए डरने की बात नहीं</li>
+      <li>चाहिए: Android 9+ का फोन, iPhone (iOS 16+), या नया कंप्यूटर</li>
+    </ul>
+    <p>बनाना: account → Security → Passkeys जोड़ें। अब अगली बार लॉगिन पर बस उंगली रखिए।</p>
+
+    <h2 id="recovery">5. कदम 4: Recovery की पूरी योजना – "फोन खो गया" वाला दिन पहले सोचें</h2>
+    <p>लोग account खोते ज़्यादातर हैकिंग से नहीं, <strong>खुद के लॉग आउट हो जाने से</strong> खोते हैं – फोन डूबा, नंबर बदला, पासवर्ड भूल गए। इसीलिए बचाव की चार परतें बना लें:</p>
+    <ol>
+      <li><strong>Recovery email + recovery phone</strong> – दोनों डालें, और साल में एक बार जांचें कि वो अब भी चालू हैं</li>
+      <li><strong>Backup codes</strong> – account में 10 one-time codes मिलते हैं; कागज़ पर छापकर घर में सुरक्षित रखें (फोन गिरने पर यही काम आते हैं)</li>
+      <li><strong>Recovery contacts</strong> – कुछ भरोसेमंद लोगों को नाम लिख सकते हैं जो आपको account वापस पाने में मदद कर सकते हैं – वे आपका डेटा नहीं देख सकते, सिर्फ मदद करते हैं</li>
+      <li>दूसरी जगह लॉगिन न रखें – पुराने/बेचे हुए फोन से लॉगआउट ज़रूर करें (Security → Your devices)</li>
+    </ol>
+
+    <h2 id="password">6. कदम 5: पासवर्ड की सही आदतें</h2>
+    <ul>
+      <li>Google account का पासवर्ड <strong>हर जगह से अलग</strong> – यही सबसे बड़ा नियम है (एक साइट लीक, सब खतरे में)</li>
+      <li>लंबा रखें (14–20+ अक्षर) – लंबाई जटिलता से ज़्यादा मायने रखती है</li>
+      <li>मज़बूत पासवर्ड बनाना मुश्किल? हमारा <a href="../tools/password-generator.html" style="color:#1a73e8">पासवर्ड जनरेटर</a> एक क्लिक में बना देता है</li>
+      <li>याद रखने की जगह: Chrome/Google का password manager (उसी account में सुरक्षित) या कोई भरोसेमंद manager</li>
+      <li>Chrome का <strong>Password Checkup</strong> बता देता है कौन-सा पासवर्ड लीक हो चुका है – चेतावनी दिखे तो तुरंत बदलें</li>
+    </ul>
+
+    <h2 id="apps">7. कदम 6: पुरानी apps और साइटों की सफाई</h2>
+    <p>हर वो app/website जिसे कभी "Google से लॉगिन" की अनुमति दी थी, उसके पास आपके account का एक दरवाज़ा खुला है। account → Security → <strong>Third-party apps with account access</strong> में जाकर जो नाम पहचानें नहीं या जिनकी ज़रूरत नहीं – पहुंच हटा दें। यही बरसों पुराने खेल/quiz apps बाद में परेशानी बनते हैं।</p>
+
+    <h2 id="phish">8. फ़िशिंग पहचानना – 5 लाल झंडे</h2>
+    <ul>
+      <li>_mail या संदेश में <strong>"आपका account बंद होगा, अभी लिंक खोलो"</strong> वाली जल्दबाज़ी</li>
+      <li>लिंक पर जाने से पहले पता देखें – <strong>google.com</strong> से पहले-बाद में जुड़े अजीब शब्द (google.com-secure-login.xyz जैसा) ठगी है</li>
+      <li>Google असल में पासवर्ड/OTP <strong>mail या फोन पर कभी नहीं मांगता</strong></li>
+      <li>"आपने जीत लिया!" वाले Google के नाम वाले इनाम के पन्ने</li>
+      <li>मांगे screen share या कोई app इंस्टॉल करवाने वाला "सहायता कर्मी"</li>
+    </ul>
+    <p>शक हो तो लिंक मत खोलिए – खुद टाइप करके google.com पर जाकर संदेश देखिए। धोखे से बचने के पूरे नियम हमारे <a href="online-fraud-se-bachav.html" style="color:#1a73e8">Online Fraud से बचाव</a> लेख में हैं।</p>
+
+
+    <h2 id="lost">बोनस: खोया हुआ account वापस पाने की कोशिश</h2>
+    <p>अगर लॉगिन नहीं हो पा रहा तो g.co/recover खोलें और पूछे गए सवालों के जवाब दें – पुराना पासवर्ड, recovery phone/email, बनाने की तारीख़ जैसी बातें। कुछ सुझाव:</p>
+    <ul>
+      <li>वही device/wifi से कोशिश करें जिससे पहले लॉगिन करते थे – Google पहचानता है</li>
+      <li>एक ही बार में पूरी कोशिश करें; बार-बार असफल प्रयास प्रक्रिया रोक देते हैं</li>
+      <li>recovery phone पर code आता ही रहे तो वही सबसे तेज़ रास्ता है</li>
+      <li>वापस मिलने पर सबसे पहले पासवर्ड + recovery जांच बदल दें</li>
+    </ul>
+
+    <h3>अपने बुज़ुर्गों का account भी सुरक्षित करें</h3>
+    <p>घर के बुज़ुर्ग ठगी के सबसे आसान निशाने हैं। उनके फोन में भी यही सेटअप कर दें: 2SV (prompt वाला सबसे आसान है), recovery में आपका नंबर, और screen lock। साथ में एक बात दोहरा दें – <strong>"Google या बैंक फोन पर OTP नहीं मांगता"</strong>। यही एक वाक्य करोड़ों बचा सकता है।</p>
+
+    <h2 id="faq">9. अक्सर पूछे जाने वाले सवाल</h2>
+    <p><strong>प्र. Passkey बनाने के बाद पासवर्ड हट जाएगा?</strong><br>नहीं – पुराने सब तरीके चालू रहते हैं, passkey बस एक आसान-मज़बूत रास्ता जोड़ता है।</p>
+    <p><strong>प्र. फोन बदल दिया तो passkey?</strong><br>नए फोन में दोबारा passkey बना लें; पुराना फोन बेचने से पहले account से उस device को हटा दें (Security → Your devices)।</p>
+    <p><strong>प्र. 2SV का OTP भी चोर मांग ले?</strong><br>हाँ, यह नया छल है – Google का नाम लेकर OTP मांगना। याद रखिए: OTP सिर्फ आप खुद डालते हैं, <strong>किसी को बताने के लिए नहीं</strong>। अनचाहा prompt आए तो "नहीं" दबाएं और पासवर्ड बदल दें।</p>
+    <p><strong>प्र. लॉगिन की गतिविधि कहां देखें?</strong><br>account → Security → Your devices / Recent security activity – अजनबी device दिखे तो तुरंत निकालें और पासवर्ड बदलें।</p>
+
+    <div class="note">⏱️ <strong>आज का काम:</strong> 30 मिनट निकालिए – Security Checkup → 2SV → passkey → backup codes प्रिंट। आज की यह आधा घंटा, आने वाले सालों की नींद हमेशा के लिए सुरक्षित कर देगा।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+</body>
+</html>
