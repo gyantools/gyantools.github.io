@@ -1,0 +1,125 @@
+name: ZIP se site auto-deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.zip'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-zip
+  cancel-in-progress: false
+
+jobs:
+  extract-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo checkout karo
+        uses: actions/checkout@v4
+
+      - name: Sabhi root zips extract karo
+        run: |
+          shopt -s nullglob
+          zips=(*.zip)
+          if [ ${#zips[@]} -eq 0 ]; then
+            echo "Koi zip nahi mili — kuch karne ki zaroorat nahi."
+            exit 0
+          fi
+          rm -rf _site _tmp
+          mkdir -p _site
+          # Zips alphabetical order me extract hoti hain.
+          # Apni zip ka naam 'site.zip' rakhein taaki wo sabse aakhir me
+          # extract ho aur uski nayi files purani zips ko overwrite kar de.
+          for z in "${zips[@]}"; do
+            echo "Extract ho rahi hai: $z"
+            rm -rf _tmp && mkdir _tmp
+            unzip -q -o "$z" -d _tmp
+            # Agar zip ke andar sab kuch ek hi folder me hai, to us folder ke andar se lo
+            entries=$(find _tmp -mindepth 1 -maxdepth 1 | wc -l)
+            if [ "$entries" -eq 1 ] && [ -d "$(find _tmp -mindepth 1 -maxdepth 1)" ]; then
+              inner=$(find _tmp -mindepth 1 -maxdepth 1 -type d)
+              cp -a "$inner"/. _site/
+            else
+              cp -a _tmp/. _site/
+            fi
+          done
+          rm -rf _tmp
+          # Zip ke andar ka koi .github humari workflow overwrite na kare
+          rm -rf _site/.github
+          N=$(find _site -name '*.html' | wc -l)
+          echo "Extract ke baad HTML pages: $N"
+          if [ "$N" -lt 50 ]; then
+            echo "EXTRACT GALAT LAG RAHA HAI (sirf $N pages mile, 50+ chahiye) — rok rahe hain."
+            exit 1
+          fi
+
+      - name: Purani site delete karke nayi lagao
+        run: |
+          # Ye files DELETE se SAFE hain:
+          #  .git, .github (yehi workflow), CNAME (custom domain),
+          #  googlefba6fce0bafda575.html (Google Search Console verification), zips, _site
+          find . -mindepth 1 -maxdepth 1 \
+            ! -name '.git' \
+            ! -name '.github' \
+            ! -name 'CNAME' \
+            ! -name 'googlefba6fce0bafda575.html' \
+            ! -name '*.zip' \
+            ! -name '_site' \
+            -exec rm -rf {} +
+          # Nayi site copy karo
+          cp -a _site/. ./
+          rm -rf _site
+          # Kaam ho gaya — ab zips bhi hata do (repo saaf rahega, agli baar naam clash nahi hoga)
+          rm -f *.zip
+          echo "Final HTML pages: $(find . -name '*.html' -not -path './.git/*' | wc -l)"
+
+      - name: Sitemap ko actual files se sync karo
+        run: |
+          python3 - <<'PYEOF'
+          import os, datetime
+          BASE = 'https://gyantools.github.io/'
+          today = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')
+          urls = set()
+          for root, dirs, fns in os.walk('.'):
+              if any(x in root for x in ('.git', '_site', '.github')):
+                  continue
+              for fn in fns:
+                  if fn.endswith('.html') and fn != 'googlefba6fce0bafda575.html':
+                      rel = os.path.relpath(os.path.join(root, fn)).replace(os.sep, '/')
+                      urls.add(BASE if rel == 'index.html' else BASE + rel)
+          out = ['<?xml version="1.0" encoding="UTF-8"?>',
+                 '<!-- Yeh sitemap workflow khud banata hai — haath se edit karne ki zaroorat nahi -->',
+                 '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+          for u in sorted(urls):
+              home = (u == BASE)
+              out += ['  <url>',
+                      '    <loc>%s</loc>' % u,
+                      '    <lastmod>%s</lastmod>' % today,
+                      '    <changefreq>%s</changefreq>' % ('weekly' if home else 'monthly'),
+                      '    <priority>%s</priority>' % ('1.0' if home else '0.8'),
+                      '  </url>']
+          out.append('</urlset>')
+          open('sitemap.xml', 'w', encoding='utf-8').write('\n'.join(out) + '\n')
+          print('SITEMAP SYNC: total URLs =', len(urls))
+          PYEOF
+          if ! grep -q 'Sitemap:' robots.txt 2>/dev/null; then
+            printf 'User-agent: *\nAllow: /\n\nSitemap: https://gyantools.github.io/sitemap.xml\n' > robots.txt
+          fi
+
+      - name: Commit aur push karo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Koi change nahi — site pehle se updated hai."
+          else
+            PAGES=$(find . -name '*.html' -not -path './.git/*' | wc -l)
+            git commit -m "Auto-deploy: ZIP se site extract hui ($PAGES pages) [skip ci]"
+            git push
+          fi
+          
