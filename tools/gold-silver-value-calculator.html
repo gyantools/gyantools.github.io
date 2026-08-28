@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Gold Silver Value Calculator in Hindi – सोना-चांदी कीमत व GST कैलकुलेटर</title>
+<meta name="description" content="मुफ्त Gold-Silver Value Calculator हिंदी में – सोने-चांदी की असली कीमत, कैरेट (24K/22K/18K) हिसाब, making charges और GST (3% + 5%) के साथ कुल कीमत। पूरा फॉर्मूला और A2Z जानकारी।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="सोना-चांदी कीमत कैलकुलेटर (हिंदी में)">
+<meta property="og:description" content="कैरेट, वज़न, रेट डालो – GST समेत पूरी कीमत पाओ।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Gold Silver Value Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"सोना-चांदी की कीमत, कैरेट हिसाब, making charges और GST कैलकुलेटर (हिंदी)","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.8}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;line-height:1.4;margin-bottom:6px}
+.row{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}
+.field{flex:1;min-width:150px}
+label{display:block;font-size:.9rem;font-weight:600;margin-bottom:5px;color:#3c4043}
+input,select{width:100%;padding:11px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:#1a73e8}
+.btn{background:#1a73e8;color:#fff;border:none;padding:13px 30px;border-radius:8px;font-size:1.05rem;font-weight:600;cursor:pointer;margin-top:8px}
+.btn:hover{background:#1558b0}
+.result{background:#f1f3f4;border-radius:10px;padding:18px;margin-top:18px}
+.result .big{font-size:1.5rem;font-weight:700;color:#0b8043}
+.result table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.95rem}
+.result td{padding:8px 6px;border-bottom:1px solid #e0e0e0}
+article{background:#fff;border-radius:12px;padding:36px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:28px 0 12px;color:#1a73e8;font-size:1.3rem}
+article h3{margin:20px 0 8px;color:#202124;font-size:1.08rem}
+article p{margin-bottom:12px}
+article ul,article ol{padding-left:24px;margin-bottom:12px}
+article li{margin-bottom:6px}
+article a{color:#1a73e8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.93rem}
+th{background:#e8f0fe;color:#1a73e8;padding:10px;text-align:left;border:1px solid #d2e3fc}
+td{padding:10px;border:1px solid #e0e0e0}
+tr:nth-child(even) td{background:#f8f9fa}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:14px 16px;border-radius:8px;margin:16px 0}
+.tip{background:#e6f4ea;border-left:4px solid #188038;padding:14px 16px;border-radius:8px;margin:16px 0}
+details{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:8px;padding:14px 16px;margin:10px 0}
+summary{font-weight:600;cursor:pointer;color:#202124}
+details p{margin-top:10px;margin-bottom:0}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/gold-silver-value-calculator.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › टूल्स › सोना-चांदी कीमत कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>🥇 Gold-Silver Value Calculator (हिंदी)</h1>
+    <p>सोने या चांदी का वज़न, कैरेट (शुद्धता) और आज का रेट डालो – असली धातु की कीमत, making charges और GST समेत <strong>कुल कीमत</strong> तुरंत पाओ।</p>
+
+    <div class="row">
+      <div class="field">
+        <label>धातु चुनें</label>
+        <select id="metal" onchange="metalChange()">
+          <option value="gold">🟡 सोना (Gold)</option>
+          <option value="silver">⚪ चांदी (Silver)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>वज़न</label>
+        <input type="number" id="wt" value="10" min="0" step="any">
+      </div>
+      <div class="field">
+        <label>यूनिट</label>
+        <select id="unit">
+          <option value="1">ग्राम</option>
+          <option value="11.664">तोला</option>
+          <option value="1000">किलोग्राम</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>शुद्धता (Purity)</label>
+        <select id="purity">
+          <option value="0.999">24K (999 – सबसे शुद्ध)</option>
+          <option value="0.916" selected>22K (916 – ज्वेलरी स्टैंडर्ड)</option>
+          <option value="0.750">18K (750)</option>
+          <option value="0.585">14K (585)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label id="rateLabel">आज का रेट – ₹ प्रति 10 ग्राम (शुद्ध 24K/999)</label>
+        <input type="number" id="rate" value="100000" min="0" step="any">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Making Charges कैसे गिनें?</label>
+        <select id="mkMode" onchange="mkChange()">
+          <option value="pct">धातु कीमत का % (बटना)</option>
+          <option value="perg">₹ प्रति ग्राम</option>
+          <option value="flat">फ्लैट ₹ राशि</option>
+          <option value="none">कोई नहीं (सिर्फ धातु कीमत)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label id="mkLabel">Making % (जैसे 12 = 12%)</label>
+        <input type="number" id="mkVal" value="12" min="0" step="any">
+      </div>
+    </div>
+
+    <button class="btn" onclick="calc()">💰 कीमत निकालो</button>
+
+    <div class="result" id="out" style="display:none">
+      <div class="big" id="total"></div>
+      <table id="breakup"></table>
+    </div>
+  </div>
+
+  <article>
+    <h2>🔍 यह टूल क्या है और क्या करता है? (A to Z पूरी जानकारी)</h2>
+    <p>जब भी हम सोने या चांदी का गहना खरीदते या बेचते हैं, तो तीन चीज़ें कीमत बनाती हैं – <strong>धातु की असली कीमत, निर्माण शुल्क (making charges)</strong> और <strong>GST</strong>। दुकान पर अक्सर सिर्फ एक आखिरी रकम बताई जाती है और हमें पता नहीं चलता कि हिसाब सही है या नहीं। यह कैलकुलेटर उसी हिसाब को पारदर्शी बनाता है:</p>
+    <ul>
+      <li><strong>क्या है:</strong> एक फ्री ऑनलाइन कैलकुलेटर जो सोना/चांदी की खरीद कीमत का पूरा ब्रेकअप देता है</li>
+      <li><strong>क्या करता है:</strong> वज़न × शुद्धता × रेट से धातु की कीमत निकालता है, उस पर making charges और दोनों GST जोड़कर कुल रकम बताता है</li>
+      <li><strong>किसके लिए:</strong> गहना खरीदने-बेचने वाले, पुराने सोने की वैल्यू जानने वाले, और ज्वेलर के बिल को चेक करने वाले सभी के लिए</li>
+    </ul>
+
+    <h2>🧮 इसके पीछे का फॉर्मूला (Logic)</h2>
+    <p>पूरा गणित 4 चरणों में बंटा है – आसान भाषा में समझो:</p>
+    <h3>चरण 1 – वज़न को ग्राम में बदलो</h3>
+    <p>अगर वज़न तोला या किलो में है तो पहले ग्राम में बदलते हैं: <strong>1 तोला = 11.664 ग्राम</strong>, <strong>1 किलो = 1000 ग्राम</strong>। जैसे 2 तोला = 2 × 11.664 = 23.33 ग्राम।</p>
+    <h3>चरण 2 – धातु की असली (शुद्ध) कीमत</h3>
+    <p>बाज़ार में रेट <strong>शुद्ध सोने (24K/999)</strong> का प्रति 10 ग्राम बताया जाता है। मगर ज्वेलरी अक्सर 22K या 18K की बनती है, जिसमें सोना कम होता है। इसलिए शुद्धता का गुणांक (purity factor) लगाते हैं:</p>
+    <p style="background:#f1f3f4;padding:12px;border-radius:8px"><strong>धातु कीमत = वज़न(ग्राम) × शुद्धता गुणांक × (रेट ÷ 10)</strong></p>
+    <p>शुद्धता गुणांक कैसे बनता है? कैरेट को 24 से भाग दो: 22K = 22÷24 = <strong>0.916</strong> (यानी 916 हॉलमार्क), 18K = 18÷24 = <strong>0.750</strong>, 14K = <strong>0.585</strong>, 24K = <strong>0.999</strong>।</p>
+    <h3>चरण 3 – Making Charges (निर्माण शुल्क)</h3>
+    <p>कारीगर की मेहनत का चार्ज – हर दुकान का अलग। तीन तरीके आम हैं: धातु कीमत का कुछ % (जैसे 12%), प्रति ग्राम फिक्स ₹, या फ्लैट रकम। यह टूल तीनों तरीके चलाता है।</p>
+    <h3>चरण 4 – GST जोड़ो</h3>
+    <p>भारत में सोने-चांदी पर GST दो हिस्सों में लगता है:</p>
+    <table>
+      <tr><th>किस पर</th><th>GST दर</th><th>ज़रूरी बात</th></tr>
+      <tr><td>धातु की कीमत (सोना/चांदी, हर शुद्धता में)</td><td><strong>3%</strong></td><td>गहना, सिक्का, बार – सभी रूपों पर</td></tr>
+      <tr><td>Making charges (अलग से बिल होने पर)</td><td><strong>5%</strong></td><td>HSN कोड 9988 (ज्वेलरी निर्माण सेवा)</td></tr>
+    </table>
+    <p style="background:#f1f3f4;padding:12px;border-radius:8px"><strong>कुल कीमत = धातु कीमत + Making + 3% GST (धातु) + 5% GST (making)</strong></p>
+
+    <h2>📖 एक उदाहरण से पूरा हिसाब देखो (Step-by-Step)</h2>
+    <p>मान लो आज का 24K रेट <strong>₹1,00,000 प्रति 10 ग्राम</strong> है और आप <strong>10 ग्राम की 22K अंगूठी</strong> खरीदते हैं, making 12%:</p>
+    <ol>
+      <li>धातु कीमत = 10 × 0.916 × (100000 ÷ 10) = <strong>₹91,600</strong></li>
+      <li>Making charges = 12% × 91,600 = <strong>₹10,992</strong></li>
+      <li>GST धातु पर = 3% × 91,600 = <strong>₹2,748</strong></li>
+      <li>GST making पर = 5% × 10,992 = <strong>₹550</strong></li>
+      <li><strong>कुल = 91,600 + 10,992 + 2,748 + 550 = ₹1,05,890</strong></li>
+    </ol>
+    <div class="tip">✅ <strong>बचत का तरीका:</strong> बड़े शहरों में making 8-15% तक होती है, मशीन-मेड गहनों पर कम और हैंडमेड पर ज़्यादा। खरीदने से पहले 2-3 दुकानों का making रेट ज़रूर तुलना करें – धातु का रेट तो हर जगह लगभग एक जैसा होता है, फर्क making से पड़ता है!</div>
+
+    <h2>⚖️ शुद्धता (Purity) चार्ट – कौन सा कैरेट कब</h2>
+    <table>
+      <tr><th>कैरेट</th><th>हॉलमार्क कोड</th><th>शुद्ध सोना</th><th>इस्तेमाल</th></tr>
+      <tr><td>24K (999)</td><td>999</td><td>99.9%</td><td>सिक्के, बार, निवेश – नाज़ुक, ज्वेलरी के लिए नहीं</td></tr>
+      <tr><td>23K</td><td>958</td><td>95.8%</td><td>कुछ सिक्के/निवेश सोना</td></tr>
+      <tr><td>22K (916)</td><td>916</td><td>91.6%</td><td>भारत की सबसे आम ज्वेलरी</td></tr>
+      <tr><td>18K (750)</td><td>750</td><td>75%</td><td>हल्की-मज़बूत ज्वेलरी, डायमंड सेटिंग</td></tr>
+      <tr><td>14K (585)</td><td>585</td><td>58.5%</td><td>सस्ती, रोज़ पहनने लायक ज्वेलरी</td></tr>
+    </table>
+    <p>चांदी में: <strong>999 फाइन</strong> (99.9% – सिक्के/बर्तन) और <strong>925 स्टर्लिंग</strong> (92.5% – ज्वेलरी/गिफ्ट आइटम) दो अहम शुद्धताएं हैं। चांदी का रेट बाज़ार में <strong>प्रति किलो</strong> बताया जाता है – इसीलिए इस टूल में चांदी चुनने पर रेट प्रति किलो मांगा जाता है।</p>
+
+    <h2>🧾 GST और सोना – ज़रूरी नियम (2026)</h2>
+    <ul>
+      <li>सोने की <strong>हर शुद्धता</strong> (24K से 14K तक) और हर रूप (गहना, सिक्का, बार) पर धातु कीमत पर <strong>3% GST</strong></li>
+      <li>Making charges अलग से बिल हों तो उन पर <strong>5% GST</strong> (HSN 9988); GST 2.0 (सितंबर 2025) के बाद भी सोने की यही दरें हैं</li>
+      <li>HSN कोड: <strong>7108</strong> सोने के बार/गोल्ड, <strong>7113</strong> गहने, <strong>7118</strong> सिक्के</li>
+      <li><strong>सॉवरेन गोल्ड बॉन्ड (SGB) और गोल्ड ETF में GST ज़ीरो</strong> – कागज़ी/डिमैट निवेश है, भौतिक सोना नहीं</li>
+      <li>डिजिटल गोल्ड (मोबाइल ऐप वाला) भी भौतिक सोना माना जाता है – <strong>3% GST</strong> लगता है</li>
+      <li>बेचने पर पुराने सोने की वैल्यू पर भी GST का मामला बनता है – एक्सचेंज/गोल्ड-स्कीम के नियम दुकान से पूछकर बिल में लिखवाएं</li>
+    </ul>
+    <div class="note">⚡ <strong>निवेश का नियम:</strong> निवेश के लिए सिक्के/बार (24K) या SGB बेहतर हैं – SGB में ब्याज भी मिलता है और GST भी नहीं। पहनने के लिए 22K/18K। पूरी तुलना हमारी <a href="../blog/gold-investment-guide.html">गोल्ड इन्वेस्टमेंट गाइड</a> में पढ़ें।</div>
+
+    <h2>❓ अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+    <details>
+      <summary>रेट मैं कहां से देखूं?</summary>
+      <p>हर शहर का रेट थोड़ा अलग होता है। आज का रेट किसी भरोसेमंद ज्वेलर की वेबसाइट/ऐप या समाचार से देखकर टूल में डालें – टूल हिसाब उसी रेट से लगाएगा। यह टूल लाइव रेट नहीं दिखाता, बल्कि आपके दिए रेट का सही गणित करता है।</p>
+    </details>
+    <details>
+      <summary>22K और 24K में कीमत का कितना फर्क होता है?</summary>
+      <p>22K में सोना 91.6% होता है, यानी उसी रेट पर 22K गहने की धातु कीमत 24K से लगभग 8.4% कम होती है। उदाहरण: 24K रेट ₹1,00,000/10g हो तो 10 ग्राम 22K की धातु कीमत ≈ ₹91,600।</p>
+    </details>
+    <details>
+      <summary>1 तोला में कितना ग्राम होता है?</summary>
+      <p>भारतीय तोला = <strong>11.664 ग्राम</strong>। 10 ग्राम से थोड़ा ज़्यादा – पुराने ज़माने का हिसाब जो आज भी ज्वेलर्स इस्तेमाल करते हैं।</p>
+    </details>
+    <details>
+      <summary>Making charges क्यों इतने बदलते हैं?</summary>
+      <p>मशीन से बनी ज्वेलरी में 5-10%, हैंडमेड या डिज़ाइनर में 15-25% तक। साथ में ब्रांड का नाम भी चार्ज बढ़ाता है। त्योहारों पर "zero making" ऑफर भी आती हैं – तब रेट थोड़ा ऊंचा होता है, तुलना करके ही खरीदें।</p>
+    </details>
+    <details>
+      <summary>पुराना सोना बेचते वक्त क्या देखें?</summary>
+      <p>हॉलमार्क और बिल संभालकर रखें। दुकान आपके सोने की शुद्धता परखकर (22K गिरकर 21K आदि हो सकता है) उसी दिन के रेट से वैल्यू देती है, making वापस नहीं मिलता। यह टूल शुद्धता बदलकर बेचने की वैल्यू भी निकाल सकता है।</p>
+    </details>
+    <details>
+      <summary>GST किसे देना पड़ता है – खरीदार को या दुकान को?</summary>
+      <p>बिल में GST खरीदार से ही वसूला जाता है (3% धातु + 5% making)। दुकान उसे सरकार को जमा करती है। बिल लेना आपका अधिकार है – बिना बिल की खरीद बाद में बेचने/एक्सचेंज में दिक्कत डालती है।</p>
+    </details>
+    <details>
+      <summary>SGB या भौतिक सोना – GST किसमें बचत है?</summary>
+      <p>SGB/ETF पर <strong>0% GST</strong>, भौतिक सोने पर 3% + making GST। निवेश के लिहाज़ से गहना खरीदने की तुलना में SGB सस्ता पड़ता है। विवरण <a href="../blog/gold-investment-guide.html">गोल्ड इन्वेस्टमेंट गाइड</a> में।</p>
+    </details>
+
+    <div class="tip">✅ <strong>और फाइनेंस टूल्स:</strong> <a href="gst-calculator.html">GST कैलकुलेटर</a> · <a href="interest-calculator.html">ब्याज कैलकुलेटर</a> · <a href="sip-calculator.html">SIP कैलकुलेटर</a> · <a href="inflation-calculator.html">महंगाई कैलकुलेटर</a> — सारे टूल्स <a href="../index.html">होम पेज</a> पर।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function fmt(n){ return '₹' + n.toLocaleString('en-IN', {maximumFractionDigits: 0}); }
+var PUR = {
+  gold: [
+    ['0.999','24K (999 – सबसे शुद्ध)'],
+    ['0.916','22K (916 – ज्वेलरी स्टैंडर्ड)'],
+    ['0.750','18K (750)'],
+    ['0.585','14K (585)']
+  ],
+  silver: [
+    ['0.999','999 फाइन (सिक्के/बर्तन)'],
+    ['0.925','925 स्टर्लिंग (ज्वेलरी)']
+  ]
+};
+function metalChange(){
+  var m = document.getElementById('metal').value;
+  var p = document.getElementById('purity');
+  p.innerHTML = '';
+  PUR[m].forEach(function(o){
+    var op = document.createElement('option');
+    op.value = o[0];
+    op.textContent = o[1];
+    if (o[0] === '0.916' || (m === 'silver' && o[0] === '0.999')) op.selected = true;
+    p.appendChild(op);
+  });
+  var rl = document.getElementById('rateLabel');
+  var r = document.getElementById('rate');
+  if (m === 'gold'){ rl.textContent = 'आज का रेट – ₹ प्रति 10 ग्राम (शुद्ध 24K/999)'; r.value = 100000; }
+  else { rl.textContent = 'आज का रेट – ₹ प्रति 1 किलो (999 फाइन चांदी)'; r.value = 100000; }
+}
+function mkChange(){
+  var mode = document.getElementById('mkMode').value;
+  var lbl = document.getElementById('mkLabel');
+  var v = document.getElementById('mkVal');
+  if (mode === 'pct'){ lbl.textContent = 'Making % (जैसे 12 = 12%)'; v.value = 12; }
+  else if (mode === 'perg'){ lbl.textContent = '₹ प्रति ग्राम (जैसे 400)'; v.value = 400; }
+  else if (mode === 'flat'){ lbl.textContent = 'फ्लैट राशि ₹'; v.value = 3000; }
+  else { lbl.textContent = '—'; v.value = 0; }
+}
+function calc(){
+  var m = document.getElementById('metal').value;
+  var wt = parseFloat(document.getElementById('wt').value) || 0;
+  var unit = parseFloat(document.getElementById('unit').value);
+  var pur = parseFloat(document.getElementById('purity').value);
+  var rate = parseFloat(document.getElementById('rate').value) || 0;
+  var mode = document.getElementById('mkMode').value;
+  var mkv = parseFloat(document.getElementById('mkVal').value) || 0;
+
+  var grams = wt * unit;
+  var perGram;
+  if (m === 'gold'){ perGram = rate / 10; }        // gold: rate per 10 gram
+  else { perGram = rate / 1000; }                   // silver: rate per kg
+  var metalVal = grams * pur * perGram;
+
+  var making = 0;
+  if (mode === 'pct'){ making = metalVal * mkv / 100; }
+  else if (mode === 'perg'){ making = grams * mkv; }
+  else if (mode === 'flat'){ making = mkv; }
+
+  var gstMetal = metalVal * 0.03;
+  var gstMaking = making * 0.05;
+  var total = metalVal + making + gstMetal + gstMaking;
+
+  var mName = m === 'gold' ? 'सोना' : 'चांदी';
+  var rows = [
+    ['वज़न (ग्राम में)', grams.toFixed(2) + ' ग्राम'],
+    ['धातु की असली कीमत (' + pur + ' शुद्धता)', fmt(metalVal)],
+    ['Making charges', mode === 'none' ? 'कोई नहीं' : fmt(making)],
+    ['GST @3% (धातु पर)', fmt(gstMetal)],
+    ['GST @5% (making पर)', fmt(gstMaking)],
+    ['<strong>कुल देय राशि</strong>', '<strong>' + fmt(total) + '</strong>']
+  ];
+  var tbl = '<tr><td>हिसाब</td><td>राशि</td></tr>';
+  rows.forEach(function(r){ tbl += '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td></tr>'; });
+  document.getElementById('breakup').innerHTML = tbl;
+  document.getElementById('total').textContent = '💰 कुल ' + mName + ' की कीमत: ' + fmt(total);
+  document.getElementById('out').style.display = 'block';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Rashi Calculator in Hindi – जन्मतिथि से अपनी राशि पता करें (12 राशि)</title>
+<meta name="description" content="मुफ्त राशि कैलकुलेटर हिंदी में – जन्मतिथि डालो और अपनी राशि (Zodiac Sign) पता करो! 12 राशियों की पूरी टेबल, अंग्रेजी नाम, तत्व और स्वामी ग्रह। Sun Sign और Moon Sign का फर्क भी आसान भाषा में समझो।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="राशि कैलकुलेटर (जन्मतिथि से)">
+<meta property="og:description" content="तारीख डालो, राशि पाओ – 12 राशियों की पूरी जानकारी।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Rashi Calculator Hindi","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","description":"जन्मतिथि से राशि (zodiac sign) पता करने वाला फ्री कैलकुलेटर (हिंदी)","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.8}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;line-height:1.4;margin-bottom:6px}
+.row{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}
+.field{flex:1;min-width:170px}
+label{display:block;font-size:.9rem;font-weight:600;margin-bottom:5px;color:#3c4043}
+input,select{width:100%;padding:11px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:#1a73e8}
+.btn{background:#1a73e8;color:#fff;border:none;padding:13px 30px;border-radius:8px;font-size:1.05rem;font-weight:600;cursor:pointer;margin-top:8px}
+.btn:hover{background:#1558b0}
+.result{background:#f1f3f4;border-radius:10px;padding:18px;margin-top:18px;display:none}
+.result .big{font-size:1.6rem;font-weight:700;color:#0b8043}
+.result table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.95rem}
+.result td{padding:8px 6px;border-bottom:1px solid #e0e0e0}
+article{background:#fff;border-radius:12px;padding:36px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:28px 0 12px;color:#1a73e8;font-size:1.3rem}
+article h3{margin:20px 0 8px;color:#202124;font-size:1.08rem}
+article p{margin-bottom:12px}
+article ul,article ol{padding-left:24px;margin-bottom:12px}
+article li{margin-bottom:6px}
+article a{color:#1a73e8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.93rem}
+th{background:#e8f0fe;color:#1a73e8;padding:10px;text-align:left;border:1px solid #d2e3fc}
+td{padding:10px;border:1px solid #e0e0e0}
+tr:nth-child(even) td{background:#f8f9fa}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:14px 16px;border-radius:8px;margin:16px 0}
+.tip{background:#e6f4ea;border-left:4px solid #188038;padding:14px 16px;border-radius:8px;margin:16px 0}
+details{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:8px;padding:14px 16px;margin:10px 0}
+summary{font-weight:600;cursor:pointer;color:#202124}
+details p{margin-top:10px;margin-bottom:0}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/rashi-calculator.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › टूल्स › राशि कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1> Zodiac Rashi Calculator (हिंदी)</h1>
+    <p>अपनी <strong>जन्मतिथि</strong> डालो – तुरंत पता चलेगा आपकी राशि, उसका अंग्रेजी नाम, चिन्ह, तत्व और स्वामी ग्रह।</p>
+    <div class="row">
+      <div class="field">
+        <label>जन्म की तारीख चुनें</label>
+        <input type="date" id="dob" onchange="calc()">
+      </div>
+    </div>
+    <button class="btn" onclick="calc()">🔮 मेरी राशि बताओ</button>
+    <div class="result" id="out">
+      <div class="big" id="rashi"></div>
+      <table id="info"></table>
+    </div>
+  </div>
+
+  <article>
+    <h2>🔍 यह टूल क्या है? (A2Z पूरी जानकारी)</h2>
+    <p><strong>क्या है:</strong> यह एक फ्री कैलकुलेटर है जो आपकी जन्मतिथि से आपकी <strong>राशि (Zodiac Sign)</strong> बताता है – हिंदी और अंग्रेजी दोनों नामों में।</p>
+    <p><strong>क्या करता है:</strong> आपकी तारीख को 12 राशियों की तय तारीख-सीमा (date range) से मिलाता है और जिस सीमा में जन्मतिथि आती है, वही राशि दिखाता है। साथ में राशि का चिन्ह, तत्व (अग्नि/पृथ्वी/वायु/जल) और स्वामी ग्रह भी बताता है।</p>
+    <p><strong>किसके लिए:</strong> राशि जानना चाहने वाले, कुंडली/मैचिंग के लिए बुनियादी जानकारी चाहने वाले, या बस मज़े के लिए अपनी और दोस्तों की राशि देखने वाले सबके लिए।</p>
+
+    <h2>🧮 इसके पीछे का Logic – कैसे काम करता है?</h2>
+    <p>पृथ्वी सूरज के चारों ओर घूमती है, और साल भर में सूरज आकाश के 12 तारा-समूहों (zodiac constellations) के सामने से गुजरता दिखता है। हर समूह के सामने लगभग एक महीना रहता है – इसी से 12 राशियां बनीं और हर राशि की तारीख-सीमा तय हो गई:</p>
+    <p style="background:#f1f3f4;padding:12px;border-radius:8px"><strong>तरीका:</strong> जन्मतिथि का महीना + दिन लो → 12 सीमाओं से एक-एक करके मिलाओ → जिस सीमा में तारीख गिरे, वही राशि। जैसे 15 अगस्त = 23 जुलाई–22 अगस्त की सीमा में = <strong>सिंह (Leo)</strong> राशि।</p>
+    <p>यह विधि पश्चिमी ज्योतिष (Western Astrology) की <strong>Sun Sign</strong> परंपरा पर आधारित है – यही पूरी दुनिया में सबसे ज्यादा इस्तेमाल होती है और अखबार/ऐप वाले राशिफल इसी से चलते हैं।</p>
+
+    <h2>📑 12 राशियों की पूरी टेबल (तारीख सीमा सहित)</h2>
+    <table>
+      <tr><th>राशि (हिंदी)</th><th>English नाम</th><th>चिन्ह</th><th>तारीख सीमा</th><th>तत्व</th><th>स्वामी ग्रह</th></tr>
+      <tr><td>मेष</td><td>Aries</td><td>♈ मेढ़ा</td><td>21 मार्च – 19 अप्रैल</td><td>अग्नि</td><td>मंगल</td></tr>
+      <tr><td>वृषभ</td><td>Taurus</td><td>♉ बैल</td><td>20 अप्रैल – 20 मई</td><td>पृथ्वी</td><td>शुक्र</td></tr>
+      <tr><td>मिथुन</td><td>Gemini</td><td>♊ जोड़ी</td><td>21 मई – 20 जून</td><td>वायु</td><td>बुध</td></tr>
+      <tr><td>कर्क</td><td>Cancer</td><td>♋ केकड़ा</td><td>21 जून – 22 जुलाई</td><td>जल</td><td>चंद्र</td></tr>
+      <tr><td>सिंह</td><td>Leo</td><td>♌ शेर</td><td>23 जुलाई – 22 अगस्त</td><td>अग्नि</td><td>सूर्य</td></tr>
+      <tr><td>कन्या</td><td>Virgo</td><td>♍ कन्या</td><td>23 अगस्त – 22 सितंबर</td><td>पृथ्वी</td><td>बुध</td></tr>
+      <tr><td>तुला</td><td>Libra</td><td>♎ तराजू</td><td>23 सितंबर – 22 अक्टूबर</td><td>वायु</td><td>शुक्र</td></tr>
+      <tr><td>वृश्चिक</td><td>Scorpio</td><td>♏ बिच्छू</td><td>23 अक्टूबर – 21 नवंबर</td><td>जल</td><td>मंगल</td></tr>
+      <tr><td>धनु</td><td>Sagittarius</td><td>♐ धनुष</td><td>22 नवंबर – 21 दिसंबर</td><td>अग्नि</td><td>गुरु</td></tr>
+      <tr><td>मकर</td><td>Capricorn</td><td>♑ मगरमच्छ-बकरा</td><td>22 दिसंबर – 19 जनवरी</td><td>पृथ्वी</td><td>शनि</td></tr>
+      <tr><td>कुम्भ</td><td>Aquarius</td><td>♒ जल-भरने वाला</td><td>20 जनवरी – 18 फरवरी</td><td>वायु</td><td>शनि</td></tr>
+      <tr><td>मीन</td><td>Pisces</td><td>♓ मछली</td><td>19 फरवरी – 20 मार्च</td><td>जल</td><td>गुरु</td></tr>
+    </table>
+
+    <h2>⚖️ Sun Sign बनाम Moon Sign – भ्रम दूर करो (जरूरी!)</h2>
+    <p>भारत में "राशि" शब्द दो अलग-अलग चीज़ों के लिए इस्तेमाल होता है, इसलिए उलझन बनती है। साफ-साफ समझो:</p>
+    <table>
+      <tr><th></th><th>Sun Sign (यह टूल)</th><th>Moon Sign (कुंडली वाली)</th></tr>
+      <tr><td>कैसे निकलती है</td><td>सिर्फ जन्मतिथि से</td><td>जन्म के समय + तारीख + स्थान से कुंडली बनाकर</td></tr>
+      <tr><td>क्या दिखाती है</td><td>सूर्य उस दिन किस राशि में था</td><td>चंद्रमा उस क्षण किस राशि में था</td></tr>
+      <tr><td>कहां ज्यादा चलती है</td><td>पश्चिमी राशिफल, अखबार, ऐप</td><td>वैदिक ज्योतिष, कुंडली मिलान</td></tr>
+    </table>
+    <div class="note">⚡ <strong>सीधी बात:</strong> यह कैलकुलेटर जन्मतिथि से <strong>Sun Sign</strong> निकालता है। शादी-विवाह वाली कुंडली और वैदिक ज्योतिष में पूछी जाने वाली राशि <strong>Moon Sign</strong> होती है, जो इससे अलग निकल सकती है – उसके लिए जन्म समय का पंचांग/कुंडली जरूरी है। दोनों को आपस में मिलाना नहीं, अलग-अलग समझना सही है।</div>
+
+    <h2>📅 सीमा वाली तारीखों का सच</h2>
+    <p>अगर जन्मतिथि किसी राशि की आखिरी/पहली तारीख पर है (जैसे 20 मार्च या 21 मार्च), तो बताई गई सीमा के हिसाब से राशि तय होती है – इस टूल में वही मानक (सबसे ज्यादा मान्य) सीमाएं इस्तेमाल हुई हैं। ध्यान रहे – सीमा वाले दिनों पर कुछ ज्योतषी थोड़ा अलग मानते हैं, इसलिए दोनों राशियों के लक्षण मिलते-जुलते महसूस होना आम है।</p>
+
+    <h2>❓ अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+    <details>
+      <summary>जन्मतिथि से राशि कैसे पता चलती है?</summary>
+      <p>आपकी तारीख को 12 तय तारीख-सीमाओं से मिलाया जाता है। जैसे 5 मई = वृषभ (20 अप्रैल–20 मई), और 10 दिसंबर = धनु (22 नवंबर–21 दिसंबर)। यही फॉर्मूला इस टूल में है।</p>
+    </details>
+    <details>
+      <summary>मेरी कुंडली वाली राशि (Moon Sign) कैसे पता करूं?</summary>
+      <p>Moon Sign के लिए जन्म का सही समय और स्थान चाहिए – पंचांग या कुंडली बनाने वाले वैदिक ज्योतिषी से बनवाएं। जन्मतिथि से अकेले वह नहीं निकलती।</p>
+    </details>
+    <details>
+      <summary>क्या राशि से भविष्य या स्वभाव पक्का पता चलता है?</summary>
+      <p>राशिफल परंपरा और मनोरंजन का हिस्सा है – इसे विज्ञान न मानें। अपने फैसले अपनी समझ से लें; राशि को बुरे फैसलों का बहाना न बनाएं। 😊</p>
+    </details>
+    <details>
+      <summary>राशियां 12 ही क्यों हैं?</summary>
+      <p>सूरज की वार्षिक यात्रा को 12 बराबर हिस्सों (हर हिस्सा ~30 डिग्री) में बांटा गया है – एक हिस्सा = एक राशि = लगभग एक महीना।</p>
+    </details>
+    <details>
+      <summary>क्या नाम के पहले अक्षर से राशि तय होती है?</summary>
+      <p>वैदिक परंपरा में नाम के अक्षर से राशि बताने का चलन है, पर वह Moon Sign पर आधारित है – जन्मतिथि वाली Sun Sign से अलग। सही जानकारी के लिए तारीख वाला तरीका (यह टूल) भरोसेमंद है।</p>
+    </details>
+    <details>
+      <summary>इसी तरह के और टूल?</summary>
+      <p>उम्र का पूरा हिसाब <a href="age-calculator.html">एज कैलकुलेटर</a> से, दो तारीखों के बीच के दिन <a href="date-difference-calculator.html">डेट डिफरेंस कैलकुलेटर</a> से, और सारे टूल्स <a href="../index.html">होम पेज</a> पर।</p>
+    </details>
+
+    <div class="tip">✅ <strong>नोट:</strong> यह टूल पारंपरिक ज्योतिष जानकारी को आसान बनाकर पेश करता है – मनोरंजन और सामान्य जानकारी के लिए। जीवन के बड़े फैसले अपने विवेक से करें।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var SIGNS = [
+  { hi: 'मेष',     en: 'Aries',       sym: '♈', emoji: '🐏', from: [3,21], to: [4,19],  el: 'अग्नि',  lord: 'मंगल' },
+  { hi: 'वृषभ',    en: 'Taurus',      sym: '♉', emoji: '🐂', from: [4,20], to: [5,20],  el: 'पृथ्वी', lord: 'शुक्र' },
+  { hi: 'मिथुन',   en: 'Gemini',      sym: '♊', emoji: '👯', from: [5,21], to: [6,20],  el: 'वायु',   lord: 'बुध' },
+  { hi: 'कर्क',    en: 'Cancer',      sym: '♋', emoji: '🦀', from: [6,21], to: [7,22],  el: 'जल',     lord: 'चंद्र' },
+  { hi: 'सिंह',    en: 'Leo',         sym: '♌', emoji: '🦁', from: [7,23], to: [8,22],  el: 'अग्नि',  lord: 'सूर्य' },
+  { hi: 'कन्या',   en: 'Virgo',       sym: '♍', emoji: '👩‍🌾', from: [8,23], to: [9,22], el: 'पृथ्वी', lord: 'बुध' },
+  { hi: 'तुला',    en: 'Libra',       sym: '♎', emoji: '⚖️', from: [9,23], to: [10,22], el: 'वायु',   lord: 'शुक्र' },
+  { hi: 'वृश्चिक',  en: 'Scorpio',    sym: '♏', emoji: '🦂', from: [10,23], to: [11,21], el: 'जल',    lord: 'मंगल' },
+  { hi: 'धनु',    en: 'Sagittarius', sym: '♐', emoji: '🏹', from: [11,22], to: [12,21], el: 'अग्नि',  lord: 'गुरु' },
+  { hi: 'मकर',    en: 'Capricorn',   sym: '♑', emoji: '🐐', from: [12,22], to: [1,19],  el: 'पृथ्वी', lord: 'शनि' },
+  { hi: 'कुम्भ',   en: 'Aquarius',    sym: '♒', emoji: '🏺', from: [1,20], to: [2,18],  el: 'वायु',   lord: 'शनि' },
+  { hi: 'मीन',    en: 'Pisces',      sym: '♓', emoji: '🐟', from: [2,19], to: [3,20],  el: 'जल',     lord: 'गुरु' }
+];
+var MONTHS = ['जनवरी','फरवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितंबर','अक्टूबर','नवंबर','दिसंबर'];
+function rashiOf(month, day){
+  // month: 1-12, day: 1-31; makar/kumbh wrap the year
+  for (var i = 0; i < SIGNS.length; i++){
+    var s = SIGNS[i];
+    if (s.from[0] <= s.to[0]){
+      if ((month === s.from[0] && day >= s.from[1]) || (month === s.to[0] && day <= s.to[1]) ||
+          (month > s.from[0] && month < s.to[0])) return s;
+    } else {
+      // wrap (Makar: Dec 22 - Jan 19)
+      if ((month === s.from[0] && day >= s.from[1]) || (month === s.to[0] && day <= s.to[1]) ||
+          (month > s.from[0] || month < s.to[0])) return s;
+    }
+  }
+  return null;
+}
+function calc(){
+  var v = document.getElementById('dob').value;
+  if (!v){ document.getElementById('rashi').textContent = 'पहले तारीख चुनें 🙂'; document.getElementById('out').style.display = 'block'; document.getElementById('info').innerHTML = ''; return; }
+  var parts = v.split('-');
+  var y = +parts[0], m = +parts[1], d = +parts[2];
+  var s = rashiOf(m, d);
+  document.getElementById('rashi').innerHTML = s.emoji + ' आपकी राशि: ' + s.hi + ' (' + s.en + ') ' + s.sym;
+  var rows = [
+    ['तारीख सीमा', s.from[1] + ' ' + MONTHS[s.from[0]-1] + ' – ' + s.to[1] + ' ' + MONTHS[s.to[0]-1]],
+    ['चिन्ह', s.sym + ' (' + s.en + ')'],
+    ['तत्व (Element)', s.el],
+    ['स्वामी ग्रह', s.lord],
+    ['आपकी जन्मतिथि', d + ' ' + MONTHS[m-1] + ' ' + y]
+  ];
+  var tbl = '';
+  rows.forEach(function(r){ tbl += '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td></tr>'; });
+  document.getElementById('info').innerHTML = tbl;
+  document.getElementById('out').style.display = 'block';
+}
+</script>
+</body>
+</html>

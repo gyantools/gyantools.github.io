@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Chess Game in Hindi – शतरंज खेलो (2 Player + Computer)</title>
+<meta name="description" content="मुफ़्त शतरंज (Chess) गेम हिंदी में – दुनिया का सबसे बड़ा बोर्ड गेम! दोस्त के साथ 2 player या कंप्यूटर से खेलें। पूरे आधुनिक नियम: कासलिंग, एन पासां, प्रमोशन, शाह और शाहमात।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="शतरंज (Chess) गेम हिंदी में">
+<meta property="og:description" content="दुनिया का #1 बोर्ड गेम – 2 Player + vs Computer!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Chess Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"शतरंज Chess गेम हिंदी में – 2 प्लेयर + कंप्यूटर मोड, पूरे आधुनिक नियमों के साथ","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.mode{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.mode button{background:#f1f3f4;color:#202124;border:none;padding:10px 22px;border-radius:20px;font-size:.95rem;font-weight:600;cursor:pointer}
+.mode button.on{background:#1a73e8;color:#fff}
+.canvas-wrap{margin:18px auto;width:max-content}
+canvas{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.1);touch-action:manipulation}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.stats span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.stats b{color:#1a73e8}
+.ctrl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.ctrl button{background:#e8f0fe;color:#1a73e8;border:none;padding:10px 18px;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer}
+.ctrl button:hover{background:#d2e3fc}
+.msg{min-height:34px;font-weight:600;margin-top:8px;font-size:1.05rem}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul,article ol{padding-left:24px}
+article a{color:#1a73e8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.93rem}
+th{background:#e8f0fe;color:#1a73e8;padding:10px;text-align:left;border:1px solid #d2e3fc}
+td{padding:10px;border:1px solid #e0e0e0}
+tr:nth-child(even) td{background:#f8f9fa}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/games/chess.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › शतरंज (Chess) गेम</p>
+
+  <div class="game-box">
+    <h1>♞ शतरंज (Chess)</h1>
+    <p>दुनिया का सबसे बड़ा बोर्ड गेम – मोहरा चुनो, हरे बिंदु पर चलो। राजा को घेर लो = <strong>शाहमात, जीत!</strong></p>
+    <div class="mode">
+      <button id="m-pvp" class="on" onclick="setMode('pvp')">👥 2 प्लेयर (दोस्त के साथ)</button>
+      <button id="m-pvc" onclick="setMode('pvc')">🤖 कंप्यूटर से खेलो</button>
+    </div>
+    <div class="canvas-wrap"><canvas id="cv" width="376" height="376"></canvas></div>
+    <div class="stats">
+      <span>चाल: <b id="stm">सफेद</b></span>
+      <span>फंदे: <b id="capinfo">0-0</b></span>
+    </div>
+    <div class="ctrl">
+      <button onclick="reset()">🔄 नया गेम</button>
+      <button onclick="undo()">↩️ चाल वापस</button>
+    </div>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <article>
+    <h2>कैसे खेलें – 2 मिनट में समझो</h2>
+    <ol>
+      <li>मोहरे: राजा (♚), रानी/वज़ीर (♛), हाथी (♜), ऊंट (♝), घोड़ा (♞), प्यादे (♟)</li>
+      <li>अपना मोहरा टैप करो – जहां जाना कानूनी है वहां <strong>हरा बिंदी</strong> दिखेगी – वहां टैप करके चलो</li>
+      <li><strong>सफेद पहले</strong> चलता है, फिर बारी-बारी</li>
+      <li>राजा को खतरा हो तो <strong>शाह (Check!)</strong> चिल्लाओ – जिसे शाह मिले उसे बचना ही होगा</li>
+      <li>जिसका राजा बच न पाए और कोई कानूनी चाल न बचे = <strong>शाहमात (Checkmate)</strong> – वह हार गया</li>
+      <li>कोई चाल न बचे पर शाह भी न हो = <strong>स्टेलमेट (Draw)</strong></li>
+    </ol>
+    <h2>हर मोहरे की चाल (याद रखने लायक)</h2>
+    <table>
+      <tr><th>मोहरा</th><th>चाल</th></tr>
+      <tr><td>♟ प्यादा</td><td>सिर्फ <strong>सीधे आगे</strong> 1 खाना (पहली चाल में 2 खाने भी); विकर्ण पर सिर्फ <strong>मारने</strong> के लिए</td></tr>
+      <tr><td>♞ घोड़ा</td><td>2+1 की अंग्रेजी "L" आकार में – <strong>एकमात्र मोहरा जो उछल के ऊपर से निकलता है</strong></td></tr>
+      <tr><td>♝ ऊंट</td><td>कितने भी खाने तिरछा (विकर्ण)</td></tr>
+      <tr><td>♜ हाथी</td><td>सीधी रेखा में कितने भी खाने (आगे-पीछे, 左-right)</td></tr>
+      <tr><td>♛ रानी</td><td>हाथी + ऊंट – किसी भी दिशा में कितने भी खाने (सबसे ताकतवर)</td></tr>
+      <tr><td>♚ राजा</td><td>किसी भी दिशा में 1 खाना (पूरे गेम में सबसे कीमती – गिरा तो गेम गया)</td></tr>
+    </table>
+    <h2>3 खास नियम (यही असली शतरंज है)</h2>
+    <ul>
+      <li><strong>कासलिंग (Castling):</strong> राजा और हाथी ने अब तक न चले हों और बीच खाली हो, तो एक ही चाल में राजा 2 खाने हाथी की तरफ जाता है और हाथी उसके पार आ जाता है – राजा की सुरक्षा का सबसे बड़ा हथियार (शाह में नहीं हो सकता)</li>
+      <li><strong>प्रमोशन (Promotion):</strong> प्यादा आखिरी कतार पहुंचा तो <strong>रानी बन जाता है</strong> (इस गेम में अपने आप रानी)</li>
+      <li><strong>एन पासां (En Passant):</strong> दुश्मन का प्यादा तुम्हारे प्यादे के बगल से 2 खाने छलांग लगाए, तो अगली ही चाल में तुम उसे विकर्ण से मार सकते हो जैसे वह 1 ही खाना चला हो</li>
+    </ul>
+    <h2>शुरुआत की 4 प्रो ट्रिक्स</h2>
+    <ul>
+      <li><strong>बीच खोलो:</strong> घोड़े-ऊंट निकालकर बीच के खानों पर कब्जा करो – कसा हुआ खिलाड़ी जीतता है</li>
+      <li><strong>जल्दी कासल करो:</strong> राजा को कोने में सुरक्षित करो, बीच में खुला राजा मारा जाता है</li>
+      <li><strong>रानी मत ललकाओ:</strong> पहली 4-5 चालों में रानी बाहर निकालना उसे शिकार बना देता है</li>
+      <li><strong>प्यादे की जंजीर मत तोड़ो:</strong> आगे निकला अकेला प्यादा मरता है; जंजीर मिलकर आगे बढ़ती है</li>
+    </ul>
+    <p>कंप्यूटर हर चाल पर 2 चाल आगे तक हिसाब लगाता है – मार खाने वाली चालों सावधानी! और बोर्ड गेम्स: <a href="checkers.html">♟️ दमा (Checkers)</a> · <a href="reversi.html">⚫⚪ रिवर्सी</a> · <a href="nine-mens-morris.html">नौ पत्थरी</a> · <a href="connect-four.html">४ गेंद जोड़ो</a></p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+// ===== Chess - full legal movegen (castling, en passant, promotion) =====
+var SZ = 8, CELL = 44, PAD = 12;
+var cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+var GLYPH = { K:'♚', Q:'♛', R:'♜', B:'♝', N:'♞', P:'♟', k:'♚', q:'♛', r:'♜', b:'♝', n:'♞', p:'♟' };
+var VAL = { P:100, N:320, B:330, R:500, Q:900, K:20000 };
+var board, turn, rights, ep, history, mode = 'pvp', sel = null, lastMove = null, over = false, busy = false;
+
+function idx(r, c){ return r * 8 + c; }
+function rc(i){ return [Math.floor(i / 8), i % 8]; }
+function colorOf(p){ return p === null ? null : (p === p.toUpperCase() ? 'w' : 'b'); }
+function other(c){ return c === 'w' ? 'b' : 'w'; }
+
+function initialState(){
+  var b = new Array(64).fill(null);
+  var back = ['R','N','B','Q','K','B','N','R'];
+  for (var c = 0; c < 8; c++){
+    b[idx(0, c)] = back[c].toLowerCase();
+    b[idx(1, c)] = 'p';
+    b[idx(6, c)] = 'P';
+    b[idx(7, c)] = back[c];
+  }
+  return { b: b, turn: 'w', rights: { wk:true, wq:true, bk:true, bq:true }, ep: -1 };
+}
+function reset(){
+  var st = initialState();
+  board = st.b; turn = st.turn; rights = st.rights; ep = st.ep;
+  history = []; sel = null; lastMove = null; over = false; busy = false;
+  updStats(); say('सफेद की बारी – मोहरा चुनो');
+  draw();
+}
+function say(html){ document.getElementById('msg').innerHTML = html; }
+function updStats(){
+  document.getElementById('stm').textContent = turn === 'w' ? 'सफेद' : 'काला';
+  var mw = 0, mb = 0;
+  for (var i = 0; i < 64; i++){
+    if (board[i] && board[i] !== board[i].toUpperCase()) mb += VAL[board[i].toUpperCase()] || 0;
+    if (board[i] && board[i] === board[i].toUpperCase()) mw += VAL[board[i]] || 0;
+  }
+  var d = Math.round((mw - mb) / 100);
+  document.getElementById('capinfo').textContent = d === 0 ? 'बराबर' : (d > 0 ? 'सफेद +' + d : 'काला +' + (-d));
+}
+function inB(r, c){ return r >= 0 && r < 8 && c >= 0 && c < 8; }
+var NDIRS = [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]];
+var KDIRS = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
+var BDIRS = [[-1,-1],[-1,1],[1,-1],[1,1]];
+var RDIRS = [[-1,0],[1,0],[0,-1],[0,1]];
+
+function attacked(bd, sq, by){
+  // by = 'w' or 'b' attacking color
+  var r = Math.floor(sq / 8), c = sq % 8;
+  var op = by === 'w' ? 'P' : 'p'; // pawns of 'by'
+  // pawn attacks: white pawns attack up (r-1)
+  var pr = by === 'w' ? r - 1 : r + 1;
+  if (inB(pr, c - 1) && bd[idx(pr, c - 1)] === op) return true;
+  if (inB(pr, c + 1) && bd[idx(pr, c + 1)] === op) return true;
+  var kn = by === 'w' ? 'N' : 'n';
+  for (var i = 0; i < 8; i++){
+    var rr = r + NDIRS[i][0], cc = c + NDIRS[i][1];
+    if (inB(rr, cc) && bd[idx(rr, cc)] === kn) return true;
+  }
+  var kg = by === 'w' ? 'K' : 'k';
+  for (var i2 = 0; i2 < 8; i2++){
+    var rr2 = r + KDIRS[i2][0], cc2 = c + KDIRS[i2][1];
+    if (inB(rr2, cc2) && bd[idx(rr2, cc2)] === kg) return true;
+  }
+  var bq = by === 'w' ? ['B','Q'] : ['b','q'];
+  for (var i3 = 0; i3 < 4; i3++){
+    var rr3 = r, cc3 = c;
+    while (true){
+      rr3 += BDIRS[i3][0]; cc3 += BDIRS[i3][1];
+      if (!inB(rr3, cc3)) break;
+      var p = bd[idx(rr3, cc3)];
+      if (p){ if (p === bq[0] || p === bq[1]) return true; break; }
+    }
+  }
+  var rq = by === 'w' ? ['R','Q'] : ['r','q'];
+  for (var i4 = 0; i4 < 4; i4++){
+    var rr4 = r, cc4 = c;
+    while (true){
+      rr4 += RDIRS[i4][0]; cc4 += RDIRS[i4][1];
+      if (!inB(rr4, cc4)) break;
+      var p2 = bd[idx(rr4, cc4)];
+      if (p2){ if (p2 === rq[0] || p2 === rq[1]) return true; break; }
+    }
+  }
+  return false;
+}
+function kingSq(bd, color){
+  var k = color === 'w' ? 'K' : 'k';
+  for (var i = 0; i < 64; i++) if (bd[i] === k) return i;
+  return -1;
+}
+function inCheck(bd, color){
+  var ks = kingSq(bd, color);
+  return ks >= 0 && attacked(bd, ks, other(color));
+}
+// pseudo moves for color; each move {from,to,flag('ep'|'castle'|'double'|'promo' optional)}
+function pseudoMoves(bd, color, rights, epSq){
+  var moves = [];
+  for (var i = 0; i < 64; i++){
+    var p = bd[i];
+    if (!p || colorOf(p) !== color) continue;
+    var r = Math.floor(i / 8), c = i % 8;
+    var up = p.toUpperCase();
+    if (up === 'P'){
+      var dir = color === 'w' ? -1 : 1;
+      var startR = color === 'w' ? 6 : 1;
+      var lastR = color === 'w' ? 0 : 7;
+      if (inB(r + dir, c) && !bd[idx(r + dir, c)]){
+        addPawn(moves, i, idx(r + dir, c), r + dir === lastR);
+        if (r === startR && !bd[idx(r + 2 * dir, c)]) moves.push({ from: i, to: idx(r + 2 * dir, c), flag: 'double' });
+      }
+      [[c - 1], [c + 1]].forEach(function(dc){
+        var cc = dc[0];
+        if (!inB(r + dir, cc)) return;
+        var t = idx(r + dir, cc);
+        if (bd[t] && colorOf(bd[t]) !== color) addPawn(moves, i, t, r + dir === lastR);
+        else if (t === epSq) moves.push({ from: i, to: t, flag: 'ep' });
+      });
+    } else if (up === 'N' || up === 'K'){
+      var D = up === 'N' ? NDIRS : KDIRS;
+      D.forEach(function(d){
+        var rr = r + d[0], cc = c + d[1];
+        if (!inB(rr, cc)) return;
+        var t = idx(rr, cc);
+        if (!bd[t] || colorOf(bd[t]) !== color) moves.push({ from: i, to: t });
+      });
+      if (up === 'K'){
+        // castling
+        var homeR = color === 'w' ? 7 : 0;
+        if (r === homeR && c === 4 && !attacked(bd, i, other(color))){
+          var kRight = color === 'w' ? rights.wk : rights.bk;
+          var qRight = color === 'w' ? rights.wq : rights.bq;
+          if (kRight && !bd[idx(homeR,5)] && !bd[idx(homeR,6)] &&
+              !attacked(bd, idx(homeR,5), other(color)) && !attacked(bd, idx(homeR,6), other(color)) &&
+              bd[idx(homeR,7)] === (color === 'w' ? 'R' : 'r'))
+            moves.push({ from: i, to: idx(homeR,6), flag: 'castle' });
+          if (qRight && !bd[idx(homeR,3)] && !bd[idx(homeR,2)] && !bd[idx(homeR,1)] &&
+              !attacked(bd, idx(homeR,3), other(color)) && !attacked(bd, idx(homeR,2), other(color)) &&
+              bd[idx(homeR,0)] === (color === 'w' ? 'R' : 'r'))
+            moves.push({ from: i, to: idx(homeR,2), flag: 'castle' });
+        }
+      }
+    } else {
+      var D2 = up === 'B' ? BDIRS : (up === 'R' ? RDIRS : KDIRS);
+      D2.forEach(function(d){
+        var rr = r + d[0], cc = c + d[1];
+        while (inB(rr, cc)){
+          var t = idx(rr, cc);
+          if (!bd[t]) moves.push({ from: i, to: t });
+          else { if (colorOf(bd[t]) !== color) moves.push({ from: i, to: t }); break; }
+          rr += d[0]; cc += d[1];
+        }
+      });
+    }
+  }
+  return moves;
+}
+function addPawn(moves, from, to, promo){
+  if (promo) moves.push({ from: from, to: to, flag: 'promo' });
+  else moves.push({ from: from, to: to });
+}
+// apply move -> returns {bd, rights, ep} new
+function applyMove(bd, m, rights, epSq, color){
+  var nb = bd.slice();
+  var p = nb[m.from];
+  var nr = { wk: rights.wk, wq: rights.wq, bk: rights.bk, bq: rights.bq };
+  var newEp = -1;
+  var r = Math.floor(m.from / 8), c = m.from % 8;
+  var tr = Math.floor(m.to / 8), tc = m.to % 8;
+  nb[m.from] = null;
+  if (m.flag === 'ep'){
+    nb[idx(tr + (color === 'w' ? 1 : -1), tc)] = null; // captured pawn behind target
+  }
+  if (m.flag === 'promo'){
+    p = color === 'w' ? 'Q' : 'q';
+  }
+  if (m.flag === 'castle'){
+    nb[m.to] = p;
+    if (tc === 6){ nb[idx(r, 5)] = nb[idx(r, 7)]; nb[idx(r, 7)] = null; }
+    else { nb[idx(r, 3)] = nb[idx(r, 0)]; nb[idx(r, 0)] = null; }
+  } else {
+    nb[m.to] = p;
+  }
+  if (m.flag === 'double') newEp = idx(r + (tr - r) / 2, c);
+  // rights update
+  if (p === 'K'){ nr.wk = false; nr.wq = false; }
+  if (p === 'k'){ nr.bk = false; nr.bq = false; }
+  if (m.from === idx(7,7) || m.to === idx(7,7)) nr.wk = false;
+  if (m.from === idx(7,0) || m.to === idx(7,0)) nr.wq = false;
+  if (m.from === idx(0,7) || m.to === idx(0,7)) nr.bk = false;
+  if (m.from === idx(0,0) || m.to === idx(0,0)) nr.bq = false;
+  return { bd: nb, rights: nr, ep: newEp };
+}
+function legalMoves(bd, color, rights, epSq){
+  var out = [];
+  pseudoMoves(bd, color, rights, epSq).forEach(function(m){
+    var res = applyMove(bd, m, rights, epSq, color);
+    if (!inCheck(res.bd, color)) out.push(m);
+  });
+  return out;
+}
+function statusOf(bd, color, rights, epSq){
+  var lm = legalMoves(bd, color, rights, epSq);
+  if (!lm.length){
+    if (inCheck(bd, color)) return { mate: true };
+    return { stale: true };
+  }
+  return { moves: lm };
+}
+// ===== UI =====
+function snapState(){
+  history.push({ bd: board.slice(), turn: turn, rights: JSON.parse(JSON.stringify(rights)), ep: ep, last: lastMove });
+  if (history.length > 60) history.shift();
+}
+function undo(){
+  if (!history.length || busy) return;
+  var h = history.pop();
+  board = h.bd; turn = h.turn; rights = h.rights; ep = h.ep; lastMove = h.last;
+  over = false; sel = null;
+  updStats(); say((turn === 'w' ? 'सफेद' : 'काला') + ' की बारी');
+  draw();
+}
+function finishTurn(){
+  sel = null;
+  updStats();
+  var st = statusOf(board, turn, rights, ep);
+  if (st.mate){
+    over = true;
+    say('👑 शाहमात! <strong>' + (turn === 'w' ? 'काले' : 'सफेदे') + '</strong> ने जीत लिया!');
+    draw(); return;
+  }
+  if (st.stale){
+    over = true;
+    say('🤝 स्टेलमेट – बराबरी! कोई कानूनी चाल नहीं बची।');
+    draw(); return;
+  }
+  if (inCheck(board, turn)) say('⚠️ शाह! ' + (turn === 'w' ? 'सफेदे' : 'काले') + ' के राजा को बचाओ!');
+  else say((turn === 'w' ? 'सफेद' : 'काला') + ' की बारी');
+  draw();
+  if (mode === 'pvc' && turn === 'b') { busy = true; setTimeout(aiMove, 350); }
+}
+function tryMove(from, to){
+  var lm = legalMoves(board, turn, rights, ep);
+  var m = lm.filter(function(x){ return x.from === from && x.to === to; })[0];
+  if (!m) return false;
+  snapState();
+  var res = applyMove(board, m, rights, ep, turn);
+  board = res.bd; rights = res.rights; ep = res.ep;
+  lastMove = { from: m.from, to: m.to };
+  turn = other(turn);
+  finishTurn();
+  return true;
+}
+cv.addEventListener('click', function(e){
+  if (over || busy) return;
+  if (mode === 'pvc' && turn === 'b') return;
+  var rect = cv.getBoundingClientRect();
+  var x = (e.clientX - rect.left) * (cv.width / rect.width);
+  var y = (e.clientY - rect.top) * (cv.height / rect.height);
+  var c = Math.floor((x - PAD) / CELL), r = Math.floor((y - PAD) / CELL);
+  if (!inB(r, c)) return;
+  var sq = idx(r, c);
+  if (sel !== null){
+    if (sq === sel){ sel = null; draw(); return; }
+    if (tryMove(sel, sq)) return;
+  }
+  if (board[sq] && colorOf(board[sq]) === turn){ sel = sq; draw(); }
+  else { sel = null; draw(); }
+});
+// ===== AI (black) - alpha-beta depth 2 =====
+function evalBd(bd){
+  var s = 0;
+  for (var i = 0; i < 64; i++){
+    var p = bd[i];
+    if (!p) continue;
+    var v = VAL[p.toUpperCase()];
+    var r = Math.floor(i / 8), c = i % 8;
+    var center = (Math.min(r, 7 - r) + Math.min(c, 7 - c)) * 3; // center bonus
+    if (colorOf(p) === 'b') s -= (v + center);
+    else s += (v + center);
+  }
+  return s; // black wants minimum
+}
+function orderMoves(bd, ms){
+  return ms.slice().sort(function(a, b){
+    var ca = bd[a.to] ? VAL[bd[a.to].toUpperCase()] : (a.flag === 'ep' ? 100 : 0);
+    var cb = bd[b.to] ? VAL[bd[b.to].toUpperCase()] : (b.flag === 'ep' ? 100 : 0);
+    return cb - ca;
+  });
+}
+function search(bd, color, rights, epSq, depth, alpha, beta){
+  var st = statusOf(bd, color, rights, epSq);
+  if (st.mate) return color === 'b' ? 99999 - depth : -99999 + depth;
+  if (st.stale) return 0;
+  if (depth === 0) return evalBd(bd);
+  var ms = orderMoves(bd, st.moves);
+  if (color === 'b'){
+    var best = Infinity;
+    for (var i = 0; i < ms.length; i++){
+      var res = applyMove(bd, ms[i], rights, epSq, 'b');
+      var v = search(res.bd, 'w', res.rights, res.ep, depth - 1, alpha, beta);
+      if (v < best) best = v;
+      if (best < beta) beta = best;
+      if (beta <= alpha) break;
+    }
+    return best;
+  } else {
+    var best2 = -Infinity;
+    for (var j = 0; j < ms.length; j++){
+      var res2 = applyMove(bd, ms[j], rights, epSq, 'w');
+      var v2 = search(res2.bd, 'b', res2.rights, res2.ep, depth - 1, alpha, beta);
+      if (v2 > best2) best2 = v2;
+      if (best2 > alpha) alpha = best2;
+      if (beta <= alpha) break;
+    }
+    return best2;
+  }
+}
+function aiMove(){
+  if (over || turn !== 'b'){ busy = false; return; }
+  var st = statusOf(board, 'b', rights, ep);
+  if (!st.moves || !st.moves.length){ busy = false; finishTurn(); return; }
+  var best = null, bestV = Infinity;
+  var ms = orderMoves(board, st.moves);
+  for (var i = 0; i < ms.length; i++){
+    var res = applyMove(board, ms[i], rights, ep, 'b');
+    var v = search(res.bd, 'w', res.rights, res.ep, 1, -Infinity, Infinity) + Math.random() * 6;
+    if (v < bestV){ bestV = v; best = ms[i]; }
+  }
+  busy = false;
+  if (best){
+    snapState();
+    var res2 = applyMove(board, best, rights, ep, 'b');
+    board = res2.bd; rights = res2.rights; ep = res2.ep;
+    lastMove = { from: best.from, to: best.to };
+    turn = 'w';
+    finishTurn();
+  }
+}
+function setMode(m){
+  mode = m;
+  document.getElementById('m-pvp').classList.toggle('on', m === 'pvp');
+  document.getElementById('m-pvc').classList.toggle('on', m === 'pvc');
+  reset();
+}
+function draw(){
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  for (var r = 0; r < 8; r++) for (var c = 0; c < 8; c++){
+    var x = PAD + c * CELL, y = PAD + r * CELL;
+    ctx.fillStyle = (r + c) % 2 === 0 ? '#f0d9b5' : '#b58863';
+    ctx.fillRect(x, y, CELL, CELL);
+  }
+  if (lastMove){
+    [lastMove.from, lastMove.to].forEach(function(sq){
+      var rr = Math.floor(sq / 8), cc = sq % 8;
+      ctx.fillStyle = 'rgba(24,128,56,.30)';
+      ctx.fillRect(PAD + cc * CELL, PAD + rr * CELL, CELL, CELL);
+    });
+  }
+  if (inCheck(board, turn) && kingSq(board, turn) >= 0){
+    var ks = kingSq(board, turn);
+    ctx.fillStyle = 'rgba(217,48,45,.45)';
+    ctx.fillRect(PAD + (ks % 8) * CELL, PAD + Math.floor(ks / 8) * CELL, CELL, CELL);
+  }
+  if (sel !== null){
+    ctx.strokeStyle = '#188038'; ctx.lineWidth = 3;
+    ctx.strokeRect(PAD + (sel % 8) * CELL + 2, PAD + Math.floor(sel / 8) * CELL + 2, CELL - 4, CELL - 4);
+    var lm = legalMoves(board, turn, rights, ep);
+    lm.forEach(function(m){
+      if (m.from !== sel) return;
+      ctx.beginPath();
+      ctx.arc(PAD + (m.to % 8) * CELL + CELL / 2, PAD + Math.floor(m.to / 8) * CELL + CELL / 2, 7, 0, 7);
+      ctx.fillStyle = 'rgba(24,128,56,.75)';
+      ctx.fill();
+    });
+  }
+  ctx.font = '30px "Segoe UI Symbol","Noto Sans Symbols 2",Arial';
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  for (var i = 0; i < 64; i++){
+    if (!board[i]) continue;
+    var px = PAD + (i % 8) * CELL + CELL / 2, py = PAD + Math.floor(i / 8) * CELL + CELL / 2;
+    var white = colorOf(board[i]) === 'w';
+    ctx.lineWidth = 2.5;
+    ctx.strokeStyle = white ? '#3c4043' : '#f1f3f4';
+    ctx.strokeText(GLYPH[board[i]], px, py);
+    ctx.fillStyle = white ? '#fafafa' : '#202124';
+    ctx.fillText(GLYPH[board[i]], px, py);
+  }
+}
+reset();
+</script>
+</body>
+</html>

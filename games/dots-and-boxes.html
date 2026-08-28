@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Dots and Boxes Game in Hindi – बिंदु-बक्सा (2 Player + Computer)</title>
+<meta name="description" content="मुफ़्त Dots and Boxes (बिंदु-बक्सा) गेम हिंदी में – बचपन वाला कागज़ का मशहूर गेम! दोस्त के साथ 2 player या कंप्यूटर से खेलें। लाइन खींचो, बक्से पूरे करो, सबसे ज़्यादा बक्से वाला जीते।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="बिंदु-बक्सा (Dots & Boxes) गेम हिंदी में">
+<meta property="og:description" content="लाइन खींचो, बक्से जीतो – 2P और vs Computer!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Dots and Boxes Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"बिंदु-बक्सा – Dots and Boxes गेम हिंदी में, 2 प्लेयर + कंप्यूटर मोड","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.mode{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.mode button{background:#f1f3f4;color:#202124;border:none;padding:10px 22px;border-radius:20px;font-size:.95rem;font-weight:600;cursor:pointer}
+.mode button.on{background:#1a73e8;color:#fff}
+.canvas-wrap{margin:18px auto;width:max-content}
+canvas{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.1);touch-action:manipulation}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.stats span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.stats b{color:#1a73e8}
+.ctrl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.ctrl button{background:#e8f0fe;color:#1a73e8;border:none;padding:10px 18px;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer}
+.ctrl button:hover{background:#d2e3fc}
+.msg{min-height:30px;font-weight:600;margin-top:8px;font-size:1.05rem}
+.msg .r{color:#d93025}.msg .y{color:#b06000}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/games/dots-and-boxes.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › बिंदु-बक्सा गेम</p>
+
+  <div class="game-box">
+    <h1>⬜ बिंदु-बक्सा (Dots & Boxes)</h1>
+    <p>बचपन वाला कागज़ का मशहूर गेम – बिंदुओं के बीच लाइन खींचो, बक्सा पूरा हुआ तो वो तुम्हारा + एक और मौका!</p>
+    <div class="mode">
+      <button id="m-pvp" class="on" onclick="setMode('pvp')">👥 2 प्लेयर (दोस्त के साथ)</button>
+      <button id="m-pvc" onclick="setMode('pvc')">🤖 कंप्यूटर से खेलो</button>
+    </div>
+    <div class="canvas-wrap"><canvas id="cv" width="340" height="340"></canvas></div>
+    <div class="stats">
+      <span>🔴 लाल: <b id="s1">0</b> बक्से</span>
+      <span>🟡 पीला: <b id="s2">0</b> बक्से</span>
+      <span>कुल बक्से: <b id="st">16</b></span>
+    </div>
+    <div class="ctrl"><button onclick="reset()">🔄 नया गेम</button></div>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <article>
+    <h2>नियम – 1 मिनट में समझो</h2>
+    <ul>
+      <li>5×5 बिंदुओं के ग्रिड में दो बिंदुओं के बीच <strong>छोटी लाइन खींचो</strong> (लेटी या खड़ी)</li>
+      <li>जिसकी लाइन से कोई <strong>बक्सा चारों तरफ से बंद</strong> हो जाए, वह बक्सा उसी का – और उसे <strong>एक और चाल (मौका)</strong> मिलती है</li>
+      <li>बक्सा न बने तो बारी अगले खिलाड़ी को</li>
+      <li>सारी लाइनें खत्म होने पर <strong>जिसके ज़्यादा बक्से, वही जीता</strong></li>
+    </ul>
+    <h2>जीतने की ट्रिक</h2>
+    <p>सबसे बड़ी चाल: <strong>तीसरी लाइन वाले बक्से मत बनाओ</strong> – वरना विरोधी चौथी लाइन लगाकर बक्सा ले लेगा और लगातार खेलता रहेगा। बड़े खिलाड़ी ऐसी लाइनें खींचते हैं जिनसे एक साथ दो बक्से बनें, या इंतज़ार करते हैं कि विरोधी मजबूर होकर तुम्हें मौका दे। कंप्यूटर भी यही समझदारी से खेलता है!</p>
+    <p>और 2-प्लेयर गेम: <a href="tic-tac-toe.html" style="color:#1a73e8">टिक टैक टो</a>, <a href="connect-four.html" style="color:#1a73e8">४ गेंद जोड़ो (Connect Four)</a> और मस्ती के लिए <a href="2048.html" style="color:#1a73e8">2048</a>।</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+// 5x5 dots => 4x4 = 16 boxes
+var N = 5; // dots per side
+var hLines = [], vLines = [], boxes = [];
+var turn = 1, over = false, mode = 'pvp';
+var score = [0, 0];
+var cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+var PAD = 34, GAP = 68;
+
+function reset(){
+  hLines = []; vLines = []; boxes = [];
+  for (var r = 0; r < N; r++){ hLines.push([0,0,0,0,0]); vLines.push([0,0,0,0,0]); }
+  for (var b = 0; b < N-1; b++) boxes.push([0,0,0,0]);
+  turn = 1; over = false; score = [0, 0];
+  document.getElementById('s1').textContent = 0;
+  document.getElementById('s2').textContent = 0;
+  document.getElementById('msg').innerHTML = turnName() + ' की बारी';
+  draw();
+}
+function turnName(){ return turn === 1 ? '<span class="r">🔴 लाल</span>' : '<span class="y">🟡 पीला</span>'; }
+function boxSides(r, c){
+  return hLines[r][c] + hLines[r+1][c] + vLines[r][c] + vLines[r][c+1];
+}
+function fullLines(){
+  var t = 0;
+  for (var r = 0; r < N; r++) for (var c = 0; c < N; c++){
+    if (c < N-1 && hLines[r][c]) t++;
+    if (r < N-1 && vLines[r][c]) t++;
+  }
+  return t;
+}
+function place(type, r, c){
+  if (type === 'h' && c >= N-1) return false;
+  if (type === 'v' && r >= N-1) return false;
+  var arr = type === 'h' ? hLines : vLines;
+  if (arr[r][c]) return false;
+  arr[r][c] = 1;
+  var got = 0;
+  if (type === 'h'){
+    if (r > 0 && boxSides(r-1, c) === 4){ boxes[r-1][c] = turn; got++; }
+    if (r < N-1 && boxSides(r, c) === 4){ boxes[r][c] = turn; got++; }
+  } else {
+    if (c > 0 && boxSides(r, c-1) === 4){ boxes[r][c-1] = turn; got++; }
+    if (c < N-1 && boxSides(r, c) === 4){ boxes[r][c] = turn; got++; }
+  }
+  if (got > 0){ score[turn-1] += got; document.getElementById(turn===1?'s1':'s2').textContent = score[turn-1]; }
+  draw();
+  if (fullLines() === (N*N*2 - N*2)){ // total edges = 2*N*(N-1)
+    over = true;
+    var m = document.getElementById('msg');
+    if (score[0] > score[1]) m.innerHTML = '🎉 <span class="r">लाल</span> जीता ' + score[0] + ' बनाम ' + score[1] + '!';
+    else if (score[1] > score[0]) m.innerHTML = '🎉 <span class="y">पीला</span> जीता ' + score[1] + ' बनाम ' + score[0] + '!';
+    else m.innerHTML = '🤝 बराबरी ' + score[0] + ' - ' + score[1] + '!';
+    return;
+  }
+  if (got === 0){ turn = 3 - turn; }
+  document.getElementById('msg').innerHTML = turnName() + ' की बारी' + (got > 0 ? ' (बोनस चाल! फिर खेलो)' : '');
+  if (mode === 'pvc' && turn === 2 && !over){
+    setTimeout(aiTurn, 400);
+  }
+}
+function aiTurn(){
+  if (over) return;
+  var best = null, safe = [], all = [];
+  for (var r = 0; r < N; r++) for (var c = 0; c < N; c++){
+    if (c < N-1 && !hLines[r][c]){
+      all.push(['h', r, c]);
+      // ye line box complete karti hai?
+      var g1 = (r > 0 && boxSides(r-1, c) === 3) || (r < N-1 && boxSides(r, c) === 3);
+      if (g1){ best = ['h', r, c]; break; }
+      // safe? kisi box ki 3rd side na bane
+      var b1 = (r > 0 && boxSides(r-1, c) === 2) || (r < N-1 && boxSides(r, c) === 2);
+      if (!b1) safe.push(['h', r, c]);
+    }
+    if (r < N-1 && !vLines[r][c]){
+      all.push(['v', r, c]);
+      var g2 = (c > 0 && boxSides(r, c-1) === 3) || (c < N-1 && boxSides(r, c) === 3);
+      if (g2 && !best){ best = ['v', r, c]; break; }
+      var b2 = (c > 0 && boxSides(r, c-1) === 2) || (c < N-1 && boxSides(r, c) === 2);
+      if (!b2) safe.push(['v', r, c]);
+    }
+  }
+  var mv;
+  if (best) mv = best;
+  else if (safe.length) mv = safe[Math.floor(Math.random() * safe.length)];
+  else if (all.length) mv = all[Math.floor(Math.random() * all.length)];
+  else return;
+  place(mv[0], mv[1], mv[2]);
+  // agar computer ko box mila to place() ne dobara aiTurn schedule kar diya hoga
+}
+function setMode(m){
+  mode = m;
+  document.getElementById('m-pvp').classList.toggle('on', m === 'pvp');
+  document.getElementById('m-pvc').classList.toggle('on', m === 'pvc');
+  reset();
+}
+function draw(){
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  // boxes fill
+  for (var r = 0; r < N-1; r++) for (var c = 0; c < N-1; c++){
+    if (boxes[r][c]){
+      ctx.fillStyle = boxes[r][c] === 1 ? '#fce8e6' : '#fef7e0';
+      ctx.fillRect(PAD + c*GAP + 3, PAD + r*GAP + 3, GAP - 6, GAP - 6);
+    }
+  }
+  // lines
+  ctx.strokeStyle = '#5f6368'; ctx.lineWidth = 5; ctx.lineCap = 'round';
+  for (var r2 = 0; r2 < N; r2++) for (var c2 = 0; c2 < N; c2++){
+    if (c2 < N-1 && hLines[r2][c2]){
+      ctx.beginPath(); ctx.moveTo(PAD + c2*GAP, PAD + r2*GAP); ctx.lineTo(PAD + (c2+1)*GAP, PAD + r2*GAP); ctx.stroke();
+    }
+    if (r2 < N-1 && vLines[r2][c2]){
+      ctx.beginPath(); ctx.moveTo(PAD + c2*GAP, PAD + r2*GAP); ctx.lineTo(PAD + c2*GAP, PAD + (r2+1)*GAP); ctx.stroke();
+    }
+  }
+  // dots
+  ctx.fillStyle = '#202124';
+  for (var r3 = 0; r3 < N; r3++) for (var c3 = 0; c3 < N; c3++){
+    ctx.beginPath(); ctx.arc(PAD + c3*GAP, PAD + r3*GAP, 6, 0, 7); ctx.fill();
+  }
+}
+function near(v){ var i = Math.round((v - PAD) / GAP); return i >= 0 && i < N ? i : -1; }
+cv.addEventListener('click', function(e){
+  if (over) return;
+  if (mode === 'pvc' && turn === 2) return;
+  var rect = cv.getBoundingClientRect();
+  var x = (e.clientX - rect.left) * (cv.width / rect.width);
+  var y = (e.clientY - rect.top) * (cv.height / rect.height);
+  var c = near(x), r = near(y);
+  if (c < 0 || r < 0) return;
+  var lx = PAD + c*GAP, ly = PAD + r*GAP;
+  var dx = x - lx, dy = y - ly;
+  // kisme paas hai: right (h), down (v), left (h c-1), up (v r-1)
+  var T = 26;
+  if (dx > T && dx < GAP - T && Math.abs(dy) < T && c < N-1){ if (!hLines[r][c]){ place('h', r, c); return; } }
+  if (dy > T && dy < GAP - T && Math.abs(dx) < T && r < N-1){ if (!vLines[r][c]){ place('v', r, c); return; } }
+  if (dx < -T && Math.abs(dy) < T && c > 0){ if (!hLines[r][c-1]){ place('h', r, c-1); return; } }
+  if (dy < -T && Math.abs(dx) < T && r > 0){ if (!vLines[r-1][c]){ place('v', r-1, c); return; } }
+  // fallback: sabse paas wali open line us dot ke charo taraf
+  var opts = [];
+  if (c < N-1 && !hLines[r][c]) opts.push(['h', r, c, dx*dx + 0]);
+  if (r < N-1 && !vLines[r][c]) opts.push(['v', r, c, dy*dy]);
+  if (c > 0 && c-1 < N-1 && !hLines[r][c-1]) opts.push(['h', r, c-1, dx*dx]);
+  if (r > 0 && r-1 < N-1 && !vLines[r-1][c]) opts.push(['v', r-1, c, dy*dy]);
+  if (opts.length){
+    opts.sort(function(a,b){ return a[3] - b[3]; });
+    place(opts[0][0], opts[0][1], opts[0][2]);
+  }
+});
+reset();
+</script>
+</body>
+</html>

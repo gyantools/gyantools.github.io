@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Investment Comparison Calculator in Hindi – FD vs PPF vs SIP vs सोना तुलना</title>
+<meta name="description" content="मुफ्त निवेश तुलना कैलकुलेटर हिंदी में – FD, PPF, SSY/SCSS, सोना और SIP का हिसाब एक ही साथ! रकम और साल डालो, हर विकल्प की असली वैल्यू + महंगाई घटाकर सच्ची वैल्यू देखो। पूरा फॉर्मूला और A2Z जानकारी।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="निवेश तुलना कैलकुलेटर (FD vs PPF vs SIP vs सोना)">
+<meta property="og:description" content="एक ही कैलकुलेटर में सबका हिसाब – महंगाई समेत!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Investment Comparison Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"FD vs PPF vs SIP vs सोना तुलना कैलकुलेटर – महंगाई समेत असली वैल्यू (हिंदी)","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.8}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.6rem;color:#1a73e8;line-height:1.4;margin-bottom:6px}
+.row{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}
+.field{flex:1;min-width:150px}
+label{display:block;font-size:.9rem;font-weight:600;margin-bottom:5px;color:#3c4043}
+input,select{width:100%;padding:11px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:#1a73e8}
+.btn{background:#1a73e8;color:#fff;border:none;padding:13px 30px;border-radius:8px;font-size:1.05rem;font-weight:600;cursor:pointer;margin-top:8px}
+.btn:hover{background:#1558b0}
+.result{background:#f1f3f4;border-radius:10px;padding:18px;margin-top:18px;display:none}
+.result h3{margin-bottom:10px;color:#1a73e8}
+.res-table{width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:.95rem}
+.res-table th{background:#e8f0fe;color:#1a73e8;padding:9px;border:1px solid #d2e3fc;text-align:left}
+.res-table td{padding:9px;border:1px solid #e0e0e0}
+.res-table tr:nth-child(even) td{background:#f8f9fa}
+.best{color:#0b8043;font-weight:700}
+article{background:#fff;border-radius:12px;padding:36px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:28px 0 12px;color:#1a73e8;font-size:1.3rem}
+article h3{margin:20px 0 8px;color:#202124;font-size:1.08rem}
+article p{margin-bottom:12px}
+article ul,article ol{padding-left:24px;margin-bottom:12px}
+article li{margin-bottom:6px}
+article a{color:#1a73e8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.93rem}
+th{background:#e8f0fe;color:#1a73e8;padding:10px;text-align:left;border:1px solid #d2e3fc}
+td{padding:10px;border:1px solid #e0e0e0}
+tr:nth-child(even) td{background:#f8f9fa}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:14px 16px;border-radius:8px;margin:16px 0}
+.tip{background:#e6f4ea;border-left:4px solid #188038;padding:14px 16px;border-radius:8px;margin:16px 0}
+details{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:8px;padding:14px 16px;margin:10px 0}
+summary{font-weight:600;cursor:pointer;color:#202124}
+details p{margin-top:10px;margin-bottom:0}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/investment-comparison-calculator.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › टूल्स › निवेश तुलना कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>⚖️ निवेश तुलना कैलकुलेटर (FD vs PPF vs SIP vs सोना)</h1>
+    <p>एक ही स्क्रीन पर सबका हिसाब – रकम डालो और देखो FD, PPF, SSY/SCSS, सोना और SIP में से किसमें पैसा कितना बनेगा। <strong>महंगाई घटाकर असली वैल्यू</strong> भी साथ में!</p>
+
+    <div class="row">
+      <div class="field">
+        <label>एक मुश्त रकम (Lumpsum) ₹</label>
+        <input type="number" id="lump" value="100000" min="0" step="any">
+      </div>
+      <div class="field">
+        <label>या हर महीने SIP ₹ (0 = छोड़ो)</label>
+        <input type="number" id="sip" value="5000" min="0" step="any">
+      </div>
+      <div class="field">
+        <label>साल</label>
+        <input type="number" id="years" value="15" min="1" max="50" step="1">
+      </div>
+      <div class="field">
+        <label>महंगाई (Inflation) %</label>
+        <input type="number" id="inf" value="6" min="0" max="20" step="any">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>FD दर % (बदल सकते हो)</label>
+        <input type="number" id="r-fd" value="7" step="any">
+      </div>
+      <div class="field">
+        <label>PPF दर % (अभी 7.1%)</label>
+        <input type="number" id="r-ppf" value="7.1" step="any">
+      </div>
+      <div class="field">
+        <label>SSY/SCSS दर % (अभी 8.2%)</label>
+        <input type="number" id="r-ssy" value="8.2" step="any">
+      </div>
+      <div class="field">
+        <label>सोना औसत % (लंबी अवधि)</label>
+        <input type="number" id="r-gold" value="10" step="any">
+      </div>
+      <div class="field">
+        <label>इक्विटी SIP औसत %</label>
+        <input type="number" id="r-sip" value="12" step="any">
+      </div>
+    </div>
+
+    <button class="btn" onclick="calc()">📊 तुलना दिखाओ</button>
+
+    <div class="result" id="out">
+      <h3>💰 एक मुश्त रकम का हिसाब (Lumpsum)</h3>
+      <table class="res-table" id="t1"></table>
+      <h3>📆 हर महीने की SIP का हिसाब</h3>
+      <table class="res-table" id="t2"></table>
+      <div id="note" style="font-size:.9rem;color:#5f6368"></div>
+    </div>
+  </div>
+
+  <article>
+    <h2>🔍 यह टूल क्या है और क्या करता है? (A2Z पूरी जानकारी)</h2>
+    <p><strong>क्या है:</strong> भारत के 5 सबसे लोकप्रिय निवेश विकल्पों – FD, PPF, SSY/SCSS, सोना और इक्विटी SIP – को <strong>एक ही स्क्रीन पर आपस में तुलना</strong> करने वाला फ्री कैलकुलेटर। आम तौर पर हर साइट पर हर चीज़ का अलग कैलकुलेटर मिलता है; फैसला लेने के लिए इकट्ठी तस्वीर कहीं नहीं मिलती – यह टूल वही गड्ढा भरता है।</p>
+    <p><strong>क्या करता है:</strong> आपकी रकम (एक मुश्त या महीने की SIP), साल और दरें लेकर हर विकल्प की <strong>भविष्य की वैल्यू (Future Value)</strong> निकालता है। साथ ही <strong>महंगाई का असर घटाकर "असली वैल्यू"</strong> भी दिखाता है – क्योंकि 15 साल बाद के ₹10 लाख की ताकत आज के ₹10 लाख जैसी नहीं होती।</p>
+    <p><strong>किसके लिए:</strong> फैसला करने वाले हर भारतीय के लिए – नौकरी शुरू करने वाले, बच्चों की पढ़ाई के लिए जमा करने वाले, रिटायरमेंट प्लान बनाने वाले।</p>
+
+    <h2>🧮 इसके पीछे का फॉर्मूला (Logic)</h2>
+    <h3>1) एक मुश्त रकम पर चक्रवृद्धि (Compound Interest)</h3>
+    <p style="background:#f1f3f4;padding:12px;border-radius:8px"><strong>भविष्य वैल्यू = रकम × (1 + दर/100)<sup>साल</sup></strong></p>
+    <p>जैसे ₹1 लाख, 7% पर 15 साल = 100000 × (1.07)^15 = ₹2.76 लाख। हर साल का ब्याज अगले साल की रकम में जुड़कर खुद ब्याज कमाने लगता है – यही चक्रवृद्धि का जादू है।</p>
+    <h3>2) हर महीने की SIP की भविष्य वैल्यू</h3>
+    <p style="background:#f1f3f4;padding:12px;border-radius:8px"><strong>SIP वैल्यू = मासिक रकम × ((1+i)<sup>n</sup> − 1) ÷ i × (1+i)</strong> &nbsp; जहां i = सालाना दर ÷ 12, n = कुल महीने</p>
+    <p>हर महीने की किश्त अलग-अलग समय के लिए ब्याज कमाती है – पहली किश्त सबसे ज़्यादा (पूरी अवधि), आखिरी सबसे कम। यह फॉर्मूला सबको जोड़कर कुल देता है।</p>
+    <h3>3) महंगाई घटाकर असली वैल्यू (Real Value)</h3>
+    <p style="background:#f1f3f4;padding:12px;border-radius:8px"><strong>असली वैल्यू = भविष्य वैल्यू ÷ (1 + महंगाई/100)<sup>साल</sup></strong></p>
+    <p>मतलब: 6% महंगाई पर 15 साल बाद के ₹10 लाख में आज के केवल ~₹4.2 लाख की खरीदने की ताकत होगी। यही वो सच है जो सिर्फ "रिटर्न %" देखने पर छूट जाता है।</p>
+
+    <h2>📖 उदाहरण से पूरा हिसाब (Step-by-Step)</h2>
+    <p>मान लो: एक मुश्त <strong>₹1 लाख</strong>, <strong>15 साल</strong>, और डिफॉल्ट दरें:</p>
+    <table>
+      <tr><th>विकल्प</th><th>दर</th><th>15 साल बाद</th><th>महंगाई (6%) घटाकर</th></tr>
+      <tr><td>FD</td><td>7%</td><td>₹2.76 लाख</td><td>₹1.15 लाख</td></tr>
+      <tr><td>PPF</td><td>7.1%</td><td>₹2.80 लाख</td><td>₹1.17 लाख</td></tr>
+      <tr><td>SSY/SCSS</td><td>8.2%</td><td>₹3.26 लाख</td><td>₹1.36 लाख</td></tr>
+      <tr><td>सोना</td><td>10%</td><td>₹4.18 लाख</td><td>₹1.74 लाख</td></tr>
+      <tr><td>इक्विटी SIP</td><td>12%</td><td>₹5.47 लाख</td><td>₹2.28 लाख</td></tr>
+    </table>
+    <p>ध्यान दो – असली फर्क दर के छोटे-छोटे अंतर से कितना बड़ा बन जाता है: 7% बनाम 12% सिर्फ 5% का फर्क है, पर 15 साल में लगभग <strong>दोगुना</strong>! वहीं SIP में हर महीने ₹5,000 डालोगे तो 15 साल में कुल ₹9 लाख लगाकर ~₹25 लाख बनाने का रास्ता बनता है (12% पर)।</p>
+
+    <h2>⚙️ डिफॉल्ट दरें क्यों? (पूरी ईमानदारी)</h2>
+    <ul>
+      <li><strong>PPF 7.1%</strong> और <strong>SSY/SCSS 8.2%</strong> — सरकार की जुलाई-सितंबर 2026 तिमाही की असली दरें</li>
+      <li><strong>FD 7%</strong> — बड़े बैंकों की आम दर के आसपास (छोटे बैंक ज़्यादा देते हैं, वहां बदल लो)</li>
+      <li><strong>सोना 10%</strong> — लंबी अवधि का औसत (पिछले 10 साल में 13%+ रहा, पर हर दशक ऐसा नहीं होता)</li>
+      <li><strong>इक्विटी 12%</strong> — Nifty का लंबी अवधि ऐतिहासिक औसत (~13-14% रहा; सतर्क अनुमान 12 रखा)</li>
+    </ul>
+    <div class="note">⚡ <strong>ज़रूरी सच:</strong> FD/PPF/SSY की दरें फिक्स हैं, पर सोना और शेयर के रिटर्न तय नहीं होते – ऊंचे-नीचे होते हैं, कभी नुकसान भी। यह कैलकुलेटर अनुमान की तुलना दिखाता है, गारंटी नहीं। टैक्स का असर (PPF टैक्स-फ्री, FD ब्याज पर स्लैब टैक्स) इसमें जोड़ा नहीं गया – वह आपकी स्लैब पर निर्भर करता है। पूरी टैक्स तुलना <a href="../blog/investment-comparison-guide.html">निवेश तुलना गाइड</a> में पढ़ें।</div>
+
+    <h2>❓ अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+    <details>
+      <summary>इतने रिटर्न पक्के मिलेंगे?</summary>
+      <p>नहीं। FD/PPF/SSY की दरें सरकारी/बैंक दरों से ली गई हैं (अभी की असली दरें), पर सोना और इक्विटी के रिटर्न अनुमानित औसत हैं – असल में उतार-चढ़ाव के साथ मिलते हैं। लंबी अवधि में औसत इसके आसपास रहे हैं।</p>
+    </details>
+    <details>
+      <summary>Lumpsum और SIP दोनों एक साथ भर दूं?</summary>
+      <p>हां! दोनों का हिसाब अलग-अलग बनेगा – जैसे "बोनस के ₹1 लाख लगाऊं + हर महीने ₹5,000 भी" वाली दोहरी योजना बनाते हैं।</p>
+    </details>
+    <details>
+      <summary>महंगाई वाला आंकड़ा देखना क्यों ज़रूरी है?</summary>
+      <p>क्योंकि रिटर्न का असली मतलब महंगाई के बाद बचती है। 7% रिटर्न + 6% महंगाई = असल में सिर्फ ~1% बढ़त। यही सोचने की आदत बड़े फैसलों में सबसे ज़्यादा काम आती है।</p>
+    </details>
+    <details>
+      <summary>PPF की दर बदल जाएगी तो?</summary>
+      <p>सरकार हर तिमाही दरें समीक्षा करती है (अभी लगातार कई तिमाहियों से वही हैं)। फील्ड में नई दर डालकर दोबारा हिसाब लगा लो – टूल आपकी दर से चलता है।</p>
+    </details>
+    <details>
+      <summary>SSY और SCSS की दर एक ही क्यों?</summary>
+      <p>अभी दोनों की दर एक जैसी 8.2% है, इसलिए एक कॉलम में दिखाया। बस याद रखें – SSY बेटी के लिए (21 साल), SCSS 60+ उम्र के लिए (5 साल)। विवरण <a href="ssy-calculator.html">SSY</a> और <a href="scss-calculator.html">SCSS</a> कैलकुलेटर में।</p>
+    </details>
+    <details>
+      <summary>कौन सा सबसे बेहतर है?</summary>
+      <p>कोई अकेला सबसे बेहतर नहीं – सुरक्षा चाहिए तो PPF/FD, बेटी की पढ़ाई तो SSY, 60+ हो तो SCSS, लंबी अवधि की दौलत तो SIP, और संतुलन के लिए थोड़ा सोना। पूरा फैसला-चार्ट <a href="../blog/investment-comparison-guide.html">निवेश तुलना गाइड</a> में।</p>
+    </details>
+
+    <div class="tip">✅ <strong>और फाइनेंस टूल्स:</strong> <a href="sip-calculator.html">SIP</a> · <a href="ppf-calculator.html">PPF</a> · <a href="fd-calculator.html">FD</a> · <a href="gold-silver-value-calculator.html">सोना-चांदी कीमत</a> · <a href="inflation-calculator.html">महंगाई</a> · <a href="retirement-calculator.html">रिटायरमेंट</a> कैलकुलेटर — सारे <a href="../index.html">होम पेज</a> पर।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function fmt(n){ return '₹' + Math.round(n).toLocaleString('en-IN'); }
+function fvLump(p, rate, yrs){ return p * Math.pow(1 + rate/100, yrs); }
+function fvSip(m, rate, yrs){
+  var i = rate / 1200, n = yrs * 12;
+  if (i === 0) return m * n;
+  return m * (Math.pow(1 + i, n) - 1) / i * (1 + i);
+}
+var OPTS = [
+  { key: 'fd',   name: '🏦 FD',                 id: 'r-fd' },
+  { key: 'ppf',  name: '🏛️ PPF',                id: 'r-ppf' },
+  { key: 'ssy',  name: '👧👴 SSY/SCSS',          id: 'r-ssy' },
+  { key: 'gold', name: '🥇 सोना',                id: 'r-gold' },
+  { key: 'sip',  name: '📈 इक्विटी (SIP)',      id: 'r-sip' }
+];
+function buildTable(rows){
+  var h = '<tr><th>विकल्प</th><th>दर</th><th>बाद में वैल्यू</th><th>कुल लगाना</th><th>महंगाई घटाकर असली वैल्यू</th></tr>';
+  rows.forEach(function(r){
+    h += '<tr><td>' + r.name + '</td><td>' + r.rate + '%</td><td>' + fmt(r.fv) + '</td><td>' + fmt(r.inv) + '</td><td>' + fmt(r.real) + '</td></tr>';
+  });
+  return h;
+}
+function calc(){
+  var lump = parseFloat(document.getElementById('lump').value) || 0;
+  var sip = parseFloat(document.getElementById('sip').value) || 0;
+  var yrs = Math.max(1, Math.min(50, parseInt(document.getElementById('years').value) || 1));
+  var inf = parseFloat(document.getElementById('inf').value) || 0;
+  var deflator = Math.pow(1 + inf/100, yrs);
+  var t1 = [], t2 = [];
+  OPTS.forEach(function(o){
+    var rate = parseFloat(document.getElementById(o.id).value) || 0;
+    var fv1 = fvLump(lump, rate, yrs);
+    t1.push({ name: o.name, rate: rate, fv: fv1, inv: lump, real: fv1 / deflator });
+    var fv2 = fvSip(sip, rate, yrs);
+    t2.push({ name: o.name, rate: rate, fv: fv2, inv: sip * yrs * 12, real: fv2 / deflator });
+  });
+  document.getElementById('t1').innerHTML = buildTable(t1);
+  document.getElementById('t2').innerHTML = buildTable(t2);
+  var best1 = t1.reduce(function(a, b){ return b.fv > a.fv ? b : a; });
+  var best2 = t2.reduce(function(a, b){ return b.fv > a.fv ? b : a; });
+  document.getElementById('note').innerHTML = '🏆 इन दरों पर सबसे ऊंची वैल्यू: एक मुश्त में <b>' + best1.name + '</b>, SIP में <b>' + best2.name + '</b>। (यह गणित की तुलना है, गारंटी नहीं — रिस्क अलग-अलग है।)';
+  document.getElementById('out').style.display = 'block';
+}
+</script>
+</body>
+</html>

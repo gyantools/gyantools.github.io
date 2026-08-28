@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Sudoku Game in Hindi – मुफ्त सुडोकू पहेली (आसान/मध्यम/कठिन)</title>
+<meta name="description" content="मुफ़्त Sudoku गेम हिंदी में – दिमाग तेज़ करने वाली क्लासिक पहेली। आसान, मध्यम, कठिन level, unlimited नई पहेलियां, mobile पर भी आसान। बिना लॉगिन तुरंत खेलें।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Sudoku गेम – हिंदी में मुफ्त पहेली">
+<meta property="og:description" content="दिमाग की परीक्षा – आसान से कठिन तक unlimited सुडोकू!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sudoku Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"क्लासिक सुडोकू पहेली गेम हिंदी में – unlimited नई पहेलियां","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.board{display:grid;grid-template-columns:repeat(9,44px);gap:1px;background:#1a73e8;border:3px solid #1a73e8;border-radius:8px;width:max-content;margin:20px auto}
+.cell{width:44px;height:44px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:600;cursor:pointer;position:relative}
+.cell:nth-child(3n){margin-right:3px}
+.cell:nth-child(9n){margin-right:0}
+.cell.br{margin-bottom:3px}
+.cell.given{background:#e8f0fe;color:#202124;cursor:default}
+.cell.user{background:#fff;color:#1a73e8}
+.cell.sel{background:#fef7e0;outline:2px solid #e8710a;outline-offset:-2px;z-index:1}
+.cell.bad{color:#d93025}
+.cell.hint{background:#e6f4ea;color:#137333}
+@media(max-width:560px){
+.board{grid-template-columns:repeat(9,34px)}
+.cell{width:34px;height:34px;font-size:1rem}
+}
+.pad{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.pad button{background:#1a73e8;color:#fff;border:none;width:42px;height:42px;border-radius:8px;font-size:1.15rem;font-weight:700;cursor:pointer}
+.pad button:hover{background:#1557b0}
+.pad button.eraser{width:auto;padding:0 14px;background:#5f6368;font-size:.9rem}
+.ctrl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.ctrl button{background:#e8f0fe;color:#1a73e8;border:none;padding:10px 18px;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer}
+.ctrl button:hover{background:#d2e3fc}
+.lvl{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.lvl button{background:#f1f3f4;color:#202124;border:none;padding:8px 20px;border-radius:20px;font-size:.95rem;font-weight:600;cursor:pointer}
+.lvl button.on{background:#1a73e8;color:#fff}
+.msg{min-height:28px;font-weight:600;margin-top:8px}
+.msg.win{color:#137333}
+.msg.err{color:#d93025}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/games/sudoku.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Sudoku गेम</p>
+
+  <div class="game-box">
+    <h1>🔢 Sudoku – दिमाग की पहेली</h1>
+    <p>हर कतार, हर column और हर 3×3 बॉक्स में 1 से 9 तक हर नंबर एक ही बार आए — बस यही नियम है!</p>
+    <div class="lvl">
+      <button id="l-easy" class="on" onclick="newGame('easy')">आसान</button>
+      <button id="l-med" onclick="newGame('med')">मध्यम</button>
+      <button id="l-hard" onclick="newGame('hard')">कठिन</button>
+    </div>
+    <div class="board" id="board"></div>
+    <div class="pad" id="pad"></div>
+    <div class="ctrl">
+      <button onclick="newGame(level)">🔄 नई पहेली</button>
+      <button onclick="checkAll()">✅ जांच करें</button>
+      <button onclick="showHint()">💡 मदद (1 खाना)</button>
+      <button onclick="revealAll()">👀 हल देखें</button>
+    </div>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <article>
+    <h2>Sudoku के नियम (1 मिनट में)</h2>
+    <ul>
+      <li>9×9 के ग्रिड में कुछ खाने पहले से भरे होते हैं (नीले रंग में)</li>
+      <li>खाली खानों में <strong>1–9</strong> तक का कोई नंबर भरें</li>
+      <li>नियम: कोई नंबर किसी कतार, column या 3×3 बॉक्स में <strong>दो बार न आए</strong></li>
+      <li>गलत जगह लगे नंबर <strong>लाल</strong> हो जाते हैं — सही करते जाएं</li>
+      <li>सारे खाने सही भर गए = पहेली हल! 🎉</li>
+    </ul>
+    <h2>कैसे खेलें</h2>
+    <p>खाने पर tap करके नीचे के number pad से नंबर लगाएं (computer पर keyboard के 1–9 और Backspace भी चलते हैं)। "मदद" बटन से कोई एक खाना सही भरवा सकते हैं, "जांच करें" से पूरी पहेली की जांच होती है। हर बार <strong>बिल्कुल नई पहेली</strong> बनती है — कभी खत्म नहीं होंगी!</p>
+    <h2>Sudoku खेलने के फायदे</h2>
+    <p>रोज़ एक सुडोकू दिमाग की exercise है — ध्यान (concentration), logic और problem-solving पर असर पड़ता है, बच्चों से लेकर बड़ों तक सबके लिए फायदेमंद समय बिताने का तरीका। और भी दिमागी गेम आज़माएं: <a href="memory-game.html" style="color:#1a73e8">Memory गेम</a>, <a href="math-quiz.html" style="color:#1a73e8">Math Quiz</a>, <a href="word-guess.html" style="color:#1a73e8">Word Guess</a> और <a href="paheli-game.html" style="color:#1a73e8">हिंदी पहेलियां</a>।</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var solution = [], puzzle = [], givens = [], sel = null, level = 'easy';
+var HOLES = {easy: 38, med: 48, hard: 56};
+
+function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function ok(g, r, c, n){
+  for (var i=0;i<9;i++){ if(g[r][i]===n || g[i][c]===n) return false; }
+  var br=Math.floor(r/3)*3, bc=Math.floor(c/3)*3;
+  for (var rr=br; rr<br+3; rr++) for (var cc=bc; cc<bc+3; cc++){ if(g[rr][cc]===n) return false; }
+  return true;
+}
+function fill(g){
+  for (var r=0;r<9;r++) for (var c=0;c<9;c++){
+    if (g[r][c]===0){
+      var ns = shuffle([1,2,3,4,5,6,7,8,9]);
+      for (var i=0;i<9;i++){
+        if (ok(g,r,c,ns[i])){ g[r][c]=ns[i]; if (fill(g)) return true; g[r][c]=0; }
+      }
+      return false;
+    }
+  }
+  return true;
+}
+function makePuzzle(sol, holes){
+  var p = sol.map(function(row){ return row.slice(); });
+  var spots = [];
+  for (var r=0;r<9;r++) for (var c=0;c<9;c++) spots.push([r,c]);
+  shuffle(spots);
+  for (var i=0;i<holes && i<81;i++){ p[spots[i][0]][spots[i][1]] = 0; }
+  return p;
+}
+function conflict(p, r, c){
+  var n = p[r][c]; if(!n) return false;
+  for (var i=0;i<9;i++){
+    if (i!==c && p[r][i]===n) return true;
+    if (i!==r && p[i][c]===n) return true;
+  }
+  var br=Math.floor(r/3)*3, bc=Math.floor(c/3)*3;
+  for (var rr=br; rr<br+3; rr++) for (var cc=bc; cc<bc+3; cc++){
+    if ((rr!==r || cc!==c) && p[rr][cc]===n) return true;
+  }
+  return false;
+}
+function newGame(lvl){
+  level = lvl;
+  ['easy','med','hard'].forEach(function(l){ document.getElementById('l-'+(l==='med'?'med':l)).classList.remove('on'); });
+  document.getElementById('l-'+(lvl==='med'?'med':lvl)).classList.add('on');
+  solution = [];
+  for (var i=0;i<9;i++) solution.push([0,0,0,0,0,0,0,0,0]);
+  fill(solution);
+  puzzle = makePuzzle(solution, HOLES[lvl]);
+  givens = puzzle.map(function(row){ return row.map(function(v){ return v!==0; }); });
+  sel = null;
+  document.getElementById('msg').textContent = '';
+  render();
+}
+function render(){
+  var b = document.getElementById('board');
+  b.innerHTML = '';
+  for (var r=0;r<9;r++) for (var c=0;c<9;c++){
+    (function(r,c){
+      var d = document.createElement('div');
+      d.className = 'cell' + (givens[r][c] ? ' given' : ' user') + (r===6||r===7||r===8 ? ' br' : '');
+      if (puzzle[r][c]) d.textContent = puzzle[r][c];
+      if (conflict(puzzle,r,c)) d.classList.add('bad');
+      if (sel && sel[0]===r && sel[1]===c) d.classList.add('sel');
+      d.onclick = function(){ if(!givens[r][c]){ sel=[r,c]; render(); } };
+      b.appendChild(d);
+    })(r,c);
+  }
+}
+function put(n){
+  if (!sel) { document.getElementById('msg').textContent = 'पहले कोई खाली खाना चुनें।'; return; }
+  if (givens[sel[0]][sel[1]]) return;
+  puzzle[sel[0]][sel[1]] = n;
+  render();
+  if (isWin()) winMsg();
+}
+function isWin(){
+  for (var r=0;r<9;r++) for (var c=0;c<9;c++){
+    if (puzzle[r][c] !== solution[r][c]) return false;
+  }
+  return true;
+}
+function winMsg(){
+  document.getElementById('msg').className = 'msg win';
+  document.getElementById('msg').textContent = '🎉 बधाई हो! पहेली हल हो गई — नई पहेली आज़माएं!';
+}
+function checkAll(){
+  var m = document.getElementById('msg');
+  var wrong = 0, empty = 0;
+  for (var r=0;r<9;r++) for (var c=0;c<9;c++){
+    if (!puzzle[r][c]) empty++;
+    else if (puzzle[r][c] !== solution[r][c]) wrong++;
+  }
+  m.className = 'msg';
+  if (empty===0 && wrong===0){ winMsg(); }
+  else m.textContent = wrong ? '❌ ' + wrong + ' नंबर गलत जगह हैं' + (empty ? ' · ' + empty + ' खाने खाली हैं' : '') : 'अभी ' + empty + ' खाने खाली हैं — सब सही भरा है अब तक 👍';
+}
+function showHint(){
+  var m = document.getElementById('msg');
+  for (var r=0;r<9;r++) for (var c=0;c<9;c++){
+    if (puzzle[r][c] !== solution[r][c]){
+      puzzle[r][c] = solution[r][c];
+      render();
+      if (isWin()) winMsg();
+      else { m.className='msg'; m.textContent = '💡 खाना (' + (r+1) + ',' + (c+1) + ') भर दिया!'; }
+      return;
+    }
+  }
+  m.className = 'msg win'; m.textContent = 'सब भरा हुआ है already!';
+}
+function revealAll(){ puzzle = solution.map(function(row){ return row.slice(); }); render(); var m = document.getElementById('msg'); m.className='msg err'; m.textContent = '👀 पूरा हल दिखा दिया — अब नई पहेली लें!'; }
+
+(function buildPad(){
+  var pad = document.getElementById('pad');
+  for (var n=1;n<=9;n++){
+    (function(n){ var b=document.createElement('button'); b.textContent=n; b.onclick=function(){ put(n); }; pad.appendChild(b); })(n);
+  }
+  var e=document.createElement('button'); e.className='eraser'; e.textContent='⌫ मिटाएं'; e.onclick=function(){ put(0); }; pad.appendChild(e);
+})();
+
+document.addEventListener('keydown', function(e){
+  if (e.key >= '1' && e.key <= '9') put(parseInt(e.key));
+  else if (e.key === 'Backspace' || e.key === '0' || e.key === 'Delete') put(0);
+  else if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'ArrowLeft' || e.key === 'ArrowRight'){
+    if (!sel) sel = [4,4];
+    if (e.key === 'ArrowUp' && sel[0] > 0) sel[0]--;
+    if (e.key === 'ArrowDown' && sel[0] < 8) sel[0]++;
+    if (e.key === 'ArrowLeft' && sel[1] > 0) sel[1]--;
+    if (e.key === 'ArrowRight' && sel[1] < 8) sel[1]++;
+    if (givens[sel[0]][sel[1]]) { /* still allow selection for navigation */ }
+    render();
+  }
+});
+
+newGame('easy');
+</script>
+</body>
+</html>

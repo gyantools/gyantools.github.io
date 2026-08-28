@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Checkers Game (Dama) in Hindi – दमा बोर्ड गेम (2 Player + Computer)</title>
+<meta name="description" content="मुफ़्त Checkers (दमा/Draughts) गेम हिंदी में – दुनिया भर का प्रसिद्ध बोर्ड गेम! दोस्त के साथ 2 player या कंप्यूटर से खेलें। पूरे नियम: ज़बरदस्ती कैप्चर, मल्टी-जंप, किंग (राजा)।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="दमा Checkers गेम हिंदी में">
+<meta property="og:description" content="Professional बोर्ड गेम – 2 Player + vs Computer!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Checkers Dama Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"दमा Checkers गेम हिंदी में – 2 प्लेयर + कंप्यूटर मोड, ज़बरदस्ती कैप्चर और किंग नियम के साथ","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.mode{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.mode button{background:#f1f3f4;color:#202124;border:none;padding:10px 22px;border-radius:20px;font-size:.95rem;font-weight:600;cursor:pointer}
+.mode button.on{background:#1a73e8;color:#fff}
+.canvas-wrap{margin:18px auto;width:max-content}
+canvas{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.1);touch-action:manipulation}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.stats span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.stats b{color:#1a73e8}
+.ctrl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.ctrl button{background:#e8f0fe;color:#1a73e8;border:none;padding:10px 18px;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer}
+.ctrl button:hover{background:#d2e3fc}
+.msg{min-height:30px;font-weight:600;margin-top:8px;font-size:1.05rem}
+.msg .r{color:#d93025}.msg .y{color:#b06000}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul,article ol{padding-left:24px}
+article a{color:#1a73e8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.93rem}
+th{background:#e8f0fe;color:#1a73e8;padding:10px;text-align:left;border:1px solid #d2e3fc}
+td{padding:10px;border:1px solid #e0e0e0}
+tr:nth-child(even) td{background:#f8f9fa}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/games/checkers.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › दमा (Checkers) गेम</p>
+
+  <div class="game-box">
+    <h1>♟️ दमा – Checkers (Draughts)</h1>
+    <p>दुनिया भर में खेला जाने वाला क्लासिक बोर्ड गेम – अपने मोहरे (pieces) आगे बढ़ाओ, दुश्मन के मोहरे उछाल कर खाओ, और सारे मोहरे खत्म करके जीत जाओ!</p>
+    <div class="mode">
+      <button id="m-pvp" class="on" onclick="setMode('pvp')">👥 2 प्लेयर (दोस्त के साथ)</button>
+      <button id="m-pvc" onclick="setMode('pvc')">🤖 कंप्यूटर से खेलो</button>
+    </div>
+    <div class="canvas-wrap"><canvas id="cv" width="360" height="360"></canvas></div>
+    <div class="stats">
+      <span>🔴 लाल: <b id="s1">12</b> मोहरे बचे</span>
+      <span>🟡 पीला: <b id="s2">12</b> मोहरे बचे</span>
+    </div>
+    <div class="ctrl"><button onclick="reset()">🔄 नया गेम</button></div>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <article>
+    <h2>कैसे खेलें – 1 मिनट में</h2>
+    <ol>
+      <li>तुम्हारे <strong>लाल मोहरे नीचे</strong> की 3 कतारों में, पीले ऊपर की 3 कतारों में होते हैं</li>
+      <li>अपना मोहरा चुनो (टैप करो) – जहां जाना मंज़ूर है वहां हल्का घेरा दिखेगा – वहां टैप करके चलो</li>
+      <li>साधारण चाल: <strong>एक खाना तिरछा आगे</strong> (सिर्फ काले खानों पर)</li>
+      <li>कैप्चर: दुश्मन के मोहरे के ठीक उस पार खाली खाना हो तो <strong>उछाल कर खा लो</strong></li>
+    </ol>
+    <h2>3 बड़े नियम (यही दमा की जान हैं)</h2>
+    <table>
+      <tr><th>नियम</th><th>मतलब</th></tr>
+      <tr><td><strong>1. ज़बरदस्ती कैप्चर</strong></td><td>अगर कैप्चर का मौका है तो <strong>कैप्चर करना ही होगा</strong> – टाल नहीं सकते। इसीलिए गेम में कैप्चर वाले मोहरे ही चुने जा सकते हैं।</td></tr>
+      <tr><td><strong>2. मल्टी-जंप</strong></td><td>एक उछाल के बाद उसी मोहरे से दूसरा उछाल मुमकिन हो तो <strong>लगातार खाते जाओ</strong> – जब तक उछाल बचे।</td></tr>
+      <tr><td><strong>3. किंग (राजा)</strong></td><td>मोहरा दुश्मन की आखिरी कतार पहुंचा तो वह <strong>किंग</strong> बन जाता है (👑 ताज दिखेगा) – अब वह <strong>आगे-पीछे दोनों तरफ</strong> चल और खा सकता है।</td></tr>
+    </table>
+    <p><strong>जीत:</strong> जो सारे दुश्मनी मोहरे खा जाए, या दुश्मन की कोई चाल ही न बचे – वही जीतता है। <strong>ड्रॉ:</strong> अगर लगातार 25-25 चालें (कुल 50) बिना किसी कैप्चर या किंग बनने के निकल जाएं तो गेम बराबरी (ड्रॉ) माना जाता है – टूर्नामेंट नियम, ताकि बस किंग घुमाते रहने वाला गेम अटके नहीं।</p>
+    <h2>जीतने की 4 प्रो ट्रिक्स</h2>
+    <ul>
+      <li><strong>किंग बनना ही सबसे बड़ी ताकत</strong> है – किंग आगे-पीछे दोनों चलता है</li>
+      <li><strong>पीछे वाली कतार संभालो</strong> – अंतिम कतार के मोहरे हिलाओ मत, इनके पीछे दुश्मन को किंग नहीं बनने देंगे</li>
+      <li><strong>जाल बिछाओ:</strong> ज़बरदस्ती कैप्चर नियम का फायदा उठाओ – ऐसा मोहरा सामने रखो कि दुश्मन खाने पर मजबूर हो और तुम्हें डबल-जंप मिल जाए</li>
+      <li><strong>मोहरों की जोड़ी रखो</strong> – अकेले मोहरे आसान शिकार होते हैं, साथ-साथ रखो</li>
+    </ul>
+    <p>और भी गेम्स: <a href="tic-tac-toe.html">टिक टैक टो</a> · <a href="connect-four.html">४ गेंद जोड़ो</a> · <a href="dots-and-boxes.html">बिंदु-बक्सा</a> · <a href="sudoku.html">सुडोकू</a></p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+// ===== Checkers (English Draughts) - 8x8, forced capture, multi-jump, kings =====
+var SZ = 8, CELL = 42, PAD = 12; // canvas 360
+var cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+var bd, turn, sel, locked, over, mode = 'pvp', captured = [0, 0];
+
+function newBoard(){
+  var b = [];
+  for (var r = 0; r < SZ; r++){
+    var row = [];
+    for (var c = 0; c < SZ; c++) row.push(null);
+    b.push(row);
+  }
+  for (var r2 = 0; r2 < 3; r2++) for (var c2 = 0; c2 < SZ; c2++)
+    if ((r2 + c2) % 2 === 1) b[r2][c2] = { p: 2, k: false };
+  for (var r3 = 5; r3 < 8; r3++) for (var c3 = 0; c3 < SZ; c3++)
+    if ((r3 + c3) % 2 === 1) b[r3][c3] = { p: 1, k: false };
+  return b;
+}
+var quiet = 0;
+function reset(){
+  bd = newBoard(); turn = 1; sel = null; locked = null; over = false; captured = [0, 0]; quiet = 0;
+  updStats();
+  say(turnName() + ' की बारी – मोहरा चुनो');
+  if (mode === 'pvc') aiMaybe();
+  draw();
+}
+function turnName(){ return turn === 1 ? '<span class="r">🔴 लाल</span>' : '<span class="y">🟡 पीला</span>'; }
+function say(html){ document.getElementById('msg').innerHTML = html; }
+function updStats(){
+  var n1 = 0, n2 = 0;
+  for (var r = 0; r < SZ; r++) for (var c = 0; c < SZ; c++){
+    if (bd[r][c] && bd[r][c].p === 1) n1++;
+    if (bd[r][c] && bd[r][c].p === 2) n2++;
+  }
+  document.getElementById('s1').textContent = n1;
+  document.getElementById('s2').textContent = n2;
+}
+function inB(r, c){ return r >= 0 && r < SZ && c >= 0 && c < SZ; }
+function dirs(piece){
+  if (piece.k) return [[-1,-1],[-1,1],[1,-1],[1,1]];
+  return piece.p === 1 ? [[-1,-1],[-1,1]] : [[1,-1],[1,1]];
+}
+// single-jump options for piece at r,c
+function jumpsFrom(b, r, c){
+  var pc = b[r][c], out = [];
+  if (!pc) return out;
+  dirs(pc).forEach(function(d){
+    var mr = r + d[0], mc = c + d[1], tr = r + 2*d[0], tc = c + 2*d[1];
+    if (inB(tr, tc) && b[mr][mc] && b[mr][mc].p !== pc.p && !b[tr][tc])
+      out.push({ r: tr, c: tc, cr: mr, cc: mc });
+  });
+  return out;
+}
+// simple step moves
+function stepsFrom(b, r, c){
+  var pc = b[r][c], out = [];
+  if (!pc) return out;
+  dirs(pc).forEach(function(d){
+    var tr = r + d[0], tc = c + d[1];
+    if (inB(tr, tc) && !b[tr][tc]) out.push({ r: tr, c: tc });
+  });
+  return out;
+}
+// pieces of player having captures
+function capturePieces(b, p){
+  var out = [];
+  for (var r = 0; r < SZ; r++) for (var c = 0; c < SZ; c++)
+    if (b[r][c] && b[r][c].p === p && jumpsFrom(b, r, c).length) out.push([r, c]);
+  return out;
+}
+function allMoves(b, p){
+  var caps = capturePieces(b, p);
+  if (caps.length) return { forced: true, from: caps };
+  var from = [];
+  for (var r = 0; r < SZ; r++) for (var c = 0; c < SZ; c++)
+    if (b[r][c] && b[r][c].p === p && stepsFrom(b, r, c).length) from.push([r, c]);
+  return { forced: false, from: from };
+}
+function applyStep(b, r, c, m){
+  b[m.r][m.c] = b[r][c]; b[r][c] = null;
+  crown(b, m.r, m.c);
+}
+function applyJump(b, r, c, j){
+  b[j.r][j.c] = b[r][c]; b[r][c] = null;
+  b[j.cr][j.cc] = null;
+  return crown(b, j.r, j.c);
+}
+function crown(b, r, c){
+  var pc = b[r][c];
+  if (!pc) return false;
+  if (!pc.k && ((pc.p === 1 && r === 0) || (pc.p === 2 && r === SZ - 1))){
+    pc.k = true;
+    return true; // crowned -> turn ends
+  }
+  return false;
+}
+function endTurnCheck(){
+  updStats();
+  var mv = allMoves(bd, turn);
+  if (!mv.from.length){
+    over = true;
+    say('🎉 ' + (turn === 1 ? '<span class="y">पीले</span>' : '<span class="r">लाल</span>') + ' ने जीत लिया! दुश्मन की कोई चाल नहीं बची।');
+    return true;
+  }
+  if (mv.forced) say('⚠️ ' + turnName() + ' को कैप्चर करना ही होगा!');
+  else say(turnName() + ' की बारी');
+  return false;
+}
+function finishMove(capped){
+  quiet = capped ? 0 : quiet + 1;
+  sel = null; locked = null;
+  if (quiet >= 50){
+    over = true; updStats();
+    say('🤝 ड्रॉ! लगातार 25-25 चालें बिना किसी कैप्चर/किंग के – बराबरी घोषित।');
+    draw();
+    return;
+  }
+  turn = 3 - turn;
+  if (!endTurnCheck()) { if (mode === 'pvc') aiMaybe(); }
+  draw();
+}
+// ===== human interaction =====
+function targetsFor(r, c){
+  var mv = allMoves(bd, turn);
+  if (locked) return (locked[0] === r && locked[1] === c) ? jumpsFrom(bd, r, c) : [];
+  if (!mv.from.some(function(f){ return f[0] === r && f[1] === c; })) return [];
+  return mv.forced ? jumpsFrom(bd, r, c) : stepsFrom(bd, r, c);
+}
+cv.addEventListener('click', function(e){
+  if (over) return;
+  if (mode === 'pvc' && turn === 2) return;
+  var rect = cv.getBoundingClientRect();
+  var x = (e.clientX - rect.left) * (cv.width / rect.width);
+  var y = (e.clientY - rect.top) * (cv.height / rect.height);
+  var c = Math.floor((x - PAD) / CELL), r = Math.floor((y - PAD) / CELL);
+  if (!inB(r, c)) return;
+  var pc = bd[r][c];
+  if (sel){
+    var tg = targetsFor(sel[0], sel[1]);
+    var hit = tg.filter(function(m){ return m.r === r && m.c === c; })[0];
+    if (hit){
+      if (hit.cr !== undefined){
+        var crowned = applyJump(bd, sel[0], sel[1], hit);
+        captured[turn-1]++;
+        if (crowned){ finishMove(true); return; } // crown -> turn ends
+        var more = jumpsFrom(bd, hit.r, hit.c);
+        if (more.length){ locked = [hit.r, hit.c]; sel = [hit.r, hit.c]; say('🔥 मल्टी-जंप! आगे खाओ'); draw(); return; }
+        finishMove(true); return;
+      } else {
+        applyStep(bd, sel[0], sel[1], hit);
+        finishMove(false); return;
+      }
+    }
+  }
+  if (pc && pc.p === turn){ sel = [r, c]; draw(); }
+  else { sel = null; draw(); }
+});
+// ===== AI (player 2) =====
+function bestChainLen(b, r, c){
+  // max captures possible from this piece (greedy full chain, crown stops)
+  var best = 0;
+  var js = jumpsFrom(b, r, c);
+  js.forEach(function(j){
+    var nb = cloneB(b);
+    var crowned = applyJump(nb, r, c, j);
+    var len = 1 + (crowned ? 0 : bestChainLen(nb, j.r, j.c));
+    if (len > best) best = len;
+  });
+  return best;
+}
+function cloneB(b){
+  var n = [];
+  for (var r = 0; r < SZ; r++){
+    var row = [];
+    for (var c = 0; c < SZ; c++) row.push(b[r][c] ? { p: b[r][c].p, k: b[r][c].k } : null);
+    n.push(row);
+  }
+  return n;
+}
+function evalBoard(b){
+  // AI (p2) perspective: material + advancement + king value
+  var s = 0;
+  for (var r = 0; r < SZ; r++) for (var c = 0; c < SZ; c++){
+    var pc = b[r][c];
+    if (!pc) continue;
+    var v = pc.k ? 2.2 : 1;
+    if (pc.p === 2) s += v + (pc.k ? 0 : (r * 0.03)); // advance p2 downward
+    else s -= v + (pc.k ? 0 : ((SZ-1-r) * 0.03));
+  }
+  return s;
+}
+function oppMaxChain(b){
+  // best chain length opponent (p1) can start next turn
+  var m = 0;
+  capturePieces(b, 1).forEach(function(f){
+    var l = bestChainLen(b, f[0], f[1]);
+    if (l > m) m = l;
+  });
+  return m;
+}
+function aiMaybe(){
+  if (over || turn !== 2) return;
+  setTimeout(aiStep, 450);
+}
+function aiStep(){
+  if (over || turn !== 2) return;
+  var mv = allMoves(bd, 2);
+  if (!mv.from.length){ endTurnCheck(); return; }
+  if (mv.forced){
+    // pick piece & jump with max chain; play one jump, chain continues via locked
+    var bestScore = -1, bestMove = null;
+    mv.from.forEach(function(f){
+      jumpsFrom(bd, f[0], f[1]).forEach(function(j){
+        var nb = cloneB(bd);
+        applyJump(nb, f[0], f[1], j);
+        var chain = 1 + (crown(nb, j.r, j.c) ? 0 : bestChainLen(nb, j.r, j.c));
+        var sc = chain * 10 + evalBoard(nb);
+        if (sc > bestScore){ bestScore = sc; bestMove = { from: f, j: j }; }
+      });
+    });
+    if (!bestMove){ endTurnCheck(); return; }
+    var crowned = applyJump(bd, bestMove.from[0], bestMove.from[1], bestMove.j);
+    captured[1]++;
+    sel = null;
+    if (crowned){ finishMove(true); return; }
+    var more = jumpsFrom(bd, bestMove.j.r, bestMove.j.c);
+    if (more.length){ locked = [bestMove.j.r, bestMove.j.c]; say('🤖 कंप्यूटर का मल्टी-जंप!'); draw(); setTimeout(aiStep, 450); return; }
+    finishMove(true); return;
+  } else {
+    var bestS = -1e9, bestM = null;
+    mv.from.forEach(function(f){
+      stepsFrom(bd, f[0], f[1]).forEach(function(m){
+        var nb = cloneB(bd);
+        applyStep(nb, f[0], f[1], m);
+        var sc = evalBoard(nb) - oppMaxChain(nb) * 1.15 + Math.random() * 0.05;
+        if (sc > bestS){ bestS = sc; bestM = { from: f, m: m }; }
+      });
+    });
+    if (!bestM){ endTurnCheck(); return; }
+    applyStep(bd, bestM.from[0], bestM.from[1], bestM.m);
+    finishMove(false); return;
+  }
+}
+function setMode(m){
+  mode = m;
+  document.getElementById('m-pvp').classList.toggle('on', m === 'pvp');
+  document.getElementById('m-pvc').classList.toggle('on', m === 'pvc');
+  reset();
+}
+// ===== drawing =====
+function draw(){
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  var mv = over ? null : allMoves(bd, turn);
+  for (var r = 0; r < SZ; r++) for (var c = 0; c < SZ; c++){
+    var x = PAD + c * CELL, y = PAD + r * CELL;
+    ctx.fillStyle = (r + c) % 2 === 1 ? '#b58863' : '#f0d9b5';
+    ctx.fillRect(x, y, CELL, CELL);
+  }
+  // highlight legal from-pieces
+  if (mv && mv.from.length && !locked){
+    mv.from.forEach(function(f){
+      ctx.strokeStyle = turn === 1 ? '#d93025' : '#f9ab00';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(PAD + f[1]*CELL + 2, PAD + f[0]*CELL + 2, CELL - 4, CELL - 4);
+    });
+  }
+  if (locked){
+    ctx.strokeStyle = '#188038'; ctx.lineWidth = 4;
+    ctx.strokeRect(PAD + locked[1]*CELL + 2, PAD + locked[0]*CELL + 2, CELL - 4, CELL - 4);
+  }
+  // pieces
+  for (var r2 = 0; r2 < SZ; r2++) for (var c2 = 0; c2 < SZ; c2++){
+    var pc = bd[r2][c2];
+    if (!pc) continue;
+    var px = PAD + c2*CELL + CELL/2, py = PAD + r2*CELL + CELL/2;
+    ctx.beginPath();
+    ctx.arc(px, py, CELL/2 - 6, 0, 7);
+    ctx.fillStyle = pc.p === 1 ? '#d93025' : '#f9ab00';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(0,0,0,.35)'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(px, py, CELL/2 - 12, 0, 7);
+    ctx.strokeStyle = 'rgba(255,255,255,.55)'; ctx.lineWidth = 1.5; ctx.stroke();
+    if (pc.k){
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 15px Arial';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('♛', px, py + 1);
+    }
+  }
+  // selection + targets
+  if (sel){
+    ctx.strokeStyle = '#188038'; ctx.lineWidth = 4;
+    ctx.strokeRect(PAD + sel[1]*CELL + 2, PAD + sel[0]*CELL + 2, CELL - 4, CELL - 4);
+    targetsFor(sel[0], sel[1]).forEach(function(m){
+      ctx.beginPath();
+      ctx.arc(PAD + m.c*CELL + CELL/2, PAD + m.r*CELL + CELL/2, 8, 0, 7);
+      ctx.fillStyle = 'rgba(24,128,56,.8)';
+      ctx.fill();
+    });
+  }
+}
+reset();
+</script>
+</body>
+</html>

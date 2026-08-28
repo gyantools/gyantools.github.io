@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>SCSS Calculator Hindi – सीनियर सिटिजन बचत योजना (8.2%) ब्याज कैलकुलेटर</title>
+<meta name="description" content="SCSS कैलकुलेटर हिंदी में – सीनियर सिटिजन सेविंग्स स्कीम में लगाई रकम का तिमाही ब्याज (quarterly interest), सालाना आय और 5 साल बाद मैच्योरिटी निकालें। मौजूदा दर 8.2% (2026), ₹30 लाख सीमा तक।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="SCSS Calculator Hindi – सीनियर सिटिजन बचत योजना">
+<meta property="og:description" content="SCSS की तिमाही पेंशन जैसी आय निकालें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SCSS Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"सीनियर सिटिजन सेविंग्स स्कीम (SCSS) ब्याज कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+.tip{background:#e6f4ea;border-left:4px solid #137333;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/scss-calculator.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › SCSS कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>👴 SCSS कैलकुलेटर (सीनियर सिटिजन बचत योजना)</h1>
+    <p>रिटायरमेंट की रकम लगाकर हर तिमाही कितनी आय मिलेगी – तुरंत जानें।</p>
+    <label for="amt">निवेश राशि (₹) – न्यूनतम ₹1,000, अधिकतम ₹30,00,000</label>
+    <input type="number" id="amt" placeholder="जैसे: 1000000" min="1000" step="any">
+    <label for="rate">ब्याज दर (%) – 2026 मौजूदा दर: 8.2%</label>
+    <input type="number" id="rate" value="8.2" min="1" max="15" step="any">
+    <button onclick="calcSCSS()">तिमाही ब्याज निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>SCSS क्या है?</h2>
+    <p><strong>सीनियर सिटिजन सेविंग्स स्कीम (Senior Citizen Savings Scheme – SCSS)</strong> 60 साल से ऊपर के लोगों के लिए सरकार की 5 साल की योजना है। एक बार रकम लगाएं – <strong>हर तिमाही (quarter) ब्याज सीधे आपके बचत खाते में</strong> आता है – यानी pension जैसी नियमित आय। 5 साल बाद पूरी रकम वापस मिलती है।</p>
+    <h2>मुख्य बातें (2026)</h2>
+    <ul>
+      <li><strong>दर: 8.2% सालाना</strong> – अप्रैल 2023 से लगातार यही दर (Q1 FY 2026-27 में भी 8.2%)</li>
+      <li>ब्याज <strong>simple interest</strong> है, <strong>हर तिमाही</strong> (1 अप्रैल, 1 जुलाई, 1 अक्टूबर, 1 जनवरी) को भुगतान</li>
+      <li>खाता खोलते वक्त की दर पूरे 5 साल के लिए <strong>lock</strong> रहती है</li>
+      <li>निवेश पर <strong>80C (नए Income Tax Act 2025 में Section 123) में छूट</strong> – पुराने tax regime में</li>
+      <li>अवधि 5 साल – अब <strong>कई बार 3-3 साल के extension</strong> की सुविधा</li>
+      <li>सेवानिवृत्त सरकारी कर्मचारी 55 साल से भी खोल सकते हैं (रिटायरमेंट की शर्तों पर)</li>
+    </ul>
+    <h2>उदाहरण (8.2% दर)</h2>
+    <table>
+      <tr><th>निवेश</th><th>तिमाही ब्याज</th><th>सालाना आय</th><th>5 साल कुल ब्याज</th></tr>
+      <tr><td>₹5 लाख</td><td id="e1">–</td><td id="e1a">–</td><td id="e1t">–</td></tr>
+      <tr><td>₹15 लाख</td><td id="e2">–</td><td id="e2a">–</td><td id="e2t">–</td></tr>
+      <tr><td>₹30 लाख (अधिकतम)</td><td id="e3">–</td><td id="e3a">–</td><td id="e3t">–</td></tr>
+    </table>
+    <p>यानी ₹30 लाख लगाने पर अकेले SCSS से <strong>हर 3 महीने ₹61,500</strong> – महीने के हिसाब से करीब ₹20,500 – बिना कोई काम किए।</p>
+    <h2>SCSS बनाम दूसरे विकल्प</h2>
+    <p>बड़े बैंकों के सीनियर FD (करीब 7.25–7.6%) के मुकाबले SCSS का 8.2% सबसे ऊंचा है। बेटी के भविष्य के लिए 8.2% देने वाली <a href="ssy-calculator.html" style="color:#1a73e8">SSY योजना</a> भी देखें। ब्याज वापस जमा करने वालों के लिए <a href="fd-calculator.html" style="color:#1a73e8">FD कैलकुलेटर</a> या <a href="ppf-calculator.html" style="color:#1a73e8">PPF कैलकुलेटर</a>, और pension योजनाओं की जानकारी के लिए <a href="../blog/nps-pension-guide.html" style="color:#1a73e8">NPS पेंशन गाइड</a> पढ़ें।</p>
+    <div class="tip">💡 <strong>टिप:</strong> ब्याज की TDS सीनियर सिटिजनों के लिए अब ₹1 लाख सालाना ब्याज तक नहीं कटती – फिर भी Form 15H जमा करा दें ताकि कटौती हो ही नहीं (यदि आय tax-free सीमा के अंदर है)।</div>
+    <div class="note">⚠️ दरें हर तिमाही सरकार द्वारा बदल सकती हैं (आपके खाते की दर lock रहती है)। टैक्स नियम आपकी आय पर निर्भर – बड़ी रकम से पहले CA/विशेषज्ञ से पूछें। यह tool अंदाज़ा देता है, सलाह नहीं।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function scssInterest(P, r){
+  return {
+    quarterly: P * r / 100 / 4,
+    annual: P * r / 100,
+    total5y: P * r / 100 * 5
+  };
+}
+function calcSCSS(){
+  var P = parseFloat(document.getElementById('amt').value);
+  var r = parseFloat(document.getElementById('rate').value);
+  var out = document.getElementById('out');
+  if(!P || P < 1000 || isNaN(r)){ out.style.display='block'; out.innerHTML='⚠️ कृपया न्यूनतम ₹1,000 की राशि और दर भरें।'; return; }
+  var warn = P > 3000000 ? '<p style="color:#b3261e">⚠️ ध्यान दें: SCSS में एक खाते में अधिकतम ₹30 लाख ही जमा हो सकते हैं।</p>' : '';
+  var x = scssInterest(P, r);
+  var f = function(v){ return '₹' + Math.round(v).toLocaleString('en-IN'); };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">हर तिमाही ब्याज: ' + f(x.quarterly) + '</div>'
+    + '<p>सालाना आय: <strong>' + f(x.annual) + '</strong> (महीने के हिसाब से ~' + f(x.annual/12) + ')</p>'
+    + '<p>5 साल में कुल ब्याज: <strong>' + f(x.total5y) + '</strong> · मैच्योरिटी पर वापस: <strong>' + f(P) + '</strong></p>' + warn;
+}
+(function fillExamples(){
+  var ex = [['e1','e1a','e1t',500000],['e2','e2a','e2t',1500000],['e3','e3a','e3t',3000000]];
+  var f = function(v){ return '₹' + Math.round(v).toLocaleString('en-IN'); };
+  for (var i = 0; i < ex.length; i++){
+    var x = scssInterest(ex[i][3], 8.2);
+    document.getElementById(ex[i][0]).textContent = f(x.quarterly);
+    document.getElementById(ex[i][1]).textContent = f(x.annual);
+    document.getElementById(ex[i][2]).textContent = f(x.total5y);
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+name: Site ko sahi folders me lagao
+on: push
+permissions:
+  contents: write
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip kholo + sitemap sync + Google-index ready banao
+        shell: bash {0}
+        run: |
+          set -u
+          cp sitemap.xml /tmp/old_sitemap.xml 2>/dev/null || echo "pehli baar: purana sitemap nahi"
+          ZIPFILE=$(ls *.zip 2>/dev/null | head -n 1)
+          if [ -n "$ZIPFILE" ]; then
+            echo "Zip mili: $ZIPFILE"
+            unzip -o "$ZIPFILE" -d . > /tmp/unzip.log 2>&1
+            echo "unzip exit: $?"
+            tail -n 3 /tmp/unzip.log || true
+            N=$(find . -name '*.html' -not -path './.git/*' | wc -l)
+            echo "Extract ke baad HTML files: $N"
+            if [ "$N" -lt 50 ]; then
+              echo "EXTRACT FAIL (sirf $N html mile, 50+ chahiye)"
+              exit 1
+            fi
+            rm -f *.zip
+            echo "Extract theek, zip delete ho gayi"
+          else
+            echo "Koi zip nahi mili - sirf sitemap sync chalega"
+          fi
+          python3 - <<'PYEOF'
+          import os, re, datetime
+          today = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=5, minutes=30)
+          BASE = 'https://gyantools.github.io/'
+
+          # 1) disk par saare HTML pages dhoondo
+          disk = []
+          for root, dirs, fns in os.walk('.'):
+              if '.git' in root: continue
+              for fn in fns:
+                  if fn.endswith('.html'):
+                      rel = os.path.relpath(os.path.join(root, fn)).replace(os.sep, '/')
+                      disk.append(rel)
+          disk_urls = set(BASE + ('' if p == 'index.html' else p) for p in disk)
+
+          # 2) abhi ke sitemap ke URLs + lastmod
+          entries, order = {}, []
+          def absorb(path, label):
+              try:
+                  t = open(path, encoding='utf-8').read()
+              except Exception:
+                  return
+              for m in re.finditer(r'<loc>([^<]+)</loc>\s*(?:<lastmod>([^<]+)</lastmod>)?', t):
+                  u, lm = m.group(1).strip(), (m.group(2) or today.strftime('%Y-%m-%d')).strip()
+                  if u not in entries:
+                      order.append(u); entries[u] = lm
+                  elif len(lm) == 10:
+                      entries[u] = max(entries[u], lm)
+          absorb('sitemap.xml', 'new')
+          absorb('/tmp/old_sitemap.xml', 'old')
+
+          # 3) union: sitemap sirf BADHEGA, kabhi ghatega nahi
+          added = 0
+          for u in sorted(disk_urls):
+              if u not in entries:
+                  order.append(u); entries[u] = today.strftime('%Y-%m-%d'); added += 1
+          # URL jo disk par nahi bache (delete hue) - sitemap me se HATA do (404 Google ke liye bura)
+          final = [u for u in order if u in disk_urls or not u.endswith('.html')]
+
+          out = ['<?xml version="1.0" encoding="UTF-8"?>',
+                 '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+          for u in final:
+              out.append('  <url>')
+              out.append('    <loc>%s</loc>' % u)
+              out.append('    <lastmod>%s</lastmod>' % entries[u])
+              out.append('  </url>')
+          out.append('</urlset>')
+          open('sitemap.xml', 'w', encoding='utf-8').write('\n'.join(out) + '\n')
+          print('SITEMAP SYNC: total URLs =', len(final), '| naye add hue =', added)
+
+          # 4) robots.txt me Sitemap line pakka rahe
+          try:
+              r = open('robots.txt', encoding='utf-8').read()
+          except Exception:
+              r = 'User-agent: *\nAllow: /\n'
+          if 'Sitemap:' not in r:
+              r = r.rstrip() + '\n\nSitemap: ' + BASE + 'sitemap.xml\n'
+              open('robots.txt', 'w', encoding='utf-8').write(r)
+              print('robots.txt me Sitemap line add hui')
+          else:
+              print('robots.txt theek hai')
+          PYEOF
+      - name: Commit karke push karo
+        run: |
+          git config user.name "gyantools"
+          git config user.email "gyantools@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Koi change nahi"
+          else
+            git commit -m "Site update + sitemap sync (Google indexing ready)"
+            git push
+          fi

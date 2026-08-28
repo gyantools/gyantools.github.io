@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Reversi Othello Game in Hindi – रिवर्सी बोर्ड गेम (2 Player + Computer)</title>
+<meta name="description" content="मुफ़्त Reversi (Othello) गेम हिंदी में – दुनिया भर का प्रसिद्ध रणनीति बोर्ड गेम! दोस्त के साथ 2 player या कंप्यूटर से खेलें। अपनी चाल से दुश्मन के सिक्के पलटो, आखिर में सबसे ज़्यादा सिक्के वाला जीते।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="रिवर्सी (Reversi/Othello) गेम हिंदी में">
+<meta property="og:description" content="सिक्के पलटो, कोने पकड़ो, जीतो – 2P + vs Computer!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Reversi Othello Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"रिवर्सी Reversi/Othello गेम हिंदी में – 2 प्लेयर + कंप्यूटर मोड","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.mode{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.mode button{background:#f1f3f4;color:#202124;border:none;padding:10px 22px;border-radius:20px;font-size:.95rem;font-weight:600;cursor:pointer}
+.mode button.on{background:#1a73e8;color:#fff}
+.canvas-wrap{margin:18px auto;width:max-content}
+canvas{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.1);touch-action:manipulation}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.stats span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.stats b{color:#1a73e8}
+.ctrl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.ctrl button{background:#e8f0fe;color:#1a73e8;border:none;padding:10px 18px;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer}
+.ctrl button:hover{background:#d2e3fc}
+.msg{min-height:32px;font-weight:600;margin-top:8px;font-size:1.05rem}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul,article ol{padding-left:24px}
+article a{color:#1a73e8}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.93rem}
+th{background:#e8f0fe;color:#1a73e8;padding:10px;text-align:left;border:1px solid #d2e3fc}
+td{padding:10px;border:1px solid #e0e0e0}
+tr:nth-child(even) td{background:#f8f9fa}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/games/reversi.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › रिवर्सी (Reversi) गेम</p>
+
+  <div class="game-box">
+    <h1>⚫⚪ रिवर्सी (Reversi / Othello)</h1>
+    <p>दुनिया भर का प्रसिद्ध रणनीति गेम – अपना सिक्का रखो, दुश्मन की कतार को दोनों तरफ से कसकर <strong>उसके सिक्के पलट डालो</strong>! आखिर में जिसके ज़्यादा सिक्के, वही जीतेगा।</p>
+    <div class="mode">
+      <button id="m-pvp" class="on" onclick="setMode('pvp')">👥 2 प्लेयर (दोस्त के साथ)</button>
+      <button id="m-pvc" onclick="setMode('pvc')">🤖 कंप्यूटर से खेलो</button>
+    </div>
+    <div class="canvas-wrap"><canvas id="cv" width="360" height="360"></canvas></div>
+    <div class="stats">
+      <span>⚫ काले: <b id="s1">2</b></span>
+      <span>⚪ सफेद: <b id="s2">2</b></span>
+    </div>
+    <div class="ctrl"><button onclick="reset()">🔄 नया गेम</button></div>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <article>
+    <h2>कैसे खेलें – 1 मिनट में</h2>
+    <ol>
+      <li>बीच के 4 खानों में 2-2 सिक्के रखकर शुरू होता है, <strong>काला पहले चलता है</strong></li>
+      <li>हरी बिंदी वाले खानों पर ही चल सकते हो – वहीं तुम्हारी <strong>कानूनी चाल</strong> है (टैप करो, सिक्का रख देगा)</li>
+      <li>चाल वैध तभी है जब वह दुश्मन के सिक्कों की कतार को <strong>एक तरफ अपना सिक्का और दूसरी तरफ पहले से रखा अपना सिक्का</strong> – ऐसे कस दे (लेटी, खड़ी या तिरछी कोई भी दिशा)</li>
+      <li>कसी हुई कतार के <strong>सारे दुश्मनी सिक्के तुरंत पलट</strong> जाते हैं और तुम्हारे हो जाते हैं</li>
+      <li>जिसकी कोई चाल न बचे वह <strong>अपने आप पास</strong> हो जाता है (यह नियम है, मर्ज़ी से पास नहीं हो सकते)</li>
+      <li>खेल तब खत्म – जब पूरा बोर्ड भर जाए या दोनों की चालें खत्म। <strong>जिसके ज़्यादा सिक्के वही जीता</strong> (32-32 = ड्रॉ)</li>
+    </ol>
+    <div class="tip" style="background:#e6f4ea;border-left:4px solid #188038;padding:12px 16px;border-radius:8px;margin:14px 0">💡 <strong>याद रखो:</strong> बीच में सिक्कों का गिनती वाला बढ़त कुछ मत समझो – रिवर्सी में पलटवार इतनी तेज़ है कि आखिरी 5 चालियों में पूरा गेम पलट जाता है। असली बात चालों की आज़ादी (mobility) और कोनों की है।</div>
+    <h2>जीतने की 4 प्रो ट्रिक्स</h2>
+    <ul>
+      <li><strong>कोना = हीरा:</strong> कोने का सिक्का कभी पलट नहीं सकता – मौका मिले तो कोना लेना ही सबसे बड़ी चाल है</li>
+      <li><strong>कोने के ठीक बगल के खाने से बचो:</strong> वहां सिक्का रखोगे तो दुश्मन को कोना भेंट में मिल जाएगा</li>
+      <li><strong>कम चालें मत छोड़ो, छोटी कतारें रखो:</strong> जिसके पास ज़्यादा विकल्प हैं वही दूसरे को मजबूर करता है</li>
+      <li><strong>किनारे (edges) कब्ज़ो:</strong> किनारों के सिक्के कम पलटते हैं और कोनों का रास्ता बंद करते हैं</li>
+    </ul>
+    <p>और गेम्स: <a href="checkers.html">♟️ दमा (Checkers)</a> · <a href="connect-four.html">४ गेंद जोड़ो</a> · <a href="tic-tac-toe.html">टिक टैक टो</a> · <a href="memory-match.html">मेमोरी मैच</a></p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+// ===== Reversi (Othello) - 8x8 =====
+var SZ = 8, CELL = 42, PAD = 12;
+var cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+var bd, turn, over, mode = 'pvp', busy = false;
+var DIRS = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
+// positional weights (corners best, corner-adjacent worst)
+var W = [
+ [100,-25,10,5,5,10,-25,100],
+ [-25,-45,1,1,1,1,-45,-25],
+ [10,1,3,2,2,3,1,10],
+ [5,1,2,1,1,2,1,5],
+ [5,1,2,1,1,2,1,5],
+ [10,1,3,2,2,3,1,10],
+ [-25,-45,1,1,1,1,-45,-25],
+ [100,-25,10,5,5,10,-25,100]
+];
+
+function newBoard(){
+  var b = [];
+  for (var r = 0; r < SZ; r++){ var row = []; for (var c = 0; c < SZ; c++) row.push(0); b.push(row); }
+  b[3][3] = 2; b[3][4] = 1; b[4][3] = 1; b[4][4] = 2;
+  return b;
+}
+function inB(r, c){ return r >= 0 && r < SZ && c >= 0 && c < SZ; }
+// flips obtained if p plays (r,c); empty array = illegal
+function flipsFor(b, r, c, p){
+  if (b[r][c] !== 0) return [];
+  var all = [];
+  for (var d = 0; d < 8; d++){
+    var line = [], rr = r + DIRS[d][0], cc = c + DIRS[d][1];
+    while (inB(rr, cc) && b[rr][cc] === 3 - p){ line.push([rr, cc]); rr += DIRS[d][0]; cc += DIRS[d][1]; }
+    if (line.length && inB(rr, cc) && b[rr][cc] === p) all = all.concat(line);
+  }
+  return all;
+}
+function legalMoves(b, p){
+  var out = [];
+  for (var r = 0; r < SZ; r++) for (var c = 0; c < SZ; c++){
+    if (b[r][c] === 0 && flipsFor(b, r, c, p).length) out.push([r, c]);
+  }
+  return out;
+}
+function applyMove(b, r, c, p){
+  var fl = flipsFor(b, r, c, p);
+  b[r][c] = p;
+  fl.forEach(function(f){ b[f[0]][f[1]] = p; });
+  return fl.length;
+}
+function counts(b){
+  var n1 = 0, n2 = 0;
+  for (var r = 0; r < SZ; r++) for (var c = 0; c < SZ; c++){
+    if (b[r][c] === 1) n1++; if (b[r][c] === 2) n2++;
+  }
+  return [n1, n2];
+}
+function reset(){
+  bd = newBoard(); turn = 1; over = false; busy = false;
+  updStats(); say(turnName() + ' की बारी (काला पहले)');
+  if (mode === 'pvc') aiMaybe();
+  draw();
+}
+function turnName(){ return turn === 1 ? '<strong>⚫ काला</strong>' : '<strong>⚪ सफेद</strong>'; }
+function say(html){ document.getElementById('msg').innerHTML = html; }
+function updStats(){
+  var n = counts(bd);
+  document.getElementById('s1').textContent = n[0];
+  document.getElementById('s2').textContent = n[1];
+}
+function endIfOver(){
+  var lm1 = legalMoves(bd, 1), lm2 = legalMoves(bd, 2);
+  if (lm1.length === 0 && lm2.length === 0){
+    over = true;
+    var n = counts(bd);
+    if (n[0] > n[1]) say('🎉 खेल खत्म! <strong>⚫ काला</strong> जीता ' + n[0] + ' – ' + n[1] + ' से!');
+    else if (n[1] > n[0]) say('🎉 खेल खत्म! <strong>⚪ सफेद</strong> जीता ' + n[1] + ' – ' + n[0] + ' से!');
+    else say('🤝 ड्रॉ! 32 – 32 की बराबरी।');
+    updStats(); draw();
+    return true;
+  }
+  return false;
+}
+function advanceTurn(){
+  if (endIfOver()) return;
+  turn = 3 - turn;
+  if (legalMoves(bd, turn).length === 0){
+    say('⏭️ ' + turnName() + ' की कोई चाल नहीं – अपने आम पास! फिर ' + (3 - turn === 1 ? 'काला' : 'सफेद') + ' चलेगा।');
+    turn = 3 - turn;
+  } else {
+    say(turnName() + ' की बारी');
+  }
+  updStats(); draw();
+  if (mode === 'pvc') aiMaybe();
+}
+cv.addEventListener('click', function(e){
+  if (over || busy) return;
+  if (mode === 'pvc' && turn === 2) return;
+  var rect = cv.getBoundingClientRect();
+  var x = (e.clientX - rect.left) * (cv.width / rect.width);
+  var y = (e.clientY - rect.top) * (cv.height / rect.height);
+  var c = Math.floor((x - PAD) / CELL), r = Math.floor((y - PAD) / CELL);
+  if (!inB(r, c)) return;
+  if (flipsFor(bd, r, c, turn).length){
+    applyMove(bd, r, c, turn);
+    advanceTurn();
+  }
+});
+// ===== AI (white=2) =====
+function cloneB(b){
+  var n = [];
+  for (var r = 0; r < SZ; r++){ var row = []; for (var c = 0; c < SZ; c++) row.push(b[r][c]); n.push(row); }
+  return n;
+}
+function aiMaybe(){
+  if (over || turn !== 2) return;
+  busy = true;
+  setTimeout(aiStep, 420);
+}
+function aiStep(){
+  if (over || turn !== 2){ busy = false; return; }
+  var mv = legalMoves(bd, 2);
+  if (!mv.length){ busy = false; advanceTurn(); return; }
+  var bestS = -1e9, bestM = mv[0];
+  mv.forEach(function(m){
+    var nb = cloneB(bd);
+    var fl = applyMove(nb, m[0], m[1], 2);
+    var sc = W[m[0]][m[1]] + fl * 1.5;
+    var opp = legalMoves(nb, 1);
+    sc -= opp.length * 3;
+    // opponent ko corner deta hai to bhaag jao
+    opp.forEach(function(o){ if (W[o[0]][o[1]] === 100) sc -= 80; });
+    // endgame me disc difference zyada matter karta hai
+    var nn = counts(nb);
+    var total = nn[0] + nn[1];
+    if (total >= 50) sc += (nn[1] - nn[0]) * 4;
+    sc += Math.random() * 0.5;
+    if (sc > bestS){ bestS = sc; bestM = m; }
+  });
+  applyMove(bd, bestM[0], bestM[1], 2);
+  busy = false;
+  advanceTurn();
+}
+function setMode(m){
+  mode = m;
+  document.getElementById('m-pvp').classList.toggle('on', m === 'pvp');
+  document.getElementById('m-pvc').classList.toggle('on', m === 'pvc');
+  reset();
+}
+function draw(){
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  for (var r = 0; r < SZ; r++) for (var c = 0; c < SZ; c++){
+    var x = PAD + c * CELL, y = PAD + r * CELL;
+    ctx.fillStyle = '#2e7d32';
+    ctx.fillRect(x, y, CELL, CELL);
+    ctx.strokeStyle = 'rgba(0,0,0,.25)';
+    ctx.strokeRect(x + .5, y + .5, CELL - 1, CELL - 1);
+  }
+  var lm = over ? [] : legalMoves(bd, turn);
+  lm.forEach(function(m){
+    ctx.beginPath();
+    ctx.arc(PAD + m[1]*CELL + CELL/2, PAD + m[0]*CELL + CELL/2, 6, 0, 7);
+    ctx.fillStyle = 'rgba(255,255,255,.55)';
+    ctx.fill();
+  });
+  for (var r2 = 0; r2 < SZ; r2++) for (var c2 = 0; c2 < SZ; c2++){
+    if (!bd[r2][c2]) continue;
+    var px = PAD + c2*CELL + CELL/2, py = PAD + r2*CELL + CELL/2;
+    ctx.beginPath();
+    ctx.arc(px, py, CELL/2 - 4, 0, 7);
+    ctx.fillStyle = bd[r2][c2] === 1 ? '#202124' : '#fafafa';
+    ctx.fill();
+    ctx.strokeStyle = bd[r2][c2] === 1 ? '#000' : '#9aa0a6';
+    ctx.lineWidth = 2; ctx.stroke();
+  }
+}
+reset();
+</script>
+</body>
+</html>

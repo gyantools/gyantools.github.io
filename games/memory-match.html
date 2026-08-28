@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Memory Match Game in Hindi – मेमोरी मैच (2 Player + Computer)</title>
+<meta name="description" content="मुफ़्त मेमोरी मैच (Memory Match) गेम हिंदी में – जोड़े मिलाओ वाला मशहूर दिमागी गेम! दोस्त के साथ 2 player या कंप्यूटर से खेलें। कार्ड पलटो, जोड़ा ढूंढो, सबसे ज़्यादा जोड़े जीतो। बच्चों की याददाश्त बढ़ाने वाला गेम।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="मेमोरी मैच गेम हिंदी में">
+<meta property="og:description" content="कार्ड पलटो, जोड़े मिलाओ – 2P + vs Computer!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Memory Match Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"मेमोरी मैच गेम हिंदी में – 2 प्लेयर + कंप्यूटर मोड, याददाश्त बढ़ाने वाला गेम","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.mode{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.mode button{background:#f1f3f4;color:#202124;border:none;padding:10px 22px;border-radius:20px;font-size:.95rem;font-weight:600;cursor:pointer}
+.mode button.on{background:#1a73e8;color:#fff}
+#board{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:380px;margin:18px auto}
+.card{aspect-ratio:1/1;background:linear-gradient(135deg,#1a73e8,#1558b0);border-radius:12px;font-size:2.2rem;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;transition:transform .15s;border:none}
+.card:hover{transform:scale(1.04)}
+.card.open{background:#fff;border:2px solid #1a73e8;cursor:default}
+.card.done{background:#e6f4ea;border:2px solid #188038;cursor:default;opacity:.85}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.stats span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.stats b{color:#1a73e8}
+.ctrl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.ctrl button{background:#e8f0fe;color:#1a73e8;border:none;padding:10px 18px;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer}
+.ctrl button:hover{background:#d2e3fc}
+.msg{min-height:32px;font-weight:600;margin-top:10px;font-size:1.05rem}
+.msg .r{color:#d93025}.msg .y{color:#b06000}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul,article ol{padding-left:24px}
+article a{color:#1a73e8}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/games/memory-match.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › मेमोरी मैच गेम</p>
+
+  <div class="game-box">
+    <h1>🃏 मेमोरी मैच (Memory Match)</h1>
+    <p>कार्ड पलटो, एक जैसे दो कार्ड का <strong>जोड़ा ढूंढो</strong> – जोड़ा बना तो वह तुम्हारा + एक और मौका! सबसे ज़्यादा जोड़े जीतने वाला चैंपियन! 🏆</p>
+    <div class="mode">
+      <button id="m-pvp" class="on" onclick="setMode('pvp')">👥 2 प्लेयर (दोस्त के साथ)</button>
+      <button id="m-pvc" onclick="setMode('pvc')">🤖 कंप्यूटर से खेलो</button>
+    </div>
+    <div id="board"></div>
+    <div class="stats">
+      <span>🔴 लाल: <b id="s1">0</b> जोड़े</span>
+      <span>🟡 पीला: <b id="s2">0</b> जोड़े</span>
+      <span>बचे हुए: <b id="st">8</b></span>
+    </div>
+    <div class="ctrl"><button onclick="reset()">🔄 नया गेम</button></div>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <article>
+    <h2>कैसे खेलें – बिल्कुल आसान</h2>
+    <ol>
+      <li>16 कार्ड उल्टे रखे हैं – नीचे 8 जोड़े (एक जैसे 2-2 इमोजी) छिपे हैं</li>
+      <li>अपनी बारी में <strong>2 कार्ड पलटो</strong> (टैप करके)</li>
+      <li>दोनों एक जैसे निकले → <strong>जोड़ा तुम्हारा!</strong> हरा भर जाएगा और <strong>तुम फिर से खेलोगे</strong></li>
+      <li>अलग निकले → कार्ड वापस उलट जाएंगे, बारी अगले खिलाड़ी की</li>
+      <li>जो पहले से खुले कार्ड याद रखता है, वही जोड़े बनाता है – यही <strong>याददाश्त की असली परीक्षा</strong> है</li>
+      <li>सारे 8 जोड़े बंट जाएं तो <strong>जिसके ज़्यादा जोड़े, वही विजेता</strong></li>
+    </ol>
+    <h2>यह गेम क्यों खेलें? (फायदे)</h2>
+    <ul>
+      <li><strong>याददाश्त तेज़:</strong> दिमाग जगहें (positions) और चित्र दोनों याद रखने की कसरत करता है</li>
+      <li><strong>फोकस बढ़ाता है:</strong> ध्यान भटका तो जोड़ा भूलोगे – एकाग्रता की दैनिक practice</li>
+      <li><strong>बच्चों के लिए बेहतरीन:</strong> मज़ेदार तरीके से दिमागी विकास (बच्चों की ऑनलाइन सुरक्षा के लिए <a href="../blog/bachchon-ki-online-suraksha.html">यह गाइड</a> भी पढ़ें)</li>
+      <li><strong>बड़ों के लिए भी:</strong> उम्र के साथ याददाश्त तेज़ रखने का अच्छा व्यायाम</li>
+    </ul>
+    <h2>जीतने की 3 ट्रिक्स</h2>
+    <ul>
+      <li>पलटते वक्त कार्ड की <strong>जगह को चित्र से जोड़कर</strong> याद करो (जैसे "🦁 ऊपर-बाएं कोने में")</li>
+      <li>पहली बारी में जान-बूझकर <strong>अलग-अलग इलाकों</strong> के कार्ड खोलो – पूरा बोर्ड जल्दी नक्शा बन जाएगा</li>
+      <li>कंप्यूटर से खेल रहे हो तो याद रखो – उसे भी कभी-कभी भूल होती है, उसकी कमज़ोरी पकड़ो! 😄</li>
+    </ul>
+    <p>और गेम्स: <a href="reversi.html">⚫⚪ रिवर्सी</a> · <a href="checkers.html">♟️ दमा (Checkers)</a> · <a href="snake-ladder.html">साँप-सीढ़ी</a> · <a href="tic-tac-toe.html">टिक टैक टो</a></p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+// ===== Memory Match - 4x4, 8 pairs =====
+var EMOJIS = ['🦁','🐘','🚗','🏏','🌹','🍎','⚡','🎈'];
+var cards = [];      // {id, emoji, done}
+var flipped = [];    // indices abhi khule hue
+var turn = 1, over = false, busy = false, mode = 'pvp';
+var pairs = [0, 0];
+var known = {};      // index -> emoji (computer ki yaad)
+
+function reset(){
+  cards = [];
+  var pool = EMOJIS.concat(EMOJIS);
+  // shuffle
+  for (var i = pool.length - 1; i > 0; i--){
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = pool[i]; pool[i] = pool[j]; pool[j] = t;
+  }
+  pool.forEach(function(em, idx){ cards.push({ emoji: em, done: false }); });
+  flipped = []; turn = 1; over = false; busy = false; pairs = [0, 0]; known = {};
+  document.getElementById('s1').textContent = 0;
+  document.getElementById('s2').textContent = 0;
+  document.getElementById('st').textContent = 8;
+  say(turnName() + ' शुरू करें – 2 कार्ड पलटो');
+  render();
+}
+function turnName(){ return turn === 1 ? '<span class="r">🔴 लाल</span>' : '<span class="y">🟡 पीला</span>'; }
+function say(html){ document.getElementById('msg').innerHTML = html; }
+function render(){
+  var b = document.getElementById('board');
+  b.innerHTML = '';
+  cards.forEach(function(cd, i){
+    var d = document.createElement('button');
+    d.className = 'card' + (cd.done ? ' done' : (flipped.indexOf(i) >= 0 ? ' open' : ''));
+    d.textContent = (cd.done || flipped.indexOf(i) >= 0) ? cd.emoji : '❓';
+    d.onclick = function(){ tap(i); };
+    b.appendChild(d);
+  });
+}
+function tap(i){
+  if (over || busy) return;
+  if (mode === 'pvc' && turn === 2) return;
+  flip(i);
+}
+function remember(i){
+  if (!cards[i].done) known[i] = cards[i].emoji;
+}
+function forgetALittle(){
+  // computer ki yaad: har मोड़े par 12% purani yaad dhundlhi
+  Object.keys(known).forEach(function(k){
+    if (Math.random() < 0.12) delete known[k];
+  });
+}
+function flip(i){
+  if (cards[i].done || flipped.indexOf(i) >= 0 || flipped.length >= 2) return;
+  flipped.push(i);
+  remember(i);
+  render();
+  if (flipped.length === 2){
+    busy = true;
+    setTimeout(function(){ resolve(); }, 850);
+  }
+}
+function resolve(){
+  var a = flipped[0], b = flipped[1];
+  var match = cards[a].emoji === cards[b].emoji;
+  if (match){
+    cards[a].done = cards[b].done = true;
+    delete known[a]; delete known[b];
+    pairs[turn-1]++;
+    document.getElementById(turn === 1 ? 's1' : 's2').textContent = pairs[turn-1];
+    var left = 8 - pairs[0] - pairs[1];
+    document.getElementById('st').textContent = left;
+    if (left === 0){
+      over = true; busy = false; flipped = [];
+      render();
+      if (pairs[0] > pairs[1]) say('🎉 <span class="r">लाल</span> ने जीता ' + pairs[0] + ' – ' + pairs[1] + ' से!');
+      else if (pairs[1] > pairs[0]) say('🎉 <span class="y">पीले</span> ने जीता ' + pairs[1] + ' – ' + pairs[0] + ' से!');
+      else say('🤝 बराबरी! 4 – 4 जोड़े।');
+      return;
+    }
+    busy = false; flipped = [];
+    say('✅ जोड़ा मिल गया! ' + turnName() + ' फिर खेलेगा');
+    render();
+    if (mode === 'pvc' && turn === 2) setTimeout(aiTurn, 700);
+    return;
+  } else {
+    flipped = [];
+    turn = 3 - turn;
+    busy = false;
+    if (mode === 'pvc') forgetALittle();
+    say('❌ जोड़ा नहीं बना। अब ' + turnName() + ' की बारी');
+    render();
+    if (mode === 'pvc' && turn === 2) setTimeout(aiTurn, 700);
+  }
+}
+// ===== computer (player 2) =====
+function hiddenIdx(){
+  var out = [];
+  cards.forEach(function(cd, i){ if (!cd.done) out.push(i); });
+  return out;
+}
+function aiTurn(){
+  if (over || turn !== 2) return;
+  var avail = hiddenIdx();
+  if (!avail.length) return;
+  // 1) kya jaana hua koi poora joda hai?
+  var byEmoji = {};
+  Object.keys(known).forEach(function(k){
+    var i = +k;
+    if (cards[i].done) { delete known[k]; return; }
+    if (!byEmoji[known[k]]) byEmoji[known[k]] = [];
+    byEmoji[known[k]].push(i);
+  });
+  var pairIdx = null;
+  Object.keys(byEmoji).forEach(function(em){
+    if (byEmoji[em].length >= 2 && !pairIdx) pairIdx = [byEmoji[em][0], byEmoji[em][1]];
+  });
+  if (pairIdx){
+    flip(pairIdx[0]);
+    setTimeout(function(){ flip(pairIdx[1]); }, 650);
+    return;
+  }
+  // 2) pehla unknown kholo
+  var unknown = avail.filter(function(i){ return known[i] === undefined; });
+  var first = unknown.length ? unknown[Math.floor(Math.random() * unknown.length)]
+                             : avail[Math.floor(Math.random() * avail.length)];
+  flip(first);
+  setTimeout(function(){
+    // kholne ke baad: kya ise jaana hua koi doosra mila?
+    var em = cards[first].emoji;
+    var matchIdx = null;
+    Object.keys(known).forEach(function(k){
+      var i = +k;
+      if (i !== first && !cards[i].done && known[k] === em) matchIdx = i;
+    });
+    if (matchIdx !== null){ flip(matchIdx); return; }
+    // warna koi bhi doosra unknown (jaana hua bacha to woh nahi)
+    var rest = avail.filter(function(i){ return i !== first && !cards[i].done; });
+    var restUnknown = rest.filter(function(i){ return known[i] === undefined; });
+    var second = restUnknown.length ? restUnknown[Math.floor(Math.random() * restUnknown.length)]
+                                    : rest[Math.floor(Math.random() * rest.length)];
+    if (second !== undefined) flip(second);
+  }, 650);
+}
+function setMode(m){
+  mode = m;
+  document.getElementById('m-pvp').classList.toggle('on', m === 'pvp');
+  document.getElementById('m-pvc').classList.toggle('on', m === 'pvc');
+  reset();
+}
+reset();
+</script>
+</body>
+</html>

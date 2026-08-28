@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Word Guess Game – 5 Letter Word Puzzle in Hindi | GyanTools</title>
+<meta name="description" content="मुफ़्त Word Guess गेम – 5 अक्षर का शब्द 6 मौकों में पहचानो! हरे/pीले/स्लेटी रंग के संकेतों वाला मज़ेदार English word puzzle। Mobile पर भी आसान, unlimited खेलें।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Word Guess – 5 Letter Word Puzzle गेम">
+<meta property="og:description" content="5 अक्षर का शब्द 6 मौकों में पहचानो!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Word Guess Game","applicationCategory":"GameApplication","operatingSystem":"Web","description":"5 अक्षर का शब्द पहचानो – word puzzle गेम","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.rows{display:flex;flex-direction:column;gap:8px;align-items:center;margin:20px 0}
+.row{display:flex;gap:8px}
+.box{width:52px;height:52px;border:2px solid #dadce0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;text-transform:uppercase;background:#fff}
+.box.filled{border-color:#5f6368}
+.box.green{background:#137333;border-color:#137333;color:#fff}
+.box.yellow{background:#e8710a;border-color:#e8710a;color:#fff}
+.box.gray{background:#5f6368;border-color:#5f6368;color:#fff}
+.box.pop{animation:pop .15s ease}
+@keyframes pop{from{transform:scale(.9)}to{transform:scale(1)}}
+.kb{display:flex;flex-direction:column;gap:6px;align-items:center;margin:14px 0}
+.kline{display:flex;gap:5px;justify-content:center;flex-wrap:nowrap}
+.kb button{background:#e8eaed;border:none;min-width:30px;height:44px;padding:0 8px;border-radius:6px;font-size:.9rem;font-weight:700;cursor:pointer;color:#202124}
+.kb button:active{background:#d2e3fc}
+.kb button.kg{background:#137333;color:#fff}
+.kb button.ky{background:#e8710a;color:#fff}
+.kb button.kd{background:#5f6368;color:#fff}
+@media(max-width:480px){.box{width:44px;height:44px;font-size:1.25rem}.kb button{min-width:26px;height:40px;padding:0 5px;font-size:.8rem}}
+.ctrl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.ctrl button{background:#1a73e8;color:#fff;border:none;padding:12px 26px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer}
+.ctrl button:hover{background:#1557b0}
+.msg{min-height:28px;font-weight:600;margin-top:8px}
+.msg.win{color:#137333}
+.msg.lose{color:#d93025}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.stats span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.stats b{color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/games/word-guess.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Word Guess गेम</p>
+
+  <div class="game-box">
+    <h1>🔤 Word Guess – 5 अक्षर का शब्द पहचानो</h1>
+    <p>6 मौकों में छिपे हुए English शब्द का पता लगाओ। रंग बताएंगे कि तुम कितने पास हो!</p>
+    <div class="rows" id="rows"></div>
+    <div class="kb" id="kb"></div>
+    <div class="ctrl"><button onclick="newGame()">🔄 नया शब्द</button></div>
+    <div class="msg" id="msg"></div>
+    <div class="stats">
+      <span>खेले: <b id="played">0</b></span>
+      <span>जीते: <b id="won">0</b></span>
+      <span>जीत की लय: <b id="streak">0</b></span>
+    </div>
+  </div>
+
+  <article>
+    <h2>रंगों का मतलब</h2>
+    <ul>
+      <li>🟩 <strong>हरा</strong> — अक्षर सही है और सही जगह पर है</li>
+      <li>🟧 <strong>नारंगी</strong> — अक्षर शब्द में है, पर जगह गलत है</li>
+      <li>⬛ <strong>स्लेटी</strong> — यह अक्षर शब्द में है ही नहीं</li>
+    </ul>
+    <h2>खेलने की टिप्स</h2>
+    <p>पहली दो कोशिशों में अलग-अलग अक्षरों वाले शब्द लगाओ — जैसे <strong>CRANE, SLATE, MOUNT</strong> — इससे ज़्यादा अक्षरों की जानकारी एक साथ मिल जाती है। आम अक्षर (A, E, R, S, T, N) वाले शब्द शुरू में काम आते हैं। हर जीत पर लय (streak) बढ़ती है — कितनी लंबी लय बना पाओगे? 🔥</p>
+    <p>ऐसे ही और गेम खेलें: <a href="sudoku.html" style="color:#1a73e8">Sudoku</a>, <a href="memory-game.html" style="color:#1a73e8">Memory गेम</a>, <a href="2048.html" style="color:#1a73e8">2048</a> और ज्ञान बढ़ाने के लिए <a href="gk-quiz.html" style="color:#1a73e8">GK Quiz (unlimited)</a>। English सीखने में मदद के लिए <a href="../tools/typing-speed-test.html" style="color:#1a73e8">Typing Speed Test</a> भी आज़माएं।</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+var WORDS = ["ABOUT","ABOVE","ACTOR","ADAPT","AFTER","AGAIN","AGENT","AGREE","AHEAD","ALARM","ALBUM","ALERT","ALIKE","ALIVE","ALLOW","ALONE","ANGRY","ANKLE","APPLE","APPLY","ARENA","ARGUE","ARISE","ARMOR","AROSE","ARRAY","ARROW","ASIDE","ASSET","AUDIO","AVOID","AWAKE","AWARD","AWARE","BADGE","BAKER","BASIC","BEACH","BEGIN","BEING","BELOW","BENCH","BERRY","BIRTH","BLACK","BLADE","BLAME","BLANK","BLAST","BLAZE","BLEND","BLIND","BLOCK","BLOOD","BOARD","BOOST","BOOTH","BOUND","BRAIN","BRAND","BRAVE","BREAD","BREAK","BRICK","BRIDE","BRIEF","BRING","BROAD","BROKE","BROWN","BRUSH","BUILD","BUNCH","BURST","CABIN","CABLE","CANDY","CARGO","CARRY","CATCH","CAUSE","CHAIN","CHAIR","CHALK","CHARM","CHART","CHASE","CHEAP","CHECK","CHEER","CHESS","CHIEF","CHILD","CHILL","CHUNK","CIVIL","CLAIM","CLASS","CLEAN","CLEAR","CLERK","CLICK","CLIFF","CLIMB","CLOCK","CLOSE","CLOTH","CLOUD","COACH","COAST","COLOR","COMET","COMIC","CORAL","COUCH","COUNT","COURT","COVER","CRAFT","CRANE","CRASH","CRAZY","CREAM","CRIME","CRISP","CROSS","CROWD","CROWN","CRUSH","CURVE","CYCLE","DAILY","DAIRY","DANCE","DEBUT","DELAY","DEPTH","DIRTY","DOUBT","DOZEN","DRAFT","DRAIN","DRAMA","DREAM","DRESS","DRIED","DRIFT","DRINK","DRIVE","EAGER","EAGLE","EARLY","EARTH","EIGHT","ELBOW","EMPTY","ENEMY","ENJOY","ENTER","EQUAL","ERROR","EVENT","EVERY","EXACT","EXIST","EXTRA","FAITH","FALSE","FAULT","FAVOR","FEAST","FENCE","FEVER","FEWER","FIELD","FIFTH","FIFTY","FIGHT","FINAL","FIRST","FLAME","FLASH","FLEET","FLESH","FLOAT","FLOCK","FLOOD","FLOOR","FLOUR","FLUTE","FOCUS","FORCE","FORTH","FORTY","FORUM","FOUND","FRAME","FRAUD","FRESH","FRONT","FRUIT","FUNNY","GHOST","GIANT","GLASS","GLOBE","GLORY","GLOVE","GRACE","GRADE","GRAIN","GRAND","GRANT","GRAPE","GRAPH","GRASP","GRASS","GRAVE","GREAT","GREEN","GREET","GRIEF","GRILL","GRIND","GROUP","GUARD","GUESS","GUEST","GUIDE","HABIT","HAPPY","HEART","HEAVY","HELLO","HENCE","HOBBY","HONEY","HONOR","HORSE","HOTEL","HOUSE","HUMAN","HUMOR","HURRY","IDEAL","IMAGE","INDEX","INNER","INPUT","ISSUE","IVORY","JELLY","JEWEL","JOINT","JUDGE","JUICE","KNIFE","KNOCK","KNOWN","LABEL","LARGE","LASER","LATER","LAUGH","LAYER","LEARN","LEAST","LEAVE","LEGAL","LEMON","LEVEL","LIGHT","LIMIT","LINEN","LIVER","LOCAL","LOGIC","LOOSE","LOVER","LOWER","LUCKY","LUNCH","MAGIC","MAJOR","MAPLE","MARCH","MATCH","MEDAL","MEDIA","MELON","MERCY","MERGE","MERIT","METER","MIGHT","MINOR","MINUS","MIXED","MODEL","MOIST","MONEY","MONTH","MORAL","MOTOR","MOUNT","MOUSE","MOUTH","MOVIE","MUSIC","NERVE","NEVER","NIGHT","NOBLE","NOISE","NORTH","NOTED","NOVEL","NURSE","OCCUR","OCEAN","OFFER","OFTEN","OLIVE","ONION","ORBIT","ORDER","OTHER","OUGHT","PAINT","PANEL","PANIC","PAPER","PARTY","PASTA","PATCH","PAUSE","PEACE","PEACH","PHASE","PHONE","PHOTO","PIANO","PIECE","PILOT","PITCH","PIZZA","PLACE","PLAIN","PLANE","PLANT","PLATE","PLAZA","POINT","POLAR","PORCH","POUND","POWER","PRESS","PRICE","PRIDE","PRIME","PRINT","PRIZE","PROOF","PROUD","PROVE","PULSE","PUNCH","PUPIL","QUEEN","QUEST","QUEUE","QUICK","QUIET","QUITE","QUOTA","RADAR","RADIO","RAISE","RALLY","RANCH","RANGE","RAPID","RATIO","REACH","READY","REALM","REBEL","REFER","RELAX","REPLY","RIDER","RIDGE","RIVAL","RIVER","ROAST","ROBIN","ROBOT","ROCKY","ROMAN","ROUGH","ROUND","ROUTE","ROYAL","RURAL","SALAD","SAUCE","SCALE","SCARE","SCENE","SCOPE","SCORE","SCOUT","SERVE","SEVEN","SHADE","SHAKE","SHALL","SHAME","SHAPE","SHARE","SHARK","SHARP","SHEEP","SHEET","SHELF","SHELL","SHIFT","SHINE","SHIRT","SHOCK","SHOOT","SHORE","SHORT","SHOUT","SIGHT","SILLY","SINCE","SIXTY","SKILL","SKIRT","SLEEP","SLICE","SLIDE","SMALL","SMART","SMELL","SMILE","SMOKE","SNACK","SNAKE","SOLID","SOLVE","SORRY","SOUND","SOUTH","SPACE","SPARE","SPARK","SPEAK","SPEED","SPELL","SPEND","SPICE","SPLIT","SPOON","SPORT","STOOL","STAFF","STAGE","STAIR","STAKE","STAMP","STAND","STARE","START","STATE","STEAM","STEEL","STICK","STILL","STONE","STOOD","STORE","STORM","STORY","STRIP","STUCK","STUDY","STYLE","SUGAR","SUNNY","SUPER","SWEET","SWIFT","SWING","SWORD","TABLE","TAKEN","TASTE","TEACH","TEETH","TEMPO","TENSE","TENTH","THANK","THEFT","THEME","THERE","THESE","THICK","THING","THINK","THIRD","THOSE","THREE","THROW","THUMB","TIGER","TIGHT","TIMER","TITLE","TOAST","TODAY","TOKEN","TOPIC","TOTAL","TOUCH","TOUGH","TOWER","TRACE","TRACK","TRADE","TRAIL","TRAIN","TRAIT","TREAT","TREND","TRIAL","TRIBE","TRICK","TRUCK","TRULY","TRUNK","TRUST","TRUTH","TWICE","UNCLE","UNDER","UNION","UNITY","UNTIL","UPPER","URBAN","USAGE","USUAL","VALID","VALUE","VIDEO","VIRAL","VIRUS","VISIT","VITAL","VIVID","VOCAL","VOICE","VOTER","WAGON","WASTE","WATCH","WATER","WEIGH","WEIRD","WHEAT","WHEEL","WHERE","WHICH","WHILE","WHITE","WHOLE","WHOSE","WIDTH","WORLD","WORRY","WORSE","WORST","WORTH","WOULD","WOUND","WRITE","WRONG","WROTE","YACHT","YOUNG","YOUTH"];
+var answer = "", cur = "", row = 0, over = false, tried = [];
+var S = { played: 0, won: 0, streak: 0 };
+try { var saved = JSON.parse(localStorage.getItem('wg_stats')); if (saved) S = saved; } catch(e){}
+
+function getFeedback(ans, guess){
+  var res = ['gray','gray','gray','gray','gray'];
+  var remain = {};
+  for (var i = 0; i < 5; i++){
+    if (guess[i] === ans[i]) res[i] = 'green';
+    else remain[ans[i]] = (remain[ans[i]] || 0) + 1;
+  }
+  for (var j = 0; j < 5; j++){
+    if (res[j] === 'green') continue;
+    if (remain[guess[j]] > 0){ res[j] = 'yellow'; remain[guess[j]]--; }
+  }
+  return res;
+}
+function newGame(){
+  answer = WORDS[Math.floor(Math.random() * WORDS.length)];
+  cur = ''; row = 0; over = false;
+  tried = [];
+  document.getElementById('msg').textContent = '';
+  document.getElementById('msg').className = 'msg';
+  renderRows(); renderKb(); renderStats();
+}
+function renderRows(){
+  var el = document.getElementById('rows');
+  el.innerHTML = '';
+  for (var r = 0; r < 6; r++){
+    var d = document.createElement('div'); d.className = 'row';
+    for (var c = 0; c < 5; c++){
+      var b = document.createElement('div'); b.className = 'box';
+      if (r < tried.length){
+        var fb = getFeedback(answer, tried[r]);
+        b.textContent = tried[r][c];
+        b.classList.add(fb[c]);
+      } else if (r === row){
+        if (cur[c]){ b.textContent = cur[c]; b.classList.add('filled'); }
+      }
+      d.appendChild(b);
+    }
+    el.appendChild(d);
+  }
+}
+function keyState(ch){
+  var best = 'kd'; // default dark gray = not in any tried word? actually not used
+  var seen = false, state = '';
+  for (var r = 0; r < tried.length; r++){
+    var fb = getFeedback(answer, tried[r]);
+    for (var c = 0; c < 5; c++){
+      if (tried[r][c] === ch){
+        seen = true;
+        if (fb[c] === 'green') return 'kg';
+        if (fb[c] === 'yellow') state = 'ky';
+        else if (!state) state = 'kd';
+      }
+    }
+  }
+  return seen ? state : '';
+}
+function renderKb(){
+  var el = document.getElementById('kb');
+  el.innerHTML = '';
+  var lines = ['QWERTYUIOP','ASDFGHJKL','↵ZXCVBNM⌫'];
+  for (var l = 0; l < lines.length; l++){
+    var d = document.createElement('div'); d.className = 'kline';
+    for (var i = 0; i < lines[l].length; i++){
+      (function(ch){
+        var b = document.createElement('button');
+        b.textContent = ch;
+        var st = (ch === '↵' || ch === '⌫') ? '' : keyState(ch);
+        if (st) b.classList.add(st);
+        b.onclick = function(){ press(ch); };
+        d.appendChild(b);
+      })(lines[l][i]);
+    }
+    el.appendChild(d);
+  }
+}
+function press(ch){
+  if (over) return;
+  if (ch === '⌫'){ cur = cur.slice(0, -1); renderRows(); return; }
+  if (ch === '↵'){ submit(); return; }
+  if (/^[A-Z]$/.test(ch) && cur.length < 5){ cur += ch; renderRows(); }
+}
+function submit(){
+  var m = document.getElementById('msg');
+  if (cur.length < 5){ m.className = 'msg'; m.textContent = '5 अक्षर पूरे करो पहले!'; return; }
+  tried.push(cur); row++; cur = '';
+  renderRows(); renderKb();
+  m.textContent = '';
+  var last = tried[tried.length - 1];
+  if (last === answer){
+    over = true;
+    S.played++; S.won++; S.streak++;
+    saveStats(); renderStats();
+    m.className = 'msg win';
+    m.textContent = '🎉 बधाई! सही शब्द: ' + answer + ' — लय: ' + S.streak;
+  } else if (row >= 6){
+    over = true;
+    S.played++; S.streak = 0;
+    saveStats(); renderStats();
+    m.className = 'msg lose';
+    m.textContent = '😅 इस बार नहीं हुआ। शब्द था: ' + answer;
+  }
+}
+function saveStats(){ try { localStorage.setItem('wg_stats', JSON.stringify(S)); } catch(e){} }
+function renderStats(){
+  document.getElementById('played').textContent = S.played;
+  document.getElementById('won').textContent = S.won;
+  document.getElementById('streak').textContent = S.streak;
+}
+document.addEventListener('keydown', function(e){
+  var k = e.key.toUpperCase();
+  if (k === 'BACKSPACE') press('⌫');
+  else if (k === 'ENTER') press('↵');
+  else if (/^[A-Z]$/.test(k)) press(k);
+});
+newGame();
+</script>
+</body>
+</html>

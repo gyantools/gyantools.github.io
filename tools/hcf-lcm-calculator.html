@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>HCF LCM Calculator Hindi – म.स.प. और ल.स.प. कैलकुलेटर (Steps सहित)</title>
+<meta name="description" content="HCF और LCM कैलकुलेटर हिंदी में – 2 या ज़्यादा संख्याओं का महत्तम समापवर्तक (HCF/GCD) और लघुत्तम समापवर्त्य (LCM) तुरंत निकालें। Prime factorization विधि समझें।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="HCF LCM कैलकुलेटर (हिंदी में)">
+<meta property="og:description" content="म.स.प. और ल.स.प. steps के साथ निकालें।">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"HCF LCM Calculator Hindi","applicationCategory":"EducationalApplication","operatingSystem":"Web","description":"HCF (म.स.प.) और LCM (ल.स.प.) कैलकुलेटर – steps सहित","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+.tip{background:#e6f4ea;border-left:4px solid #137333;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/hcf-lcm-calculator.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › HCF-LCM कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>➗ HCF और LCM कैलकुलेटर</h1>
+    <p>2 से 10 तक संख्याएं comma से लिखें – HCF (म.स.प.) और LCM (ल.स.प.) दोनों साथ निकलेंगे।</p>
+    <label for="nums">संख्याएं (comma से अलग करें)</label>
+    <input type="text" id="nums" placeholder="जैसे: 12, 18, 24">
+    <button onclick="calcHCF()">HCF और LCM निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>HCF (म.स.प.) क्या है?</h2>
+    <p><strong>HCF – Highest Common Factor</strong> (हिंदी: <strong>महत्तम समापवर्तक</strong>, GCD भी कहते हैं) वह सबसे बड़ी संख्या है जिससे दी हुई सभी संख्याएं पूरी-पूरी विभाजित हो जाती हैं। जैसे 12 और 18 के factors में सबसे बड़ा common factor <strong>6</strong> है।</p>
+    <h2>LCM (ल.स.प.) क्या है?</h2>
+    <p><strong>LCM – Lowest Common Multiple</strong> (हिंदी: <strong>लघुत्तम समापवर्त्य</strong>) वह सबसे छोटी संख्या है जो दी हुई हर संख्या का multiple हो। जैसे 4 और 6 दोनों से विभाजित होने वाली सबसे छोटी संख्या <strong>12</strong> है।</p>
+    <h2>याद रखने लायक जुगनू फॉर्मूला</h2>
+    <p>दो संख्याओं के लिए: <strong>HCF × LCM = पहली संख्या × दूसरी संख्या</strong>। जैसे 12 और 18: HCF 6, LCM 36 → 6 × 36 = 216 = 12 × 18 ✅ परीक्षा में किसी एक से दूसरा निकलने का यही शॉर्टकट है।</p>
+    <h2>कहां काम आता है?</h2>
+    <ul>
+      <li><strong>टाइल/पट्टी काटने में:</strong> सबसे बड़ी बराबर टुकड़ा = HCF</li>
+      <li><strong>घंटियां/बसें साथ बजने पर:</strong> अगली बार कब साथ होंगी = LCM</li>
+      <li><strong>भिन्न जोड़ने में:</strong> denominator का LCM लेते हैं</li>
+      <li><strong>कक्षा 5 से 10 तक</strong> हर बोर्ड के syllabus में यह topic आता है</li>
+    </ul>
+    <h2>उदाहरण टेबल</h2>
+    <table>
+      <tr><th>संख्याएं</th><th>HCF</th><th>LCM</th></tr>
+      <tr><td>12, 18</td><td>6</td><td>36</td></tr>
+      <tr><td>4, 6, 8</td><td>2</td><td>24</td></tr>
+      <tr><td>15, 25</td><td>5</td><td>75</td></tr>
+      <tr><td>7, 13</td><td>1 (co-prime)</td><td>91</td></tr>
+      <tr><td>24, 36, 60</td><td>12</td><td>360</td></tr>
+    </table>
+    <div class="tip">💡 और math tools देखें: <a href="number-system-converter.html" style="color:#1a73e8">Number System Converter</a>, <a href="scientific-calculator.html" style="color:#1a73e8">Scientific Calculator</a>, <a href="roman-numerals.html" style="color:#1a73e8">Roman Numerals</a> और मज़ेदार practice के लिए <a href="../games/math-quiz.html" style="color:#1a73e8">Math Quiz गेम</a>।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+function gcd(a, b){ while (b){ var t = b; b = a % b; a = t; } return a; }
+function hcfOf(nums){ return nums.reduce(function(a,b){ return gcd(a,b); }); }
+function lcmOf(nums){
+  return nums.reduce(function(a,b){ return (a / gcd(a,b)) * b; });
+}
+function calcHCF(){
+  var raw = document.getElementById('nums').value;
+  var out = document.getElementById('out');
+  var nums = raw.split(',').map(function(s){ return parseFloat(s.trim()); }).filter(function(n){ return !isNaN(n) && n > 0 && Number.isInteger(n); });
+  if (nums.length < 2){ out.style.display='block'; out.innerHTML='⚠️ कम से कम 2 पूर्ण संख्याएं भरें (जैसे: 12, 18)।'; return; }
+  if (nums.length > 10){ out.style.display='block'; out.innerHTML='⚠️ एक साथ अधिकतम 10 संख्याएं ही भरें।'; return; }
+  var h = hcfOf(nums), l = lcmOf(nums);
+  out.style.display='block';
+  out.innerHTML = '<div class="big">HCF (म.स.प.): ' + h.toLocaleString('en-IN') + ' · LCM (ल.स.प.): ' + l.toLocaleString('en-IN') + '</div>'
+    + '<p>' + nums.length + ' संख्याएं: ' + nums.join(', ') + '</p>'
+    + (nums.length === 2 ? '<p>जांच: HCF × LCM = ' + (h*l).toLocaleString('en-IN') + ' = ' + (nums[0]*nums[1]).toLocaleString('en-IN') + ' ✅</p>' : '');
+}
+</script>
+</body>
+</html>

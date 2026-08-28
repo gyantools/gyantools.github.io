@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Nine Men's Morris Game in Hindi – नौ पत्थरी (2 Player + Computer)</title>
+<meta name="description" content="मुफ़्त नौ पत्थरी (Nine Men's Morris / Mill) गेम हिंदी में – सदियों पुराना रणनीति बोर्ड गेम! दोस्त के साथ 2 player या कंप्यूटर से खेलें। 3 पत्थर जोड़ो = मिल बनी = दुश्मन का पत्थर उठाओ।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="नौ पत्थरी (Nine Men's Morris) गेम हिंदी में">
+<meta property="og:description" content="3 पत्थर जोड़ो, मिल बनाओ, दुश्मन का पत्थर उठाओ!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Nine Men's Morris Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"नौ पत्थरी Nine Men's Morris गेम हिंदी में – 2 प्लेयर + कंप्यूटर मोड","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.mode{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.mode button{background:#f1f3f4;color:#202124;border:none;padding:10px 22px;border-radius:20px;font-size:.95rem;font-weight:600;cursor:pointer}
+.mode button.on{background:#1a73e8;color:#fff}
+.canvas-wrap{margin:18px auto;width:max-content}
+canvas{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.1);touch-action:manipulation}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.stats span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.stats b{color:#1a73e8}
+.ctrl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.ctrl button{background:#e8f0fe;color:#1a73e8;border:none;padding:10px 18px;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer}
+.ctrl button:hover{background:#d2e3fc}
+.msg{min-height:34px;font-weight:600;margin-top:8px;font-size:1.05rem}
+.msg .r{color:#d93025}.msg .y{color:#b06000}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul,article ol{padding-left:24px}
+article a{color:#1a73e8}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/games/nine-mens-morris.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › नौ पत्थरी गेम</p>
+
+  <div class="game-box">
+    <h1>🔘 नौ पत्थरी (Nine Men's Morris)</h1>
+    <p>सदियों पुराना रणनीति गेम – बारी-बारी <strong>9-9 पत्थर</strong> रखो, कतार में <strong>3 पत्थर जोड़कर मिल</strong> बनाओ और दुश्मन का पत्थर बोने से उठा लो!</p>
+    <div class="mode">
+      <button id="m-pvp" class="on" onclick="setMode('pvp')">👥 2 प्लेयर (दोस्त के साथ)</button>
+      <button id="m-pvc" onclick="setMode('pvc')">🤖 कंप्यूटर से खेलो</button>
+    </div>
+    <div class="canvas-wrap"><canvas id="cv" width="380" height="380"></canvas></div>
+    <div class="stats">
+      <span>🔴 लाल: <b id="s1">9</b> बचे</span>
+      <span>🟡 पीला: <b id="s2">9</b> बचे</span>
+    </div>
+    <div class="ctrl"><button onclick="reset()">🔄 नया गेम</button></div>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <article>
+    <h2>कैसे खेलें – 3 चरण में</h2>
+    <ol>
+      <li><strong>चरण 1 – पत्थर रखो:</strong> बारी-बारी खाली बिंदु पर अपने 9 पत्थर रखो</li>
+      <li><strong>चरण 2 – पत्थर खिसकाओ:</strong> सारे पत्थर लगने के बाद अपना पत्थर <strong>पास-पास वाले खाली बिंदु</strong> पर एक-एक कदम खिसकाओ</li>
+      <li><strong>चरण 3 – उड़ान (Flying):</strong> जिसके सिर्फ 3 पत्थर बचें, वह किसी भी खाली बिंदु पर सीधा उड़ सकता है</li>
+    </ol>
+    <p><strong>मिल (Mill):</strong> किसी सीधी रेखा पर तुम्हारे 3 पत्थर एक साथ आए = मिल बनी = तुरंत दुश्मन का एक पत्थर बोने से हटाओ (जो पत्थर किसी मिल में बंद हो उसे नहीं हटा सकते – जब तक सब बंद न हों)। मिल बनने पर <strong>एक और मौका नहीं</strong> मिलता – बस पत्थर हटाने का अधिकार मिलता है। पुरानी मिल तोड़कर दोबारा बनाने पर फिर पत्थर हटा सकते हो!</p>
+    <p><strong>जीत:</strong> जिसके पत्थर 2 पर आ जाएं या खिसकाने की कोई जगह ही न बचे – वह हार गया।</p>
+    <h2>जीतने की 3 प्रो ट्रिक्स</h2>
+    <ul>
+      <li><strong>चौराहे पकड़ो:</strong> वे बिंदु जो 4 रेखाओं में आते हैं (चौकोर के मुड़ने वाले कोने-मुहाने) सबसे ताकतवर हैं</li>
+      <li><strong>डबल-धमकी बनाओ:</strong> ऐसी स्थिति बनाओ जहां एक ही चाल से 2 जगह मिल बन सकती हो – दुश्मन एक रोक पाएगा</li>
+      <li><strong>उड़ान का फायदा:</strong> 3 पत्थर वाला खिलाड़ी रोज़-रोज़ मिल तोड़कर बना सकता है – इसलिए बचपन (शुरुआत) में ही दुश्मन को 3 पर मत छोड़ो, उसे घेरो</li>
+    </ul>
+    <p>और बोर्ड गेम्स: <a href="chess.html">♞ शतरंज (Chess)</a> · <a href="checkers.html">♟️ दमा</a> · <a href="reversi.html">⚫⚪ रिवर्सी</a> · <a href="tic-tac-toe.html">टिक टैक टो</a></p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+// ===== Nine Men's Morris =====
+// 24 points: ring 0=outer,1=middle,2=inner; pos 0..7 clockwise from top-left corner
+// order per ring: 0:top-left,1:top-mid,2:top-right,3:right-mid,4:bottom-right,5:bottom-mid,6:bottom-left,7:left-mid
+var PTS = []; // {x,y} in grid units 0..6
+var CO = [0, 1, 2]; // ring offsets
+for (var ring = 0; ring < 3; ring++){
+  var o = ring; // 0,1,2
+  var lo = o, hi = 6 - o;
+  PTS.push(
+    { x: lo, y: lo }, { x: 3, y: lo }, { x: hi, y: lo },
+    { x: hi, y: 3 },
+    { x: hi, y: hi }, { x: 3, y: hi }, { x: lo, y: hi },
+    { x: lo, y: 3 }
+  );
+}
+function pIdx(ring, pos){ return ring * 8 + pos; }
+// 16 mills
+var MILLS = [];
+for (var rg = 0; rg < 3; rg++){
+  var b = rg * 8;
+  MILLS.push([b+0,b+1,b+2],[b+2,b+3,b+4],[b+4,b+5,b+6],[b+6,b+7,b+0]);
+}
+MILLS.push([pIdx(0,1),pIdx(1,1),pIdx(2,1)],[pIdx(0,3),pIdx(1,3),pIdx(2,3)],[pIdx(0,5),pIdx(1,5),pIdx(2,5)],[pIdx(0,7),pIdx(1,7),pIdx(2,7)]);
+// adjacency
+var ADJ = [];
+for (var i = 0; i < 24; i++) ADJ.push([]);
+for (var rg2 = 0; rg2 < 3; rg2++){
+  for (var p = 0; p < 8; p++){
+    var a = pIdx(rg2, p), b1 = pIdx(rg2, (p + 1) % 8), b2 = pIdx(rg2, (p + 7) % 8);
+    ADJ[a].push(b1); ADJ[a].push(b2);
+  }
+}
+[[1],[3],[5],[7]].forEach(function(mid){
+  ADJ[pIdx(0, mid[0])].push(pIdx(1, mid[0]));
+  ADJ[pIdx(1, mid[0])].push(pIdx(0, mid[0]));
+  ADJ[pIdx(1, mid[0])].push(pIdx(2, mid[0]));
+  ADJ[pIdx(2, mid[0])].push(pIdx(1, mid[0]));
+});
+
+var cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+var CELLU = 52, PADU = 12;
+var cells, toPlace, turn, phase, removeMode, over, mode = 'pvp', sel = null, busy = false;
+// cells: 0 empty, 1 red, 2 yellow
+
+function reset(){
+  cells = new Array(24).fill(0);
+  toPlace = [9, 9];
+  turn = 1; removeMode = false; over = false; sel = null; busy = false;
+  updStats();
+  say(turnName() + ' – पत्थर रखो (' + toPlace[0] + ' बचे)');
+  draw();
+}
+function turnName(){ return turn === 1 ? '<span class="r">🔴 लाल</span>' : '<span class="y">🟡 पीला</span>'; }
+function say(html){ document.getElementById('msg').innerHTML = html; }
+function updStats(){
+  var n1 = 0, n2 = 0;
+  cells.forEach(function(v){ if (v === 1) n1++; if (v === 2) n2++; });
+  document.getElementById('s1').textContent = n1 + toPlace[0];
+  document.getElementById('s2').textContent = n2 + toPlace[1];
+}
+function millsOf(i){
+  return MILLS.filter(function(m){ return m.indexOf(i) >= 0; });
+}
+function inMill(i, p){
+  return millsOf(i).some(function(m){ return m.every(function(x){ return cells[x] === p; }); });
+}
+function anyMill(p){ 
+  for (var i = 0; i < 24; i++) if (cells[i] === p && inMill(i, p)) return true;
+  return false;
+}
+function formsMill(i, p){ // agar i par p rakha/jaya to mill banti?
+  return millsOf(i).some(function(m){
+    return m.every(function(x){ return x === i || cells[x] === p; });
+  });
+}
+function wouldFormAfter(from, to, p){
+  // from(>=0) se to par khiska ke p ki mill banti? (board wapas restore)
+  var save = from >= 0 ? cells[from] : 0;
+  if (from >= 0) cells[from] = 0;
+  cells[to] = p;
+  var mill = millsOf(to).some(function(m){
+    return m.every(function(x){ return cells[x] === p; });
+  });
+  cells[to] = 0;
+  if (from >= 0) cells[from] = save;
+  return mill;
+}
+function countOf(p){
+  var n = 0;
+  cells.forEach(function(v){ if (v === p) n++; });
+  return n;
+}
+function movable(p){
+  var n = countOf(p);
+  if (n === 3 && toPlace[p-1] === 0) return true; // flying
+  if (toPlace[p-1] > 0) return true;
+  for (var i = 0; i < 24; i++){
+    if (cells[i] === p){
+      for (var j = 0; j < ADJ[i].length; j++) if (cells[ADJ[i][j]] === 0) return true;
+    }
+  }
+  return false;
+}
+function checkEnd(){
+  // placing phase me 2-pieces loss check tabhi jab sab rakhe jaa chuke
+  if (toPlace[0] === 0 && toPlace[1] === 0){
+    if (countOf(1) <= 2){ win(2); return true; }
+    if (countOf(2) <= 2){ win(1); return true; }
+    if (!movable(1)){ win(2); return true; }
+    if (!movable(2)){ win(1); return true; }
+  }
+  return false;
+}
+function win(p){
+  over = true;
+  say('🎉 ' + (p === 1 ? '<span class="r">लाल</span>' : '<span class="y">पीला</span>') + ' ने जीत लिया!');
+  draw();
+}
+function afterAction(){
+  updStats();
+  if (checkEnd()) return;
+  draw();
+  if (mode === 'pvc' && turn === 2 && !removeMode){ busy = true; setTimeout(aiTurn, 450); }
+  else if (mode === 'pvc' && turn === 2 && removeMode){ busy = true; setTimeout(aiRemove, 450); }
+}
+function place(i){
+  cells[i] = turn;
+  toPlace[turn-1]--;
+  sel = null;
+  if (formsMill(i, turn)){
+    removeMode = true;
+    say('🔥 मिल बन गई! ' + turnName() + ' दुश्मन का पत्थर हटाओ');
+    draw();
+    if (mode === 'pvc' && turn === 2){ busy = true; setTimeout(aiRemove, 500); }
+    return;
+  }
+  turn = 3 - turn;
+  phaseMsg();
+  afterAction();
+}
+function phaseMsg(){
+  if (toPlace[0] > 0 || toPlace[1] > 0) say(turnName() + ' – पत्थर रखो');
+  else {
+    var fly = countOf(turn) === 3;
+    say(turnName() + ' – पत्थर ' + (fly ? 'उड़ाओ ✈️' : 'खिसकाओ'));
+  }
+}
+function slide(from, to){
+  cells[from] = 0;
+  cells[to] = turn;
+  sel = null;
+  if (formsMill(to, turn)){
+    removeMode = true;
+    say('🔥 मिल बन गई! ' + turnName() + ' दुश्मन का पत्थर हटाओ');
+    draw();
+    if (mode === 'pvc' && turn === 2){ busy = true; setTimeout(aiRemove, 500); }
+    return;
+  }
+  turn = 3 - turn;
+  phaseMsg();
+  afterAction();
+}
+function removable(i, opp){
+  if (cells[i] !== opp) return false;
+  if (inMill(i, opp)) return !anyMill(opp); // sab mill me hai to koi bhi
+  return true;
+}
+function removeAt(i){
+  var opp = 3 - turn;
+  cells[i] = 0;
+  removeMode = false;
+  turn = opp;
+  say((opp === 1 ? '<span class="r">लाल</span>' : '<span class="y">पीला</span>') + ' का पत्थर हटा! ' + turnName() + ' की बारी');
+  afterAction();
+}
+// ===== click =====
+function pxOf(i){ return { x: PADU + PTS[i].x * CELLU, y: PADU + PTS[i].y * CELLU }; }
+cv.addEventListener('click', function(e){
+  if (over || busy) return;
+  if (mode === 'pvc' && turn === 2) return;
+  var rect = cv.getBoundingClientRect();
+  var x = (e.clientX - rect.left) * (cv.width / rect.width);
+  var y = (e.clientY - rect.top) * (cv.height / rect.height);
+  var best = -1, bd2 = 30 * 30;
+  for (var i = 0; i < 24; i++){
+    var pp = pxOf(i);
+    var d = (pp.x - x) * (pp.x - x) + (pp.y - y) * (pp.y - y);
+    if (d < bd2){ bd2 = d; best = i; }
+  }
+  if (best < 0) return;
+  handleClick(best);
+});
+function handleClick(i){
+  if (removeMode){
+    if (removable(i, 3 - turn)) removeAt(i);
+    return;
+  }
+  if (toPlace[turn-1] > 0){
+    if (cells[i] === 0) place(i);
+    return;
+  }
+  // moving phase
+  if (sel === null){
+    if (cells[i] === turn){ sel = i; draw(); }
+    return;
+  }
+  if (i === sel){ sel = null; draw(); return; }
+  if (cells[i] === 0){
+    var fly = countOf(turn) === 3;
+    var adj = fly || ADJ[sel].indexOf(i) >= 0;
+    if (adj) slide(sel, i);
+  }
+}
+// ===== AI (yellow=2) =====
+function nearMills(p){ // khali 3rd spot wali 2-length lines of p
+  var threats = [];
+  MILLS.forEach(function(m){
+    var mine = 0, empty = -1;
+    m.forEach(function(x){ if (cells[x] === p) mine++; else if (cells[x] === 0) empty = x; });
+    if (mine === 2 && empty >= 0) threats.push(empty);
+  });
+  return threats;
+}
+function aiTurn(){
+  if (over || turn !== 2 || removeMode){ busy = false; return; }
+  // 1) mill complete karo
+  var t2 = nearMills(2);
+  if (t2.length){ doAIRemovalAfter(function(){ place(t2[0]); }); return; }
+  // 2) dushman ki mill roko
+  var t1 = nearMills(1);
+  if (t1.length){ doAIRemovalAfter(function(){ place(t1[Math.floor(Math.random() * t1.length)]); }); return; }
+  // 3) moving phase: try slide jo mill banaye, warna block, warna random
+  if (toPlace[1] > 0){
+    // best empty: apni 2-length line me, ya crossing point
+    var scored = [];
+    for (var i = 0; i < 24; i++){
+      if (cells[i] !== 0) continue;
+      var sc = millsOf(i).filter(function(m){
+        var mine = 0, bad = 0;
+        m.forEach(function(x){ if (cells[x] === 2) mine++; if (cells[x] === 1) bad++; });
+        return mine === 1 && bad === 0;
+      }).length;
+      sc += Math.random() * 0.5;
+      scored.push([i, sc]);
+    }
+    scored.sort(function(a, b){ return b[1] - a[1]; });
+    busy = false;
+    place(scored[0][0]);
+    return;
+  }
+  // slide phase
+  var myCells = [];
+  for (var j = 0; j < 24; j++) if (cells[j] === 2) myCells.push(j);
+  var fly = myCells.length === 3;
+  var bestMove = null, bestSc = -1;
+  myCells.forEach(function(from){
+    for (var k = 0; k < 24; k++){
+      if (cells[k] !== 0) continue;
+      var ok = fly || ADJ[from].indexOf(k) >= 0;
+      if (!ok) continue;
+      var sc = wouldFormAfter(from, k, 2) ? 10 : 0;
+      // block: k wahan hai jahan dushman mill bana sakta
+      var threats = nearMills(1);
+      if (threats.indexOf(k) >= 0) sc += 6;
+      sc += Math.random();
+      if (sc > bestSc){ bestSc = sc; bestMove = { from: from, to: k }; }
+    }
+  });
+  busy = false;
+  if (bestMove) slide(bestMove.from, bestMove.to);
+}
+function doAIRemovalAfter(fn){ busy = false; fn(); }
+function aiRemove(){
+  if (over || !removeMode){ busy = false; return; }
+  var opp = 1;
+  var cands = [];
+  for (var i = 0; i < 24; i++) if (removable(i, opp)) cands.push(i);
+  if (!cands.length){ busy = false; removeMode = false; turn = opp; afterAction(); return; }
+  // dushman ki 2-length lines ka member prefer
+  var threats = nearMills(1);
+  var pick = null;
+  threats.forEach(function(t){ if (!pick && cands.indexOf(t) >= 0 && cells[t] === 1) pick = t; });
+  if (pick === null){
+    // warna sabse "active" dushman patthar
+    cands.sort(function(a, b){ return ADJ[b].filter(function(x){ return cells[x] === 0; }).length - ADJ[a].filter(function(x){ return cells[x] === 0; }).length; });
+    pick = cands[0];
+  }
+  busy = false;
+  removeAt(pick);
+}
+function setMode(m){
+  mode = m;
+  document.getElementById('m-pvp').classList.toggle('on', m === 'pvp');
+  document.getElementById('m-pvc').classList.toggle('on', m === 'pvc');
+  reset();
+}
+function draw(){
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  // lines: ring sides
+  ctx.strokeStyle = '#9aa0a6'; ctx.lineWidth = 2;
+  [0, 1, 2].forEach(function(rg){
+    var corners = [0, 2, 4, 6].map(function(p){ return pxOf(pIdx(rg, p)); });
+    ctx.beginPath();
+    ctx.moveTo(corners[0].x, corners[0].y);
+    for (var k = 1; k <= 4; k++) ctx.lineTo(corners[k % 4].x, corners[k % 4].y);
+    ctx.stroke();
+  });
+  // cross links
+  [1, 3, 5, 7].forEach(function(mid){
+    var a = pxOf(pIdx(0, mid)), b = pxOf(pIdx(2, mid));
+    ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+  });
+  // highlights
+  if (sel !== null){
+    var sp = pxOf(sel);
+    ctx.beginPath(); ctx.arc(sp.x, sp.y, 15, 0, 7);
+    ctx.strokeStyle = '#188038'; ctx.lineWidth = 3; ctx.stroke();
+  }
+  if (removeMode){
+    cells.forEach(function(v, i){
+      if (v === 3 - turn && removable(i, 3 - turn)){
+        var pp = pxOf(i);
+        ctx.beginPath(); ctx.arc(pp.x, pp.y, 15, 0, 7);
+        ctx.strokeStyle = '#d93025'; ctx.lineWidth = 3; ctx.stroke();
+      }
+    });
+  } else if (toPlace[turn-1] > 0 && !over){
+    // khali points halka hint
+  }
+  // points + pieces
+  for (var i = 0; i < 24; i++){
+    var pp = pxOf(i);
+    ctx.beginPath();
+    ctx.arc(pp.x, pp.y, 6, 0, 7);
+    ctx.fillStyle = '#202124';
+    ctx.fill();
+    if (cells[i]){
+      ctx.beginPath();
+      ctx.arc(pp.x, pp.y, 14, 0, 7);
+      ctx.fillStyle = cells[i] === 1 ? '#d93025' : '#f9ab00';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(0,0,0,.3)'; ctx.lineWidth = 2; ctx.stroke();
+    }
+  }
+}
+reset();
+</script>
+</body>
+</html>

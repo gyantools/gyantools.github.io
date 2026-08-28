@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Snakes and Ladders Game in Hindi – साँप-सीढ़ी गेम (2 Player + Computer)</title>
+<meta name="description" content="मुफ़्त साँप-सीढ़ी (Snakes and Ladders) गेम हिंदी में – बचपन वाला मशहूर बोर्ड गेम! दोस्त के साथ 2 player या कंप्यूटर से खेलें। पासा फेंको, सीढ़ी से ऊपर चढ़ो, साँप से बचो, 100 पर पहले पहुंचो!">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="साँप-सीढ़ी गेम हिंदी में">
+<meta property="og:description" content="पासा फेंको, सीढ़ी चढ़ो, साँप से बचो – 2P + vs Computer!">
+<meta property="og:type" content="website">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Snakes and Ladders Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"साँप-सीढ़ी गेम हिंदी में – 2 प्लेयर + कंप्यूटर मोड, क्लासिक 100-खाना बोर्ड","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+.mode{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.mode button{background:#f1f3f4;color:#202124;border:none;padding:10px 22px;border-radius:20px;font-size:.95rem;font-weight:600;cursor:pointer}
+.mode button.on{background:#1a73e8;color:#fff}
+.canvas-wrap{margin:18px auto;width:max-content}
+canvas{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.1);touch-action:manipulation}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.stats span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.stats b{color:#1a73e8}
+.dice{font-size:3rem;line-height:1;margin:6px 0}
+.btn{background:#1a73e8;color:#fff;border:none;padding:14px 34px;border-radius:10px;font-size:1.1rem;font-weight:700;cursor:pointer;margin-top:6px}
+.btn:disabled{background:#9aa0a6;cursor:not-allowed}
+.msg{min-height:32px;font-weight:600;margin-top:10px;font-size:1.05rem}
+.msg .r{color:#d93025}.msg .y{color:#b06000}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul,article ol{padding-left:24px}
+article a{color:#1a73e8}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/games/snake-ladder.html">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › साँप-सीढ़ी गेम</p>
+
+  <div class="game-box">
+    <h1>🐍🪜 साँप-सीढ़ी (Snakes & Ladders)</h1>
+    <p>पासा फेंको, सीढ़ी मिले तो ऊपर चढ़ो, साँप मिले तो नीचे फिसलो – <strong>100 नंबर पर पहले पहुंचने वाला जीतेगा!</strong></p>
+    <div class="mode">
+      <button id="m-pvp" class="on" onclick="setMode('pvp')">👥 2 प्लेयर (दोस्त के साथ)</button>
+      <button id="m-pvc" onclick="setMode('pvc')">🤖 कंप्यूटर से खेलो</button>
+    </div>
+    <div class="canvas-wrap"><canvas id="cv" width="360" height="360"></canvas></div>
+    <div class="stats">
+      <span>🔴 लाल: नंबर <b id="s1">0</b></span>
+      <span>🟡 पीला: नंबर <b id="s2">0</b></span>
+    </div>
+    <div class="dice" id="dice">🎲</div>
+    <button class="btn" id="rollBtn" onclick="roll()">🎲 पासा फेंको</button>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <article>
+    <h2>कैसे खेलें – बिल्कुल आसान</h2>
+    <ol>
+      <li>दोनों खिलाड़ी 0 (शुरुआत) से चलते हैं, बारी-बारी पासा फेंकते हैं</li>
+      <li>जितना नंबर आए, उतने खाने आगे बढ़ो</li>
+      <li>जिस खाने पर पहुंचो वहां <strong>सीढ़ी 🪜</strong> का मुंह हो तो सीधे ऊपर चढ़ जाओ</li>
+      <li>वहां <strong>साँप 🐍</strong> का मुंह हो तो उसकी पूंछ तक नीचे उतर जाओ</li>
+      <li><strong>छह</strong> आने पर एक और पासा मिलता है (बोनस चाल)</li>
+      <li>100 तक पहुंचने के लिए <strong>ठीक उतना ही नंबर</strong> चाहिए – ज़्यादा आए तो उस चाल में टिकट नहीं होती (वहीं रुके रहते हो)</li>
+    </ol>
+    <h2>इस बोर्ड की सीढ़ियां और साँप</h2>
+    <p>यह दुनिया भर में मशहूर क्लासिक 100-खाना बोर्ड है। 9 सीढ़ियां (1→38, 4→14, 9→31, 21→42, 28→84, 36→44, 51→67, 71→91, 80→100) और 10 साँप (16→6, 47→26, 49→11, 56→53, 62→19, 64→60, 87→24, 93→73, 95→75, 98→78)। सबसे बड़ी सीढ़ी 28 से 84 और सबसे लंबा साँप 87 से 24! 98 पर खड़े होकर भी साँप सरकता है – 99 और 100 सिर्फ 2 कदम दूर होते हुए भी मुश्किल! 😄</p>
+    <p>और गेम्स: <a href="snake-game.html">🐍 Snake Game</a> · <a href="checkers.html">♟️ दमा (Checkers)</a> · <a href="tic-tac-toe.html">टिक टैक टो</a> · <a href="connect-four.html">४ गेंद जोड़ो</a></p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools & Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+// ===== Snakes & Ladders - classic 100-square board =====
+var LADDERS = {1:38, 4:14, 9:31, 21:42, 28:84, 36:44, 51:67, 71:91, 80:100};
+var SNAKES  = {16:6, 47:26, 49:11, 56:53, 62:19, 64:60, 87:24, 93:73, 95:75, 98:78};
+var N = 10, CELL = 34, PAD = 10; // canvas 360
+var cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+var pos = [0, 0], turn = 1, over = false, busy = false, mode = 'pvp';
+var FACES = ['🎲','⚀','⚁','⚂','⚃','⚄','⚅'];
+
+function reset(){
+  pos = [0, 0]; turn = 1; over = false; busy = false;
+  document.getElementById('s1').textContent = 0;
+  document.getElementById('s2').textContent = 0;
+  document.getElementById('rollBtn').disabled = false;
+  document.getElementById('dice').textContent = '🎲';
+  say(turnName() + ' पासा फेंको');
+  draw();
+}
+function turnName(){ return turn === 1 ? '<span class="r">🔴 लाल</span>' : '<span class="y">🟡 पीला</span>'; }
+function say(html){ document.getElementById('msg').innerHTML = html; }
+function cellOf(p){
+  if (p === 0) return { row: -1, col: -1 }; // off board
+  var row = Math.floor((p - 1) / N);        // 0 = bottom row
+  var col = (p - 1) % N;
+  if (row % 2 === 1) col = N - 1 - col;     // boustrophedon
+  return { row: row, col: col };
+}
+function applyCell(p){
+  // ladder ya snake lagta hai (ek hi baar - board me koi chain nahi)
+  if (LADDERS[p]) return { to: LADDERS[p], kind: 'L' };
+  if (SNAKES[p])  return { to: SNAKES[p],  kind: 'S' };
+  return { to: p, kind: null };
+}
+function moveAfter(p, d){
+  if (p + d > 100) return { final: p, moved: false, note: 'overshoot' };
+  var st = applyCell(p + d);
+  return { final: st.to, moved: true, note: st.kind, landed: p + d };
+}
+function roll(){
+  if (over || busy) return;
+  if (mode === 'pvc' && turn === 2) return;
+  doRoll();
+}
+function doRoll(){
+  busy = true;
+  document.getElementById('rollBtn').disabled = true;
+  var spins = 0;
+  var iv = setInterval(function(){
+    document.getElementById('dice').textContent = FACES[1 + Math.floor(Math.random() * 6)];
+    if (++spins >= 8){
+      clearInterval(iv);
+      var d = 1 + Math.floor(Math.random() * 6);
+      document.getElementById('dice').textContent = FACES[d];
+      afterRoll(d);
+    }
+  }, 70);
+}
+function afterRoll(d){
+  var i = turn - 1;
+  var res = moveAfter(pos[i], d);
+  var notes = turnName() + ' को ' + d + ' आया। ';
+  if (!res.moved){
+    notes += '100 से आगे नहीं जा सकते – वहीं रुके! ';
+  } else {
+    pos[i] = res.final;
+    if (res.note === 'L') notes += '🪜 सीढ़ी मिली! ' + res.landed + ' से चढ़कर ' + res.final + ' पर! ';
+    if (res.note === 'S') notes += '🐍 अरे! साँप ने काट लिया – ' + res.landed + ' से फिसलकर ' + res.final + ' पर! ';
+  }
+  document.getElementById(turn === 1 ? 's1' : 's2').textContent = pos[i];
+  draw();
+  if (pos[i] === 100){
+    over = true; busy = false;
+    document.getElementById('rollBtn').disabled = true;
+    say('🎉 ' + turnName() + ' ने 100 पहुंचकर जीत लिया! ' + notes);
+    return;
+  }
+  if (d === 6){ notes += 'छह आया – एक और पासा! 🎉'; busy = false; }
+  else { turn = 3 - turn; busy = false; }
+  say(notes + '<br>' + (over ? '' : turnName() + ' की बारी'));
+  if (mode === 'pvc'){
+    document.getElementById('rollBtn').disabled = (turn !== 1 || over);
+    if (turn === 2 && !over) setTimeout(doRoll, 800);
+  } else {
+    document.getElementById('rollBtn').disabled = over;
+  }
+}
+function setMode(m){
+  mode = m;
+  document.getElementById('m-pvp').classList.toggle('on', m === 'pvp');
+  document.getElementById('m-pvc').classList.toggle('on', m === 'pvc');
+  reset();
+}
+function draw(){
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  // cells + numbers
+  for (var r = 0; r < N; r++){        // canvas row 0 = top = number row 9
+    for (var c = 0; c < N; c++){
+      var boardRow = N - 1 - r;
+      var col = boardRow % 2 === 0 ? c : N - 1 - c;
+      var num = boardRow * N + col + 1;
+      var x = PAD + c * CELL, y = PAD + r * CELL;
+      ctx.fillStyle = (r + c) % 2 === 0 ? '#e8f0fe' : '#f8f9fa';
+      ctx.fillRect(x, y, CELL, CELL);
+      ctx.strokeStyle = '#d2e3fc';
+      ctx.strokeRect(x + .5, y + .5, CELL - 1, CELL - 1);
+      ctx.fillStyle = '#5f6368';
+      ctx.font = '9px Arial';
+      ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+      ctx.fillText(num, x + 3, y + 2);
+    }
+  }
+  // ladders
+  ctx.strokeStyle = '#188038'; ctx.lineWidth = 3; ctx.lineCap = 'round';
+  Object.keys(LADDERS).forEach(function(s){
+    drawLine(+s, LADDERS[s], '#188038');
+  });
+  // snakes
+  Object.keys(SNAKES).forEach(function(s){
+    drawLine(+s, SNAKES[s], '#d93025');
+  });
+  // tokens
+  var cells = [cellOf(pos[0]), cellOf(pos[1])];
+  [0, 1].forEach(function(i){
+    if (pos[i] === 0) return;
+    var cc = cells[i];
+    var x = PAD + cc.col * CELL + CELL / 2 + (i === 0 ? -6 : 6);
+    var y = PAD + (N - 1 - cc.row) * CELL + CELL / 2;
+    ctx.beginPath();
+    ctx.arc(x, y, 9, 0, 7);
+    ctx.fillStyle = i === 0 ? '#d93025' : '#f9ab00';
+    ctx.fill();
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+  });
+}
+function centerOf(p){
+  var cc = cellOf(p);
+  return { x: PAD + cc.col * CELL + CELL / 2, y: PAD + (N - 1 - cc.row) * CELL + CELL / 2 };
+}
+function drawLine(a, b, color){
+  var pa = centerOf(a), pb = centerOf(b);
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  // gentle curve
+  var mx = (pa.x + pb.x) / 2 + (color === '#d93025' ? 14 : 0);
+  var my = (pa.y + pb.y) / 2 + (color === '#188038' ? 0 : 10);
+  ctx.moveTo(pa.x, pa.y);
+  ctx.quadraticCurveTo(mx, my, pb.x, pb.y);
+  ctx.stroke();
+  if (color === '#188038'){
+    // rungs: chhote tirchhe dashes
+    ctx.lineWidth = 2;
+    for (var t = 0.2; t < 0.9; t += 0.22){
+      var x1 = pa.x + (mx - pa.x) * 2 * t * (1 - t) + (pb.x - pa.x) * t * t;
+      // simple approx: point on quadratic
+      var qx = (1-t)*(1-t)*pa.x + 2*(1-t)*t*mx + t*t*pb.x;
+      var qy = (1-t)*(1-t)*pa.y + 2*(1-t)*t*my + t*t*pb.y;
+      ctx.beginPath();
+      ctx.moveTo(qx - 5, qy - 4);
+      ctx.lineTo(qx + 5, qy + 4);
+      ctx.stroke();
+    }
+  } else {
+    // snake head dot
+    ctx.beginPath();
+    ctx.arc(pa.x, pa.y, 5, 0, 7);
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+}
+reset();
+</script>
+</body>
+</html>
