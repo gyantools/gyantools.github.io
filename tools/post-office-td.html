@@ -1,0 +1,149 @@
+<title>Post Office FD Calculator 2026 – टाइम डिपॉजिट | GyanTools</title>
+
+<meta name="description" content="पोस्ट ऑफिस टाइम डिपॉजिट कैलकुलेटर 2026 – 1/2/3/5 साल की TD की मैच्योरिटी, 6.9%–7.5% दरें, तिमाही कंपाउंडिंग के साथ।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Post Office TD Calculator 2026 – पोस्ट ऑफिस FD मैच्योरिटी">
+<meta property="og:description" content="पोस्ट ऑफिस टाइम डिपॉजिट की मैच्योरिटी और ब्याज – तिमाही कंपाउंडिंग के साथ।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/post-office-td.html">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Post Office Time Deposit Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"पोस्ट ऑफिस TD मैच्योरिटी कैलकुलेटर (1/2/3/5 साल)","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/post-office-td.html">
+</head>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › <a href="../index.html#tools">टूल्स</a> › Post Office TD कैलकुलेटर</p>
+<div class="tool-box">
+  <h1>🏣 पोस्ट ऑफिस TD (फिक्स्ड डिपॉजिट) कैलकुलेटर</h1>
+  <p>पोस्ट ऑफिस टाइम डिपॉजिट की मैच्योरिटी राशि – 1, 2, 3 या 5 साल की अवधि, तिमाही कंपाउंडिंग के साथ।</p>
+
+  <label for="amt">जमा राशि (₹)</label>
+  <input type="number" id="amt" placeholder="जैसे: 100000" step="any">
+  <label for="tenure">अवधि</label>
+  <select id="tenure" onchange="setRate()">
+    <option value="5">5 साल – 7.5%</option>
+    <option value="3">3 साल – 7.1%</option>
+    <option value="2">2 साल – 7.0%</option>
+    <option value="1">1 साल – 6.9%</option>
+  </select>
+  <label for="rate">ब्याज दर (%) – वर्तमान दर पहले से भरी है, बदलना हो तो बदलें</label>
+  <input type="number" id="rate" placeholder="जैसे: 7.5" step="any" value="7.5">
+  <button onclick="calcTD()">मैच्योरिटी निकालें</button>
+  <div class="result" id="out" style="display:none"></div>
+</div>
+
+<article>
+  <h2>पोस्ट ऑफिस टाइम डिपॉजिट (TD) क्या है?</h2>
+  <p><strong>पोस्ट ऑफिस टाइम डिपॉजिट</strong> बैंक FD की तरह ही है – आप एकमुश्त राशि 1, 2, 3 या 5 साल के लिए जमा करते हैं और तय ब्याज पाते हैं। इसे चलाता है भारत सरकार का डाक विभाग, इसलिए इसमें पूरी सरकारी गारंटी है। न्यूनतम जमा ₹1,000 (₹100 के गुणक में) है और अधिकतम सीमा की कोई बाध्यता नहीं। 5 साल की TD पर 80C में टैक्स छूट भी मिलती है (पुरानी व्यवस्था में)।</p>
+
+  <h2>वर्तमान ब्याज दरें (2026)</h2>
+  <style>table{width:100%;border-collapse:collapse;margin-top:14px}table th,table td{border:1px solid #dadce0;padding:8px 12px;text-align:left}table th{background:#e8f0fe}</style>
+  <table>
+    <tr><th>अवधि</th><th>दर</th><th>₹1 लाख की मैच्योरिटी</th></tr>
+    <tr><td>1 साल</td><td>6.9%</td><td>₹1,07,081</td></tr>
+    <tr><td>2 साल</td><td>7.0%</td><td>₹1,14,372</td></tr>
+    <tr><td>3 साल</td><td>7.1%</td><td>₹1,21,874</td></tr>
+    <tr><td>5 साल</td><td>7.5%</td><td>₹1,44,995</td></tr>
+  </table>
+  <p>ये दरें जनवरी 2024 से लगातार अपरिवर्तित हैं और 2026 की शुरुआती तिमाहियों में भी वही रहीं। वित्त मंत्रालय हर तिमाही समीक्षा करता है – खाता खोलते समय की दर पूरी अवधि के लिए लॉक रहती है।</p>
+
+  <h2>फॉर्मूला और गणना</h2>
+  <p>TD का ब्याज <strong>तिमाही कंपाउंड</strong> होता है और हर साल के अंत में खाते में जमा होता है:</p>
+  <p><strong>मैच्योरिटी = P × (1 + r/4)^(4×t)</strong> – जहां P = जमा, r = वार्षिक दर, t = साल।</p>
+  <p>उदाहरण: ₹1,00,000, 5 साल, 7.5% → तिमाही दर 1.875%, 20 तिमाहियों में कंपाउंड → <strong>₹1,44,995</strong> (ब्याज ₹44,995)। तिमाही कंपाउंडिंग की वजह से असली सालाना yield 7.71% बनती है – यानी नाममात्र दर से ज्यादा।</p>
+
+  <h2>TD बनाम बैंक FD</h2>
+  <ul>
+    <li><strong>सुरक्षा:</strong> TD पर पूरी सरकारी गारंटी; बैंक FD पर DICGC से ₹5 लाख तक का कवर।</li>
+    <li><strong>ब्याज:</strong> 5 साल की TD 7.5% – ज्यादातर बैंकों की 5 साल की FD (6.5-7.3%) से ज्यादा।</li>
+    <li><strong>80C:</strong> 5 साल की TD पर 80C छूट; बैंक FD पर सिर्फ 5 साल की टैक्स सेवर FD पर।</li>
+    <li><strong>समय से पहले निकासी:</strong> TD में जुर्माने के साथ निकासी संभव है (नियमानुसार); बैंक FD में भी पेनल्टी।</li>
+  </ul>
+
+  <h2>कौन ले सकता है और कैसे खोलें?</h2>
+  <p>कोई भी भारतीय निवासी (वयस्क), नाबालिग के लिए अभिभावक, और संयुक्त खाता (अधिकतम 3 वयस्क) खोल सकते हैं। NRI पात्र नहीं। खाता किसी भी डाकघर में आधार, पैन, फोटो और पासबुक के साथ खुलता है; नामांकन जरूर करें। पूरी जानकारी के लिए <a href="../blog/post-office-schemes.html" style="color:#1a73e8">पोस्ट ऑफिस योजनाएं गाइड</a> पढ़ें।</p>
+
+  <h2>संबंधित टूल्स</h2>
+  <p>मासिक आय के लिए: <a href="post-office-mis-calculator.html" style="color:#1a73e8">MIS कैलकुलेटर</a> | 60+ के लिए: <a href="scss-calculator.html" style="color:#1a73e8">SCSS कैलकुलेटर</a> | बैंक FD तुलना: <a href="fd-calculator.html" style="color:#1a73e8">FD कैलकुलेटर</a> | RD: <a href="rd-calculator.html" style="color:#1a73e8">RD कैलकुलेटर</a>।</p>
+</article>
+
+<script>
+function setRate(){
+  var rates={'5':7.5,'3':7.1,'2':7.0,'1':6.9};
+  document.getElementById('rate').value=rates[document.getElementById('tenure').value];
+}
+function calcTD(){
+  var amt=parseFloat(document.getElementById('amt').value);
+  var t=parseInt(document.getElementById('tenure').value);
+  var rate=parseFloat(document.getElementById('rate').value);
+  var out=document.getElementById('out');
+  if(!amt||amt<=0){out.innerHTML='<strong>⚠️ जमा राशि भरें।</strong>';out.style.display='block';return;}
+  if(!rate||rate<=0){rate=7.5;}
+  var mv=amt*Math.pow(1+rate/400,4*t);
+  var int=mv-amt;
+  var yield=Math.pow(1+rate/400,4)-1;
+  var f=function(n){return '₹'+Math.round(n).toLocaleString('en-IN');};
+  out.innerHTML='📅 <strong>'+t+' साल बाद मैच्योरिटी: '+f(mv)+'</strong><br>'+
+    '💰 कुल ब्याज: <b>'+f(int)+'</b><br>'+
+    '📈 असली सालाना yield (कंपाउंडिंग के बाद): '+(yield*100).toFixed(2)+'%<br><br>'+
+    '<span style="font-size:.9rem">ब्याज हर साल के अंत में खाते में जमा होता है; मैच्योरिटी पर पूरी राशि वापस।</span>';
+  out.style.display='block';
+}
+</script>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+</body>
+</html>

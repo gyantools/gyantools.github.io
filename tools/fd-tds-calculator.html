@@ -1,0 +1,157 @@
+<title>FD TDS Calculator 2026 – बैंक FD ब्याज पर TDS | GyanTools</title>
+
+<meta name="description" content="FD TDS कैलकुलेटर 2026 – धारा 194A के नए नियमों (₹50,000 / वरिष्ठ ₹1 लाख सीमा) के अनुसार बैंक FD ब्याज पर TDS, 10%/20% दर और 15G/15H सलाह।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="FD TDS Calculator 2026 in Hindi – ब्याज पर TDS का हिसाब">
+<meta property="og:description" content="FD ब्याज पर कितना TDS कटेगा – नए नियमों के साथ, फ्री टूल।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/fd-tds-calculator.html">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FD TDS Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"FD ब्याज पर TDS कैलकुलेटर – 194A नियम, 15G/15H","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/fd-tds-calculator.html">
+</head>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › <a href="../index.html#tools">टूल्स</a> › FD TDS कैलकुलेटर</p>
+<div class="tool-box">
+  <h1>💰 FD TDS कैलकुलेटर 2026</h1>
+  <p>बैंक FD के ब्याज पर कितना TDS कटेगा – नए नियमों (₹50,000 / ₹1 लाख सीमा) के अनुसार, 15G/15H की सलाह के साथ।</p>
+
+  <label for="interest">साल भर की कुल FD ब्याज आय (₹)</label>
+  <input type="number" id="interest" placeholder="जैसे: 75000" step="any">
+  <label for="age">आपकी उम्र</label>
+  <select id="age">
+    <option value="normal">60 साल से कम</option>
+    <option value="senior">60 साल या उससे ज्यादा (वरिष्ठ नागरिक)</option>
+  </select>
+  <label for="pan">क्या बैंक में PAN जमा है?</label>
+  <select id="pan">
+    <option value="yes">हाँ, PAN जमा है</option>
+    <option value="no">नहीं</option>
+  </select>
+  <label for="income">क्या आपकी कुल आय टैक्स-फ्री सीमा से नीचे है? (15G/15H भरने के लिए)</label>
+  <select id="income">
+    <option value="low">हाँ, कुल आय टैक्स सीमा से कम है</option>
+    <option value="high">नहीं, टैक्स देना पड़ता है</option>
+  </select>
+  <button onclick="calcTDS()">TDS निकालें</button>
+  <div class="result" id="out" style="display:none"></div>
+</div>
+
+<article>
+  <h2>FD पर TDS क्या है?</h2>
+  <p><strong>TDS (Tax Deducted at Source)</strong> यानी आयकर की वह राशि जो बैंक आपके FD के ब्याज से पहले ही काटकर सरकार को जमा कर देता है। आयकर अधिनियम की <strong>धारा 194A</strong> के तहत बैंक, डाकघर और सहकारी बैंक ब्याज आय पर TDS काटते हैं। 2026 में लागू नियम:</p>
+  <ul>
+    <li><strong>60 साल से कम:</strong> अगर साल भर की कुल FD/बैंक ब्याज आय <strong>₹50,000 से ज्यादा</strong> है तो 10% TDS</li>
+    <li><strong>वरिष्ठ नागरिक (60+):</strong> सीमा <strong>₹1,00,000</strong> – इससे ज्यादा ब्याज पर 10% TDS</li>
+    <li><strong>PAN नहीं:</strong> PAN न होने पर 20% TDS कटता है (धारा 206AA)</li>
+  </ul>
+  <div class="note"><strong>नया नियम:</strong> FY 2025-26 से पहले ये सीमाएं ₹40,000 (वरिष्ठ ₹50,000) थीं – वित्त अधिनियम 2025 के बाद सीमा बढ़ाकर ₹50,000 / ₹1 लाख कर दी गई। यही नियम 2026-27 में भी लागू हैं।</div>
+
+  <h2>कैसे काम करता है?</h2>
+  <p>बैंक पूरे साल आपकी सभी FD के ब्याज का हिसाब रखता है (एक ही बैंक की सभी शाखाओं का मिलाकर)। जैसे ही कुल ब्याज सीमा से ऊपर जाता है, बैंक उस साल के ब्याज पर <strong>10% (PAN के साथ) या 20% (बिना PAN)</strong> TDS काटकर आपके नेट ब्याज में जमा करता है।</p>
+  <p><strong>उदाहरण:</strong> आपकी कुल FD ब्याज आय ₹75,000 है (60 से कम उम्र, PAN जमा):</p>
+  <ul>
+    <li>सीमा: ₹50,000 → ब्याज ₹75,000 सीमा से ज्यादा</li>
+    <li>TDS: ₹75,000 का 10% = <strong>₹7,500</strong></li>
+    <li>आपको खाते में मिलेगा: ₹67,500</li>
+  </ul>
+
+  <h2>15G / 15H फॉर्म क्या है?</h2>
+  <p>अगर आपकी कुल आय टैक्स-फ्री सीमा से नीचे है, तो आपको TDS नहीं कटना चाहिए। इसके लिए बैंक में <strong>फॉर्म 15G</strong> (60 साल से कम) या <strong>फॉर्म 15H</strong> (60+) हर साल अप्रैल में जमा करना होता है। फॉर्म जमा करने पर बैंक ब्याज पर TDS नहीं काटता। यही कैलकुलेटर बताता है कि आपके लिए 15G/15H सही रहेगा या नहीं।</p>
+
+  <h2>क्या TDS का मतलब टैक्स देना ही है?</h2>
+  <p>नहीं – TDS सिर्फ अग्रिम कटौती (advance deduction) है। असली टैक्स ITR भरते समय तय होता है। अगर आपका पूरा टैक्स TDS से कम बनता है, तो बाकी <strong>रिफंड के रूप में वापस</strong> मिलता है। वरिष्ठ नागरिकों को धारा 80TTB के तहत ब्याज आय पर ₹50,000 तक की छूट मिलती है (पुरानी व्यवस्था में) – इससे उनका TDS अक्सर पूरा रिफंड हो जाता है।</p>
+
+  <h2>संबंधित टूल्स</h2>
+  <p>FD की मैच्योरिटी: <a href="fd-calculator.html" style="color:#1a73e8">FD कैलकुलेटर</a> | पोस्ट ऑफिस FD: <a href="post-office-td.html" style="color:#1a73e8">पोस्ट ऑफिस TD कैलकुलेटर</a> | टैक्स: <a href="income-tax-calculator.html" style="color:#1a73e8">Income Tax कैलकुलेटर</a> | गाइड: <a href="../blog/bank-fd-interest-rates-2026.html" style="color:#1a73e8">Bank FD Rates गाइड</a></p>
+</article>
+
+<script>
+var RATES={1000:[42,46,50,54,59,64,70,76,82,90,97,106,116,126,138,151,165,181,198,218,240,264,291],2000:[84,92,100,108,117,127,139,151,164,178,194,212,231,252,276,302,330,362,396,436,480,528,582],3000:[126,138,150,162,177,192,208,226,246,268,292,318,347,379,414,453,495,543,594,654,720,792,873],4000:[168,183,198,215,234,254,277,301,327,356,388,423,462,504,551,602,659,722,792,870,957,1054,1164],5000:[210,228,248,269,292,318,346,376,409,446,485,529,577,630,689,752,824,902,990,1087,1196,1318,1454]};
+function calcTDS(){
+  var int=parseFloat(document.getElementById('interest').value);
+  var age=document.getElementById('age').value;
+  var pan=document.getElementById('pan').value;
+  var inc=document.getElementById('income').value;
+  var out=document.getElementById('out');
+  if(!int||int<0){out.innerHTML='<strong>⚠️ ब्याज की राशि भरें।</strong>';out.style.display='block';return;}
+  var limit=age==='senior'?100000:50000;
+  var rate=pan==='yes'?0.10:0.20;
+  var tds=int>limit?Math.round(int*rate):0;
+  var f=function(n){return '₹'+Math.round(n).toLocaleString('en-IN');};
+  var html='';
+  if(tds===0){
+    html='✅ <strong>कोई TDS नहीं कटेगा!</strong><br>आपकी ब्याज आय '+f(int)+' सीमा '+f(limit)+' से कम/बराबर है।<br>पूरा ब्याज '+f(int)+' आपके खाते में मिलेगा।';
+  }else{
+    html='⚠️ <strong>TDS कटेगा: '+f(tds)+'</strong><br>'+
+      'ब्याज आय: '+f(int)+' (सीमा '+f(limit)+' से ज्यादा)<br>'+
+      'कटौती दर: '+(rate*100)+'%'+(pan==='no'?' (PAN न होने पर 20%)':'')+'<br>'+
+      'खाते में मिलेगा: '+f(int-tds)+'<br><br>';
+  }
+  if(inc==='low'){
+    html+='📋 <strong>15G/15H सलाह:</strong> आपकी कुल आय टैक्स-सीमा से कम है – '+(age==='senior'?'फॉर्म 15H':'फॉर्म 15G')+' बैंक में जमा करें, TDS नहीं कटेगा। हर वित्त वर्ष की शुरुआत में फॉर्म दोबारा जमा करना होता है।';
+  }else if(tds>0){
+    html+='ℹ️ TDS कोई अलग टैक्स नहीं – ITR भरते समय असली टैक्स तय होगा; ज्यादा कटा हो तो रिफंड मिलता है। वरिष्ठ नागरिक 80TTB (₹50,000) का लाभ ले सकते हैं।';
+  }
+  out.innerHTML=html;
+  out.style.display='block';
+}
+</script>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+</body>
+</html>

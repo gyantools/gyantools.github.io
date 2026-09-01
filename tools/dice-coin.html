@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-adsense-account" content="ca-pub-7660664276583367">
 <meta name="author" content="Pawan Verma">
 <meta name="publisher" content="PAWANGAMINGSTUDIO">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
@@ -12,6 +13,7 @@
 <meta property="og:title" content="पासा और सिक्का – Dice &amp; Coin">
 <meta property="og:description" content="रोल करो, उछालो, फैसला करो!">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/dice-coin.html">
 <!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Dice and Coin Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"पासा रोलर और सिक्का उछालने वाला टूल","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
@@ -59,7 +61,7 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
         <li><a href="../index.html">होम</a></li>
         <li><a href="../index.html#tools">टूल्स</a></li>
         <li><a href="../index.html#games">गेम्स</a></li>
-        <li><a href="../index.html#blog">ब्लॉग</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
         <li><a href="../contact.html">संपर्क</a></li>
       </ul>
     </nav>
@@ -100,6 +102,18 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
     <h2>कैसे random है?</h2>
     <p>Browser का <strong>crypto.getRandomValues()</strong> — वही generator जो security में इस्तेमाल होता है। हर नतीजा आज़ाद — इसलिए 6 बार रोल करने पर 6 आना ज़रूरी नहीं (यही तो probability का मज़ा है)।</p>
     <div class="note">💡 सिक्का और पासे का हर नतीजा अलग — कोई जानकारी सेव नहीं होती।</div>
+  
+    <h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+    <h3>क्या पासा और सिक्का सच में random (बराबर मौका) देते हैं?</h3>
+    <p>हाँ। यह tool आपके ब्राउज़र के <strong>crypto.getRandomValues()</strong> system का इस्तेमाल करता है – यह वही secure random generator है जिसका उपयोग बैंकिंग और security apps करते हैं। असली पासे/सिक्के के मुकाबले यह कहीं ज़्यादा balanced होता है, क्योंकि असली सिक्के में सतह, उछाल जैसी चीज़ों का हल्का असर हो सकता है।</p>
+    <h3>क्या यह offline (बिना internet) चलता है?</h3>
+    <p>जी हाँ। पूरा tool आपके ब्राउज़र में ही चलता है – internet, app या login किसी की ज़रूरत नहीं। एक बार page खुल जाए तो हवाई जहाज़ में भी काम करता है।</p>
+    <h3>क्या मैं एक साथ कई पासे फेंक सकता/सकती हूँ?</h3>
+    <p>इस tool में एक साथ एक पासा और एक सिक्का है, लेकिन आप जितनी बार चाहें उतनी बार फेंक सकते हैं – नतीजा हर बार नया और random होता है। दो पासों वाले खेल (जैसे Ludo) के लिए बस एक के बाद एक दो बार फेंकें।</p>
+    <h3>फैसले लेने के लिए क्या यह भरोसेमंद है?</h3>
+    <p>बराबर के दो विकल्पों (कौन-सी फिल्म, कौन-सा topic पहले) में फैसला करने के लिए यह बिल्कुल निष्पक्ष (unbiased) तरीका है। हाँ, ज़िंदगी के बड़े फैसले (पैसा, नौकरी, पढ़ाई) सिर्फ सिक्के पर न छोड़ें – वहाँ सोच-समझकर फैसला लें।</p>
+    <p>🎲 <strong>मज़ेदार बात:</strong> Ludo, Snake &amp; Ladders और कई पारंपरिक खेल सदियों से पासे पर ही चलते हैं। अब आपके पास भी एक निष्पक्ष पासा हमेशा जेब में है!</p>
+
   </article>
 </div>
 
@@ -107,7 +121,7 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
   <div class="container">
     <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
     <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
-    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a></p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
   </div>
 </footer>
 

@@ -1,0 +1,149 @@
+<title>Currency Converter – डॉलर, यूरो, पाउंड हिसाब | GyanTools</title>
+
+<meta name="description" content="करेंसी कन्वर्टर 2026 – USD, EUR, GBP, AED, SAR, JPY का रुपये में तुरंत हिसाब। दरें अपडेट करने योग्य, सितंबर 2026 की दरों के साथ।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Currency Converter in Hindi – विदेशी मुद्रा हिसाब">
+<meta property="og:description" content="डॉलर/यूरो/पाउंड/दिरहम का रुपये में तुरंत बदलाव।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/currency-converter.html">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Currency Converter Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"करेंसी कन्वर्टर – USD/EUR/GBP/AED/SAR/JPY से INR","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/currency-converter.html">
+</head>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › <a href="../index.html#tools">टूल्स</a> › करेंसी कन्वर्टर</p>
+<div class="tool-box">
+  <h1>💱 करेंसी कन्वर्टर (Currency Converter)</h1>
+  <p>डॉलर, यूरो, पाउंड, दिरहम, रियाल, येन – किसी भी करेंसी का रुपये में (और आपस में) तुरंत हिसाब। दरें खुद बदल सकते हैं।</p>
+
+  <label for="amount">राशि</label>
+  <input type="number" id="amount" placeholder="जैसे: 100" step="any">
+  <label for="from">किस करेंसी से?</label>
+  <select id="from"></select>
+  <label for="to">किस करेंसी में?</label>
+  <select id="to"></select>
+  <button onclick="calcFX()">बदलें</button>
+  <div class="result" id="out" style="display:none"></div>
+
+  <h2 style="margin-top:26px">मौजूदा दरें (₹ में, 1 सितंबर 2026 – अनुमानित)</h2>
+  <p style="font-size:.9rem">दरें रोज बदलती हैं – ऊपर की तालिका में अपनी पसंद की दरें खुद डालकर भी हिसाब कर सकते हैं।</p>
+  <table>
+    <tr><th>करेंसी</th><th>1 यूनिट = ₹</th></tr>
+    <tr><td>US डॉलर (USD)</td><td>95.20</td></tr>
+    <tr><td>यूरो (EUR)</td><td>111.34</td></tr>
+    <tr><td>ब्रिटिश पाउंड (GBP)</td><td>130.18</td></tr>
+    <tr><td>UAE दिरहम (AED)</td><td>26.10</td></tr>
+    <tr><td>सऊदी रियाल (SAR)</td><td>25.34</td></tr>
+    <tr><td>जापानी येन (JPY)</td><td>0.60</td></tr>
+  </table>
+</div>
+
+<article>
+  <h2>करेंसी कन्वर्टर कैसे काम करता है?</h2>
+  <p>हर करेंसी की कीमत रुपये में तय होती है – जैसे 1 डॉलर ≈ ₹95.2। कन्वर्टर उसी दर से गुणा/भाग करके राशि बदल देता है। <strong>रुपये में बदलने के लिए:</strong> राशि × दर (जैसे $100 × 95.2 = ₹9,520)। <strong>रुपये से करेंसी में:</strong> राशि ÷ दर (जैसे ₹95,200 ÷ 95.2 = $1,000)। दो विदेशी करेंसियों के बीच बदलने पर पहले रुपये में, फिर दूसरी करेंसी में।</p>
+
+  <h2>दरें क्यों बदलती रहती हैं?</h2>
+  <p>करेंसी दरें हर पल बदलती हैं – इन्हें तय करते हैं: मांग-आपूर्ति (कितने लोग डॉलर खरीद रहे हैं), RBI का हस्तक्षेप, ब्याज दरों में अंतर, तेल की कीमतें, महंगाई और अंतरराष्ट्रीय घटनाएं। 2026 की शुरुआत में डॉलर करीब ₹95 के पार चला गया है – जो 2025 के मुकाबले रुपये पर दबाव दिखाता है। विदेश यात्रा या पढ़ाई की योजना में दर का सही अंदाजा जरूरी है।</p>
+
+  <h2>असली दर कहां देखें?</h2>
+  <ul>
+    <li><strong>RBI रेफरेंस दर:</strong> rbi.org.in पर हर दिन जारी होती है</li>
+    <li><strong>बैंक की वेबसाइट/ऐप:</strong> बैंक की "buy/sell" दर थोड़ी अलग (ज्यादा) होती है – बैंक अपना मार्जिन जोड़ते हैं</li>
+    <li><strong>Google/फाइनेंस ऐप्स:</strong> तुरंत लाइव दर देखने के लिए</li>
+  </ul>
+  <p>याद रखें: बैंक/एक्सचेंज पर मिलने वाली दर बाजार दर से 0.5-2% तक ऊपर-नीचे होती है – यही उनकी कमाई है।</p>
+
+  <h2>विदेश में पैसे ले जाने के तरीके</h2>
+  <ul>
+    <li><strong>फॉरेक्स कार्ड:</strong> पहले से लोड की गई करेंसी – दर लॉक रहती है, यात्रा के लिए सबसे लोकप्रिय</li>
+    <li><strong>अंतरराष्ट्रीय डेबिट/क्रेडिट कार्ड:</strong> सुविधाजनक, लेकिन विदेशी लेन-देन शुल्क (1-3.5%) और दर का ध्यान रखें</li>
+    <li><strong>नकद:</strong> छोटे खर्च के लिए थोड़ी नकदी; नियमों के हिसाब से सीमा तय है</li>
+  </ul>
+  <p>भारत से विदेश भेजने के लिए RBI की LRS योजना के तहत सालाना ₹2.5 लाख तक की सीमा लागू है।</p>
+
+  <h2>संबंधित टूल्स</h2>
+  <p><a href="gold-silver-value-calculator.html" style="color:#1a73e8">गोल्ड-सिल्वर वैल्यू</a> | <a href="unit-converter.html" style="color:#1a73e8">Unit कन्वर्टर</a> | गाइड: <a href="../blog/passport-guide.html" style="color:#1a73e8">पासपोर्ट गाइड</a> | <a href="../blog/gold-investment-guide.html" style="color:#1a73e8">सोने में निवेश</a></p>
+</article>
+
+<script>
+var CURR={'USD':95.20,'EUR':111.34,'GBP':130.18,'AED':26.10,'SAR':25.34,'JPY':0.60,'INR':1};
+window.onload=function(){
+  var f=document.getElementById('from'),t=document.getElementById('to');
+  for(var c in CURR){
+    var o1=document.createElement('option');o1.value=c;o1.textContent=c;f.appendChild(o1);
+    var o2=document.createElement('option');o2.value=c;o2.textContent=c;t.appendChild(o2);
+  }
+  f.value='USD';t.value='INR';
+};
+function calcFX(){
+  var amt=parseFloat(document.getElementById('amount').value);
+  var f=document.getElementById('from').value,t=document.getElementById('to').value;
+  var out=document.getElementById('out');
+  if(!amt||amt<0){out.innerHTML='<strong>⚠️ राशि भरें।</strong>';out.style.display='block';return;}
+  var inr=amt*CURR[f];
+  var res=inr/CURR[t];
+  var fmt=function(n){return n.toLocaleString('en-IN',{maximumFractionDigits:2});};
+  out.innerHTML='💱 <strong>'+fmt(amt)+' '+f+' = '+fmt(res)+' '+t+'</strong><br>'+
+    (t==='INR'?'':'₹ में: '+fmt(inr)+'<br>')+
+    '<span style="font-size:.9rem">दर: 1 '+f+' = '+CURR[f]+' ₹ | 1 '+t+' = '+CURR[t]+' ₹<br>नोट: ये अनुमानित दरें हैं (1 सितंबर 2026); बैंक/एक्सचेंज की असली दर अलग हो सकती है।</span>';
+  out.style.display='block';
+}
+</script>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<title>Credit Card Payoff Calculator – क्रेडिट कार्ड कर्ज हिसाब | GyanTools</title>
+
+<meta name="description" content="क्रेडिट कार्ड बकाया चुकाने में कितना समय और कितना ब्याज लगेगा – मासिक भुगतान से समय, या तय समय से मासिक भुगतान, दोनों तरीके।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Credit Card Payoff Calculator in Hindi – कार्ड कर्ज चुकाने का हिसाब">
+<meta property="og:description" content="क्रेडिट कार्ड का बकाया कब और कितने ब्याज के साथ चुकेगा – फ्री टूल।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/credit-card-payoff.html">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Credit Card Payoff Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"क्रेडिट कार्ड बकाया चुकाने का समय और ब्याज कैलकुलेटर","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/credit-card-payoff.html">
+</head>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › <a href="../index.html#tools">टूल्स</a> › Credit Card Payoff कैलकुलेटर</p>
+<div class="tool-box">
+  <h1>💳 क्रेडिट कार्ड पेऑफ कैलकुलेटर (Credit Card Payoff)</h1>
+  <p>क्रेडिट कार्ड का बकाया चुकाने में कितना समय और कितना ब्याज लगेगा – या तय समय में चुकाने के लिए हर महीने कितना देना होगा।</p>
+
+  <label for="balance">मौजूदा बकाया (₹)</label>
+  <input type="number" id="balance" placeholder="जैसे: 50000" step="any">
+  <label for="rate">सालाना ब्याज दर (%) – डिफ़ॉल्ट 36% (कार्ड की आम दर)</label>
+  <input type="number" id="rate" placeholder="जैसे: 36" step="any" value="36">
+  <label for="mode">क्या निकालना है?</label>
+  <select id="mode">
+    <option value="pay">मासिक भुगतान से समय और ब्याज</option>
+    <option value="time">तय महीनों में चुकाने के लिए जरूरी भुगतान</option>
+  </select>
+  <label for="val" id="lval">हर महीने भुगतान (₹)</label>
+  <input type="number" id="val" placeholder="जैसे: 5000" step="any">
+  <button onclick="calcCC()">हिसाब लगाएं</button>
+  <div class="result" id="out" style="display:none"></div>
+</div>
+
+<article>
+  <h2>क्रेडिट कार्ड का ब्याज कैसे काम करता है?</h2>
+  <p>क्रेडिट कार्ड पर अगर आप पूरा बिल (due date तक) नहीं चुकाते, तो बची राशि पर <strong>बहुत ज्यादा ब्याज</strong> लगता है – आमतौर पर सालाना 30-45% (मासिक 2.5-3.75%)। यह ब्याज रोजाना के हिसाब से जुड़ता है (daily compounding), इसलिए कर्ज तेजी से बढ़ता है। यह कैलकुलेटर दिखाता है कि सिर्फ minimum amount भरने से कर्ज कितने साल चलेगा और कुल कितना ब्याज देना पड़ेगा।</p>
+
+  <h2>फॉर्मूला और गणना</h2>
+  <p><strong>मासिक ब्याज = बकाया × (सालाना दर ÷ 12 ÷ 100)</strong>। हर महीने: नया बकाया = पुराना बकाया + मासिक ब्याज − भुगतान। यही चक्र तब तक चलता है जब तक बकाया शून्य न हो जाए। उदाहरण: ₹50,000 बकाया, 36% ब्याज, ₹5,000/माह भुगतान – करीब 13 महीने लगेंगे और कुल ब्याज करीब ₹10,000 देना होगा। सिर्फ minimum (5% यानी ₹2,500) भरने पर यही कर्ज 5+ साल तक चल सकता है और ब्याज ₹60,000 से ज्यादा बन जाता है।</p>
+
+  <h2>कर्ज से जल्दी निकलने के 5 तरीके</h2>
+  <ul>
+    <li><strong>हर महीने पूरा बिल भरें:</strong> due date तक पूरा भुगतान करने पर ब्याज शून्य – 45-50 दिन का मुफ्त कर्ज।</li>
+    <li><strong>जितना हो सके उतना ज्यादा भरें:</strong> minimum से ऊपर की हर रकम सीधे मूलधन घटाती है।</li>
+    <li><strong>बैलेंस ट्रांसफर:</strong> कम ब्याज वाले कार्ड/लोन में बकाया ट्रांसफर करें (transfer fee ध्यान रखें)।</li>
+    <li><strong>कार्ड लोन/EMI में बदलें:</strong> ब्याज कम हो सकता है, लेकिन नया कर्ज न जोड़ें।</li>
+    <li><strong>कार्ड का इस्तेमाल बंद करें:</strong> जब तक पुराना बकाया न चुके, नई खरीदारी न करें।</li>
+  </ul>
+
+  <h2>ध्यान रखें</h2>
+  <ul>
+    <li>कार्ड पर ब्याज दर हर बैंक में अलग होती है – अपने स्टेटमेंट में दिखी दर डालें।</li>
+    <li>देर से भुगतान पर अलग से late fee और ब्याज दर और बढ़ जाती है।</li>
+    <li>क्रेडिट स्कोर (CIBIL) पर असर: बकाया ज्यादा रखने से score गिरता है – <a href="../blog/cibil-credit-score-guide.html" style="color:#1a73e8">CIBIL गाइड</a> पढ़ें।</li>
+    <li>अगर बकाया बेकाबू हो रहा है तो <a href="../tools/loan-eligibility-calculator.html" style="color:#1a73e8">पर्सनल लोन</a> (कम ब्याज) से कार्ड का कर्ज बदलना समझदारी हो सकती है।</li>
+  </ul>
+
+  <h2>संबंधित टूल्स</h2>
+  <p>कार्ड गाइड: <a href="../blog/credit-card-guide.html" style="color:#1a73e8">Credit Card गाइड</a> | लोन किस्त: <a href="emi-calculator.html" style="color:#1a73e8">EMI कैलकुलेटर</a> | ब्याज तुलना: <a href="interest-calculator.html" style="color:#1a73e8">ब्याज कैलकुलेटर</a>।</p>
+</article>
+
+<script>
+function calcCC(){
+  var bal=parseFloat(document.getElementById('balance').value);
+  var rate=parseFloat(document.getElementById('rate').value);
+  var mode=document.getElementById('mode').value;
+  var val=parseFloat(document.getElementById('val').value);
+  var out=document.getElementById('out');
+  if(!bal||bal<=0||!rate||rate<=0){out.innerHTML='<strong>⚠️ बकाया और ब्याज दर सही भरें।</strong>';out.style.display='block';return;}
+  var mr=rate/1200;
+  var f=function(n){return '₹'+Math.round(n).toLocaleString('en-IN');};
+  if(mode==='pay'){
+    if(!val||val<=0){out.innerHTML='<strong>⚠️ मासिक भुगतान भरें।</strong>';out.style.display='block';return;}
+    var b=bal, months=0, totalInt=0;
+    if(val<=b*mr){out.innerHTML='⚠️ आपका भुगतान सिर्फ ब्याज के बराबर है – बकाया कभी नहीं घटेगा। कम से कम '+f(Math.ceil(b*mr)+1)+'/माह भरें।';out.style.display='block';return;}
+    while(b>0&&months<600){
+      var int=b*mr;
+      totalInt+=int;
+      b=b+int-val;
+      months++;
+      if(b<0)b=0;
+    }
+    out.innerHTML='📅 <strong>पूरा चुकाने में: '+months+' महीने ('+(Math.ceil(months/12))+' साल '+(months%12)+' महीने)</strong><br>'+
+      '💰 कुल ब्याज: <b>'+f(totalInt)+'</b><br>'+
+      '💳 कुल भुगतान (मूलधन+ब्याज): '+f(bal+totalInt);
+  }else{
+    if(!val||val<=0){out.innerHTML='<strong>⚠️ महीनों की संख्या भरें।</strong>';out.style.display='block';return;}
+    var n=Math.ceil(val);
+    var pay=bal*mr*Math.pow(1+mr,n)/(Math.pow(1+mr,n)-1);
+    var ti=pay*n-bal;
+    out.innerHTML='📅 <strong>'+n+' महीनों में चुकाने के लिए मासिक भुगतान: '+f(pay)+'</strong><br>'+
+      '💰 कुल ब्याज: '+f(ti)+'<br>'+
+      '💳 कुल भुगतान: '+f(pay*n);
+  }
+  out.style.display='block';
+}
+</script>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-adsense-account" content="ca-pub-7660664276583367">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Salary Hike Calculator – नई सैलरी और हाइक % कैलकुलेटर | GyanTools</title>
+
+<meta name="description" content="Salary hike calculator – वर्तमान सैलरी और hike % से नई सैलरी, या target सैलरी से जरूरी hike % का हिसाब। CTC, gross, in-hand और टैक्स प्रभाव समझें।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Salary Hike Calculator – नई सैलरी कैलकुलेटर">
+<meta property="og:description" content="हाइक % से नई सैलरी या टारगेट से जरूरी हाइक – दोनों तरीके।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/salary-hike-calculator.html">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Percentage Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"प्रतिशत (percentage) कैलकुलेटर हिंदी में – तीन तरीके","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/salary-hike-calculator.html">
+</head><body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › <a href="../index.html#tools">टूल्स</a> › सैलरी हाइक कैलकुलेटर</p>
+<div class="tool-box">
+  <h1>📈 सैलरी हाइक कैलकुलेटर (Salary Hike Calculator)</h1>
+  <p>दो तरीके: hike % से नई सैलरी, या टारगेट सैलरी से जरूरी hike % – दोनों एक जगह।</p>
+
+  <label for="mode">क्या निकालना है?</label>
+  <select id="mode" onchange="updateMode()">
+    <option value="hike">हाइक % से नई सैलरी</option>
+    <option value="target">टारगेट सैलरी से जरूरी हाइक %</option>
+  </select>
+  <label for="cur">वर्तमान मासिक सैलरी (₹)</label>
+  <input type="number" id="cur" placeholder="जैसे: 50000" step="any">
+  <label for="val" id="lval">हाइक प्रतिशत (%)</label>
+  <input type="number" id="val" placeholder="जैसे: 10" step="any">
+  <button onclick="calcHike()">हिसाब लगाएं</button>
+  <div class="result" id="out" style="display:none"></div>
+</div>
+
+<article>
+  <h2>सैलरी हाइक क्या होता है?</h2>
+  <p><strong>सैलरी हाइक</strong> यानी वेतन वृद्धि – आमतौर पर सालाना appraisal (प्रदर्शन समीक्षा), प्रमोशन या नई नौकरी के समय आपकी सैलरी में होने वाली बढ़ोतरी। यह आमतौर पर प्रतिशत (%) में तय होती है, जैसे "10% हाइक मिली"। भारत में औसत हाइक 8-12% रहती है, अच्छे प्रदर्शन पर 15-25% और नौकरी बदलने पर 20-40% तक मिल सकती है।</p>
+
+  <h2>फॉर्मूला</h2>
+  <p><strong>नई सैलरी = पुरानी सैलरी × (1 + हाइक% ÷ 100)</strong></p>
+  <p>उदाहरण: ₹50,000/माह पर 10% हाइक = 50,000 × 1.10 = <strong>₹55,000/माह</strong>, यानी बढ़ोतरी ₹5,000/माह। उल्टा, अगर आपको ₹60,000 चाहिए तो जरूरी हाइक = (60,000 − 50,000) ÷ 50,000 × 100 = <strong>20%</strong>। हमारा कैलकुलेटर दोनों दिशाओं में हिसाब करता है।</p>
+
+  <h2>CTC, ग्रॉस और इन-हैंड में फर्क समझें</h2>
+  <ul>
+    <li><strong>CTC (Cost to Company):</strong> कंपनी का कुल खर्च – सैलरी + बोनस + PF + भत्ते + बीमा प्रीमियम सब मिलाकर। यह सबसे बड़ी संख्या है।</li>
+    <li><strong>ग्रॉस सैलरी:</strong> PF और टैक्स कटने से पहले की सैलरी।</li>
+    <li><strong>इन-हैंड:</strong> बैंक में आने वाली असली राशि – PF, प्रोफेशनल टैक्स और आयकर कटने के बाद।</li>
+  </ul>
+  <p>हाइक की बात करते समय हमेशा पूछें कि <strong>किस पर हाइक लग रही है</strong> – CTC पर या ग्रॉस पर? कभी-कभी CTC पर बड़ी हाइक दिखती है लेकिन इन-हैंड में मामूली फर्क होता है। अपनी असली कमाई <a href="inhand-salary-calculator.html" style="color:#1a73e8">In-hand Salary कैलकुलेटर</a> से जांचें।</p>
+
+  <h2>हाइक का टैक्स पर असर</h2>
+  <p>सैलरी बढ़ने पर आयकर भी बढ़ सकता है – खासकर अगर नई सैलरी टैक्स स्लैब की सीमा पार कर जाए। उदाहरण के लिए FY 2026-27 की नई व्यवस्था में ₹4 लाख तक टैक्स नहीं है, लेकिन उसके ऊपर दरें शुरू हो जाती हैं। हाइक के बाद की टैक्स देनदारी <a href="income-tax-calculator.html" style="color:#1a73e8">Income Tax कैलकुलेटर</a> से जरूर देखें, और <a href="../blog/income-tax-slabs-2026-27.html" style="color:#1a73e8">नए स्लैब</a> समझें।</p>
+
+  <h2>हाइक बातचीत के 5 टिप्स</h2>
+  <ul>
+    <li>बाजार दर जानें – उसी भूमिका के लिए दूसरी कंपनियां क्या दे रही हैं।</li>
+    <li>अपनी उपलब्धियों को नंबरों में रखें ("बिक्री 30% बढ़ाई", "लागत ₹2 लाख घटाई")।</li>
+    <li>सिर्फ % मत मांगिए – आंकड़े के साथ मांगिए और तैयार रहिए कि काउंटर ऑफर आएगा।</li>
+    <li>हाइक के साथ ग्रोथ का वादा भी लें – अगली समीक्षा का आधार तय कराएं।</li>
+    <li>हाइक राशि को तुरंत बचत में लगाएं – <a href="sip-calculator.html" style="color:#1a73e8">SIP</a> या <a href="ppf-calculator.html" style="color:#1a73e8">PPF</a> में "खुद को पहले भुगतान" का नियम बनाएं।</li>
+  </ul>
+
+  <h2>महंगाई के हिसाब से हाइक कितनी होनी चाहिए?</h2>
+  <p>भारत में आमतौर पर महंगाई (retail inflation) 4-6% रहती है। अगर आपकी हाइक 5% से कम है तो असल में आपकी क्रय शक्ति (purchasing power) घट रही है। इसलिए कम से कम "महंगाई + 3-4%" की हाइक ही असली वृद्धि है। सरकारी कर्मचारियों की सैलरी की बात करें तो <a href="../blog/8th-pay-commission-2026-guide.html" style="color:#1a73e8">8वें वेतन आयोग</a> के लागू होने पर 25-35% तक बढ़ोतरी की उम्मीद है – उस गाइड में पूरी जानकारी है।</p>
+
+  <h2>संबंधित टूल्स</h2>
+  <p>नई सैलरी पर टैक्स: <a href="income-tax-calculator.html" style="color:#1a73e8">Income Tax कैलकुलेटर</a> | असली कमाई: <a href="inhand-salary-calculator.html" style="color:#1a73e8">In-hand Salary</a> | बचत योजना: <a href="retirement-calculator.html" style="color:#1a73e8">Retirement कैलकुलेटर</a> | दोनों टैक्स व्यवस्थाएं: <a href="old-vs-new-tax-regime-calculator.html" style="color:#1a73e8">Old vs New Regime</a>।</p>
+
+  <h2>भारत में appraisal कैसे काम करता है?</h2>
+  <p>ज्यादातर कंपनियों में साल में एक बार appraisal होता है – आमतौर पर अप्रैल-जुलाई के बीच (financial year की शुरुआत में)। प्रक्रिया: self-appraisal (खुद का आकलन) → मैनेजर की रेटिंग → कंपनी का बजट (hike pool आमतौर पर CTC का 6-10%) → अंतिम हाइक। कई कंपनियों में सैलरी का कुछ हिस्सा <strong>वेरिएबल (performance bonus)</strong> होता है – हाइक की बात करते समय fixed और variable का अंतर जरूर पूछें, क्योंकि variable हर साल नहीं मिलता। नई नौकरी के समय negotiation में पिछली सैलरी की स्लिप और दूसरे ऑफर का इस्तेमाल करें।</p>
+
+</article>
+
+<script>
+function updateMode(){
+  document.getElementById('lval').textContent=document.getElementById('mode').value==='hike'?'हाइक प्रतिशत (%)':'टारगेट मासिक सैलरी (₹)';
+  document.getElementById('val').placeholder=document.getElementById('mode').value==='hike'?'जैसे: 10':'जैसे: 60000';
+}
+function calcHike(){
+  var mode=document.getElementById('mode').value;
+  var cur=parseFloat(document.getElementById('cur').value);
+  var val=parseFloat(document.getElementById('val').value);
+  var out=document.getElementById('out');
+  if(!cur||cur<=0||!val||val<=0){out.innerHTML='<strong>⚠️ दोनों मान सही-सही भरें (धनात्मक)।</strong>';out.style.display='block';return;}
+  var f=function(n){return '₹'+Math.round(n).toLocaleString('en-IN');};
+  if(mode==='hike'){
+    var inc=cur*val/100;
+    var fresh=cur+inc;
+    out.innerHTML='📈 <strong>बढ़ोतरी (मासिक): '+f(inc)+'</strong><br>'+
+      '💼 <strong>नई मासिक सैलरी: '+f(fresh)+'</strong><br>'+
+      '📅 सालाना नई सैलरी: '+f(fresh*12)+' (पहले '+f(cur*12)+')';
+  }else{
+    var need=((val-cur)/cur*100);
+    out.innerHTML='🎯 टारगेट सैलरी '+f(val)+' पाने के लिए<br>'+
+      '<strong>जरूरी हाइक: '+need.toFixed(2)+'%</strong><br>'+
+      '(बढ़ोतरी राशि: '+f(val-cur)+'/माह, यानी '+f((val-cur)*12)+'/साल)';
+  }
+  out.style.display='block';
+}
+</script>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+</body>
+</html>

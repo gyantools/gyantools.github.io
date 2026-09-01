@@ -1,0 +1,139 @@
+<title>CAGR Calculator – निवेश की सालाना ग्रोथ | GyanTools</title>
+
+<meta name="description" content="CAGR कैलकुलेटर – निवेश की असली सालाना वृद्धि दर, कुल रिटर्न और पैसा दोगुना होने की अवधि। म्यूचुअल फंड/शेयर/FD सबके लिए।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="CAGR Calculator in Hindi – फंड रिटर्न निकालें">
+<meta property="og:description" content="CAGR फॉर्मूला से निवेश की सालाना ग्रोथ – फ्री टूल।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/cagr-calculator.html">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CAGR Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"CAGR (Compound Annual Growth Rate) कैलकुलेटर","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/cagr-calculator.html">
+</head>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › <a href="../index.html#tools">टूल्स</a> › CAGR कैलकुलेटर</p>
+<div class="tool-box">
+  <h1>📈 CAGR कैलकुलेटर</h1>
+  <p>निवेश की असली सालाना ग्रोथ (CAGR) निकालें – म्यूचुअल फंड, FD, शेयर या किसी भी निवेश के लिए।</p>
+
+  <label for="initial">शुरुआती निवेश (₹)</label>
+  <input type="number" id="initial" placeholder="जैसे: 100000" step="any">
+  <label for="final">आज की वैल्यू (₹)</label>
+  <input type="number" id="final" placeholder="जैसे: 180000" step="any">
+  <label for="years">साल (अवधि)</label>
+  <input type="number" id="years" placeholder="जैसे: 5" step="any">
+  <button onclick="calcCAGR()">CAGR निकालें</button>
+  <div class="result" id="out" style="display:none"></div>
+</div>
+
+<article>
+  <h2>CAGR क्या है?</h2>
+  <p><strong>CAGR (Compound Annual Growth Rate)</strong> यानी आपके निवेश की वह सालाना दर जिस पर वह हर साल बढ़ा होता – अगर बढ़त हर साल एक जैसी (compound) रहती। यह सबसे भरोसेमंद तरीका है यह जानने का कि आपका निवेश सच में कितनी तेजी से बढ़ा। म्यूचुअल फंड, FD, शेयर, PPF – हर निवेश की तुलना CAGR से ही करनी चाहिए।</p>
+  <p><strong>उदाहरण:</strong> आपने 5 साल पहले ₹1,00,000 लगाए और आज वैल्यू ₹1,80,000 है। इसका मतलब यह नहीं कि हर साल 16% बढ़ा – साल-दर-साल बढ़त अलग-अलग रही होगी। CAGR बताता है कि <strong>औसतन सालाना वृद्धि दर 12.5%</strong> रही। इसी तरह सिर्फ कुल रिटर्न (% में) देखना भ्रामक हो सकता है – 3 साल में 60% रिटर्न का CAGR 17% बनता है, जबकि 6 साल में 60% रिटर्न का सिर्फ 8.1%।</p>
+
+  <h2>फॉर्मूला</h2>
+  <p><strong>CAGR = (अंतिम वैल्यू ÷ शुरुआती वैल्यू)^(1 ÷ साल) − 1</strong></p>
+  <p>उदाहरण: ₹1,00,000 → 5 साल में ₹1,80,000:<br>
+  CAGR = (1,80,000 ÷ 1,00,000)^(1/5) − 1 = (1.8)^0.2 − 1 = <strong>0.125 यानी 12.5% सालाना</strong></p>
+
+  <h2>CAGR कहां-कहां काम आता है?</h2>
+  <ul>
+    <li><strong>म्यूचुअल फंड तुलना:</strong> दो फंडों में कौन बेहतर – सिर्फ CAGR से तुलना करें (3, 5, 10 साल के CAGR देखें)।</li>
+    <li><strong>FD बनाम मार्केट:</strong> FD का तय ब्याज उसका "CAGR" है – मार्केट फंड का CAGR उससे कम या ज्यादा हो सकता है।</li>
+    <li><strong>टारगेट प्लानिंग:</strong> अगर आपको पता है कि कितने साल में कितना चाहिए, तो CAGR से जरूरी रिटर्न दर निकाल सकते हैं।</li>
+    <li><strong>रिटायरमेंट/गोल:</strong> <a href="goal-planner-calculator.html" style="color:#1a73e8">Goal Planner</a> और <a href="retirement-calculator.html" style="color:#1a73e8">Retirement कैलकुलेटर</a> के साथ मिलकर इस्तेमाल करें।</li>
+  </ul>
+
+  <h2>ध्यान रखने वाली बातें</h2>
+  <ul>
+    <li>CAGR <strong>एकमुश्त (lumpsum)</strong> निवेश का रिटर्न बताता है – SIP का रिटर्न XIRR से निकलता है।</li>
+    <li>पिछला CAGR <strong>भविष्य की गारंटी नहीं</strong> – मार्केट फंड का रिटर्न बदलता रहता है।</li>
+    <li>लंबी अवधि में ही CAGR का सही मतलब बनता है; 1-2 साल का CAGR भ्रामक हो सकता है।</li>
+    <li>फंड की स्कीम दस्तावेज़ (SID) में दिए गए "सामान्य रिटर्न" वाली तालिका भी CAGR ही दिखाती है।</li>
+  </ul>
+
+  <h2>संबंधित टूल्स</h2>
+  <p><a href="sip-calculator.html" style="color:#1a73e8">SIP कैलकुलेटर</a> | <a href="fd-calculator.html" style="color:#1a73e8">FD कैलकुलेटर</a> | <a href="investment-comparison-calculator.html" style="color:#1a73e8">Investment तुलना</a> | <a href="inflation-calculator.html" style="color:#1a73e8">Inflation कैलकुलेटर</a> | गाइड: <a href="../blog/mutual-fund-guide.html" style="color:#1a73e8">Mutual Fund गाइड</a></p>
+</article>
+
+<script>
+function calcCAGR(){
+  var ini=parseFloat(document.getElementById('initial').value);
+  var fin=parseFloat(document.getElementById('final').value);
+  var yrs=parseFloat(document.getElementById('years').value);
+  var out=document.getElementById('out');
+  if(!ini||ini<=0||!fin||fin<0||!yrs||yrs<=0){out.innerHTML='<strong>⚠️ तीनों मान सही भरें।</strong>';out.style.display='block';return;}
+  var f=function(n){return '₹'+Math.round(n).toLocaleString('en-IN');};
+  if(fin<=ini){
+    out.innerHTML='⚠️ अंतिम वैल्यू शुरुआती निवेश से कम या बराबर है – निवेश में नुकसान हुआ है। CAGR निकालने के लिए अंतिम वैल्यू ज्यादा होनी चाहिए।';
+    out.style.display='block';return;
+  }
+  var cagr=Math.pow(fin/ini,1/yrs)-1;
+  var totalRet=(fin-ini)/ini*100;
+  var doubling=Math.log(2)/Math.log(1+cagr);
+  out.innerHTML='📈 <strong>CAGR: '+(cagr*100).toFixed(2)+'% सालाना</strong><br>'+
+    '💹 कुल रिटर्न: '+totalRet.toFixed(1)+'%<br>'+
+    '💰 निवेश: '+f(ini)+' → '+f(fin)+' (बढ़त: '+f(fin-ini)+')<br>'+
+    '⏱️ पैसा दोगुना होने में: करीब '+doubling.toFixed(1)+' साल (Rule of 72 के हिसाब से: '+(72/(cagr*100)).toFixed(1)+' साल)<br><br>'+
+    '<span style="font-size:.9rem">नोट: CAGR एकमुश्त निवेश का औसत सालाना रिटर्न है; SIP के लिए XIRR देखें। पिछला रिटर्न भविष्य की गारंटी नहीं।</span>';
+  out.style.display='block';
+}
+</script>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+</body>
+</html>
