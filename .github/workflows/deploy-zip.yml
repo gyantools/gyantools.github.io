@@ -61,12 +61,12 @@ jobs:
         run: |
           # Ye files DELETE se SAFE hain:
           #  .git, .github (yehi workflow), CNAME (custom domain),
-          #  googlefba6fce0bafda575.html (Google Search Console verification), zips, _site
+          #  google*.html (Google verification files), zips, _site
           find . -mindepth 1 -maxdepth 1 \
             ! -name '.git' \
             ! -name '.github' \
             ! -name 'CNAME' \
-            ! -name 'googlefba6fce0bafda575.html' \
+            ! -name 'google*.html' \
             ! -name '*.zip' \
             ! -name '_site' \
             -exec rm -rf {} +
@@ -88,8 +88,11 @@ jobs:
               if any(x in root for x in ('.git', '_site', '.github')):
                   continue
               for fn in fns:
-                  if fn.endswith('.html') and fn != 'googlefba6fce0bafda575.html':
+                  if fn.endswith('.html'):
                       rel = os.path.relpath(os.path.join(root, fn)).replace(os.sep, '/')
+                      # Root-level google*.html = Google verification files — sitemap me nahi
+                      if rel.count('/') == 0 and fn.startswith('google'):
+                          continue
                       urls.add(BASE if rel == 'index.html' else BASE + rel)
           out = ['<?xml version="1.0" encoding="UTF-8"?>',
                  '<!-- Yeh sitemap workflow khud banata hai — haath se edit karne ki zaroorat nahi -->',
