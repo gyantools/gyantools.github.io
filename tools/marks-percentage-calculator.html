@@ -14,6 +14,14 @@
 <meta property="og:description" content="नंबर से प्रतिशत और ग्रेड निकालें – CGPA कन्वर्टर सहित।">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gyantools.github.io/tools/marks-percentage-calculator.html">
+<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
+<link rel="apple-touch-icon" href="https://gyantools.github.io/images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://gyantools.github.io/images/logo.png">
 <!-- ads -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Marks Percentage Calculator Hindi","applicationCategory":"EducationalApplication","operatingSystem":"Web","description":"नंबर से प्रतिशत और ग्रेड कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
@@ -181,7 +189,15 @@ th{background:#e8f0fe;color:#1a73e8}
 <details><summary>Grace marks क्या हैं?</summary><p>Passing से 1–5 कम हों तो board grace देता है (policy के हिसाब से)। Result में * या # से दिखता है।</p></details>
 </div>
 <div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="cgpa-calculator.html">🎓 CGPA से Percentage कैलकुलेटर</a> · <a href="hcf-lcm-calculator.html">➗ HCF और LCM कैलकुलेटर</a> · <a href="scientific-calculator.html">🔬 वैज्ञानिक कैलकुलेटर</a> · <a href="simple-calculator.html">🧮 ऑनलाइन कैलकुलेटर</a> · <a href="number-system-converter.html">🔢 नंबर सिस्टम कन्वर्टर</a></div>
-<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+<h2>मार्कशीट के निशान (*, #, RL) क्या बताते हैं?</h2>
+<p>Result में अंकों के साथ कुछ निशान भी होते हैं - इन्हें नजरअंदाज न करें:</p>
+<ul>
+<li><strong>* (तारा):</strong> अक्सर grace marks मिलने का निशान - यानी आप पासिंग से थोड़े ही ऊपर हैं।</li>
+<li><strong># (हैश):</strong> कई boards में grace/moderation का दूसरा निशान।</li>
+<li><strong>RL / RT / UFM:</strong> Result Late / Result Withheld / अनुचित साधन जैसे प्रशासनिक codes - ऐसे में board/स्कूल कार्यालय से ही स्थिति साफ कराएं।</li>
+</ul>
+<p>ध्यान रखें: हर board के codes थोड़े अलग होते हैं - सही मतलब अपनी marksheet के पीछे छपे निर्देशों या board की website से ही मिलाएं।</p>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>Pawan Verma · GyanTools</strong><p>यह गाइड Pawan Verma ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 
@@ -202,7 +218,7 @@ function grade(p){
 function addRow(){
   var d = document.createElement('div');
   d.className = 'srow';
-  d.innerHTML = '<input type="text" placeholder="विषय"><input type="number" class="obt" placeholder="प्राप्त" min="0" step="any"><input type="number" class="max" placeholder="कुल" min="1" step="any">';
+  d.innerHTML = '<input type="text" placeholder="विषय" aria-label="विषय का नाम"><input type="number" class="obt" placeholder="प्राप्त" aria-label="प्राप्त अंक" min="0" step="any"><input type="number" class="max" placeholder="कुल" aria-label="कुल अंक" min="1" step="any">';
   document.getElementById('rows').appendChild(d);
 }
 function removeRow(){
