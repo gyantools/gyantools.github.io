@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-adsense-account" content="ca-pub-7660664276583367">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>EMI Calculator in Hindi – लोन की मासिक किश्त निकालें (Home, Car, Personal Loan)</title>
+<meta name="description" content="फ्री EMI कैलकुलेटर हिंदी में – लोन राशि, ब्याज दर और समय डालकर मासिक किश्त, कुल ब्याज और कुल भुगतान जानें। Home Loan, Car Loan, Personal Loan सबके लिए।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="EMI Calculator in Hindi – लोन किश्त कैलकुलेटर">
+<meta property="og:description" content="लोन की मासिक EMI, कुल ब्याज और कुल भुगतान सेकंडों में निकालें।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/emi-calculator.html">
+<!-- GOOGLE ADSENSE: Approval ke baad yahan script paste karein -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EMI Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"लोन की मासिक किश्त (EMI) कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/emi-calculator.html">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"EMI kaise calculate ki jaati hai?","acceptedAnswer":{"@type":"Answer","text":"EMI ka formula P × R × (1+R)^N ÷ ((1+R)^N − 1) hai, jisme P loan raashi, R maasik byaaj dar aur N kul mahine hain. Aap upar diye calculator me raashi, dar aur samay daalkar turant EMI nikaal sakte hain."}},
+{"@type":"Question","name":"Kya EMI ki avadhi badhane se kul byaaj badhta hai?","acceptedAnswer":{"@type":"Answer","text":"Haan. Avadhi badhane se maasik kisht kam hoti hai, lekin kul byaaj kaafi badh jaata hai. Isliye utni hi avadhi rakhein jitni kisht aap aaraam se de sakein."}},
+{"@type":"Question","name":"Prepayment karne se kya fayda hota hai?","acceptedAnswer":{"@type":"Answer","text":"Loan ke shuruati saalon me prepayment sabse zyada faydemand hota hai, kyunki shuruati kishton me byaaj ka hissa zyada hota hai. RBI ke naye niyam se floating rate loan par prepayment penalty nahi lagti."}},
+{"@type":"Question","name":"CIBIL score ka EMI par kya asar padta hai?","acceptedAnswer":{"@type":"Answer","text":"750 ya usse upar CIBIL score hone par bank aam taur par kam byaaj dar dete hain, jisse EMI kam banti hai. Kam score par dar zyada lag sakti hai ya loan reject bhi ho sakta hai."}},
+{"@type":"Question","name":"Kya Home Loan ki EMI par tax chhoot milti hai?","acceptedAnswer":{"@type":"Answer","text":"Haan, purani tax regime me section 24(b) ke tahat byaaj par 2 lakh rupaye tak aur section 80C me mool raashi par 1.5 lakh rupaye tak chhoot milti hai."}},
+{"@type":"Question","name":"EMI miss ho jaaye to kya hota hai?","acceptedAnswer":{"@type":"Answer","text":"EMI miss hone par bank late fee lagata hai aur CIBIL score kharab hota hai. Lagataar 2-3 EMI miss hone par bank recovery notice bhej sakta hai, isliye dikkat ho to turant bank se baat karein."}},
+{"@type":"Question","name":"0% EMI ka sach kya hai?","acceptedAnswer":{"@type":"Answer","text":"Zyadatar 0% EMI me byaaj pehle se keemat me juda hota hai ya processing fee li jaati hai. Asli cash discount se tulna karke hi faisla lein."}},
+{"@type":"Question","name":"Part-payment aur prepayment me kya antar hai?","acceptedAnswer":{"@type":"Answer","text":"Part-payment me loan ka kuch hissa beech me jama kiya jaata hai, jabki prepayment (foreclosure) me poora loan ek saath band kar diya jaata hai. Dono se byaaj bachta hai."}}
+]}
+</script>
+
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › EMI कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>💰 EMI कैलकुलेटर – मासिक किश्त निकालें</h1>
+    <p>लोन की राशि, ब्याज दर और समय भरें – आपकी EMI तुरंत निकल आएगी।</p>
+    <label for="amount">लोन राशि (₹)</label>
+    <input type="number" id="amount" placeholder="जैसे: 500000" min="1">
+    <label for="rate">सालाना ब्याज दर (%)</label>
+    <input type="number" id="rate" placeholder="जैसे: 9.5" step="0.01" min="0">
+    <label for="years">लोन अवधि (साल में)</label>
+    <input type="number" id="years" placeholder="जैसे: 20" min="0.5" step="0.5">
+    <button onclick="calcEMI()">EMI निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <span class="gt-updated">✅ आखिरी अपडेट: 11 सितंबर 2026</span>
+    <h2>EMI क्या होती है? (आसान भाषा में)</h2>
+    <p>EMI का पूरा नाम <strong>Equated Monthly Installment</strong> (समान मासिक किश्त) है। जब आप बैंक या किसी finance कंपनी से लोन लेते हैं – जैसे Home Loan, Car Loan, Personal Loan या Education Loan – तो वह राशि ब्याज समेत बराबर-बराबर महीनों में लौटाई जाती है। यही मासिक किश्त EMI कहलाती है।</p>
+    <p>एक उदाहरण से समझिए: मान लीजिए आपने <strong>₹5,00,000 का Personal Loan</strong> 5 साल के लिए लिया। बैंक यह रकम आपको एक साथ दे देगा, और आप अगले 60 महीनों तक हर महीने एक तय रकम (लगभग ₹10,501) लौटाते रहेंगे। इस तय रकम में मूल राशि (principal) का कुछ हिस्सा + उस महीने का ब्याज – दोनों शामिल होते हैं।</p>
+    <h2>EMI कैलकुलेटर कैसे इस्तेमाल करें? (6 आसान स्टेप)</h2>
+    <ol>
+      <li><strong>लोन राशि भरें</strong> – जितना लोन चाहिए, जैसे 500000 (₹5 लाख)।</li>
+      <li><strong>सालाना ब्याज दर भरें</strong> – बैंक जो दर बता रहा है, जैसे 9.5। अलग-अलग बैंकों की दरें अलग होती हैं, इसलिए 2–3 बैंकों से पूछकर तुलना ज़रूर करें।</li>
+      <li><strong>लोन अवधि भरें</strong> – कितने साल में चुकाना है, जैसे 5।</li>
+      <li><strong>"EMI निकालें" बटन दबाएं</strong> – नतीजा तुरंत नीचे दिख जाएगा।</li>
+      <li><strong>तीनों आंकड़े देखें</strong> – मासिक EMI, कुल ब्याज और कुल भुगतान। सिर्फ EMI देखकर फैसला न लें – <strong>कुल ब्याज</strong> देखना सबसे ज़रूरी है।</li>
+      <li><strong>अवधि बदलकर दोबारा जांचें</strong> – 3 साल, 5 साल, 7 साल डालकर देखें कि किश्त और ब्याज कैसे बदलते हैं। नीचे दी गई table में इसका नमूना भी दिया है।</li>
+    </ol>
+    <h2>EMI का फॉर्मूला (और हल सहित उदाहरण)</h2>
+    <p>EMI = <strong>P × R × (1+R)^N ÷ ((1+R)^N − 1)</strong></p>
+    <ul>
+      <li><strong>P</strong> = मूल लोन राशि (Principal)</li>
+      <li><strong>R</strong> = मासिक ब्याज दर (सालाना दर ÷ 12 ÷ 100)</li>
+      <li><strong>N</strong> = कुल महीने (साल × 12)</li>
+    </ul>
+    <div class="note">💡 <strong>हल सहित उदाहरण 1:</strong> ₹5,00,000 का लोन, 9.5% ब्याज, 5 साल (60 महीने) में → मासिक दर R = 9.5 ÷ 1200 = 0.007917। फॉर्मूले में रखने पर EMI ≈ <strong>₹10,501</strong>, कुल ब्याज ≈ ₹1,30,056, कुल भुगतान ≈ ₹6,30,056।</div>
+    <div class="note">💡 <strong>हल सहित उदाहरण 2 (Home Loan):</strong> ₹30,00,000 का Home Loan, 8.5% ब्याज, 20 साल (240 महीने) में → EMI ≈ <strong>₹26,035</strong>, कुल ब्याज ≈ ₹32,48,000, कुल भुगतान ≈ ₹62,48,000। ध्यान दीजिए – 20 साल में ब्याज मूल राशि से भी ज़्यादा हो गया! इसीलिए बीच-बीच में part-payment करना बहुत फायदेमंद होता है।</div>
+    <h2>अलग-अलग लोन की ब्याज दरें (2026 का अनुमान)</h2>
+    <p>नीचे दी गई दरें बाज़ार की आम दरें हैं – असली दर आपके CIBIL score, आय और बैंक के हिसाब से बदल सकती है:</p>
+    <table class="gt-table">
+      <tr><th>लोन का प्रकार</th><th>आम ब्याज दर (सालाना)</th><th>आम अवधि</th></tr>
+      <tr><td>Home Loan</td><td>8.5% – 9.5%</td><td>10 – 30 साल</td></tr>
+      <tr><td>Car Loan</td><td>9% – 11%</td><td>3 – 7 साल</td></tr>
+      <tr><td>Personal Loan</td><td>11% – 15%</td><td>1 – 5 साल</td></tr>
+      <tr><td>Education Loan</td><td>9% – 12%</td><td>5 – 15 साल</td></tr>
+      <tr><td>Gold Loan</td><td>9% – 12%</td><td>6 महीने – 3 साल</td></tr>
+    </table>
+    <h2>अवधि बढ़ाने से किश्त और ब्याज पर क्या असर? (₹5 लाख, 10% दर)</h2>
+    <table class="gt-table">
+      <tr><th>अवधि</th><th>मासिक EMI (लगभग)</th><th>कुल ब्याज (लगभग)</th></tr>
+      <tr><td>2 साल</td><td>₹23,073</td><td>₹53,752</td></tr>
+      <tr><td>3 साल</td><td>₹16,133</td><td>₹80,788</td></tr>
+      <tr><td>5 साल</td><td>₹10,623</td><td>₹1,37,380</td></tr>
+    </table>
+    <p>Table से साफ दिखता है – <strong>किश्त आधी करने की कीमत ब्याज दोगुना</strong> हो जाती है। सुनहरा नियम: उतनी ही अवधि रखें जिसकी किश्त आपकी मासिक आय के <strong>30–40% से ज़्यादा न हो</strong>।</p>
+    <h2>EMI घटाने के 7 आज़माए हुए तरीके</h2>
+    <ul>
+      <li><strong>Down payment ज़्यादा दें</strong> – लोन की राशि कम होगी तो EMI अपने आप कम बनेगी। Car/Home लेते समय 20–30% down payment की कोशिश करें।</li>
+      <li><strong>ब्याज दरों की तुलना करें</strong> – 0.5% दर का अंतर भी 20 साल के Home Loan में लाखों बचा सकता है। कम से कम 3 बैंकों/NBFC से quote लें।</li>
+      <li><strong>CIBIL score 750+ रखें</strong> – अच्छा score होने पर बैंक सस्ती दर देता है। समय पर EMI/क्रेडिट कार्ड चुकाना ही score बढ़ाने का सबसे आसान तरीका है।</li>
+      <li><strong>Prepayment / Part-payment करें</strong> – बोनस या बचत से बीच में extra पैसा जमा करें। लोन के शुरुआती सालों में इसका सबसे ज़्यादा फायदा मिलता है।</li>
+      <li><strong>Balance Transfer कराएं</strong> – अगर दूसरा बैंक काफी सस्ती दर दे रहा है तो लोन transfer कराएं, पर processing fee और बची अवधि का हिसाब ज़रूर लगाएं।</li>
+      <li><strong>अवधि सोच-समझकर बढ़ाएं</strong> – किश्त कम होगी, लेकिन कुल ब्याज बढ़ेगा। यह आखिरी विकल्प रखें, पहला नहीं।</li>
+      <li><strong>Moratorium का लालच न करें</strong> – "3 महीने बाद से EMI" जैसी स्कीम में उन महीनों का ब्याज मूल राशि में जुड़ जाता है – मुफ्त कुछ नहीं होता।</li>
+    </ul>
+    <h2>किश्तों का हिसाब कैसे बनता है? (Amortization)</h2>
+    <p>शुरुआती किश्तों में <strong>ब्याज का हिस्सा ज़्यादा</strong> होता है और मूल राशि (principal) कम। समय के साथ यह उलट जाता है – आखिरी किश्तों में लगभग पूरी रकम मूल राशि होती है। इसीलिए लोन के शुरुआती सालों में prepayment सबसे ज़्यादा फायदेमंद होता है। महीने-दर-महीने पूरा ब्योरा देखने के लिए हमारा <a href="emi-table-calculator.html">EMI Table Calculator</a> इस्तेमाल करें।</p>
+    <h2>लोन लेते समय 5 आम गलतियां (इनसे बचें)</h2>
+    <ol>
+      <li><strong>सिर्फ EMI देखकर फैसला</strong> – हमेशा कुल ब्याज और कुल भुगतान भी देखें।</li>
+      <li><strong>Processing fee और hidden charges न पूछना</strong> – 1–2% processing fee + GST भी बड़ी रकम बनती है।</li>
+      <li><strong>Fixed vs Floating न समझना</strong> – Floating दर घट-बढ़ सकती है; Home Loan में ज़्यादातर लोग floating ही लेते हैं।</li>
+      <li><strong>Insurance ज़बरदस्ती ले लेना</strong> – लोन के साथ बीमा लेना अनिवार्य नहीं होता, बैंक दबाव नहीं बना सकता।</li>
+      <li><strong>EMI आय से ज़्यादा रखना</strong> – सारी EMI मिलाकर मासिक आय के 40% से ऊपर जाना खतरे की घंटी है।</li>
+    </ol>
+    <h2>EMI के बारे में अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+    <div class="gt-faq">
+      <details><summary>EMI कैसे calculate की जाती है?</summary><p>EMI का फॉर्मूला P × R × (1+R)^N ÷ ((1+R)^N − 1) है। ऊपर दिए calculator में राशि, दर और समय डालकर आप सेकंडों में सटीक EMI निकाल सकते हैं।</p></details>
+      <details><summary>क्या अवधि बढ़ाने से कुल ब्याज बढ़ता है?</summary><p>हां। अवधि बढ़ाने से मासिक किश्त कम होती है, लेकिन कुल ब्याज काफी बढ़ जाता है – ऊपर दी table में आप खुद देख सकते हैं।</p></details>
+      <details><summary>Prepayment कब सबसे फायदेमंद होता है?</summary><p>लोन के शुरुआती 2–3 सालों में, क्योंकि तब किश्तों में ब्याज का हिस्सा सबसे ज़्यादा होता है। RBI के नियम से floating rate loan पर prepayment penalty नहीं लगती।</p></details>
+      <details><summary>CIBIL score का EMI पर क्या असर पड़ता है?</summary><p>750+ score पर बैंक सस्ती दर देता है, जिससे EMI कम बनती है। कम score पर दर ज़्यादा लग सकती है या लोन reject भी हो सकता है।</p></details>
+      <details><summary>क्या Home Loan EMI पर tax छूट मिलती है?</summary><p>हां, पुरानी regime में section 24(b) के तहत ब्याज पर ₹2 लाख तक और 80C में मूल राशि पर ₹1.5 लाख तक छूट मिलती है। पूरी जानकारी के लिए <a href="home-loan-tax.html">Home Loan Tax Calculator</a> देखें।</p></details>
+      <details><summary>EMI miss हो जाए तो क्या होता है?</summary><p>बैंक late fee लगाता है और CIBIL score खराब होता है। लगातार 2–3 EMI miss होने पर recovery notice आ सकता है – दिक्कत हो तो तुरंत बैंक से बात करें।</p></details>
+      <details><summary>0% EMI का सच क्या है?</summary><p>ज़्यादातर 0% EMI में ब्याज पहले से कीमत में जुड़ा होता है या processing fee ली जाती है। Cash discount से तुलना करके ही फैसला लें।</p></details>
+      <details><summary>Part-payment और prepayment में क्या अंतर है?</summary><p>Part-payment में लोन का कुछ हिस्सा बीच में जमा होता है, जबकि prepayment (foreclosure) में पूरा लोन एक साथ बंद कर दिया जाता है। <a href="loan-prepayment-calculator.html">Loan Prepayment Calculator</a> से बचत का हिसाब लगाएं।</p></details>
+    </div>
+    <div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="emi-table-calculator.html">EMI Table</a> · <a href="loan-prepayment-calculator.html">Loan Prepayment</a> · <a href="home-loan-tax.html">Home Loan Tax</a> · <a href="loan-eligibility-calculator.html">Loan Eligibility</a> · <a href="interest-calculator.html">ब्याज कैलकुलेटर</a> · <a href="../blog/cibil-credit-score-guide.html">CIBIL Score गाइड</a></div>
+    <div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली EMI बैंक की दर और शर्तों पर निर्भर करती है। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+    <div class="note">🔒 आपकी जानकारी कहीं नहीं जाती – calculation आपके ब्राउज़र में ही होता है।</div>
+    <div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने बैंकिंग स्रोतों और RBI के नियमों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+
+<script>
+function calcEMI(){
+  var P = parseFloat(document.getElementById('amount').value);
+  var R = parseFloat(document.getElementById('rate').value);
+  var Y = parseFloat(document.getElementById('years').value);
+  var out = document.getElementById('out');
+  if(!P || P<=0 || isNaN(R) || isNaN(Y) || Y<=0){ out.style.display='block'; out.innerHTML='⚠️ कृपया सभी जानकारी सही भरें।'; return; }
+  var r = R/1200, n = Math.round(Y*12), emi;
+  if(r === 0){ emi = P/n; }
+  else { emi = P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1); }
+  var total = emi*n, interest = total-P;
+  out.style.display='block';
+  out.innerHTML = '<div class="big">मासिक EMI: ₹' + emi.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</div>'
+    + '<p>कुल ब्याज: <strong>₹' + interest.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</strong></p>'
+    + '<p>कुल भुगतान (ब्याज समेत): <strong>₹' + total.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</strong></p>'
+    + '<p>कुल किश्तें: <strong>' + n + '</strong> (' + Y + ' साल)</p>';
+}
+</script>
+</body>
+</html>
