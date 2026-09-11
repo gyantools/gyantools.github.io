@@ -52,8 +52,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/games/dots-and-boxes.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "जीतने की strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Sacrifice trick: आखिर में chains opponent को दो – 'loony' move से बचो! Control strategy: छोटे chains बनाओ, बड़े avoid करो।"}}, {"@type": "Question", "name": "ये game कितना पुराना?", "acceptedAnswer": {"@type": "Answer", "text": "1889 French mathematician Édouard Lucas ने बनाया ('La Pipopipette')। 130+ साल – कागज़ से phone तक!"}}, {"@type": "Question", "name": "Extra turn rule?", "acceptedAnswer": {"@type": "Answer", "text": "Box पूरा करने पर उसी की बारी जारी – chain में 5–6 boxes एक साथ! Endgame में यही win/lose तय करता है।"}}, {"@type": "Question", "name": "Computer strong है?", "acceptedAnswer": {"@type": "Answer", "text": "Greedy + chain-control logic – casual players के लिए solid challenge। Experts sacrifice-trick से हराएंगे!"}}, {"@type": "Question", "name": "बच्चों को क्या सिखाता है?", "acceptedAnswer": {"@type": "Answer", "text": "Counting + planning + fine-motor (line खींचना)। 5+ उम्र – school-break का best game!"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -102,7 +124,40 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
     <h2>जीतने की ट्रिक</h2>
     <p>सबसे बड़ी चाल: <strong>तीसरी लाइन वाले बक्से मत बनाओ</strong> – वरना विरोधी चौथी लाइन लगाकर बक्सा ले लेगा और लगातार खेलता रहेगा। बड़े खिलाड़ी ऐसी लाइनें खींचते हैं जिनसे एक साथ दो बक्से बनें, या इंतज़ार करते हैं कि विरोधी मजबूर होकर तुम्हें मौका दे। कंप्यूटर भी यही समझदारी से खेलता है!</p>
     <p>और 2-प्लेयर गेम: <a href="tic-tac-toe.html" style="color:#1a73e8">टिक टैक टो</a>, <a href="connect-four.html" style="color:#1a73e8">४ गेंद जोड़ो (Connect Four)</a> और मस्ती के लिए <a href="2048.html" style="color:#1a73e8">2048</a>।</p>
-  </article>
+  
+<h2>Dots & Boxes कैसे खेलें?</h2>
+<ol>
+<li><strong>Line खींचो</strong> – 2 dots के बीच (बारी-बारी)।</li>
+<li><strong>Box पूरा</strong> करो = 1 point + <strong>extra turn!</strong>।</li>
+<li><strong>सबसे ज़्यादा boxes</strong> = winner।</li>
+<li><strong>2P / Computer</strong> – दोनों modes।</li>
+<li>बचपन का game – <strong>अब phone पर!</strong></li>
+</ol>
+<h2>Game Phases</h2>
+<table class="gt-table"><tr><th>Phase</th><th>क्या करें</th></tr><tr><td>Opening</td><td>3-side boxes मत बनाओ!</td></tr><tr><td>Mid</td><td>Chains गिनो, छोटे रखो</td></tr><tr><td>Endgame</td><td>Sacrifice – छोटे chains दो, बड़े लो!</td></tr></table>
+<div class="note">💡 <strong>Chain rule:</strong> आखिर में जो chains देगा वो हारेगा! Trick: छोटी chains (1–2 boxes) opponent को देकर बड़ी (5+) खुद लो। 'Greedy लेना' अक्सर हारता है – control जीतता है!</div>
+<h2>Dots Master के 5 सूत्र</h2>
+<ul>
+<li><strong>3rd side avoid</strong> – box देना = free point!।</li>
+<li><strong>Chains गिनो</strong> – endgame पहले से plan करो।</li>
+<li><strong>Sacrifice सीखो</strong> – 2 देकर 6 लो!।</li>
+<li><strong>Center पहले</strong> – edges बाद में।</li>
+<li><strong>Count always</strong> – score + बचे boxes track करो।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>जीतने की strategy?</summary><p>Sacrifice trick: आखिर में chains opponent को दो – 'loony' move से बचो! Control strategy: छोटे chains बनाओ, बड़े avoid करो।</p></details>
+<details><summary>ये game कितना पुराना?</summary><p>1889 French mathematician Édouard Lucas ने बनाया ('La Pipopipette')। 130+ साल – कागज़ से phone तक!</p></details>
+<details><summary>Extra turn rule?</summary><p>Box पूरा करने पर उसी की बारी जारी – chain में 5–6 boxes एक साथ! Endgame में यही win/lose तय करता है।</p></details>
+<details><summary>Computer strong है?</summary><p>Greedy + chain-control logic – casual players के लिए solid challenge। Experts sacrifice-trick से हराएंगे!</p></details>
+<details><summary>बच्चों को क्या सिखाता है?</summary><p>Counting + planning + fine-motor (line खींचना)। 5+ उम्र – school-break का best game!</p></details>
+</div>
+<div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="gk-quiz.html">🧠 भारत GK क्विज़ – All India</a> · <a href="math-quiz.html">➗ गणित क्विज़ (Math Quiz)</a> · <a href="memory-game.html">🃏 जोड़ी मिलाओ – Memory गेम</a> · <a href="memory-match.html">🃏 मेमोरी मैच (Memory Match)</a> · <a href="nine-mens-morris.html">🔘 नौ पत्थरी (Nine Men&#x27;s Morris)</a></div>
+<h2>Chain Counting सीखो (1 उदाहरण)</h2>
+<p>Endgame में board chains (जुड़े खाली boxes) में बंट जाता है। उदाहरण: 3-chain + 5-chain बची हैं और तुम्हारी बारी। <strong>गलत:</strong> 3-chain ले लो (3 points) – फिर opponent 5-chain लेगा (5 points) = तुम हारे! <strong>सही:</strong> 3-chain में से सिर्फ 1–2 लेकर control छोड़ो (sacrifice), फिर 5-chain पूरी लो = तुम जीते! यही 'loony move' theory है – छोटा दो, बड़ा लो।</p>
+<p>Practice drill: <strong>खाली 3×3 board</strong> पर अकेले खेलो और chains गिनो। 10 games में counting automatic हो जाएगी – फिर computer क्या, दोस्त भी नहीं जीत पाएंगे!</p>
+<div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें!</p></div></div>
+</article>
 </div>
 
 <footer>

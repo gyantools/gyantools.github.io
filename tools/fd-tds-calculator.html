@@ -49,8 +49,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/fd-tds-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "FD पर TDS कब कटता है?", "acceptedAnswer": {"@type": "Answer", "text": "एक bank में सालाना ब्याज ₹50,000 (senior ₹1L) से ज़्यादा हो तो 10% TDS। सीमा से कम ब्याज पर कोई TDS नहीं।"}}, {"@type": "Question", "name": "TDS से कैसे बचें?", "acceptedAnswer": {"@type": "Answer", "text": "कुल income tax-free सीमा के अंदर हो तो bank में Form 15G (60 से कम) / 15H (senior) जमा करें। ब्याज slab से taxable फिर भी रहेगा।"}}, {"@type": "Question", "name": "PAN न देने पर क्या होगा?", "acceptedAnswer": {"@type": "Answer", "text": "20% TDS कटेगा (10% की जगह) और refund में दिक्कत होगी। Bank में PAN हमेशा update रखें।"}}, {"@type": "Question", "name": "कटा TDS वापस कैसे मिलेगा?", "acceptedAnswer": {"@type": "Answer", "text": "ITR file करें – 26AS/AIS में दिखा TDS आपकी liability से adjust होगा, extra रकम refund बनकर bank में आएगी।"}}, {"@type": "Question", "name": "क्या post office MIS/TD पर TDS है?", "acceptedAnswer": {"@type": "Answer", "text": "हां, post office ब्याज पर भी TDS नियम लागू होते हैं – सीमा से ज़्यादा ब्याज पर 10% TDS।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -121,6 +143,37 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 
   <h2>संबंधित टूल्स</h2>
   <p>FD की मैच्योरिटी: <a href="fd-calculator.html" style="color:#1a73e8">FD कैलकुलेटर</a> | पोस्ट ऑफिस FD: <a href="post-office-td.html" style="color:#1a73e8">पोस्ट ऑफिस TD कैलकुलेटर</a> | टैक्स: <a href="income-tax-calculator.html" style="color:#1a73e8">Income Tax कैलकुलेटर</a> | गाइड: <a href="../blog/bank-fd-interest-rates-2026.html" style="color:#1a73e8">Bank FD Rates गाइड</a></p>
+
+<h2>FD TDS कैसे निकालें?</h2>
+<ol>
+<li>एक bank में <strong>सालाना कुल FD ब्याज</strong> भरें (सारी FDs जोड़कर)।</li>
+<li><strong>उम्र category</strong> चुनें – general (₹50,000 सीमा) या senior citizen (₹1,00,000 सीमा)।</li>
+<li><strong>PAN status</strong> बताएं – PAN हो तो 10%, न हो तो 20% TDS!</li>
+<li><strong>Calculate दबाएं</strong> – TDS + net ब्याज + 15G/H eligibility दिखेगी।</li>
+<li>TDS कटा हो तो <strong>Form 26AS/AIS</strong> में entry ज़रूर check करें।</li>
+</ol>
+<h2>TDS Threshold 2026 (Budget 2025 से)</h2>
+<table class="gt-table"><tr><th>जमाकर्ता</th><th>सालाना सीमा (प्रति bank)</th><th>TDS Rate</th></tr><tr><td>General (60 से कम)</td><td>₹50,000</td><td>10% (PAN पर)</td></tr><tr><td>Senior citizen (60+)</td><td>₹1,00,000</td><td>10% (PAN पर)</td></tr><tr><td>PAN न हो</td><td>वही सीमा</td><td>20%!</td></tr></table>
+<div class="note">💡 <strong>15G/H का जादू:</strong> कुल income tax-सीमा से कम हो तो Form 15G (60 से कम) / 15H (senior) bank में जमा करें – <strong>TDS zero!</strong> हर financial year की शुरुआत (अप्रैल) में देना न भूलें।</div>
+<h2>TDS से जुड़े 5 नियम</h2>
+<ul>
+<li><strong>सीमा प्रति bank है</strong> – 3 banks में ₹40K-₹40K ब्याज = किसी पर TDS नहीं (पर ITR में ₹1.2L दिखाएं!)।</li>
+<li><strong>TDS ≠ Final tax</strong> – 10% कटा हो और slab 30% हो तो बाकी 20% ITR में देना होगा।</li>
+<li><strong>Refund</strong> – ज़्यादा कटा TDS ITR भरने पर वापस मिलता है।</li>
+<li><strong>RD ब्याज पर भी</strong> यही नियम (bank RD TDS में गिना जाता है)।</li>
+<li><strong>15G/H गलत दिया</strong> तो penalty – सिर्फ eligible हों तभी दें।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>FD पर TDS कब कटता है?</summary><p>एक bank में सालाना ब्याज ₹50,000 (senior ₹1L) से ज़्यादा हो तो 10% TDS। सीमा से कम ब्याज पर कोई TDS नहीं।</p></details>
+<details><summary>TDS से कैसे बचें?</summary><p>कुल income tax-free सीमा के अंदर हो तो bank में Form 15G (60 से कम) / 15H (senior) जमा करें। ब्याज slab से taxable फिर भी रहेगा।</p></details>
+<details><summary>PAN न देने पर क्या होगा?</summary><p>20% TDS कटेगा (10% की जगह) और refund में दिक्कत होगी। Bank में PAN हमेशा update रखें।</p></details>
+<details><summary>कटा TDS वापस कैसे मिलेगा?</summary><p>ITR file करें – 26AS/AIS में दिखा TDS आपकी liability से adjust होगा, extra रकम refund बनकर bank में आएगी।</p></details>
+<details><summary>क्या post office MIS/TD पर TDS है?</summary><p>हां, post office ब्याज पर भी TDS नियम लागू होते हैं – सीमा से ज़्यादा ब्याज पर 10% TDS।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="ppf-calculator.html">🏦 PPF कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 
 <script>

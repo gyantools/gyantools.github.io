@@ -49,8 +49,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/dice-coin.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "क्या सच में random है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – browser crypto-grade random (Math.random + unbiased)। असली पासे जैसी probability, धांधली zero!"}}, {"@type": "Question", "name": "Ludo में इस्तेमाल कर सकते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "बिल्कुल – board असली, पासा digital। Roll history से विवाद भी खत्म!"}}, {"@type": "Question", "name": "Toss fair कैसे होगा?", "acceptedAnswer": {"@type": "Answer", "text": "एक call करे (Head), दूसरा flip दबाए – screen सबके सामने। Best-of-3 series सबसे fair।"}}, {"@type": "Question", "name": "Probability क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "हर number 1/6 (≈16.7%)। 100 rolls में ~17 बार हर number – long-run में बराबर!"}}, {"@type": "Question", "name": "2 पासों का total?", "acceptedAnswer": {"@type": "Answer", "text": "7 सबसे common (6/36 combos), 2 और 12 सबसे rare (1/36)। Board-game strategy में काम का!"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -126,6 +148,36 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 </ul>
 <p>टिप: बार-बार फेंकने पर पैटर्न नहीं बनता – हर बार पिछले नतीजे से पूरी तरह स्वतंत्र होता है। अगर कोई कहे "अब तो बार-बार 6 आ रहा है" – यह सिर्फ संयोग है, अगले बार फिर 1/6 ही मौका है।</p>
 
+
+<h2>Dice & Coin कैसे चलाएं?</h2>
+<ol>
+<li><strong>पासा:</strong> Roll दबाएं – 1–6 random (Ludo सांप-सीढ़ी के लिए)।</li>
+<li><strong>Multi-dice:</strong> 2–6 पासे एक साथ (games + probability)।</li>
+<li><strong>सिक्का:</strong> Flip – Head/Tails (toss/faisla)।</li>
+<li><strong>Best-of mode:</strong> RPS/toss series में winner track करें।</li>
+<li>असली पासा खो जाए तो <strong>phone ही पासा!</strong> 📱</li>
+</ol>
+<h2>2 पासों के Total की Probability</h2>
+<table class="gt-table"><tr><th>Total</th><th>तरीके (36 में)</th><th>Chance</th></tr><tr><td>2 / 12</td><td>1</td><td>2.8%</td></tr><tr><td>3 / 11</td><td>2</td><td>5.6%</td></tr><tr><td>6 / 8</td><td>5</td><td>13.9%</td></tr><tr><td>7 ⭐</td><td>6</td><td>16.7%</td></tr></table>
+<div class="note">💡 <strong>7 सबसे common!</strong> Board games (Catan/Monopoly) की strategy इसी पर बनती है। Coin 10 बार Head आए तो अगली बार भी 50-50 – <strong>Gambler fallacy</strong> से बचो!</div>
+<h2>Fair Play के 5 नियम</h2>
+<ul>
+<li><strong>Screen सामने</strong> – सब देखें, विवाद zero।</li>
+<li><strong>Best-of-3</strong> – 1 toss से ज़्यादा fair।</li>
+<li><strong>Roll history</strong> – screenshot = proof।</li>
+<li><strong>Stuck dice?</strong> – re-roll rule पहले तय करो।</li>
+<li><strong>Kids:</strong> बारी-बारी दबाने दो – झगड़ा खत्म!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>क्या सच में random है?</summary><p>हां – browser crypto-grade random (Math.random + unbiased)। असली पासे जैसी probability, धांधली zero!</p></details>
+<details><summary>Ludo में इस्तेमाल कर सकते हैं?</summary><p>बिल्कुल – board असली, पासा digital। Roll history से विवाद भी खत्म!</p></details>
+<details><summary>Toss fair कैसे होगा?</summary><p>एक call करे (Head), दूसरा flip दबाए – screen सबके सामने। Best-of-3 series सबसे fair।</p></details>
+<details><summary>Probability क्या है?</summary><p>हर number 1/6 (≈16.7%)। 100 rolls में ~17 बार हर number – long-run में बराबर!</p></details>
+<details><summary>2 पासों का total?</summary><p>7 सबसे common (6/36 combos), 2 और 12 सबसे rare (1/36)। Board-game strategy में काम का!</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="password-generator.html">🔐 मज़बूत पासवर्ड जनरेटर</a> · <a href="online-notepad.html">🗒️ ऑनलाइन नोटपैड</a> · <a href="todo-list.html">✅ काम की सूची (To-Do List)</a> · <a href="stopwatch-timer.html">⏱️ स्टॉपवॉच &amp; टाइमर</a> · <a href="lucky-draw-picker.html">🎰 लकी ड्रा पिकर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 

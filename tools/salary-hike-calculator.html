@@ -48,8 +48,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/salary-hike-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "अच्छा hike % कितना माना जाता है?", "acceptedAnswer": {"@type": "Answer", "text": "एक ही company में 10–15% अच्छा, 15%+ बहुत अच्छा। Job switch पर 25–40% आम है। महंगाई (~6%) से ऊपर ही असली बढ़त है।"}}, {"@type": "Question", "name": "क्या hike पर tax ज़्यादा लगता है?", "acceptedAnswer": {"@type": "Answer", "text": "Hike आपकी slab rate से taxable है – नई regime में ₹12.75L तक zero tax याद रखें। Hike के बाद regime दोबारा compare करें।"}}, {"@type": "Question", "name": "Appraisal rating और hike का क्या संबंध?", "acceptedAnswer": {"@type": "Answer", "text": "ज़्यादातर companies में bell-curve/budget से hike बंधा होता है – top rating वालों को औसत से 1.5–2x hike मिलता है।"}}, {"@type": "Question", "name": "Hike letter में क्या check करें?", "acceptedAnswer": {"@type": "Answer", "text": "नई CTC, fixed vs variable %, effective date, arrears, और bond/notice-period की शर्तें।"}}, {"@type": "Question", "name": "Switch कब करना चाहिए?", "acceptedAnswer": {"@type": "Answer", "text": "2–4 साल में skill + salary दोनों अटक जाएं तो। हर 6 महीने में switch करना CV खराब करता है।"}}]}
+</script>
+
 </head><body>
 <header>
   <div class="container nav">
@@ -121,6 +143,38 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
   <h2>भारत में appraisal कैसे काम करता है?</h2>
   <p>ज्यादातर कंपनियों में साल में एक बार appraisal होता है – आमतौर पर अप्रैल-जुलाई के बीच (financial year की शुरुआत में)। प्रक्रिया: self-appraisal (खुद का आकलन) → मैनेजर की रेटिंग → कंपनी का बजट (hike pool आमतौर पर CTC का 6-10%) → अंतिम हाइक। कई कंपनियों में सैलरी का कुछ हिस्सा <strong>वेरिएबल (performance bonus)</strong> होता है – हाइक की बात करते समय fixed और variable का अंतर जरूर पूछें, क्योंकि variable हर साल नहीं मिलता। नई नौकरी के समय negotiation में पिछली सैलरी की स्लिप और दूसरे ऑफर का इस्तेमाल करें।</p>
 
+
+<h2>Hike Calculator कैसे इस्तेमाल करें?</h2>
+<ol>
+<li><strong>मौजूदा CTC</strong> भरें और <strong>hike %</strong> डालें → नई salary तुरंत।</li>
+<li>या <strong>target salary</strong> डालें → कितना % hike चाहिए, ये जानें।</li>
+<li><strong>मासिक बढ़त</strong> भी देखें – सालाना आंकड़ा बड़ा लगता है, असली फर्क महीने में दिखता है।</li>
+<li>Hike पर <strong>extra TDS</strong> का अंदाज़ा income-tax calculator से लगाएं।</li>
+<li>Appraisal से पहले <strong>market range</strong> (Naukri/LinkedIn) ज़रूर check करें।</li>
+</ol>
+<h2>Hike % का असली मतलब (₹6L CTC पर)</h2>
+<table class="gt-table"><tr><th>Hike</th><th>नई CTC</th><th>मासिक बढ़त (लगभग)*</th></tr><tr><td>8%</td><td>₹6,48,000</td><td>≈ ₹3,000</td></tr><tr><td>12%</td><td>₹6,72,000</td><td>≈ ₹4,500</td></tr><tr><td>20%</td><td>₹7,20,000</td><td>≈ ₹7,500</td></tr><tr><td>30% (switch)</td><td>₹7,80,000</td><td>≈ ₹11,000</td></tr></table>
+<p>*मासिक बढ़त = in-hand का ~70–75% अनुमान (PF/TDS घटाकर)। महंगाई (~6%) घटाकर देखें – 8% hike का असली फायदा सिर्फ ~2% है!</p>
+<div class="note">💡 <strong>Switch vs Stay:</strong> एक ही company में आम hike 8–12% होती है, जबकि job switch पर 25–40% तक मिल सकती है। 2–3 साल में skill बढ़ाकर switch करना salary growth का सबसे तेज़ तरीका है।</div>
+<h2>बेहतर Hike पाने के 5 तरीके</h2>
+<ul>
+<li><strong>साल भर achievements लिखें</strong> – appraisal में numbers के साथ रखें।</li>
+<li><strong>Market data साथ ले जाएं</strong> – same role की range दिखाना सबसे मज़बूत point है।</li>
+<li><strong>Counter-offer का सही इस्तेमाल</strong> – offer letter हो तो बातचीत आसान होती है।</li>
+<li><strong>Perks भी negotiate करें</strong> – WFH, bonus, courses, joining bonus।</li>
+<li><strong>Rating से पहले manager से मिलें</strong> – expectations पहले ही clear कर लें।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>अच्छा hike % कितना माना जाता है?</summary><p>एक ही company में 10–15% अच्छा, 15%+ बहुत अच्छा। Job switch पर 25–40% आम है। महंगाई (~6%) से ऊपर ही असली बढ़त है।</p></details>
+<details><summary>क्या hike पर tax ज़्यादा लगता है?</summary><p>Hike आपकी slab rate से taxable है – नई regime में ₹12.75L तक zero tax याद रखें। Hike के बाद regime दोबारा compare करें।</p></details>
+<details><summary>Appraisal rating और hike का क्या संबंध?</summary><p>ज़्यादातर companies में bell-curve/budget से hike बंधा होता है – top rating वालों को औसत से 1.5–2x hike मिलता है।</p></details>
+<details><summary>Hike letter में क्या check करें?</summary><p>नई CTC, fixed vs variable %, effective date, arrears, और bond/notice-period की शर्तें।</p></details>
+<details><summary>Switch कब करना चाहिए?</summary><p>2–4 साल में skill + salary दोनों अटक जाएं तो। हर 6 महीने में switch करना CV खराब करता है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="income-tax-calculator.html">🧾 Income Tax कैलकुलेटर – FY 2026-27 (नई रजिम)</a> · <a href="old-vs-new-tax-regime-calculator.html">⚖️ Old vs New Tax Regime Calculator (FY 2026-27) – कौन सी रेजीम में कि</a> · <a href="hra-calculator.html">🏠 HRA छूट कैलकुलेटर (HRA Exemption Calculator)</a> · <a href="inhand-salary-calculator.html">💰 In-Hand Salary कैलकुलेटर (CTC से)</a> · <a href="gratuity-calculator.html">💼 Gratuity कैलकुलेटर (ग्रेच्युटी)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 
 <script>

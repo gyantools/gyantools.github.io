@@ -54,8 +54,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/scientific-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "DEG और RAD क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Angle की unit – school/engineering sums DEG (degrees) में। sin(30°) = 0.5 सिर्फ DEG mode में! Mode हमेशा display पर check करें।"}}, {"@type": "Question", "name": "sin 30 का मान 0.5 क्यों नहीं आया?", "acceptedAnswer": {"@type": "Answer", "text": "99% chance calculator RAD mode में है। DEG पर switch करके दोबारा दबाएं – 0.5 आएगा।"}}, {"@type": "Question", "name": "log और ln में अंतर?", "acceptedAnswer": {"@type": "Answer", "text": "log = base 10, ln = base e (2.718)। Chemistry/pH में log, calculus में ln ज़्यादा लगता है।"}}, {"@type": "Question", "name": "क्या board exam में calculator allowed है?", "acceptedAnswer": {"@type": "Answer", "text": "CBSE/State boards में आमतौर पर नहीं; JEE/NEET में नहीं; कुछ competitive + college exams में non-programmable allowed। Admit card पढ़ें।"}}, {"@type": "Question", "name": "e और π की value?", "acceptedAnswer": {"@type": "Answer", "text": "π ≈ 3.14159, e ≈ 2.71828। Calculator constants exact internal value इस्तेमाल करता है।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -147,6 +169,36 @@ th{background:#e8f0fe;color:#1a73e8}
 <p>यह कैलकुलेटर स्कूल-कॉलेज के गणित और विज्ञान के हिसाबों के लिए बना है। <strong>sin, cos, tan</strong> – त्रिकोणमिति के लिए; <strong>log, ln</strong> – लघुगणक; <strong>√, x², xʸ</strong> – घात-मूल; और <strong>π, e</strong> जैसे स्थिरांक सीधे बटन से। <strong>DEG/RAD</strong> का चयन जरूरी है – कोण डिग्री में है तो DEG, रेडियन में है तो RAD चुनें, वरना जवाब गलत आएगा।</p>
 <p>उदाहरण: <em>sin 30°</em> के लिए DEG चुनकर sin दबाएं – उत्तर 0.5 आएगा। <em>√144</em> = 12, <em>2⁵</em> = 32। ब्रैकेट ( ) से जटिल हिसाबों का क्रम तय करें – जैसे (2+3)×4 = 20।</p>
 
+
+<h2>Scientific Calculator कैसे चलाएं?</h2>
+<ol>
+<li><strong>Basic:</strong> +, −, ×, ÷, %, bracket – keyboard से भी।</li>
+<li><strong>Trig:</strong> sin/cos/tan – <strong>DEG/RAD mode</strong> पहले check करें!।</li>
+<li><strong>Power/root:</strong> x², x³, √, ∛, log, ln, 10ˣ, eˣ।</li>
+<li><strong>Constants:</strong> π, e एक tap में।</li>
+<li>Exam में <strong>DEG mode</strong> ही रखें – 90% गलतियां RAD mode से!</li>
+</ol>
+<h2>Common Values Table (DEG mode!)</h2>
+<table class="gt-table"><tr><th>Angle</th><th>sin</th><th>cos</th><th>tan</th></tr><tr><td>0°</td><td>0</td><td>1</td><td>0</td></tr><tr><td>30°</td><td>1/2</td><td>√3/2</td><td>1/√3</td></tr><tr><td>45°</td><td>1/√2</td><td>1/√2</td><td>1</td></tr><tr><td>60°</td><td>√3/2</td><td>1/2</td><td>√3</td></tr><tr><td>90°</td><td>1</td><td>0</td><td>∞</td></tr></table>
+<div class="note">💡 <strong>Hand trick:</strong> बाएं हाथ की उंगलियां 0–90° – folded finger के नीचे/ऊपर से sin values! Exam में table भूल जाओ तो calculator + trick बचाएगा।</div>
+<h2>Calculator की 5 सावधानियां</h2>
+<ul>
+<li><strong>Mode check</strong> – हर sum से पहले DEG/RAD display देखें।</li>
+<li><strong>Brackets</strong> – 1/(2+3) vs 1/2+3 = अलग! Bracket लगाएं।</li>
+<li><strong>π button</strong> – 3.14 type करने से exact बेहतर।</li>
+<li><strong>Ans key</strong> – पिछला नतीजा chain calculations में।</li>
+<li><strong>Battery</strong> – exam से पहले cell check (solar + battery)!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>DEG और RAD क्या है?</summary><p>Angle की unit – school/engineering sums DEG (degrees) में। sin(30°) = 0.5 सिर्फ DEG mode में! Mode हमेशा display पर check करें।</p></details>
+<details><summary>sin 30 का मान 0.5 क्यों नहीं आया?</summary><p>99% chance calculator RAD mode में है। DEG पर switch करके दोबारा दबाएं – 0.5 आएगा।</p></details>
+<details><summary>log और ln में अंतर?</summary><p>log = base 10, ln = base e (2.718)। Chemistry/pH में log, calculus में ln ज़्यादा लगता है।</p></details>
+<details><summary>क्या board exam में calculator allowed है?</summary><p>CBSE/State boards में आमतौर पर नहीं; JEE/NEET में नहीं; कुछ competitive + college exams में non-programmable allowed। Admit card पढ़ें।</p></details>
+<details><summary>e और π की value?</summary><p>π ≈ 3.14159, e ≈ 2.71828। Calculator constants exact internal value इस्तेमाल करता है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="cgpa-calculator.html">🎓 CGPA से Percentage कैलकुलेटर</a> · <a href="marks-percentage-calculator.html">🎓 नंबर और प्रतिशत कैलकुलेटर</a> · <a href="hcf-lcm-calculator.html">➗ HCF और LCM कैलकुलेटर</a> · <a href="simple-calculator.html">🧮 ऑनलाइन कैलकुलेटर</a> · <a href="number-system-converter.html">🔢 नंबर सिस्टम कन्वर्टर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 

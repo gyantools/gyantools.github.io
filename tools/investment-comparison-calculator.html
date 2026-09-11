@@ -65,8 +65,30 @@ details p{margin-top:10px;margin-bottom:0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
 footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/investment-comparison-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "FD vs PPF vs SIP – best कौन?", "acceptedAnswer": {"@type": "Answer", "text": "Safety+tax: PPF। Growth long-term: SIP। Short goal: FD/RD। Best = तीनों का mix (allocation उम्र + goal के हिसाब से)।"}}, {"@type": "Question", "name": "Real return क्यों देखना चाहिए?", "acceptedAnswer": {"@type": "Answer", "text": "₹32L (15 साल बाद) की purchasing power आज के ~₹13L जितनी है। Nominal return देखकर खुश होना भ्रम है – हमेशा inflation-adjusted सोचें।"}}, {"@type": "Question", "name": "100 − उम्र वाला नियम क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Equity % = 100 − आपकी उम्र। 30 की उम्र → 70% equity। Conservative हों तो 100 की जगह 90/80 से घटाएं।"}}, {"@type": "Question", "name": "Gold में कितना invest करें?", "acceptedAnswer": {"@type": "Answer", "text": "Portfolio का 10–15% hedge के तौर पर। SGB बंद होने के बाद Gold ETF/Fund best विकल्प – physical gold में making charge + चोरी risk।"}}, {"@type": "Question", "name": "Rebalancing कब करें?", "acceptedAnswer": {"@type": "Answer", "text": "साल में एक बार – equity target से ±5% हिले तो profit book/loss average करके allocation वापस लाएं।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -209,7 +231,39 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
     </details>
 
     <div class="tip">✅ <strong>और फाइनेंस टूल्स:</strong> <a href="sip-calculator.html">SIP</a> · <a href="ppf-calculator.html">PPF</a> · <a href="fd-calculator.html">FD</a> · <a href="gold-silver-value-calculator.html">सोना-चांदी कीमत</a> · <a href="inflation-calculator.html">महंगाई</a> · <a href="retirement-calculator.html">रिटायरमेंट</a> कैलकुलेटर — सारे <a href="../index.html">होम पेज</a> पर।</div>
-  </article>
+  
+<h2>तुलना कैसे करें?</h2>
+<ol>
+<li>एक ही <strong>रकम + अवधि</strong> डालें – जैसे ₹10,000/माह, 15 साल।</li>
+<li><strong>FD (7%), PPF (7.1%), SIP (12%), Gold (9%)</strong> – चारों का नतीजा एक साथ देखें।</li>
+<li><strong>महंगाई-adjusted (real) value</strong> ज़रूर देखें – nominal return भ्रम है।</li>
+<li><strong>Tax काटकर</strong> सोचें – FD slab-tax, PPF zero-tax, equity LTCG 12.5%。</li>
+<li>Risk capacity के हिसाब से <strong>mix बनाएं</strong> – सिर्फ एक में सब नहीं।</li>
+</ol>
+<h2>₹10,000/माह, 15 साल – चारों की तुलना</h2>
+<table class="gt-table"><tr><th>विकल्प</th><th>Return*</th><th>Value (लगभग)</th><th>Real (6% महंगाई)</th></tr><tr><td>FD/RD</td><td>7%</td><td>≈ ₹31.7L</td><td>≈ ₹13.2L</td></tr><tr><td>PPF</td><td>7.1%</td><td>≈ ₹32.0L</td><td>≈ ₹13.3L</td></tr><tr><td>Gold</td><td>9%</td><td>≈ ₹36.5L</td><td>≈ ₹15.2L</td></tr><tr><td>Equity SIP ⭐</td><td>12%</td><td>≈ ₹49.9L</td><td>≈ ₹20.8L</td></tr></table>
+<p>*अनुमानित। <strong>Real value</strong> = महंगाई घटाकर आज की कीमत में। FD का ₹31.7L असल में सिर्फ ₹13.2L जैसा!</p>
+<div class="note">💡 <strong>सही mix (30 की उम्र):</strong> 60% equity SIP + 20% PPF/EPF + 10% gold + 10% emergency (FD/liquid)। उम्र बढ़े तो equity घटाकर debt बढ़ाएं – <strong>100 − उम्र = equity %</strong> (मोटा नियम)।</div>
+<h2>Asset Allocation के 5 नियम</h2>
+<ul>
+<li><strong>उम्र = debt %</strong> – 30 की उम्र → ~30% safe, 70% growth।</li>
+<li><strong>Rebalance सालाना</strong> – equity बढ़ जाए तो profit book करके debt में।</li>
+<li><strong>Emergency अलग</strong> – 6 महीने खर्च liquid/FD में, invest नहीं।</li>
+<li><strong>Gold 10–15%</strong> – hedge के लिए, main investment नहीं (SGB बंद, अब ETF/Fund)।</li>
+<li><strong>Tax-efficiency</strong> – PPF/EPF (zero tax) पहले भरें, फिर taxable options।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>FD vs PPF vs SIP – best कौन?</summary><p>Safety+tax: PPF। Growth long-term: SIP। Short goal: FD/RD। Best = तीनों का mix (allocation उम्र + goal के हिसाब से)।</p></details>
+<details><summary>Real return क्यों देखना चाहिए?</summary><p>₹32L (15 साल बाद) की purchasing power आज के ~₹13L जितनी है। Nominal return देखकर खुश होना भ्रम है – हमेशा inflation-adjusted सोचें।</p></details>
+<details><summary>100 − उम्र वाला नियम क्या है?</summary><p>Equity % = 100 − आपकी उम्र। 30 की उम्र → 70% equity। Conservative हों तो 100 की जगह 90/80 से घटाएं।</p></details>
+<details><summary>Gold में कितना invest करें?</summary><p>Portfolio का 10–15% hedge के तौर पर। SGB बंद होने के बाद Gold ETF/Fund best विकल्प – physical gold में making charge + चोरी risk।</p></details>
+<details><summary>Rebalancing कब करें?</summary><p>साल में एक बार – equity target से ±5% हिले तो profit book/loss average करके allocation वापस लाएं।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="ppf-calculator.html">🏦 PPF कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

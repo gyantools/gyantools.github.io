@@ -48,8 +48,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/nps-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "NPS पर कितना return मिलता है?", "acceptedAnswer": {"@type": "Answer", "text": "पिछले 10+ साल में Tier-1 equity ने ~10–12%, overall ~9–10% दिया है। Market-linked है, guarantee नहीं – calculator में 9–10% डालें।"}}, {"@type": "Question", "name": "NPS में tax छूट कैसे मिलती है?", "acceptedAnswer": {"@type": "Answer", "text": "80CCD(1): ₹1.5L के अंदर + 80CCD(1B): extra ₹50,000 (नई regime में भी!) + employer contribution पर extra छूट।"}}, {"@type": "Question", "name": "60 से पहले NPS निकाल सकते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "3 साल बाद partial (25% तक, खास कारणों से, max 3 बार)। Premature exit (60 से पहले) में 80% annuity अनिवार्य।"}}, {"@type": "Question", "name": "NPS vs Mutual Fund – retirement के लिए?", "acceptedAnswer": {"@type": "Answer", "text": "NPS: सस्ता + tax छूट + lock-in (discipline)। MF: flexible + ज़्यादा return संभावना। smart combo = दोनों!"}}, {"@type": "Question", "name": "UPS क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Unified Pension Scheme – सरकारी कर्मचारियों के लिए assured पेंशन (last pay का ~50%) वाला नया विकल्प। NPS vs UPS तुलना nps-pension-guide blog में।"}}]}
+</script>
+
 </head><body>
 <header>
   <div class="container nav">
@@ -129,6 +151,39 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
     <li>60 साल के बाद एन्युइटी खरीदने तक कॉर्पस में योगदान जारी रख सकते हैं (75 साल तक)।</li>
   </ul>
 
+
+<h2>NPS Corpus कैसे निकालें?</h2>
+<ol>
+<li>मासिक <strong>NPS contribution</strong> भरें – जैसे ₹5,000।</li>
+<li><strong>Expected return</strong> डालें – 9–10% आम अनुमान (market-linked)।</li>
+<li><strong>60 साल तक के बचे साल</strong> automatic गिनें।</li>
+<li>नतीजे में <strong>corpus + 60% lump-sum (tax-free) + 40% annuity पेंशन</strong> देखें।</li>
+<li><strong>₹50,000 extra tax छूट</strong> (80CCD-1B) नई regime में भी मिलती है – ITR में लेना न भूलें।</li>
+</ol>
+<h2>NPS निकासी नियम 2026 (नए नियम)</h2>
+<table class="gt-table"><tr><th>नियम</th><th>विवरण</th></tr><tr><td>60 पर lump-sum</td><td>80% तक निकाल सकते हैं (नया नियम)*</td></tr><tr><td>Annuity</td><td>कम से कम 20% से पेंशन लेना ज़रूरी*</td></tr><tr><td>Tax</td><td>60% lump-sum tax-free; annuity पेंशन slab से taxable</td></tr><tr><td>Extra छूट</td><td>80CCD(1B): ₹50,000 (नई regime में भी)</td></tr></table>
+<p>*नियम समय-समय पर बदलते हैं – PFRDA की latest circular ही final मानी जाती है। UPS (Unified Pension Scheme) सरकारी कर्मचारियों का नया विकल्प है – nps-pension-guide blog में पूरी तुलना है।</p>
+<div class="note">💡 <strong>उदाहरण:</strong> ₹10,000/माह, 10%, 30 साल → corpus ≈ <strong>₹2.27 करोड़</strong>! 60% (≈₹1.36Cr) tax-free lump-sum + बाकी से ~₹45,000/माह पेंशन (annuity ~6% पर)।</div>
+<h2>NPS के 6 फायदे</h2>
+<ul>
+<li><strong>सबसे सस्ता retirement product</strong> – fund charges ~0.01% (mutual fund से 100x सस्ता!)।</li>
+<li><strong>Extra ₹50K छूट</strong> – नई regime में भी मिलने वाली इकलौती बड़ी कटौती।</li>
+<li><strong>Equity exposure</strong> – 75% तक equity (active choice) से long-term growth।</li>
+<li><strong>Tier-2</strong> – बिना lock-in वाला flexible account भी खोल सकते हैं।</li>
+<li><strong>Auto rebalancing</strong> – उम्र के साथ equity अपने आप घटता है (auto choice)।</li>
+<li><strong>PRAN portable</strong> – नौकरी बदले, NPS साथ चलता है।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>NPS पर कितना return मिलता है?</summary><p>पिछले 10+ साल में Tier-1 equity ने ~10–12%, overall ~9–10% दिया है। Market-linked है, guarantee नहीं – calculator में 9–10% डालें।</p></details>
+<details><summary>NPS में tax छूट कैसे मिलती है?</summary><p>80CCD(1): ₹1.5L के अंदर + 80CCD(1B): extra ₹50,000 (नई regime में भी!) + employer contribution पर extra छूट।</p></details>
+<details><summary>60 से पहले NPS निकाल सकते हैं?</summary><p>3 साल बाद partial (25% तक, खास कारणों से, max 3 बार)। Premature exit (60 से पहले) में 80% annuity अनिवार्य।</p></details>
+<details><summary>NPS vs Mutual Fund – retirement के लिए?</summary><p>NPS: सस्ता + tax छूट + lock-in (discipline)। MF: flexible + ज़्यादा return संभावना। smart combo = दोनों!</p></details>
+<details><summary>UPS क्या है?</summary><p>Unified Pension Scheme – सरकारी कर्मचारियों के लिए assured पेंशन (last pay का ~50%) वाला नया विकल्प। NPS vs UPS तुलना nps-pension-guide blog में।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="ppf-calculator.html">🏦 PPF कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="ssy-calculator.html">👧 SSY कैलकुलेटर (सुकन्या समृद्धि योजना)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 
 <script>

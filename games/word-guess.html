@@ -65,8 +65,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/games/word-guess.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Word Guess (Wordle) क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "5-letter word, 6 tries, color clues – 2021 में Josh Wardle ने बनाया, NYT ने खरीदा। रोज़ 1 puzzle = दुनिया की आदत!"}}, {"@type": "Question", "name": "Best starting word?", "acceptedAnswer": {"@type": "Answer", "text": "ARISE, SLATE, CRANE – 3 vowels + common letters। Hindi-mode हो तो स्वर-युक्त शुरुआत!"}}, {"@type": "Question", "name": "Yellow vs Green?", "acceptedAnswer": {"@type": "Answer", "text": "Green = lock (सही जगह)। Yellow = अक्षर है पर elsewhere – अगली guess में नई जगह try करो।"}}, {"@type": "Question", "name": "6 tries में strategy?", "acceptedAnswer": {"@type": "Answer", "text": "1–2: letters test | 3–4: positions fix | 5–6: solve। Panic में random मत भरो!"}}, {"@type": "Question", "name": "Vocabulary बढ़ेगी?", "acceptedAnswer": {"@type": "Answer", "text": "बहुत – नए शब्द + spelling + patterns। Students के लिए English vocab का मज़ेदार तरीका!"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -111,7 +133,40 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
     <h2>खेलने की टिप्स</h2>
     <p>पहली दो कोशिशों में अलग-अलग अक्षरों वाले शब्द लगाओ — जैसे <strong>CRANE, SLATE, MOUNT</strong> — इससे ज़्यादा अक्षरों की जानकारी एक साथ मिल जाती है। आम अक्षर (A, E, R, S, T, N) वाले शब्द शुरू में काम आते हैं। हर जीत पर लय (streak) बढ़ती है — कितनी लंबी लय बना पाओगे? 🔥</p>
     <p>ऐसे ही और गेम खेलें: <a href="sudoku.html" style="color:#1a73e8">Sudoku</a>, <a href="memory-game.html" style="color:#1a73e8">Memory गेम</a>, <a href="2048.html" style="color:#1a73e8">2048</a> और ज्ञान बढ़ाने के लिए <a href="gk-quiz.html" style="color:#1a73e8">GK Quiz (unlimited)</a>। English सीखने में मदद के लिए <a href="../tools/typing-speed-test.html" style="color:#1a73e8">Typing Speed Test</a> भी आज़माएं।</p>
-  </article>
+  
+<h2>Word Guess कैसे खेलें?</h2>
+<ol>
+<li><strong>5-letter शब्द</strong> guess करो – 6 मौके!।</li>
+<li><strong>🟩 Green</strong> = सही अक्षर + सही जगह।</li>
+<li><strong>🟨 Yellow</strong> = अक्षर सही, जगह गलत।</li>
+<li><strong>⬜ Gray</strong> = अक्षर शब्द में नहीं।</li>
+<li>6 में guess = <strong>जीत! Vocabulary + logic!</strong></li>
+</ol>
+<h2>Color Guide + Strategy</h2>
+<table class="gt-table"><tr><th>Color</th><th>मतलब</th><th>अगली चाल</th></tr><tr><td>🟩 Green</td><td>सही + सही जगह</td><td>Lock करो!</td></tr><tr><td>🟨 Yellow</td><td>सही, गलत जगह</td><td>जगह बदलो</td></tr><tr><td>⬜ Gray</td><td>शब्द में नहीं</td><td>भूल जाओ</td></tr></table>
+<div class="note">💡 <strong>Starter words:</strong> ARISE / STARE / CRANE (3 vowels + common consonants)! पहली 2 guesses में max letters test करो – 3rd से solve mode। Double letters (EERIE) आखिर में सोचो!</div>
+<h2>Wordle-Pro के 5 सूत्र</h2>
+<ul>
+<li><strong>Vowel-starter</strong> – ARISE/SLATE जैसी।</li>
+<li><strong>Grays हटाओ</strong> – दोबारा कभी मत लिखो।</li>
+<li><strong>Yellows घुमाओ</strong> – हर guess नई position।</li>
+<li><strong>Common patterns</strong> – TH/SH/CH/EE अंत में।</li>
+<li><strong>6th = confirm</strong> – sure हो तभी, वरना test-word!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Word Guess (Wordle) क्या है?</summary><p>5-letter word, 6 tries, color clues – 2021 में Josh Wardle ने बनाया, NYT ने खरीदा। रोज़ 1 puzzle = दुनिया की आदत!</p></details>
+<details><summary>Best starting word?</summary><p>ARISE, SLATE, CRANE – 3 vowels + common letters। Hindi-mode हो तो स्वर-युक्त शुरुआत!</p></details>
+<details><summary>Yellow vs Green?</summary><p>Green = lock (सही जगह)। Yellow = अक्षर है पर elsewhere – अगली guess में नई जगह try करो।</p></details>
+<details><summary>6 tries में strategy?</summary><p>1–2: letters test | 3–4: positions fix | 5–6: solve। Panic में random मत भरो!</p></details>
+<details><summary>Vocabulary बढ़ेगी?</summary><p>बहुत – नए शब्द + spelling + patterns। Students के लिए English vocab का मज़ेदार तरीका!</p></details>
+</div>
+<div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="2048.html">🔢 2048 पहेली गेम</a> · <a href="checkers.html">♟️ दमा – Checkers (Draughts)</a> · <a href="chess.html">♞ शतरंज (Chess)</a> · <a href="connect-four.html">🔴 ४ गेंद जोड़ो (Connect Four)</a> · <a href="dots-and-boxes.html">⬜ बिंदु-बक्सा (Dots &amp; Boxes)</a></div>
+<h2>Letter Frequency Guide (English)</h2>
+<p>Pro players अक्षरों की frequency जानते हैं: <strong>सबसे common: E A R I O T L N S</strong> – starter words इन्हीं से बनाओ! <strong>5-letter sweet spots:</strong> _A_E_ pattern (CRANE/SLATE/ARISE) पहले 2 guesses में 10 unique letters test करता है। <strong>Endings:</strong> -ER, -ED, -LY, -ING (6-letter में) सबसे common। <strong>Doubles:</strong> E, L, O, T दोगुने आते हैं (HELLO/SPOOL)।</p>
+<p>4th guess तक 0 green? घबराओ नहीं – <strong>grays हटाकर बचे letters से नया word</strong> बनाओ। Elimination ही solution है!</p>
+<div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें!</p></div></div>
+</article>
 </div>
 
 <footer>

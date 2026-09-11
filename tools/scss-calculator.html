@@ -51,8 +51,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/scss-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "SCSS में कौन invest कर सकता है?", "acceptedAnswer": {"@type": "Answer", "text": "60+ वरिष्ठ नागरिक; 55+ retired/VRS वाले (retirement के 3 महीने में); defence retirees 50+। HUF/NRI allowed नहीं।"}}, {"@type": "Question", "name": "SCSS interest rate 2026 क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "8.2% सालाना, तिमाही payout (अप्रैल/जुलाई/अक्टूबर/जनवरी)। Rate तिमाही review होती है।"}}, {"@type": "Question", "name": "SCSS पर tax कैसे लगता है?", "acceptedAnswer": {"@type": "Answer", "text": "जमा पर 80C छूट (पुरानी regime); ब्याज slab rate से taxable। सालाना ₹50,000+ ब्याज पर TDS – 15H देकर बचाएं (eligible हों तो)।"}}, {"@type": "Question", "name": "SCSS vs FD – senior citizen के लिए?", "acceptedAnswer": {"@type": "Answer", "text": "SCSS: 8.2% + तिमाही आय + 80C। Senior FD: ~7.5–8% + flexible tenure। Regular income चाहिए तो SCSS, flexibility चाहिए तो FD ladder।"}}, {"@type": "Question", "name": "क्या SCSS बीच में बंद कर सकते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "1 साल बाद penalty के साथ (1–2 साल: 1.5%, 2+ साल: 1%)। 1 साल से पहले closure पर ब्याज savings rate से मिलेगा।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -109,7 +131,39 @@ th{background:#e8f0fe;color:#1a73e8}
     <div class="tip">💡 <strong>टिप:</strong> ब्याज की TDS सीनियर सिटिजनों के लिए अब ₹1 लाख सालाना ब्याज तक नहीं कटती – फिर भी Form 15H जमा करा दें ताकि कटौती हो ही नहीं (यदि आय tax-free सीमा के अंदर है)।</div>
     <div class="note">⚠️ दरें हर तिमाही सरकार द्वारा बदल सकती हैं (आपके खाते की दर lock रहती है)। टैक्स नियम आपकी आय पर निर्भर – बड़ी रकम से पहले CA/विशेषज्ञ से पूछें। यह tool अंदाज़ा देता है, सलाह नहीं।</div>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>SCSS आय कैसे निकालें?</h2>
+<ol>
+<li><strong>जमा राशि</strong> भरें – ₹1,000 से ₹30 लाख तक (single)।</li>
+<li><strong>8.2% दर</strong> (2026) पर तिमाही payout automatic गिना जाएगा।</li>
+<li><strong>5 साल अवधि</strong> – 3 साल extension (एक बार) का विकल्प भी है।</li>
+<li><strong>तिमाही आय</strong> = (जमा × 8.2%) ÷ 4 – हर 3 महीने bank में।</li>
+<li>TDS से बचने के लिए <strong>Form 15H</strong> (income tax सीमा से कम हो तो) ज़रूर दें।</li>
+</ol>
+<h2>SCSS तिमाही आय चार्ट (8.2% पर)</h2>
+<table class="gt-table"><tr><th>जमा</th><th>तिमाही आय</th><th>मासिक (लगभग)</th></tr><tr><td>₹5L</td><td>₹10,250</td><td>₹3,417</td></tr><tr><td>₹10L</td><td>₹20,500</td><td>₹6,833</td></tr><tr><td>₹15L (joint)</td><td>₹30,750</td><td>₹10,250</td></tr><tr><td>₹30L (max)</td><td>₹61,500</td><td>₹20,500</td></tr></table>
+<div class="note">💡 <strong>Senior citizens का favorite:</strong> 8.2% + हर 3 महीने पक्की आय + 80C में ₹1.5L छूट। MIS (7.4%) से ज़्यादा दर – retirement income के लिए SCSS पहले, फिर MIS!</div>
+<h2>SCSS के 6 नियम</h2>
+<ul>
+<li><strong>60+ उम्र</strong> (55+ retired/VRS, defence में और पहले)।</li>
+<li><strong>₹30L max</strong> – single + joint मिलाकर कुल सीमा।</li>
+<li><strong>80C छूट</strong> जमा पर, पर ब्याज slab से taxable (15H से TDS बचाएं)।</li>
+<li><strong>Premature closure</strong> – 1 साल बाद 1.5%, 2 साल बाद 1% penalty।</li>
+<li><strong>Nominee</strong> ज़रूर बनाएं – claim आसान होगा।</li>
+<li><strong>5+3 साल</strong> – maturity पर 3 साल extension एक बार मिलता है।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>SCSS में कौन invest कर सकता है?</summary><p>60+ वरिष्ठ नागरिक; 55+ retired/VRS वाले (retirement के 3 महीने में); defence retirees 50+। HUF/NRI allowed नहीं।</p></details>
+<details><summary>SCSS interest rate 2026 क्या है?</summary><p>8.2% सालाना, तिमाही payout (अप्रैल/जुलाई/अक्टूबर/जनवरी)। Rate तिमाही review होती है।</p></details>
+<details><summary>SCSS पर tax कैसे लगता है?</summary><p>जमा पर 80C छूट (पुरानी regime); ब्याज slab rate से taxable। सालाना ₹50,000+ ब्याज पर TDS – 15H देकर बचाएं (eligible हों तो)।</p></details>
+<details><summary>SCSS vs FD – senior citizen के लिए?</summary><p>SCSS: 8.2% + तिमाही आय + 80C। Senior FD: ~7.5–8% + flexible tenure। Regular income चाहिए तो SCSS, flexibility चाहिए तो FD ladder।</p></details>
+<details><summary>क्या SCSS बीच में बंद कर सकते हैं?</summary><p>1 साल बाद penalty के साथ (1–2 साल: 1.5%, 2+ साल: 1%)। 1 साल से पहले closure पर ब्याज savings rate से मिलेगा।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="ppf-calculator.html">🏦 PPF कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

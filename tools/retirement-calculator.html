@@ -52,8 +52,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/retirement-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Retirement के लिए कितना corpus चाहिए?", "acceptedAnswer": {"@type": "Answer", "text": "मोटा नियम: सालाना खर्च × 25 (4% rule)। ₹6L/साल खर्च → ~₹1.5Cr (आज की कीमत); inflation जोड़कर future value पर plan करें – calculator exact बताता है।"}}, {"@type": "Question", "name": "4% withdrawal rule क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Corpus का 4%/साल निकालो तो पैसा ~30 साल चलेगा। भारत में 4–5% safe माना जाता है।"}}, {"@type": "Question", "name": "Retirement planning कब शुरू करें?", "acceptedAnswer": {"@type": "Answer", "text": "पहली salary से! 25 की उम्र में ₹10K SIP = 35 की उम्र में ₹30K SIP के बराबर (compounding)। देरी की कीमत सबसे ज़्यादा है।"}}, {"@type": "Question", "name": "EPF काफी है retirement के लिए?", "acceptedAnswer": {"@type": "Answer", "text": "अकेले नहीं – EPF + NPS + SIP का combo बनाएं। EPF safe नींव है, growth SIP से आती है।"}}, {"@type": "Question", "name": "Retirement के बाद पैसा कहां रखें?", "acceptedAnswer": {"@type": "Answer", "text": "SWP (mutual fund monthly payout) + SCSS/MIS + FD ladder – growth + regular income का mix।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -134,7 +156,40 @@ th{background:#e8f0fe;color:#1a73e8}
     <p><strong>प्र. महंगाई 6% क्यों?</strong><br>भारत का दीर्घकालिक औसत ~5–6% रहा है (जुलाई 2026 में 4.45%, RBI लक्ष्य 4%)। सेहत/पढ़ाई के खर्च ज़्यादा तेज़ बढ़ते हैं – इसलिए 6–7% लेना समझदारी है।</p>
     <p><strong>प्र. रिटर्न महंगाई से कम क्यों नहीं चलेगा?</strong><br>तो फंड की ताकत महंगाई खाती जाएगी और पैसा बीच में खत्म हो जाएगा – कैलकुलेटर आपको यही बताएगा।</p>
     <p><strong>प्र. EPF/ग्रेच्युटी भी तो है?</strong><br>बिल्कुल – उन्हें जोड़कर बाकी ज़रूरत इस कैलकुलेटर से पता करें। ग्रेच्युटी की गणना <a href="gratuity-calculator.html" style="color:#1a73e8">ग्रेच्युटी कैलकुलेटर</a> से।</p>
-  </article>
+  
+<h2>Retirement Corpus कैसे निकालें?</h2>
+<ol>
+<li>आज का <strong>मासिक खर्च</strong> भरें – जैसे ₹50,000 (EMI छोड़कर)।</li>
+<li><strong>Retirement में साल</strong> डालें – जैसे 25 साल (35→60)।</li>
+<li><strong>Inflation 7%</strong> + retirement के बाद <strong>25–30 साल</strong> जीवन मानें।</li>
+<li><strong>Corpus नतीजा</strong> देखें – अक्सर ₹4–8 करोड़ निकलता है (डरें नहीं!)।</li>
+<li><strong>मासिक SIP</strong> देखें – 25 साल हो तो ₹15–25K/माह ही काफी है।</li>
+<li>EPF+NPS+PPF पहले से हैं तो <strong>gap = target − existing</strong> पर SIP बनाएं।</li>
+</ol>
+<h2>₹50,000/माह खर्च – Retirement गणित (7% inflation, 12% return)</h2>
+<table class="gt-table"><tr><th></th><th>रकम</th></tr><tr><td>25 साल बाद मासिक खर्च</td><td>≈ ₹2,71,000</td></tr><tr><td>30 साल retirement corpus</td><td>≈ ₹5.5–6 करोड़</td></tr><tr><td>मासिक SIP (25 साल, 12%)</td><td>≈ ₹28,000</td></tr></table>
+<div class="note">💡 <strong>4% Rule:</strong> सालाना खर्च × 25 = मोटा corpus। ₹32L/साल खर्च → ~₹8Cr। बड़ी रकम देखकर घबराएं नहीं – <strong>25 साल + SIP + EPF/NPS</strong> मिलकर इसे आसान बनाते हैं। देरी ही सबसे बड़ी दुश्मन है!</div>
+<h2>Retirement के 6 स्तंभ</h2>
+<ul>
+<li><strong>EPF</strong> – नौकरीपेशा की नींव (8.25% + auto)।</li>
+<li><strong>NPS</strong> – extra ₹50K tax छूट + पेंशन।</li>
+<li><strong>Equity SIP</strong> – growth engine (12% उम्मीद)।</li>
+<li><strong>PPF/SSY</strong> – safe + tax-free हिस्सा।</li>
+<li><strong>Health cover ₹25L+</strong> – medical महंगाई से बचाव।</li>
+<li><strong>खुद का घर</strong> – retirement से पहले loan-free!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Retirement के लिए कितना corpus चाहिए?</summary><p>मोटा नियम: सालाना खर्च × 25 (4% rule)। ₹6L/साल खर्च → ~₹1.5Cr (आज की कीमत); inflation जोड़कर future value पर plan करें – calculator exact बताता है।</p></details>
+<details><summary>4% withdrawal rule क्या है?</summary><p>Corpus का 4%/साल निकालो तो पैसा ~30 साल चलेगा। भारत में 4–5% safe माना जाता है।</p></details>
+<details><summary>Retirement planning कब शुरू करें?</summary><p>पहली salary से! 25 की उम्र में ₹10K SIP = 35 की उम्र में ₹30K SIP के बराबर (compounding)। देरी की कीमत सबसे ज़्यादा है।</p></details>
+<details><summary>EPF काफी है retirement के लिए?</summary><p>अकेले नहीं – EPF + NPS + SIP का combo बनाएं। EPF safe नींव है, growth SIP से आती है।</p></details>
+<details><summary>Retirement के बाद पैसा कहां रखें?</summary><p>SWP (mutual fund monthly payout) + SCSS/MIS + FD ladder – growth + regular income का mix।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="ppf-calculator.html">🏦 PPF कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

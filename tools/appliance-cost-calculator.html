@@ -54,8 +54,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/appliance-cost-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Unit (kWh) क्या होता है?", "acceptedAnswer": {"@type": "Answer", "text": "1 Unit = 1000 Watt × 1 घंटा। 100W bulb 10 घंटे = 1 unit। Formula: Watt × घंटे ÷ 1000।"}}, {"@type": "Question", "name": "AC का बिल इतना ज़्यादा क्यों?", "acceptedAnswer": {"@type": "Answer", "text": "1500W × 8h × 30 दिन = 360 units ≈ ₹2,160! Inverter + 26°C + service से 30–40% घटता है।"}}, {"@type": "Question", "name": "Star rating का मतलब?", "acceptedAnswer": {"@type": "Answer", "text": "BEE stars = efficiency। 5-star fridge सालाना ~₹3–5K बिजली बचाता है vs 2-star। Price difference 2–3 साल में वसूल।"}}, {"@type": "Question", "name": "BLDC fan कितना बचाता है?", "acceptedAnswer": {"@type": "Answer", "text": "75W → 28W: रोज़ 12h पर ~₹100/माह प्रति fan बचत। 4 fans = ₹400/माह = ₹4,800/साल!"}}, {"@type": "Question", "name": "Standby power क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "OFF दिखने वाले TV/microwave/set-top भी 3–10W खाते हैं – सालाना ₹500–1,500! Switch से OFF करें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -141,6 +163,37 @@ th{background:#e8f0fe;color:#1a73e8}
 </ul>
 <p>टिप: बिजली बिल में यूनिट दर स्लैब के हिसाब से बदलती है – अपने शहर की औसत दर डालकर अनुमान लगाएं।</p>
 
+
+<h2>Device का खर्च कैसे निकालें?</h2>
+<ol>
+<li><strong>Device चुनें</strong> – AC/fridge/geyser/TV या custom watt।</li>
+<li><strong>Watt rating</strong> भरें – label पर लिखा (AC ~1500W, fan ~75W)।</li>
+<li><strong>रोज़ के घंटे</strong> डालें – actual usage (AC 8h, geyser 1h)।</li>
+<li><strong>Unit rate</strong> – अपने slab की दर (~₹5–8)।</li>
+<li><strong>मासिक खर्च</strong> देखें – formula: Watt×Hours×30÷1000×Rate।</li>
+</ol>
+<h2>आम Devices का मासिक खर्च (₹6/unit, रोज़ाना use)</h2>
+<table class="gt-table"><tr><th>Device</th><th>Watt</th><th>Use/दिन</th><th>महीना (लगभग)</th></tr><tr><td>1.5T AC (non-inverter)</td><td>1500W</td><td>8h</td><td>₹2,160 😱</td></tr><tr><td>Fridge (double-door)</td><td>200W</td><td>24h*</td><td>₹350</td></tr><tr><td>Geyser</td><td>2000W</td><td>1h</td><td>₹360</td></tr><tr><td>Ceiling fan (old)</td><td>75W</td><td>12h</td><td>₹162</td></tr><tr><td>BLDC fan ⭐</td><td>28W</td><td>12h</td><td>₹60</td></tr><tr><td>LED bulb (9W)</td><td>9W</td><td>6h</td><td>₹10</td></tr></table>
+<p>*Fridge compressor रुक-रुककर चलता है (actual ~8–10h equivalent)।</p>
+<div class="note">💡 <strong>सबसे बड़ा चोर = AC + Geyser!</strong> पुराने fan को BLDC से बदलो (₹60 vs ₹162), AC inverter 5-star लो – <strong>2–3 साल में कीमत वसूल!</strong> Device खरीदते समय star rating = future bill।</div>
+<h2>बिजली बचत के 5 upgrades</h2>
+<ul>
+<li><strong>BLDC fans</strong> – 4 fans बदलने से ~₹400/माह बचत।</li>
+<li><strong>Inverter AC 5-star</strong> – पुराने से 40–50% कम खपत।</li>
+<li><strong>Front-load washing</strong> – ठंडे पानी mode में चलाएं।</li>
+<li><strong>Voltage stabilizer-free</strong> – wide-range devices लें।</li>
+<li><strong>Master switch</strong> – TV+setup box एक switch से full OFF।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Unit (kWh) क्या होता है?</summary><p>1 Unit = 1000 Watt × 1 घंटा। 100W bulb 10 घंटे = 1 unit। Formula: Watt × घंटे ÷ 1000।</p></details>
+<details><summary>AC का बिल इतना ज़्यादा क्यों?</summary><p>1500W × 8h × 30 दिन = 360 units ≈ ₹2,160! Inverter + 26°C + service से 30–40% घटता है।</p></details>
+<details><summary>Star rating का मतलब?</summary><p>BEE stars = efficiency। 5-star fridge सालाना ~₹3–5K बिजली बचाता है vs 2-star। Price difference 2–3 साल में वसूल।</p></details>
+<details><summary>BLDC fan कितना बचाता है?</summary><p>75W → 28W: रोज़ 12h पर ~₹100/माह प्रति fan बचत। 4 fans = ₹400/माह = ₹4,800/साल!</p></details>
+<details><summary>Standby power क्या है?</summary><p>OFF दिखने वाले TV/microwave/set-top भी 3–10W खाते हैं – सालाना ₹500–1,500! Switch से OFF करें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="discount-calculator.html">🏷️ छूट कैलकुलेटर (Discount Calculator)</a> · <a href="percentage-calculator.html">📊 प्रतिशत कैलकुलेटर (Percentage Calculator)</a> · <a href="currency-converter.html">💱 करेंसी कन्वर्टर (Currency Converter)</a> · <a href="gold-silver-value-calculator.html">🥇 Gold-Silver Value Calculator (हिंदी)</a> · <a href="number-to-words.html">🔢 संख्या को शब्दों में बदलें (Number to Words)</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 

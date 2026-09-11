@@ -52,8 +52,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/stepup-sip-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Step-up SIP क्या होती है?", "acceptedAnswer": {"@type": "Answer", "text": "हर साल SIP राशि को तय % (जैसे 10%) से बढ़ाना। Salary growth के साथ निवेश भी बढ़ता है, जिससे long-term fund normal SIP से लगभग दोगुना बन सकता है।"}}, {"@type": "Question", "name": "कितना % step-up सही है?", "acceptedAnswer": {"@type": "Answer", "text": "आम तौर पर 8–12% (hike जितना)। ज़्यादा aggressive बनना हो तो 15% भी रख सकते हैं – calculator में compare करके देखें।"}}, {"@type": "Question", "name": "क्या step-up automatic होता है?", "acceptedAnswer": {"@type": "Answer", "text": "कई fund houses (Groww, Zerodha, AMC apps) में yearly auto step-up option है। न हो तो हर appraisal के बाद manually बढ़ा दें।"}}, {"@type": "Question", "name": "Normal SIP vs Step-up – कितना फर्क?", "acceptedAnswer": {"@type": "Answer", "text": "₹10K, 12%, 20 साल: normal ≈ ₹1 करोड़, 10% step-up ≈ ₹1.9 करोड़। फर्क समय के साथ बढ़ता जाता है।"}}, {"@type": "Question", "name": "Step-up के साथ tax कैसे लगेगा?", "acceptedAnswer": {"@type": "Answer", "text": "SIP जैसा ही – equity LTCG सालाना ₹1.25L तक tax-free, ऊपर 12.5%।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -120,7 +142,38 @@ th{background:#e8f0fe;color:#1a73e8}
     <p><strong>प्र. कितना step-up सही रहता है?</strong><br>आमतौर पर 5–10% – तनख्वाह की औसत बढ़त के बराबर। ज़्यादा बढ़ा सकते हैं तो और बढ़ा लें!</p>
     <p><strong>प्र. पुरानी SIP में step-up जोड़ सकते हैं?</strong><br>हाँ – नया SIP रजिस्टर कराएं या AMC/ऐप में "Step-up/Top-up" विकल्प चुनें।</p>
     <p><strong>प्र. गारंटीड रिटर्न चाहिए तो?</strong><br>PPF (7.1%), SSY (8.2%) जैसी सरकारी योजनाएं देखें – <a href="../blog/post-office-schemes.html" style="color:#1a73e8">डाकघर योजनाएं गाइड</a> और <a href="ppf-calculator.html" style="color:#1a73e8">PPF कैलकुलेटर</a>।</p>
-  </article>
+  
+<h2>Step-Up SIP कैसे calculate करें?</h2>
+<ol>
+<li>शुरुआती <strong>मासिक SIP</strong> भरें – जैसे ₹10,000।</li>
+<li><strong>सालाना बढ़त %</strong> डालें – salary hike जितनी, आम तौर पर 10%。</li>
+<li><strong>Return % और अवधि</strong> चुनें (12%, 15–20 साल)।</li>
+<li><strong>Compare देखें</strong> – normal SIP vs step-up SIP का फर्क लाखों में दिखेगा।</li>
+<li>Hike मिलते ही SIP बढ़ाना <strong>automatic नियम</strong> बना लें।</li>
+</ol>
+<h2>Step-Up का कमाल – ₹10,000 SIP, 12%, 20 साल</h2>
+<table class="gt-table"><tr><th>तरीका</th><th>कुल निवेश</th><th>अनुमानित Value</th></tr><tr><td>Normal SIP</td><td>₹24.0L</td><td>≈ ₹99.9L</td></tr><tr><td>10% Step-Up ⭐</td><td>≈ ₹68.7L</td><td>≈ ₹1.90 करोड़</td></tr></table>
+<div class="note">💡 सिर्फ <strong>10% सालाना बढ़त से fund लगभग दोगुना!</strong> Salary बढ़े पर lifestyle की जगह पहले SIP बढ़ाएं – crorepati बनने का सबसे आसान फॉर्मूला।</div>
+<h2>Step-Up SIP के 5 नियम</h2>
+<ul>
+<li><strong>Hike का 50% नियम</strong> – hike का आधा SIP में, आधा खर्च में।</li>
+<li><strong>Auto step-up</strong> – कई AMCs में yearly auto-increase option होता है, ON कर दें।</li>
+<li><strong>Bonus = lump-sum</strong> – सालाना bonus सीधे goal fund में डालें।</li>
+<li><strong>Goal पूरा हो तो review</strong> – ज़रूरत से ज़्यादा risk न लें, debt में shift करें।</li>
+<li><strong>Pause बेहतर है stop से</strong> – दिक्कत में 3–6 महीने pause करें, habit न तोड़ें।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Step-up SIP क्या होती है?</summary><p>हर साल SIP राशि को तय % (जैसे 10%) से बढ़ाना। Salary growth के साथ निवेश भी बढ़ता है, जिससे long-term fund normal SIP से लगभग दोगुना बन सकता है।</p></details>
+<details><summary>कितना % step-up सही है?</summary><p>आम तौर पर 8–12% (hike जितना)। ज़्यादा aggressive बनना हो तो 15% भी रख सकते हैं – calculator में compare करके देखें।</p></details>
+<details><summary>क्या step-up automatic होता है?</summary><p>कई fund houses (Groww, Zerodha, AMC apps) में yearly auto step-up option है। न हो तो हर appraisal के बाद manually बढ़ा दें।</p></details>
+<details><summary>Normal SIP vs Step-up – कितना फर्क?</summary><p>₹10K, 12%, 20 साल: normal ≈ ₹1 करोड़, 10% step-up ≈ ₹1.9 करोड़। फर्क समय के साथ बढ़ता जाता है।</p></details>
+<details><summary>Step-up के साथ tax कैसे लगेगा?</summary><p>SIP जैसा ही – equity LTCG सालाना ₹1.25L तक tax-free, ऊपर 12.5%।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="ppf-calculator.html">🏦 PPF कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a> · <a href="ssy-calculator.html">👧 SSY कैलकुलेटर (सुकन्या समृद्धि योजना)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

@@ -51,8 +51,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/epf-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "EPF interest rate 2026 क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "FY 2025-26 के लिए 8.25% घोषित। EPFO हर साल rate तय करता है और ब्याज सालाना credit होता है।"}}, {"@type": "Question", "name": "नौकरी बदलने पर PF का क्या करें?", "acceptedAnswer": {"@type": "Answer", "text": "Withdraw नहीं – UAN portal/UMANG से Form 13 भरकर नए employer को transfer करें। ब्याज और सेवा अवधि दोनों जुड़े रहते हैं।"}}, {"@type": "Question", "name": "PF कब निकाल सकते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "Retirement/resignation के 2 महीने बाद पूरा; बीच में घर, इलाज, पढ़ाई, शादी जैसे कारणों से partial withdrawal (Form 31)।"}}, {"@type": "Question", "name": "PF निकासी पर tax कब लगता है?", "acceptedAnswer": {"@type": "Answer", "text": "5 साल की कुल सेवा से पहले निकासी पर TDS (10%, PAN हो तो) + slab tax। 5 साल बाद पूरी निकासी tax-free।"}}, {"@type": "Question", "name": "EPS और EPF में क्या अंतर?", "acceptedAnswer": {"@type": "Answer", "text": "EPF = आपका retirement fund (lump-sum), EPS = पेंशन scheme (10+ साल सेवा पर 58 के बाद मासिक पेंशन)। Company के 12% में से 8.33% EPS में जाता है।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -109,7 +131,40 @@ th{background:#e8f0fe;color:#1a73e8}
     <p>EPF (8.25%) पूरी तरह tax-free और सरकारी गारंटी वाली है – इसलिए इसे retirement की रीढ़ मानें। पुराने tax regime में deduction के लिए PPF (<a href="ppf-calculator.html" style="color:#1a73e8">PPF कैलकुलेटर</a>) भी देखें। पेंशन योजनाओं की पूरी जानकारी <a href="../blog/nps-pension-guide.html" style="color:#1a73e8">NPS पेंशन गाइड</a> और ग्रेच्युटी का हिसाब <a href="gratuity-calculator.html" style="color:#1a73e8">Gratuity कैलकुलेटर</a> से लगाएं। कुल CTC का टैक्स हिसाब <a href="income-tax-calculator.html" style="color:#1a73e8">Income Tax कैलकुलेटर</a> पर।</p>
     <div class="note">⚠️ असली EPF ब्याज साल के आखिर में जुड़ता है और दरें हर साल EPFO तय करता है – यहां महीनेवार ब्याज का अंदाज़ा है। Salary structure, DA और नियम अलग होने पर असली रकम थोड़ी अलग हो सकती है। यह tool अंदाज़ा देता है, सलाह नहीं।</div>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>EPF Corpus कैसे निकालें?</h2>
+<ol>
+<li>अपना <strong>monthly basic + DA</strong> भरें (PF इसी पर कटता है)।</li>
+<li><strong>सालाना increment %</strong> डालें – basic बढ़ेगा तो PF भी बढ़ेगा।</li>
+<li><strong>ब्याज दर 8.25%</strong> (2026) set है – EPFO हर साल घोषित करता है।</li>
+<li><strong>नौकरी के बचे साल</strong> डालें – 58 साल (retirement) तक का हिसाब।</li>
+<li>नतीजे में <strong>आपका हिस्सा + company हिस्सा + ब्याज</strong> = retirement corpus!</li>
+</ol>
+<h2>EPF का बंटवारा – ₹40,000 basic पर (मासिक)</h2>
+<table class="gt-table"><tr><th>हिस्सा</th><th>रकम/माह</th><th>कहां जाता है</th></tr><tr><td>आपका (12%)</td><td>₹4,800</td><td>EPF (ब्याज समेत)</td></tr><tr><td>Company (3.67%)</td><td>₹1,468</td><td>EPF</td></tr><tr><td>Company (8.33%)*</td><td>₹3,332</td><td>EPS (पेंशन)</td></tr></table>
+<p>*EPS हिस्सा ₹15,000 wage-ceiling पर capped (max ₹1,250/माह)। <strong>नए Labour Codes में basic 50%</strong> होने से PF कटौती + corpus दोनों बढ़ेंगे।</p>
+<div class="note">💡 <strong>Power of EPF:</strong> ₹40K basic, 10% increment, 30 साल → corpus <strong>₹2.5 करोड़+</strong> (8.25% पर)! नौकरी बदलने पर PF <strong>transfer</strong> करें, withdraw नहीं – UAN एक ही रहता है।</div>
+<h2>EPF के 6 ज़रूरी नियम</h2>
+<ul>
+<li><strong>UAN + KYC</strong> – Aadhaar/PAN/bank link रखें, तभी online निकासी होगी।</li>
+<li><strong>Transfer, not withdraw</strong> – job change पर Form 13 से transfer करें।</li>
+<li><strong>5 साल बाद tax-free</strong> – 5 साल से पहले निकासी पर TDS + tax लग सकता है।</li>
+<li><strong>VPF option</strong> – EPF से ज़्यादा (VPF) जमा करके 8.25% पा सकते हैं।</li>
+<li><strong>EPS पेंशन</strong> – 10+ साल सेवा पर 58 के बाद मासिक पेंशन।</li>
+<li><strong>2026 Scheme</strong> – नए EPF rules/updates के लिए epf-pf-guide blog देखें।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>EPF interest rate 2026 क्या है?</summary><p>FY 2025-26 के लिए 8.25% घोषित। EPFO हर साल rate तय करता है और ब्याज सालाना credit होता है।</p></details>
+<details><summary>नौकरी बदलने पर PF का क्या करें?</summary><p>Withdraw नहीं – UAN portal/UMANG से Form 13 भरकर नए employer को transfer करें। ब्याज और सेवा अवधि दोनों जुड़े रहते हैं।</p></details>
+<details><summary>PF कब निकाल सकते हैं?</summary><p>Retirement/resignation के 2 महीने बाद पूरा; बीच में घर, इलाज, पढ़ाई, शादी जैसे कारणों से partial withdrawal (Form 31)।</p></details>
+<details><summary>PF निकासी पर tax कब लगता है?</summary><p>5 साल की कुल सेवा से पहले निकासी पर TDS (10%, PAN हो तो) + slab tax। 5 साल बाद पूरी निकासी tax-free।</p></details>
+<details><summary>EPS और EPF में क्या अंतर?</summary><p>EPF = आपका retirement fund (lump-sum), EPS = पेंशन scheme (10+ साल सेवा पर 58 के बाद मासिक पेंशन)। Company के 12% में से 8.33% EPS में जाता है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="ppf-calculator.html">🏦 PPF कैलकुलेटर</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a> · <a href="ssy-calculator.html">👧 SSY कैलकुलेटर (सुकन्या समृद्धि योजना)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

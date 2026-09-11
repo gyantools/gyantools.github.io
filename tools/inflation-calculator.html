@@ -52,8 +52,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/inflation-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "भारत में महंगाई दर कितनी है?", "acceptedAnswer": {"@type": "Answer", "text": "CPI आम तौर पर 4–7% (RBI target 4% ±2%)। पर पढ़ाई ~10%, medical ~12–14%, घर ~8–10% – personal inflation ज़्यादा होती है।"}}, {"@type": "Question", "name": "Real return क्या होता है?", "acceptedAnswer": {"@type": "Answer", "text": "Return − महंगाई। FD 7% पर महंगाई 6% = सिर्फ 1% real return। Tax घटाएं तो negative भी हो सकता है!"}}, {"@type": "Question", "name": "Retirement के लिए inflation कितनी मानें?", "acceptedAnswer": {"@type": "Answer", "text": "आम खर्च 6–7%, medical 10–12%। Safe planning के लिए overall 7% मानना समझदारी है।"}}, {"@type": "Question", "name": "₹1 करोड़ 20 साल बाद कितना रहेगा?", "acceptedAnswer": {"@type": "Answer", "text": "6% महंगाई पर सिर्फ ~₹31 लाख की purchasing power। इसीलिए goal हमेशा future value पर बनाएं।"}}, {"@type": "Question", "name": "महंगाई से बचने का best निवेश?", "acceptedAnswer": {"@type": "Answer", "text": "Long-term equity (SIP), skill growth, और खुद का घर (किराया-महंगाई से बचाव)। सिर्फ FD से महंगाई नहीं हराई जा सकती।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -117,7 +139,38 @@ th{background:#e8f0fe;color:#1a73e8}
     <p><strong>प्र. कैलकुलेटर कौन-सी दर डालूं?</strong><br>आम अनुमान के लिए 6% (भारत का दीर्घकालिक औसत)। अपने खर्च के हिसाब से 5–8% की कोशिश करें – पढ़ाई/इलाज के खर्च ज़्यादा तेज़ बढ़ते हैं (8–10%)।</p>
     <p><strong>प्र. खरीद शक्ति का मतलब?</strong><br>6% महंगाई पर 10 साल में ₹1 लाख सिर्फ ₹55,840 के बराबर सामान खरीद पाएगा – बाकी की ताकत महंगाई खा गई।</p>
     <p><strong>प्र. FD महंगाई हरा देती है क्या?</strong><br>आमतौर पर नहीं – FD ब्याज taxable भी होता है। तुलना <a href="fd-calculator.html" style="color:#1a73e8">FD कैलकुलेटर</a> और <a href="../blog/income-tax-guide.html" style="color:#1a73e8">टैक्स गाइड</a> से करें।</p>
-  </article>
+  
+<h2>महंगाई का असर कैसे देखें?</h2>
+<ol>
+<li>आज की <strong>रकम</strong> भरें – जैसे ₹100 (या ₹1 करोड़ retirement goal)।</li>
+<li><strong>महंगाई दर</strong> डालें – आम 6%, पढ़ाई 10%, medical 12–14%!</li>
+<li><strong>साल</strong> चुनें – 10, 20, 30 साल का असर देखें।</li>
+<li><strong>दोनों तरफ calculate करें</strong> – आज के ₹100 की future value + future goal की आज की कीमत।</li>
+<li>Retirement planning में <strong>हमेशा inflation-adjusted</strong> goal रखें।</li>
+</ol>
+<h2>₹1 करोड़ की असली कीमत (6% महंगाई पर)</h2>
+<table class="gt-table"><tr><th>कब</th><th>₹1Cr की आज जैसी कीमत</th></tr><tr><td>10 साल बाद</td><td>≈ ₹55.8L</td></tr><tr><td>20 साल बाद</td><td>≈ ₹31.2L</td></tr><tr><td>30 साल बाद</td><td>≈ ₹17.4L</td></tr></table>
+<div class="note">💡 <strong>डरावना सच:</strong> आज का ₹1 करोड़ 20 साल बाद सिर्फ <strong>₹31 लाख जैसा</strong> रहेगा! इसीलिए retirement corpus हमेशा <strong>future कीमत</strong> पर plan करें – ₹1Cr नहीं, ₹3–4Cr का goal रखें। Education (10%) और medical (14%) महंगाई और भी खतरनाक है!</div>
+<h2>महंगाई से लड़ने के 5 हथियार</h2>
+<ul>
+<li><strong>Equity SIP long-term</strong> – 12% return महंगाई को हराता है।</li>
+<li><strong>Skill में invest</strong> – salary growth ही सबसे बड़ी inflation-fighter है।</li>
+<li><strong>Real return देखें</strong> – FD 7% − महंगाई 6% = सिर्फ 1% real!</li>
+<li><strong>Health insurance बड़ा</strong> लें – medical महंगाई 14% है!।</li>
+<li><strong>Goal inflation अलग</strong> – पढ़ाई 10%, शादी 8%, घर 8–10% से calculate करें।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>भारत में महंगाई दर कितनी है?</summary><p>CPI आम तौर पर 4–7% (RBI target 4% ±2%)। पर पढ़ाई ~10%, medical ~12–14%, घर ~8–10% – personal inflation ज़्यादा होती है।</p></details>
+<details><summary>Real return क्या होता है?</summary><p>Return − महंगाई। FD 7% पर महंगाई 6% = सिर्फ 1% real return। Tax घटाएं तो negative भी हो सकता है!</p></details>
+<details><summary>Retirement के लिए inflation कितनी मानें?</summary><p>आम खर्च 6–7%, medical 10–12%। Safe planning के लिए overall 7% मानना समझदारी है।</p></details>
+<details><summary>₹1 करोड़ 20 साल बाद कितना रहेगा?</summary><p>6% महंगाई पर सिर्फ ~₹31 लाख की purchasing power। इसीलिए goal हमेशा future value पर बनाएं।</p></details>
+<details><summary>महंगाई से बचने का best निवेश?</summary><p>Long-term equity (SIP), skill growth, और खुद का घर (किराया-महंगाई से बचाव)। सिर्फ FD से महंगाई नहीं हराई जा सकती।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="ppf-calculator.html">🏦 PPF कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

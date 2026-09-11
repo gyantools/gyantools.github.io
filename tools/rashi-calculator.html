@@ -62,8 +62,30 @@ details p{margin-top:10px;margin-bottom:0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
 footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/rashi-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Vedic और Western राशि अलग क्यों?", "acceptedAnswer": {"@type": "Answer", "text": "Vedic (चंद्र/sidereal, ~24° पीछे) vs Western (सूर्य/tropical)। भारत में शादी/मुहूर्त Vedic से – दोनों में 1 राशि का फर्क आम है।"}}, {"@type": "Question", "name": "Nakshatra क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "चंद्र के 27 नक्षत्र (अश्विनी→रेवती) – नाम का पहला अक्षर + गुण इससे। राशि से ज़्यादा detailed Vedic analysis nakshatra से होती है।"}}, {"@type": "Question", "name": "राशि से नाम कैसे रखें?", "acceptedAnswer": {"@type": "Answer", "text": "Nakshatra-pada के तय अक्षरों से (जैसे अश्विनी: चू/चे/चो/ला)। Pandit birth-time rectification के बाद अक्षर बताता है।"}}, {"@type": "Question", "name": "Kundli मिलान में क्या देखा जाता है?", "acceptedAnswer": {"@type": "Answer", "text": "Guna-milan (36 में से 18+), मांगलिक दोष, dasha – सिर्फ राशि same होना काफी नहीं। Experienced ज्योतिषी से पूरा मिलान कराएं।"}}, {"@type": "Question", "name": "रत्न पहनना चाहिए?", "acceptedAnswer": {"@type": "Answer", "text": "बिना कुंडली-analysis कभी नहीं – गलत रत्न नुकसान भी कर सकता है। Certified (lab-tested) ही लें, ठगों से बचें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -168,7 +190,37 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
     </details>
 
     <div class="tip">✅ <strong>नोट:</strong> यह टूल पारंपरिक ज्योतिष जानकारी को आसान बनाकर पेश करता है – मनोरंजन और सामान्य जानकारी के लिए। जीवन के बड़े फैसले अपने विवेक से करें।</div>
-  </article>
+  
+<h2>अपनी राशि कैसे जानें?</h2>
+<ol>
+<li><strong>जन्म तारीख</strong> डालें – Vedic (चंद्र) + Western (सूर्य) दोनों राशियां।</li>
+<li><strong>Nakshatra + rashi lord</strong> भी देखें – कुंडली की नींव।</li>
+<li><strong>12 राशियों की table</strong> से date-ranges समझें।</li>
+<li>सही prediction के लिए <strong>जन्म समय + स्थान</strong> भी नोट करें।</li>
+<li>याद रखें – राशि मनोरंजन + परंपरा; <strong>फैसले मेहनत से!</strong> 🙏</li>
+</ol>
+<h2>12 राशियां – Vedic date ranges (लगभग)</h2>
+<table class="gt-table"><tr><th>राशि</th><th>तारीख (लगभग)</th><th>स्वामी</th></tr><tr><td>मेष</td><td>14 Apr – 14 May</td><td>मंगल</td></tr><tr><td>वृषभ</td><td>15 May – 14 Jun</td><td>शुक्र</td></tr><tr><td>मिथुन</td><td>15 Jun – 15 Jul</td><td>बुध</td></tr><tr><td>कर्क</td><td>16 Jul – 16 Aug</td><td>चंद्र</td></tr><tr><td>सिंह</td><td>17 Aug – 16 Sep</td><td>सूर्य</td></tr><tr><td>कन्या</td><td>17 Sep – 16 Oct</td><td>बुध</td></tr><tr><td>तुला</td><td>17 Oct – 15 Nov</td><td>शुक्र</td></tr><tr><td>वृश्चिक</td><td>16 Nov – 15 Dec</td><td>मंगल</td></tr><tr><td>धनु</td><td>16 Dec – 13 Jan</td><td>गुरु</td></tr><tr><td>मकर</td><td>14 Jan – 12 Feb</td><td>शनि</td></tr><tr><td>कुंभ</td><td>13 Feb – 13 Mar</td><td>शनि</td></tr><tr><td>मीन</td><td>14 Mar – 13 Apr</td><td>गुरु</td></tr></table>
+<div class="note">💡 Border dates (14–16) पर राशि <strong>जन्म समय</strong> से तय होती है – चंद्र किस राशि में था, वही असली (चंद्र) राशि। सिर्फ date से 90% सही, 100% के लिए समय चाहिए।</div>
+<h2>ज्योतिष के 5 समझदारी नियम</h2>
+<ul>
+<li><strong>राशि future नहीं</strong> – दशा + गोचर + कर्म तीनों मिलकर फल।</li>
+<li><strong>मांगलिक भय</strong> – 60%+ कुंडलियों में भंग होता है, डरें नहीं।</li>
+<li><strong>साढ़ेसाती</strong> – मेहनत वालों को शनि फल देता है।</li>
+<li><strong>उपाय पहले</strong> – दान/मंत्र/व्रत पहले, महंगे रत्न बाद में।</li>
+<li><strong>ठग पहचानें</strong> – डराकर महंगी पूजा बेचे = 100% fraud!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Vedic और Western राशि अलग क्यों?</summary><p>Vedic (चंद्र/sidereal, ~24° पीछे) vs Western (सूर्य/tropical)। भारत में शादी/मुहूर्त Vedic से – दोनों में 1 राशि का फर्क आम है।</p></details>
+<details><summary>Nakshatra क्या है?</summary><p>चंद्र के 27 नक्षत्र (अश्विनी→रेवती) – नाम का पहला अक्षर + गुण इससे। राशि से ज़्यादा detailed Vedic analysis nakshatra से होती है।</p></details>
+<details><summary>राशि से नाम कैसे रखें?</summary><p>Nakshatra-pada के तय अक्षरों से (जैसे अश्विनी: चू/चे/चो/ला)। Pandit birth-time rectification के बाद अक्षर बताता है।</p></details>
+<details><summary>Kundli मिलान में क्या देखा जाता है?</summary><p>Guna-milan (36 में से 18+), मांगलिक दोष, dasha – सिर्फ राशि same होना काफी नहीं। Experienced ज्योतिषी से पूरा मिलान कराएं।</p></details>
+<details><summary>रत्न पहनना चाहिए?</summary><p>बिना कुंडली-analysis कभी नहीं – गलत रत्न नुकसान भी कर सकता है। Certified (lab-tested) ही लें, ठगों से बचें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="age-calculator.html">🎂 उम्र कैलकुलेटर (Age Calculator)</a> · <a href="bmi-calculator.html">⚖️ BMI कैलकुलेटर (बीएमआई)</a> · <a href="calorie-bmr-calculator.html">🔥 रोज़ कितनी कैलोरी चाहिए?</a> · <a href="water-intake-calculator.html">💧 रोज़ कितना पानी पिएं?</a> · <a href="sleep-cycle-calculator.html">😴 कब सोएं, कब उठें?</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

@@ -58,8 +58,30 @@ td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
 .cgpa{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:end;margin-top:8px}
 @media(max-width:600px){.cgpa{grid-template-columns:1fr}}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/marks-percentage-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "85% कैसे calculate करते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "(प्राप्त ÷ कुल) × 100। 510/600 = 85%। सभी subjects जोड़कर overall % निकालें।"}}, {"@type": "Question", "name": "First division कितने % पर?", "acceptedAnswer": {"@type": "Answer", "text": "आम तौर पर 60%+ first, 75%+ distinction (board/university के हिसाब से थोड़ा अलग)।"}}, {"@type": "Question", "name": "CGPA से marks कैसे निकालें?", "acceptedAnswer": {"@type": "Answer", "text": "CBSE: % = CGPA × 9.5, फिर % × total marks। 9.0 CGPA (500 में) = 85.5% = 427.5 marks।"}}, {"@type": "Question", "name": "% और percentile में अंतर?", "acceptedAnswer": {"@type": "Answer", "text": "% = आपके marks; percentile = आपसे नीचे कितने students (100 में)। Entrance में percentile मायने रखता है।"}}, {"@type": "Question", "name": "Grace marks क्या हैं?", "acceptedAnswer": {"@type": "Answer", "text": "Passing से 1–5 कम हों तो board grace देता है (policy के हिसाब से)। Result में * या # से दिखता है।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -130,7 +152,37 @@ th{background:#e8f0fe;color:#1a73e8}
     <p>CBSE ने पाया कि A1 (91–100) वाले students का औसत 95 निकलता है। 95 ÷ 10 (A1 का grade point) = <strong>9.5</strong>। इसीलिए CGPA को 9.5 से गुणा करने पर अनुमानित percentage आता है। उदाहरण: ग्रेड पॉइंट 9+8+8+7+8 = 40 → CGPA = 40÷5 = 8 → Percentage = 8 × 9.5 = <strong>76%</strong>।</p>
     <div class="note">💡 <strong>ध्यान दें:</strong> कई बोर्ड अब सीधे नंबर और प्रतिशत देते हैं। अपने बोर्ड/स्कूल के नियम ही अंतिम मानें – यह tool गणित का अंदाज़ा देता है।</div>
     <div class="note">🔒 आपके नंबर कहीं नहीं जाते – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>Marks → % + Grade कैसे निकालें?</h2>
+<ol>
+<li><strong>हर subject के marks</strong> भरें – obtained + total।</li>
+<li><strong>Calculate दबाएं</strong> – total, %, grade, division एक साथ।</li>
+<li><strong>CGPA converter</strong> – % से CGPA (≈ % ÷ 9.5) भी देखें।</li>
+<li><strong>Grace/supply</strong> cases में passing criteria नीचे पढ़ें।</li>
+<li>Competitive exams में <strong>cutoff vs %</strong> का फर्क समझें।</li>
+</ol>
+<h2>% → Division + Grade Table</h2>
+<table class="gt-table"><tr><th>%</th><th>Division</th><th>Grade</th></tr><tr><td>75%+</td><td>Distinction</td><td>A1/A2</td></tr><tr><td>60–75%</td><td>First</td><td>B1/B2</td></tr><tr><td>45–60%</td><td>Second</td><td>C1/C2</td></tr><tr><td>33–45%</td><td>Third/Pass</td><td>D/E</td></tr></table>
+<div class="note">💡 <strong>Best-of-5 rule:</strong> कुछ boards/admissions best 5 subjects गिनते हैं – 6th subject (additional) replace हो सकता है। Admission criteria ज़रूर पढ़ें!</div>
+<h2>% बढ़ाने के 5 तरीके</h2>
+<ul>
+<li><strong>High-weightage chapters</strong> पहले – blueprint से priority।</li>
+<li><strong>Sample papers timed</strong> – 3h exam-hall practice।</li>
+<li><strong>Presentation:</strong> neat + underlined keywords + diagrams।</li>
+<li><strong>Revision notes</strong> – 1-page per chapter formulas।</li>
+<li><strong>Sleep 7h+</strong> – रातभर जागना = recall down 40%!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>85% कैसे calculate करते हैं?</summary><p>(प्राप्त ÷ कुल) × 100। 510/600 = 85%। सभी subjects जोड़कर overall % निकालें।</p></details>
+<details><summary>First division कितने % पर?</summary><p>आम तौर पर 60%+ first, 75%+ distinction (board/university के हिसाब से थोड़ा अलग)।</p></details>
+<details><summary>CGPA से marks कैसे निकालें?</summary><p>CBSE: % = CGPA × 9.5, फिर % × total marks। 9.0 CGPA (500 में) = 85.5% = 427.5 marks।</p></details>
+<details><summary>% और percentile में अंतर?</summary><p>% = आपके marks; percentile = आपसे नीचे कितने students (100 में)। Entrance में percentile मायने रखता है।</p></details>
+<details><summary>Grace marks क्या हैं?</summary><p>Passing से 1–5 कम हों तो board grace देता है (policy के हिसाब से)। Result में * या # से दिखता है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="cgpa-calculator.html">🎓 CGPA से Percentage कैलकुलेटर</a> · <a href="hcf-lcm-calculator.html">➗ HCF और LCM कैलकुलेटर</a> · <a href="scientific-calculator.html">🔬 वैज्ञानिक कैलकुलेटर</a> · <a href="simple-calculator.html">🧮 ऑनलाइन कैलकुलेटर</a> · <a href="number-system-converter.html">🔢 नंबर सिस्टम कन्वर्टर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

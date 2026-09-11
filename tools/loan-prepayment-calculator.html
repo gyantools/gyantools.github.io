@@ -49,8 +49,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/loan-prepayment-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Prepayment और part-payment में अंतर?", "acceptedAnswer": {"@type": "Answer", "text": "Part-payment = बीच में कुछ रकम जमा (लोन जारी), prepayment/foreclosure = पूरा लोन एक साथ बंद। दोनों floating home loan पर बिना charge होते हैं।"}}, {"@type": "Question", "name": "क्या prepayment से CIBIL बढ़ता है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – कम outstanding और समय पर closure से credit utilization घटता है और score सुधरता है।"}}, {"@type": "Question", "name": "Home loan prepayment पर tax छूट जाती है?", "acceptedAnswer": {"@type": "Answer", "text": "Prepayment के बाद बचा interest घटेगा तो 24(b)/80C छूट भी घटेगी – फिर भी prepayment फायदेमंद है क्योंकि छूट सिर्फ ~30% है जबकि ब्याज 100% बचता है।"}}, {"@type": "Question", "name": "Extra पैसा invest करूं या prepayment?", "acceptedAnswer": {"@type": "Answer", "text": "अगर loan दर 9% और safe return 7% है तो prepayment बेहतर (guaranteed 9% बचत)। Long-term equity (12%+ उम्मीद) से तुलना करके फैसला लें।"}}, {"@type": "Question", "name": "Bank prepayment लेने से मना करे तो?", "acceptedAnswer": {"@type": "Answer", "text": "RBI नियम से floating home loan prepayment से मना नहीं कर सकते। लिखित complaint दें और Banking Ombudsman (RBI) में मुफ़्त शिकायत करें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -111,7 +133,38 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
     <div class="note">💡 कई बैंक floating rate home loan पर prepayment free लेते हैं – charge के बारे में बैंक से पूछकर ही बड़ी रकम जमा करें।</div>
     <div class="note">⚠️ यह tool अनुमान देता है – बैंक की गिनती (खुली तारीखें, शुल्क) से थोड़ा अंतर हो सकता है।</div>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>Prepayment बचत कैसे निकालें?</h2>
+<ol>
+<li>बचा हुआ <strong>loan balance, ब्याज दर और बची अवधि</strong> भरें।</li>
+<li><strong>मासिक extra राशि</strong> डालें (जैसे ₹5,000) – या एकमुश्त part-payment।</li>
+<li><strong>दो विकल्प compare करें</strong> – EMI कम करें vs अवधि घटाएं।</li>
+<li>नतीजे में <strong>बचा ब्याज + बचे महीने</strong> साफ दिखेंगे।</li>
+<li>Bank से <strong>prepayment charges</strong> confirm करें (floating home loan पर zero)।</li>
+</ol>
+<h2>अवधि घटाएं या EMI? – ₹25L, 9%, 20 साल + ₹5,000/माह extra</h2>
+<table class="gt-table"><tr><th>विकल्प</th><th>ब्याज बचत (लगभग)</th><th>फायदा</th></tr><tr><td>कुछ न करें</td><td>–</td><td>कुल ब्याज ~₹27.5L</td></tr><tr><td>EMI same, अवधि घटाएं ⭐</td><td>~₹10–12 लाख</td><td>लोन ~6–7 साल पहले खत्म</td></tr><tr><td>अवधि same, EMI घटाएं</td><td>~₹4–5 लाख</td><td>मासिक बोझ कम</td></tr></table>
+<div class="note">💡 <strong>हमेशा अवधि घटाना बेहतर</strong> – उसी extra पैसे से दोगुनी-तिगुनी बचत! EMI तभी घटाएं जब मासिक बजट टाइट हो। Bank को लिखित में बताएं कि prepayment <strong>tenure reduction</strong> में लगाएं।</div>
+<h2>Prepayment के 5 सुनहरे नियम</h2>
+<ul>
+<li><strong>शुरुआत में करें</strong> – पहले 5 साल में 1 रुपया = बाद के 3 रुपये के बराबर।</li>
+<li><strong>Emergency fund पहले</strong> – 6 महीने का खर्च बचाकर रखें, फिर prepayment।</li>
+<li><strong>High-interest पहले</strong> – personal loan/credit card (12–42%) home loan (9%) से पहले चुकाएं।</li>
+<li><strong>Tax angle देखें</strong> – home loan interest पर छूट मिलती है, तो 80C/24b भरने के बाद extra prepayment सोचें।</li>
+<li><strong>Charges पूछें</strong> – floating home loan: zero; fixed/personal loan: 2–5% तक हो सकता है।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Prepayment और part-payment में अंतर?</summary><p>Part-payment = बीच में कुछ रकम जमा (लोन जारी), prepayment/foreclosure = पूरा लोन एक साथ बंद। दोनों floating home loan पर बिना charge होते हैं।</p></details>
+<details><summary>क्या prepayment से CIBIL बढ़ता है?</summary><p>हां – कम outstanding और समय पर closure से credit utilization घटता है और score सुधरता है।</p></details>
+<details><summary>Home loan prepayment पर tax छूट जाती है?</summary><p>Prepayment के बाद बचा interest घटेगा तो 24(b)/80C छूट भी घटेगी – फिर भी prepayment फायदेमंद है क्योंकि छूट सिर्फ ~30% है जबकि ब्याज 100% बचता है।</p></details>
+<details><summary>Extra पैसा invest करूं या prepayment?</summary><p>अगर loan दर 9% और safe return 7% है तो prepayment बेहतर (guaranteed 9% बचत)। Long-term equity (12%+ उम्मीद) से तुलना करके फैसला लें।</p></details>
+<details><summary>Bank prepayment लेने से मना करे तो?</summary><p>RBI नियम से floating home loan prepayment से मना नहीं कर सकते। लिखित complaint दें और Banking Ombudsman (RBI) में मुफ़्त शिकायत करें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="emi-calculator.html">💰 EMI कैलकुलेटर – मासिक किश्त निकालें</a> · <a href="emi-table-calculator.html">📊 EMI टेबल (Amortization) कैलकुलेटर</a> · <a href="loan-eligibility-calculator.html">🏦 Loan Eligibility कैलकुलेटर</a> · <a href="home-loan-tax.html">🏠 होम लोन टैक्स बेनिफिट कैलकुलेटर</a> · <a href="car-loan-eligibility.html">🚗 कार लोन एलिजिबिलिटी कैलकुलेटर</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

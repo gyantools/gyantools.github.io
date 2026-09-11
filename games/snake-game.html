@@ -48,8 +48,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/games/snake-game.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Snake game किसने बनाया?", "acceptedAnswer": {"@type": "Answer", "text": "1976 arcade 'Blockade' से शुरुआत, 1997 में Nokia 6110 में आकर दुनिया भर में मशहूर। 400M+ phones में खेला गया – mobile gaming का पहला बादशाह!"}}, {"@type": "Question", "name": "High score कैसे बनाएं?", "acceptedAnswer": {"@type": "Answer", "text": "बड़े loops बनाओ (पूरे board का चक्कर), दीवारों के साथ चलो, जल्दबाज़ी मत करो। सांप लंबा हो तो बीच में मत घुसो!"}}, {"@type": "Question", "name": "Speed बढ़ती क्यों है?", "acceptedAnswer": {"@type": "Answer", "text": "हर फल पर speed +1 – यही challenge है! 20+ फल के बाद सिर्फ calm players बचते हैं।"}}, {"@type": "Question", "name": "Keyboard vs Touch?", "acceptedAnswer": {"@type": "Answer", "text": "Keyboard (arrows) precise; touch swipe mobile पर। Shortcut: spacebar = pause।"}}, {"@type": "Question", "name": "सांप खुद को खा जाए तो?", "acceptedAnswer": {"@type": "Answer", "text": "Classic rule: game over! कुछ versions में 'wrap mode' (दीवार पार) भी होता है।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -98,7 +120,44 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
       <li>दीवार या खुद से टकराने पर गेम खत्म</li>
     </ul>
     <p>🎮 यह गेम <strong>PAWANGAMINGSTUDIO</strong> की एक पेशकश है। Tic-Tac-Toe और जोड़ी मिलाओ भी खेलें!</p>
-  </article>
+  
+<h2>Snake Game कैसे खेलें?</h2>
+<ol>
+<li><strong>Start दबाएं</strong> – सांप अपने आप चलने लगेगा।</li>
+<li><strong>Arrow keys / swipe</strong> – ऊपर-नीचे-दाएं-बाएं direction।</li>
+<li><strong>फल खाएं</strong> – हर फल = +points + लंबा सांप!।</li>
+<li><strong>दीवार + खुद से बचें</strong> – टकराया = game over!।</li>
+<li><strong>High score तोड़ें</strong> – speed हर फल के साथ बढ़ती है!</li>
+</ol>
+<h2>Snake Score Guide</h2>
+<table class="gt-table"><tr><th>फल</th><th>Level</th></tr><tr><td>0–10</td><td>Warm-up – slow + safe</td></tr><tr><td>10–25</td><td>Medium – planning शुरू</td></tr><tr><td>25–50</td><td>Hard – सिर्फ loops!</td></tr><tr><td>50+</td><td>Insane – legend zone!</td></tr></table>
+<div class="note">💡 <strong>Golden loop:</strong> board के किनारे-किनारे बड़ा चक्कर लगाओ – सांप कभी खुद में नहीं फंसेगा! बीच में घुसना = मौत। फल के पीछे मत भागो, फल को अपने रास्ते में आने दो!</div>
+<h2>High Score के 5 मंत्र</h2>
+<ul>
+<li><strong>Loops बनाओ</strong> – किनारों का चक्कर safest।</li>
+<li><strong>पूंछ देखो</strong> – हर move से पहले tail-position।</li>
+<li><strong>Speed से मत डरो</strong> – rhythm पकड़ो, panic = crash।</li>
+<li><strong>Corners avoid</strong> – फंसने की जगह #1।</li>
+<li><strong>Breaks लो</strong> – आंखें थकीं = गलती पक्की।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Snake game किसने बनाया?</summary><p>1976 arcade 'Blockade' से शुरुआत, 1997 में Nokia 6110 में आकर दुनिया भर में मशहूर। 400M+ phones में खेला गया – mobile gaming का पहला बादशाह!</p></details>
+<details><summary>High score कैसे बनाएं?</summary><p>बड़े loops बनाओ (पूरे board का चक्कर), दीवारों के साथ चलो, जल्दबाज़ी मत करो। सांप लंबा हो तो बीच में मत घुसो!</p></details>
+<details><summary>Speed बढ़ती क्यों है?</summary><p>हर फल पर speed +1 – यही challenge है! 20+ फल के बाद सिर्फ calm players बचते हैं।</p></details>
+<details><summary>Keyboard vs Touch?</summary><p>Keyboard (arrows) precise; touch swipe mobile पर। Shortcut: spacebar = pause।</p></details>
+<details><summary>सांप खुद को खा जाए तो?</summary><p>Classic rule: game over! कुछ versions में 'wrap mode' (दीवार पार) भी होता है।</p></details>
+</div>
+<div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="snake-ladder.html">🐍🪜 साँप-सीढ़ी (Snakes &amp; Ladders)</a> · <a href="sudoku.html">🔢 Sudoku – दिमाग की पहेली</a> · <a href="tic-tac-toe.html">🎮 Tic Tac Toe (X-O)</a> · <a href="word-guess.html">🔤 Word Guess – 5 अक्षर का शब्द पहचानो</a> · <a href="2048.html">🔢 2048 पहेली गेम</a></div>
+<h2>Snake Master Practice Routine (7 दिन)</h2>
+<p>High score fluke नहीं, practice का नतीजा है। ये 7-दिन का drill follow करो: <strong>दिन 1–2:</strong> सिर्फ slow loops – बिना फल के 2 min survive करना सीखो। <strong>दिन 3–4:</strong> फल खाते हुए किनारों पर रहो, बीच में कभी मत जाओ। <strong>दिन 5–6:</strong> speed बढ़ने पर 'zig-zag' की जगह 'wide-U-turns' practice करो। <strong>दिन 7:</strong> full-run – target 30+ फल!</p>
+<ul>
+<li><strong>Rule 1:</strong> सांप की पूंछ हमेशा तुम्हारी आंखों के सामने होनी चाहिए – blind turns = मौत।</li>
+<li><strong>Rule 2:</strong> फल के ठीक पीछे मत भागो – loop में रहो, फल खुद मिलेगा।</li>
+<li><strong>Rule 3:</strong> 20+ फल के बाद हर move पहले से plan करो – reaction-time काफी नहीं रहता।</li>
+</ul>
+<div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें!</p></div></div>
+</article>
 </div>
 
 <footer>

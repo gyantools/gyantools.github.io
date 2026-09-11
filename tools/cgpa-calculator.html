@@ -51,8 +51,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/cgpa-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "8.6 CGPA कितने %?", "acceptedAnswer": {"@type": "Answer", "text": "CBSE ×9.5 से: 8.6 × 9.5 = 81.7%। ये 10th/12th CBSE के लिए official है।"}}, {"@type": "Question", "name": "CGPA × 9.5 rule क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "CBSE का official conversion: Percentage = CGPA × 9.5। 10 CGPA = 95% (100% नहीं!) – board average पर आधारित।"}}, {"@type": "Question", "name": "SGPA और CGPA में अंतर?", "acceptedAnswer": {"@type": "Answer", "text": "SGPA = एक semester का; CGPA = सभी semesters का cumulative average (credit-weighted)। Final degree पर CGPA छपता है।"}}, {"@type": "Question", "name": "University CGPA to % कैसे?", "acceptedAnswer": {"@type": "Answer", "text": "हर university का formula अलग (×9.5 / ×10 / own table)। Degree/transcript के पीछे छपा formula ही official – वही इस्तेमाल करें।"}}, {"@type": "Question", "name": "9+ CGPA कैसे लाएं?", "acceptedAnswer": {"@type": "Answer", "text": "PYQs + revision cycles + answer-writing practice। CGPA 8.5+ = placement/shortlist safe zone (most companies)।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -115,7 +137,37 @@ th{background:#e8f0fe;color:#1a73e8}
     <div class="tip">💡 मार्क्स का प्रतिशत निकालने के लिए हमारा <a href="marks-percentage-calculator.html" style="color:#1a73e8">Marks Percentage कैलकुलेटर</a> और पढ़ाई की रणनीति के लिए <a href="../blog/exam-tips-guide.html" style="color:#1a73e8">Exam Tips गाइड</a> पढ़ें।</div>
     <div class="note">⚠️ यह calculator अनुमानित conversion देता है। सरकारी नौकरी/एडमिशन फॉर्म में असली conversion certificate (बोर्ड से) मांगा जाए तो वही लगामें।</div>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>CGPA → Percentage कैसे निकालें?</h2>
+<ol>
+<li><strong>CGPA</strong> भरें – जैसे 8.6 (10-point scale)।</li>
+<li><strong>CBSE ×9.5 formula</strong> automatic – 8.6 × 9.5 = 81.7%।</li>
+<li><strong>Grade points mode:</strong> हर subject का grade point डालकर overall CGPA।</li>
+<li><strong>SGPA → CGPA:</strong> semesters के SGPA + credits से final CGPA।</li>
+<li>University का <strong>अपना formula</strong> हो तो note देखें – हर जगह ×9.5 नहीं!</li>
+</ol>
+<h2>CGPA → % Quick Table (CBSE ×9.5)</h2>
+<table class="gt-table"><tr><th>CGPA</th><th>%</th><th>Grade</th></tr><tr><td>10</td><td>95%</td><td>A1</td></tr><tr><td>9.0</td><td>85.5%</td><td>A2</td></tr><tr><td>8.0</td><td>76%</td><td>B1</td></tr><tr><td>7.0</td><td>66.5%</td><td>B2</td></tr><tr><td>6.0</td><td>57%</td><td>C1</td></tr></table>
+<div class="note">💡 <strong>10 CGPA = 95%, 100% नहीं!</strong> ×9.5 board-average formula है। College admission/cutoff में % ही मांगा जाता है – CGPA slip के साथ conversion proof रखें।</div>
+<h2>CGPA बढ़ाने के 5 तरीके</h2>
+<ul>
+<li><strong>PYQs 10 साल</strong> – 60%+ paper repeat-pattern से।</li>
+<li><strong>NCERT line-by-line</strong> – board में 90%+ NCERT से।</li>
+<li><strong>Answer writing</strong> – diagrams + headings = full marks।</li>
+<li><strong>Revision 3 rounds</strong> – 7-day, 30-day, exam-eve।</li>
+<li><strong>Weak subject पहले</strong> – सुबह fresh mind = tough topics।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>8.6 CGPA कितने %?</summary><p>CBSE ×9.5 से: 8.6 × 9.5 = 81.7%। ये 10th/12th CBSE के लिए official है।</p></details>
+<details><summary>CGPA × 9.5 rule क्या है?</summary><p>CBSE का official conversion: Percentage = CGPA × 9.5। 10 CGPA = 95% (100% नहीं!) – board average पर आधारित।</p></details>
+<details><summary>SGPA और CGPA में अंतर?</summary><p>SGPA = एक semester का; CGPA = सभी semesters का cumulative average (credit-weighted)। Final degree पर CGPA छपता है।</p></details>
+<details><summary>University CGPA to % कैसे?</summary><p>हर university का formula अलग (×9.5 / ×10 / own table)। Degree/transcript के पीछे छपा formula ही official – वही इस्तेमाल करें।</p></details>
+<details><summary>9+ CGPA कैसे लाएं?</summary><p>PYQs + revision cycles + answer-writing practice। CGPA 8.5+ = placement/shortlist safe zone (most companies)।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="marks-percentage-calculator.html">🎓 नंबर और प्रतिशत कैलकुलेटर</a> · <a href="hcf-lcm-calculator.html">➗ HCF और LCM कैलकुलेटर</a> · <a href="scientific-calculator.html">🔬 वैज्ञानिक कैलकुलेटर</a> · <a href="simple-calculator.html">🧮 ऑनलाइन कैलकुलेटर</a> · <a href="number-system-converter.html">🔢 नंबर सिस्टम कन्वर्टर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

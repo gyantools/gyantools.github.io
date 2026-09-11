@@ -54,8 +54,37 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/games/tic-tac-toe.html">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Tic Tac Toe (X-O) कैसे खेलते हैं?","acceptedAnswer":{"@type":"Answer","text":"3x3 के खाने में दो खिलाड़ी बारी-बारी से X और O बनाते हैं। जो पहले अपनी तीन निशानियां सीधी, आड़ी या तिरछी लाइन में बना ले, वही जीतता है।"}},
+{"@type":"Question","name":"क्या मुश्किल मोड वाले computer को हराया जा सकता है?","acceptedAnswer":{"@type":"Answer","text":"लगभग नहीं। मुश्किल मोड minimax algorithm से खेलता है जो कभी गलती नहीं करता। इसके खिलाफ बराबरी (draw) ही आपकी जीत मानी जाती है।"}},
+{"@type":"Question","name":"अगर दोनों खिलाड़ी सही खेलें तो क्या होगा?","acceptedAnswer":{"@type":"Answer","text":"अगर दोनों तरफ से कोई गलती न हो तो हर खेल बराबरी (draw) पर खत्म होगा। यही इस खेल का गणितीय सच है।"}},
+{"@type":"Question","name":"क्या यह गेम बिना इंटरनेट चलता है?","acceptedAnswer":{"@type":"Answer","text":"पेज एक बार खुलने के बाद गेम आपके ब्राउज़र में ही चलता है, इसलिए इंटरनेट धीमा होने पर भी खेल नहीं रुकता।"}},
+{"@type":"Question","name":"क्या बच्चों के लिए यह गेम फायदेमंद है?","acceptedAnswer":{"@type":"Answer","text":"हां। X-O से बच्चों में तर्क-शक्ति, आगे की चाल सोचना और हार-जीत को खेल भावना से लेना सीखने को मिलता है।"}},
+{"@type":"Question","name":"मेरा स्कोर क्या save रहता है?","acceptedAnswer":{"@type":"Answer","text":"जीत-हार का स्कोर तब तक दिखता है जब तक पेज खुला है। पेज refresh करने पर स्कोर reset हो जाता है।"}}
+]}
+</script>
+
 </head>
 <body>
 <header>
@@ -95,20 +124,57 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
   </div>
 
   <article>
-    <h2>तीन मोड – अपने हिसाब से खेलें</h2>
+    <span class="gt-updated">✅ आखिरी अपडेट: 11 सितंबर 2026</span>
+    <h2>X-O (Tic Tac Toe) क्या है?</h2>
+    <p>Tic Tac Toe – जिसे भारत में <strong>X-O, काटा-गोला या शून्य-कांटा</strong> भी कहते हैं – दुनिया का सबसे मशहूर कागज़-पेंसिल वाला खेल है। 3×3 के नौ खानों में दो खिलाड़ी बारी-बारी से X और O बनाते हैं, और जो पहले अपनी <strong>तीन निशानियां एक सीधी, आड़ी या तिरछी लाइन</strong> में बना ले, वही जीतता है।</p>
+    <p>क्या आप जानते हैं? इस खेल की जड़ें <strong>3000 साल पुरानी</strong> हैं – प्राचीन मिस्र और रोम में इससे मिलते-जुलते खेल खेले जाते थे। 1952 में यह दुनिया के सबसे पहले computer games में से एक बना, और आज भी बच्चों को तर्क-शक्ति (logical thinking) सिखाने का सबसे आसान तरीका माना जाता है।</p>
+    <h2>कैसे खेलें? (स्टेप-बाय-स्टेप)</h2>
+    <ol>
+      <li><strong>मोड चुनें</strong> – ऊपर तीन बटन हैं: 2 खिलाड़ी, Computer आसान, Computer मुश्किल।</li>
+      <li><strong>पहली चाल:</strong> खिलाड़ी 1 (X) हमेशा पहले चलता है – किसी भी खाली खाने पर क्लिक/टैप करें।</li>
+      <li><strong>बारी-बारी खेलें</strong> – अब खिलाड़ी 2 (O) या computer अपनी चाल चलेगा।</li>
+      <li><strong>जीत की घोषणा</strong> – तीन निशानियां एक लाइन में बनते ही विजेता का नाम दिख जाएगा और स्कोर अपने आप बढ़ जाएगा।</li>
+      <li><strong>नया गेम</strong> – "🔄 नया गेम" दबाकर तुरंत दोबारा खेलें, स्कोर ऊपर बना रहेगा।</li>
+    </ol>
+    <h2>तीन मोड – अपने हिसाब से चुनें</h2>
     <ul>
-      <li><strong>👤👤 2 खिलाड़ी:</strong> दो दोस्त/भाई-बहन एक ही फोन पर बारी-बारी से खेलें – खिलाड़ी 1 <strong>X</strong>, खिलाड़ी 2 <strong>O</strong></li>
-      <li><strong>🤖 Computer आसान:</strong> बच्चों और सीखने वालों के लिए</li>
-      <li><strong>😈 Computer मुश्किल:</strong> computer पूरी गणितीय चाल (minimax algorithm) से खेलता है – उसे हराना लगभग नामुमकिन, बराबरी ही आपकी जीत!</li>
+      <li><strong>👤👤 2 खिलाड़ी:</strong> दो दोस्त या भाई-बहन एक ही फोन पर बारी-बारी से खेलें – खिलाड़ी 1 <strong>X</strong>, खिलाड़ी 2 <strong>O</strong>। लंबी यात्रा या light जाने पर time-pass का सबसे अच्छा साथी!</li>
+      <li><strong>🤖 Computer आसान:</strong> बच्चों और पहली बार खेलने वालों के लिए – computer कभी-कभी जानबूझकर आसान चाल चलता है ताकि आप जीतना सीख सकें।</li>
+      <li><strong>😈 Computer मुश्किल:</strong> computer पूरी गणितीय चाल (minimax algorithm) से खेलता है – उसे हराना लगभग नामुमकिन है। इसके खिलाफ <strong>बराबरी (draw) ही आपकी जीत</strong> समझिए!</li>
     </ul>
-    <h2>जीतने की चालें</h2>
+    <h2>जीतने की 7 पक्की चालें (Tips & Tricks)</h2>
+    <ol>
+      <li><strong>पहली चाल में केंद्र (बीच वाला खाना) लें</strong> – केंद्र से सबसे ज़्यादा (4) जीतने वाली लाइनें खुलती हैं।</li>
+      <li><strong>केंद्र न मिले तो कोना लें</strong> – कोने से 3 लाइनें खुलती हैं, जबकि side वाले खानों से सिर्फ 2।</li>
+      <li><strong>"Fork" बनाएं</strong> – ऐसी स्थिति बनाएं जहां आपकी एक साथ दो जीतने वाली लाइनें बन रही हों – विरोधी एक ही चाल में दोनों नहीं रोक पाएगा। यही सबसे बड़ी जीतने वाली तरकीब है।</li>
+      <li><strong>विरोधी के fork को पहले रोकें</strong> – अगर विरोधी की दो-दो निशानियां दो लाइनों में हैं, तो अपनी जीत छोड़कर पहले उसे रोकें।</li>
+      <li><strong>विपरीत कोना (Opposite Corner) तरकीब</strong> – अगर विरोधी कोने में है तो उससे उल्टा कोना लेना अक्सर fork का रास्ता खोलता है।</li>
+      <li><strong>खाली कोनों पर नज़र रखें</strong> – अनुभवी खिलाड़ी हमेशा गिनते हैं कि कौन-सी लाइन में दो निशानियां हो चुकी हैं।</li>
+      <li><strong>मुश्किल computer से draw का लक्ष्य रखें</strong> – उसके खिलाफ जीत की नहीं, गलती न करने की रणनीति अपनाएं; एक भी गलत चाल और हार पक्की!</li>
+    </ol>
+    <div class="note">🧠 <strong>गणितीय सच:</strong> अगर दोनों खिलाड़ी एक भी गलती न करें तो X-O का हर खेल <strong>हमेशा draw</strong> होता है। यानी इस खेल में जीत का असली मंत्र है – खुद गलती न करना और विरोधी की गलती पकड़ना!</div>
+    <h2>Minimax Algorithm क्या है? (आसान भाषा में)</h2>
+    <p>मुश्किल मोड वाला computer <strong>minimax</strong> नाम की तकनीक से खेलता है। आसान शब्दों में – वह अपनी हर चाल से पहले <strong>आगे की सारी संभावित चालें</strong> मन ही मन खेलकर देख लेता है (X-O में ज़्यादा से ज़्यादा 255,168 संभावित खेल होते हैं!) और फिर वही चाल चुनता है जिससे वह कभी न हारे। इसीलिए उसे हराना लगभग नामुमकिन है – लेकिन draw कराना आपके हाथ में है!</p>
+    <h2>बच्चों के लिए क्यों फायदेमंद है?</h2>
     <ul>
-      <li><strong>केंद्र या कोना पहले लें</strong> – केंद्र सबसे ज़्यादा जीतने वाली लाइनें खोलता है</li>
-      <li>ऐसी दो लाइनें एक साथ बनाएं जिन्हें विरोधी एक ही चाल से न रोक सके</li>
-      <li>विरोधी की दो-वाली लाइन हमेशा पहले रोकें</li>
+      <li><strong>तर्क-शक्ति:</strong> "अगर मैं यहां चलूं तो वह वहां चलेगा" – आगे सोचने की आदत बनती है।</li>
+      <li><strong>योजना बनाना:</strong> fork जैसी रणनीति से planning skill विकसित होती है।</li>
+      <li><strong>खेल भावना:</strong> हार-जीत को मुस्कुराकर लेना सीखते हैं।</li>
+      <li><strong>स्क्रीन से हटकर भी:</strong> यह खेल कागज़ पर भी खेला जा सकता है – आंखों को आराम!</li>
     </ul>
-    <p>🎮 यह गेम <strong>PAWANGAMINGSTUDIO</strong> की एक पेशकश है। और गेम आ रहे हैं!</p>
-  </article>
+    <h2>X-O के बारे में अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+    <div class="gt-faq">
+      <details><summary>X-O खेलने का सही तरीका क्या है?</summary><p>3×3 के खानों में बारी-बारी से X और O बनाएं। जो पहले तीन निशानियां एक लाइन (सीधी, आड़ी या तिरछी) में बनाए, वही जीतता है।</p></details>
+      <details><summary>क्या मुश्किल computer को हराया जा सकता है?</summary><p>लगभग नहीं – वह minimax algorithm से खेलता है और कभी गलती नहीं करता। उसके खिलाफ draw ही आपकी जीत है!</p></details>
+      <details><summary>दोनों सही खेलें तो क्या होगा?</summary><p>हमेशा draw। X-O गणितीय रूप से "solved game" है – सही खेल पर पहला या दूसरा, कोई नहीं जीतता।</p></details>
+      <details><summary>क्या यह गेम बिना इंटरनेट चलेगा?</summary><p>पेज एक बार लोड होने के बाद गेम पूरी तरह आपके ब्राउज़र में चलता है, इसलिए धीमे इंटरनेट पर भी खेल नहीं रुकेगा।</p></details>
+      <details><summary>क्या बच्चों के लिए फायदेमंद है?</summary><p>बिल्कुल! इससे तर्क-शक्ति, planning और खेल भावना विकसित होती है। छोटे बच्चों को "Computer आसान" मोड से शुरुआत कराएं।</p></details>
+      <details><summary>मेरा स्कोर save रहता है क्या?</summary><p>जब तक पेज खुला है, जीत-हार-बराबरी का स्कोर ऊपर दिखता रहेगा। पेज refresh करने पर स्कोर reset हो जाता है।</p></details>
+    </div>
+    <div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="memory-game.html">जोड़ी मिलाओ</a> · <a href="snake-game.html">Snake Game</a> · <a href="2048.html">2048 पहेली</a> · <a href="connect-four.html">Connect Four</a> · <a href="sudoku.html">Sudoku</a> · <a href="dots-and-boxes.html">Dots &amp; Boxes</a></div>
+    <div class="note">🔒 बिना लॉगिन, बिना डाउनलोड – गेम आपके ब्राउज़र में ही चलता है, कोई डेटा कहीं नहीं जाता।</div>
+    <div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। कोई सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें – और गेम आ रहे हैं!</p></div></div>
+</article>
 </div>
 
 <footer>

@@ -51,8 +51,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/simple-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "BODMAS क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Bracket → Of/Order → Divide/Multiply → Add/Subtract। 2+3×4 = 14 (20 नहीं!)। Calculator सही order follow करता है।"}}, {"@type": "Question", "name": "% button कैसे काम करता है?", "acceptedAnswer": {"@type": "Answer", "text": "500 − 20% = 400 (500 का 20% घटाकर)। 500 + 18% = 590 (GST जोड़ना)।"}}, {"@type": "Question", "name": "Keyboard से चलेगा?", "acceptedAnswer": {"@type": "Answer", "text": "हां – numbers, +, −, *, /, Enter (=), Backspace, Escape (clear) सब काम करते हैं।"}}, {"@type": "Question", "name": "GST जल्दी कैसे जोड़ें?", "acceptedAnswer": {"@type": "Answer", "text": "राशि + 18% दबाएं – जैसे 1000+18% = 1180। निकालने के लिए ÷1.18 करें।"}}, {"@type": "Question", "name": "बड़ा हिसाब कैसे करें?", "acceptedAnswer": {"@type": "Answer", "text": "टुकड़ों में: पहले bracket, फिर ×÷, फिर +−। हर step note करें – गलती पकड़ना आसान।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -136,6 +158,36 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 </ul>
 <p>अगर आपको <strong>प्रतिशत, ब्याज, EMI या GST</strong> जैसे खास हिसाब चाहिए – तो ऊपर मेन्यू में दिए GyanTools के विशेष कैलकुलेटर (Percentage, Interest, EMI, GST) इस्तेमाल करें, वे उन गणनाओं के लिए बने हैं।</p>
 
+
+<h2>Online Calculator कैसे चलाएं?</h2>
+<ol>
+<li><strong>Buttons tap</strong> करें या <strong>keyboard</strong> से type करें (0–9, +, −, *, /)।</li>
+<li><strong>% button</strong> – 500−20% = 400 सीधे।</li>
+<li><strong>Backspace</strong> (⌫) से आखिरी digit मिटाएं, C से all-clear।</li>
+<li><strong>Decimal (.)</strong> – पैसे के हिसाब के लिए।</li>
+<li>History चाहिए तो <strong>steps लिखकर</strong> calculate करें (बड़ा हिसाब टुकड़ों में)।</li>
+</ol>
+<h2>रोज़मर्रा Quick Formulas</h2>
+<table class="gt-table"><tr><th>काम</th><th>कैसे</th><th>उदाहरण</th></tr><tr><td>GST जोड़ना 18%</td><td>× 1.18</td><td>1000 → 1180</td></tr><tr><td>GST निकालना 18%</td><td>÷ 1.18</td><td>1180 → 1000</td></tr><tr><td>Discount 20%</td><td>× 0.8</td><td>1000 → 800</td></tr><tr><td>Tip 10%</td><td>÷ 10 जोड़ें</td><td>850 → 935</td></tr><tr><td>Split 4 में</td><td>÷ 4</td><td>2640 → 660</td></tr></table>
+<div class="note">💡 <strong>×1.18 / ÷1.18</strong> – GST का जादुई number याद रखें! 5% के लिए 1.05, 12% के लिए 1.12, 28% के लिए 1.28।</div>
+<h2>गलती-free हिसाब के 5 नियम</h2>
+<ul>
+<li><strong>Estimate पहले</strong> – 198×5 ≈ 1000 (exact 990) – अंदाज़ा = error-catch।</li>
+<li><strong>Double-tap check</strong> – पैसे के हिसाब दो बार calculate करें।</li>
+<li><strong>Units लिखें</strong> – ₹/kg/% – unit mismatch = गलत नतीजा।</li>
+<li><strong>Decimal गिनें</strong> – 10.5 vs 105 – point की गलती सबसे आम!।</li>
+<li><strong>History note</strong> – बड़े हिसाब के steps paper पर।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>BODMAS क्या है?</summary><p>Bracket → Of/Order → Divide/Multiply → Add/Subtract। 2+3×4 = 14 (20 नहीं!)। Calculator सही order follow करता है।</p></details>
+<details><summary>% button कैसे काम करता है?</summary><p>500 − 20% = 400 (500 का 20% घटाकर)। 500 + 18% = 590 (GST जोड़ना)।</p></details>
+<details><summary>Keyboard से चलेगा?</summary><p>हां – numbers, +, −, *, /, Enter (=), Backspace, Escape (clear) सब काम करते हैं।</p></details>
+<details><summary>GST जल्दी कैसे जोड़ें?</summary><p>राशि + 18% दबाएं – जैसे 1000+18% = 1180। निकालने के लिए ÷1.18 करें।</p></details>
+<details><summary>बड़ा हिसाब कैसे करें?</summary><p>टुकड़ों में: पहले bracket, फिर ×÷, फिर +−। हर step note करें – गलती पकड़ना आसान।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="cgpa-calculator.html">🎓 CGPA से Percentage कैलकुलेटर</a> · <a href="marks-percentage-calculator.html">🎓 नंबर और प्रतिशत कैलकुलेटर</a> · <a href="hcf-lcm-calculator.html">➗ HCF और LCM कैलकुलेटर</a> · <a href="scientific-calculator.html">🔬 वैज्ञानिक कैलकुलेटर</a> · <a href="number-system-converter.html">🔢 नंबर सिस्टम कन्वर्टर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 

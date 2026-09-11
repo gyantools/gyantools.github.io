@@ -50,8 +50,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/income-tax-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "नई और पुरानी regime में कौन सी बेहतर है?", "acceptedAnswer": {"@type": "Answer", "text": "कोई एक जवाब नहीं – ज़्यादा deductions (80C, HRA, home loan interest) वालों को अक्सर पुरानी, और बिना deduction वालों को नई regime सस्ती पड़ती है। हमारा old-vs-new-regime calculator दोनों की slab-by-slab तुलना करके बता देता है।"}}, {"@type": "Question", "name": "₹12.75 लाख तक zero tax का मतलब क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "सैलरी वालों को ₹75,000 standard deduction मिलता है। ₹12.75 लाख सैलरी पर taxable आय ₹12 लाख बनती है, जिस पर 87A rebate से tax zero हो जाता है। ये सिर्फ नई regime में लागू है।"}}, {"@type": "Question", "name": "TDS और Income Tax में क्या अंतर है?", "acceptedAnswer": {"@type": "Answer", "text": "TDS सरकार का advance collection है – employer/bank आपकी आय से काटकर जमा करता है। असली tax liability ITR में तय होती है; ज़्यादा कटा TDS refund बनकर वापस मिलता है।"}}, {"@type": "Question", "name": "क्या FD के ब्याज पर भी tax लगता है?", "acceptedAnswer": {"@type": "Answer", "text": "हां, FD/RD ब्याज आपकी slab rate से taxable है। एक bank में सालाना ₹50,000 (वरिष्ठ नागरिक ₹1,00,000) से ज़्यादा ब्याज पर 10% TDS भी कटता है – TDS कटा हो तब भी ITR में पूरा ब्याज दिखाना ज़रूरी है।"}}, {"@type": "Question", "name": "ITR भरने की आखिरी तारीख क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "सैलरी वालों (audit न हो तो) के लिए आमतौर पर 31 जुलाई। देर पर belated ITR पर ₹5,000 तक जुर्माना + ब्याज लगता है। तारीखें बदल सकती हैं, इसलिए income-tax-guide वाला blog भी देखें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -108,7 +130,42 @@ th{background:#e8f0fe;color:#1a73e8}
     </ul>
     <div class="note">⚠️ <strong>सूचना:</strong> यह tool सिर्फ अंदाज़ा देने के लिए है, यह CA की सलाह नहीं है। ITR भरने से पहले income tax department (incometax.gov.in) या किसी expert से जांच ज़रूर करें।</div>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>Income Tax Calculator कैसे इस्तेमाल करें?</h2>
+<ol>
+<li>अपनी <strong>सालाना कुल आय (CTC नहीं, taxable income)</strong> डालें – जैसे 1200000।</li>
+<li>सैलरी वालों के लिए <strong>Standard Deduction ₹75,000</strong> अपने आप घटता है (नई regime में) – calculator में इसका ध्यान रखें।</li>
+<li><strong>Regime चुनें</strong> – नई या पुरानी। कंफ्यूज़ हैं तो दोनों में calculate करके तुलना करें।</li>
+<li><strong>80C, 80D, HRA</strong> जैसी कटौतियां (पुरानी regime में) भरें।</li>
+<li><strong>Calculate दबाएं</strong> – slab-wise tax, 4% cess और मासिक TDS सब दिख जाएगा।</li>
+<li>नतीजे को <strong>old-vs-new-regime टूल</strong> से मिलाएं और हर साल regime दोबारा चुनें – बदली आय पर बेहतर विकल्प बदल सकता है।</li>
+</ol>
+<h2>FY 2026-27 नई Regime Slab (सैलरी वालों के लिए खास)</h2>
+<p>नई regime में <strong>₹12 लाख तक की taxable आय पर 87A rebate से ZERO tax</strong> – और सैलरी वालों को ₹75,000 standard deduction मिलाकर <strong>₹12.75 लाख तक zero tax</strong>! Slab इस प्रकार हैं:</p>
+<table class="gt-table"><tr><th>सालाना आय</th><th>Tax Rate</th></tr><tr><td>₹0 – ₹4 लाख</td><td>0%</td></tr><tr><td>₹4 – ₹8 लाख</td><td>5%</td></tr><tr><td>₹8 – ₹12 लाख</td><td>10%</td></tr><tr><td>₹12 – ₹16 लाख</td><td>15%</td></tr><tr><td>₹16 – ₹20 लाख</td><td>20%</td></tr><tr><td>₹20 – ₹24 लाख</td><td>25%</td></tr><tr><td>₹24 लाख से ऊपर</td><td>30%</td></tr></table>
+<div class="note">💡 <strong>उदाहरण:</strong> ₹13 लाख सैलरी (standard deduction के बाद ₹12.25 लाख taxable) → नई regime में tax ≈ ₹82,500 + 4% cess ≈ <strong>₹85,800</strong>। Marginal relief की वजह से ₹12 लाख के ठीक ऊपर वालों को राहत मिलती है – calculator में खुद जांचें।</div>
+<p>याद रखें – tax के ऊपर <strong>4% Health &amp; Education Cess</strong> हमेशा लगता है, और ₹50 लाख से ऊपर आय पर surcharge भी जुड़ता है।</p>
+<h2>Tax बचाने के 6 सही तरीके (कानूनी)</h2>
+<ul>
+<li><strong>Regime की तुलना हर साल करें</strong> – ज़्यादा 80C/HRA वालों को अक्सर पुरानी regime सस्ती पड़ती है।</li>
+<li><strong>NPS में ₹50,000 extra</strong> – 80CCD(1B) से नई regime में भी छूट मिलती है।</li>
+<li><strong>80D health insurance</strong> – खुद + माता-पिता के premium पर ₹25,000–₹50,000 तक कटौती (पुरानी regime)।</li>
+<li><strong>HRA छूट सही से लें</strong> – metro में basic का 50%, non-metro में 40% वाला नियम; rent receipts संभालकर रखें।</li>
+<li><strong>ELSS/LTCG का ध्यान</strong> – Equity LTCG सालाना ₹1.25 लाख तक tax-free, उसके ऊपर 12.5%।</li>
+<li><strong>Form 16 और AIS मिलाएं</strong> – ITR भरने से पहले AIS/TIS में ब्याज-शेयर की entry ज़रूर check करें।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>नई और पुरानी regime में कौन सी बेहतर है?</summary><p>कोई एक जवाब नहीं – ज़्यादा deductions (80C, HRA, home loan interest) वालों को अक्सर पुरानी, और बिना deduction वालों को नई regime सस्ती पड़ती है। हमारा old-vs-new-regime calculator दोनों की slab-by-slab तुलना करके बता देता है।</p></details>
+<details><summary>₹12.75 लाख तक zero tax का मतलब क्या है?</summary><p>सैलरी वालों को ₹75,000 standard deduction मिलता है। ₹12.75 लाख सैलरी पर taxable आय ₹12 लाख बनती है, जिस पर 87A rebate से tax zero हो जाता है। ये सिर्फ नई regime में लागू है।</p></details>
+<details><summary>TDS और Income Tax में क्या अंतर है?</summary><p>TDS सरकार का advance collection है – employer/bank आपकी आय से काटकर जमा करता है। असली tax liability ITR में तय होती है; ज़्यादा कटा TDS refund बनकर वापस मिलता है।</p></details>
+<details><summary>क्या FD के ब्याज पर भी tax लगता है?</summary><p>हां, FD/RD ब्याज आपकी slab rate से taxable है। एक bank में सालाना ₹50,000 (वरिष्ठ नागरिक ₹1,00,000) से ज़्यादा ब्याज पर 10% TDS भी कटता है – TDS कटा हो तब भी ITR में पूरा ब्याज दिखाना ज़रूरी है।</p></details>
+<details><summary>ITR भरने की आखिरी तारीख क्या है?</summary><p>सैलरी वालों (audit न हो तो) के लिए आमतौर पर 31 जुलाई। देर पर belated ITR पर ₹5,000 तक जुर्माना + ब्याज लगता है। तारीखें बदल सकती हैं, इसलिए income-tax-guide वाला blog भी देखें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="old-vs-new-tax-regime-calculator.html">⚖️ Old vs New Tax Regime Calculator (FY 2026-27) – कौन सी रेजीम में कि</a> · <a href="hra-calculator.html">🏠 HRA छूट कैलकुलेटर (HRA Exemption Calculator)</a> · <a href="inhand-salary-calculator.html">💰 In-Hand Salary कैलकुलेटर (CTC से)</a> · <a href="salary-hike-calculator.html">📈 सैलरी हाइक कैलकुलेटर (Salary Hike Calculator)</a> · <a href="gratuity-calculator.html">💼 Gratuity कैलकुलेटर (ग्रेच्युटी)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

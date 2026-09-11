@@ -48,8 +48,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/online-notepad.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "क्या login चाहिए?", "acceptedAnswer": {"@type": "Answer", "text": "बिल्कुल नहीं – खोलो और लिखो। Notes browser में auto-save होते हैं।"}}, {"@type": "Question", "name": "Notes कहां save होते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "आपके browser के localStorage में – सिर्फ इसी device/browser पर। Server पर कुछ नहीं जाता (100% private)।"}}, {"@type": "Question", "name": "क्या दूसरे phone पर दिखेंगे?", "acceptedAnswer": {"@type": "Answer", "text": "नहीं – sync नहीं है। Transfer के लिए Download/copy-paste करें।"}}, {"@type": "Question", "name": "Notes delete कैसे करें?", "acceptedAnswer": {"@type": "Answer", "text": "Clear button से। Browser history/data clear करने पर भी auto-delete हो जाते हैं।"}}, {"@type": "Question", "name": "कितना लिख सकते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "~5MB तक (लाखों शब्द!) – browser limit तक। बहुत बड़ा text हो तो parts में download करें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -128,6 +150,36 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 <p><strong>सवाल: नोट कब तक रहता है?</strong><br>जब तक आप उसी ब्राउज़र में हैं – ब्राउज़र का डेटा साफ करने पर नोट हट सकता है। स्थायी रखना हो तो डाउनलोड कर लें।</p>
 <p><strong>सवाल: क्या मैं हिंदी में लिख सकता हूं?</strong><br>हां – किसी भी भाषा में लिखें; नोटपैड यूनिकोड टेक्स्ट को पूरी तरह सपोर्ट करता है।</p>
 
+
+<h2>Online Notepad कैसे इस्तेमाल करें?</h2>
+<ol>
+<li><strong>लिखना शुरू</strong> करें – login/account कुछ नहीं चाहिए।</li>
+<li><strong>Auto-save</strong> – हर शब्द browser (localStorage) में अपने आप save।</li>
+<li><strong>वापस आएं</strong> – browser बंद करके भी खोलो, notes वहीं मिलेंगे।</li>
+<li><strong>Download</strong> – .txt file के तौर पर save/clear options।</li>
+<li>Password/OTP जैसे <strong>sensitive notes</strong> काम के बाद delete करें।</li>
+</ol>
+<h2>Notepad किस-किस काम आता है?</h2>
+<table class="gt-table"><tr><th>काम</th><th>कैसे</th></tr><tr><td>Quick notes</td><td>Phone number, address, ideas तुरंत</td></tr><tr><td>Draft writing</td><td>Email/letter/message पहले यहां, फिर paste</td></tr><tr><td>Study points</td><td>Revision bullets + formulas</td></tr><tr><td>Code/text temp</td><td>Copy-paste holding area</td></tr><tr><td>Lists</td><td>Shopping/packing/todo rough list</td></tr></table>
+<div class="note">💡 <strong>Privacy + limit:</strong> notes सिर्फ <strong>इसी browser</strong> में रहते हैं (दूसरे phone/PC पर नहीं दिखेंगे)। Browser data clear = notes गायब! ज़रूरी notes <strong>Download</strong> करके रखें।</div>
+<h2>Notes के 5 smart तरीके</h2>
+<ul>
+<li><strong>1 note = 1 topic</strong> – heading + date ऊपर लिखें।</li>
+<li><strong>Download weekly</strong> – important notes .txt backup।</li>
+<li><strong>Passwords अस्थायी</strong> – काम होते ही delete करें।</li>
+<li><strong>Checklists</strong> – [ ] लगाकर todo बनाएं।</li>
+<li><strong>Share:</strong> select-all → copy → WhatsApp/email।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>क्या login चाहिए?</summary><p>बिल्कुल नहीं – खोलो और लिखो। Notes browser में auto-save होते हैं।</p></details>
+<details><summary>Notes कहां save होते हैं?</summary><p>आपके browser के localStorage में – सिर्फ इसी device/browser पर। Server पर कुछ नहीं जाता (100% private)।</p></details>
+<details><summary>क्या दूसरे phone पर दिखेंगे?</summary><p>नहीं – sync नहीं है। Transfer के लिए Download/copy-paste करें।</p></details>
+<details><summary>Notes delete कैसे करें?</summary><p>Clear button से। Browser history/data clear करने पर भी auto-delete हो जाते हैं।</p></details>
+<details><summary>कितना लिख सकते हैं?</summary><p>~5MB तक (लाखों शब्द!) – browser limit तक। बहुत बड़ा text हो तो parts में download करें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="password-generator.html">🔐 मज़बूत पासवर्ड जनरेटर</a> · <a href="todo-list.html">✅ काम की सूची (To-Do List)</a> · <a href="stopwatch-timer.html">⏱️ स्टॉपवॉच &amp; टाइमर</a> · <a href="dice-coin.html">🎲 पासा &amp; 🪙 सिक्का</a> · <a href="lucky-draw-picker.html">🎰 लकी ड्रा पिकर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 

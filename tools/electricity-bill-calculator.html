@@ -52,8 +52,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/electricity-bill-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "बिजली बिल slabs क्या होती हैं?", "acceptedAnswer": {"@type": "Answer", "text": "जितनी ज़्यादा units, उतनी ऊंची दर – 0–100 सस्ती, 500+ सबसे महंगी। हर राज्य की slabs/rates अलग (DISCOM website पर)।"}}, {"@type": "Question", "name": "AC सबसे ज़्यादा बिजली खाता है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – 1.5T AC ~1.5–2 units/घंटा। 8 घंटे रोज़ = ~400 units/माह! 24–26°C + 5-star inverter = आधी खपत।"}}, {"@type": "Question", "name": "Fixed charge क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Connection load (kW) पर fixed monthly charge – units zero हों तब भी लगता है। Load कम कराकर घटा सकते हैं।"}}, {"@type": "Question", "name": "स्मार्ट meter से फायदा?", "acceptedAnswer": {"@type": "Answer", "text": "Time-of-day rates – रात में सस्ती बिजली (कुछ राज्यों में)। Heavy काम रात में = बचत।"}}, {"@type": "Question", "name": "Solar से bill zero होगा?", "acceptedAnswer": {"@type": "Answer", "text": "1–3kW rooftop (₹78K तक subsidy) से 150–400 units/माह free। Net-metering से extra units adjust। pm-surya-ghar-guide blog देखें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -127,7 +149,38 @@ th{background:#e8f0fe;color:#1a73e8}
       <li>घर की छत पर गर्मी रोकने का इंतज़ाम (रंग, छत वाला इन्सुलेशन) से AC का बोझ घटता है</li>
     </ul>
     <div class="note">🔒 आपकी रीडिंग कहीं नहीं जाती – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>बिजली बिल कैसे निकालें?</h2>
+<ol>
+<li><strong>पुरानी + नई meter reading</strong> भरें – units = नई − पुरानी।</li>
+<li><strong>State/slab rates</strong> चुनें – 0–100, 101–200, 201–500, 500+ slabs।</li>
+<li><strong>Fixed charges</strong> जुड़ेंगे – load (kW) के हिसाब से।</li>
+<li><strong>Calculate दबाएं</strong> – slab-wise bill + fuel surcharge + duty।</li>
+<li>Bill ज़्यादा आए तो <strong>appliance-cost tool</strong> से कौन सा device दोषी है, पकड़ें!</li>
+</ol>
+<h2>200 Units का हिसाब (उदाहरण slabs – राज्य के हिसाब से बदलें)</h2>
+<table class="gt-table"><tr><th>Slab</th><th>Units</th><th>Rate (उदा.)</th><th>रकम</th></tr><tr><td>0–100</td><td>100</td><td>₹3.50</td><td>₹350</td></tr><tr><td>101–200</td><td>100</td><td>₹5.50</td><td>₹550</td></tr><tr><td>Fixed + duty</td><td>–</td><td>–</td><td>≈ ₹150</td></tr><tr><td><strong>Total</strong></td><td><strong>200</strong></td><td></td><td><strong>≈ ₹1,050</strong></td></tr></table>
+<div class="note">💡 <strong>Slab trap:</strong> 200→201 units होते ही extra unit ऊंची slab (₹7–8) में! महीने के आखिर में heavy appliances (geyser/washing) का इस्तेमाल सोचकर करें। <strong>Solar (PM Surya Ghar: ₹78K subsidy)</strong> से bill ~zero possible!</div>
+<h2>बिजली बचाने के 6 तरीके</h2>
+<ul>
+<li><strong>AC 24–26°C</strong> पर – हर 1° कम = 6% ज़्यादा bill!।</li>
+<li><strong>5-star appliances</strong> – fridge/AC में star = सीधी बचत।</li>
+<li><strong>LED + BLDC fan</strong> – fan 75W→28W, bill आधा!।</li>
+<li><strong>Phantom load</strong> – TV/set-top standby भी खाते हैं, switch off करें।</li>
+<li><strong>Geyser timer</strong> – 15 min पहले ON, नहाकर OFF।</li>
+<li><strong>PM Surya Ghar</strong> – 1–2kW solar पर ₹30–78K subsidy!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>बिजली बिल slabs क्या होती हैं?</summary><p>जितनी ज़्यादा units, उतनी ऊंची दर – 0–100 सस्ती, 500+ सबसे महंगी। हर राज्य की slabs/rates अलग (DISCOM website पर)।</p></details>
+<details><summary>AC सबसे ज़्यादा बिजली खाता है?</summary><p>हां – 1.5T AC ~1.5–2 units/घंटा। 8 घंटे रोज़ = ~400 units/माह! 24–26°C + 5-star inverter = आधी खपत।</p></details>
+<details><summary>Fixed charge क्या है?</summary><p>Connection load (kW) पर fixed monthly charge – units zero हों तब भी लगता है। Load कम कराकर घटा सकते हैं।</p></details>
+<details><summary>स्मार्ट meter से फायदा?</summary><p>Time-of-day rates – रात में सस्ती बिजली (कुछ राज्यों में)। Heavy काम रात में = बचत।</p></details>
+<details><summary>Solar से bill zero होगा?</summary><p>1–3kW rooftop (₹78K तक subsidy) से 150–400 units/माह free। Net-metering से extra units adjust। pm-surya-ghar-guide blog देखें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="discount-calculator.html">🏷️ छूट कैलकुलेटर (Discount Calculator)</a> · <a href="percentage-calculator.html">📊 प्रतिशत कैलकुलेटर (Percentage Calculator)</a> · <a href="currency-converter.html">💱 करेंसी कन्वर्टर (Currency Converter)</a> · <a href="gold-silver-value-calculator.html">🥇 Gold-Silver Value Calculator (हिंदी)</a> · <a href="number-to-words.html">🔢 संख्या को शब्दों में बदलें (Number to Words)</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

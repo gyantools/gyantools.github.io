@@ -52,8 +52,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/land-area-converter.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "1 बीघा कितना होता है?", "acceptedAnswer": {"@type": "Answer", "text": "राज्य पर निर्भर! राजस्थान पक्का: 27,225 sq-ft (0.625 acre); UP/MP: ~27,000 sq-ft; बंगाल: ~14,400 sq-ft। अपना राज्य चुनकर convert करें।"}}, {"@type": "Question", "name": "1 एकड़ में कितने sq-ft?", "acceptedAnswer": {"@type": "Answer", "text": "43,560 sq-ft = 4,840 sq-yd (गज़) = 0.4047 हेक्टेयर। 1 हेक्टेयर = 2.47 एकड़।"}}, {"@type": "Question", "name": "कच्चा vs पक्का बीघा?", "acceptedAnswer": {"@type": "Answer", "text": "पक्का बीघा standard (शाहजहानी); कच्चा आधा/क्षेत्रीय। राजस्थान में पक्का 20 बिस्वा, कच्चा अलग – patwari record देखें!"}}, {"@type": "Question", "name": "Registry में कौन सी unit?", "acceptedAnswer": {"@type": "Answer", "text": "Documents में sq-mt/हेक्टेयर (metric) official। बीघा बोलचाल की – agreement में metric + local दोनों लिखवाएं।"}}, {"@type": "Question", "name": "Plot rate कैसे compare करें?", "acceptedAnswer": {"@type": "Answer", "text": "सबको ₹/sq-ft में बदलकर compare करें। Corner/park-facing 10–20% premium normal है।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -114,7 +136,37 @@ th{background:#e8f0fe;color:#1a73e8}
       <li>यह tool मानक (accepted) गुणांक से तुरंत अंदाज़ा देता है – कानूनी काम में पटवारी/तहसील से पुष्टि करें</li>
     </ul>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>ज़मीन Convert कैसे करें?</h2>
+<ol>
+<li><strong>Value + From unit</strong> – बीघा (पक्का/कच्चा), एकड़, हेक्टेयर, sq-ft।</li>
+<li><strong>राज्य चुनें</strong> – बीघा हर राज्य में अलग! (राजस्थान पक्का 27,225 sq-ft)।</li>
+<li><strong>Convert दबाएं</strong> – सभी units एक साथ।</li>
+<li><strong>Registry से पहले</strong> khasra/khatauni में unit verify करें।</li>
+<li>Rate/price निकालने के लिए <strong>per sq-ft rate</strong> से गुणा करें।</li>
+</ol>
+<h2>राज्यवार बीघा (लगभग sq-ft)</h2>
+<table class="gt-table"><tr><th>राज्य</th><th>1 बीघा ≈</th></tr><tr><td>राजस्थान (पक्का)</td><td>27,225 sq-ft</td></tr><tr><td>UP/MP (पक्का)</td><td>~27,000 sq-ft</td></tr><tr><td>बिहार/झारखंड</td><td>~21,600 sq-ft</td></tr><tr><td>बंगाल/असम</td><td>~14,400 sq-ft</td></tr><tr><td>गुजरात</td><td>~17,400 sq-ft</td></tr></table>
+<div class="note">💡 <strong>बीघा = local unit!</strong> 5km दूर गांव में भी अलग हो सकता है। Registry से पहले <strong>patwari/khasra record</strong> में sq-mt verify करें – बोलचाल पर भरोसा नहीं!</div>
+<h2>ज़मीन खरीदने के 5 नियम</h2>
+<ul>
+<li><strong>Title check 30 साल</strong> – EC (encumbrance certificate) निकलवाएं।</li>
+<li><strong>Dispute check</strong> – court cases + family partition।</li>
+<li><strong>Conversion</strong> – कृषि → आवासीय (143/90A) approved?।</li>
+<li><strong>Measure on-site</strong> – tape + patwari map मिलाएं।</li>
+<li><strong>RERA</strong> – plot scheme RERA-registered हो तो best।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>1 बीघा कितना होता है?</summary><p>राज्य पर निर्भर! राजस्थान पक्का: 27,225 sq-ft (0.625 acre); UP/MP: ~27,000 sq-ft; बंगाल: ~14,400 sq-ft। अपना राज्य चुनकर convert करें।</p></details>
+<details><summary>1 एकड़ में कितने sq-ft?</summary><p>43,560 sq-ft = 4,840 sq-yd (गज़) = 0.4047 हेक्टेयर। 1 हेक्टेयर = 2.47 एकड़।</p></details>
+<details><summary>कच्चा vs पक्का बीघा?</summary><p>पक्का बीघा standard (शाहजहानी); कच्चा आधा/क्षेत्रीय। राजस्थान में पक्का 20 बिस्वा, कच्चा अलग – patwari record देखें!</p></details>
+<details><summary>Registry में कौन सी unit?</summary><p>Documents में sq-mt/हेक्टेयर (metric) official। बीघा बोलचाल की – agreement में metric + local दोनों लिखवाएं।</p></details>
+<details><summary>Plot rate कैसे compare करें?</summary><p>सबको ₹/sq-ft में बदलकर compare करें। Corner/park-facing 10–20% premium normal है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="cgpa-calculator.html">🎓 CGPA से Percentage कैलकुलेटर</a> · <a href="marks-percentage-calculator.html">🎓 नंबर और प्रतिशत कैलकुलेटर</a> · <a href="hcf-lcm-calculator.html">➗ HCF और LCM कैलकुलेटर</a> · <a href="scientific-calculator.html">🔬 वैज्ञानिक कैलकुलेटर</a> · <a href="simple-calculator.html">🧮 ऑनलाइन कैलकुलेटर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

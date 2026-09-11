@@ -53,8 +53,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/games/snake-ladder.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "सांप-सीढ़ी कहां से आया?", "acceptedAnswer": {"@type": "Answer", "text": "भारत! 13th century 'Moksha Patam' – सीढ़ी = अच्छे कर्म (मोक्ष), सांप = बुरे कर्म! अंग्रेज़ों ने 'Snakes & Ladders' बनाकर दुनिया में फैलाया।"}}, {"@type": "Question", "name": "100 पर exact क्यों चाहिए?", "acceptedAnswer": {"@type": "Answer", "text": "Classic rule – ज़्यादा number आए तो गोटी नहीं चलती। 97 पर 3 ही चाहिए (4/5/6 = wait)!"}}, {"@type": "Question", "name": "6 पर क्या होता है?", "acceptedAnswer": {"@type": "Answer", "text": "Extra turn! कुछ rules में लगातार 3 sixes = turn cancel। हमारा version standard rules पर है।"}}, {"@type": "Question", "name": "सबसे बड़ी सीढ़ी कौन सी?", "acceptedAnswer": {"@type": "Answer", "text": "1→38 (37 jump)! 80→100 सीधी जीत देती है। सबसे लंबा सांप 87→24 (63 down)!"}}, {"@type": "Question", "name": "बच्चों को क्या सिखाता है?", "acceptedAnswer": {"@type": "Answer", "text": "Counting 1–100 + patience + हार स्वीकारना। 4+ उम्र – पहला board game यही होना चाहिए!"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -105,7 +127,37 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
     <h2>इस बोर्ड की सीढ़ियां और साँप</h2>
     <p>यह दुनिया भर में मशहूर क्लासिक 100-खाना बोर्ड है। 9 सीढ़ियां (1→38, 4→14, 9→31, 21→42, 28→84, 36→44, 51→67, 71→91, 80→100) और 10 साँप (16→6, 47→26, 49→11, 56→53, 62→19, 64→60, 87→24, 93→73, 95→75, 98→78)। सबसे बड़ी सीढ़ी 28 से 84 और सबसे लंबा साँप 87 से 24! 98 पर खड़े होकर भी साँप सरकता है – 99 और 100 सिर्फ 2 कदम दूर होते हुए भी मुश्किल! 😄</p>
     <p>और गेम्स: <a href="snake-game.html">🐍 Snake Game</a> · <a href="checkers.html">♟️ दमा (Checkers)</a> · <a href="tic-tac-toe.html">टिक टैक टो</a> · <a href="connect-four.html">४ गेंद जोड़ो</a></p>
-  </article>
+  
+<h2>सांप-सीढ़ी कैसे खेलें?</h2>
+<ol>
+<li><strong>Players/mode चुनें</strong> – दोस्तों के साथ या computer।</li>
+<li><strong>पासा फेंको</strong> – 6 आए तो extra turn!।</li>
+<li><strong>सीढ़ी चढ़ो</strong> – नीचे से ऊपर jump!।</li>
+<li><strong>सांप से बचो</strong> – सिर पर पहुंचे तो पूंछ तक slide!।</li>
+<li><strong>100 पर exact</strong> – ज़्यादा आए तो रुको, exact = जीत!</li>
+</ol>
+<h2>Board Map (classic 100-खाना)</h2>
+<table class="gt-table"><tr><th>सीढ़ियां (up) ⭐</th><th>सांप (down) 😱</th></tr><tr><td>1→38, 4→14, 9→31</td><td>16→6, 47→26, 49→11</td></tr><tr><td>21→42, 28→84</td><td>56→53, 62→19, 64→60</td></tr><tr><td>36→44, 51→67</td><td>87→24, 93→73, 95→75</td></tr><tr><td>71→91, 80→100 🏆</td><td>98→78 (so close!)</td></tr></table>
+<div class="note">💡 <strong>80→100 सीढ़ी = jackpot!</strong> 98 वाला सांप (→78) सबसे दर्दनाक – जीत के मुंह से हार! Exact-100 rule: 97 पर हो और 5 आए = रुको (97 ही रहो)।</div>
+<h2>जीत (luck + smart) के 5 fundas</h2>
+<ul>
+<li><strong>6 = gold</strong> – extra turn + आगे छलांग।</li>
+<li><strong>सीढ़ी वाले खाने</strong> याद रखो – target squares!।</li>
+<li><strong>सांप-सिर avoid</strong> – 98/93/87 के आसपास डर!।</li>
+<li><strong>Exact finish</strong> – 94+ पर छोटा number चाहिए।</li>
+<li><strong>बच्चों से हारो मत!</strong> – 😄 practice करो।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>सांप-सीढ़ी कहां से आया?</summary><p>भारत! 13th century 'Moksha Patam' – सीढ़ी = अच्छे कर्म (मोक्ष), सांप = बुरे कर्म! अंग्रेज़ों ने 'Snakes & Ladders' बनाकर दुनिया में फैलाया।</p></details>
+<details><summary>100 पर exact क्यों चाहिए?</summary><p>Classic rule – ज़्यादा number आए तो गोटी नहीं चलती। 97 पर 3 ही चाहिए (4/5/6 = wait)!</p></details>
+<details><summary>6 पर क्या होता है?</summary><p>Extra turn! कुछ rules में लगातार 3 sixes = turn cancel। हमारा version standard rules पर है।</p></details>
+<details><summary>सबसे बड़ी सीढ़ी कौन सी?</summary><p>1→38 (37 jump)! 80→100 सीधी जीत देती है। सबसे लंबा सांप 87→24 (63 down)!</p></details>
+<details><summary>बच्चों को क्या सिखाता है?</summary><p>Counting 1–100 + patience + हार स्वीकारना। 4+ उम्र – पहला board game यही होना चाहिए!</p></details>
+</div>
+<div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="sudoku.html">🔢 Sudoku – दिमाग की पहेली</a> · <a href="tic-tac-toe.html">🎮 Tic Tac Toe (X-O)</a> · <a href="word-guess.html">🔤 Word Guess – 5 अक्षर का शब्द पहचानो</a> · <a href="2048.html">🔢 2048 पहेली गेम</a> · <a href="checkers.html">♟️ दमा – Checkers (Draughts)</a></div>
+<div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें!</p></div></div>
+</article>
 </div>
 
 <footer>

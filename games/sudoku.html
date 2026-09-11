@@ -66,8 +66,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/games/sudoku.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Sudoku solve कैसे करें?", "acceptedAnswer": {"@type": "Answer", "text": "Scanning (row/col/box) → singles → pencil-marks → elimination। कठिन में X-Wing/naked-pairs techniques। Practice = speed!"}}, {"@type": "Question", "name": "Sudoku कहां से आया?", "acceptedAnswer": {"@type": "Answer", "text": "Japan (1980s) ने नाम दिया, जड़ें Swiss math (Euler) में। अब दुनिया का #1 newspaper puzzle – दिमागी कसरत!"}}, {"@type": "Question", "name": "कठिन Sudoku trick?", "acceptedAnswer": {"@type": "Answer", "text": "Pencil-marks ज़रूर लगाओ, एक number पर focus (सारे 7s ढूंढो), stuck हो तो break लेकर वापस आओ।"}}, {"@type": "Question", "name": "क्या दिमाग तेज़ होता है?", "acceptedAnswer": {"@type": "Answer", "text": "Logic + concentration + patience बढ़ते हैं (research-backed)। Daily 15 min = mental fitness!"}}, {"@type": "Question", "name": "Guess करना चाहिए?", "acceptedAnswer": {"@type": "Answer", "text": "आसान/मध्यम में कभी नहीं – logic ही काफी। कठिन में educated-guess + backtrack आखिरी हथियार।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -120,7 +142,40 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
     <p>खाने पर tap करके नीचे के number pad से नंबर लगाएं (computer पर keyboard के 1–9 और Backspace भी चलते हैं)। "मदद" बटन से कोई एक खाना सही भरवा सकते हैं, "जांच करें" से पूरी पहेली की जांच होती है। हर बार <strong>बिल्कुल नई पहेली</strong> बनती है — कभी खत्म नहीं होंगी!</p>
     <h2>Sudoku खेलने के फायदे</h2>
     <p>रोज़ एक सुडोकू दिमाग की exercise है — ध्यान (concentration), logic और problem-solving पर असर पड़ता है, बच्चों से लेकर बड़ों तक सबके लिए फायदेमंद समय बिताने का तरीका। और भी दिमागी गेम आज़माएं: <a href="memory-game.html" style="color:#1a73e8">Memory गेम</a>, <a href="math-quiz.html" style="color:#1a73e8">Math Quiz</a>, <a href="word-guess.html" style="color:#1a73e8">Word Guess</a> और <a href="paheli-game.html" style="color:#1a73e8">हिंदी पहेलियां</a>।</p>
-  </article>
+  
+<h2>Sudoku कैसे खेलें?</h2>
+<ol>
+<li><strong>Level चुनें</strong> – आसान (beginners) / मध्यम / कठिन।</li>
+<li><strong>1–9 भरें</strong> – हर row, column और 3×3 box में 1–9 एक-एक बार।</li>
+<li><strong>Number select + cell tap</strong> – गलत entry red दिखेगी।</li>
+<li><strong>Notes mode</strong> – possible numbers pencil-mark करो (कठिन में)।</li>
+<li>रोज़ 1 puzzle – <strong>unlimited नई पहेलियां!</strong></li>
+</ol>
+<h2>Difficulty Guide</h2>
+<table class="gt-table"><tr><th>Level</th><th>खाली खाने</th><th>Time</th></tr><tr><td>आसान</td><td>~35</td><td>5–10 min</td></tr><tr><td>मध्यम</td><td>~45</td><td>15–25 min</td></tr><tr><td>कठिन</td><td>~55</td><td>30–60 min</td></tr></table>
+<div class="note">💡 <strong>Scanning order:</strong> Rows → Columns → Boxes, 1 से 9 तक हर number ढूंढो। जो cell सिर्फ 1 number ले सके = Naked Single! 80% आसान puzzles सिर्फ scanning से solve!</div>
+<h2>Sudoku Master के 5 नियम</h2>
+<ul>
+<li><strong>Pencil-marks</strong> – कठिन में हर cell के options लिखो।</li>
+<li><strong>1 number focus</strong> – सारे 5s एक साथ ढूंढो।</li>
+<li><strong>Double-check</strong> – भरने से पहले row+col+box।</li>
+<li><strong>Stuck? Break!</strong> – 5 min बाद pattern दिखेगा।</li>
+<li><strong>रोज़ 1</strong> – 30 दिन = speed 3x!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Sudoku solve कैसे करें?</summary><p>Scanning (row/col/box) → singles → pencil-marks → elimination। कठिन में X-Wing/naked-pairs techniques। Practice = speed!</p></details>
+<details><summary>Sudoku कहां से आया?</summary><p>Japan (1980s) ने नाम दिया, जड़ें Swiss math (Euler) में। अब दुनिया का #1 newspaper puzzle – दिमागी कसरत!</p></details>
+<details><summary>कठिन Sudoku trick?</summary><p>Pencil-marks ज़रूर लगाओ, एक number पर focus (सारे 7s ढूंढो), stuck हो तो break लेकर वापस आओ।</p></details>
+<details><summary>क्या दिमाग तेज़ होता है?</summary><p>Logic + concentration + patience बढ़ते हैं (research-backed)। Daily 15 min = mental fitness!</p></details>
+<details><summary>Guess करना चाहिए?</summary><p>आसान/मध्यम में कभी नहीं – logic ही काफी। कठिन में educated-guess + backtrack आखिरी हथियार।</p></details>
+</div>
+<div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="tic-tac-toe.html">🎮 Tic Tac Toe (X-O)</a> · <a href="word-guess.html">🔤 Word Guess – 5 अक्षर का शब्द पहचानो</a> · <a href="2048.html">🔢 2048 पहेली गेम</a> · <a href="checkers.html">♟️ दमा – Checkers (Draughts)</a> · <a href="chess.html">♞ शतरंज (Chess)</a></div>
+<h2>Sudoku Variants – आगे क्या?</h2>
+<p>Classic Sudoku master कर लिया? अब variants try करो: <strong>Mini Sudoku (6×6)</strong> – बच्चों और warm-up के लिए perfect। <strong>Killer Sudoku</strong> – cages में sum-clues के साथ (math + logic combo!)। <strong>Diagonal Sudoku (X)</strong> – दोनों diagonals में भी 1–9 ज़रूरी। <strong>Samurai (5 grids)</strong> – overlapping monsters, सिर्फ experts के लिए!</p>
+<p>Daily habit बनाओ: <strong>सुबह 1 आसान</strong> (5 min warm-up) + <strong>रात 1 मध्यम</strong> (15 min workout)। 30 दिन में scanning speed 3x – और newspaper puzzles बच्चों का खेल लगेंगे!</p>
+<div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें!</p></div></div>
+</article>
 </div>
 
 <footer>

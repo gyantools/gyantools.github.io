@@ -47,8 +47,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/percentage-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "किसी संख्या का % कैसे निकालें?", "acceptedAnswer": {"@type": "Answer", "text": "(संख्या × %) ÷ 100। 500 का 20% = (500×20)÷100 = 100।"}}, {"@type": "Question", "name": "बढ़त % का formula क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "((नया − पुराना) ÷ पुराना) × 100। 80→100 = 25% बढ़त। गिरावट में same formula (negative आएगा)।"}}, {"@type": "Question", "name": "18% of 50 जल्दी कैसे निकालें?", "acceptedAnswer": {"@type": "Answer", "text": "Swap करें – 50% of 18 = 9। X% of Y हमेशा Y% of X के बराबर होता है!"}}, {"@type": "Question", "name": "Discount double कैसे गिनें?", "acceptedAnswer": {"@type": "Answer", "text": "40% फिर 10% = 46% total, 50% नहीं। Formula: 100 − ((100−a)×(100−b)÷100)।"}}, {"@type": "Question", "name": "CGPA से % कैसे निकालें?", "acceptedAnswer": {"@type": "Answer", "text": "CBSE rule: CGPA × 9.5। 8.6 CGPA = 81.7%। हमारा CGPA calculator exact बताता है।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -115,7 +137,38 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
       <li>अगर कीमत X% बढ़े और फिर X% घटे, तो original कीमत से कम रहती है – हमेशा!</li>
     </ul>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>तीनों Percentage तरीके</h2>
+<ol>
+<li><strong>X का Y%:</strong> 500 का 20% = 100 (discount/tip के लिए)।</li>
+<li><strong>X, Y का कितने %:</strong> 45/60 = 75% (marks/score के लिए)।</li>
+<li><strong>बढ़त/गिरावट %:</strong> 80→100 = +25% (growth/discount-check के लिए)।</li>
+<li>Mode चुनें, numbers भरें, <strong>नतीजा + formula</strong> दोनों देखें।</li>
+<li>GST/tip/salary-hike – सब percentage के ही खेल हैं, नीचे tricks पढ़ें।</li>
+</ol>
+<h2>रोज़ काम आने वाले % shortcuts</h2>
+<table class="gt-table"><tr><th>काम</th><th>Shortcut</th><th>उदाहरण</th></tr><tr><td>10% निकालना</td><td>÷ 10</td><td>₹850 का 10% = ₹85</td></tr><tr><td>5% निकालना</td><td>10% का आधा</td><td>₹850 का 5% = ₹42.5</td></tr><tr><td>15% (tip)</td><td>10% + 5%</td><td>₹85 + ₹42.5 = ₹127.5</td></tr><tr><td>20% off</td><td>÷ 5 घटाएं</td><td>₹1,000 → ₹800</td></tr><tr><td>X% of Y = Y% of X</td><td>swap करें!</td><td>4% of 75 = 75% of 4 = 3</td></tr></table>
+<div class="note">💡 <strong>Magic trick:</strong> 18% of 50 कठिन लगे? Swap करो → 50% of 18 = 9! दोनों हमेशा बराबर होते हैं। दुकान पर बिना calculator % निकालने का सबसे तेज़ तरीका।</div>
+<h2>Percentage की 5 गहरी बातें</h2>
+<ul>
+<li><strong>50% + 50% ≠ 100% extra:</strong> ₹100 पर +50% फिर +50% = ₹225 (+125%)!।</li>
+<li><strong>आधा-आधा भ्रम:</strong> 100 → 50 (−50%) → वापसी के लिए +100% चाहिए!।</li>
+<li><strong>Percentage points:</strong> 10% → 12% = 2 points, पर 20% growth!।</li>
+<li><strong>Marks %:</strong> (प्राप्त ÷ कुल) × 100 – CGPA×9.5 वाला rule अलग है।</li>
+<li><strong>Success rate:</strong> 45/60 = 75% – test/sports सबमें same formula।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>किसी संख्या का % कैसे निकालें?</summary><p>(संख्या × %) ÷ 100। 500 का 20% = (500×20)÷100 = 100।</p></details>
+<details><summary>बढ़त % का formula क्या है?</summary><p>((नया − पुराना) ÷ पुराना) × 100। 80→100 = 25% बढ़त। गिरावट में same formula (negative आएगा)।</p></details>
+<details><summary>18% of 50 जल्दी कैसे निकालें?</summary><p>Swap करें – 50% of 18 = 9। X% of Y हमेशा Y% of X के बराबर होता है!</p></details>
+<details><summary>Discount double कैसे गिनें?</summary><p>40% फिर 10% = 46% total, 50% नहीं। Formula: 100 − ((100−a)×(100−b)÷100)।</p></details>
+<details><summary>CGPA से % कैसे निकालें?</summary><p>CBSE rule: CGPA × 9.5। 8.6 CGPA = 81.7%। हमारा CGPA calculator exact बताता है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="discount-calculator.html">🏷️ छूट कैलकुलेटर (Discount Calculator)</a> · <a href="currency-converter.html">💱 करेंसी कन्वर्टर (Currency Converter)</a> · <a href="gold-silver-value-calculator.html">🥇 Gold-Silver Value Calculator (हिंदी)</a> · <a href="number-to-words.html">🔢 संख्या को शब्दों में बदलें (Number to Words)</a> · <a href="bill-split-calculator.html">🍽️ बिल बांटो (Bill Split) कैलकुलेटर</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

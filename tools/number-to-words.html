@@ -49,8 +49,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
 .copy{background:#fff;border:1px solid #dadce0;border-radius:8px;padding:12px;margin-top:10px;cursor:pointer;font-size:.9rem}
 .copy:hover{background:#f1f3f4}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/number-to-words.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Check पर राशि कैसे लिखें?", "acceptedAnswer": {"@type": "Answer", "text": "शब्दों में + 'Only': 'Rupees Fifty Thousand Only'। अंकों में: ₹50,000। दोनों same होने चाहिए – फर्क हो तो शब्द मान्य।"}}, {"@type": "Question", "name": "Lakh/Crore को Million में कैसे बदलें?", "acceptedAnswer": {"@type": "Answer", "text": "1 Million = 10 Lakh; 1 Crore = 10 Million; 1 Billion = 100 Crore। Converter दोनों system दिखाता है।"}}, {"@type": "Question", "name": "'Only' क्यों लिखते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "आगे कुछ जोड़ा न जा सके (fraud से बचाव)। 'One Lakh Only' के बाद 'Fifty' नहीं जोड़ा जा सकता।"}}, {"@type": "Question", "name": "Paise वाली राशि कैसे लिखें?", "acceptedAnswer": {"@type": "Answer", "text": "'Rupees One Thousand Two Hundred and Paise Fifty Only'। Decimal: ₹1,200.50।"}}, {"@type": "Question", "name": "अंकों-शब्दों में फर्क हो तो?", "acceptedAnswer": {"@type": "Answer", "text": "NI Act section 18: शब्दों वाली राशि मान्य होगी। इसीलिए शब्दों में लिखने में extra सावधानी बरतें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -111,6 +133,36 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 </ul>
 <p>याद रखें: चेक पर शब्दों वाली राशि ही मान्य होती है – अंकों और शब्दों में फर्क हो तो बैंक शब्दों वाली मानता है।</p>
 
+
+<h2>राशि शब्दों में कैसे लिखें?</h2>
+<ol>
+<li><strong>राशि (अंकों में)</strong> भरें – जैसे 125000।</li>
+<li><strong>भाषा चुनें</strong> – Hindi (एक लाख पच्चीस हज़ार) या English।</li>
+<li><strong>Convert दबाएं</strong> – दोनों formats तैयार।</li>
+<li><strong>Check पर</strong> लिखते समय आखिर में 'Only' ज़रूर जोड़ें।</li>
+<li>Paise हो तो <strong>'and Paise XX Only'</strong> format इस्तेमाल करें।</li>
+</ol>
+<h2>Indian vs International system</h2>
+<table class="gt-table"><tr><th>Indian 🇮🇳</th><th>International 🌍</th></tr><tr><td>1,00,000 = एक लाख</td><td>100,000 = Hundred Thousand</td></tr><tr><td>10,00,000 = दस लाख</td><td>1,000,000 = One Million</td></tr><tr><td>1,00,00,000 = एक करोड़</td><td>10,000,000 = Ten Million</td></tr></table>
+<div class="note">💡 <strong>Check bounce से बचें:</strong> शब्दों और अंकों की राशि अलग हुई तो bank <strong>शब्दों वाली</strong> मानता है (NI Act)! हमेशा पहले शब्दों में लिखें, फिर अंक मिलाएं। 'Only' लिखना न भूलें – 'एक लाख रुपये Only'।</div>
+<h2>राशि लिखने के 5 नियम</h2>
+<ul>
+<li><strong>Check:</strong> 'Rupees One Lakh Twenty Five Thousand Only'।</li>
+<li><strong>Strike-off:</strong> बची खाली जगह पर line खींचें (छेड़छाड़ रुके)।</li>
+<li><strong>Cutting नहीं:</strong> गलती हो तो नया check – overwriting invalid।</li>
+<li><strong>INR format:</strong> ₹1,25,000 (Indian commas: 3-2-2)।</li>
+<li><strong>Agreement में:</strong> अंक + शब्द दोनों + stamp duty receipt।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Check पर राशि कैसे लिखें?</summary><p>शब्दों में + 'Only': 'Rupees Fifty Thousand Only'। अंकों में: ₹50,000। दोनों same होने चाहिए – फर्क हो तो शब्द मान्य।</p></details>
+<details><summary>Lakh/Crore को Million में कैसे बदलें?</summary><p>1 Million = 10 Lakh; 1 Crore = 10 Million; 1 Billion = 100 Crore। Converter दोनों system दिखाता है।</p></details>
+<details><summary>'Only' क्यों लिखते हैं?</summary><p>आगे कुछ जोड़ा न जा सके (fraud से बचाव)। 'One Lakh Only' के बाद 'Fifty' नहीं जोड़ा जा सकता।</p></details>
+<details><summary>Paise वाली राशि कैसे लिखें?</summary><p>'Rupees One Thousand Two Hundred and Paise Fifty Only'। Decimal: ₹1,200.50।</p></details>
+<details><summary>अंकों-शब्दों में फर्क हो तो?</summary><p>NI Act section 18: शब्दों वाली राशि मान्य होगी। इसीलिए शब्दों में लिखने में extra सावधानी बरतें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="discount-calculator.html">🏷️ छूट कैलकुलेटर (Discount Calculator)</a> · <a href="percentage-calculator.html">📊 प्रतिशत कैलकुलेटर (Percentage Calculator)</a> · <a href="currency-converter.html">💱 करेंसी कन्वर्टर (Currency Converter)</a> · <a href="gold-silver-value-calculator.html">🥇 Gold-Silver Value Calculator (हिंदी)</a> · <a href="bill-split-calculator.html">🍽️ बिल बांटो (Bill Split) कैलकुलेटर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 

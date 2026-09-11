@@ -53,8 +53,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/inhand-salary-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "CTC और in-hand में इतना फर्क क्यों?", "acceptedAnswer": {"@type": "Answer", "text": "CTC में employer PF, gratuity, insurance, variable pay सब जुड़ा होता है जो हाथ में नहीं आता। आम तौर पर in-hand CTC का 70–80% बैठता है।"}}, {"@type": "Question", "name": "नए Labour Codes से salary पर क्या असर?", "acceptedAnswer": {"@type": "Answer", "text": "Basic+DA कुल वेतन का 50%+ होगा → PF/gratuity कटौती बढ़ेगी, in-hand थोड़ा घटेगा, लेकिन retirement savings बढ़ेंगी।"}}, {"@type": "Question", "name": "Professional Tax क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "राज्य सरकार का tax (अधिकतम ₹2,500/साल), salary से सीधे कटता है। कुछ राज्यों में लागू नहीं है।"}}, {"@type": "Question", "name": "Variable pay क्या 100% मिलता है?", "acceptedAnswer": {"@type": "Answer", "text": "नहीं – company + आपकी performance/rating पर निर्भर करता है। Offer letter में payout % ज़रूर पढ़ें।"}}, {"@type": "Question", "name": "In-hand बढ़ाने का सही तरीका?", "acceptedAnswer": {"@type": "Answer", "text": "CTC बढ़वाने के साथ tax regime सही चुनें, NPS extra ₹50K (नई regime में भी) लें और perks (fuel/food/bill) का tax-फायदा समझें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -105,7 +127,38 @@ th{background:#e8f0fe;color:#1a73e8}
     <div class="tip">💡 PF का पूरा फायदा देखें: <a href="epf-calculator.html" style="color:#1a73e8">EPF कैलकुलेटर</a> · gratuity का हिसाब: <a href="gratuity-calculator.html" style="color:#1a73e8">Gratuity कैलकुलेटर</a> · टैक्स काटकर: <a href="income-tax-calculator.html" style="color:#1a73e8">Income Tax कैलकुलेटर</a> · नौकरी वाली और बचतें: <a href="../blog/income-tax-guide.html" style="color:#1a73e8">Income Tax गाइड</a>।</div>
     <div class="note">⚠️ हर कंपनी का salary structure अलग होता है (meal card, insurance, variable pay वगैरह)। यह calculator आम ढांचे पर <strong>टैक्स से पहले</strong> का अंदाज़ा देता है – असली payslip से मिलाकर देखें। आपकी income tax (TDS) इसमें नहीं कटी है।</div>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>In-Hand Salary कैसे निकालें?</h2>
+<ol>
+<li>अपनी <strong>सालाना CTC</strong> भरें – जैसे 800000।</li>
+<li><strong>Basic % चुनें</strong> – नए Labour Codes में basic+DA कुल का ~50% होता है।</li>
+<li><strong>Employer PF, Gratuity, bonus</strong> अपने आप घटेंगे – यही CTC और in-hand का फर्क है।</li>
+<li><strong>Professional Tax</strong> (राज्य के हिसाब से ~₹200/माह) और TDS का अनुमान देखें।</li>
+<li><strong>मासिक in-hand</strong> = CTC − PF − Gratuity − TDS − PT − अन्य कटौतियां।</li>
+</ol>
+<h2>CTC vs In-Hand – पैसा कहां जाता है? (₹8L CTC उदाहरण)</h2>
+<table class="gt-table"><tr><th>मद</th><th>सालाना (लगभग)</th></tr><tr><td>CTC</td><td>₹8,00,000</td></tr><tr><td>Employer PF (12% of basic)</td><td>− ₹57,600</td></tr><tr><td>Gratuity</td><td>− ₹23,000</td></tr><tr><td>Employee PF + PT</td><td>− ₹60,000</td></tr><tr><td>TDS (नई regime, ~zero)</td><td>− ₹0</td></tr><tr><td><strong>In-Hand (लगभग)</strong></td><td><strong>≈ ₹6,55,000 (₹54,600/माह)</strong></td></tr></table>
+<div class="note">💡 <strong>नए Labour Codes का असर:</strong> basic 50% होने से PF कटौती बढ़ेगी (in-hand थोड़ा कम), लेकिन <strong>retirement fund + gratuity बड़े</strong> होंगे। छोटी अवधि में जेब हल्की, लंबी अवधि में फायदा!</div>
+<h2>Salary Slip समझने के सूत्र</h2>
+<ul>
+<li><strong>CTC ≠ Salary</strong> – CTC में employer का PF, gratuity, insurance सब जुड़ा होता है।</li>
+<li><strong>Form 16</strong> हर साल check करें – TDS और आय का official हिसाब वही है।</li>
+<li><strong>Variable pay</strong> 100% न मानें – appraisal/rating पर घट-बढ़ होता है।</li>
+<li><strong>EPF passbook</strong> (EPFO app/UMANG) में balance देखते रहें।</li>
+<li><strong>Offer compare करते समय</strong> in-hand + PF + perks तीनों तोलें, सिर्फ CTC नहीं।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>CTC और in-hand में इतना फर्क क्यों?</summary><p>CTC में employer PF, gratuity, insurance, variable pay सब जुड़ा होता है जो हाथ में नहीं आता। आम तौर पर in-hand CTC का 70–80% बैठता है।</p></details>
+<details><summary>नए Labour Codes से salary पर क्या असर?</summary><p>Basic+DA कुल वेतन का 50%+ होगा → PF/gratuity कटौती बढ़ेगी, in-hand थोड़ा घटेगा, लेकिन retirement savings बढ़ेंगी।</p></details>
+<details><summary>Professional Tax क्या है?</summary><p>राज्य सरकार का tax (अधिकतम ₹2,500/साल), salary से सीधे कटता है। कुछ राज्यों में लागू नहीं है।</p></details>
+<details><summary>Variable pay क्या 100% मिलता है?</summary><p>नहीं – company + आपकी performance/rating पर निर्भर करता है। Offer letter में payout % ज़रूर पढ़ें।</p></details>
+<details><summary>In-hand बढ़ाने का सही तरीका?</summary><p>CTC बढ़वाने के साथ tax regime सही चुनें, NPS extra ₹50K (नई regime में भी) लें और perks (fuel/food/bill) का tax-फायदा समझें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="income-tax-calculator.html">🧾 Income Tax कैलकुलेटर – FY 2026-27 (नई रजिम)</a> · <a href="old-vs-new-tax-regime-calculator.html">⚖️ Old vs New Tax Regime Calculator (FY 2026-27) – कौन सी रेजीम में कि</a> · <a href="hra-calculator.html">🏠 HRA छूट कैलकुलेटर (HRA Exemption Calculator)</a> · <a href="salary-hike-calculator.html">📈 सैलरी हाइक कैलकुलेटर (Salary Hike Calculator)</a> · <a href="gratuity-calculator.html">💼 Gratuity कैलकुलेटर (ग्रेच्युटी)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

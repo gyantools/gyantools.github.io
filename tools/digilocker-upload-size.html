@@ -49,8 +49,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/digilocker-upload-size.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "DigiLocker में कितनी जगह मिलती है?", "acceptedAnswer": {"@type": "Answer", "text": "1GB free (uploaded documents के लिए)। Issued docs (Aadhaar/PAN/DL/marksheet) unlimited + space-free!"}}, {"@type": "Question", "name": "Issued vs Uploaded क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Issued = सरकार से सीधे verified (कानूनी valid, space-free)। Uploaded = आपने scan करके डाला (space खाता है)। हमेशा issued पहले!"}}, {"@type": "Question", "name": "1GB full हो जाए तो?", "acceptedAnswer": {"@type": "Answer", "text": "पुरानी uploaded हटाएं/compress करें। Issued docs कभी delete नहीं होते – वही असली काम के हैं।"}}, {"@type": "Question", "name": "PDF कैसे छोटी करें?", "acceptedAnswer": {"@type": "Answer", "text": "SmallPDF/ILovePDF free compress (80%+ छोटी), या photo 72dpi scan। Aadhaar e-copy सिर्फ ~200KB!"}}, {"@type": "Question", "name": "DigiLocker documents valid हैं?", "acceptedAnswer": {"@type": "Answer", "text": "Issued docs = original जैसे valid (IT Act) – traffic police/exam/job सब जगह चलते हैं। mAadhaar + DigiLocker combo best!"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -114,6 +136,36 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 
   <h2>संबंधित गाइड</h2>
   <p>डिजिटल पहचान: <a href="../blog/aadhaar-card-guide.html" style="color:#1a73e8">आधार गाइड</a> | सरकारी सेवाएं: <a href="../blog/eshram-card-guide.html" style="color:#1a73e8">ई-श्रम कार्ड गाइड</a>।</p>
+
+<h2>DigiLocker Space कैसे calculate करें?</h2>
+<ol>
+<li><strong>Files add</strong> करें – type + size (Aadhaar PDF ~200KB, photo ~100KB)।</li>
+<li><strong>कुल usage</strong> देखें – 1GB (1024MB) में कितना भरा?।</li>
+<li><strong>बची जगह</strong> – और कितनी files आएंगी?।</li>
+<li><strong>Compress tips</strong> – बड़ी PDF/photo छोटी कैसे करें (नीचे)।</li>
+<li>Issued documents (Aadhaar/PAN/DL) <strong>space नहीं खाते</strong> – सिर्फ uploaded!</li>
+</ol>
+<h2>आम Files का Size (लगभग)</h2>
+<table class="gt-table"><tr><th>File</th><th>Size</th><th>1GB में कितनी?</th></tr><tr><td>Aadhaar e-copy PDF</td><td>~200KB</td><td>5000+</td></tr><tr><td>Photo (compressed)</td><td>~100KB</td><td>10000+</td></tr><tr><td>Marksheet scan</td><td>~500KB</td><td>2000+</td></tr><tr><td>Phone-photo (full)</td><td>~3MB</td><td>~350</td></tr></table>
+<div class="note">💡 <strong>1GB = हज़ारों documents!</strong> Full हो तो phone-photos (3MB) compress करो – CamScanner/ILovePDF से 200KB। Issued docs तो space-free हैं ही – <strong>fetch issued, delete uploaded!</strong></div>
+<h2>DigiLocker के 5 pro-tips</h2>
+<ul>
+<li><strong>Issued पहले</strong> – Aadhaar/PAN/DL/marksheet fetch करो।</li>
+<li><strong>6-digit PIN</strong> – DigiLocker PIN + Aadhaar lock।</li>
+<li><strong>eSign</strong> – documents digitally sign (free)।</li>
+<li><strong>Share via link</strong> – verify-link भेजो, photo नहीं।</li>
+<li><strong>Nominee</strong> – family access (new feature) ON करो।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>DigiLocker में कितनी जगह मिलती है?</summary><p>1GB free (uploaded documents के लिए)। Issued docs (Aadhaar/PAN/DL/marksheet) unlimited + space-free!</p></details>
+<details><summary>Issued vs Uploaded क्या है?</summary><p>Issued = सरकार से सीधे verified (कानूनी valid, space-free)। Uploaded = आपने scan करके डाला (space खाता है)। हमेशा issued पहले!</p></details>
+<details><summary>1GB full हो जाए तो?</summary><p>पुरानी uploaded हटाएं/compress करें। Issued docs कभी delete नहीं होते – वही असली काम के हैं।</p></details>
+<details><summary>PDF कैसे छोटी करें?</summary><p>SmallPDF/ILovePDF free compress (80%+ छोटी), या photo 72dpi scan। Aadhaar e-copy सिर्फ ~200KB!</p></details>
+<details><summary>DigiLocker documents valid हैं?</summary><p>Issued docs = original जैसे valid (IT Act) – traffic police/exam/job सब जगह चलते हैं। mAadhaar + DigiLocker combo best!</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="password-generator.html">🔐 मज़बूत पासवर्ड जनरेटर</a> · <a href="online-notepad.html">🗒️ ऑनलाइन नोटपैड</a> · <a href="todo-list.html">✅ काम की सूची (To-Do List)</a> · <a href="stopwatch-timer.html">⏱️ स्टॉपवॉच &amp; टाइमर</a> · <a href="dice-coin.html">🎲 पासा &amp; 🪙 सिक्का</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 
 <script>

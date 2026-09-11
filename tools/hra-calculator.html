@@ -48,8 +48,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/hra-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "HRA छूट नई regime में मिलती है?", "acceptedAnswer": {"@type": "Answer", "text": "नहीं। HRA छूट सिर्फ पुरानी regime में मिलती है – नई regime चुनने पर HRA पूरी तरह taxable हो जाता है।"}}, {"@type": "Question", "name": "किराया नकद दिया तो छूट मिलेगी?", "acceptedAnswer": {"@type": "Answer", "text": "मुश्किल। Rent receipts + bank transfer proof सबसे मज़बूत सबूत हैं। ₹1 लाख से ऊपर सालाना किराये पर मालिक का PAN अनिवार्य है।"}}, {"@type": "Question", "name": "Metro शहर कौन से माने जाते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "HRA के लिए सिर्फ 4 metro हैं – Delhi, Mumbai, Chennai, Kolkata। Bangalore/Hyderabad/Pune भी non-metro (40%) में आते हैं।"}}, {"@type": "Question", "name": "क्या माता-पिता को किराया देकर HRA ले सकते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "हां, अगर असली में किराया transfer होता है और माता-पिता उसे अपनी आय में दिखाते हैं। कागज़ी खानापूर्ति पकड़ी गई तो penalty लगेगी।"}}, {"@type": "Question", "name": "HRA न मिले तो कोई छूट?", "acceptedAnswer": {"@type": "Answer", "text": "हां – section 80GG से ₹60,000/साल तक कटौती (शर्तों के साथ), अगर salary में HRA हिस्सा नहीं है और खुद/परिवार के नाम उस शहर में घर नहीं है।"}}]}
+</script>
+
 </head><body>
 <header>
   <div class="container nav">
@@ -127,6 +149,37 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 
   <h2>संबंधित टूल्स और गाइड</h2>
   <p>अपनी पूरी टैक्स बचत का हिसाब <a href="income-tax-calculator.html" style="color:#1a73e8">Income Tax कैलकुलेटर</a> से लगाएं, दोनों व्यवस्थाओं की तुलना <a href="old-vs-new-tax-regime-calculator.html" style="color:#1a73e8">यहां</a> करें, और हाथ में आने वाली सैलरी के लिए <a href="inhand-salary-calculator.html" style="color:#1a73e8">In-hand Salary कैलकुलेटर</a> इस्तेमाल करें। टैक्स स्लैब की ताजा जानकारी के लिए <a href="../blog/income-tax-slabs-2026-27.html" style="color:#1a73e8">Income Tax Slabs 2026-27 गाइड</a> पढ़ें।</p>
+
+<h2>HRA छूट कैसे निकालें?</h2>
+<ol>
+<li>अपना <strong>monthly basic + DA</strong> भरें (सिर्फ basic, पूरी salary नहीं)।</li>
+<li><strong>महीने का किराया</strong> भरें – सालाना अपने आप गिना जाएगा।</li>
+<li><strong>शहर चुनें</strong> – Delhi/Mumbai/Chennai/Kolkata = Metro, बाकी Non-metro।</li>
+<li><strong>Calculate दबाएं</strong> – तीनों शर्तों में सबसे कम वाली छूट + सालाना टैक्स बचत दिखेगी।</li>
+<li>नतीजा <strong>पुरानी regime</strong> में ही लागू होता है – नई regime में HRA छूट नहीं मिलती।</li>
+</ol>
+<h2>HRA छूट की 3 शर्तें (सबसे कम वाली मिलती है)</h2>
+<table class="gt-table"><tr><th>शर्त</th><th>मतलब</th></tr><tr><td>1. असली HRA</td><td>Employer से मिला सालाना HRA</td></tr><tr><td>2. किराया − basic का 10%</td><td>(सालाना किराया) − (basic+DA का 10%)</td></tr><tr><td>3. Basic का 50%/40%</td><td>Metro में 50%, Non-metro में 40%</td></tr></table>
+<div class="note">💡 <strong>उदाहरण:</strong> Basic ₹50,000/माह, किराया ₹15,000/माह, Metro शहर → (1) मान लें HRA ₹2.4L (2) ₹1.8L − ₹60K = ₹1.2L (3) ₹6L का 50% = ₹3L → छूट = <strong>₹1.2 लाख</strong> (सबसे कम)। 30% slab में ≈ ₹37,400 टैक्स बचत!</div>
+<h2>HRA से जुड़े ज़रूरी नियम</h2>
+<ul>
+<li><strong>₹1 लाख+/साल किराये पर</strong> मकान मालिक का PAN देना ज़रूरी है।</li>
+<li><strong>Rent receipts/agreement</strong> संभालकर रखें – scrutiny में मांगे जाते हैं।</li>
+<li><strong>माता-पिता को किराया</strong> देकर भी HRA मिल सकता है (असली transfer + उनका ITR ज़रूरी)।</li>
+<li><strong>खुद के घर में</strong> रहने पर HRA छूट नहीं मिलती (किराया दिया ही नहीं)।</li>
+<li><strong>पति-पत्नी दोनों</strong> अलग-अलग HRA ले सकते हैं अगर दोनों किराया देते हैं।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>HRA छूट नई regime में मिलती है?</summary><p>नहीं। HRA छूट सिर्फ पुरानी regime में मिलती है – नई regime चुनने पर HRA पूरी तरह taxable हो जाता है।</p></details>
+<details><summary>किराया नकद दिया तो छूट मिलेगी?</summary><p>मुश्किल। Rent receipts + bank transfer proof सबसे मज़बूत सबूत हैं। ₹1 लाख से ऊपर सालाना किराये पर मालिक का PAN अनिवार्य है।</p></details>
+<details><summary>Metro शहर कौन से माने जाते हैं?</summary><p>HRA के लिए सिर्फ 4 metro हैं – Delhi, Mumbai, Chennai, Kolkata। Bangalore/Hyderabad/Pune भी non-metro (40%) में आते हैं।</p></details>
+<details><summary>क्या माता-पिता को किराया देकर HRA ले सकते हैं?</summary><p>हां, अगर असली में किराया transfer होता है और माता-पिता उसे अपनी आय में दिखाते हैं। कागज़ी खानापूर्ति पकड़ी गई तो penalty लगेगी।</p></details>
+<details><summary>HRA न मिले तो कोई छूट?</summary><p>हां – section 80GG से ₹60,000/साल तक कटौती (शर्तों के साथ), अगर salary में HRA हिस्सा नहीं है और खुद/परिवार के नाम उस शहर में घर नहीं है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="income-tax-calculator.html">🧾 Income Tax कैलकुलेटर – FY 2026-27 (नई रजिम)</a> · <a href="old-vs-new-tax-regime-calculator.html">⚖️ Old vs New Tax Regime Calculator (FY 2026-27) – कौन सी रेजीम में कि</a> · <a href="inhand-salary-calculator.html">💰 In-Hand Salary कैलकुलेटर (CTC से)</a> · <a href="salary-hike-calculator.html">📈 सैलरी हाइक कैलकुलेटर (Salary Hike Calculator)</a> · <a href="gratuity-calculator.html">💼 Gratuity कैलकुलेटर (ग्रेच्युटी)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 
 <script>

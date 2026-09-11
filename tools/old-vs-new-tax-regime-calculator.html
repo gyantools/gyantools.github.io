@@ -66,8 +66,30 @@ details p{margin-top:10px;margin-bottom:0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
 footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/old-vs-new-tax-regime-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "क्या हर साल regime बदली जा सकती है?", "acceptedAnswer": {"@type": "Answer", "text": "सैलरी वालों के लिए हां – हर financial year में ITR भरते समय चुनाव किया जा सकता है। Business/professional income वालों पर कुछ शर्तें लागू होती हैं।"}}, {"@type": "Question", "name": "नई regime में कौन सी कटौतियां मिलती हैं?", "acceptedAnswer": {"@type": "Answer", "text": "Standard deduction (₹75,000 सैलरी), NPS extra ₹50,000 (80CCD-1B), Agniveer fund जैसी कुछ खास कटौतियां मिलती हैं। 80C, HRA, 80D, home loan interest नहीं मिलते।"}}, {"@type": "Question", "name": "80C पूरा करने पर कौन सी regime बेहतर?", "acceptedAnswer": {"@type": "Answer", "text": "आमतौर पर सिर्फ 80C (₹1.5L) से पुरानी regime नहीं जीतती – साथ में HRA या home loan interest भी चाहिए। Calculator में अपने आंकड़े डालकर पक्का करें।"}}, {"@type": "Question", "name": "Marginal relief क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "₹12 लाख के ठीक ऊपर जाने पर tax आय से ज़्यादा न बढ़े, इसके लिए राहत मिलती है – ताकि ₹12.1 लाख वाले पर ₹12 लाख वाले से बहुत ज़्यादा tax न पड़े।"}}, {"@type": "Question", "name": "TDS regime और ITR regime अलग हो सकते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "हां। Employer को TDS के लिए बताई regime ITR में बदली जा सकती है – final tax ITR वाली regime से ही तय होता है।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -225,7 +247,38 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
       <summary>हर साल रेजीम बदल सकते हैं?</summary>
       <p>Salaried हर साल बदल सकते हैं (salary income वालों के लिए)। बिज़नेस आय वालों के लिए पुरानी रेजीम छोड़ने के बाद लौटने पर पाबंदी है।</p>
     </details>
-  </article>
+  
+<h2>तुलना Calculator कैसे इस्तेमाल करें?</h2>
+<ol>
+<li>अपनी <strong>gross सालाना आय</strong> भरें (सैलरी + ब्याज + अन्य आय)।</li>
+<li><strong>80C निवेश</strong> (PPF/ELSS/LIC – max ₹1.5 लाख) डालें।</li>
+<li><strong>HRA छूट, 80D premium, home loan interest</strong> भरें – जो लागू हो।</li>
+<li><strong>NPS extra ₹50,000</strong> (80CCD-1B) अलग से डालें – ये नई regime में भी मिलता है।</li>
+<li><strong>तुलना देखें</strong> – दोनों regimes का tax + अंतर साफ दिखेगा; कम tax वाली regime चुनें।</li>
+</ol>
+<h2>किसे कौन सी Regime? (आम नियम)</h2>
+<table class="gt-table"><tr><th>आपकी स्थिति</th><th>अक्सर बेहतर</th></tr><tr><td>कोई deduction नहीं / कम निवेश</td><td>नई Regime</td></tr><tr><td>80C पूरा + HRA + 80D</td><td>पुरानी Regime</td></tr><tr><td>Home loan interest ₹2 लाख</td><td>पुरानी Regime</td></tr><tr><td>सिर्फ NPS ₹50,000 extra</td><td>नई Regime</td></tr><tr><td>आय ₹12.75L तक (सैलरी)</td><td>नई Regime (zero tax)</td></tr></table>
+<div class="note">💡 <strong>नियम:</strong> करीब <strong>₹4–5 लाख से ज़्यादा कुल deductions</strong> हों तो पुरानी regime जीतने लगती है। इससे कम पर नई regime आसान + सस्ती। फिर भी हर साल calculator से जांचना न भूलें।</div>
+<h2>Regime चुनते समय ध्यान रखें</h2>
+<ul>
+<li><strong>नई regime default है</strong> – ITR में पुरानी चाहिए तो उसे चुनना पड़ता है।</li>
+<li><strong>Business income वालों के लिए</strong> regime बदलने के नियम सख्त हैं (Form 10-IEA) – CA से पूछें।</li>
+<li><strong>सैलरी वाले हर साल बदल सकते हैं</strong> – कोई रोक नहीं।</li>
+<li><strong>Employer को दिया चुनाव final नहीं</strong> – TDS के लिए दिया विकल्प ITR में बदला जा सकता है।</li>
+<li><strong>सिर्फ tax नहीं, सुविधा भी देखें</strong> – नई regime में कागज़-झंझट लगभग zero है।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>क्या हर साल regime बदली जा सकती है?</summary><p>सैलरी वालों के लिए हां – हर financial year में ITR भरते समय चुनाव किया जा सकता है। Business/professional income वालों पर कुछ शर्तें लागू होती हैं।</p></details>
+<details><summary>नई regime में कौन सी कटौतियां मिलती हैं?</summary><p>Standard deduction (₹75,000 सैलरी), NPS extra ₹50,000 (80CCD-1B), Agniveer fund जैसी कुछ खास कटौतियां मिलती हैं। 80C, HRA, 80D, home loan interest नहीं मिलते।</p></details>
+<details><summary>80C पूरा करने पर कौन सी regime बेहतर?</summary><p>आमतौर पर सिर्फ 80C (₹1.5L) से पुरानी regime नहीं जीतती – साथ में HRA या home loan interest भी चाहिए। Calculator में अपने आंकड़े डालकर पक्का करें।</p></details>
+<details><summary>Marginal relief क्या है?</summary><p>₹12 लाख के ठीक ऊपर जाने पर tax आय से ज़्यादा न बढ़े, इसके लिए राहत मिलती है – ताकि ₹12.1 लाख वाले पर ₹12 लाख वाले से बहुत ज़्यादा tax न पड़े।</p></details>
+<details><summary>TDS regime और ITR regime अलग हो सकते हैं?</summary><p>हां। Employer को TDS के लिए बताई regime ITR में बदली जा सकती है – final tax ITR वाली regime से ही तय होता है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="income-tax-calculator.html">🧾 Income Tax कैलकुलेटर – FY 2026-27 (नई रजिम)</a> · <a href="hra-calculator.html">🏠 HRA छूट कैलकुलेटर (HRA Exemption Calculator)</a> · <a href="inhand-salary-calculator.html">💰 In-Hand Salary कैलकुलेटर (CTC से)</a> · <a href="salary-hike-calculator.html">📈 सैलरी हाइक कैलकुलेटर (Salary Hike Calculator)</a> · <a href="gratuity-calculator.html">💼 Gratuity कैलकुलेटर (ग्रेच्युटी)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

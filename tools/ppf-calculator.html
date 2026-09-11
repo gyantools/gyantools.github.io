@@ -52,8 +52,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/ppf-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "PPF पर current interest rate क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "2026 में 7.1% सालाना (compounded yearly)। सरकार हर तिमाही review करती है – rate घट-बढ़ सकती है।"}}, {"@type": "Question", "name": "PPF पूरी तरह tax-free है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – EEE category: 80C में जमा पर छूट (पुरानी regime), ब्याज और maturity दोनों tax-free।"}}, {"@type": "Question", "name": "PPF से पैसा कब निकाल सकते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "3rd साल से loan, 7th साल से साल में 1 बार partial withdrawal। 15 साल पूरे पर पूरी maturity + 5-5 साल extension option।"}}, {"@type": "Question", "name": "PPF vs ELSS – कौन बेहतर?", "acceptedAnswer": {"@type": "Answer", "text": "Safe + guaranteed + tax-free चाहिए तो PPF; ज़्यादा return + 3 साल lock-in चाहिए तो ELSS (market risk के साथ)। दोनों 80C में आते हैं।"}}, {"@type": "Question", "name": "5 अप्रैल वाला नियम क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "PPF ब्याज महीने के 5 तारीख से आखिर तक के min balance पर मिलता है – इसलिए अप्रैल की शुरुआत में जमा करने से पूरे साल का ब्याज मिलता है।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -117,7 +139,39 @@ th{background:#e8f0fe;color:#1a73e8}
     <div class="note">💡 <strong>ट्रिक:</strong> साल की जमा 1 अप्रैल से 5 अप्रैल के बीच कर दें – उस महीने के कम balance पर भी पूरा ब्याज मिलता है।</div>
     <div class="note">⚠️ दरें सरकार हर तिमाही बदल सकती है – यह tool अंदाज़ा देता है। खाता खोलने से पहले bank/post office से current नियम जांचें।</div>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>PPF Maturity कैसे निकालें?</h2>
+<ol>
+<li>सालाना <strong>जमा राशि</strong> भरें – ₹500 से ₹1.5 लाख तक (max limit)।</li>
+<li><strong>ब्याज दर 7.1%</strong> (2026) पहले से set है – सरकार हर तिमाही बदल सकती है।</li>
+<li><strong>15 साल</strong> की अवधि automatic – extension (5-5 साल) का हिसाब अलग से लगाएं।</li>
+<li><strong>5 अप्रैल से पहले जमा</strong> का नियम याद रखें – ब्याज महीने के min balance पर मिलता है।</li>
+<li>नतीजे में <strong>जमा vs ब्याज vs maturity</strong> – तीनों साफ दिखेंगे, पूरी तरह tax-free!</li>
+</ol>
+<h2>PPF का पूरा गणित – ₹1.5L/साल, 7.1%, 15 साल</h2>
+<table class="gt-table"><tr><th></th><th>रकम</th></tr><tr><td>कुल जमा (15 × ₹1.5L)</td><td>₹22.5L</td></tr><tr><td>कुल ब्याज</td><td>≈ ₹18.2L</td></tr><tr><td><strong>Maturity (tax-free)</strong></td><td><strong>≈ ₹40.7L</strong></td></tr></table>
+<div class="note">💡 <strong>EEE दर्जा:</strong> जमा पर 80C छूट + ब्याज tax-free + maturity tax-free – <strong>तीनों जगह zero tax!</strong> Safe निवेश में PPF जैसा combo कोई नहीं। 15 साल बाद 5-5 साल बढ़ाकर करोड़+ भी बनाया जा सकता है।</div>
+<h2>PPF के 6 ज़रूरी नियम</h2>
+<ul>
+<li><strong>5 अप्रैल से पहले</strong> सालाना जमा करें – पूरे साल का ब्याज मिलेगा।</li>
+<li><strong>₹1.5L से ज़्यादा</strong> पर ब्याज नहीं + 80C भी नहीं – limit न तोड़ें।</li>
+<li><strong>Loan/withdrawal</strong> – 3rd साल से loan, 7th साल से partial withdrawal।</li>
+<li><strong>15 साल lock-in</strong> – बीच में पूरा पैसा नहीं निकलता (extension में निकासी आसान)।</li>
+<li><strong>Minor account</strong> – बच्चे के नाम भी खोल सकते हैं (family limit shared)।</li>
+<li><strong>Rate हर तिमाही</strong> बदल सकती है – calculator current 7.1% पर आधारित है।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>PPF पर current interest rate क्या है?</summary><p>2026 में 7.1% सालाना (compounded yearly)। सरकार हर तिमाही review करती है – rate घट-बढ़ सकती है।</p></details>
+<details><summary>PPF पूरी तरह tax-free है?</summary><p>हां – EEE category: 80C में जमा पर छूट (पुरानी regime), ब्याज और maturity दोनों tax-free।</p></details>
+<details><summary>PPF से पैसा कब निकाल सकते हैं?</summary><p>3rd साल से loan, 7th साल से साल में 1 बार partial withdrawal। 15 साल पूरे पर पूरी maturity + 5-5 साल extension option।</p></details>
+<details><summary>PPF vs ELSS – कौन बेहतर?</summary><p>Safe + guaranteed + tax-free चाहिए तो PPF; ज़्यादा return + 3 साल lock-in चाहिए तो ELSS (market risk के साथ)। दोनों 80C में आते हैं।</p></details>
+<details><summary>5 अप्रैल वाला नियम क्या है?</summary><p>PPF ब्याज महीने के 5 तारीख से आखिर तक के min balance पर मिलता है – इसलिए अप्रैल की शुरुआत में जमा करने से पूरे साल का ब्याज मिलता है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a> · <a href="ssy-calculator.html">👧 SSY कैलकुलेटर (सुकन्या समृद्धि योजना)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

@@ -56,8 +56,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/games/2048.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "2048 जीतने की trick क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Corner strategy: सबसे बड़ी tile एक corner में रखो, कभी opposite direction मत दबाओ। 3-direction play = 90% win rate!"}}, {"@type": "Question", "name": "2048 किसने बनाया?", "acceptedAnswer": {"@type": "Answer", "text": "2014 में 19-साल के Gabriele Cirulli ने weekend में! Open-source – करोड़ों clones बने। Simple math = addictive puzzle।"}}, {"@type": "Question", "name": "4096/8192 possible है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – patience + corner strategy से। 8192 के बाद luck भी चाहिए। World records 100,000+ tiles तक!"}}, {"@type": "Question", "name": "सबसे बड़ी गलती क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Random swiping! हर move सोचकर – बड़ी tile corner से हिली = खेल बिगड़ा।"}}, {"@type": "Question", "name": "बच्चों के लिए फायदेमंद?", "acceptedAnswer": {"@type": "Answer", "text": "बहुत – powers of 2, planning, patience। Math fear खत्म करने वाला game!"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -109,7 +131,45 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
       <li>धैर्य! जल्दबाज़ी में बड़ी संख्या की जगह छोटी आ जाती है</li>
     </ul>
     <p>🎮 यह गेम <strong>PAWANGAMINGSTUDIO</strong> की पेशकश है। Snake, Tic-Tac-Toe और जोड़ी मिलाओ भी खेलें!</p>
-  </article>
+  
+<h2>2048 कैसे खेलें?</h2>
+<ol>
+<li><strong>Arrows/swipe</strong> – सारी tiles एक दिशा में slide।</li>
+<li><strong>Same numbers मिलाओ</strong> – 2+2=4, 4+4=8... 1024+1024=<strong>2048!</strong>।</li>
+<li><strong>2048 बनते ही जीत</strong> – फिर 4096/8192 का challenge!।</li>
+<li><strong>Board full + no moves = over</strong> – जगह बचाकर खेलो।</li>
+<li>Undo/new-game से <strong>practice</strong> – strategy नीचे!</li>
+</ol>
+<h2>Tile Values (powers of 2)</h2>
+<table class="gt-table"><tr><th>Tiles</th><th>कैसे</th></tr><tr><td>2 → 128</td><td>Easy – random भी चलेगा</td></tr><tr><td>256 → 512</td><td>Corner lock करो!</td></tr><tr><td>1024</td><td>3-direction only</td></tr><tr><td>2048 🏆</td><td>Patience = win</td></tr></table>
+<div class="note">💡 <strong>Corner lock:</strong> बड़ी tile bottom-left में – फिर UP और RIGHT कभी मत दबाओ! सिर्फ LEFT + DOWN (+कभी UP)। ये 1 rule = 90% wins। 1024 बनते ही जीत 2 min दूर!</div>
+<h2>2048 की 5 commandments</h2>
+<ul>
+<li><strong>1 corner</strong> – बड़ी tile वहीं, हमेशा।</li>
+<li><strong>3 directions</strong> – 4th भूल जाओ।</li>
+<li><strong>Snake chain</strong> – घटते क्रम की लड़ी बनाओ।</li>
+<li><strong>Rows मत भरो</strong> – 1 खाली row हमेशा रखो।</li>
+<li><strong> Undo smart</strong> – गलती पर तुरंत वापस।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>2048 जीतने की trick क्या है?</summary><p>Corner strategy: सबसे बड़ी tile एक corner में रखो, कभी opposite direction मत दबाओ। 3-direction play = 90% win rate!</p></details>
+<details><summary>2048 किसने बनाया?</summary><p>2014 में 19-साल के Gabriele Cirulli ने weekend में! Open-source – करोड़ों clones बने। Simple math = addictive puzzle।</p></details>
+<details><summary>4096/8192 possible है?</summary><p>हां – patience + corner strategy से। 8192 के बाद luck भी चाहिए। World records 100,000+ tiles तक!</p></details>
+<details><summary>सबसे बड़ी गलती क्या है?</summary><p>Random swiping! हर move सोचकर – बड़ी tile corner से हिली = खेल बिगड़ा।</p></details>
+<details><summary>बच्चों के लिए फायदेमंद?</summary><p>बहुत – powers of 2, planning, patience। Math fear खत्म करने वाला game!</p></details>
+</div>
+<div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="checkers.html">♟️ दमा – Checkers (Draughts)</a> · <a href="chess.html">♞ शतरंज (Chess)</a> · <a href="connect-four.html">🔴 ४ गेंद जोड़ो (Connect Four)</a> · <a href="dots-and-boxes.html">⬜ बिंदु-बक्सा (Dots &amp; Boxes)</a> · <a href="gk-quiz.html">🧠 भारत GK क्विज़ – All India</a></div>
+<h2>2048 से 4096 तक का Roadmap</h2>
+<p>2048 बनाना सिर्फ शुरुआत है! <strong>4096</strong> के लिए वही corner strategy + 2x patience चाहिए। 1024 की दो tiles बनाकर मिलाना सबसे नाज़ुक phase है – एक गलत swipe और chain टूट जाती है। Pro players 'snake chain' maintain करते हैं: 1024-512-256-128 की घटती लड़ी एक edge पर, और नई tiles दूसरी तरफ बनाते हैं।</p>
+<ul>
+<li><strong>Milestone 1:</strong> 10 min में 1024 (beginner ✓)।</li>
+<li><strong>Milestone 2:</strong> बिना undo 2048 (intermediate ✓)।</li>
+<li><strong>Milestone 3:</strong> 4096 + score 50,000+ (advanced ✓)।</li>
+<li><strong>Legend:</strong> 8192 – सिर्फ 1% players! क्या तुम बनोगे?</li>
+</ul>
+<div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें!</p></div></div>
+</article>
 </div>
 
 <footer>

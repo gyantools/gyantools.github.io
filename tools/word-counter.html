@@ -47,8 +47,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/word-counter.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Reading time कैसे निकलता है?", "acceptedAnswer": {"@type": "Answer", "text": "शब्द ÷ 200 (avg reading speed)। 1000 शब्द ≈ 5 min। Speaking (YouTube) में ~130–150 शब्द/min मानें।"}}, {"@type": "Question", "name": "SEO के लिए कितने शब्द?", "acceptedAnswer": {"@type": "Answer", "text": "Blog: 800–1500+ (topic पर); news: 300+; guide: 2000+। Quality > quantity – thin 300-word posts rank नहीं करते!"}}, {"@type": "Question", "name": "Meta description कितनी लंबी?", "acceptedAnswer": {"@type": "Answer", "text": "~155–160 characters। ज़्यादा कटी दिखेगी (…), कम = space waste। Counter से exact रखें।"}}, {"@type": "Question", "name": "Twitter/X limit कितनी?", "acceptedAnswer": {"@type": "Answer", "text": "280 characters (free), 25,000 (Premium)। Counter बिना space वाले अक्षर भी दिखाता है।"}}, {"@type": "Question", "name": "Hindi शब्द सही गिनता है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – space-based counting भाषा-independent है। मात्राएं/संयुक्ताक्षर अक्षरों में गिने जाते हैं (Unicode standard)।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -108,6 +130,36 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 </ul>
 <p>टाइप करते ही गिनती अपने आप बदलती है – कॉपी-पेस्ट भी कर सकते हैं, फिर भी तुरंत गिनती मिल जाएगी।</p>
 
+
+<h2>Word Counter कैसे इस्तेमाल करें?</h2>
+<ol>
+<li><strong>Text paste/type</strong> करें – गिनती <strong>live</strong> बदलेगी।</li>
+<li><strong>6 metrics</strong> देखें – शब्द, अक्षर (±space), वाक्य, पैराग्राफ, reading time।</li>
+<li><strong>Limits check करें</strong> – Twitter 280, meta ~160, essay 500।</li>
+<li><strong>Hindi text</strong> भी 100% गिना जाता है (Unicode)।</li>
+<li>Blog/YouTube script की <strong>length plan</strong> करने में इस्तेमाल करें।</li>
+</ol>
+<h2>लंबाई Guide – कितने शब्द कहां?</h2>
+<table class="gt-table"><tr><th>काम</th><th>आम लंबाई</th></tr><tr><td>Tweet/X</td><td>280 chars</td></tr><tr><td>Meta description</td><td>~160 chars</td></tr><tr><td>Essay (school)</td><td>250–500 शब्द</td></tr><tr><td>Blog post</td><td>800–1500+ शब्द</td></tr><tr><td>YouTube 10-min script</td><td>~1300 शब्द</td></tr><tr><td>Resume</td><td>1 page (~400 शब्द)</td></tr></table>
+<div class="note">💡 <strong>Speaking ≠ Reading:</strong> पढ़ना 200 wpm, बोलना 130–150 wpm। 5-min speech = ~700 शब्द। Script हमेशा बोलकर time करें!</div>
+<h2>लिखाई के 5 नियम</h2>
+<ul>
+<li><strong>Short sentences</strong> – 15–20 शब्द max (Hindi/English)।</li>
+<li><strong>Active voice</strong> – 'मैंने किया' > 'मेरे द्वारा किया गया'।</li>
+<li><strong>1 idea = 1 para</strong> – लंबा para = reader भागेगा।</li>
+<li><strong>Headings</strong> – हर 200 शब्द पर subheading।</li>
+<li><strong>Read aloud</strong> – अटके तो sentence छोटा करो।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Reading time कैसे निकलता है?</summary><p>शब्द ÷ 200 (avg reading speed)। 1000 शब्द ≈ 5 min। Speaking (YouTube) में ~130–150 शब्द/min मानें।</p></details>
+<details><summary>SEO के लिए कितने शब्द?</summary><p>Blog: 800–1500+ (topic पर); news: 300+; guide: 2000+। Quality > quantity – thin 300-word posts rank नहीं करते!</p></details>
+<details><summary>Meta description कितनी लंबी?</summary><p>~155–160 characters। ज़्यादा कटी दिखेगी (…), कम = space waste। Counter से exact रखें।</p></details>
+<details><summary>Twitter/X limit कितनी?</summary><p>280 characters (free), 25,000 (Premium)। Counter बिना space वाले अक्षर भी दिखाता है।</p></details>
+<details><summary>Hindi शब्द सही गिनता है?</summary><p>हां – space-based counting भाषा-independent है। मात्राएं/संयुक्ताक्षर अक्षरों में गिने जाते हैं (Unicode standard)।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="cgpa-calculator.html">🎓 CGPA से Percentage कैलकुलेटर</a> · <a href="marks-percentage-calculator.html">🎓 नंबर और प्रतिशत कैलकुलेटर</a> · <a href="hcf-lcm-calculator.html">➗ HCF और LCM कैलकुलेटर</a> · <a href="scientific-calculator.html">🔬 वैज्ञानिक कैलकुलेटर</a> · <a href="simple-calculator.html">🧮 ऑनलाइन कैलकुलेटर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 

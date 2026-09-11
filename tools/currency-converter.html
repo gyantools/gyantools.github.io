@@ -49,8 +49,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/currency-converter.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "USD to INR rate आज क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Rate हर सेकंड बदलती है – converter ताज़ा अनुमानित दर दिखाता है। Bank/forex की असली rate में 1–3% margin जुड़ता है।"}}, {"@type": "Question", "name": "Google rate पर dollar क्यों नहीं मिलता?", "acceptedAnswer": {"@type": "Answer", "text": "Google mid-market (wholesale) rate दिखाता है। Retail में dealer margin + GST + fees जुड़ते हैं – इसीलिए फर्क आता है।"}}, {"@type": "Question", "name": "विदेश पैसे भेजने का सबसे सस्ता तरीका?", "acceptedAnswer": {"@type": "Answer", "text": "तुलना करें: Wise/Remitly अक्सर bank से सस्ते। ₹10L+ पर 20% TCS (बाद में ITR में adjust/refund)।"}}, {"@type": "Question", "name": "Forex card या cash?", "acceptedAnswer": {"@type": "Answer", "text": "Forex card – safe, बेहतर rate, PIN-protected, reloadable। थोड़ा cash (local) emergency के लिए रखें।"}}, {"@type": "Question", "name": "DCC क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Dynamic Currency Conversion – विदेश में card से INR में pay का option। हमेशा मना करें, local currency चुनें (3–5% सस्ता)!"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -124,6 +146,37 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 
   <h2>संबंधित टूल्स</h2>
   <p><a href="gold-silver-value-calculator.html" style="color:#1a73e8">गोल्ड-सिल्वर वैल्यू</a> | <a href="unit-converter.html" style="color:#1a73e8">Unit कन्वर्टर</a> | गाइड: <a href="../blog/passport-guide.html" style="color:#1a73e8">पासपोर्ट गाइड</a> | <a href="../blog/gold-investment-guide.html" style="color:#1a73e8">सोने में निवेश</a></p>
+
+<h2>Currency Convert कैसे करें?</h2>
+<ol>
+<li><strong>राशि</strong> भरें – जैसे 1000।</li>
+<li><strong>From/To currency</strong> चुनें – USD, EUR, GBP, AED, SAR समेत कई।</li>
+<li><strong>Convert दबाएं</strong> – ताज़ा अनुमानित दरों से नतीजा।</li>
+<li>याद रखें – <strong>Google rate ≠ bank rate</strong>; bank 1–3% margin + charges लेता है।</li>
+<li>बड़ी रकम (फीस/यात्रा) के लिए <strong>Wise/Western Union/bank</strong> तीनों compare करें।</li>
+</ol>
+<h2>₹1,00,000 भेजने पर असली फर्क (उदाहरण)</h2>
+<table class="gt-table"><tr><th>तरीका</th><th>Rate Margin (लगभग)</th><th>Extra Charges</th></tr><tr><td>Google/search rate</td><td>0% (mid-market)</td><td>– (मिलता नहीं)</td></tr><tr><td>Bank wire</td><td>1–3%</td><td>₹500–1,500 + GST</td></tr><tr><td>Wise/Remitly ⭐</td><td>0.4–1%</td><td>कम fixed fee</td></tr><tr><td>Airport counter 😱</td><td>5–10%!</td><td>अक्सर hidden</td></tr></table>
+<div class="note">💡 <strong>Airport पर currency कभी न बदलें</strong> – 5–10% लूट! जाने से पहले city forex dealer/online (BookMyForex/Wise) से लें। International card पर <strong>DCC (INR में pay) मना करें</strong> – local currency में pay हमेशा सस्ता!</div>
+<h2>Foreign Money के 5 नियम</h2>
+<ul>
+<li><strong>TCS:</strong> ₹10L+/साल foreign remittance पर 20% TCS (education/medical में राहत)।</li>
+<li><strong>Forex card > cash</strong> – safe + बेहतर rate + ATM access।</li>
+<li><strong>Zero-markup cards</strong> – Niyo/Fi/Jupiter से 0% forex markup।</li>
+<li><strong>Rate alert</strong> लगाएं – बड़ी payment सही rate पर करें।</li>
+<li><strong>Receipts रखें</strong> – LRS limit ($2.5L/साल) + ITR proof के लिए।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>USD to INR rate आज क्या है?</summary><p>Rate हर सेकंड बदलती है – converter ताज़ा अनुमानित दर दिखाता है। Bank/forex की असली rate में 1–3% margin जुड़ता है।</p></details>
+<details><summary>Google rate पर dollar क्यों नहीं मिलता?</summary><p>Google mid-market (wholesale) rate दिखाता है। Retail में dealer margin + GST + fees जुड़ते हैं – इसीलिए फर्क आता है।</p></details>
+<details><summary>विदेश पैसे भेजने का सबसे सस्ता तरीका?</summary><p>तुलना करें: Wise/Remitly अक्सर bank से सस्ते। ₹10L+ पर 20% TCS (बाद में ITR में adjust/refund)।</p></details>
+<details><summary>Forex card या cash?</summary><p>Forex card – safe, बेहतर rate, PIN-protected, reloadable। थोड़ा cash (local) emergency के लिए रखें।</p></details>
+<details><summary>DCC क्या है?</summary><p>Dynamic Currency Conversion – विदेश में card से INR में pay का option। हमेशा मना करें, local currency चुनें (3–5% सस्ता)!</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="discount-calculator.html">🏷️ छूट कैलकुलेटर (Discount Calculator)</a> · <a href="percentage-calculator.html">📊 प्रतिशत कैलकुलेटर (Percentage Calculator)</a> · <a href="gold-silver-value-calculator.html">🥇 Gold-Silver Value Calculator (हिंदी)</a> · <a href="number-to-words.html">🔢 संख्या को शब्दों में बदलें (Number to Words)</a> · <a href="bill-split-calculator.html">🍽️ बिल बांटो (Bill Split) कैलकुलेटर</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 
 <script>

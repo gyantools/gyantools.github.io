@@ -52,8 +52,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/goal-planner-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Goal-based investing क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "हर सपने (घर, पढ़ाई, retirement) के लिए अलग रकम + समय + SIP तय करना। बिना goal का निवेश अक्सर बीच में टूट जाता है।"}}, {"@type": "Question", "name": "बच्चों की पढ़ाई के लिए कितना चाहिए?", "acceptedAnswer": {"@type": "Answer", "text": "आज ₹20L की degree 15 साल बाद (10% inflation) ≈ ₹83L! ₹83L के लिए 15 साल, 12% पर ≈ ₹16,600/माह SIP चाहिए।"}}, {"@type": "Question", "name": "Short-term goal (2 साल) के लिए क्या?", "acceptedAnswer": {"@type": "Answer", "text": "Equity बिल्कुल नहीं – RD/FD/liquid fund। 2 साल में बाज़ार गिरा तो goal टूट जाएगा।"}}, {"@type": "Question", "name": "Goal पूरा होने पर पैसा कैसे निकालें?", "acceptedAnswer": {"@type": "Answer", "text": "Equity LTCG: सालाना ₹1.25L tax-free limit में बांटकर निकालें (2 financial years में split = tax बचत)।"}}, {"@type": "Question", "name": "एक साथ कई goals कैसे manage करें?", "acceptedAnswer": {"@type": "Answer", "text": "Priority + horizon लिखें, हर goal की अलग SIP/folio रखें, और emergency fund सबसे पहले बनाएं।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -118,7 +140,39 @@ th{background:#e8f0fe;color:#1a73e8}
     <p><strong>प्र. लक्ष्य राशि में महंगाई जोड़ूं?</strong><br>बेहतर होगा – लक्ष्य को महंगाई से बढ़ाकर डालें (जैसे आज ₹20 लाख की गाड़ी, 5 साल में 6% बढ़ोतरी पर ₹26.8 लाख)।</p>
     <p><strong>प्र. एकमुश्त जमा हो तो?</strong><br>तो अलग गणना होगी – FD/PPF कैलकुलेटर देखें। यह टूल मासिक बचत के लिए है।</p>
     <p><strong>प्र. रिटर्न 0% कब डालूं?</strong><br>जब पैसा गुल्लक/बचत खाते में रखना हो – तब दिखेगा कि बिना निवेश कितना मुश्किल है!</p>
-  </article>
+  
+<h2>Goal Planning कैसे करें?</h2>
+<ol>
+<li><strong>Goal amount</strong> भरें – आज की कीमत में (जैसे घर ₹50L)।</li>
+<li><strong>कितने साल बाद</strong> चाहिए – जैसे 10 साल।</li>
+<li><strong>Goal inflation</strong> डालें – घर 8%, पढ़ाई 10%, आम 6%。</li>
+<li><strong>Expected return</strong> चुनें – equity 12%, hybrid 10%, safe 7%。</li>
+<li><strong>मासिक SIP</strong> नतीजा देखें – बस इतना invest = goal पक्का!</li>
+<li>Goal नज़दीक आए तो <strong>equity से debt में shift</strong> करना न भूलें।</li>
+</ol>
+<h2>₹1 करोड़ Goals – कितनी SIP? (12% return)</h2>
+<table class="gt-table"><tr><th>समय</th><th>मासिक SIP</th><th>कुल निवेश</th></tr><tr><td>10 साल</td><td>≈ ₹43,500</td><td>₹52.2L</td></tr><tr><td>15 साल</td><td>≈ ₹20,000</td><td>₹36.0L</td></tr><tr><td>20 साल</td><td>≈ ₹10,000</td><td>₹24.0L</td></tr><tr><td>25 साल</td><td>≈ ₹5,300</td><td>₹15.9L</td></tr></table>
+<div class="note">💡 <strong>समय = पैसा:</strong> 25 साल हो तो सिर्फ ₹5,300/माह से करोड़पति! 10 साल में वही goal ₹43,500/माह मांगता है। <strong>Goal planning आज से = आधी मेहनत।</strong></div>
+<h2>Goal Planning के 5 नियम</h2>
+<ul>
+<li><strong>हर goal की अलग SIP</strong> – नाम लिखें: 'बेटी की पढ़ाई', 'घर', 'car'।</li>
+<li><strong>Horizon से asset चुनें</strong> – 5+ साल: equity; 1–3 साल: RD/FD; 3–5: hybrid।</li>
+<li><strong>Goal glide-path</strong> – आखिरी 2 साल में equity से debt में shift करें।</li>
+<li><strong>Inflation न भूलें</strong> – आज ₹20L की पढ़ाई 10 साल बाद ~₹52L (10%)!</li>
+<li><strong>Review हर 6 महीने</strong> – return कम हो तो SIP बढ़ाएं, समय नहीं।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Goal-based investing क्या है?</summary><p>हर सपने (घर, पढ़ाई, retirement) के लिए अलग रकम + समय + SIP तय करना। बिना goal का निवेश अक्सर बीच में टूट जाता है।</p></details>
+<details><summary>बच्चों की पढ़ाई के लिए कितना चाहिए?</summary><p>आज ₹20L की degree 15 साल बाद (10% inflation) ≈ ₹83L! ₹83L के लिए 15 साल, 12% पर ≈ ₹16,600/माह SIP चाहिए।</p></details>
+<details><summary>Short-term goal (2 साल) के लिए क्या?</summary><p>Equity बिल्कुल नहीं – RD/FD/liquid fund। 2 साल में बाज़ार गिरा तो goal टूट जाएगा।</p></details>
+<details><summary>Goal पूरा होने पर पैसा कैसे निकालें?</summary><p>Equity LTCG: सालाना ₹1.25L tax-free limit में बांटकर निकालें (2 financial years में split = tax बचत)।</p></details>
+<details><summary>एक साथ कई goals कैसे manage करें?</summary><p>Priority + horizon लिखें, हर goal की अलग SIP/folio रखें, और emergency fund सबसे पहले बनाएं।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="ppf-calculator.html">🏦 PPF कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

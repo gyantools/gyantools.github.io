@@ -53,8 +53,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/pregnancy-due-date-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Due date कैसे गिनी जाती है?", "acceptedAnswer": {"@type": "Answer", "text": "Naegele rule: LMP + 9 महीने + 7 दिन (या −3 महीने + 7 दिन + 1 साल) = 280 दिन/40 हफ़्ते। Calculator cycle-length adjust भी करता है।"}}, {"@type": "Question", "name": "Trimesters क्या हैं?", "acceptedAnswer": {"@type": "Answer", "text": "1st: हफ़्ता 1–12 (organ बनना), 2nd: 13–26 (golden period), 3rd: 27–40 (growth)। हर trimester की care अलग – doctor schedule follow करें।"}}, {"@type": "Question", "name": "Ultrasound date अलग आए तो?", "acceptedAnswer": {"@type": "Answer", "text": "पहला trimester scan सबसे accurate – LMP से ±7 दिन फर्क हो तो doctor scan वाली date मानता है।"}}, {"@type": "Question", "name": "कब doctor के पास जाएं?", "acceptedAnswer": {"@type": "Answer", "text": "Positive test के तुरंत बाद! Folic acid, first scan (6–8 हफ़्ते), टीके, diet chart – जल्दी शुरुआत = safe pregnancy।"}}, {"@type": "Question", "name": "High-risk signs क्या हैं?", "acceptedAnswer": {"@type": "Answer", "text": "Bleeding, तेज़ पेट दर्द, पानी निकलना, baby movement रुकना, तेज़ BP – इनमें तुरंत hospital/108, इंतज़ार नहीं!"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -111,7 +133,37 @@ th{background:#e8f0fe;color:#1a73e8}
     </ul>
     <div class="note">⚕️ <strong>सूचना:</strong> यह tool शिक्षा के लिए है, medical सलाह नहीं। गर्भावस्था की हर जांच और फैसला अपने डॉक्टर की निगरानी में करें।</div>
     <div class="note">🔒 आपकी तारीख कहीं नहीं जाती – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>Due Date कैसे निकालें?</h2>
+<ol>
+<li><strong>Last period (LMP) की पहली तारीख</strong> डालें।</li>
+<li><strong>Cycle length</strong> चुनें – default 28 दिन (अलग हो तो बदलें)।</li>
+<li><strong>Calculate दबाएं</strong> – due date + चल रहा हफ़्ता + trimester।</li>
+<li><strong>Milestone dates</strong> देखें – 12-हफ़्ता scan, anomaly scan समय।</li>
+<li>याद रखें – सिर्फ <strong>5% deliveries due date पर!</strong> ±2 हफ़्ते normal।</li>
+</ol>
+<h2>Trimester Roadmap</h2>
+<table class="gt-table"><tr><th>Trimester</th><th>हफ़्ते</th><th>Key Milestones</th></tr><tr><td>1st</td><td>1–12</td><td>Folic acid, first scan (6–8w), NT scan (11–13w)</td></tr><tr><td>2nd</td><td>13–26</td><td>Anomaly scan (18–22w), sugar test (24–28w), kicks!</td></tr><tr><td>3rd</td><td>27–40</td><td>Growth scans, iron/calcium, hospital bag (36w)</td></tr></table>
+<div class="note">💡 <strong>जननी सुरक्षा + PMMVY:</strong> सरकारी hospital delivery + maternity benefit – Asha worker/ANM से registration कराएं। Ayushman card हो तो selected private में भी सुविधा संभव!</div>
+<h2>Healthy Pregnancy के 5 नियम</h2>
+<ul>
+<li><strong>Folic acid day-1</strong> से – neural defects से बचाव।</li>
+<li><strong>Iron + calcium</strong> – doctor dose, खाली पेट नहीं।</li>
+<li><strong>Weight gain 10–14kg</strong> – दो के लिए खाना myth है!।</li>
+<li><strong>Daily walk 30min</strong> – normal delivery chances बढ़ते हैं।</li>
+<li><strong>Kick count (28w+)</strong> – 2h में 10 kicks; कम हो तो तुरंत doctor।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Due date कैसे गिनी जाती है?</summary><p>Naegele rule: LMP + 9 महीने + 7 दिन (या −3 महीने + 7 दिन + 1 साल) = 280 दिन/40 हफ़्ते। Calculator cycle-length adjust भी करता है।</p></details>
+<details><summary>Trimesters क्या हैं?</summary><p>1st: हफ़्ता 1–12 (organ बनना), 2nd: 13–26 (golden period), 3rd: 27–40 (growth)। हर trimester की care अलग – doctor schedule follow करें।</p></details>
+<details><summary>Ultrasound date अलग आए तो?</summary><p>पहला trimester scan सबसे accurate – LMP से ±7 दिन फर्क हो तो doctor scan वाली date मानता है।</p></details>
+<details><summary>कब doctor के पास जाएं?</summary><p>Positive test के तुरंत बाद! Folic acid, first scan (6–8 हफ़्ते), टीके, diet chart – जल्दी शुरुआत = safe pregnancy।</p></details>
+<details><summary>High-risk signs क्या हैं?</summary><p>Bleeding, तेज़ पेट दर्द, पानी निकलना, baby movement रुकना, तेज़ BP – इनमें तुरंत hospital/108, इंतज़ार नहीं!</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="age-calculator.html">🎂 उम्र कैलकुलेटर (Age Calculator)</a> · <a href="bmi-calculator.html">⚖️ BMI कैलकुलेटर (बीएमआई)</a> · <a href="calorie-bmr-calculator.html">🔥 रोज़ कितनी कैलोरी चाहिए?</a> · <a href="water-intake-calculator.html">💧 रोज़ कितना पानी पिएं?</a> · <a href="sleep-cycle-calculator.html">😴 कब सोएं, कब उठें?</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

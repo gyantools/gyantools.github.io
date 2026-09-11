@@ -57,8 +57,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/games/checkers.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Checkers कितना पुराना?", "acceptedAnswer": {"@type": "Answer", "text": "5000 साल! Iraq में 3000 BC के boards मिले। 'Draughts' नाम से world championship – भारत में दमा/ड्रा के नाम से घर-घर!"}}, {"@type": "Question", "name": "Forced capture क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "काटने का मौका हो तो काटना ज़रूरी – यही game की जान! Sacrifice tricks (अपना देकर 2 खाना) इसी से बनते हैं।"}}, {"@type": "Question", "name": "King कितना powerful?", "acceptedAnswer": {"@type": "Answer", "text": "बहुत – आगे+पीछे diagonal। 2 kings vs 1 = लगभग पक्की जीत। Promotion race ही mid-game है!"}}, {"@type": "Question", "name": "जीतने की strategy?", "acceptedAnswer": {"@type": "Answer", "text": "Center control + back-row guard + pieces साथ रखो (undefended मत छोड़ो) + endgame में opposition।"}}, {"@type": "Question", "name": "Chess से आसान?", "acceptedAnswer": {"@type": "Answer", "text": "सीखना आसान, master करना कठिन! Perfect-play draw है (2007 solved)। Beginners chess से पहले checkers सीखें!"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -119,7 +141,37 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
       <li><strong>मोहरों की जोड़ी रखो</strong> – अकेले मोहरे आसान शिकार होते हैं, साथ-साथ रखो</li>
     </ul>
     <p>और भी गेम्स: <a href="tic-tac-toe.html">टिक टैक टो</a> · <a href="connect-four.html">४ गेंद जोड़ो</a> · <a href="dots-and-boxes.html">बिंदु-बक्सा</a> · <a href="sudoku.html">सुडोकू</a></p>
-  </article>
+  
+<h2>Checkers (ड्रा/दमा) कैसे खेलें?</h2>
+<ol>
+<li><strong>Diagonal चलो</strong> – काले खानों पर, 1 घर आगे।</li>
+<li><strong>Capture:</strong> opponent के ऊपर jump (chain jumps auto)।</li>
+<li><strong>Capture अनिवार्य!</strong> – मौका हो तो काटना ही पड़ेगा।</li>
+<li><strong>King बनो</strong> – आखिरी line पहुंचो = पीछे भी चलेगा!।</li>
+<li>सारे pieces खाओ या block करो = <strong>जीत!</strong></li>
+</ol>
+<h2>Piece Guide</h2>
+<table class="gt-table"><tr><th>Piece</th><th>चाल</th><th>Power</th></tr><tr><td>Man (गोटी)</td><td>आगे diagonal 1</td><td>Basic</td></tr><tr><td>King 👑</td><td>आगे+पीछे diagonal</td><td>3x!</td></tr></table>
+<div class="note">💡 <strong>Forced capture = हथियार:</strong> अपनी गोटी sacrifice करके opponent को ऐसी जगह खींचो जहां double/triple jump मिले! Back-row 2 गोटियां हमेशा guard पर रखो – king-entry रुकेगी।</div>
+<h2>Checkers Champion के 5 नियम</h2>
+<ul>
+<li><strong>Center control</strong> – बीच की गोटियां सबसे mobile।</li>
+<li><strong>साथ रखो</strong> – अकेली गोटी = मुफ्त शिकार।</li>
+<li><strong>Back-row guard</strong> – आखिर तक 1–2 पीछे रखो।</li>
+<li><strong>Trade smart</strong> – आगे हो तो pieces घटाओ (exchange)।</li>
+<li><strong>King race</strong> – promotion = game-changer!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Checkers कितना पुराना?</summary><p>5000 साल! Iraq में 3000 BC के boards मिले। 'Draughts' नाम से world championship – भारत में दमा/ड्रा के नाम से घर-घर!</p></details>
+<details><summary>Forced capture क्या है?</summary><p>काटने का मौका हो तो काटना ज़रूरी – यही game की जान! Sacrifice tricks (अपना देकर 2 खाना) इसी से बनते हैं।</p></details>
+<details><summary>King कितना powerful?</summary><p>बहुत – आगे+पीछे diagonal। 2 kings vs 1 = लगभग पक्की जीत। Promotion race ही mid-game है!</p></details>
+<details><summary>जीतने की strategy?</summary><p>Center control + back-row guard + pieces साथ रखो (undefended मत छोड़ो) + endgame में opposition।</p></details>
+<details><summary>Chess से आसान?</summary><p>सीखना आसान, master करना कठिन! Perfect-play draw है (2007 solved)। Beginners chess से पहले checkers सीखें!</p></details>
+</div>
+<div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="chess.html">♞ शतरंज (Chess)</a> · <a href="connect-four.html">🔴 ४ गेंद जोड़ो (Connect Four)</a> · <a href="dots-and-boxes.html">⬜ बिंदु-बक्सा (Dots &amp; Boxes)</a> · <a href="gk-quiz.html">🧠 भारत GK क्विज़ – All India</a> · <a href="math-quiz.html">➗ गणित क्विज़ (Math Quiz)</a></div>
+<div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें!</p></div></div>
+</article>
 </div>
 
 <footer>

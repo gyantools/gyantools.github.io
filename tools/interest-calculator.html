@@ -49,8 +49,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/interest-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Simple और Compound interest में अंतर?", "acceptedAnswer": {"@type": "Answer", "text": "SI: सिर्फ principal पर ब्याज। CI: ब्याज पर भी ब्याज (compounding)। लंबी अवधि में CI बहुत आगे – ₹1L, 10%, 20 साल: SI ₹3L vs CI ₹6.73L!"}}, {"@type": "Question", "name": "Compounding frequency क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "साल में कितनी बार ब्याज जुड़ता है – मासिक > तिमाही > छमाही > सालाना। FD में quarterly compounding आम है।"}}, {"@type": "Question", "name": "Rule of 72 क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "72 ÷ ब्याज दर = पैसा दोगुना होने के साल। 9% पर 8 साल, 12% पर 6 साल। तिगुना = 114÷दर।"}}, {"@type": "Question", "name": "Flat rate और reducing rate?", "acceptedAnswer": {"@type": "Answer", "text": "Flat: पूरी राशि पर (महंगा भ्रम)। Reducing: बचे balance पर (सही)। Personal loan/car loan हमेशा reducing rate में compare करें।"}}, {"@type": "Question", "name": "Loan में compounding कैसे बचाएं?", "acceptedAnswer": {"@type": "Answer", "text": "जल्दी prepayment + छोटी अवधि + extra EMI – loan में हर महीना देरी = compounding दुश्मन।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -114,7 +136,38 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
     <p>72 को ब्याज दर से भाग दें – जो आए, उतने सालों में पैसा लगभग दोगुना होता है। जैसे 8% दर पर: 72 ÷ 8 = <strong>9 साल</strong> में पैसा दोगुना।</p>
     <div class="note">💡 <strong>निवेश समझते हुए:</strong> FD की तुलना में PPF, SIP जैसे options लंबे समय में ज़्यादा चक्रवृद्धि फायदा देते हैं। निवेश से पहले अपनी ज़रूरत और risk समझें – यह tool गणित सिखाता है, सलाह नहीं देता।</div>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>SI–CI कैसे compare करें?</h2>
+<ol>
+<li><strong>Principal</strong> भरें – जैसे ₹1,00,000।</li>
+<li><strong>दर + समय</strong> डालें – SI और CI दोनों एक साथ गिने जाएंगे।</li>
+<li><strong>Compounding frequency</strong> चुनें – सालाना/छमाही/तिमाही/मासिक।</li>
+<li><strong>अंतर देखें</strong> – समय बढ़ने पर CI कैसे आगे निकलता है!</li>
+<li>FD/loan दोनों के लिए <strong>reducing vs flat</strong> का फर्क नीचे पढ़ें।</li>
+</ol>
+<h2>₹1L, 10% – SI vs CI का फर्क</h2>
+<table class="gt-table"><tr><th>साल</th><th>Simple (SI)</th><th>Compound (CI) ⭐</th><th>फर्क</th></tr><tr><td>5</td><td>₹1.50L</td><td>₹1.61L</td><td>+₹11K</td></tr><tr><td>10</td><td>₹2.00L</td><td>₹2.59L</td><td>+₹59K</td></tr><tr><td>20</td><td>₹3.00L</td><td>₹6.73L</td><td>+₹3.73L!</td></tr></table>
+<div class="note">💡 <strong>8वां अजूबा:</strong> 20 साल में CI, SI का <strong>दोगुना से ज़्यादा!</strong> निवेश में compounding दोस्त है (जल्दी शुरू करो), loan में दुश्मन (जल्दी चुकाओ)। Frequency भी मायने रखती है – मासिक compounding > सालाना!</div>
+<h2>ब्याज के 5 सूत्र</h2>
+<ul>
+<li><strong>Rule of 72</strong> – 72 ÷ दर = दोगुना होने के साल।</li>
+<li><strong>Rule of 114/144</strong> – 3x/4x होने के साल (114÷दर, 144÷दर)।</li>
+<li><strong>Flat vs Reducing</strong> – flat 6% ≈ reducing 11%! हमेशा reducing पूछें।</li>
+<li><strong>Frequency</strong> – quarterly compounding FD > annual payout।</li>
+<li><strong>Tax घटाएं</strong> – 7% FD − 30% tax − 6% महंगाई = negative real!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Simple और Compound interest में अंतर?</summary><p>SI: सिर्फ principal पर ब्याज। CI: ब्याज पर भी ब्याज (compounding)। लंबी अवधि में CI बहुत आगे – ₹1L, 10%, 20 साल: SI ₹3L vs CI ₹6.73L!</p></details>
+<details><summary>Compounding frequency क्या है?</summary><p>साल में कितनी बार ब्याज जुड़ता है – मासिक > तिमाही > छमाही > सालाना। FD में quarterly compounding आम है।</p></details>
+<details><summary>Rule of 72 क्या है?</summary><p>72 ÷ ब्याज दर = पैसा दोगुना होने के साल। 9% पर 8 साल, 12% पर 6 साल। तिगुना = 114÷दर।</p></details>
+<details><summary>Flat rate और reducing rate?</summary><p>Flat: पूरी राशि पर (महंगा भ्रम)। Reducing: बचे balance पर (सही)। Personal loan/car loan हमेशा reducing rate में compare करें।</p></details>
+<details><summary>Loan में compounding कैसे बचाएं?</summary><p>जल्दी prepayment + छोटी अवधि + extra EMI – loan में हर महीना देरी = compounding दुश्मन।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="ppf-calculator.html">🏦 PPF कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

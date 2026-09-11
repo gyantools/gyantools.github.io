@@ -52,8 +52,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/loan-eligibility-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "FOIR क्या होता है?", "acceptedAnswer": {"@type": "Answer", "text": "Fixed Obligation to Income Ratio – आपकी सारी EMIs (नए loan समेत) मासिक आय के 40–50% से ज़्यादा नहीं होनी चाहिए। Bank इसी से max loan तय करता है।"}}, {"@type": "Question", "name": "CIBIL score कितना चाहिए loan के लिए?", "acceptedAnswer": {"@type": "Answer", "text": "750+ best (सस्ती दर), 650–750 ठीक (ऊंची दर), 650 से कम पर rejection संभव। Home loan में कभी-कभी 650 पर भी मिलता है।"}}, {"@type": "Question", "name": "बिना salary-slip loan मिल सकता है?", "acceptedAnswer": {"@type": "Answer", "text": "मुश्किल – bank को income proof (slip/ITR/bank statement) चाहिए। Self-employed ITR (2–3 साल) से loan ले सकते हैं।"}}, {"@type": "Question", "name": "Co-applicant से क्या फायदा?", "acceptedAnswer": {"@type": "Answer", "text": "दोनों की income जुड़ती है → eligibility ~दोगुनी + home loan पर दोनों को tax छूट (co-owner होने पर)।"}}, {"@type": "Question", "name": "Eligibility और affordability में अंतर?", "acceptedAnswer": {"@type": "Answer", "text": "Eligibility = bank कितना देगा; affordability = आप कितना चुका सकते हो। हमेशा affordability (40% rule) से कम loan लें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -122,7 +144,38 @@ th{background:#e8f0fe;color:#1a73e8}
     <div class="note">💡 EMI और ब्याज का पूरा हिसाब <a href="emi-calculator.html" style="color:#1a73e8">EMI कैलकुलेटर</a> से, प्रीपेमेंट बचत <a href="loan-prepayment-calculator.html" style="color:#1a73e8">Prepayment कैलकुलेटर</a> से, पूरी समझ <a href="../blog/home-loan-guide.html" style="color:#1a73e8">होम लोन गाइड</a> से।</div>
     <div class="note">⚠️ यह अनुमान है – बैंक आय की गिनती, उम्र, काम और नीति के हिसाब से अलग रकम दे सकता है।</div>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>Loan Eligibility कैसे जानें?</h2>
+<ol>
+<li>अपनी <strong>मासिक net आय</strong> (in-hand) भरें – bank इसी पर loan देता है।</li>
+<li><strong>मौजूदा EMIs</strong> डालें – car/personal/credit-card सब जोड़कर।</li>
+<li><strong>FOIR rule</strong> automatic लगेगा – सारी EMI आय के 40–50% से ऊपर नहीं।</li>
+<li><strong>अवधि चुनें</strong> – लंबी अवधि = ज़्यादा loan amount (पर ज़्यादा ब्याज)।</li>
+<li>नतीजे में <strong>max loan + max EMI</strong> देखें – CIBIL 750+ पर best दर मिलेगी।</li>
+</ol>
+<h2>FOIR नियम – ₹60,000 salary पर कितना loan?</h2>
+<table class="gt-table"><tr><th></th><th>रकम</th></tr><tr><td>मासिक आय</td><td>₹60,000</td></tr><tr><td>Max EMI (50% FOIR)</td><td>₹30,000</td></tr><tr><td>मौजूदा EMI</td><td>− ₹10,000</td></tr><tr><td><strong>नए loan की गुंजाइश</strong></td><td><strong>₹20,000/माह</strong></td></tr></table>
+<div class="note">💡 ₹20,000 EMI = 9% पर 20 साल में <strong>~₹22 लाख home loan</strong>! Eligibility बढ़ानी हो तो <strong>co-applicant जोड़ें</strong> (पति-पत्नी की joint income) या छोटा existing loan पहले बंद करें।</div>
+<h2>Eligibility बढ़ाने के 5 तरीके</h2>
+<ul>
+<li><strong>CIBIL 750+</strong> – सबसे बड़ा factor; report में गलती हो तो dispute करें।</li>
+<li><strong>छोटे loans बंद करें</strong> – personal loan closure से FOIR तुरंत सुधरता है।</li>
+<li><strong>Co-applicant</strong> – working spouse/mाता-पिता जोड़ने से income दोगुनी।</li>
+<li><strong>लंबी अवधि चुनें</strong> – EMI घटेगी, eligibility बढ़ेगी (ब्याज ज़्यादा)।</li>
+<li><strong>6 महीने salary credit</strong> – bank statement clean रखें, cash salary पर loan मुश्किल।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>FOIR क्या होता है?</summary><p>Fixed Obligation to Income Ratio – आपकी सारी EMIs (नए loan समेत) मासिक आय के 40–50% से ज़्यादा नहीं होनी चाहिए। Bank इसी से max loan तय करता है।</p></details>
+<details><summary>CIBIL score कितना चाहिए loan के लिए?</summary><p>750+ best (सस्ती दर), 650–750 ठीक (ऊंची दर), 650 से कम पर rejection संभव। Home loan में कभी-कभी 650 पर भी मिलता है।</p></details>
+<details><summary>बिना salary-slip loan मिल सकता है?</summary><p>मुश्किल – bank को income proof (slip/ITR/bank statement) चाहिए। Self-employed ITR (2–3 साल) से loan ले सकते हैं।</p></details>
+<details><summary>Co-applicant से क्या फायदा?</summary><p>दोनों की income जुड़ती है → eligibility ~दोगुनी + home loan पर दोनों को tax छूट (co-owner होने पर)।</p></details>
+<details><summary>Eligibility और affordability में अंतर?</summary><p>Eligibility = bank कितना देगा; affordability = आप कितना चुका सकते हो। हमेशा affordability (40% rule) से कम loan लें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="emi-calculator.html">💰 EMI कैलकुलेटर – मासिक किश्त निकालें</a> · <a href="emi-table-calculator.html">📊 EMI टेबल (Amortization) कैलकुलेटर</a> · <a href="loan-prepayment-calculator.html">💸 Loan Prepayment कैलकुलेटर</a> · <a href="home-loan-tax.html">🏠 होम लोन टैक्स बेनिफिट कैलकुलेटर</a> · <a href="car-loan-eligibility.html">🚗 कार लोन एलिजिबिलिटी कैलकुलेटर</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

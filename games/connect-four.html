@@ -57,8 +57,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/games/connect-four.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Connect Four कौन जीतता है?", "acceptedAnswer": {"@type": "Answer", "text": "Perfect play में पहला खिलाड़ी! (1975 में solved)। बीच column (4th) से शुरू = सबसे मज़बूत opening।"}}, {"@type": "Question", "name": "जीतने की trick?", "acceptedAnswer": {"@type": "Answer", "text": "Center control + '7-trap' (दो तरफ़ा धमकी) + opponent की 3-वाली हमेशा रोको। नीचे rows पहले भरो!"}}, {"@type": "Question", "name": "कब से मशहूर है?", "acceptedAnswer": {"@type": "Answer", "text": "1974 Milton Bradley launch – 'Pretty sneaky, sis!' ad से hit। अब strategy-classic + AI research game!"}}, {"@type": "Question", "name": "बच्चों के लिए?", "acceptedAnswer": {"@type": "Answer", "text": "Perfect – planning + patterns + patience। 6+ उम्र, 5-min games, कोई luck नहीं – pure skill!"}}, {"@type": "Question", "name": "Computer कितना strong?", "acceptedAnswer": {"@type": "Answer", "text": "Minimax depth-limited – अच्छा challenge! उसे हराने के लिए center + traps ज़रूरी।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -107,7 +129,44 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
     <h2>कंप्यूटर से खेलने की ट्रिक</h2>
     <p>कंप्यूटर समझदार खेलता है – वह अपनी जीत का रास्ता देखता है, तुम्हारी 4 गेंद रोकता है। टिप: बीच के खूंटे (3 और 4) पर गेंद गिराओ – इनसे तिरछी लाइनें बनना आसान होता है। और हमेशा देखो कि कहीं विरोधी की 3 गेंद एक लाइन में तो नहीं खुली है!</p>
     <p>ऐसे ही और 2-प्लेयर गेम खेलें: <a href="tic-tac-toe.html" style="color:#1a73e8">टिक टैक टो</a>, <a href="dots-and-boxes.html" style="color:#1a73e8">बिंदु-बक्सा (Dots & Boxes)</a> और अकेले खेलने के लिए <a href="sudoku.html" style="color:#1a73e8">Sudoku</a>।</p>
-  </article>
+  
+<h2>Connect Four कैसे खेलें?</h2>
+<ol>
+<li><strong>Mode:</strong> दोस्त (2P) या Computer।</li>
+<li><strong>Column tap</strong> – गेंद नीचे गिरेगी (gravity!)।</li>
+<li><strong>4 in a row</strong> – सीधी/आड़ी/तिरछी = जीत!।</li>
+<li><strong>Block + trap</strong> – opponent रोको + fork बनाओ।</li>
+<li>पहली चाल वाला <strong>advantage</strong> में – नीचे strategy!</li>
+</ol>
+<h2>Opening Strength</h2>
+<table class="gt-table"><tr><th>पहली चाल</th><th>Strength</th></tr><tr><td>Center (D/4) ⭐</td><td>सबसे मज़बूत – max lines</td></tr><tr><td>Side-center (C/E)</td><td>अच्छी</td></tr><tr><td>Edge (A/G)</td><td>कमज़ोर – कम options</td></tr></table>
+<div class="note">💡 <strong>7-Trap:</strong> ऐसी चाल जिससे 2 जगह जीत बने (एक रोकी तो दूसरी से जीतो)! नीचे की rows पहले भरो – ऊपर के खाने बाद में काम आते हैं। Opponent की हर 3-वाली तुरंत रोको!</div>
+<h2>Connect Four Master के 5 नियम</h2>
+<ul>
+<li><strong>Center पहले</strong> – D-column = king!।</li>
+<li><strong>3-वाली रोको</strong> – हमेशा, बिना सोचे।</li>
+<li><strong>अपनी 3 बनाओ</strong> – attack + defense साथ।</li>
+<li><strong>ऊपर मत खेलो</strong> – नीचे भरा नहीं तो trap!।</li>
+<li><strong>Endgame गिनो</strong> – खाली जगहों का हिसाब रखो।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Connect Four कौन जीतता है?</summary><p>Perfect play में पहला खिलाड़ी! (1975 में solved)। बीच column (4th) से शुरू = सबसे मज़बूत opening।</p></details>
+<details><summary>जीतने की trick?</summary><p>Center control + '7-trap' (दो तरफ़ा धमकी) + opponent की 3-वाली हमेशा रोको। नीचे rows पहले भरो!</p></details>
+<details><summary>कब से मशहूर है?</summary><p>1974 Milton Bradley launch – 'Pretty sneaky, sis!' ad से hit। अब strategy-classic + AI research game!</p></details>
+<details><summary>बच्चों के लिए?</summary><p>Perfect – planning + patterns + patience। 6+ उम्र, 5-min games, कोई luck नहीं – pure skill!</p></details>
+<details><summary>Computer कितना strong?</summary><p>Minimax depth-limited – अच्छा challenge! उसे हराने के लिए center + traps ज़रूरी।</p></details>
+</div>
+<div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="dots-and-boxes.html">⬜ बिंदु-बक्सा (Dots &amp; Boxes)</a> · <a href="gk-quiz.html">🧠 भारत GK क्विज़ – All India</a> · <a href="math-quiz.html">➗ गणित क्विज़ (Math Quiz)</a> · <a href="memory-game.html">🃏 जोड़ी मिलाओ – Memory गेम</a> · <a href="memory-match.html">🃏 मेमोरी मैच (Memory Match)</a></div>
+<h2>7-Trap Masterclass (जीत की गारंटी Pattern)</h2>
+<p>'7-Trap' Connect Four का सबसे घातक हथियार है: ऐसी position बनाओ जहां तुम्हारी <strong>दो अलग-अलग जगहों पर जीत</strong> तैयार हो – opponent एक रोकेगा, दूसरी से तुम जीतोगे! Classic setup: नीचे की row में _ X X X _ (दोनों तरफ खुला) – इसे कोई नहीं रोक सकता। दूसरा trap: diagonal + vertical का cross – दो directions, एक चाल!</p>
+<ul>
+<li><strong>Setup चालें:</strong> center column में 3 stack करो, फिर side से attack।</li>
+<li><strong>Defense:</strong> opponent की हर '3-in-row' तुरंत रोको – कोई exception नहीं।</li>
+<li><strong>Endgame:</strong> ऊपर की rows में खेलने से पहले गिनो – कहीं जीत gift तो नहीं कर रहे!</li>
+</ul>
+<div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें!</p></div></div>
+</article>
 </div>
 
 <footer>

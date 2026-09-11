@@ -47,8 +47,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/discount-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Discount % कैसे निकालते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "((MRP − Sale Price) ÷ MRP) × 100। ₹1,999 पर ₹1,199 = 40% off। Calculator का reverse mode यही करता है।"}}, {"@type": "Question", "name": "40% + 10% extra = 50% off?", "acceptedAnswer": {"@type": "Answer", "text": "नहीं – 46%! दूसरा discount घटी कीमत पर लगता है: 100 − (60×90÷100) = 46%।"}}, {"@type": "Question", "name": "Sale genuine है या fake?", "acceptedAnswer": {"@type": "Answer", "text": "Price history tools (Keepa/PriceDekho) से 3 महीने का graph देखें – sale से पहले बढ़ाई MRP = fake discount।"}}, {"@type": "Question", "name": "Coupon + bank offer साथ मिलते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "अक्सर हां – coupon code + card discount stack होते हैं। Final price पर ही असली % गिनें।"}}, {"@type": "Question", "name": "GST discount पर कैसे लगता है?", "acceptedAnswer": {"@type": "Answer", "text": "Discounted price पर GST लगता है – ₹1,199 (18% incl.) में GST पहले से शामिल। Bill में split check करें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -108,7 +130,38 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
       <li>Bank offer + छूट मिलाकर असली बचत निकालें</li>
     </ul>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>Discount Calculator कैसे इस्तेमाल करें?</h2>
+<ol>
+<li><strong>MRP/Original price</strong> भरें – जैसे ₹1,999।</li>
+<li><strong>Discount %</strong> डालें – जैसे 40।</li>
+<li><strong>Calculate दबाएं</strong> – final price + बचत दोनों दिखेंगे।</li>
+<li><strong>Reverse mode:</strong> MRP और sale price डालकर असली discount % जांचें।</li>
+<li>Extra coupon/bank offer हो तो <strong>final price पर दोबारा calculate</strong> करें।</li>
+</ol>
+<h2>Sale का गणित – ₹1,999 पर अलग-अलग discount</h2>
+<table class="gt-table"><tr><th>Discount</th><th>Final Price</th><th>बचत</th></tr><tr><td>20%</td><td>₹1,599</td><td>₹400</td></tr><tr><td>40%</td><td>₹1,199</td><td>₹800</td></tr><tr><td>40% + 10% coupon ⭐</td><td>₹1,079</td><td>₹920</td></tr></table>
+<div class="note">💡 <strong>Double discount formula:</strong> 40% फिर 10% = 46% total (50% नहीं!)। Formula: 100 − (60×90÷100) = 46%। Sale में <strong>MRP inflate</strong> करके discount दिखाया जाता है – price history (BuyHatke/Keepa) से असली कीमत जांचें!</div>
+<h2>Smart Shopping के 5 नियम</h2>
+<ul>
+<li><strong>MRP trap:</strong> ₹9,999 MRP अक्सर fake – असली street price compare करें।</li>
+<li><strong>Bank + coupon stack</strong> करें – 10% card + 10% coupon = ~19% extra।</li>
+<li><strong>Per-unit price</strong> देखें – बड़ा pack हमेशा सस्ता नहीं होता।</li>
+<li><strong>Wishlist + wait</strong> – sale (Diwali/BBD) में 30–50% तक गिरता है।</li>
+<li><strong>Return policy</strong> पढ़ें – deep discount = अक्सर no-return।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Discount % कैसे निकालते हैं?</summary><p>((MRP − Sale Price) ÷ MRP) × 100। ₹1,999 पर ₹1,199 = 40% off। Calculator का reverse mode यही करता है।</p></details>
+<details><summary>40% + 10% extra = 50% off?</summary><p>नहीं – 46%! दूसरा discount घटी कीमत पर लगता है: 100 − (60×90÷100) = 46%।</p></details>
+<details><summary>Sale genuine है या fake?</summary><p>Price history tools (Keepa/PriceDekho) से 3 महीने का graph देखें – sale से पहले बढ़ाई MRP = fake discount।</p></details>
+<details><summary>Coupon + bank offer साथ मिलते हैं?</summary><p>अक्सर हां – coupon code + card discount stack होते हैं। Final price पर ही असली % गिनें।</p></details>
+<details><summary>GST discount पर कैसे लगता है?</summary><p>Discounted price पर GST लगता है – ₹1,199 (18% incl.) में GST पहले से शामिल। Bill में split check करें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="percentage-calculator.html">📊 प्रतिशत कैलकुलेटर (Percentage Calculator)</a> · <a href="currency-converter.html">💱 करेंसी कन्वर्टर (Currency Converter)</a> · <a href="gold-silver-value-calculator.html">🥇 Gold-Silver Value Calculator (हिंदी)</a> · <a href="number-to-words.html">🔢 संख्या को शब्दों में बदलें (Number to Words)</a> · <a href="bill-split-calculator.html">🍽️ बिल बांटो (Bill Split) कैलकुलेटर</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

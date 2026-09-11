@@ -47,8 +47,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/age-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Exact उम्र कैसे निकालते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "आज की तारीख − जन्म तारीख (leap years adjust करके)। Calculator साल+महीने+दिन + कुल दिन/घंटे सब बताता है।"}}, {"@type": "Question", "name": "Documents में DOB अलग-अलग हो तो?", "acceptedAnswer": {"@type": "Answer", "text": "10th marksheet वाली DOB सबसे authentic मानी जाती है। Aadhaar/PAN उसी से match कराएं।"}}, {"@type": "Question", "name": "18 साल कब पूरे होंगे?", "acceptedAnswer": {"@type": "Answer", "text": "Calculator में DOB डालें – अगला birthday + कौन सी eligibility (voter/license) कब, सब दिखेगा।"}}, {"@type": "Question", "name": "Aadhaar में DOB कैसे update करें?", "acceptedAnswer": {"@type": "Answer", "text": "mAadhaar/UIDAI portal से (valid proof: 10th marksheet/passport) या Aadhaar center जाकर। aadhaar-card-guide blog में पूरा तरीका है।"}}, {"@type": "Question", "name": "Retirement में कितना समय?", "acceptedAnswer": {"@type": "Answer", "text": "60 − मौजूदा उम्र = बचे साल। 25 साल हो तो SIP से करोड़पति बनना आसान – retirement calculator देखें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -104,6 +126,36 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 </ul>
 <p>टिप: जन्मतिथि आधार कार्ड/जन्म प्रमाण पत्र से मिलान करके डालें – फॉर्म में उम्र हमेशा इन्हीं दस्तावेजों से लिखी जाती है।</p>
 
+
+<h2>Age Calculator कैसे इस्तेमाल करें?</h2>
+<ol>
+<li>अपनी <strong>जन्म तारीख</strong> (date of birth) चुनें – day/month/year।</li>
+<li><strong>Calculate दबाएं</strong> – साल, महीने, दिन में exact उम्र।</li>
+<li><strong>Extra details</strong> देखें – कुल महीने, हफ़्ते, दिन, घंटे तक!</li>
+<li><strong>अगला birthday countdown</strong> – कितने दिन बाकी + कौन सा weekday।</li>
+<li>Documents (Aadhaar/PAN) से <strong>DOB match</strong> करें – फर्क हो तो update कराएं।</li>
+</ol>
+<h2>उम्र से जुड़ी ज़रूरी eligibility (भारत)</h2>
+<table class="gt-table"><tr><th>उम्र</th><th>क्या मिलता है</th></tr><tr><td>10 साल</td><td>SSY account (बेटी के लिए, 10 से पहले)</td></tr><tr><td>18 साल</td><td>Voter ID, driving license, bank account, APY/NPS शुरू</td></tr><tr><td>21 साल</td><td>SSY maturity (बेटी), शादी (लड़का, कानूनी)</td></tr><tr><td>55–60 साल</td><td>SCSS, senior citizen benefits, retirement</td></tr></table>
+<div class="note">💡 <strong>DOB proof ladder:</strong> 10th marksheet &gt; Aadhaar &gt; PAN। Documents में DOB अलग-अलग हो तो <strong>10th certificate वाली</strong> सबसे मज़बूत मानी जाती है – बाकी update करा लें।</div>
+<h2>DOB से जुड़े 5 काम</h2>
+<ul>
+<li><strong>Aadhaar DOB update</strong> – online/center से (proof के साथ)।</li>
+<li><strong>PAN DOB</strong> – 10th marksheet से match कराएं।</li>
+<li><strong>Passport:</strong> DOB proof + ECR/ECNR (10th pass = ECNR)।</li>
+<li><strong>Retirement countdown</strong> – 60 तक कितने साल = planning horizon।</li>
+<li><strong>Horoscope:</strong> सही DOB + time = सही कुंडली (rashi tool देखें)।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Exact उम्र कैसे निकालते हैं?</summary><p>आज की तारीख − जन्म तारीख (leap years adjust करके)। Calculator साल+महीने+दिन + कुल दिन/घंटे सब बताता है।</p></details>
+<details><summary>Documents में DOB अलग-अलग हो तो?</summary><p>10th marksheet वाली DOB सबसे authentic मानी जाती है। Aadhaar/PAN उसी से match कराएं।</p></details>
+<details><summary>18 साल कब पूरे होंगे?</summary><p>Calculator में DOB डालें – अगला birthday + कौन सी eligibility (voter/license) कब, सब दिखेगा।</p></details>
+<details><summary>Aadhaar में DOB कैसे update करें?</summary><p>mAadhaar/UIDAI portal से (valid proof: 10th marksheet/passport) या Aadhaar center जाकर। aadhaar-card-guide blog में पूरा तरीका है।</p></details>
+<details><summary>Retirement में कितना समय?</summary><p>60 − मौजूदा उम्र = बचे साल। 25 साल हो तो SIP से करोड़पति बनना आसान – retirement calculator देखें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="bmi-calculator.html">⚖️ BMI कैलकुलेटर (बीएमआई)</a> · <a href="calorie-bmr-calculator.html">🔥 रोज़ कितनी कैलोरी चाहिए?</a> · <a href="water-intake-calculator.html">💧 रोज़ कितना पानी पिएं?</a> · <a href="sleep-cycle-calculator.html">😴 कब सोएं, कब उठें?</a> · <a href="pregnancy-due-date-calculator.html">🤰 डिलीवरी की तारीख कैलकुलेटर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 

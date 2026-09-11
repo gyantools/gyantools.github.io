@@ -56,8 +56,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/games/reversi.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Reversi और Othello same हैं?", "acceptedAnswer": {"@type": "Answer", "text": "लगभग – Othello (1971 brand) = 8×8 fixed start; Reversi (1883) = cross start option। Rules 99% same, strategy same!"}}, {"@type": "Question", "name": "Corners इतने ज़रूरी क्यों?", "acceptedAnswer": {"@type": "Answer", "text": "Corner कभी पलट नहीं सकता (bracket impossible) – 1 corner = पूरी edge stable। 2+ corners ≈ पक्की जीत!"}}, {"@type": "Question", "name": "शुरुआत में ज़्यादा गोटी बुरी?", "acceptedAnswer": {"@type": "Answer", "text": "हां! ज़्यादा गोटी = opponent को ज़्यादा options + तुम्हें कम। Experts पहले 20 moves 'कम' खेलते हैं।"}}, {"@type": "Question", "name": "Pass कब होता है?", "acceptedAnswer": {"@type": "Answer", "text": "कोई valid bracket-move न हो तो बारी skip। दोनों pass = game over (board full न भी हो)।"}}, {"@type": "Question", "name": "Computer कितना strong?", "acceptedAnswer": {"@type": "Answer", "text": "Positional evaluation + mobility count – beginners के लिए tough! Corners + mobility सीखकर हराओ।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -113,7 +135,37 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
       <li><strong>किनारे (edges) कब्ज़ो:</strong> किनारों के सिक्के कम पलटते हैं और कोनों का रास्ता बंद करते हैं</li>
     </ul>
     <p>और गेम्स: <a href="checkers.html">♟️ दमा (Checkers)</a> · <a href="connect-four.html">४ गेंद जोड़ो</a> · <a href="tic-tac-toe.html">टिक टैक टो</a> · <a href="memory-match.html">मेमोरी मैच</a></p>
-  </article>
+  
+<h2>Reversi (Othello) कैसे खेलें?</h2>
+<ol>
+<li><strong>2×2 center</strong> से शुरू – black पहले चलता है।</li>
+<li><strong>Bracket करो:</strong> अपनी गोटियों के बीच opponent की line = सब पलटेंगी!।</li>
+<li><strong>Valid moves</strong> – highlights दिखेंगे, वहीं खेल सकते हो।</li>
+<li><strong>Pass rule:</strong> move न हो तो बारी skip।</li>
+<li>Board full = <strong>ज़्यादा गोटी वाला जीतेगा!</strong></li>
+</ol>
+<h2>Reversi Strategy Tiers</h2>
+<table class="gt-table"><tr><th>खाने</th><th>Value</th></tr><tr><td>Corners (a1/h1/a8/h8) ⭐</td><td>कभी पलटते नहीं – सबसे कीमती!</td></tr><tr><td>Edges</td><td>Stable – अच्छी पकड़</td></tr><tr><td>Center</td><td>शुरुआत में खेलो</td></tr><tr><td>Corner-adjacent (X/C) 😱</td><td>Corner गिफ्ट = avoid!</td></tr></table>
+<div class="note">💡 <strong>कम = ज़्यादा!</strong> शुरुआत में कम गोटियां रखो (opponent को moves दो) – आखिरी 10 चालों में पलटवार! Corners पकड़ो, X-squares (corner के बगल) कभी मत दो। Mobility (options) ही असली ताकत है!</div>
+<h2>Reversi Master के 5 नियम</h2>
+<ul>
+<li><strong>Corners = gold</strong> – पूरी game इन्हीं के लिए।</li>
+<li><strong>X/C squares avoid</strong> – corner गिफ्ट मत दो।</li>
+<li><strong>कम गोटी शुरुआत</strong> – endgame में पलटो।</li>
+<li><strong>Mobility गिनो</strong> – options ज़्यादा = control।</li>
+<li><strong>Parity</strong> – आखिरी चाल तुम्हारी हो (even regions)!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Reversi और Othello same हैं?</summary><p>लगभग – Othello (1971 brand) = 8×8 fixed start; Reversi (1883) = cross start option। Rules 99% same, strategy same!</p></details>
+<details><summary>Corners इतने ज़रूरी क्यों?</summary><p>Corner कभी पलट नहीं सकता (bracket impossible) – 1 corner = पूरी edge stable। 2+ corners ≈ पक्की जीत!</p></details>
+<details><summary>शुरुआत में ज़्यादा गोटी बुरी?</summary><p>हां! ज़्यादा गोटी = opponent को ज़्यादा options + तुम्हें कम। Experts पहले 20 moves 'कम' खेलते हैं।</p></details>
+<details><summary>Pass कब होता है?</summary><p>कोई valid bracket-move न हो तो बारी skip। दोनों pass = game over (board full न भी हो)।</p></details>
+<details><summary>Computer कितना strong?</summary><p>Positional evaluation + mobility count – beginners के लिए tough! Corners + mobility सीखकर हराओ।</p></details>
+</div>
+<div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="rps-game.html">🪨📄✂️ पत्थर-कागज़-कैंची</a> · <a href="snake-game.html">🐍 साँप वाला गेम (Snake)</a> · <a href="snake-ladder.html">🐍🪜 साँप-सीढ़ी (Snakes &amp; Ladders)</a> · <a href="sudoku.html">🔢 Sudoku – दिमाग की पहेली</a> · <a href="tic-tac-toe.html">🎮 Tic Tac Toe (X-O)</a></div>
+<div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें!</p></div></div>
+</article>
 </div>
 
 <footer>

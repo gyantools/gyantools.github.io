@@ -52,8 +52,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/calorie-bmr-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "BMR क्या होता है?", "acceptedAnswer": {"@type": "Answer", "text": "Basal Metabolic Rate – सोते-बैठे भी body जलाती है (सांस, दिल, दिमाग)। कुल खर्च का ~60–70%! Mifflin-St Jeor सबसे accurate formula है।"}}, {"@type": "Question", "name": "वज़न घटाने के लिए कितनी calories?", "acceptedAnswer": {"@type": "Answer", "text": "TDEE से 300–500 कम। 500 deficit = ~0.5kg/हफ़्ता। Crash diet (1000 से नीचे) से muscle + metabolism दोनों खराब।"}}, {"@type": "Question", "name": "वज़न बढ़ाने के लिए?", "acceptedAnswer": {"@type": "Answer", "text": "TDEE से 300–500 ज़्यादा + protein 1.5g/kg + strength training। सिर्फ खाना = fat gain; training = muscle gain।"}}, {"@type": "Question", "name": "Cheat meal चलेगा?", "acceptedAnswer": {"@type": "Answer", "text": "हां – हफ़्ते में 1 meal (दिन नहीं!)। 80/20 rule: 80% clean, 20% flexible = long-term success।"}}, {"@type": "Question", "name": "Calories गिनना ज़रूरी है?", "acceptedAnswer": {"@type": "Answer", "text": "शुरुआत में 2–4 हफ़्ते (आदत + अंदाज़ा), फिर plate-rule + portions से काम चलता है। Lifetime counting ज़रूरी नहीं।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -134,6 +156,36 @@ th{background:#e8f0fe;color:#1a73e8}
 </ul>
 <p>याद रखें: यह सिर्फ अनुमान है – डाइट/बीमारी की स्थिति में डॉक्टर या डाइटीशियन की सलाह लें।</p>
 
+
+<h2>Calorie Need कैसे निकालें?</h2>
+<ol>
+<li><strong>उम्र, gender, ऊंचाई, वज़न</strong> भरें – BMR (Mifflin-St Jeor) गिना जाएगा।</li>
+<li><strong>Activity level</strong> चुनें – sedentary → very active (ईमानदारी से!)।</li>
+<li><strong>Goal चुनें</strong> – maintain / lose (−500) / gain (+300)।</li>
+<li><strong>Daily calories + macros</strong> (protein/carbs/fat split) देखें।</li>
+<li>2–3 हफ़्ते follow करके <strong>वज़न trend</strong> से calories adjust करें।</li>
+</ol>
+<h2>BMR + Activity = TDEE (उदाहरण: 30M, 70kg, 170cm)</h2>
+<table class="gt-table"><tr><th>Activity</th><th>TDEE (लगभग)</th><th>Weight-loss target</th></tr><tr><td>Sedentary (desk job)</td><td>≈ 2,000</td><td>≈ 1,500</td></tr><tr><td>Light (walk 3x)</td><td>≈ 2,300</td><td>≈ 1,800</td></tr><tr><td>Active (gym 5x) ⭐</td><td>≈ 2,650</td><td>≈ 2,150</td></tr></table>
+<div class="note">💡 <strong>500-calorie rule:</strong> रोज़ 500 कम = हफ़्ते में ~0.5kg down (1kg fat ≈ 7,700 cal)। 1,200 (महिला) / 1,500 (पुरुष) से नीचे <strong>बिना doctor कभी नहीं!</strong></div>
+<h2>Calorie Control के 5 तरीके</h2>
+<ul>
+<li><strong>Protein 25–30%</strong> – पेट भरा + muscle safe + thermic effect।</li>
+<li><strong>Liquid calories</strong> काटें – cold drink/juice = 150+ cal/glass!।</li>
+<li><strong>Plate rule:</strong> ½ सब्ज़ी + ¼ protein + ¼ roti/rice।</li>
+<li><strong>Weigh weekly</strong> – रोज़ नहीं, same day/time हफ़्ते में 1 बार।</li>
+<li><strong>NEAT बढ़ाएं</strong> – stairs, walk-breaks = 200–300 cal/day free!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>BMR क्या होता है?</summary><p>Basal Metabolic Rate – सोते-बैठे भी body जलाती है (सांस, दिल, दिमाग)। कुल खर्च का ~60–70%! Mifflin-St Jeor सबसे accurate formula है।</p></details>
+<details><summary>वज़न घटाने के लिए कितनी calories?</summary><p>TDEE से 300–500 कम। 500 deficit = ~0.5kg/हफ़्ता। Crash diet (1000 से नीचे) से muscle + metabolism दोनों खराब।</p></details>
+<details><summary>वज़न बढ़ाने के लिए?</summary><p>TDEE से 300–500 ज़्यादा + protein 1.5g/kg + strength training। सिर्फ खाना = fat gain; training = muscle gain।</p></details>
+<details><summary>Cheat meal चलेगा?</summary><p>हां – हफ़्ते में 1 meal (दिन नहीं!)। 80/20 rule: 80% clean, 20% flexible = long-term success।</p></details>
+<details><summary>Calories गिनना ज़रूरी है?</summary><p>शुरुआत में 2–4 हफ़्ते (आदत + अंदाज़ा), फिर plate-rule + portions से काम चलता है। Lifetime counting ज़रूरी नहीं।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="age-calculator.html">🎂 उम्र कैलकुलेटर (Age Calculator)</a> · <a href="bmi-calculator.html">⚖️ BMI कैलकुलेटर (बीएमआई)</a> · <a href="water-intake-calculator.html">💧 रोज़ कितना पानी पिएं?</a> · <a href="sleep-cycle-calculator.html">😴 कब सोएं, कब उठें?</a> · <a href="pregnancy-due-date-calculator.html">🤰 डिलीवरी की तारीख कैलकुलेटर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 

@@ -56,8 +56,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/games/chess.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "शतरंज कहां से आया?", "acceptedAnswer": {"@type": "Answer", "text": "भारत! 6th century 'Chaturanga' (पैदल/घोड़ा/हाथी/रथ) – Persia→Arab→Europe होते हुए world game बना। गर्व की बात!"}}, {"@type": "Question", "name": "Beginners क्या सीखें?", "acceptedAnswer": {"@type": "Answer", "text": "Piece values (pawn 1...queen 9) + center control + king safety (castling जल्दी) + 'हर move से पहले: opponent क्या करेगा?'"}}, {"@type": "Question", "name": "Castling क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "King + rook की joint move (king 2 घर, rook बगल में) – king safe + rook active। शर्तें: दोनों unmoved, बीच खाली, check में नहीं।"}}, {"@type": "Question", "name": "En Passant क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "प्यादे की खास चाल – opponent pawn 2 घर चले तो बगल वाला उसे काट सकता है (तुरंत, 1 move में)। Rare + cool!"}}, {"@type": "Question", "name": "Checkmate patterns?", "acceptedAnswer": {"@type": "Answer", "text": "Back-rank, Scholar (4-move), Fool (2-move), Smothered – patterns रटो, rating बढ़ेगी। Puzzles रोज़ solve करो!"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -131,7 +153,37 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
       <li><strong>प्यादे की जंजीर मत तोड़ो:</strong> आगे निकला अकेला प्यादा मरता है; जंजीर मिलकर आगे बढ़ती है</li>
     </ul>
     <p>कंप्यूटर हर चाल पर 2 चाल आगे तक हिसाब लगाता है – मार खाने वाली चालों सावधानी! और बोर्ड गेम्स: <a href="checkers.html">♟️ दमा (Checkers)</a> · <a href="reversi.html">⚫⚪ रिवर्सी</a> · <a href="nine-mens-morris.html">नौ पत्थरी</a> · <a href="connect-four.html">४ गेंद जोड़ो</a></p>
-  </article>
+  
+<h2>शतरंज कैसे खेलें? (इस version में)</h2>
+<ol>
+<li><strong>Mode चुनें</strong> – 2 खिलाड़ी या Computer से।</li>
+<li><strong>Piece tap → green dots</strong> – legal moves दिखेंगे।</li>
+<li><strong>Special moves:</strong> Castling, En Passant, Promotion – सब legal!।</li>
+<li><strong>Check/Checkmate</strong> – राजा फंसा = खेल खत्म!।</li>
+<li>Undo/move-history से <strong>सीखते जाओ</strong>।</li>
+</ol>
+<h2>Piece Values + Power</h2>
+<table class="gt-table"><tr><th>मोहरा</th><th>Value</th><th>चाल</th></tr><tr><td>प्यादा</td><td>1</td><td>आगे 1 (पहली बार 2)</td></tr><tr><td>घोड़ा/ऊंट</td><td>3</td><td>L-jump / diagonal</td></tr><tr><td>हाथी (रुक)</td><td>5</td><td>सीधा कितना भी</td></tr><tr><td>वज़ीर</td><td>9</td><td>सबसे powerful!</td></tr><tr><td>राजा</td><td>∞</td><td>1 घर (castling खास)</td></tr></table>
+<div class="note">💡 <strong>Opening 3 rules:</strong> 1) Center pawns आगे 2) घोड़े-ऊंट बाहर 3) जल्दी castling! वज़ीर शुरुआत में मत निकालो – फंस जाएगा। 10 चालों में development पूरा = strong game!</div>
+<h2>Chess Rating बढ़ाने के 5 सूत्र</h2>
+<ul>
+<li><strong>Blunder check</strong> – हर चाल से पहले: क्या मुफ्त में कुछ दे रहा हूं?।</li>
+<li><strong>Opponent की चाल</strong> – वो क्या धमकी दे रहा है? पहले देखो।</li>
+<li><strong>Endgame सीखो</strong> – King+pawn vs King = must-know।</li>
+<li><strong>Puzzles रोज़</strong> – 10 tactics/day = 200 rating/साल!।</li>
+<li><strong>अपनी games review</strong> – हार से ज़्यादा कोई coach नहीं।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>शतरंज कहां से आया?</summary><p>भारत! 6th century 'Chaturanga' (पैदल/घोड़ा/हाथी/रथ) – Persia→Arab→Europe होते हुए world game बना। गर्व की बात!</p></details>
+<details><summary>Beginners क्या सीखें?</summary><p>Piece values (pawn 1...queen 9) + center control + king safety (castling जल्दी) + 'हर move से पहले: opponent क्या करेगा?'</p></details>
+<details><summary>Castling क्या है?</summary><p>King + rook की joint move (king 2 घर, rook बगल में) – king safe + rook active। शर्तें: दोनों unmoved, बीच खाली, check में नहीं।</p></details>
+<details><summary>En Passant क्या है?</summary><p>प्यादे की खास चाल – opponent pawn 2 घर चले तो बगल वाला उसे काट सकता है (तुरंत, 1 move में)। Rare + cool!</p></details>
+<details><summary>Checkmate patterns?</summary><p>Back-rank, Scholar (4-move), Fool (2-move), Smothered – patterns रटो, rating बढ़ेगी। Puzzles रोज़ solve करो!</p></details>
+</div>
+<div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="connect-four.html">🔴 ४ गेंद जोड़ो (Connect Four)</a> · <a href="dots-and-boxes.html">⬜ बिंदु-बक्सा (Dots &amp; Boxes)</a> · <a href="gk-quiz.html">🧠 भारत GK क्विज़ – All India</a> · <a href="math-quiz.html">➗ गणित क्विज़ (Math Quiz)</a> · <a href="memory-game.html">🃏 जोड़ी मिलाओ – Memory गेम</a></div>
+<div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें!</p></div></div>
+</article>
 </div>
 
 <footer>

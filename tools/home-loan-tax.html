@@ -49,8 +49,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/home-loan-tax.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Home loan पर कुल कितनी tax छूट?", "acceptedAnswer": {"@type": "Answer", "text": "पुरानी regime में: ब्याज ₹2L (24b) + principal ₹1.5L (80C) + पहला सस्ता घर हो तो extra ₹1.5L (80EEA) = ₹5L तक deduction।"}}, {"@type": "Question", "name": "नई regime में home loan छूट मिलती है?", "acceptedAnswer": {"@type": "Answer", "text": "Self-occupied घर पर नहीं। इसीलिए बड़ा home loan वालों को अक्सर पुरानी regime सस्ती पड़ती है – regime calculator से compare करें।"}}, {"@type": "Question", "name": "Joint home loan पर double छूट?", "acceptedAnswer": {"@type": "Answer", "text": "हां – co-owner + co-borrower पति-पत्नी दोनों 24(b) और 80C अलग-अलग claim कर सकते हैं। EMI भी दोनों के account से जानी चाहिए।"}}, {"@type": "Question", "name": "Under-construction घर के ब्याज पर छूट?", "acceptedAnswer": {"@type": "Answer", "text": "Possession के बाद – पहले का पूरा ब्याज 5 साल की किस्तों में 24(b) में claim होता है (₹2L सालाना सीमा के अंदर)।"}}, {"@type": "Question", "name": "80EEA क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "पहले सस्ते घर (stamp ≤₹45L) पर ब्याज की extra ₹1.5L छूट – 24(b) के ऊपर। Loan sanction date की शर्तें लागू होती हैं।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -122,6 +144,38 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 
   <h2>संबंधित टूल्स</h2>
   <p>लोन की किस्त: <a href="emi-calculator.html" style="color:#1a73e8">EMI कैलकुलेटर</a> | पूरा टैक्स हिसाब: <a href="income-tax-calculator.html" style="color:#1a73e8">Income Tax कैलकुलेटर</a> | व्यवस्था तुलना: <a href="old-vs-new-tax-regime-calculator.html" style="color:#1a73e8">Old vs New</a> | घर खरीद गाइड: <a href="../blog/home-loan-guide.html" style="color:#1a73e8">Home Loan गाइड</a>।</p>
+
+<h2>Home Loan Tax छूट कैसे निकालें?</h2>
+<ol>
+<li>सालाना <strong>ब्याज हिस्सा</strong> भरें – EMI table/statement से (24b के लिए)।</li>
+<li>सालाना <strong>principal हिस्सा</strong> भरें – 80C के लिए (₹1.5L सीमा में)।</li>
+<li><strong>पहला घर + सस्ता घर</strong> हो तो 80EEA (extra ₹1.5L) भी check करें।</li>
+<li><strong>Slab चुनें</strong> – 30% slab में ₹2L ब्याज = ₹62,400 बचत!</li>
+<li>नतीजे में <strong>कुल छूट + tax बचत</strong> देखें – सिर्फ पुरानी regime में।</li>
+</ol>
+<h2>Home Loan की तीनों छूटें (पुरानी regime)</h2>
+<table class="gt-table"><tr><th>Section</th><th>किस पर</th><th>Max छूट</th><th>30% slab बचत</th></tr><tr><td>24(b)</td><td>ब्याज (self-occupied)</td><td>₹2,00,000</td><td>₹62,400</td></tr><tr><td>80C</td><td>Principal + stamp duty</td><td>₹1,50,000*</td><td>₹46,800</td></tr><tr><td>80EEA</td><td>ब्याज extra (पहला सस्ता घर)</td><td>₹1,50,000</td><td>₹46,800</td></tr></table>
+<p>*80C में PPF/ELSS/LIC सब मिलाकर ₹1.5L। <strong>कुल बचत ₹1.5L+/साल</strong> तक – home loan सिर्फ घर नहीं, tax-saver भी!</p>
+<div class="note">💡 <strong>Joint loan = double छूट:</strong> पति-पत्नी co-owner + co-borrower हों तो दोनों अलग-अलग 24(b) ₹2L + 80C ₹1.5L claim कर सकते हैं – <strong>₹7L कुल deduction!</strong></div>
+<h2>Home Loan Tax के 5 नियम</h2>
+<ul>
+<li><strong>नई regime में ZERO</strong> – 24(b)/80C home loan छूटें सिर्फ पुरानी में।</li>
+<li><strong>Under-construction</strong> – possession से पहले का ब्याज 5 किस्तों में (possession के बाद)।</li>
+<li><strong>80EEA शर्तें</strong> – पहला घर, stamp value ≤₹45L, loan sanction तय तारीख के अंदर।</li>
+<li><strong>Certificate लें</strong> – bank से सालाना interest/principal certificate ITR proof है।</li>
+<li><strong>Rent + own home</strong> – खुद किराए पर + दूसरा घर? दोनों के नियम अलग – CA से पूछें।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Home loan पर कुल कितनी tax छूट?</summary><p>पुरानी regime में: ब्याज ₹2L (24b) + principal ₹1.5L (80C) + पहला सस्ता घर हो तो extra ₹1.5L (80EEA) = ₹5L तक deduction।</p></details>
+<details><summary>नई regime में home loan छूट मिलती है?</summary><p>Self-occupied घर पर नहीं। इसीलिए बड़ा home loan वालों को अक्सर पुरानी regime सस्ती पड़ती है – regime calculator से compare करें।</p></details>
+<details><summary>Joint home loan पर double छूट?</summary><p>हां – co-owner + co-borrower पति-पत्नी दोनों 24(b) और 80C अलग-अलग claim कर सकते हैं। EMI भी दोनों के account से जानी चाहिए।</p></details>
+<details><summary>Under-construction घर के ब्याज पर छूट?</summary><p>Possession के बाद – पहले का पूरा ब्याज 5 साल की किस्तों में 24(b) में claim होता है (₹2L सालाना सीमा के अंदर)।</p></details>
+<details><summary>80EEA क्या है?</summary><p>पहले सस्ते घर (stamp ≤₹45L) पर ब्याज की extra ₹1.5L छूट – 24(b) के ऊपर। Loan sanction date की शर्तें लागू होती हैं।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="emi-calculator.html">💰 EMI कैलकुलेटर – मासिक किश्त निकालें</a> · <a href="emi-table-calculator.html">📊 EMI टेबल (Amortization) कैलकुलेटर</a> · <a href="loan-prepayment-calculator.html">💸 Loan Prepayment कैलकुलेटर</a> · <a href="loan-eligibility-calculator.html">🏦 Loan Eligibility कैलकुलेटर</a> · <a href="car-loan-eligibility.html">🚗 कार लोन एलिजिबिलिटी कैलकुलेटर</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 
 <script>

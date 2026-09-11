@@ -49,8 +49,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/bill-split-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Restaurant bill कैसे split करें?", "acceptedAnswer": {"@type": "Answer", "text": "GST-समेत total ÷ लोग + tip %। Unequal खाया हो तो items के हिसाब से अलग-अलग जोड़ें।"}}, {"@type": "Question", "name": "भारत में कितनी tip दें?", "acceptedAnswer": {"@type": "Answer", "text": "Fine-dine अच्छी service: 7–10%; casual: 0–5%; service charge लगा हो तो extra नहीं। Tip स्वैच्छिक है, अनिवार्य नहीं।"}}, {"@type": "Question", "name": "Service charge और tip में अंतर?", "acceptedAnswer": {"@type": "Answer", "text": "Service charge = restaurant का fixed % (bill में); tip = आपकी मर्ज़ी से waiter को। दोनों लगे तो bill double-check करें।"}}, {"@type": "Question", "name": "UPI से split कैसे वसूलें?", "acceptedAnswer": {"@type": "Answer", "text": "GPay/PhonePe collect request या QR दिखाएं – तुरंत वसूली, भूलने का झंझट खत्म। Splitwise में record रखें।"}}, {"@type": "Question", "name": "GST bill में पहले से होता है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – restaurant bill में 5% (non-AC) / 18% (AC/luxury) GST शामिल होता है। Menu 'plus taxes' लिखे तो extra जुड़ेगा।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -115,6 +137,36 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 </ul>
 <p>टिप: कुछ जगहों पर टिप पहले से बिल में जुड़ी होती है – ऐसे में टिप 0% रखें, वरना दो बार टिप देने जैसा होगा।</p>
 
+
+<h2>Bill Split कैसे करें?</h2>
+<ol>
+<li><strong>कुल bill</strong> भरें – GST समेत final amount।</li>
+<li><strong>लोगों की संख्या</strong> डालें – tip % भी चुनें (0/5/10%)।</li>
+<li><strong>Split दबाएं</strong> – per-person हिस्सा तुरंत।</li>
+<li><strong>Unequal split:</strong> जिसने ज़्यादा खाया, उसका हिस्सा अलग calculate करें।</li>
+<li><strong>UPI collect/QR</strong> से तुरंत वसूलें – 'बाद में' मतलब कभी नहीं! 😄</li>
+</ol>
+<h2>₹2,400 bill, 4 दोस्त – Tip का फर्क</h2>
+<table class="gt-table"><tr><th>Tip</th><th>Total</th><th>Per Person</th></tr><tr><td>0%</td><td>₹2,400</td><td>₹600</td></tr><tr><td>5%</td><td>₹2,520</td><td>₹630</td></tr><tr><td>10% ⭐</td><td>₹2,640</td><td>₹660</td></tr></table>
+<div class="note">💡 <strong>Tip etiquette India:</strong> अच्छा service → 5–10%; buffet/casual → 0–5%; service charge पहले से जुड़ा हो तो extra tip ज़रूरी नहीं। Bill में <strong>service charge vs GST</strong> अलग-अलग check करें!</div>
+<h2>Group Bill के 5 fundas</h2>
+<ul>
+<li><strong>पहले decide:</strong> equal या actuals – खाने से पहले, बाद में नहीं!।</li>
+<li><strong>Non-veg/veg:</strong> rate अलग हो तो दो bills बनाएं।</li>
+<li><strong>Birthday treat:</strong> जिसका birthday, वो pay (या पहले clear करें)।</li>
+<li><strong>Round-off:</strong> ₹637 → ₹640, अगली बार adjust।</li>
+<li><strong>Splitwise app</strong> – trip/group खर्चों के लिए best (UPI settle)।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Restaurant bill कैसे split करें?</summary><p>GST-समेत total ÷ लोग + tip %। Unequal खाया हो तो items के हिसाब से अलग-अलग जोड़ें।</p></details>
+<details><summary>भारत में कितनी tip दें?</summary><p>Fine-dine अच्छी service: 7–10%; casual: 0–5%; service charge लगा हो तो extra नहीं। Tip स्वैच्छिक है, अनिवार्य नहीं।</p></details>
+<details><summary>Service charge और tip में अंतर?</summary><p>Service charge = restaurant का fixed % (bill में); tip = आपकी मर्ज़ी से waiter को। दोनों लगे तो bill double-check करें।</p></details>
+<details><summary>UPI से split कैसे वसूलें?</summary><p>GPay/PhonePe collect request या QR दिखाएं – तुरंत वसूली, भूलने का झंझट खत्म। Splitwise में record रखें।</p></details>
+<details><summary>GST bill में पहले से होता है?</summary><p>हां – restaurant bill में 5% (non-AC) / 18% (AC/luxury) GST शामिल होता है। Menu 'plus taxes' लिखे तो extra जुड़ेगा।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="discount-calculator.html">🏷️ छूट कैलकुलेटर (Discount Calculator)</a> · <a href="percentage-calculator.html">📊 प्रतिशत कैलकुलेटर (Percentage Calculator)</a> · <a href="currency-converter.html">💱 करेंसी कन्वर्टर (Currency Converter)</a> · <a href="gold-silver-value-calculator.html">🥇 Gold-Silver Value Calculator (हिंदी)</a> · <a href="number-to-words.html">🔢 संख्या को शब्दों में बदलें (Number to Words)</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 

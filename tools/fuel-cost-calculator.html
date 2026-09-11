@@ -51,8 +51,30 @@ footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-alig
 footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 .breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
 .breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/fuel-cost-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Car mileage कैसे calculate करें?", "acceptedAnswer": {"@type": "Answer", "text": "Tank full → trip meter zero → 100km चलाएं → फिर full: liters ÷ km = mileage। जैसे 6L में 100km = 16.7 km/l।"}}, {"@type": "Question", "name": "Petrol vs Diesel vs CNG – कौन सस्ता?", "acceptedAnswer": {"@type": "Answer", "text": "Per-km: CNG ~₹3, diesel ~₹6, petrol ~₹7 (लगभग)। कम चलना (500km/माह) = petrol; ज़्यादा (1500km+) = CNG/diesel।"}}, {"@type": "Question", "name": "Trip cost में क्या-क्या जोड़ें?", "acceptedAnswer": {"@type": "Answer", "text": "Fuel + toll (FASTag) + parking + food + stay। 500km trip में toll ~₹500–800 extra लगता है।"}}, {"@type": "Question", "name": "Mileage अचानक क्यों गिरती है?", "acceptedAnswer": {"@type": "Answer", "text": "गंदा air filter, कम tyre pressure, खराब spark plugs, ज़्यादा load, या short city trips – service + pressure check कराएं।"}}, {"@type": "Question", "name": "EV trip सस्ती है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – ₹1–1.5/km charging! पर long trip पर charging stations plan करें + time जोड़ें।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -119,6 +141,37 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 </ul>
 <p>टिप: माइलेज शहर और हाईवे में अलग होती है – लंबी दूरी के लिए हाईवे वाला माइलेज डालें, सटीक अनुमान मिलेगा।</p>
 
+
+<h2>Trip Fuel Cost कैसे निकालें?</h2>
+<ol>
+<li><strong>दूरी (km)</strong> भरें – one-way या round-trip (×2)।</li>
+<li><strong>Mileage (km/l)</strong> डालें – bike ~45–60, car petrol ~12–18, diesel ~18–24।</li>
+<li><strong>Fuel price</strong> – petrol/diesel/CNG आज का rate।</li>
+<li><strong>लोगों की संख्या</strong> डालें – per-person हिस्सा automatic।</li>
+<li>नतीजे में <strong>कुल fuel + liters + per-person</strong> देखें – trip budget ready!</li>
+</ol>
+<h2>Jaipur–Delhi Trip (500 km round-trip) – कितना खर्च?</h2>
+<table class="gt-table"><tr><th>गाड़ी</th><th>Mileage</th><th>Fuel</th><th>खर्च (लगभग)*</th></tr><tr><td>Bike (petrol)</td><td>50 km/l</td><td>10L</td><td>≈ ₹1,050</td></tr><tr><td>Hatchback (petrol)</td><td>16 km/l</td><td>31L</td><td>≈ ₹3,300</td></tr><tr><td>SUV (diesel)</td><td>14 km/l</td><td>36L</td><td>≈ ₹3,200</td></tr><tr><td>CNG car ⭐</td><td>25 km/kg</td><td>20kg</td><td>≈ ₹1,500</td></tr></table>
+<p>*Rate अनुमानित (petrol ~₹105, diesel ~₹90, CNG ~₹75) – अपने शहर का rate डालकर exact निकालें। Toll + parking अलग जोड़ें!</p>
+<div class="note">💡 <strong>CNG = आधी कीमत!</strong> रोज़ 50km+ चलाने वालों के लिए CNG car 2 साल में premium वसूल लेती है। Trip पर <strong>toll (FASTag) + parking + food</strong> भी budget में जोड़ें – fuel सिर्फ 60–70% खर्च है!</div>
+<h2>Fuel बचाने के 5 तरीके</h2>
+<ul>
+<li><strong>Speed 80–100</strong> – 120+ पर mileage 20–30% गिरती है!।</li>
+<li><strong>Tyre pressure</strong> सही रखें – कम हवा = 5–10% ज़्यादा fuel।</li>
+<li><strong>AC smart use</strong> – city में blower, highway पर AC (खिड़की बंद)।</li>
+<li><strong>Idle OFF</strong> – 30+ सेकंड signal पर engine बंद।</li>
+<li><strong>Light foot</strong> – sudden brake/race से mileage आधी!।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Car mileage कैसे calculate करें?</summary><p>Tank full → trip meter zero → 100km चलाएं → फिर full: liters ÷ km = mileage। जैसे 6L में 100km = 16.7 km/l।</p></details>
+<details><summary>Petrol vs Diesel vs CNG – कौन सस्ता?</summary><p>Per-km: CNG ~₹3, diesel ~₹6, petrol ~₹7 (लगभग)। कम चलना (500km/माह) = petrol; ज़्यादा (1500km+) = CNG/diesel।</p></details>
+<details><summary>Trip cost में क्या-क्या जोड़ें?</summary><p>Fuel + toll (FASTag) + parking + food + stay। 500km trip में toll ~₹500–800 extra लगता है।</p></details>
+<details><summary>Mileage अचानक क्यों गिरती है?</summary><p>गंदा air filter, कम tyre pressure, खराब spark plugs, ज़्यादा load, या short city trips – service + pressure check कराएं।</p></details>
+<details><summary>EV trip सस्ती है?</summary><p>हां – ₹1–1.5/km charging! पर long trip पर charging stations plan करें + time जोड़ें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="discount-calculator.html">🏷️ छूट कैलकुलेटर (Discount Calculator)</a> · <a href="percentage-calculator.html">📊 प्रतिशत कैलकुलेटर (Percentage Calculator)</a> · <a href="currency-converter.html">💱 करेंसी कन्वर्टर (Currency Converter)</a> · <a href="gold-silver-value-calculator.html">🥇 Gold-Silver Value Calculator (हिंदी)</a> · <a href="number-to-words.html">🔢 संख्या को शब्दों में बदलें (Number to Words)</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
 </article>
 </div>
 

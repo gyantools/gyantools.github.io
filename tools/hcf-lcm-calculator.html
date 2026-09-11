@@ -51,8 +51,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/hcf-lcm-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "HCF और LCM क्या हैं?", "acceptedAnswer": {"@type": "Answer", "text": "HCF = सबसे बड़ा common divisor (12,18 → 6)। LCM = सबसे छोटा common multiple (12,18 → 36)। Formula: HCF × LCM = a × b।"}}, {"@type": "Question", "name": "Prime factorization method क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "संख्याओं को prime factors में तोड़ो: HCF = common primes (min power), LCM = सभी primes (max power)। Calculator steps दिखाता है।"}}, {"@type": "Question", "name": "HCF-LCM word problems कैसे पहचानें?", "acceptedAnswer": {"@type": "Answer", "text": "Max-size/गहराई/बांटना → HCF। Bell/traffic/दोहराव-साथ → LCM। 'एक साथ कब' = LCM, 'सबसे बड़ा टुकड़ा' = HCF।"}}, {"@type": "Question", "name": "Co-prime क्या होते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "जिनका HCF = 1 (जैसे 8, 15)। Co-prime का LCM = दोनों का गुणनफल।"}}, {"@type": "Question", "name": "3+ संख्याओं का HCF–LCM?", "acceptedAnswer": {"@type": "Answer", "text": "Same method – सभी के prime factors से common (HCF) / सभी max-power (LCM)। Calculator 10 तक संख्याएं लेता है।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -107,7 +129,37 @@ th{background:#e8f0fe;color:#1a73e8}
     </table>
     <div class="tip">💡 और math tools देखें: <a href="number-system-converter.html" style="color:#1a73e8">Number System Converter</a>, <a href="scientific-calculator.html" style="color:#1a73e8">Scientific Calculator</a>, <a href="roman-numerals.html" style="color:#1a73e8">Roman Numerals</a> और मज़ेदार practice के लिए <a href="../games/math-quiz.html" style="color:#1a73e8">Math Quiz गेम</a>।</div>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>HCF–LCM कैसे निकालें?</h2>
+<ol>
+<li><strong>2 से 10 संख्याएं</strong> डालें – comma से अलग करके।</li>
+<li><strong>Calculate दबाएं</strong> – HCF + LCM + steps एक साथ।</li>
+<li><strong>Prime factorization steps</strong> देखें – exam method समझें।</li>
+<li><strong>Word problems</strong> – नीचे bell/traffic/lights वाले सवाल।</li>
+<li>Formula याद रखें: <strong>HCF × LCM = a × b</strong> (2 संख्याओं के लिए)।</li>
+</ol>
+<h2>HCF–LCM Solved Example (12, 18)</h2>
+<table class="gt-table"><tr><th>Step</th><th>12</th><th>18</th></tr><tr><td>Prime factors</td><td>2² × 3</td><td>2 × 3²</td></tr><tr><td>HCF (min power)</td><td colspan="2">2 × 3 = <strong>6</strong></td></tr><tr><td>LCM (max power)</td><td colspan="2">2² × 3² = <strong>36</strong></td></tr></table>
+<div class="note">💡 Verify: 6 × 36 = 216 = 12 × 18 ✓। <strong>2 numbers पर ही</strong> ये formula लगता है – 3+ पर सिर्फ prime-factor method!</div>
+<h2>Exam के 5 shortcuts</h2>
+<ul>
+<li><strong>Division method</strong> – साथ-साथ भाग (fast for big numbers)।</li>
+<li><strong>Euclid algorithm</strong> – HCF(a,b) = HCF(b, a%b) – सबसे तेज़!।</li>
+<li><strong>Co-prime check</strong> – HCF=1 हो तो LCM = product।</li>
+<li><strong>Units digit trick</strong> – LCM options eliminate करने में।</li>
+<li><strong>Word problems:</strong> 'साथ-साथ कब' = LCM; 'max equal pieces' = HCF।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>HCF और LCM क्या हैं?</summary><p>HCF = सबसे बड़ा common divisor (12,18 → 6)। LCM = सबसे छोटा common multiple (12,18 → 36)। Formula: HCF × LCM = a × b।</p></details>
+<details><summary>Prime factorization method क्या है?</summary><p>संख्याओं को prime factors में तोड़ो: HCF = common primes (min power), LCM = सभी primes (max power)। Calculator steps दिखाता है।</p></details>
+<details><summary>HCF-LCM word problems कैसे पहचानें?</summary><p>Max-size/गहराई/बांटना → HCF। Bell/traffic/दोहराव-साथ → LCM। 'एक साथ कब' = LCM, 'सबसे बड़ा टुकड़ा' = HCF।</p></details>
+<details><summary>Co-prime क्या होते हैं?</summary><p>जिनका HCF = 1 (जैसे 8, 15)। Co-prime का LCM = दोनों का गुणनफल।</p></details>
+<details><summary>3+ संख्याओं का HCF–LCM?</summary><p>Same method – सभी के prime factors से common (HCF) / सभी max-power (LCM)। Calculator 10 तक संख्याएं लेता है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="cgpa-calculator.html">🎓 CGPA से Percentage कैलकुलेटर</a> · <a href="marks-percentage-calculator.html">🎓 नंबर और प्रतिशत कैलकुलेटर</a> · <a href="scientific-calculator.html">🔬 वैज्ञानिक कैलकुलेटर</a> · <a href="simple-calculator.html">🧮 ऑनलाइन कैलकुलेटर</a> · <a href="number-system-converter.html">🔢 नंबर सिस्टम कन्वर्टर</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>

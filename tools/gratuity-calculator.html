@@ -52,8 +52,30 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
 table{width:100%;border-collapse:collapse;margin-top:14px}
 td,th{border:1px solid #dadce0;padding:10px;text-align:left}
 th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
 </style>
 <link rel="canonical" href="https://gyantools.github.io/tools/gratuity-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Gratuity कब मिलती है?", "acceptedAnswer": {"@type": "Answer", "text": "एक ही employer के पास लगातार 5 साल (4 साल 7 महीने से ऊपर round-up) पूरे करने पर – resignation, retirement या termination पर। मृत्यु/विकलांगता में 5 साल की शर्त नहीं।"}}, {"@type": "Question", "name": "क्या gratuity पर tax लगता है?", "acceptedAnswer": {"@type": "Answer", "text": "Private कर्मचारियों को ₹20 लाख तक tax-free। सरकारी कर्मचारियों की पूरी gratuity tax-free है। सीमा से ऊपर की रकम salary की तरह taxable।"}}, {"@type": "Question", "name": "15/26 फॉर्मूले का मतलब?", "acceptedAnswer": {"@type": "Answer", "text": "हर सेवा-वर्ष के लिए 15 दिन का वेतन; 26 = महीने के working days (रविवार घटाकर)। Govt कर्मचारियों का फॉर्मूला अलग (1/4 × salary × छमाही अवधि) है।"}}, {"@type": "Question", "name": "Contract/fixed-term वालों को gratuity?", "acceptedAnswer": {"@type": "Answer", "text": "Payment of Gratuity Act 10+ कर्मचारियों वाले प्रतिष्ठानों पर लागू है। नए Labour Codes में fixed-term कर्मचारियों को आनुपातिक gratuity का प्रावधान आसान हुआ है।"}}, {"@type": "Question", "name": "Employer gratuity न दे तो क्या करें?", "acceptedAnswer": {"@type": "Answer", "text": "30 दिन के बाद Controlling Authority (Assistant Labour Commissioner) को Form N में complaint करें – ये प्रक्रिया मुफ़्त है और ब्याज समेत payment का आदेश होता है।"}}]}
+</script>
+
 </head>
 <body>
 <header>
@@ -117,7 +139,38 @@ th{background:#e8f0fe;color:#1a73e8}
     </table>
     <div class="note">⚠️ यह calculator मानक फॉर्मूला से अंदाज़ा देता है। कंपनी की नीति, सेवा के अंतराल और अंतिम वेतन संरचना से असली रकम थोड़ी अलग हो सकती है – HR/payroll से पुष्टि करें।</div>
     <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
-  </article>
+  
+<h2>Gratuity कैसे निकालें?</h2>
+<ol>
+<li>अपनी <strong>last drawn basic + DA (मासिक)</strong> भरें।</li>
+<li><strong>सेवा के पूरे साल</strong> भरें – 4 साल 7 महीने = 5 साल गिने जाते हैं (6+ महीने round-up)।</li>
+<li><strong>Calculate दबाएं</strong> – (15/26) × salary × years फॉर्मूले से रकम।</li>
+<li><strong>₹20 लाख की सीमा</strong> याद रखें – private कर्मचारियों के लिए tax-free gratuity max ₹20 लाख।</li>
+<li>5 साल से पहले नौकरी छोड़ी तो gratuity <strong>नहीं मिलती</strong> (मृत्यु/विकलांगता अपवाद)।</li>
+</ol>
+<h2>Gratuity फॉर्मूला + उदाहरण</h2>
+<p><strong>Gratuity = (15 ÷ 26) × अंतिम Basic+DA × सेवा वर्ष</strong> — 15 दिन का वेतन हर पूरे साल के लिए, 26 = महीने के working days।</p>
+<div class="note">💡 <strong>उदाहरण:</strong> अंतिम basic ₹60,000, सेवा 8 साल → (15/26) × 60,000 × 8 = <strong>₹2,76,923</strong>। पूरी रकम tax-free (₹20L सीमा के अंदर)। नए Labour Codes में fixed-term/contract वालों के लिए भी gratuity आसान हुई है।</div>
+<h2>Gratuity के ज़रूरी नियम</h2>
+<ul>
+<li><strong>5 साल की शर्त</strong> – एक ही employer के पास लगातार सेवा (4Y7M+ = 5 साल)।</li>
+<li><strong>₹20 लाख तक tax-free</strong> (private) – सरकारी कर्मचारियों को पूरी छूट।</li>
+<li><strong>Nominee ज़रूर बनाएं</strong> – Form F भरकर HR को दें।</li>
+<li><strong>30 दिन में payment</strong> – देरी पर employer को ब्याज देना पड़ता है।</li>
+<li><strong>न मिले तो शिकायत</strong> – Controlling Authority (Labour Dept) में free complaint होती है।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Gratuity कब मिलती है?</summary><p>एक ही employer के पास लगातार 5 साल (4 साल 7 महीने से ऊपर round-up) पूरे करने पर – resignation, retirement या termination पर। मृत्यु/विकलांगता में 5 साल की शर्त नहीं।</p></details>
+<details><summary>क्या gratuity पर tax लगता है?</summary><p>Private कर्मचारियों को ₹20 लाख तक tax-free। सरकारी कर्मचारियों की पूरी gratuity tax-free है। सीमा से ऊपर की रकम salary की तरह taxable।</p></details>
+<details><summary>15/26 फॉर्मूले का मतलब?</summary><p>हर सेवा-वर्ष के लिए 15 दिन का वेतन; 26 = महीने के working days (रविवार घटाकर)। Govt कर्मचारियों का फॉर्मूला अलग (1/4 × salary × छमाही अवधि) है।</p></details>
+<details><summary>Contract/fixed-term वालों को gratuity?</summary><p>Payment of Gratuity Act 10+ कर्मचारियों वाले प्रतिष्ठानों पर लागू है। नए Labour Codes में fixed-term कर्मचारियों को आनुपातिक gratuity का प्रावधान आसान हुआ है।</p></details>
+<details><summary>Employer gratuity न दे तो क्या करें?</summary><p>30 दिन के बाद Controlling Authority (Assistant Labour Commissioner) को Form N में complaint करें – ये प्रक्रिया मुफ़्त है और ब्याज समेत payment का आदेश होता है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="income-tax-calculator.html">🧾 Income Tax कैलकुलेटर – FY 2026-27 (नई रजिम)</a> · <a href="old-vs-new-tax-regime-calculator.html">⚖️ Old vs New Tax Regime Calculator (FY 2026-27) – कौन सी रेजीम में कि</a> · <a href="hra-calculator.html">🏠 HRA छूट कैलकुलेटर (HRA Exemption Calculator)</a> · <a href="inhand-salary-calculator.html">💰 In-Hand Salary कैलकुलेटर (CTC से)</a> · <a href="salary-hike-calculator.html">📈 सैलरी हाइक कैलकुलेटर (Salary Hike Calculator)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>GyanTools Editorial Team</strong><p>यह गाइड हमारी टीम ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
 </div>
 
 <footer>
