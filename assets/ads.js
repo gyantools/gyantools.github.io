@@ -13,13 +13,21 @@
  *
  * Kisi bhi ad ko band karna ho to neeche CONFIG me false kar do.
  */
+
+  /* ================================================================
+     FIX (25 Sep 2026): popunder aur socialbar BAND kiye gaye hain.
+     Ye 2 ads naye site ki Google trust/indexing sabse zyada nuksaan karte
+     hain. Banner + Native chalu hain (non-intrusive).
+     Wapas ON karne ke liye upar CONFIG me true kar do — PAR AdSense ke
+     liye ye hamesha band hi rakhna hoga!
+     ================================================================ */
 (function () {
   "use strict";
 
   var CONFIG = {
-    popunder:  true,
+    popunder:  false,
     banner:    true,
-    socialbar: true,
+    socialbar: false,
     native:    true,
     smartlink: true,
 
