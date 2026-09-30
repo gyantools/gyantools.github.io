@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>In-Hand Salary Calculator Hindi – CTC से मासिक वेतन कैलकुलेटर</title>
+<meta name="description" content="CTC से in-hand salary निकालें हिंदी में – basic, HRA, PF (12%), gratuity (4.81%) और professional tax काटकर महीने के हाथ में आने वाली तनख्वाह। नए Labour Codes के 50% basic rule का असर भी समझें।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="In-Hand Salary कैलकुलेटर (हिंदी में)">
+<meta property="og:description" content="CTC से महीने की in-hand salary निकालें।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/inhand-salary-calculator.html">
+<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
+<link rel="apple-touch-icon" href="https://gyantools.github.io/images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://gyantools.github.io/images/logo.png">
+<!-- ads -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"In-Hand Salary Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"CTC से in-hand (मासिक वेतन) कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"publisher":{"@type":"Organization","name":"PAWANGAMINGSTUDIO"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.chk{display:flex;align-items:center;gap:10px;margin-top:12px;font-weight:600}
+.chk input{width:18px;height:18px}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+.tip{background:#e6f4ea;border-left:4px solid #137333;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/inhand-salary-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "CTC और in-hand में इतना फर्क क्यों?", "acceptedAnswer": {"@type": "Answer", "text": "CTC में employer PF, gratuity, insurance, variable pay सब जुड़ा होता है जो हाथ में नहीं आता। आम तौर पर in-hand CTC का 70–80% बैठता है।"}}, {"@type": "Question", "name": "नए Labour Codes से salary पर क्या असर?", "acceptedAnswer": {"@type": "Answer", "text": "Basic+DA कुल वेतन का 50%+ होगा → PF/gratuity कटौती बढ़ेगी, in-hand थोड़ा घटेगा, लेकिन retirement savings बढ़ेंगी।"}}, {"@type": "Question", "name": "Professional Tax क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "राज्य सरकार का tax (अधिकतम ₹2,500/साल), salary से सीधे कटता है। कुछ राज्यों में लागू नहीं है।"}}, {"@type": "Question", "name": "Variable pay क्या 100% मिलता है?", "acceptedAnswer": {"@type": "Answer", "text": "नहीं – company + आपकी performance/rating पर निर्भर करता है। Offer letter में payout % ज़रूर पढ़ें।"}}, {"@type": "Question", "name": "In-hand बढ़ाने का सही तरीका?", "acceptedAnswer": {"@type": "Answer", "text": "CTC बढ़वाने के साथ tax regime सही चुनें, NPS extra ₹50K (नई regime में भी) लें और perks (fuel/food/bill) का tax-फायदा समझें।"}}]}
+</script>
+
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › In-Hand Salary कैलकुलेटर</p>
+  <p style="display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:6px 0 0">✓ अनुमानित गणना – असली सैलरी आपकी कंपनी के structure पर निर्भर · जांच: सितंबर 2026</p>
+
+  <div class="tool-box">
+    <h1>💰 In-Hand Salary कैलकुलेटर (CTC से)</h1>
+    <p>सालाना CTC डालें – basic, HRA, PF, gratuity काटकर हाथ में आने वाली तनख्वाह निकालें (tax से पहले)।</p>
+    <label for="ctc">सालाना CTC (₹)</label>
+    <input type="number" id="ctc" placeholder="जैसे: 1000000" min="100000" step="any">
+    <label for="basicp">Basic Salary – CTC का कितना % (नए Labour Code में 50%+ होगा)</label>
+    <input type="number" id="basicp" value="40" min="10" max="70" step="any">
+    <label for="hrap">HRA – Basic का कितना %</label>
+    <input type="number" id="hrap" value="50" min="0" max="60" step="any">
+    <label for="bonus">Performance Bonus – CTC का कितना % (साल में एक बार मिलता है)</label>
+    <input type="number" id="bonus" value="0" min="0" max="30" step="any">
+    <div class="chk"><input type="checkbox" id="pfceiling"><label for="pfceiling" style="margin:0">PF सिर्फ ₹15,000 वेतन सीमा पर (statutory ceiling)</label></div>
+    <button onclick="calcInhand()">In-Hand Salary निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>CTC और In-Hand में क्या फर्क है?</h2>
+    <p><strong>CTC (Cost to Company)</strong> कंपनी पर आपकी कुल सालाना लागत है – जिसमें आपकी तनख्वाह के अलावा कंपनी का PF हिस्सा, gratuity जैसे खर्च भी शामिल होते हैं। <strong>In-hand</strong> वह रकम है जो काट-वट के बाद बैंक खाते में आती है। इस calculator में हमने यह माना है:</p>
+    <ul>
+      <li><strong>Employee PF:</strong> basic का 12% (चेकबॉक्स से ₹15,000 सीमा वाला statutory तरीका)</li>
+      <li><strong>Employer PF:</strong> उतना ही 12% – यह CTC का हिस्सा है पर हाथ में नहीं आता, PF खाते में जाता है</li>
+      <li><strong>Gratuity provision:</strong> basic का ~4.81% (15/26 फॉर्मूले से)</li>
+      <li><strong>Professional Tax:</strong> लगभग ₹200/महीना (राज्य अनुसार)</li>
+    </ul>
+    <h2>नए Labour Codes का असर (21 नवंबर 2025 से लागू)</h2>
+    <p>चारों श्रम कोड अब पूरी तरह लागू हैं। सबसे बड़ा नियम – <strong>Basic + DA कुल में कम से कम 50% होना चाहिए</strong>। जिनकी salary में allowances ज़्यादा थे (IT/बिक्री वाली नौकरियां), उनका basic बढ़ेगा → PF और gratuity बढ़ेंगे → <strong>हाथ की salary 3–7% घट सकती है</strong>, पर retirement की बचत बढ़ेगी। इसका पूरा ब्यौरा हमारी <a href="../blog/naye-shram-kanoon-2026.html" style="color:#1a73e8">नए श्रम कोड गाइड</a> में पढ़ें। Basic % बदलकर (40 → 50) दोनों हालत का फर्क खुद देखें।</p>
+    <div class="tip">💡 PF का पूरा फायदा देखें: <a href="epf-calculator.html" style="color:#1a73e8">EPF कैलकुलेटर</a> · gratuity का हिसाब: <a href="gratuity-calculator.html" style="color:#1a73e8">Gratuity कैलकुलेटर</a> · टैक्स काटकर: <a href="income-tax-calculator.html" style="color:#1a73e8">Income Tax कैलकुलेटर</a> · नौकरी वाली और बचतें: <a href="../blog/income-tax-guide.html" style="color:#1a73e8">Income Tax गाइड</a>।</div>
+    <div class="note">⚠️ हर कंपनी का salary structure अलग होता है (meal card, insurance, variable pay वगैरह)। यह calculator आम ढांचे पर <strong>टैक्स से पहले</strong> का अंदाज़ा देता है – असली payslip से मिलाकर देखें। आपकी income tax (TDS) इसमें नहीं कटी है।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  
+<h2>In-Hand Salary कैसे निकालें?</h2>
+<ol>
+<li>अपनी <strong>सालाना CTC</strong> भरें – जैसे 800000।</li>
+<li><strong>Basic % चुनें</strong> – नए Labour Codes में basic+DA कुल का ~50% होता है।</li>
+<li><strong>Employer PF, Gratuity, bonus</strong> अपने आप घटेंगे – यही CTC और in-hand का फर्क है।</li>
+<li><strong>Professional Tax</strong> (राज्य के हिसाब से ~₹200/माह) और TDS का अनुमान देखें।</li>
+<li><strong>मासिक in-hand</strong> = CTC − PF − Gratuity − TDS − PT − अन्य कटौतियां।</li>
+</ol>
+<h2>CTC vs In-Hand – पैसा कहां जाता है? (₹8L CTC उदाहरण)</h2>
+<table class="gt-table"><tr><th>मद</th><th>सालाना (लगभग)</th></tr><tr><td>CTC</td><td>₹8,00,000</td></tr><tr><td>Employer PF (12% of basic)</td><td>− ₹57,600</td></tr><tr><td>Gratuity</td><td>− ₹23,000</td></tr><tr><td>Employee PF + PT</td><td>− ₹60,000</td></tr><tr><td>TDS (नई regime, ~zero)</td><td>− ₹0</td></tr><tr><td><strong>In-Hand (लगभग)</strong></td><td><strong>≈ ₹6,55,000 (₹54,600/माह)</strong></td></tr></table>
+<div class="note">💡 <strong>नए Labour Codes का असर:</strong> basic 50% होने से PF कटौती बढ़ेगी (in-hand थोड़ा कम), लेकिन <strong>retirement fund + gratuity बड़े</strong> होंगे। छोटी अवधि में जेब हल्की, लंबी अवधि में फायदा!</div>
+<h2>Salary Slip समझने के सूत्र</h2>
+<ul>
+<li><strong>CTC ≠ Salary</strong> – CTC में employer का PF, gratuity, insurance सब जुड़ा होता है।</li>
+<li><strong>Form 16</strong> हर साल check करें – TDS और आय का official हिसाब वही है।</li>
+<li><strong>Variable pay</strong> 100% न मानें – appraisal/rating पर घट-बढ़ होता है।</li>
+<li><strong>EPF passbook</strong> (EPFO app/UMANG) में balance देखते रहें।</li>
+<li><strong>Offer compare करते समय</strong> in-hand + PF + perks तीनों तोलें, सिर्फ CTC नहीं।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>CTC और in-hand में इतना फर्क क्यों?</summary><p>CTC में employer PF, gratuity, insurance, variable pay सब जुड़ा होता है जो हाथ में नहीं आता। आम तौर पर in-hand CTC का 70–80% बैठता है।</p></details>
+<details><summary>नए Labour Codes से salary पर क्या असर?</summary><p>Basic+DA कुल वेतन का 50%+ होगा → PF/gratuity कटौती बढ़ेगी, in-hand थोड़ा घटेगा, लेकिन retirement savings बढ़ेंगी।</p></details>
+<details><summary>Professional Tax क्या है?</summary><p>राज्य सरकार का tax (अधिकतम ₹2,500/साल), salary से सीधे कटता है। कुछ राज्यों में लागू नहीं है।</p></details>
+<details><summary>Variable pay क्या 100% मिलता है?</summary><p>नहीं – company + आपकी performance/rating पर निर्भर करता है। Offer letter में payout % ज़रूर पढ़ें।</p></details>
+<details><summary>In-hand बढ़ाने का सही तरीका?</summary><p>CTC बढ़वाने के साथ tax regime सही चुनें, NPS extra ₹50K (नई regime में भी) लें और perks (fuel/food/bill) का tax-फायदा समझें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="income-tax-calculator.html">🧾 Income Tax कैलकुलेटर – FY 2026-27 (नई रजिम)</a> · <a href="old-vs-new-tax-regime-calculator.html">⚖️ Old vs New Tax Regime Calculator (FY 2026-27) – कौन सी रेजीम में कि</a> · <a href="hra-calculator.html">🏠 HRA छूट कैलकुलेटर (HRA Exemption Calculator)</a> · <a href="salary-hike-calculator.html">📈 सैलरी हाइक कैलकुलेटर (Salary Hike Calculator)</a> · <a href="gratuity-calculator.html">💼 Gratuity कैलकुलेटर (ग्रेच्युटी)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<h2>Offer Letter Decode – CTC Components Table</h2>
+<p>₹12L CTC का typical breakup (private company):</p>
+<table class="gt-table"><tr><th>Component</th><th>सालाना (लगभग)</th><th>हाथ में?</th></tr><tr><td>Basic + DA (50%)</td><td>₹6,00,000</td><td>हां (PF कटकर)</td></tr><tr><td>HRA (20%)</td><td>₹2,40,000</td><td>हां</td></tr><tr><td>Special allowance</td><td>₹1,50,000</td><td>हां</td></tr><tr><td>Employer PF</td><td>₹72,000</td><td>नहीं (retirement)</td></tr><tr><td>Gratuity</td><td>₹28,800</td><td>नहीं (5Y बाद)</td></tr><tr><td>Variable + insurance</td><td>₹1,09,200</td><td>शर्तों पर</td></tr><tr><td><strong>In-hand (लगभग)</strong></td><td><strong>≈ ₹9.3L (₹77K/माह)</strong></td><td></td></tr></table>
+<p><strong>Negotiation hacks:</strong> joining bonus (one-time, easy approval) + notice buyout + WFH/allowances (non-CTC perks!) मांगो – HR का budget fixed-pay से अलग होता है। <strong>Red flags:</strong> variable 30%+, bond 2Y+, 'CTC' में training-cost जुड़ा! <strong>Appraisal:</strong> hike % fixed-pay पर लगता है, CTC पर नहीं – letter में दोनों lines पढ़ो। Switch पर <strong>last 3 payslips + hike letter</strong> ready रखो – background verification में लगते हैं।</p>
+<h2>First Salary Plan (50-30-20) + EPF Nominee</h2>
+<p>₹50K in-hand? <strong>50-30-20:</strong> ₹25K needs (rent/food/EMI) + ₹15K wants (fun!) + <strong>₹10K invest (non-negotiable!)</strong> – salary-credit day को auto-SIP date बनाओ (पहले invest, फिर खर्च = pay-yourself-first!)।</p>
+<table class="gt-table"><tr><th>₹10K Invest Split</th><th>कहां</th><th>क्यों</th></tr><tr><td>₹4,000</td><td>Equity SIP ⭐</td><td>Growth engine</td></tr><tr><td>₹2,500</td><td>PPF/RD</td><td>Safe habit</td></tr><tr><td>₹2,000</td><td>Emergency fund</td><td>6 माह खर्च तक</td></tr><tr><td>₹1,500</td><td>NPS</td><td>Tax + retirement</td></tr></table>
+<p><strong>EPF nominee day-1:</strong> UAN portal → e-nomination (Aadhaar-eSign, 5 min!) – बिना nominee family को पैसा months में। <strong>Form 11 + KYC:</strong> joining पर Aadhaar/PAN/bank link – PF transfer/withdraw तभी smooth। <strong>Salary account perks:</strong> zero-balance + free insurance + pre-approved offers – job-change पर convert कराना न भूलो (charges लगते हैं!)। <strong>Appraisal diary:</strong> साल भर wins note करो – hike-meeting में numbers = leverage!</p>
+<h2>CTC Decoder – हर Component समझो</h2>
+<table class="gt-table"><tr><th>Component</th><th>मिलता है?</th></tr><tr><td>Basic + DA</td><td>हाँ (PF/gratuity base!)</td></tr><tr><td>HRA</td><td>हाँ (exemption possible)</td></tr><tr><td>Special allowance</td><td>हाँ (fully taxable)</td></tr><tr><td>Employer PF</td><td><strong>नहीं!</strong> (PF में जाता है)</td></tr><tr><td>Gratuity</td><td><strong>नहीं!</strong> (5Y बाद, अगर रुके)</td></tr><tr><td>Insurance premium</td><td><strong>नहीं!</strong> (policy है)</td></tr><tr><td>Variable/bonus</td><td>शायद (performance!)</td></tr></table>
+<p><strong>₹8L CTC = ₹55–60K in-hand/माह</strong> (typically!) – offer-letter देखकर निराश मत हो! Joining-bonus one-time (बंटकर नहीं!)। ESOPs = lottery-ticket (vesting 4Y!) – value आज zero मानो!</p>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>Pawan Verma · GyanTools</strong><p>यह गाइड Pawan Verma ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+
+<script>
+function inhand(ctc, basicP, hraP, bonusP, pfCeiling){
+  var basic = ctc * basicP / 100;
+  var hra = basic * hraP / 100;
+  var pfBase = pfCeiling ? 15000 * 12 : basic;
+  var eePF = pfBase * 0.12;
+  var erPF = eePF;
+  var gratuity = basic * (15/26/12);
+  var cash = ctc - erPF - gratuity;
+  var bonus = ctc * bonusP / 100;
+  var special = cash - basic - hra - bonus;
+  var pt = 2400;
+  var inhandAnnual = cash - bonus - eePF - pt;
+  return { basic: basic, hra: hra, eePF: eePF, erPF: erPF, gratuity: gratuity, cash: cash, bonus: bonus, special: special, inhandAnnual: inhandAnnual, monthly: inhandAnnual / 12, pt: pt };
+}
+function calcInhand(){
+  var ctc = parseFloat(document.getElementById('ctc').value);
+  var bp = parseFloat(document.getElementById('basicp').value);
+  var hp = parseFloat(document.getElementById('hrap').value);
+  var bnp = parseFloat(document.getElementById('bonus').value);
+  var ceil = document.getElementById('pfceiling').checked;
+  var out = document.getElementById('out');
+  if(!ctc || ctc < 100000 || isNaN(bp) || isNaN(hp) || isNaN(bnp)){ out.style.display='block'; out.innerHTML='⚠️ कृपया सालाना CTC (न्यूनतम ₹1 लाख) और percentages सही भरें।'; return; }
+  var x = inhand(ctc, bp, hp, bnp, ceil);
+  var f = function(v){ return '₹' + Math.round(v).toLocaleString('en-IN'); };
+  if (x.special < 0){ out.style.display='block'; out.innerHTML='⚠️ यह combination संभव नहीं – basic/HRA/bonus मिलाकर CTC से ज़्यादा हो रहा है। HRA या bonus घटाएं।'; return; }
+  out.style.display='block';
+  out.innerHTML = '<div class="big">हर महीने हाथ में (tax से पहले): ~' + f(x.monthly) + '</div>'
+    + '<table>'
+    + '<tr><th>घटक (सालाना)</th><th>राशि</th></tr>'
+    + '<tr><td>Basic Salary</td><td>' + f(x.basic) + '</td></tr>'
+    + '<tr><td>HRA</td><td>' + f(x.hra) + '</td></tr>'
+    + '<tr><td>Special Allowance</td><td>' + f(x.special) + '</td></tr>'
+    + (x.bonus > 0 ? '<tr><td>Bonus (साल में एक बार)</td><td>' + f(x.bonus) + '</td></tr>' : '')
+    + '<tr><td>आपका PF (12%) – कटता है</td><td>' + f(x.eePF) + '</td></tr>'
+    + '<tr><td>कंपनी का PF (12%) – CTC में, हाथ में नहीं</td><td>' + f(x.erPF) + '</td></tr>'
+    + '<tr><td>Gratuity provision – CTC में, हाथ में नहीं</td><td>' + f(x.gratuity) + '</td></tr>'
+    + '<tr><td>Professional Tax</td><td>' + f(x.pt) + '</td></tr>'
+    + '<tr><td><strong>साल की in-hand (bonus छोड़कर)</strong></td><td><strong>' + f(x.inhandAnnual) + '</strong></td></tr>'
+    + '</table>'
+    + '<p>PF खाते में आपके + कंपनी के मिलाकर साल में ' + f(x.eePF + x.erPF) + ' जुड़ेगा।</p>';
+}
+</script>
+
+<!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
+<script defer src="/assets/ads.js"></script>
+</body>
+</html>

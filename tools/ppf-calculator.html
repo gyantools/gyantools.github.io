@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>PPF Calculator in Hindi – PPF कैलकुलेटर (7.1% दर, मैच्योरिटी हिसाब)</title>
+<meta name="description" content="PPF कैलकुलेटर हिंदी में – सालाना जमा और दर से PPF खाते की मैच्योरिटी राशि निकालें। जुलाई–सितंबर 2026 तिमाही की दर 7.1%। EEE टैक्स-फ्री, 15 साल की अवधि। फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="PPF Calculator in Hindi – PPF कैलकुलेटर">
+<meta property="og:description" content="PPF खाते की मैच्योरिटी और ब्याज का हिसाब निकालें।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/ppf-calculator.html">
+<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
+<link rel="apple-touch-icon" href="https://gyantools.github.io/images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://gyantools.github.io/images/logo.png">
+<!-- ads -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PPF Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"PPF कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/ppf-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "PPF पर current interest rate क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "2026 में 7.1% सालाना (compounded yearly)। सरकार हर तिमाही review करती है – rate घट-बढ़ सकती है।"}}, {"@type": "Question", "name": "PPF पूरी तरह tax-free है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – EEE category: 80C में जमा पर छूट (पुरानी regime), ब्याज और maturity दोनों tax-free।"}}, {"@type": "Question", "name": "PPF से पैसा कब निकाल सकते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "3rd साल से loan, 7th साल से साल में 1 बार partial withdrawal। 15 साल पूरे पर पूरी maturity + 5-5 साल extension option।"}}, {"@type": "Question", "name": "PPF vs ELSS – कौन बेहतर?", "acceptedAnswer": {"@type": "Answer", "text": "Safe + तयशुदा ब्याज + tax-free चाहिए तो PPF; ज़्यादा return + 3 साल lock-in चाहिए तो ELSS (market risk के साथ)। दोनों 80C में आते हैं।"}}, {"@type": "Question", "name": "5 अप्रैल वाला नियम क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "PPF ब्याज महीने के 5 तारीख से आखिर तक के min balance पर मिलता है – इसलिए अप्रैल की शुरुआत में जमा करने से पूरे साल का ब्याज मिलता है।"}}]}
+</script>
+
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › PPF कैलकुलेटर</p>
+  <p style="display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:6px 0 0">✓ जुलाई–सितंबर 2026 तिमाही: 7.1% · स्रोत: <a href="https://www.indiapost.gov.in" style="color:#137333">indiapost.gov.in</a> · जांच: सितंबर 2026</p>
+
+  <div class="tool-box">
+    <h1>🏦 PPF कैलकुलेटर</h1>
+    <p>सालाना जमा और दर से PPF की मैच्योरिटी निकालें।</p>
+    <label for="dep">सालाना जमा (₹) – अधिकतम ₹1,50,000</label>
+    <input type="number" id="dep" placeholder="जैसे: 150000" min="500" max="150000" step="any">
+    <div class="row">
+      <div>
+        <label for="rate">ब्याज दर (%) – जुलाई–सितंबर 2026: 7.1%</label>
+        <input type="number" id="rate" value="7.1" min="1" max="20" step="any">
+      </div>
+      <div>
+        <label for="yrs">अवधि (साल) – PPF 15 साल का, फिर 5-5 साल बढ़ाया जा सकता है</label>
+        <input type="number" id="yrs" value="15" min="15" max="50" step="5">
+      </div>
+    </div>
+    <button onclick="calcPPF()">मैच्योरिटी राशि निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>PPF क्या है?</h2>
+    <p><strong>PPF (Public Provident Fund)</strong> सरकार की small savings scheme है – बैंक या डाकघर में खुलती है। <strong>15 साल</strong> की अवधि के बाद पैसा वापस मिलता है, और 5-5 साल के ब्लॉक में बढ़ाया जा सकता है।</p>
+    <h2>PPF की खास बातें</h2>
+    <ul>
+      <li><strong>सरकार की गारंटी</strong> – market से नहीं जुड़ा, इसलिए safest निवेशों में से एक</li>
+      <li><strong>दर अभी 7.1% सालाना</strong> (जुलाई–सितंबर 2026 तिमाही – सरकार हर तिमाही दरें तय करती है; लगातार कई तिमाहियों से 7.1% ही है)</li>
+      <li><strong>टैक्स में तीन बार छूट (EEE)</strong> – जमा पर deduction (80C), ब्याज टैक्स-फ्री, मैच्योरिटी पर भी कोई टैक्स नहीं</li>
+      <li>सालाना जमा: न्यूनतम <strong>₹500</strong>, अधिकतम <strong>₹1,50,000</strong></li>
+      <li>ब्याज सालाना compound होता है (सबसे कम balance पर, हर महीने गिनकर)</li>
+      <li>7 साल बाद आंशिक निकासी (loan/withdrawal) की सुविधा भी है</li>
+    </ul>
+    <h2>PPF बनाम FD (आम तौर पर)</h2>
+    <table>
+      <tr><th></th><th>PPF</th><th>Bank FD</th></tr>
+      <tr><td>दर</td><td>7.1% (सरकारी)</td><td>बैंक-बैंक अलग (~6–7.5%)</td></tr>
+      <tr><td>टैक्स</td><td>ब्याज पूरी तरह टैक्स-फ्री</td><td>ब्याज पर टैक्स लगता है</td></tr>
+      <tr><td>अवधि</td><td>15 साल (लॉक-इन)</td><td>7 दिन–10 साल</td></tr>
+      <tr><td>जोखिम</td><td>सरकारी गारंटी</td><td>₹5 लाख तक DICGC बीमा</td></tr>
+    </table>
+    <p>यानी लंबी अवधि की सुरक्षित बचत के लिए PPF का tax-free ब्याज बड़ा फायदा है; बीच में पैसा चाहिए हो तो FD/Liquid fund देखें।</p>
+    <div class="note">💡 <strong>ट्रिक:</strong> साल की जमा 1 अप्रैल से 5 अप्रैल के बीच कर दें – उस महीने के कम balance पर भी पूरा ब्याज मिलता है।</div>
+    <div class="note">⚠️ दरें सरकार हर तिमाही बदल सकती है – यह tool अंदाज़ा देता है। खाता खोलने से पहले bank/post office से current नियम जांचें।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  
+<h2>PPF Maturity कैसे निकालें?</h2>
+<ol>
+<li>सालाना <strong>जमा राशि</strong> भरें – ₹500 से ₹1.5 लाख तक (max limit)।</li>
+<li><strong>ब्याज दर 7.1%</strong> (2026) पहले से set है – सरकार हर तिमाही बदल सकती है।</li>
+<li><strong>15 साल</strong> की अवधि automatic – extension (5-5 साल) का हिसाब अलग से लगाएं।</li>
+<li><strong>5 अप्रैल से पहले जमा</strong> का नियम याद रखें – ब्याज महीने के min balance पर मिलता है।</li>
+<li>नतीजे में <strong>जमा vs ब्याज vs maturity</strong> – तीनों साफ दिखेंगे, पूरी तरह tax-free!</li>
+</ol>
+<h2>PPF का पूरा गणित – ₹1.5L/साल, 7.1%, 15 साल</h2>
+<table class="gt-table"><tr><th></th><th>रकम</th></tr><tr><td>कुल जमा (15 × ₹1.5L)</td><td>₹22.5L</td></tr><tr><td>कुल ब्याज</td><td>≈ ₹18.2L</td></tr><tr><td><strong>Maturity (tax-free)</strong></td><td><strong>≈ ₹40.7L</strong></td></tr></table>
+<div class="note">💡 <strong>EEE दर्जा:</strong> जमा पर 80C छूट + ब्याज tax-free + maturity tax-free – <strong>तीनों जगह zero tax!</strong> Safe निवेश में PPF जैसा combo कोई नहीं। 15 साल बाद 5-5 साल बढ़ाकर करोड़+ भी बनाया जा सकता है।</div>
+<h2>PPF के 6 ज़रूरी नियम</h2>
+<ul>
+<li><strong>5 अप्रैल से पहले</strong> सालाना जमा करें – पूरे साल का ब्याज मिलेगा।</li>
+<li><strong>₹1.5L से ज़्यादा</strong> पर ब्याज नहीं + 80C भी नहीं – limit न तोड़ें।</li>
+<li><strong>Loan/withdrawal</strong> – 3rd साल से loan, 7th साल से partial withdrawal।</li>
+<li><strong>15 साल lock-in</strong> – बीच में पूरा पैसा नहीं निकलता (extension में निकासी आसान)।</li>
+<li><strong>Minor account</strong> – बच्चे के नाम भी खोल सकते हैं (family limit shared)।</li>
+<li><strong>Rate हर तिमाही</strong> बदल सकती है – calculator current 7.1% पर आधारित है।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>PPF पर current interest rate क्या है?</summary><p>2026 में 7.1% सालाना (compounded yearly)। सरकार हर तिमाही review करती है – rate घट-बढ़ सकती है।</p></details>
+<details><summary>PPF पूरी तरह tax-free है?</summary><p>हां – EEE category: 80C में जमा पर छूट (पुरानी regime), ब्याज और maturity दोनों tax-free।</p></details>
+<details><summary>PPF से पैसा कब निकाल सकते हैं?</summary><p>3rd साल से loan, 7th साल से साल में 1 बार partial withdrawal। 15 साल पूरे पर पूरी maturity + 5-5 साल extension option।</p></details>
+<details><summary>PPF vs ELSS – कौन बेहतर?</summary><p>Safe + तयशुदा ब्याज + tax-free चाहिए तो PPF; ज़्यादा return + 3 साल lock-in चाहिए तो ELSS (market risk के साथ)। दोनों 80C में आते हैं।</p></details>
+<details><summary>5 अप्रैल वाला नियम क्या है?</summary><p>PPF ब्याज महीने के 5 तारीख से आखिर तक के min balance पर मिलता है – इसलिए अप्रैल की शुरुआत में जमा करने से पूरे साल का ब्याज मिलता है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="sip-calculator.html">📈 SIP कैलकुलेटर</a> · <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a> · <a href="ssy-calculator.html">👧 SSY कैलकुलेटर (सुकन्या समृद्धि योजना)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<h2>PPF Extension Strategy – 15 साल के बाद क्या?</h2>
+<p>15 साल पूरे पर 3 options: <strong>1) पूरा निकाल लो</strong> (tax-free)। <strong>2) बिना जमा extend</strong> (5-5 साल, balance पर ब्याज)। <strong>3) जमा के साथ extend ⭐</strong> (Form H, 5-5 साल) – सबसे powerful! ₹1.5L/साल जारी रखो तो 25वें साल corpus ≈ <strong>₹1.03 करोड़</strong> (7.1% पर) – सब tax-free!</p>
+<table class="gt-table"><tr><th>Strategy (₹1.5L/साल)</th><th>25 साल corpus (लगभग)</th></tr><tr><td>15 साल फिर stop</td><td>≈ ₹80L (10 साल ब्याज only)</td></tr><tr><td>15+5+5 जमा के साथ ⭐</td><td>≈ ₹1.03 करोड़</td></tr></table>
+<p><strong>Minor (बच्चे का) PPF:</strong> बच्चे के नाम भी खोल सकते हो – पर family में 80C limit shared (₹1.5L कुल)। बच्चे का PPF 15 साल में mature = college fund ready! Nominee + extension form (H) maturity से <strong>1 साल पहले</strong> देना न भूलो – देर हुई तो बिना-जमा extension ही मिलेगा।</p>
+<div class="note">💡 <strong>PPF + SSY combo:</strong> बेटी हो तो SSY (8.2%) max करो, फिर PPF – दोनों EEE tax-free! 25 साल में दोनों मिलकर ₹1.7Cr+ बना सकते हैं।</div>
+<h2>PPF Loan + Withdrawal Rules (Detail) + PPF vs VPF</h2>
+<p><strong>Loan (3rd–6th year):</strong> पिछले balance का 25% तक, ब्याज सिर्फ 1% extra (8.1%) – personal loan (12%+) से 10x सस्ता! 36 किस्तों में चुकाओ। <strong>Partial withdrawal (7th year+):</strong> साल में 1 बार, 4th-year-end balance का 50% तक। Education/emergency में lifeline – EPF जैसा paperwork नहीं!</p>
+<table class="gt-table"><tr><th></th><th>PPF</th><th>VPF (EPF-topup)</th></tr><tr><td>Rate</td><td>7.1%</td><td>8.25% ⭐</td></tr><tr><td>कौन</td><td>कोई भी</td><td>सिर्फ salaried</td></tr><tr><td>Lock-in</td><td>15Y</td><td>Till retirement*</td></tr><tr><td>Max</td><td>₹1.5L/साल</td><td>100% basic!</td></tr><tr><td>Tax</td><td>EEE (full free)</td><td>₹2.5L+ interest taxable**</td></tr></table>
+<p>*VPF job-change पर transfer/withdraw possible। **₹2.5L/साल से ऊपर contribution का interest taxable (2021+)। <strong>Verdict:</strong> salaried → VPF पहले (8.25%!), फिर PPF। Self-employed → PPF king!</p>
+<h2>PPF Account Online कैसे खोलें? (5 Steps)</h2>
+<ul>
+<li><strong>1.</strong> Bank app (SBI/HDFC/ICICI/Post-office) → 'Open PPF' चुनो।</li>
+<li><strong>2.</strong> Aadhaar + PAN verify (OTP) → nominee जोड़ो।</li>
+<li><strong>3.</strong> पहला deposit (min ₹500) – UPI/net-banking से।</li>
+<li><strong>4.</strong> Standing-instruction लगाओ (5 April auto-debit!)।</li>
+<li><strong>5.</strong> Passbook/statement download – 15Y date note करो!</li>
+</ul>
+<p><strong>Minor (बच्चे) का PPF:</strong> guardian (parent) खोल सकता है – पर ₹1.5L सीमा self + minor <strong>मिलाकर</strong>! दो accounts, एक limit – ज़्यादा जमा = बिना-ब्याज पैसा!</p>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>Pawan Verma · GyanTools</strong><p>यह गाइड Pawan Verma ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+
+<script>
+function calcPPF(){
+  var D = parseFloat(document.getElementById('dep').value);
+  var R = parseFloat(document.getElementById('rate').value);
+  var Y = parseInt(document.getElementById('yrs').value);
+  var out = document.getElementById('out');
+  if(!D || D < 500 || isNaN(R) || !Y || Y < 15){ out.style.display='block'; out.innerHTML='⚠️ कृपया सही जमा, दर और अवधि भरें।'; return; }
+  if(D > 150000){ out.style.display='block'; out.innerHTML='⚠️ PPF में सालाना जमा ₹1,50,000 तक ही हो सकती है।'; return; }
+  var r = R/100, fv = 0;
+  for(var y = 0; y < Y; y++){ fv = (fv + D) * (1 + r); }
+  var invested = D*Y, interest = fv - invested;
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">' + Y + ' साल में मैच्योरिटी: ' + f(fv) + '</div>'
+    + '<p>कुल जमा: <strong>' + f(invested) + '</strong> · कमाया ब्याज (टैक्स-फ्री): <strong>' + f(interest) + '</strong></p>'
+    + '<p>ब्याज आपके निवेश का <strong>' + (invested>0 ? (interest/invested*100).toFixed(0) : 0) + '%</strong> – और इस पर एक भी रुपया टैक्स नहीं (EEE)।</p>';
+}
+</script>
+
+<!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
+<script defer src="/assets/ads.js"></script>
+</body>
+</html>

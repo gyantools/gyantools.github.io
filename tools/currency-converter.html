@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+
+<title>Currency Converter – डॉलर, यूरो, पाउंड हिसाब | GyanTools</title>
+
+<meta name="description" content="करेंसी कन्वर्टर 2026 – USD, EUR, GBP, AED, SAR, JPY का रुपये में तुरंत हिसाब। दरें अपडेट करने योग्य, सितंबर 2026 की दरों के साथ।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Currency Converter in Hindi – विदेशी मुद्रा हिसाब">
+<meta property="og:description" content="डॉलर/यूरो/पाउंड/दिरहम का रुपये में तुरंत बदलाव।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/currency-converter.html">
+<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
+<link rel="apple-touch-icon" href="https://gyantools.github.io/images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://gyantools.github.io/images/logo.png">
+<!-- ads -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Currency Converter Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"करेंसी कन्वर्टर – USD/EUR/GBP/AED/SAR/JPY से INR","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/currency-converter.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "USD to INR rate आज क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Rate हर सेकंड बदलती है – converter ताज़ा अनुमानित दर दिखाता है। Bank/forex की असली rate में 1–3% margin जुड़ता है।"}}, {"@type": "Question", "name": "Google rate पर dollar क्यों नहीं मिलता?", "acceptedAnswer": {"@type": "Answer", "text": "Google mid-market (wholesale) rate दिखाता है। Retail में dealer margin + GST + fees जुड़ते हैं – इसीलिए फर्क आता है।"}}, {"@type": "Question", "name": "विदेश पैसे भेजने का सबसे सस्ता तरीका?", "acceptedAnswer": {"@type": "Answer", "text": "तुलना करें: Wise/Remitly अक्सर bank से सस्ते। ₹10L+ पर 20% TCS (बाद में ITR में adjust/refund)।"}}, {"@type": "Question", "name": "Forex card या cash?", "acceptedAnswer": {"@type": "Answer", "text": "Forex card – safe, बेहतर rate, PIN-protected, reloadable। थोड़ा cash (local) emergency के लिए रखें।"}}, {"@type": "Question", "name": "DCC क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Dynamic Currency Conversion – विदेश में card से INR में pay का option। हमेशा मना करें, local currency चुनें (3–5% सस्ता)!"}}]}
+</script>
+
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › <a href="../index.html#tools">टूल्स</a> › करेंसी कन्वर्टर</p>
+  <p style="display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:6px 0 0">✓ दरें अगस्त 2026 के अनुमानित स्नैपशॉट – RBI संदर्भ दर: <a href="https://www.rbi.org.in" style="color:#137333">rbi.org.in</a> · अपनी ताज़ा दर खुद डालें</p>
+<div class="tool-box">
+  <h1>💱 करेंसी कन्वर्टर (Currency Converter)</h1>
+  <p>डॉलर, यूरो, पाउंड, दिरहम, रियाल, येन – किसी भी करेंसी का रुपये में (और आपस में) तुरंत हिसाब। दरें खुद बदल सकते हैं।</p>
+
+  <label for="amount">राशि</label>
+  <input type="number" id="amount" placeholder="जैसे: 100" step="any">
+  <label for="from">किस करेंसी से?</label>
+  <select id="from"></select>
+  <label for="to">किस करेंसी में?</label>
+  <select id="to"></select>
+  <button onclick="calcFX()">बदलें</button>
+  <div class="result" id="out" style="display:none"></div>
+
+  <h2 style="margin-top:26px">मौजूदा दरें (₹ में – ET 4-अगस्त-2026 स्नैपशॉट, अनुमानित)</h2>
+  <p style="font-size:.9rem">दरें रोज बदलती हैं – ऊपर की तालिका में अपनी पसंद की दरें खुद डालकर भी हिसाब कर सकते हैं।</p>
+  <table>
+    <tr><th>करेंसी</th><th>1 यूनिट = ₹</th></tr>
+    <tr><td>US डॉलर (USD)</td><td>95.41</td></tr>
+    <tr><td>यूरो (EUR)</td><td>111.34</td></tr>
+    <tr><td>ब्रिटिश पाउंड (GBP)</td><td>130.18</td></tr>
+    <tr><td>UAE दिरहम (AED)</td><td>26.10</td></tr>
+    <tr><td>सऊदी रियाल (SAR)</td><td>25.34</td></tr>
+    <tr><td>जापानी येन (JPY)</td><td>0.60</td></tr>
+  </table>
+</div>
+
+<article>
+  <h2>करेंसी कन्वर्टर कैसे काम करता है?</h2>
+  <p>हर करेंसी की कीमत रुपये में तय होती है – जैसे 1 डॉलर ≈ ₹95.41। कन्वर्टर उसी दर से गुणा/भाग करके राशि बदल देता है। <strong>रुपये में बदलने के लिए:</strong> राशि × दर (जैसे $100 × 95.41 = ₹9,541)। <strong>रुपये से करेंसी में:</strong> राशि ÷ दर (जैसे ₹95,410 ÷ 95.41 = $1,000)। दो विदेशी करेंसियों के बीच बदलने पर पहले रुपये में, फिर दूसरी करेंसी में।</p>
+
+  <h2>दरें क्यों बदलती रहती हैं?</h2>
+  <p>करेंसी दरें हर पल बदलती हैं – इन्हें तय करते हैं: मांग-आपूर्ति (कितने लोग डॉलर खरीद रहे हैं), RBI का हस्तक्षेप, ब्याज दरों में अंतर, तेल की कीमतें, महंगाई और अंतरराष्ट्रीय घटनाएं। 2026 की शुरुआत में डॉलर करीब ₹95 के पार चला गया है – जो 2025 के मुकाबले रुपये पर दबाव दिखाता है। विदेश यात्रा या पढ़ाई की योजना में दर का सही अंदाजा जरूरी है।</p>
+
+  <h2>असली दर कहां देखें?</h2>
+  <ul>
+    <li><strong>RBI रेफरेंस दर:</strong> rbi.org.in पर हर दिन जारी होती है</li>
+    <li><strong>बैंक की वेबसाइट/ऐप:</strong> बैंक की "buy/sell" दर थोड़ी अलग (ज्यादा) होती है – बैंक अपना मार्जिन जोड़ते हैं</li>
+    <li><strong>Google/फाइनेंस ऐप्स:</strong> तुरंत लाइव दर देखने के लिए</li>
+  </ul>
+  <p>याद रखें: बैंक/एक्सचेंज पर मिलने वाली दर बाजार दर से 0.5-2% तक ऊपर-नीचे होती है – यही उनकी कमाई है।</p>
+
+  <h2>विदेश में पैसे ले जाने के तरीके</h2>
+  <ul>
+    <li><strong>फॉरेक्स कार्ड:</strong> पहले से लोड की गई करेंसी – दर लॉक रहती है, यात्रा के लिए सबसे लोकप्रिय</li>
+    <li><strong>अंतरराष्ट्रीय डेबिट/क्रेडिट कार्ड:</strong> सुविधाजनक, लेकिन विदेशी लेन-देन शुल्क (1-3.5%) और दर का ध्यान रखें</li>
+    <li><strong>नकद:</strong> छोटे खर्च के लिए थोड़ी नकदी; नियमों के हिसाब से सीमा तय है</li>
+  </ul>
+  <p>भारत से विदेश भेजने के लिए RBI की LRS (Liberalised Remittance Scheme) योजना के तहत प्रति व्यक्ति प्रति वित्तीय वर्ष <strong>$2,50,000 तक (मौजूदा दर पर करीब ₹2 करोड़ से ऊपर)</strong> की सीमा लागू है।</p>
+
+  <h2>बाजार दर बनाम बैंक दर में फर्क क्यों?</h2>
+  <p>जब आप बैंक या एक्सचेंज से विदेशी मुद्रा खरीदते हैं, तो आपको बाजार दर (जैसे USD ₹95.41) से थोड़ी महंगी दर मिलती है – इस अंतर को <strong>spread</strong> कहते हैं, जो बैंक की कमाई है। ऑनलाइन दिखने वाली दरें (Google, XE, कैलकुलेटर) आमतौर पर "इंटरबैंक" दर होती हैं, जो असली लेन-देन में नहीं मिलती। विदेश जाने से पहले 2-3 जगहों (बैंक, मनी एक्सचेंज, ऑनलाइन प्लेटफॉर्म) की दरें तुलना करें – ₹10,000 की खरीद पर 0.5% का फर्क भी ₹50 का अंतर बनाता है।</p>
+  <p><strong>रिमिटेंस (विदेश से पैसा भेजना):</strong> विदेश से रुपये भेजने पर भी दर और शुल्क अलग-अलग होते हैं – RBI की तय लिबरलाइज्ड रिमिटेंस स्कीम (LRS) के तहत सालाना $2,50,000 तक भेज सकते हैं। दरें हर पल बदलती हैं, इसलिए बड़ी खरीद/भेजी से पहले लाइव दर देखें – इस कैलकुलेटर में दी गई दरें अनुमानित हैं और आप चाहें तो अपनी जगह की ताजा दर डाल सकते हैं।</p>
+
+  <h2>संबंधित टूल्स</h2>
+  <p><a href="gold-silver-value-calculator.html" style="color:#1a73e8">गोल्ड-सिल्वर वैल्यू</a> | <a href="unit-converter.html" style="color:#1a73e8">Unit कन्वर्टर</a> | गाइड: <a href="../blog/passport-guide.html" style="color:#1a73e8">पासपोर्ट गाइड</a> | <a href="../blog/gold-investment-guide.html" style="color:#1a73e8">सोने में निवेश</a></p>
+
+<h2>Currency Convert कैसे करें?</h2>
+<ol>
+<li><strong>राशि</strong> भरें – जैसे 1000।</li>
+<li><strong>From/To currency</strong> चुनें – USD, EUR, GBP, AED, SAR समेत कई।</li>
+<li><strong>Convert दबाएं</strong> – ताज़ा अनुमानित दरों से नतीजा।</li>
+<li>याद रखें – <strong>Google rate ≠ bank rate</strong>; bank 1–3% margin + charges लेता है।</li>
+<li>बड़ी रकम (फीस/यात्रा) के लिए <strong>Wise/Western Union/bank</strong> तीनों compare करें।</li>
+</ol>
+<h2>₹1,00,000 भेजने पर असली फर्क (उदाहरण)</h2>
+<table class="gt-table"><tr><th>तरीका</th><th>Rate Margin (लगभग)</th><th>Extra Charges</th></tr><tr><td>Google/search rate</td><td>0% (mid-market)</td><td>– (मिलता नहीं)</td></tr><tr><td>Bank wire</td><td>1–3%</td><td>₹500–1,500 + GST</td></tr><tr><td>Wise/Remitly ⭐</td><td>0.4–1%</td><td>कम fixed fee</td></tr><tr><td>Airport counter 😱</td><td>5–10%!</td><td>अक्सर hidden</td></tr></table>
+<div class="note">💡 <strong>Airport पर currency कभी न बदलें</strong> – 5–10% लूट! जाने से पहले city forex dealer/online (BookMyForex/Wise) से लें। International card पर <strong>DCC (INR में pay) मना करें</strong> – local currency में pay हमेशा सस्ता!</div>
+<h2>Foreign Money के 5 नियम</h2>
+<ul>
+<li><strong>TCS:</strong> ₹10L+/साल foreign remittance पर 20% TCS (education/medical में राहत)।</li>
+<li><strong>Forex card > cash</strong> – safe + बेहतर rate + ATM access।</li>
+<li><strong>Zero-markup cards</strong> – Niyo/Fi/Jupiter से 0% forex markup।</li>
+<li><strong>Rate alert</strong> लगाएं – बड़ी payment सही rate पर करें।</li>
+<li><strong>Receipts रखें</strong> – LRS limit ($2.5L/साल) + ITR proof के लिए।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>USD to INR rate आज क्या है?</summary><p>Rate हर सेकंड बदलती है – converter ताज़ा अनुमानित दर दिखाता है। Bank/forex की असली rate में 1–3% margin जुड़ता है।</p></details>
+<details><summary>Google rate पर dollar क्यों नहीं मिलता?</summary><p>Google mid-market (wholesale) rate दिखाता है। Retail में dealer margin + GST + fees जुड़ते हैं – इसीलिए फर्क आता है।</p></details>
+<details><summary>विदेश पैसे भेजने का सबसे सस्ता तरीका?</summary><p>तुलना करें: Wise/Remitly अक्सर bank से सस्ते। ₹10L+ पर 20% TCS (बाद में ITR में adjust/refund)।</p></details>
+<details><summary>Forex card या cash?</summary><p>Forex card – safe, बेहतर rate, PIN-protected, reloadable। थोड़ा cash (local) emergency के लिए रखें।</p></details>
+<details><summary>DCC क्या है?</summary><p>Dynamic Currency Conversion – विदेश में card से INR में pay का option। हमेशा मना करें, local currency चुनें (3–5% सस्ता)!</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="discount-calculator.html">🏷️ छूट कैलकुलेटर (Discount Calculator)</a> · <a href="percentage-calculator.html">📊 प्रतिशत कैलकुलेटर (Percentage Calculator)</a> · <a href="gold-silver-value-calculator.html">🥇 Gold-Silver Value Calculator (हिंदी)</a> · <a href="number-to-words.html">🔢 संख्या को शब्दों में बदलें (Number to Words)</a> · <a href="bill-split-calculator.html">🍽️ बिल बांटो (Bill Split) कैलकुलेटर</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>Pawan Verma · GyanTools</strong><p>यह गाइड Pawan Verma ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
+
+<script>
+var CURR={'USD':95.41,'EUR':111.34,'GBP':130.18,'AED':26.10,'SAR':25.34,'JPY':0.60,'INR':1};
+window.onload=function(){
+  var f=document.getElementById('from'),t=document.getElementById('to');
+  for(var c in CURR){
+    var o1=document.createElement('option');o1.value=c;o1.textContent=c;f.appendChild(o1);
+    var o2=document.createElement('option');o2.value=c;o2.textContent=c;t.appendChild(o2);
+  }
+  f.value='USD';t.value='INR';
+};
+function calcFX(){
+  var amt=parseFloat(document.getElementById('amount').value);
+  var f=document.getElementById('from').value,t=document.getElementById('to').value;
+  var out=document.getElementById('out');
+  if(!amt||amt<0){out.innerHTML='<strong>⚠️ राशि भरें।</strong>';out.style.display='block';return;}
+  var inr=amt*CURR[f];
+  var res=inr/CURR[t];
+  var fmt=function(n){return n.toLocaleString('en-IN',{maximumFractionDigits:2});};
+  out.innerHTML='💱 <strong>'+fmt(amt)+' '+f+' = '+fmt(res)+' '+t+'</strong><br>'+
+    (t==='INR'?'':'₹ में: '+fmt(inr)+'<br>')+
+    '<span style="font-size:.9rem">दर: 1 '+f+' = '+CURR[f]+' ₹ | 1 '+t+' = '+CURR[t]+' ₹<br>नोट: ये अनुमानित दरें हैं (1 सितंबर 2026); बैंक/एक्सचेंज की असली दर अलग हो सकती है।</span>';
+  out.style.display='block';
+}
+</script>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+
+<!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
+<script defer src="/assets/ads.js"></script>
+</body>
+</html>

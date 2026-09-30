@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Snake Game in Hindi – साँप वाला गेम खेलें (मुफ़्त)</title>
+<meta name="description" content="क्लासिक Snake गेम हिंदी में – फल खाओ, लंबा होओ, दीवार और खुद से बचो! मोबाइल बटन + कीबोर्ड दोनों से खेलें। PAWANGAMINGSTUDIO की पेशकश।">
+<meta property="og:title" content="Snake Game – साँप वाला गेम in Hindi">
+<meta property="og:description" content="फल खाओ, हाई स्कोर बनाओ!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/games/snake-game.html">
+<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
+<link rel="apple-touch-icon" href="https://gyantools.github.io/images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://gyantools.github.io/images/logo.png">
+<!-- ads -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Snake Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"साँप वाला क्लासिक गेम हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.game-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0;text-align:center}
+.game-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+canvas{background:#174ea6;border-radius:12px;display:block;margin:16px auto;max-width:100%;touch-action:none}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.stats span{background:#f1f3f4;padding:8px 18px;border-radius:20px;font-size:.95rem}
+.stats b{color:#1a73e8}
+button.play{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:10px}
+button.play:hover{background:#1557b0}
+.pad{display:grid;grid-template-columns:60px 60px 60px;gap:8px;justify-content:center;margin:14px auto;width:max-content}
+.pad button{width:60px;height:52px;font-size:1.3rem;background:#e8f0fe;color:#1a73e8;border:none;border-radius:10px;cursor:pointer;font-weight:700}
+.pad button:hover{background:#d2e3fc}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
+canvas{max-width:100%;height:auto}
+</style>
+<link rel="canonical" href="https://gyantools.github.io/games/snake-game.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Snake game किसने बनाया?", "acceptedAnswer": {"@type": "Answer", "text": "1976 arcade 'Blockade' से शुरुआत, 1997 में Nokia 6110 में आकर दुनिया भर में मशहूर। 400M+ phones में खेला गया – mobile gaming का पहला बादशाह!"}}, {"@type": "Question", "name": "High score कैसे बनाएं?", "acceptedAnswer": {"@type": "Answer", "text": "बड़े loops बनाओ (पूरे board का चक्कर), दीवारों के साथ चलो, जल्दबाज़ी मत करो। सांप लंबा हो तो बीच में मत घुसो!"}}, {"@type": "Question", "name": "Speed बढ़ती क्यों है?", "acceptedAnswer": {"@type": "Answer", "text": "हर फल पर speed +1 – यही challenge है! 20+ फल के बाद सिर्फ calm players बचते हैं।"}}, {"@type": "Question", "name": "Keyboard vs Touch?", "acceptedAnswer": {"@type": "Answer", "text": "Keyboard (arrows) precise; touch swipe mobile पर। Shortcut: spacebar = pause।"}}, {"@type": "Question", "name": "सांप खुद को खा जाए तो?", "acceptedAnswer": {"@type": "Answer", "text": "Classic rule: game over! कुछ versions में 'wrap mode' (दीवार पार) भी होता है।"}}]}
+</script>
+
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Snake Game</p>
+
+  <div class="game-box">
+    <h1>🐍 साँप वाला गेम (Snake)</h1>
+    <p>🍎 फल खाओ, लंबे होओ – दीवार और अपनी ही देह से बचो!</p>
+    <div class="stats">
+      <span>🍎 स्कोर: <b id="score">0</b></span>
+      <span>🏆 हाई स्कोर: <b id="high">0</b></span>
+    </div>
+    <canvas id="cv" width="400" height="400"></canvas>
+    <div class="pad">
+      <span></span><button onclick="setDir(0,-1)">▲</button><span></span>
+      <button onclick="setDir(-1,0)">◀</button><button onclick="setDir(0,1)">▼</button><button onclick="setDir(1,0)">▶</button>
+    </div>
+    <div>
+      <button class="play" onclick="startGame()">▶ शुरू करें</button>
+      <button class="play" onclick="pauseGame()">⏸ रोकें</button>
+    </div>
+    <p id="msg" style="margin-top:12px;font-weight:600;min-height:1.6em"></p>
+  </div>
+
+  <article>
+    <h2>कैसे खेलें?</h2>
+    <ul>
+      <li><strong>कंप्यूटर:</strong> arrow keys (↑↓←→) या W-A-S-D</li>
+      <li><strong>मोबाइल:</strong> नीचे दिए बटन या canvas पर उंगली खींचकर (swipe)</li>
+      <li>हर फल ₹10… यानी 1 अंक 🙂 और हर फल के बाद साँप थोड़ा तेज़ हो जाता है!</li>
+      <li>दीवार या खुद से टकराने पर गेम खत्म</li>
+    </ul>
+    <p>🎮 यह गेम <strong>PAWANGAMINGSTUDIO</strong> की एक पेशकश है। Tic-Tac-Toe और जोड़ी मिलाओ भी खेलें!</p>
+  
+<h2>Snake Game कैसे खेलें?</h2>
+<ol>
+<li><strong>Start दबाएं</strong> – सांप अपने आप चलने लगेगा।</li>
+<li><strong>Arrow keys / swipe</strong> – ऊपर-नीचे-दाएं-बाएं direction।</li>
+<li><strong>फल खाएं</strong> – हर फल = +points + लंबा सांप!।</li>
+<li><strong>दीवार + खुद से बचें</strong> – टकराया = game over!।</li>
+<li><strong>High score तोड़ें</strong> – speed हर फल के साथ बढ़ती है!</li>
+</ol>
+<h2>Snake Score Guide</h2>
+<table class="gt-table"><tr><th>फल</th><th>Level</th></tr><tr><td>0–10</td><td>Warm-up – slow + safe</td></tr><tr><td>10–25</td><td>Medium – planning शुरू</td></tr><tr><td>25–50</td><td>Hard – सिर्फ loops!</td></tr><tr><td>50+</td><td>Insane – legend zone!</td></tr></table>
+<div class="note">💡 <strong>Golden loop:</strong> board के किनारे-किनारे बड़ा चक्कर लगाओ – सांप कभी खुद में नहीं फंसेगा! बीच में घुसना = मौत। फल के पीछे मत भागो, फल को अपने रास्ते में आने दो!</div>
+<h2>High Score के 5 मंत्र</h2>
+<ul>
+<li><strong>Loops बनाओ</strong> – किनारों का चक्कर safest।</li>
+<li><strong>पूंछ देखो</strong> – हर move से पहले tail-position।</li>
+<li><strong>Speed से मत डरो</strong> – rhythm पकड़ो, panic = crash।</li>
+<li><strong>Corners avoid</strong> – फंसने की जगह #1।</li>
+<li><strong>Breaks लो</strong> – आंखें थकीं = गलती पक्की।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Snake game किसने बनाया?</summary><p>1976 arcade 'Blockade' से शुरुआत, 1997 में Nokia 6110 में आकर दुनिया भर में मशहूर। 400M+ phones में खेला गया – mobile gaming का पहला बादशाह!</p></details>
+<details><summary>High score कैसे बनाएं?</summary><p>बड़े loops बनाओ (पूरे board का चक्कर), दीवारों के साथ चलो, जल्दबाज़ी मत करो। सांप लंबा हो तो बीच में मत घुसो!</p></details>
+<details><summary>Speed बढ़ती क्यों है?</summary><p>हर फल पर speed +1 – यही challenge है! 20+ फल के बाद सिर्फ calm players बचते हैं।</p></details>
+<details><summary>Keyboard vs Touch?</summary><p>Keyboard (arrows) precise; touch swipe mobile पर। Shortcut: spacebar = pause।</p></details>
+<details><summary>सांप खुद को खा जाए तो?</summary><p>Classic rule: game over! कुछ versions में 'wrap mode' (दीवार पार) भी होता है।</p></details>
+</div>
+<div class="gt-related">🎮 <strong>और मज़ेदार गेम्स:</strong> <a href="snake-ladder.html">🐍🪜 साँप-सीढ़ी (Snakes &amp; Ladders)</a> · <a href="sudoku.html">🔢 Sudoku – दिमाग की पहेली</a> · <a href="tic-tac-toe.html">🎮 Tic Tac Toe (X-O)</a> · <a href="word-guess.html">🔤 Word Guess – 5 अक्षर का शब्द पहचानो</a> · <a href="2048.html">🔢 2048 पहेली गेम</a></div>
+<h2>Snake Master Practice Routine (7 दिन)</h2>
+<p>High score fluke नहीं, practice का नतीजा है। ये 7-दिन का drill follow करो: <strong>दिन 1–2:</strong> सिर्फ slow loops – बिना फल के 2 min survive करना सीखो। <strong>दिन 3–4:</strong> फल खाते हुए किनारों पर रहो, बीच में कभी मत जाओ। <strong>दिन 5–6:</strong> speed बढ़ने पर 'zig-zag' की जगह 'wide-U-turns' practice करो। <strong>दिन 7:</strong> full-run – target 30+ फल!</p>
+<ul>
+<li><strong>Rule 1:</strong> सांप की पूंछ हमेशा तुम्हारी आंखों के सामने होनी चाहिए – blind turns = मौत।</li>
+<li><strong>Rule 2:</strong> फल के ठीक पीछे मत भागो – loop में रहो, फल खुद मिलेगा।</li>
+<li><strong>Rule 3:</strong> 20+ फल के बाद हर move पहले से plan करो – reaction-time काफी नहीं रहता।</li>
+</ul>
+<h2>Snake का इतिहास – Nokia 6110 से AR तक</h2>
+<p>1976 के arcade 'Blockade' से जन्मा Snake 1997 में <strong>Nokia 6110</strong> में आया – और history बन गई! Taneli Armanto (Nokia engineer) ने 4,000+ phones... माफ़ कीजिए, <strong>400 million+ phones</strong> तक पहुंचाया। Monochrome screen, 4 buttons – फिर भी करोड़ों दीवाने! 2000s में Snake II (maze + bonus bugs), फिर color versions, अब 3D/AR/multiplayer snake games – पर original की simplicity unbeatable है।</p>
+<h2>World Records + Variants</h2>
+<p><strong>Records:</strong> classic Nokia high-scores 2000+ points (legend players!) – speed max पर खेलना superhuman reflex मांगता है। <strong>Variants try करो:</strong> Slither.io (online multiplayer – दूसरों को खाओ!), Snake vs Block (number-balls तोड़ो), Google Doodle Snake (cute twists)। <strong>Mobile vs PC:</strong> PC keyboard precise + fast; mobile swipe casual + anywhere – high-score serious हो तो keyboard!</p>
+<ul>
+<li><strong>Speedrun trick:</strong> pattern-memorization – same moves हर game (muscle memory!)।</li>
+<li><strong>Marathon:</strong> 50+ फल के बाद 2-min break – focus reset = record!।</li>
+<li><strong>Challenge friends:</strong> screenshot scores – weekly leaderboard बनाओ!</li>
+</ul>
+<h2>Slither.io Strategy + खुद Snake Code करो! (Python)</h2>
+<p><strong>Slither.io (multiplayer) pro-tips:</strong> शुरुआत edge पर (crowd से दूर) → small orbs खाओ → 500+ length पर 'coil-trap' (छोटों को घेरो!) → boost सिर्फ kill-moment पर (length घटती है!) → leaderboard-top से दूर रहो (bullies!)। <strong>Codes/skins:</strong> quests से unlock – style + motivation!</p>
+<p><strong>खुद बनाओ (kids coding!):</strong> Python + pygame में 50-line Snake = पहला game-project! Logic: list = body → हर frame head-add + (फल नहीं तो tail-remove) → collision-check = game-over। Scratch (blocks) में 8+ बच्चे बना सकते हैं – YouTube 'scratch snake tutorial Hindi' देखो! <strong>School project:</strong> Snake + score + levels = computer-exhibition winner! Code समझने से game भी बेहतर खेलोगे – patterns दिखने लगते हैं!</p>
+<ul>
+<li><strong>Exercise:</strong> speed variable बदलकर देखो – game-design सीखो!</li>
+<li><strong>Challenge:</strong> 2-player same-keyboard Snake बनाओ – दोस्तों के साथ!</li>
+<li><strong>Next:</strong> Tetris → Pong → Flappy – classic ladder चढ़ो!</li>
+</ul>
+<h2>Nokia Snake History + Famous Variants</h2>
+<p><strong>History:</strong> 1976 arcade 'Blockade' → 1997 Nokia 6110 'Snake' (400M+ players!) → 2017 Google-Doodle Snake → आज Slither.io (500M+ downloads!)। <strong>Fun fact:</strong> Nokia-version Taneli Armanto ने बनाया – high-score memory में save होता था (bragging-rights!)। 3310-relaunch (2017) में Snake वापस = nostalgia-explosion!</p>
+<table class="gt-table"><tr><th>Variant</th><th>Twist</th></tr><tr><td>Slither.io ⭐</td><td>Multiplayer + boost-kills</td></tr><tr><td>Snake '97 (app)</td><td>Pixel-Nokia nostalgia!</td></tr><tr><td>Google Snake</td><td>Modes: cheese/wall/twin!</td></tr><tr><td>Little Big Snake</td><td>Missions + evolution</td></tr><tr><td>Snake.io</td><td>Fast arcade multiplayer</td></tr></table>
+<p><strong>Did-you-know:</strong> perfect Snake AI (Hamiltonian-cycle) कभी नहीं हारता – YouTube पर देखो, दिमाग घूम जाएगा! Speed-challenge: 1-min में max-length – family leaderboard बनाओ (fridge पर!)। <strong>Parents:</strong> 15-min Snake = reflex + patience training – guilt-free screen-time!</p>
+<h2>Snake World Records + Party Ideas</h2>
+<p><strong>Records:</strong> Google-Snake max-score runs YouTube पर legendary (hours-long!) – 'world record' search करके patterns सीखो! <strong>Party:</strong> projector-Snake (crowd-cheering!) + tournament-bracket + loser-washes-dishes! <strong>School:</strong> lab-competition (highest in 10-min!) – reflex + focus दोनों! <strong>Gym-for-fingers:</strong> रोज़ 10-min Snake = reaction-time training – gamers + typists दोनों के लिए!</p>
+<h2>Mobile Controls + Lag-Free Tips</h2>
+<p><strong>Touch:</strong> swipe-direction (tap-hold = boost, Slither!) – thumb-zone साफ रखो (sweat = slip!)। <strong>Sensitivity:</strong> settings में low-latency-mode + 60fps – old-phones पर graphics-low! <strong>Battery:</strong> brightness-50% + power-saver-off (lag!) – 30-min sessions! <strong>Focus:</strong> notifications-silent + landscape-mode – full-board दिखेगा! <strong>Practice-drill:</strong> रोज़ 3-games edge-play (walls-touch!) – 1 हफ़्ते में control-double! Friends-duel: same-phone pass-and-play – loser treats-chai!</p>
+<div class="gt-author"><div class="ava">🎮</div><div><strong>PAWANGAMINGSTUDIO</strong><p>यह गेम Pawan Verma और PAWANGAMINGSTUDIO की पेशकश है। सुझाव हो तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर लिखें!</p></div></div>
+</article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+
+<script>
+var cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+var CELL = 20, GRID = 20;
+var snake, dir, nextDir, food, score, high = 0, timer = null, speed, running = false, over = false;
+try { high = parseInt(localStorage.getItem('gyantools_snake_high')) || 0; } catch(e){}
+document.getElementById('high').textContent = high;
+
+function startGame(){
+  snake = [{x:10,y:10},{x:9,y:10},{x:8,y:10}];
+  dir = {x:1,y:0}; nextDir = dir;
+  score = 0; over = false; speed = 150;
+  placeFood();
+  document.getElementById('score').textContent = 0;
+  document.getElementById('msg').textContent = '';
+  clearInterval(timer);
+  timer = setInterval(tick, speed);
+  running = true;
+  draw();
+}
+function pauseGame(){
+  if(!running) return;
+  clearInterval(timer); running = false;
+  document.getElementById('msg').textContent = '⏸ रुका हुआ – "शुरू करें" दबाकर जारी रखें… नहीं, "शुरू" नए गेम से शुरू करेगा, इसलिए नीचे ⏸ ही रखें';
+  document.getElementById('msg').textContent = '⏸ गेम रुका है (नया गेम = शुरू करें)';
+}
+function placeFood(){
+  do {
+    food = {x: Math.floor(Math.random()*GRID), y: Math.floor(Math.random()*GRID)};
+  } while(snake.some(function(s){ return s.x === food.x && s.y === food.y; }));
+}
+function setDir(x, y){
+  if(dir.x === -x && dir.y === -y) return;   // उलटी दिशा मना
+  nextDir = {x:x, y:y};
+}
+function tick(){
+  dir = nextDir;
+  var head = {x: snake[0].x + dir.x, y: snake[0].y + dir.y};
+  if(head.x < 0 || head.y < 0 || head.x >= GRID || head.y >= GRID || snake.some(function(s){ return s.x === head.x && s.y === head.y; })){
+    gameOver();
+    return;
+  }
+  snake.unshift(head);
+  if(head.x === food.x && head.y === food.y){
+    score++;
+    document.getElementById('score').textContent = score;
+    placeFood();
+    if(score % 5 === 0 && speed > 70){
+      speed -= 10;
+      clearInterval(timer);
+      timer = setInterval(tick, speed);
+    }
+  } else {
+    snake.pop();
+  }
+  draw();
+}
+function gameOver(){
+  clearInterval(timer); running = false; over = true;
+  if(score > high){
+    high = score;
+    document.getElementById('high').textContent = high;
+    try { localStorage.setItem('gyantools_snake_high', high); } catch(e){}
+    document.getElementById('msg').textContent = '🏆 नया हाई स्कोर: ' + score + '! शाबाश!';
+  } else {
+    document.getElementById('msg').textContent = '💀 गेम खत्म! स्कोर: ' + score + ' – फिर से "शुरू करें" दबाएं';
+  }
+  draw(true);
+}
+function draw(dead){
+  ctx.fillStyle = '#174ea6';
+  ctx.fillRect(0, 0, cv.width, cv.height);
+  // फल
+  if(food){
+    ctx.fillStyle = '#ea4335';
+    ctx.beginPath();
+    ctx.arc(food.x*CELL + CELL/2, food.y*CELL + CELL/2, CELL/2 - 2, 0, Math.PI*2);
+    ctx.fill();
+  }
+  // साँप
+  snake.forEach(function(s, i){
+    ctx.fillStyle = i === 0 ? '#ffffff' : (dead ? '#9aa0a6' : '#8ab4f8');
+    ctx.fillRect(s.x*CELL + 1, s.y*CELL + 1, CELL - 2, CELL - 2);
+  });
+  if(dead){
+    ctx.fillStyle = 'rgba(32,33,36,.6)';
+    ctx.fillRect(0, 0, cv.width, cv.height);
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 26px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('💀 गेम खत्म', cv.width/2, cv.height/2 - 10);
+    ctx.font = '16px sans-serif';
+    ctx.fillText('स्कोर: ' + score, cv.width/2, cv.height/2 + 20);
+  }
+}
+// कीबोर्ड
+document.addEventListener('keydown', function(e){
+  var k = e.key;
+  if(k === 'ArrowUp' || k === 'w' || k === 'W') { setDir(0,-1); e.preventDefault(); }
+  else if(k === 'ArrowDown' || k === 's' || k === 'S') { setDir(0,1); e.preventDefault(); }
+  else if(k === 'ArrowLeft' || k === 'a' || k === 'A') { setDir(-1,0); e.preventDefault(); }
+  else if(k === 'ArrowRight' || k === 'd' || k === 'D') { setDir(1,0); e.preventDefault(); }
+});
+// स्वाइप
+var tx = null, ty = null;
+cv.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, {passive:true});
+cv.addEventListener('touchend', function(e){
+  if(tx === null) return;
+  var dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+  if(Math.abs(dx) > Math.abs(dy)) setDir(dx > 0 ? 1 : -1, 0);
+  else setDir(0, dy > 0 ? 1 : -1);
+  tx = null;
+}, {passive:true});
+// शुरुआती स्क्रीन
+snake = [{x:10,y:10},{x:9,y:10},{x:8,y:10}];
+dir = {x:1,y:0}; nextDir = dir; score = 0;
+placeFood();
+draw();
+document.getElementById('msg').textContent = '▶ "शुरू करें" दबाकर खेलना शुरू करें';
+</script>
+
+<!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
+<script defer src="/assets/ads.js"></script>
+</body>
+</html>

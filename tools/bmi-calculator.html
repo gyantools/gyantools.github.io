@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>BMI Calculator in Hindi – बीएमआई कैलकुलेटर (भारतीय मानक सहित)</title>
+<meta name="description" content="BMI कैलकुलेटर हिंदी में – लंबाई और वजन से अपना BMI निकालें। WHO और भारतीय/एशियाई मानक दोनों से जानें कि वजन सही है या नहीं। फ्री, बिना लॉगिन।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="BMI Calculator in Hindi – बीएमआई कैलकुलेटर">
+<meta property="og:description" content="लंबाई-वजन से BMI निकालें – WHO + भारतीय मानक दोनों में।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/bmi-calculator.html">
+<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
+<link rel="apple-touch-icon" href="https://gyantools.github.io/images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://gyantools.github.io/images/logo.png">
+<!-- ads -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"BMI Calculator Hindi","applicationCategory":"HealthApplication","operatingSystem":"Web","description":"BMI कैलकुलेटर हिंदी में – WHO और भारतीय मानक सहित","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/bmi-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "BMI क्या होता है?", "acceptedAnswer": {"@type": "Answer", "text": "Body Mass Index = वज़न(kg) ÷ ऊंचाई(m)²। 18.5–22.9 (Asian) normal। मोटापे का शुरुआती indicator है।"}}, {"@type": "Question", "name": "Indian BMI अलग क्यों?", "acceptedAnswer": {"@type": "Answer", "text": "Research: Indians में कम BMI पर भी ज़्यादा body fat + diabetes risk। इसलिए overweight 23 से, obese 25 से माना जाता है।"}}, {"@type": "Question", "name": "BMI normal पर tummy क्यों?", "acceptedAnswer": {"@type": "Answer", "text": "Skinny-fat: muscle कम + belly fat ज़्यादा। Solution: strength training + protein, सिर्फ cardio नहीं।"}}, {"@type": "Question", "name": "Ideal weight कैसे निकालें?", "acceptedAnswer": {"@type": "Answer", "text": "BMI 21–22 वाली range: (ऊंचाईm)² × 21 से × 22 तक। 5'6\" (1.68m) → 59–62kg ideal।"}}, {"@type": "Question", "name": "बच्चों का BMI अलग है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – बच्चों में age+gender percentile charts लगते हैं (adult cutoff नहीं)। Pediatrician से consult करें।"}}]}
+</script>
+
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › BMI कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>⚖️ BMI कैलकुलेटर (बीएमआई)</h1>
+    <p>लंबाई और वजन डालें – BMI दोनों मानकों (WHO और भारतीय) में निकलेगा।</p>
+    <label for="hunit">लंबाई किसमें बताएंगे?</label>
+    <select id="hunit" onchange="toggleH()">
+      <option value="cm">सेंटीमीटर (cm) में</option>
+      <option value="ft">फीट-इंच में</option>
+    </select>
+    <div id="cmbox">
+      <label for="hcm">लंबाई (cm)</label>
+      <input type="number" id="hcm" placeholder="जैसे: 170" min="1" step="any">
+    </div>
+    <div id="ftbox" style="display:none">
+      <label>लंबाई</label>
+      <div class="row">
+        <input type="number" id="hft" placeholder="फीट (जैसे: 5)" min="0" step="1">
+        <input type="number" id="hin" placeholder="इंच (जैसे: 6)" min="0" max="11" step="any">
+      </div>
+    </div>
+    <label for="wt">वजन (kg)</label>
+    <input type="number" id="wt" placeholder="जैसे: 65" min="1" step="any">
+    <button onclick="calcBMI()">BMI निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>BMI क्या होता है?</h2>
+    <p><strong>BMI (Body Mass Index)</strong> एक सीधा-सादा हिसाब है जो बताता है कि आपका वजन, आपकी लंबाई के हिसाब से कितना है। फॉर्मूला:</p>
+    <p><strong>BMI = वजन (kg) ÷ [लंबाई (m)]²</strong> — जैसे 65 kg वजन और 1.70 m लंबाई पर BMI = 65 ÷ (1.70×1.70) = 22.5</p>
+
+    <h2>भारतीय/एशियाई मानक क्यों अलग हैं?</h2>
+    <p>रिसर्च में पाया गया है कि <strong>एक ही BMI पर भारतीयों के शरीर में ज़्यादा चर्बी</strong> (खासकर पेट के आस-पास) जमती है और डायबिटीज़, ब्लड प्रेशर व दिल की बीमारी का खतरा कम BMI पर ही शुरू हो जाता है। इसीलिए WHO और भारतीय गाइडलाइन्स में भारतीयों के लिए कट-ऑफ कम रखे गए हैं:</p>
+    <table>
+      <tr><th>श्रेणी</th><th>WHO मानक</th><th>भारतीय/एशियाई मानक</th></tr>
+      <tr><td>कम वजन</td><td>18.5 से कम</td><td>18.5 से कम</td></tr>
+      <tr><td>सामान्य</td><td>18.5 – 24.9</td><td><strong>18.5 – 22.9</strong></td></tr>
+      <tr><td>अधिक वजन (at risk)</td><td>25.0 – 29.9</td><td><strong>23.0 – 24.9</strong></td></tr>
+      <tr><td>मोटापा</td><td>30 और ऊपर</td><td><strong>25 और ऊपर</strong></td></tr>
+    </table>
+    <p>यानी BMI 24 पर अंग्रेज़ी चार्ट आपको "normal" बताएगा, लेकिन भारतीय मानक में आप "at risk" में आ जाते हैं।</p>
+
+    <h2>BMI की सीमाएं</h2>
+    <ul>
+      <li>BMI muscle और चर्बी में फर्क नहीं करता – bodybuilders का BMI ऊंचा आता है जबकि वजन मोटापे से नहीं होता</li>
+      <li>बच्चों, गर्भवती महिलाओं और बहुत बूढ़े लोगों के लिए BMI सही पैमाना नहीं</li>
+      <li>BMI सिर्फ एक शुरुआती संकेत है – पूरी जांच के लिए डॉक्टर से मिलें</li>
+    </ul>
+    <div class="note">⚕️ <strong>सूचना:</strong> यह tool सिर्फ जानकारी के लिए है, यह medical सलाह नहीं है। सेहत से जुड़े फैसले डॉक्टर की सलाह से लें।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  
+<h2>BMI कैसे निकालें?</h2>
+<ol>
+<li>अपनी <strong>ऊंचाई (cm/feet)</strong> भरें – बिना जूतों के।</li>
+<li><strong>वज़न (kg)</strong> भरें – सुबह खाली पेट best।</li>
+<li><strong>Calculate दबाएं</strong> – BMI + WHO + Indian category दोनों।</li>
+<li><strong>Ideal weight range</strong> देखें – आपकी height पर कितना सही।</li>
+<li>BMI के साथ <strong>waist + activity</strong> भी track करें – पूरी picture के लिए।</li>
+</ol>
+<h2>BMI Categories – WHO vs Indian/Asian</h2>
+<table class="gt-table"><tr><th>Category</th><th>WHO</th><th>Indian/Asian*</th></tr><tr><td>Underweight</td><td>&lt; 18.5</td><td>&lt; 18.5</td></tr><tr><td>Normal ⭐</td><td>18.5 – 24.9</td><td>18.5 – 22.9</td></tr><tr><td>Overweight</td><td>25 – 29.9</td><td>23 – 24.9</td></tr><tr><td>Obese</td><td>30+</td><td>25+</td></tr></table>
+<p>*Indians में कम BMI पर भी diabetes/heart risk ज़्यादा – इसलिए Asian cutoff सख्त है।</p>
+<div class="note">💡 <strong>BMI अकेला काफी नहीं:</strong> athlete (muscle) का BMI high पर fat कम! साथ में <strong>waist (पुरुष &lt;90cm, महिला &lt;80cm)</strong> ज़रूर नापें – belly fat ही असली खतरा है।</div>
+<h2>Healthy BMI के 5 सूत्र</h2>
+<ul>
+<li><strong>0.5kg/हफ़्ता</strong> – safe weight loss speed (crash diet = muscle loss)।</li>
+<li><strong>Protein 1g/kg</strong> – वज़न घटाते समय muscle बचाने के लिए।</li>
+<li><strong>10,000 steps</strong> – रोज़ 30–45 min walk = game changer।</li>
+<li><strong>Sleep 7–8h</strong> – कम नींद = ज़्यादा भूख hormone (ghrelin)!।</li>
+<li><strong>Calorie tool</strong> से daily need निकालकर 300–500 deficit रखें।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>BMI क्या होता है?</summary><p>Body Mass Index = वज़न(kg) ÷ ऊंचाई(m)²। 18.5–22.9 (Asian) normal। मोटापे का शुरुआती indicator है।</p></details>
+<details><summary>Indian BMI अलग क्यों?</summary><p>Research: Indians में कम BMI पर भी ज़्यादा body fat + diabetes risk। इसलिए overweight 23 से, obese 25 से माना जाता है।</p></details>
+<details><summary>BMI normal पर tummy क्यों?</summary><p>Skinny-fat: muscle कम + belly fat ज़्यादा। Solution: strength training + protein, सिर्फ cardio नहीं।</p></details>
+<details><summary>Ideal weight कैसे निकालें?</summary><p>BMI 21–22 वाली range: (ऊंचाईm)² × 21 से × 22 तक। 5'6" (1.68m) → 59–62kg ideal।</p></details>
+<details><summary>बच्चों का BMI अलग है?</summary><p>हां – बच्चों में age+gender percentile charts लगते हैं (adult cutoff नहीं)। Pediatrician से consult करें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="age-calculator.html">🎂 उम्र कैलकुलेटर (Age Calculator)</a> · <a href="calorie-bmr-calculator.html">🔥 रोज़ कितनी कैलोरी चाहिए?</a> · <a href="water-intake-calculator.html">💧 रोज़ कितना पानी पिएं?</a> · <a href="sleep-cycle-calculator.html">😴 कब सोएं, कब उठें?</a> · <a href="pregnancy-due-date-calculator.html">🤰 डिलीवरी की तारीख कैलकुलेटर</a></div>
+<h2>Indian Diet Chart + Exercise Plan (Practical)</h2>
+<p>Weight loss = <strong>80% diet + 20% exercise</strong>। Sample 1600-cal day (weight-loss, avg adult):</p>
+<table class="gt-table"><tr><th>Meal</th><th>क्या</th><th>Calories (लगभग)</th></tr><tr><td>सुबह</td><td>1 गिलास पानी + 5 बादाम + चाय (बिना चीनी)</td><td>100</td></tr><tr><td>Breakfast</td><td>2 besan chilla / poha + दही</td><td>350</td></tr><tr><td>Lunch</td><td>2 roti + dal + सब्ज़ी + salad</td><td>500</td></tr><tr><td>Snack</td><td>1 फल + मूंगफली (मुट्ठी)</td><td>200</td></tr><tr><td>Dinner (7pm)</td><td>1 roti + paneer/chicken + soup</td><td>400</td></tr></table>
+<p><strong>Exercise starter (zero equipment):</strong> हफ़्ते में 5 दिन – 30 min brisk walk + 10 min bodyweight (squats, pushups-wall, plank)। महीने 2 से: dumbbells/rope add करो। <strong>Weigh protocol:</strong> रोज़ सुबह (same time) + weekly average देखो – daily ups-downs (पानी!) ignore करो। 0.5kg/week = perfect speed। <strong>Plateau (वज़न अटका)?</strong> 2 हफ़्ते same diet + sleep 8h + steps 12K – टूट जाएगा। Crash diet कभी नहीं – muscle गया तो metabolism गया!</p>
+<h2>Indian Protein Sources Table + Supplement Truth</h2>
+<p>Muscle बचाने के लिए <strong>1–1.2g protein/kg</strong> (weight-loss में 1.5g!) चाहिए। Desi sources:</p>
+<table class="gt-table"><tr><th>Food (100g)</th><th>Protein (लगभग)</th><th>Note</th></tr><tr><td>Soya chunks ⭐</td><td>52g</td><td>सबसे सस्ता king!</td></tr><tr><td>Paneer</td><td>18g</td><td>Fat भी – portion देखो</td></tr><tr><td>Chicken breast</td><td>31g</td><td>Lean best</td></tr><tr><td>Eggs (2)</td><td>12g</td><td>Complete protein</td></tr><tr><td>Dal (cooked bowl)</td><td>9g</td><td>Rice/roti के साथ complete</td></tr><tr><td>Milk (500ml)</td><td>17g</td><td>रात में casein-slow!</td></tr><tr><td>Peanuts (50g)</td><td>13g</td><td>Calories high – मुट्ठी!</td></tr></table>
+<p><strong>Supplements – सच:</strong> Whey = सिर्फ convenient milk-protein (magic नहीं!) – diet पूरी हो तो ज़रूरत नहीं। Creatine = खूब study किया गया supplement (आमतौर पर 3–5g/day discuss होता है) – फिर भी कोई भी supplement शुरू करने से पहले डॉक्टर/dietitian से पूछें, क्योंकि हर व्यक्ति की सेहत अलग होती है। Fat-burners = 99% scam (caffeine + सपने)! <strong>Veg 100g protein/day plan:</strong> सुबह soya-milk + lunch 2 bowls dal + snack peanuts + dinner paneer + रात milk = <strong>~95–105g!</strong> Non-veg हो तो 2 eggs + 150g chicken = आधा काम वहीं! Water 3L+ (protein metabolism के लिए) + sleep 8h = muscle-safe fat-loss!</p>
+<h2>7-Day Sample Veg Diet Chart (~1600 kcal)</h2>
+<table class="gt-table"><tr><th>Day</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th></tr><tr><td>Mon</td><td>Oats + केला</td><td>2 रोटी + दाल + सब्ज़ी</td><td>खिचड़ी + दही</td></tr><tr><td>Tue</td><td>Poha + मूंगफली</td><td>Rajma + चावल (1 कटोरी)</td><td>Soup + पनीर-टिक्का</td></tr><tr><td>Wed</td><td>Idli (4) + सांभर</td><td>2 रोटी + छोले</td><td>दलिया + दूध</td></tr><tr><td>Thu</td><td>Upma + नारियल</td><td>Kadhi + चावल</td><td>Grilled-सब्ज़ी + दही</td></tr><tr><td>Fri</td><td>Paratha (1) + दही</td><td>2 रोटी + पनीर + सलाद</td><td>Moong-soup + रोटी</td></tr><tr><td>Sat</td><td>Dosa (2) + सांभर</td><td>Veg-बिरयानी (1 कटोरी)</td><td>Palak- soup + पनीर</td></tr><tr><td>Sun</td><td>Cheat-breakfast!</td><td>घर का खाना (portion!)</td><td>Light: soup + सलाद</td></tr></table>
+<p><strong>Rules:</strong> snack = फल/मूंगफली (chips नहीं!) + 3L पानी + रात 8 बजे तक dinner। Sunday 1 cheat-meal allowed (पूरा cheat-day नहीं!)। 4 हफ़्ते follow → 2–3kg healthy-loss! Doctor/dietitian से personalize कराओ (diabetes/PCOS/thyroid cases!)।</p>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>Pawan Verma · GyanTools</strong><p>यह गाइड Pawan Verma ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+
+<script>
+function toggleH(){
+  var u = document.getElementById('hunit').value;
+  document.getElementById('cmbox').style.display = u==='cm' ? 'block' : 'none';
+  document.getElementById('ftbox').style.display = u==='ft' ? 'block' : 'none';
+}
+function catWHO(b){ return b<18.5?'कम वजन (Underweight)': b<25?'सामान्य (Normal)': b<30?'अधिक वजन (Overweight)':'मोटापा (Obese)'; }
+function catIN(b){ return b<18.5?'कम वजन': b<23?'सामान्य': b<25?'अधिक वजन (at risk)':'मोटापा (Obese)'; }
+function calcBMI(){
+  var out = document.getElementById('out');
+  var u = document.getElementById('hunit').value, cm;
+  if(u==='cm'){ cm = parseFloat(document.getElementById('hcm').value); }
+  else {
+    var ft = parseFloat(document.getElementById('hft').value)||0;
+    var inch = parseFloat(document.getElementById('hin').value)||0;
+    cm = ft*30.48 + inch*2.54;
+  }
+  var kg = parseFloat(document.getElementById('wt').value);
+  if(!cm || cm<50 || cm>250 || !kg || kg<10 || kg>300){ out.style.display='block'; out.innerHTML='⚠️ कृपया सही लंबाई और वजन भरें।'; return; }
+  var m = cm/100, bmi = kg/(m*m);
+  var lo = 18.5*m*m, hi = 22.9*m*m;
+  out.style.display='block';
+  out.innerHTML = '<div class="big">आपका BMI: ' + bmi.toFixed(1) + '</div>'
+    + '<p>🇮🇳 <strong>भारतीय मानक:</strong> ' + catIN(bmi) + '</p>'
+    + '<p>🌍 <strong>WHO मानक:</strong> ' + catWHO(bmi) + '</p>'
+    + '<p>💡 आपकी लंबाई के हिसाब से सेहतमंद वजन: <strong>' + lo.toFixed(1) + ' – ' + hi.toFixed(1) + ' kg</strong> (भारतीय मानक)</p>';
+}
+</script>
+
+<!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
+<script defer src="/assets/ads.js"></script>
+</body>
+</html>
