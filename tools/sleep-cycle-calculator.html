@@ -241,5 +241,17 @@ function calc(){
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={collect:function(){
+  var out=document.getElementById('out');
+  if(!out.textContent.trim()) return null;
+  var items=[{text:(out.children[0]?out.children[0].textContent.replace(/\s+/g,' ').trim():''),bold:false}];
+  Array.prototype.forEach.call(out.querySelectorAll('.slot'),function(s){
+    items.push({segs:[{text:s.textContent.replace(/\s+/g,' ').trim(),bold:true}]});
+  });
+  return {items:items};
+},title:"😴 कब सोएं, कब उठें?",slug:"sleep-cycle-calculator"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

@@ -228,6 +228,18 @@ function press(c){
   if('+-×÷^'.indexOf(c) >= 0 && '+-×÷^('.indexOf(last) >= 0 && last !== '('){
     expr = expr.slice(0, -1);
   }
+  if(c === '%'){
+    var m = expr.match(/(\d+\.?\d*)$/);
+    if(!m) return;
+    var num = parseFloat(m[1]);
+    var before = expr.slice(0, m.index);
+    // "A+B%" / "A−B%" में B% = A का B प्रतिशत (Casio/Google जैसा), बाकी में सीधा /100
+    var m2 = before.match(/^(\d+\.?\d*)[+\-]$/);
+    if(m2){ expr = before + '(' + (parseFloat(m2[1]) * num / 100) + ')'; }
+    else { expr = before + '(' + (num/100) + ')'; }
+    update();
+    return;
+  }
   expr += c;
   update();
 }
@@ -257,8 +269,9 @@ function safeEval(e, deg){
       var word = '';
       while(i < e.length && /[a-z0-9]/.test(e[i])){ word += e[i]; i++; }
       if(word === 'sin' || word === 'cos' || word === 'tan' || word === 'log' || word === 'ln' || word === 'sqrt'){
-        js += 'F.' + word + '(';
-      } else if(word === 'pi'){ js += 'F.pi'; }
+        js += 'F.' + word;   // '(' user/button khud dete hain — pehle yahan extra '(' judd raha tha jisse har function "गलत समीकरण" deta tha
+      } else if(word === 'fact'){ js += 'fact'; }   // "F" literal pehle hi js mein hai → 5! → (F.fact(5))
+      else if(word === 'pi'){ js += 'F.pi'; }
       else if(word === 'e'){ js += 'F.e'; }
       else { return null; }
     } else if(ch === '×'){ js += '*'; i++; }
@@ -329,5 +342,18 @@ document.addEventListener('keydown', function(e){
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#val', anchor:'.keys', alwaysShow:true, title:'साइंटिफिक कैलकुलेटर',
+collect:function(){
+  var v=document.getElementById('val').textContent.trim();
+  var h=document.getElementById('expr').textContent.trim();
+  var m=document.getElementById('mode').textContent.trim();
+  var items=[{text:m}];
+  if(h) items.push({text:h});
+  items.push({text:v,big:true});
+  return {items:items};
+},title:"🔬 वैज्ञानिक कैलकुलेटर",slug:"scientific-calculator"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

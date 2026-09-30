@@ -207,10 +207,10 @@ function calcGold(){
   if(!w||w<=0||!rate22||rate22<=0){out.innerHTML='<strong>⚠️ वजन और दर सही भरें।</strong>';out.style.display='block';return;}
   if(!r||r<=0){r=10;} if(!n||n<=0){n=12;}
   var value=w*rate22*(pu/22);
-  var loan=value*0.75;
-  var ltv=0.75;
-  if(loan<=250000){loan=value*0.85;ltv=0.85;}
-  else if(loan<=500000){loan=value*0.80;ltv=0.80;}
+  // RBI (अप्रैल 2026): LTV tier सैंक्शन होने वाले लोन पर तय होता है
+  var ltv=0.75, loan=value*0.75;
+  if(value*0.85<=250000){ltv=0.85;loan=value*0.85;}
+  else if(value*0.80<=500000){ltv=0.80;loan=value*0.80;}
   var f=function(x){return '₹'+Math.round(x).toLocaleString('en-IN');};
   var mr=r/1200;
   var emi=loan*mr*Math.pow(1+mr,n)/(Math.pow(1+mr,n)-1);
@@ -237,5 +237,9 @@ function calcGold(){
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#out',title:"🥇 गोल्ड लोन कैलकुलेटर 2026",slug:"gold-loan-calculator"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

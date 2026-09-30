@@ -229,5 +229,17 @@ roll();
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#diceOut', anchor:'#coinHist', alwaysShow:true, title:'डाइस और सिक्का',
+collect:function(){
+  var g=function(id){var e=document.getElementById(id);return e?e.textContent.trim():'';};
+  var items=[];
+  if(g('diceSum')) items.push({segs:[{text:'🎲 '+g('diceSum'),bold:true}]});
+  if(g('coinHist')) items.push({segs:[{text:'🪙 '+g('coinHist'),bold:true}]});
+  if(g('diceHist')) items.push({text:g('diceHist')});
+  return items.length?{items:items}:null;
+},title:"🎲 पासा &amp; 🪙 सिक्का",slug:"dice-coin"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

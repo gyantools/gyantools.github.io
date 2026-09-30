@@ -201,7 +201,7 @@ function calcCC(){
       months++;
       if(b<0)b=0;
     }
-    out.innerHTML='📅 <strong>पूरा चुकाने में: '+months+' महीने ('+(Math.ceil(months/12))+' साल '+(months%12)+' महीने)</strong><br>'+
+    out.innerHTML='📅 <strong>पूरा चुकाने में: '+months+' महीने ('+Math.floor(months/12)+' साल '+(months%12)+' महीने)</strong><br>'+
       '💰 कुल ब्याज: <b>'+f(totalInt)+'</b><br>'+
       '💳 कुल भुगतान (मूलधन+ब्याज): '+f(bal+totalInt);
   }else{
@@ -229,5 +229,9 @@ function calcCC(){
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#out',title:"💳 क्रेडिट कार्ड पेऑफ कैलकुलेटर",slug:"credit-card-payoff"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

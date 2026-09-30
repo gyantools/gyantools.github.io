@@ -236,5 +236,21 @@ render();
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#list', anchor:'#list', title:'मेरी To-Do सूची',
+collect:function(){
+  var lis=document.querySelectorAll('#list li');
+  if(!lis.length) return null;
+  var items=[];
+  lis.forEach(function(li){
+    var txt=li.querySelector('.txt'), ck=li.querySelector('input[type=checkbox]');
+    if(txt) items.push({text:(ck&&ck.checked?'☑ ':'☐ ')+txt.textContent.trim()});
+  });
+  var ids=['total','done','pending'].map(function(id){var e=document.getElementById(id);return e?e.textContent:'?';});
+  items.push({segs:[{text:'कुल: ',bold:true},{text:ids[0]},{text:' · पूरे: ',bold:true},{text:ids[1]},{text:' · बाकी: ',bold:true},{text:ids[2]}]});
+  return {items:items};
+},title:"✅ काम की सूची",slug:"todo-list"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

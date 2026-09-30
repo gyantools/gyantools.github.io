@@ -207,7 +207,7 @@ function calcNPS(){
   if(!ret||ret<=0||ret>30){ret=10;}
   var n=Math.max(0,60-age);
   var i=ret/1200;
-  var fv=function(P){if(P<=0)return 0;if(n<=0)return P;return P*((Math.pow(1+i,12*n)-1)/i)*(1+i);};
+  var fv=function(P){if(P<=0||n<=0)return 0;return P*((Math.pow(1+i,12*n)-1)/i)*(1+i);};
   var fvCur=cur>0&&n>0?cur*Math.pow(1+ret/100,n):cur;
   var total=fv(own||0)+fv(emp||0)+fvCur;
   var lump=total*0.6, ann=total*0.4;
@@ -237,5 +237,9 @@ function calcNPS(){
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#out',title:"🏦 NPS कैलकुलेटर",slug:"nps-calculator"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

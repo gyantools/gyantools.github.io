@@ -187,7 +187,8 @@ function calc(){
   var cycle = parseInt(document.getElementById('cycle').value);
   var out = document.getElementById('out');
   if(!lmp){ out.style.display='block'; out.innerHTML='⚠️ कृपया LMP की तारीख चुनें।'; return; }
-  var d = new Date(lmp);
+  var lp = lmp.split('-');
+  var d = new Date(+lp[0], parseInt(lp[1],10)-1, +lp[2]); // लोकल आधी रात — timezone off-by-one से बचने के लिए
   var adj = cycle - 28;
   var due = new Date(d.getTime() + (280 + adj) * 86400000);
   var today = new Date();
@@ -217,5 +218,9 @@ function calc(){
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#out',title:"🤰 डिलीवरी की तारीख कैलकुलेटर",slug:"pregnancy-due-date-calculator"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

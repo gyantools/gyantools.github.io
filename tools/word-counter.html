@@ -214,5 +214,18 @@ function count(){
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#txt', anchor:'#txt', title:'शब्द गिनती',
+collect:function(){
+  var t=document.getElementById('txt').value;
+  if(!t.trim()) return null;
+  function v(id){var e=document.getElementById(id);return e?e.textContent.trim():'';}
+  return {items:[
+    {segs:[{text:'शब्द: ',bold:true},{text:v('w')},{text:' · अक्षर: ',bold:true},{text:v('c')},{text:' · अक्षर (बिना space): ',bold:true},{text:v('cns')}]},
+    {segs:[{text:'वाक्य: ',bold:true},{text:v('s')},{text:' · पैराग्राफ: ',bold:true},{text:v('p')},{text:' · पढ़ने का समय: ',bold:true},{text:v('t')}]}
+  ]};
+},title:"📝 शब्द गिनती",slug:"word-counter"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

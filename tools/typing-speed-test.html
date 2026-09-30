@@ -252,5 +252,22 @@ newPassage();
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={collect:function(){
+  var out=document.getElementById('out');
+  if(out.style.display==='none') return null;
+  var t=(out.innerText||'').trim();
+  if(!t||t.indexOf('⚠')===0) return null;
+  var big=out.querySelector('.big');
+  var items=[{text:(big?big.textContent.trim():''),big:true}];
+  Array.prototype.forEach.call(out.children,function(ch){
+    if(ch===big||ch.tagName==='BUTTON') return;
+    var tt=(ch.textContent||'').replace(/\s+/g,' ').trim();
+    if(tt) items.push({text:tt});
+  });
+  return {items:items};
+},title:"⌨️ टाइपिंग स्पीड टेस्ट",slug:"typing-speed-test"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

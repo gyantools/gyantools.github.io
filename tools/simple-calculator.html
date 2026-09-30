@@ -225,7 +225,11 @@ function press(c){
     var m = expr.match(/(\d+\.?\d*)$/);
     if(!m) return;
     var num = parseFloat(m[1]);
-    expr = expr.slice(0, m.index) + '(' + (num/100) + ')';
+    var before = expr.slice(0, m.index);
+    // "A+B%" / "A−B%" में B% = A का B प्रतिशत (Casio/Google कैलकुलेटर जैसा), बाकी में सीधा /100
+    var m2 = before.match(/^(\d+\.?\d*)[+\-]$/);
+    if(m2){ expr = before + '(' + (parseFloat(m2[1]) * num / 100) + ')'; }
+    else { expr = before + '(' + (num/100) + ')'; }
     update();
     return;
   }
@@ -275,5 +279,17 @@ document.addEventListener('keydown', function(e){
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#val', anchor:'.keys', alwaysShow:true, title:'साधारण कैलकुलेटर',
+collect:function(){
+  var v=document.getElementById('val').textContent.trim();
+  var h=document.getElementById('expr').textContent.trim();
+  var items=[];
+  if(h) items.push({text:h});
+  items.push({text:v,big:true});
+  return {items:items};
+},title:"🧮 ऑनलाइन कैलकुलेटर",slug:"simple-calculator"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

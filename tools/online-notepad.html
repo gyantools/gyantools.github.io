@@ -251,5 +251,17 @@ count();
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#txt', anchor:'#msg', title:'मेरा नोट — GyanTools',
+collect:function(){
+  var t=document.getElementById('txt').value;
+  if(!t.trim()) return null;
+  var shown=t.length>700?t.slice(0,700)+'… (कुल '+t.length+' अक्षर)':t;
+  var w=document.getElementById('w').textContent, c=document.getElementById('c').textContent;
+  var sv=document.getElementById('sv').textContent.trim();
+  return {items:[{text:shown},{segs:[{text:'शब्द: ',bold:true},{text:w},{text:' · अक्षर: ',bold:true},{text:c},{text:sv?' · आख़िरी सेव: '+sv:''}]}]};
+},title:"🗒️ ऑनलाइन नोटपैड",slug:"online-notepad"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

@@ -208,5 +208,16 @@ function op(mode){
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#txt', anchor:'#txt', title:'टेक्स्ट केस कन्वर्टर',
+collect:function(){
+  var t=document.getElementById('txt').value;
+  if(!t.trim()) return null;
+  var shown=t.length>600?t.slice(0,600)+'… (कुल '+t.length+' अक्षर)':t;
+  var w=document.getElementById('w').textContent, c=document.getElementById('c').textContent;
+  return {items:[{text:shown},{segs:[{text:'शब्द: ',bold:true},{text:w},{text:' · अक्षर: ',bold:true},{text:c}]}]};
+},title:"🔤 Text Case Converter",slug:"text-case-converter"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

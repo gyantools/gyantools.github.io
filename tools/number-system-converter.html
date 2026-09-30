@@ -202,7 +202,7 @@ function setAll(base, val){
     err.textContent = '⚠️ इस सिस्टम में ये अंक मान्य नहीं हैं';
     return;
   }
-  if(n > Number.MAX_SAFE_INTEGER){ err.textContent = '⚠ी बहुत बड़ा नंबर'; return; }
+  if(n > Number.MAX_SAFE_INTEGER){ err.textContent = '⚠️ बहुत बड़ा नंबर'; return; }
   err.textContent = '';
   document.getElementById('dec').value = n.toString(10);
   document.getElementById('bin').value = n.toString(2);
@@ -217,28 +217,28 @@ function clearOthers(except){
 function fromDec(){
   var v = document.getElementById('dec').value.trim();
   if(v === ''){ clearOthers('dec'); document.getElementById('err').textContent=''; return; }
-  if(!/^[0-9]+$/.test(v)){ document.getElementById('err').textContent = '⚠ी Decimal में सिर्फ 0-9'; return; }
+  if(!/^[0-9]+$/.test(v)){ document.getElementById('err').textContent = '⚠️ Decimal में सिर्फ 0-9'; return; }
   clearOthers('dec');
   setAll(10, v);
 }
 function fromBin(){
   var v = document.getElementById('bin').value.trim();
   if(v === ''){ clearOthers('bin'); document.getElementById('err').textContent=''; return; }
-  if(!/^[01]+$/.test(v)){ document.getElementById('err').textContent = '⚠ी Binary में सिर्फ 0 और 1'; return; }
+  if(!/^[01]+$/.test(v)){ document.getElementById('err').textContent = '⚠️ Binary में सिर्फ 0 और 1'; return; }
   clearOthers('bin');
   setAll(2, v);
 }
 function fromOct(){
   var v = document.getElementById('oct').value.trim();
   if(v === ''){ clearOthers('oct'); document.getElementById('err').textContent=''; return; }
-  if(!/^[0-7]+$/.test(v)){ document.getElementById('err').textContent = '⚠ी Octal में सिर्फ 0-7'; return; }
+  if(!/^[0-7]+$/.test(v)){ document.getElementById('err').textContent = '⚠️ Octal में सिर्फ 0-7'; return; }
   clearOthers('oct');
   setAll(8, v);
 }
 function fromHex(){
   var v = document.getElementById('hex').value.trim();
   if(v === ''){ clearOthers('hex'); document.getElementById('err').textContent=''; return; }
-  if(!/^[0-9a-fA-F]+$/.test(v)){ document.getElementById('err').textContent = '⚠ी Hex में सिर्फ 0-9 और A-F'; return; }
+  if(!/^[0-9a-fA-F]+$/.test(v)){ document.getElementById('err').textContent = '⚠️ Hex में सिर्फ 0-9 और A-F'; return; }
   clearOthers('hex');
   setAll(16, v);
 }
@@ -246,5 +246,19 @@ function fromHex(){
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#err', anchor:'#err',
+collect:function(){
+  var g=function(id){var e=document.getElementById(id);return e?e.value.trim():'';};
+  if(!g('dec')&&!g('bin')&&!g('oct')&&!g('hex')) return null;
+  return {items:[
+    {segs:[{text:'Decimal: ',bold:true},{text:g('dec')||'—'}]},
+    {segs:[{text:'Binary (2): ',bold:true},{text:g('bin')||'—'}]},
+    {segs:[{text:'Octal (8): ',bold:true},{text:g('oct')||'—'}]},
+    {segs:[{text:'Hexadecimal (16): ',bold:true},{text:g('hex')||'—'}]}
+  ]};
+},title:"🔢 नंबर सिस्टम कन्वर्टर",slug:"number-system-converter"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

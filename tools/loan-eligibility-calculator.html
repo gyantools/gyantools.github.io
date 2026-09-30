@@ -218,11 +218,15 @@ function calc(){
   out.innerHTML = '<div class="big">अनुमानित लोन: ' + f(P) + '</div>'
     + '<p>EMI क्षमता: <strong>' + f(capacity) + '</strong> (' + Math.round(foir*100) + '% of ' + f(inc) + ') − पुरानी EMI ' + f(exist) + ' = <strong>' + f(emi) + '</strong> उपलब्ध</p>'
     + '<p>यह ' + f(emi) + ' की EMI, ' + R + '% दर पर, ' + Y + ' साल में उठा सकती है</p>'
-    + '<p>हर महीने का EMI अनुमानित लोन ब्याज सहित: <strong>' + f(P*Math.pow(1+i,n)/n) + '</strong> कुल ब्याज ~' + f(P*Math.pow(1+i,n)-P) + '</p>';
+    + '<p>मासिक EMI: <strong>' + f(emi) + '</strong> · कुल भुगतान: <strong>' + f(emi*n) + '</strong> · कुल ब्याज: <strong>' + f(emi*n-P) + '</strong></p>';
 }
 </script>
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#out',title:"🏦 Loan Eligibility कैलकुलेटर",slug:"loan-eligibility-calculator"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

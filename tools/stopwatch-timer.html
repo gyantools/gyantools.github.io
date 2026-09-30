@@ -317,5 +317,23 @@ tmDisp(tmTotal());
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#swDisp', anchor:'#laps', alwaysShow:true, title:'स्टॉपवॉच / टाइमर',
+collect:function(){
+  var items=[];
+  var swb=document.getElementById('swBox'), tmb=document.getElementById('tmBox');
+  if(tmb && tmb.style.display!=='none'){
+    items.push({text:'⏱️ टाइमर: '+document.getElementById('tmDisp').textContent.trim(),big:true});
+  } else {
+    items.push({text:'⏱️ स्टॉपवॉच: '+document.getElementById('swDisp').textContent.trim(),big:true});
+    var laps=document.querySelectorAll('#laps div');
+    var n=Math.min(laps.length,8);
+    for(var i=0;i<n;i++) items.push({text:laps[i].textContent.replace(/\s+/g,' ').trim()});
+    if(laps.length>n) items.push({text:'… और '+(laps.length-n)+' लैप'});
+  }
+  return {items:items};
+},title:"⏱️ स्टॉपवॉच &amp; टाइमर",slug:"stopwatch-timer"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>

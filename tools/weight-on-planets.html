@@ -208,5 +208,19 @@ function calcAll(){
 
 <!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
 <script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#cards', anchor:'#cards', title:'ग्रहों पर आपका वज़न',
+collect:function(){
+  var cards=document.querySelectorAll('#cards .card');
+  if(!cards.length) return null;
+  var items=[];
+  cards.forEach(function(c){
+    var n=c.querySelector('.name'), w=c.querySelector('.wt');
+    if(n&&w) items.push({segs:[{text:n.textContent.trim()+': ',bold:true},{text:w.textContent.trim()}]});
+  });
+  return {items:items};
+},title:"🪐 ग्रहों पर आपका वज़न कितना होगा?",slug:"weight-on-planets"};</script>
+<script src="../assets/result-image.js"></script>
 </body>
 </html>
