@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Word Counter in Hindi – शब्द, अक्षर, वाक्य गिनने वाला टूल (Free)</title>
+<meta name="description" content="फ्री Word Counter हिंदी में – टेक्स्ट में शब्द, अक्षर (characters), वाक्य, पैराग्राफ और पढ़ने का समय गिनें। Students, bloggers और writers के लिए।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Word Counter in Hindi – शब्द गिनती टूल">
+<meta property="og:description" content="शब्द, अक्षर, वाक्य और पैराग्राफ एक साथ गिनें – बिना लॉगिन।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/word-counter.html">
+<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
+<link rel="apple-touch-icon" href="https://gyantools.github.io/images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://gyantools.github.io/images/logo.png">
+<!-- ads -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Word Counter Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"शब्द, अक्षर और वाक्य गिनने का फ्री टूल","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+textarea{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff;min-height:220px;resize:vertical}
+textarea:focus{outline:2px solid #1a73e8;border-color:transparent}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:18px}
+.stat{background:#e8f0fe;border-radius:10px;padding:14px;text-align:center}
+.stat .num{font-size:1.6rem;font-weight:700;color:#1a73e8;display:block}
+.stat .lbl{font-size:.85rem;color:#3c4043}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/word-counter.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Reading time कैसे निकलता है?", "acceptedAnswer": {"@type": "Answer", "text": "शब्द ÷ 200 (avg reading speed)। 1000 शब्द ≈ 5 min। Speaking (YouTube) में ~130–150 शब्द/min मानें।"}}, {"@type": "Question", "name": "SEO के लिए कितने शब्द?", "acceptedAnswer": {"@type": "Answer", "text": "Blog: 800–1500+ (topic पर); news: 300+; guide: 2000+। Quality > quantity – thin 300-word posts rank नहीं करते!"}}, {"@type": "Question", "name": "Meta description कितनी लंबी?", "acceptedAnswer": {"@type": "Answer", "text": "~155–160 characters। ज़्यादा कटी दिखेगी (…), कम = space waste। Counter से exact रखें।"}}, {"@type": "Question", "name": "Twitter/X limit कितनी?", "acceptedAnswer": {"@type": "Answer", "text": "280 characters (free), 25,000 (Premium)। Counter बिना space वाले अक्षर भी दिखाता है।"}}, {"@type": "Question", "name": "Hindi शब्द सही गिनता है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – space-based counting भाषा-independent है। मात्राएं/संयुक्ताक्षर अक्षरों में गिने जाते हैं (Unicode standard)।"}}]}
+</script>
+
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › शब्द गिनती (Word Counter)</p>
+
+  <div class="tool-box">
+    <h1>📝 शब्द गिनती – Word Counter</h1>
+    <p>नीचे अपना टेक्स्ट लिखें या पेस्ट करें – शब्द, अक्षर, वाक्य सब लाइव गिने जाएंगे।</p>
+    <textarea id="txt" placeholder="यहाँ अपना टेक्स्ट लिखें या पेस्ट करें..." oninput="count()"></textarea>
+    <div class="stats">
+      <div class="stat"><span class="num" id="w">0</span><span class="lbl">शब्द (Words)</span></div>
+      <div class="stat"><span class="num" id="c">0</span><span class="lbl">अक्षर (Characters)</span></div>
+      <div class="stat"><span class="num" id="cns">0</span><span class="lbl">अक्षर (बिना space)</span></div>
+      <div class="stat"><span class="num" id="s">0</span><span class="lbl">वाक्य (Sentences)</span></div>
+      <div class="stat"><span class="num" id="p">0</span><span class="lbl">पैराग्राफ</span></div>
+      <div class="stat"><span class="num" id="t">0 मिनट</span><span class="lbl">पढ़ने का समय</span></div>
+    </div>
+  </div>
+
+  <article>
+    <h2>Word Counter किस-किस काम आता है?</h2>
+    <ul>
+      <li><strong>Students</strong> – essay, assignment और exam के जवाब की word limit पालन के लिए</li>
+      <li><strong>Bloggers और content writers</strong> – SEO के लिए article की लंबाई जांचने के लिए (अच्छे article आमतौर पर 800+ शब्द होते हैं)</li>
+      <li><strong>Social media</strong> – Twitter/X की 280 characters की limit और meta description की 160 characters की limit जांचने के लिए</li>
+      <li><strong>Translation और typing काम</strong> – काम का हिसाब रखने के लिए</li>
+      <li><strong>Speech और script लेखन</strong> – बोलने का समय अंदाज़ा लगाने के लिए</li>
+    </ul>
+    <h2>पढ़ने का समय कैसे निकलते हैं?</h2>
+    <p>आमतौर पर एक इंसान <strong>200–250 शब्द प्रति मिनट</strong> पढ़ता है। हमारा tool 200 शब्द/मिनट के हिसाब से अनुमान देता है। यानी 1000 शब्द का article लगभग 5 मिनट में पढ़ा जा सकता है।</p>
+    <h2>हिंदी टेक्स्ट भी गिनेगा?</h2>
+    <p>जी हाँ! यह tool हिंदी, English दोनों के साथ-साथ किसी भी भाषा का टेक्स्ट गिनता है। देवनागरी, अरबी, चीनी – सभी characters एक जैसे गिने जाते हैं।</p>
+    <div class="note">🔒 आपका टेक्स्ट किसी server पर नहीं जाता – गिनती आपके ब्राउज़र में ही होती है। इसलिए निजी दस्तावेज़ भी बेफिक्र होकर पेस्ट कर सकते हैं।</div>
+  
+<h2>कितने शब्द, कितने अक्षर – क्यों जरूरी?</h2>
+<p>कई जगहों पर लिखाई की सीमा तय होती है – यह टूल बताता है कि आपका टेक्स्ट <strong>कितने शब्द, अक्षर, वाक्य और पैराग्राफ</strong> का है, साथ ही <strong>पढ़ने में कितना समय</strong> लगेगा।</p>
+<ul>
+  <li><strong>निबंध/होमवर्क:</strong> "500 शब्द का निबंध" – सीमा के अंदर-बाहर तुरंत पता</li>
+  <li><strong>ब्लॉग/वेबसाइट:</strong> लेख की लंबाई तय करना (SEO के लिए)</li>
+  <li><strong>ईमेल/सोशल मीडिया:</strong> कैरेक्टर लिमिट (जैसे ट्वीट 280 अक्षर) के हिसाब से लिखना</li>
+  <li><strong>मेटा डिस्क्रिप्शन:</strong> सर्च नतीजों में ~155 अक्षर दिखते हैं – उसी हिसाब से लिखना</li>
+</ul>
+<p>टाइप करते ही गिनती अपने आप बदलती है – कॉपी-पेस्ट भी कर सकते हैं, फिर भी तुरंत गिनती मिल जाएगी।</p>
+
+
+<h2>Word Counter कैसे इस्तेमाल करें?</h2>
+<ol>
+<li><strong>Text paste/type</strong> करें – गिनती <strong>live</strong> बदलेगी।</li>
+<li><strong>6 metrics</strong> देखें – शब्द, अक्षर (±space), वाक्य, पैराग्राफ, reading time।</li>
+<li><strong>Limits check करें</strong> – Twitter 280, meta ~160, essay 500।</li>
+<li><strong>Hindi text</strong> भी 100% गिना जाता है (Unicode)।</li>
+<li>Blog/YouTube script की <strong>length plan</strong> करने में इस्तेमाल करें।</li>
+</ol>
+<h2>लंबाई Guide – कितने शब्द कहां?</h2>
+<table class="gt-table"><tr><th>काम</th><th>आम लंबाई</th></tr><tr><td>Tweet/X</td><td>280 chars</td></tr><tr><td>Meta description</td><td>~160 chars</td></tr><tr><td>Essay (school)</td><td>250–500 शब्द</td></tr><tr><td>Blog post</td><td>800–1500+ शब्द</td></tr><tr><td>YouTube 10-min script</td><td>~1300 शब्द</td></tr><tr><td>Resume</td><td>1 page (~400 शब्द)</td></tr></table>
+<div class="note">💡 <strong>Speaking ≠ Reading:</strong> पढ़ना 200 wpm, बोलना 130–150 wpm। 5-min speech = ~700 शब्द। Script हमेशा बोलकर time करें!</div>
+<h2>लिखाई के 5 नियम</h2>
+<ul>
+<li><strong>Short sentences</strong> – 15–20 शब्द max (Hindi/English)।</li>
+<li><strong>Active voice</strong> – 'मैंने किया' > 'मेरे द्वारा किया गया'।</li>
+<li><strong>1 idea = 1 para</strong> – लंबा para = reader भागेगा।</li>
+<li><strong>Headings</strong> – हर 200 शब्द पर subheading।</li>
+<li><strong>Read aloud</strong> – अटके तो sentence छोटा करो।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Reading time कैसे निकलता है?</summary><p>शब्द ÷ 200 (avg reading speed)। 1000 शब्द ≈ 5 min। Speaking (YouTube) में ~130–150 शब्द/min मानें।</p></details>
+<details><summary>SEO के लिए कितने शब्द?</summary><p>Blog: 800–1500+ (topic पर); news: 300+; guide: 2000+। Quality > quantity – thin 300-word posts rank नहीं करते!</p></details>
+<details><summary>Meta description कितनी लंबी?</summary><p>~155–160 characters। ज़्यादा कटी दिखेगी (…), कम = space waste। Counter से exact रखें।</p></details>
+<details><summary>Twitter/X limit कितनी?</summary><p>280 characters (free), 25,000 (Premium)। Counter बिना space वाले अक्षर भी दिखाता है।</p></details>
+<details><summary>Hindi शब्द सही गिनता है?</summary><p>हां – space-based counting भाषा-independent है। मात्राएं/संयुक्ताक्षर अक्षरों में गिने जाते हैं (Unicode standard)।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="cgpa-calculator.html">🎓 CGPA से Percentage कैलकुलेटर</a> · <a href="marks-percentage-calculator.html">🎓 नंबर और प्रतिशत कैलकुलेटर</a> · <a href="hcf-lcm-calculator.html">➗ HCF और LCM कैलकुलेटर</a> · <a href="scientific-calculator.html">🔬 वैज्ञानिक कैलकुलेटर</a> · <a href="simple-calculator.html">🧮 ऑनलाइन कैलकुलेटर</a></div>
+<h2>Freelance Writing Rates India (2026) + Career</h2>
+<p>Word counter सिर्फ गिनती नहीं – <strong>कमाई का meter</strong> है! Freelance Hindi/English writing rates:</p>
+<table class="gt-table"><tr><th>काम</th><th>Beginner</th><th>Experienced</th></tr><tr><td>Blog/article (per word)</td><td>₹0.50–1</td><td>₹2–5+</td></tr><tr><td>Website content (per page)</td><td>₹500–1,000</td><td>₹3,000–8,000</td></tr><tr><td>YouTube script (per min)</td><td>₹200–400</td><td>₹800–2,000</td></tr><tr><td>Copywriting (per project)</td><td>₹2,000+</td><td>₹15,000+</td></tr></table>
+<p><strong>Career roadmap:</strong> रोज़ 500 शब्द लिखो (30 दिन) → 5 samples बनाओ → LinkedIn/Twitter portfolio → Internshala/cold-pitch से clients → 6 महीने में ₹20–40K/माह possible! <strong>AI + human combo</strong> सबसे demanding skill है – AI draft + human polish = premium rates। <strong>Typing speed</strong> 40+ WPM रखो (typing test tool से practice) – speed = direct income! Plagiarism-free + SEO basics सीखो – repeat clients की guarantee।</p>
+<div class="note">💡 <strong>Rate formula:</strong> (महीने का target ÷ काम के दिन ÷ रोज़ के शब्द) = per-word rate। ₹30K target, 25 दिन, 2000 शब्द/दिन → <strong>₹0.60/word minimum!</strong> इससे कम = loss deal।</div>
+<h2>SEO Content Structure + Readability Scores</h2>
+<p>Google rank करने वाले articles का formula (2026):</p>
+<table class="gt-table"><tr><th>Element</th><th>Ideal</th></tr><tr><td>Title (H1)</td><td>50–60 chars + keyword</td></tr><tr><td>Intro</td><td>100 शब्द – जवाब पहले!</td></tr><tr><td>Headings (H2/H3)</td><td>हर 200–300 शब्द पर</td></tr><tr><td>Para length</td><td>2–3 lines max (mobile!)</td></tr><tr><td>Images/alt-text</td><td>हर 500 शब्द पर 1</td></tr><tr><td>FAQ + schema</td><td>5+ Qs (featured snippet!)</td></tr><tr><td>Total</td><td>800–2000 (topic पर)</td></tr></table>
+<p><strong>Readability:</strong> Flesch 60+ (easy) रखो – छोटे वाक्य + simple शब्द + active voice। Hindi में: 15–20 शब्द/vakya max! <strong>E-E-A-T signals:</strong> author name + date + sources + experience ('मैंने try किया') – AI-content से अलग दिखो! <strong>Update:</strong> पुराने posts हर 6 माह refresh (date + facts) = ranking boost। Counter से length + reading-time check करके publish करो – <strong>thin (300-) posts = rank suicide!</strong></p>
+<h2>Famous Word Counts + NaNoWriMo Challenge</h2>
+<table class="gt-table"><tr><th>Work</th><th>Words (लगभग)</th></tr><tr><td>गब्बर-speech? (Filmy!)</td><td>–</td></tr><tr><td>Harry Potter (Book 1)</td><td>77,000</td></tr><tr><td>The Alchemist</td><td>45,000</td></tr><tr><td>Gitanjali (Tagore)</td><td>25,000</td></tr><tr><td>Typical blog post</td><td>1,000–2,000</td></tr><tr><td>PhD thesis</td><td>80,000+</td></tr><tr><td>NaNoWriMo novel</td><td>50,000 (30 दिन!)</td></tr></table>
+<p><strong>NaNoWriMo (November):</strong> 30 दिन में 50,000 शब्द = रोज़ 1,667! Counter से daily-track करो – writers का world-famous challenge! <strong>School:</strong> essay 500–800, project-report 2,000–5,000। <strong>Freelance:</strong> ₹1–3/word (Hindi), ₹2–5 (English) – counter = income-proof! रोज़ 500 शब्द journaling = 6 माह में लेखक!</p>
+<h2>Typing Speed + Daily Writing Goals</h2>
+<p><strong>Typing:</strong> 40 WPM good / 60+ pro – keybr.com + typing.com से practice! <strong>Daily goals:</strong> student 300 / blogger 1000 / author 2000 शब्द – counter से track + streak-calendar (X-marks!) बनाओ। <strong>Pomodoro-writing:</strong> 25-min sprints + 5-min break × 4 = 2000+ शब्द/session! Distraction: phone-airplane-mode + full-screen-editor – environment = output!</p>
+<h2>Word Counter Pro-Tips (सही गिनती!)</h2>
+<p><strong>Hyphenated-words:</strong> 'state-of-the-art' = 1 या 4? Tools अलग गिनते हैं – submission से पहले guideline-check! <strong>Numbers:</strong> '₹1,50,000' कुछ tools 2 शब्द गिनते हैं! <strong>Hidden-text:</strong> Word से paste पर headers/footnotes साथ आते हैं – plain-text-paste (Ctrl+Shift+V!) use करो। <strong>Twitter/LinkedIn:</strong> character-limit (280/3000) – counter से pre-check! <strong>Thesis:</strong> bibliography + annexures गिनती में? University-rules पढ़ो – 10–20% variation normal! हमेशा 2 tools से cross-verify (critical-submissions!)।</p>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>Pawan Verma · GyanTools</strong><p>यह गाइड Pawan Verma ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+
+<script>
+function count(){
+  var t = document.getElementById('txt').value;
+  var words = t.trim() ? t.trim().split(/\s+/).length : 0;
+  var chars = t.length;
+  var cns = t.replace(/\s/g, '').length;
+  var sentences = (t.match(/[।.!?\n]+/g) || []).filter(function(x){return x;}).length;
+  var paras = t.trim() ? t.trim().split(/\n\s*\n/).filter(function(x){return x.trim();}).length : 0;
+  var mins = Math.ceil(words/200);
+  document.getElementById('w').textContent = words;
+  document.getElementById('c').textContent = chars;
+  document.getElementById('cns').textContent = cns;
+  document.getElementById('s').textContent = sentences;
+  document.getElementById('p').textContent = paras;
+  document.getElementById('t').textContent = mins + ' मिनट';
+}
+</script>
+
+<!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
+<script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#txt', anchor:'#txt', title:'शब्द गिनती',
+collect:function(){
+  var t=document.getElementById('txt').value;
+  if(!t.trim()) return null;
+  function v(id){var e=document.getElementById(id);return e?e.textContent.trim():'';}
+  return {items:[
+    {segs:[{text:'शब्द: ',bold:true},{text:v('w')},{text:' · अक्षर: ',bold:true},{text:v('c')},{text:' · अक्षर (बिना space): ',bold:true},{text:v('cns')}]},
+    {segs:[{text:'वाक्य: ',bold:true},{text:v('s')},{text:' · पैराग्राफ: ',bold:true},{text:v('p')},{text:' · पढ़ने का समय: ',bold:true},{text:v('t')}]}
+  ]};
+},title:"📝 शब्द गिनती",slug:"word-counter"};</script>
+<script src="../assets/result-image.js"></script>
+</body>
+</html>

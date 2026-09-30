@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Loan Prepayment Calculator in Hindi – अतिरिक्त EMI से कितनी बचत?</title>
+<meta name="description" content="Loan prepayment कैलकुलेटर हिंदी में – हर महीने अतिरिक्त किश्त जोड़कर देखें कितने महीने पहले लोन खत्म होगा और कितना ब्याज बचेगा। Home loan, car loan के लिए फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Loan Prepayment Calculator – अतिरिक्त EMI से बचत">
+<meta property="og:description" content="थोड़ी अतिरिक्त किश्त से लाखों की बचत देखें।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/loan-prepayment-calculator.html">
+<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
+<link rel="apple-touch-icon" href="https://gyantools.github.io/images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://gyantools.github.io/images/logo.png">
+<!-- ads -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Loan Prepayment Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"लोन प्रीपेमेंट कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.45rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/loan-prepayment-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Prepayment और part-payment में अंतर?", "acceptedAnswer": {"@type": "Answer", "text": "Part-payment = बीच में कुछ रकम जमा (लोन जारी), prepayment/foreclosure = पूरा लोन एक साथ बंद। दोनों floating home loan पर बिना charge होते हैं।"}}, {"@type": "Question", "name": "क्या prepayment से CIBIL बढ़ता है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – कम outstanding और समय पर closure से credit utilization घटता है और score सुधरता है।"}}, {"@type": "Question", "name": "Home loan prepayment पर tax छूट जाती है?", "acceptedAnswer": {"@type": "Answer", "text": "Prepayment के बाद बचा interest घटेगा तो 24(b)/80C छूट भी घटेगी – फिर भी prepayment फायदेमंद है क्योंकि छूट सिर्फ ~30% है जबकि ब्याज 100% बचता है।"}}, {"@type": "Question", "name": "Extra पैसा invest करूं या prepayment?", "acceptedAnswer": {"@type": "Answer", "text": "अगर loan दर 9% और safe return 7% है तो prepayment बेहतर (guaranteed 9% बचत)। Long-term equity (12%+ उम्मीद) से तुलना करके फैसला लें।"}}, {"@type": "Question", "name": "Bank prepayment लेने से मना करे तो?", "acceptedAnswer": {"@type": "Answer", "text": "RBI नियम से floating home loan prepayment से मना नहीं कर सकते। लिखित complaint दें और Banking Ombudsman (RBI) में मुफ़्त शिकायत करें।"}}]}
+</script>
+
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../index.html#games">गेम्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › Loan Prepayment कैलकुलेटर</p>
+
+  <div class="tool-box">
+    <h1>💸 Loan Prepayment कैलकुलेटर</h1>
+    <p>हर महीने थोड़ा अतिरिक्त जोड़ें – देखें लोन कितना पहले खत्म होगा और कितना ब्याज बचेगा।</p>
+    <label for="bal">बाकी लोन राशि (₹)</label>
+    <input type="number" id="bal" placeholder="जैसे: 5000000" min="10000" step="any">
+    <div class="row">
+      <div>
+        <label for="rate">सालाना ब्याज दर (%)</label>
+        <input type="number" id="rate" placeholder="जैसे: 8.5" min="1" max="30" step="any">
+      </div>
+      <div>
+        <label for="mon">बाकी अवधि (महीने)</label>
+        <input type="number" id="mon" placeholder="जैसे: 240" min="1" max="360" step="1">
+      </div>
+    </div>
+    <label for="extra">हर महीने अतिरिक्त भुगतान (₹) – अपनी EMI के ऊपर</label>
+    <input type="number" id="extra" placeholder="जैसे: 5000" min="0" step="any">
+    <button onclick="calc()">बचत निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>Prepayment का जादू – उदाहरण से समझें</h2>
+    <p>लोन की शुरुआती किश्तों में <strong>ब्याज का हिस्सा सबसे बड़ा</strong> होता है। इसीलिए शुरुआती सालों में अतिरिक्त भुगतान सबसे ज़्यादा असर करता है – वह रकम सीधे मूलधन से कटती है, और उस पर आगे का पूरा ब्याज हमेशा के लिए बच जाता है।</p>
+    <p>मोटा उदाहरण (test किया हुआ): ₹50 लाख बाकी, 8.5% दर, 20 साल बाकी (EMI ~₹43,391) – सिर्फ <strong>₹5,000/महीना अतिरिक्त</strong> जोड़ने से लोन <strong>54 महीने (~साढ़े चार साल) पहले</strong> खत्म और <strong>₹13.9 लाख</strong> तक ब्याज की बचत! अपना हिसाब ऊपर निकालकर देखें!</p>
+    <h2>पहले या बाद में?</h2>
+    <ul>
+      <li><strong>जितना जल्दी, उतना फायदा</strong> – पहले साल का ₹1 लाख अतिरिक्त, आख़िरी साल के ₹2 लाख से ज़्यादा बचाता है</li>
+      <li>बोनस/पुरस्कार (bonus) मिलने पर एकमुश्त राशि भी जोड़ें – ऊपर के calculator में उसे 12 से भागकर मासिक अनुमान की तरह डाल सकते हैं</li>
+      <li>Emergency fund (3–6 महीने का खर्च) पहले जुटा लें – सारी बचत लोन में डुबोकर फिर कर्ज़ पर न आएं</li>
+    </ul>
+    <h2>किन लोनों पर सबसे पहले?</h2>
+    <ul>
+      <li>Personal loan / credit card का कर्ज़ (सबसे महंगा – पहले खत्म करें)</li>
+      <li>Car loan</li>
+      <li>Home loan (सस्ता और टैक्स फायदे वाला हो सकता है – पुरानी रजिम की छूट देखकर तय करें)</li>
+    </ul>
+    <div class="note">💡 कई बैंक floating rate home loan पर prepayment free लेते हैं – charge के बारे में बैंक से पूछकर ही बड़ी रकम जमा करें।</div>
+    <div class="note">⚠️ यह tool अनुमान देता है – बैंक की गिनती (खुली तारीखें, शुल्क) से थोड़ा अंतर हो सकता है।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  
+<h2>Prepayment बचत कैसे निकालें?</h2>
+<ol>
+<li>बचा हुआ <strong>loan balance, ब्याज दर और बची अवधि</strong> भरें।</li>
+<li><strong>मासिक extra राशि</strong> डालें (जैसे ₹5,000) – या एकमुश्त part-payment।</li>
+<li><strong>दो विकल्प compare करें</strong> – EMI कम करें vs अवधि घटाएं।</li>
+<li>नतीजे में <strong>बचा ब्याज + बचे महीने</strong> साफ दिखेंगे।</li>
+<li>Bank से <strong>prepayment charges</strong> confirm करें (floating home loan पर zero)।</li>
+</ol>
+<h2>अवधि घटाएं या EMI? – ₹25L, 9%, 20 साल + ₹5,000/माह extra</h2>
+<table class="gt-table"><tr><th>विकल्प</th><th>ब्याज बचत (लगभग)</th><th>फायदा</th></tr><tr><td>कुछ न करें</td><td>–</td><td>कुल ब्याज ~₹27.5L</td></tr><tr><td>EMI same, अवधि घटाएं ⭐</td><td>~₹10–12 लाख</td><td>लोन ~6–7 साल पहले खत्म</td></tr><tr><td>अवधि same, EMI घटाएं</td><td>~₹4–5 लाख</td><td>मासिक बोझ कम</td></tr></table>
+<div class="note">💡 <strong>हमेशा अवधि घटाना बेहतर</strong> – उसी extra पैसे से दोगुनी-तिगुनी बचत! EMI तभी घटाएं जब मासिक बजट टाइट हो। Bank को लिखित में बताएं कि prepayment <strong>tenure reduction</strong> में लगाएं।</div>
+<h2>Prepayment के 5 सुनहरे नियम</h2>
+<ul>
+<li><strong>शुरुआत में करें</strong> – पहले 5 साल में 1 रुपया = बाद के 3 रुपये के बराबर।</li>
+<li><strong>Emergency fund पहले</strong> – 6 महीने का खर्च बचाकर रखें, फिर prepayment।</li>
+<li><strong>High-interest पहले</strong> – personal loan/credit card (12–42%) home loan (9%) से पहले चुकाएं।</li>
+<li><strong>Tax angle देखें</strong> – home loan interest पर छूट मिलती है, तो 80C/24b भरने के बाद extra prepayment सोचें।</li>
+<li><strong>Charges पूछें</strong> – floating home loan: zero; fixed/personal loan: 2–5% तक हो सकता है।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Prepayment और part-payment में अंतर?</summary><p>Part-payment = बीच में कुछ रकम जमा (लोन जारी), prepayment/foreclosure = पूरा लोन एक साथ बंद। दोनों floating home loan पर बिना charge होते हैं।</p></details>
+<details><summary>क्या prepayment से CIBIL बढ़ता है?</summary><p>हां – कम outstanding और समय पर closure से credit utilization घटता है और score सुधरता है।</p></details>
+<details><summary>Home loan prepayment पर tax छूट जाती है?</summary><p>Prepayment के बाद बचा interest घटेगा तो 24(b)/80C छूट भी घटेगी – फिर भी prepayment फायदेमंद है क्योंकि छूट सिर्फ ~30% है जबकि ब्याज 100% बचता है।</p></details>
+<details><summary>Extra पैसा invest करूं या prepayment?</summary><p>अगर loan दर 9% और safe return 7% है तो prepayment बेहतर (guaranteed 9% बचत)। Long-term equity (12%+ उम्मीद) से तुलना करके फैसला लें।</p></details>
+<details><summary>Bank prepayment लेने से मना करे तो?</summary><p>RBI नियम से floating home loan prepayment से मना नहीं कर सकते। लिखित complaint दें और Banking Ombudsman (RBI) में मुफ़्त शिकायत करें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="emi-calculator.html">💰 EMI कैलकुलेटर – मासिक किश्त निकालें</a> · <a href="emi-table-calculator.html">📊 EMI टेबल (Amortization) कैलकुलेटर</a> · <a href="loan-eligibility-calculator.html">🏦 Loan Eligibility कैलकुलेटर</a> · <a href="home-loan-tax.html">🏠 होम लोन टैक्स बेनिफिट कैलकुलेटर</a> · <a href="car-loan-eligibility.html">🚗 कार लोन एलिजिबिलिटी कैलकुलेटर</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<h2>Real Case Study – ₹40L Home Loan (9%, 20Y) + ₹10K/माह Extra</h2>
+<p>Ramesh ने ₹40L home loan लिया (EMI ≈ ₹35,989, 20 साल)। 2nd साल से ₹10,000/माह extra (tenure-reduction) शुरू किया। नतीजा:</p>
+<table class="gt-table"><tr><th></th><th>बिना Prepayment</th><th>₹10K Extra ⭐</th></tr><tr><td>कुल ब्याज</td><td>≈ ₹46.4L</td><td>≈ ₹24.8L</td></tr><tr><td>बचत</td><td>–</td><td><strong>≈ ₹21.6L!</strong></td></tr><tr><td>Loan खत्म</td><td>20 साल</td><td><strong>~11.5 साल</strong></td></tr></table>
+<p><strong>Prepayment vs Invest?</strong> Extra ₹10K SIP (12%) में डालते तो 11.5 साल में ≈ ₹30L बनता – पर loan 20 साल चलता + ₹46L ब्याज! Net: prepayment (guaranteed 9% + peace) vs SIP (12% उम्मीद + risk)। <strong>Rule:</strong> loan-rate से 3%+ ज़्यादा sure-return न मिले तो <strong>prepayment जीतो</strong>। High-interest (personal 12%+) हो तो invest सोचना भी मत – पहले loan मारो! <strong>Tax note:</strong> prepayment से 24(b) छूट घटेगी – पर ₹21.6L बचत vs ~₹2L छूट-नुकसान – no competition!</p>
+<h2>Balance Transfer Math – कब फायदेमंद?</h2>
+<p>9.5% से 8.5% transfer (₹30L, 15Y बचे): EMI ₹29,290 → ₹27,600 = <strong>₹1,690/माह बचत</strong>। पर costs: processing (0.5–1% = ₹15–30K) + MODT/stamp + time। <strong>Break-even:</strong> ₹25K cost ÷ ₹1,690 = ~15 महीने – 15Y बचे हों तो jackpot, 2Y बचे हों तो loss!</p>
+<table class="gt-table"><tr><th>Transfer करो अगर ✓</th><th>मत करो अगर ✗</th></tr><tr><td>दर-फर्क 0.5%+</td><td>फर्क 0.25% से कम</td></tr><tr><td>अवधि 5Y+ बची</td><td>2–3Y ही बचे</td></tr><tr><td>CIBIL 750+ (best rate)</td><td>CIBIL खराब (rate same!)</td></tr><tr><td>Zero/low processing deal</td><td>Heavy charges + MODT</td></tr></table>
+<p><strong>Negotiation hack:</strong> transfer-quote लेकर <strong>अपने bank से bargain</strong> करो – retention-desk अक्सर rate match कर देता है (paperwork zero!)। <strong>Top-up trap:</strong> transfer के साथ top-up loan मत लो (rate + tenure दोनों बिगड़ते हैं)। New bank की reset-clause + prepayment-terms पढ़कर ही sign करो!</p>
+<h2>Prepayment Charges (Bank-wise नियम)</h2>
+<table class="gt-table"><tr><th>Loan Type</th><th>Floating Rate</th><th>Fixed Rate</th></tr><tr><td>Home loan (individual)</td><td><strong>ZERO</strong> (RBI नियम!) ⭐</td><td>ZERO (NHB/RBI: individuals)</td></tr><tr><td>Company/firm borrower</td><td>0–2%</td><td>2–4%</td></tr><tr><td>Personal loan</td><td>2–5%</td><td>2–5%</td></tr><tr><td>Car loan</td><td>3–6 माह interest*</td><td>3–6 माह interest*</td></tr></table>
+<p>*कई banks 12 EMI बाद free-closure देते हैं – sanction-letter पढ़ो! <strong>Home-loan individuals = हमेशा zero</strong> – bank मांगे तो RBI circular दिखाओ + complaint (CMS portal)! Part-payment साल में कितनी बार? Most banks unlimited (some: 1–4/year) – MITC document check करो!</p>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>Pawan Verma · GyanTools</strong><p>यह गाइड Pawan Verma ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+
+<script>
+function simulate(P, r, pay){
+  var months = 0, total = 0;
+  while(P > 0 && months < 1200){
+    P = P*(1+r) - pay;
+    total += pay;
+    months++;
+    if(P < 0){ total += P; P = 0; }
+  }
+  return {months:months, paid:total};
+}
+function calc(){
+  var P = parseFloat(document.getElementById('bal').value);
+  var R = parseFloat(document.getElementById('rate').value);
+  var N = parseInt(document.getElementById('mon').value);
+  var extra = parseFloat(document.getElementById('extra').value) || 0;
+  var out = document.getElementById('out');
+  if(!P || P < 10000 || isNaN(R) || !N || N < 1 || N > 360){ out.style.display='block'; out.innerHTML='⚠️ कृपया सभी जानकारी सही भरें।'; return; }
+  var r = R/1200;
+  var emi = P*r*Math.pow(1+r,N)/(Math.pow(1+r,N)-1);
+  if(r === 0) emi = P/N;
+  if(emi <= P*r){ out.style.display='block'; out.innerHTML='⚠️ EMI ही ब्याज से कम है – ये लोन इस दर से खत्म नहीं होगा।'; return; }
+  var base = simulate(P, r, emi);
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  if(extra <= 0){
+    out.style.display='block';
+    out.innerHTML = '<p>आपकी EMI: <strong>' + f(emi) + '</strong> · बाकी ' + base.months + ' महीने (' + (base.months/12).toFixed(1) + ' साल) · कुल भुगतान: ' + f(base.paid) + '</p><p>💡 ऊपर "अतिरिक्त भुगतान" में राशि डालकर बचत देखें!</p>';
+    return;
+  }
+  var fast = simulate(P, r, emi + extra);
+  var saveInterest = base.paid - fast.paid;
+  var saveMonths = base.months - fast.months;
+  out.style.display='block';
+  out.innerHTML = '<p>आपकी EMI: <strong>' + f(emi) + '</strong> · नई कुल किश्त: <strong>' + f(emi+extra) + '</strong></p>'
+    + '<div class="big">ब्याज की बचत: ' + f(saveInterest) + '</div>'
+    + '<p>लोन <strong>' + saveMonths + ' महीने (' + (saveMonths/12).toFixed(1) + ' साल) पहले</strong> खत्म होगा</p>'
+    + '<p>अब: ' + base.months + ' महीने · अतिरिक्त के साथ: ' + fast.months + ' महीने</p>';
+}
+</script>
+
+<!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
+<script defer src="/assets/ads.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#out',title:"💸 Loan Prepayment कैलकुलेटर",slug:"loan-prepayment-calculator"};</script>
+<script src="../assets/result-image.js"></script>
+</body>
+</html>
