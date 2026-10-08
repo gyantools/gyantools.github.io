@@ -1,0 +1,15 @@
+# GyanTools — ads.txt
+#
+# Kyun ye file zaroori hai:
+#   ads.txt batata hai ki aapke domain par ads bechne ka haq SIRF kin ko hai.
+#   Iske bina koi aapka domain spoof karke aapke naam par inventory bech sakta hai.
+#   AdSense ke liye ye COMPULSORY hai. Adsterra ke liye optional par useful.
+#
+# ---- Adsterra (abhi chal raha hai) ----
+# Apne Adsterra dashboard -> Websites -> apni site -> "ads.txt" section se
+# exact line copy karke neeche paste karein. Format aisa hoga:
+#   adsterra.com, PUB-XXXXXX, DIRECT
+#
+# ---- Google AdSense (jab domain + approval mil jaye) ----
+# apna pub-id daalein:
+#   google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

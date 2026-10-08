@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Sudoku Game Hindi – नई आसान, मध्यम और कठिन पहेली | GyanTools</title>
+<meta name="description" content="हिंदी में मुफ्त Sudoku खेलें। हर row, column और 3×3 box में 1–9 एक बार भरें। आसान, मध्यम, कठिन; notes, hints, timer और keyboard support।">
+<link rel="canonical" href="https://gyantools.github.io/games/sudoku.html">
+<meta property="og:title" content="Sudoku – हिंदी में मुफ्त पहेली | GyanTools">
+<meta property="og:description" content="हिंदी में मुफ्त Sudoku खेलें। हर row, column और 3×3 box में 1–9 एक बार भरें। आसान, मध्यम, कठिन; notes, hints, timer और keyboard support।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/games/sudoku.html">
+<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools - हिंदी में Free Online Tools aur Games">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
+<link rel="apple-touch-icon" href="../images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../images/logo.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sudoku Puzzle Game Hindi","applicationCategory":"GameApplication","operatingSystem":"Web","description":"हर पंक्ति, स्तम्भ और 3×3 box में 1–9 भरने की तर्क पहेली।","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<script>try{var t=localStorage.getItem('gt_theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<style>
+:root{--bg:#f6f8fb;--card:#ffffff;--text:#1f2937;--muted:#6b7280;--brand:#1a73e8;--brand2:#e8710a;--line:#e5e7eb;--chip:#eef2f7;--shadow:0 1px 3px rgba(16,24,40,.08);--win:#188038;--lose:#d93025}
+[data-theme="dark"]{--bg:#0f172a;--card:#1e293b;--text:#e5e7eb;--muted:#94a3b8;--brand:#60a5fa;--brand2:#fb923c;--line:#334155;--chip:#273449;--shadow:0 1px 3px rgba(0,0,0,.45);--win:#5bb974;--lose:#f28b82}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.container{max-width:1080px;margin:0 auto;padding:0 18px}
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:11px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.35rem;font-weight:800;color:var(--brand);text-decoration:none;letter-spacing:-.5px}
+.logo span{color:var(--brand2)}
+nav ul{list-style:none;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:.93rem}
+nav a:hover{color:var(--brand)}
+.chipbtn{background:var(--chip);border:1px solid var(--line);color:var(--text);border-radius:20px;padding:7px 12px;font-size:.85rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.chipbtn:hover{border-color:var(--brand)}
+.breadcrumb{font-size:.85rem;color:var(--muted);margin:14px 0 0}
+.breadcrumb a{color:var(--brand);text-decoration:none}
+.game-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow);margin:16px 0;text-align:center}
+.game-box h1{font-size:1.55rem;color:var(--brand);margin-bottom:4px}
+.sub{color:var(--muted);font-size:.95rem;margin-bottom:12px}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.stats span{background:var(--chip);padding:7px 16px;border-radius:20px;font-size:.92rem}
+.stats b{color:var(--brand)}
+.btn{background:var(--brand);color:#fff;border:none;padding:11px 24px;border-radius:9px;font-size:.98rem;font-weight:700;cursor:pointer;margin:5px;touch-action:manipulation}
+.btn:hover{filter:brightness(1.1)}
+.btn.sec{background:var(--chip);color:var(--text);border:1px solid var(--line)}
+.btn.sm{padding:8px 14px;font-size:.88rem}
+.btnrow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.btnrow .btn{margin:2px}
+#msg{font-weight:700;min-height:1.8em;margin-top:10px;font-size:1.06rem}
+#msg.win{color:var(--win)}
+#msg.lose{color:var(--lose)}
+article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:var(--shadow);margin:22px 0;text-align:left}
+article h2{margin:22px 0 8px;color:var(--brand);font-size:1.2rem}
+article h2:first-child{margin-top:0}
+article h3{margin:16px 0 6px;color:var(--brand2);font-size:1.02rem}
+article p,article li{margin-bottom:9px}
+article ul{padding-left:22px}
+article table{border-collapse:collapse;width:100%;margin:10px 0;font-size:.92rem}
+article th,article td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+article th{background:var(--chip)}
+footer{background:var(--card);border-top:1px solid var(--line);margin-top:30px;padding:22px 0;text-align:center;color:var(--muted);font-size:.9rem}
+footer a{color:var(--brand);text-decoration:none}
+.rel{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.rel a{background:var(--chip);border:1px solid var(--line);color:var(--text);padding:7px 14px;border-radius:20px;text-decoration:none;font-size:.87rem}
+.rel a:hover{border-color:var(--brand);color:var(--brand)}
+.gt-ad-label{display:block;font-size:11px;letter-spacing:.5px;color:#9aa0a6;text-transform:uppercase;margin-bottom:6px;font-family:system-ui,Arial,sans-serif}
+/* ---- Tic Tac Toe ---- */
+.ttt{display:grid;grid-template-columns:repeat(3,92px);grid-template-rows:repeat(3,92px);gap:8px;justify-content:center;margin:14px auto}
+.ttt button{font-size:2.3rem;font-weight:800;border:1px solid var(--line);border-radius:12px;background:var(--chip);color:var(--text);cursor:pointer;font-family:inherit}
+.ttt button:hover{background:var(--card);border-color:var(--brand)}
+.ttt button.x{color:#1a73e8}.ttt button.o{color:#e8710a}
+.ttt button.win{background:#d9f2e3;border-color:var(--win)}
+[data-theme="dark"] .ttt button.win{background:#14532d}
+/* ---- Memory ---- */
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:440px;margin:14px auto}
+.mem button{aspect-ratio:1;border:1px solid var(--line);border-radius:12px;background:var(--chip);font-size:1.9rem;cursor:pointer;transition:transform .15s}
+.mem button:active{transform:scale(.94)}
+.mem button.open,.mem button.done{border-color:var(--brand);background:var(--card)}
+.mem button.done{opacity:.75;cursor:default}
+/* ---- Snake (canvas) ---- */
+#snakeCanvas{background:#233; border-radius:12px;border:1px solid var(--line);max-width:100%;touch-action:none}
+.pad{display:grid;grid-template-columns:56px 56px 56px;gap:8px;justify-content:center;margin:12px auto;width:max-content}
+.pad button{width:56px;height:48px;font-size:1.25rem;background:var(--chip);color:var(--text);border:1px solid var(--line);border-radius:10px;cursor:pointer;font-weight:700}
+.pad button:active{background:var(--brand);color:#fff}
+.pad .sp{visibility:hidden}
+/* ---- 2048 ---- */
+.g2048{display:grid;grid-template-columns:repeat(4,74px);grid-template-rows:repeat(4,74px);gap:9px;background:#b9c2cf;border-radius:12px;padding:9px;width:max-content;margin:14px auto;touch-action:none}
+[data-theme="dark"] .g2048{background:#3b4a61}
+.g2048 .cell{background:rgba(255,255,255,.55);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:#5b5648}
+[data-theme="dark"] .g2048 .cell{background:rgba(255,255,255,.08);color:#e5e7eb}
+.g2048 .cell.pop{animation:pop .18s ease}
+@keyframes pop{0%{transform:scale(.4)}100%{transform:scale(1)}}
+.t2{background:#eee4da!important}.t4{background:#ede0c8!important}.t8{background:#f2b179!important;color:#fff!important}
+.t16{background:#f59563!important;color:#fff!important}.t32{background:#f67c5f!important;color:#fff!important}
+.t64{background:#f65e3b!important;color:#fff!important}.t128{background:#edcf72!important;color:#fff!important;font-size:1.25rem!important}
+.t256{background:#edcc61!important;color:#fff!important;font-size:1.25rem!important}.t512{background:#edc850!important;color:#fff!important;font-size:1.25rem!important}
+.t1024{background:#edc53f!important;color:#fff!important;font-size:1.05rem!important}.t2048{background:#edc22e!important;color:#fff!important;font-size:1.05rem!important;box-shadow:0 0 14px rgba(237,194,46,.85)}
+.t4096{background:#3c3a32!important;color:#fff!important}.t8192{background:#3c3a32!important;color:#edc22e!important;box-shadow:0 0 14px rgba(237,194,46,.6)}
+/* ---- Connect Four ---- */
+.c4{display:grid;grid-template-columns:repeat(7,52px);gap:6px;background:#1a73e8;border-radius:12px;padding:10px;width:max-content;margin:14px auto;touch-action:manipulation}
+.c4 .col{display:grid;grid-template-rows:repeat(6,52px);gap:6px;cursor:pointer}
+.c4 .h{background:rgba(255,255,255,.25);border-radius:50%;width:52px;height:52px}
+.c4 .r{background:#e74c3c;border-radius:50%;width:52px;height:52px;animation:drop .25s ease}
+.c4 .y{background:#f1c40f;border-radius:50%;width:52px;height:52px;animation:drop .25s ease}
+.c4 .h.hl{background:rgba(255,255,255,.5)}
+.c4 .w{box-shadow:0 0 0 3px #fff,0 0 12px #fff}
+@keyframes drop{0%{transform:translateY(-160px)}100%{transform:translateY(0)}}
+/* ---- Dots & Boxes ---- */
+.db-wrap{display:flex;justify-content:center;margin:14px auto;overflow-x:auto}
+.db{display:grid;gap:0;touch-action:manipulation}
+.db .dot{width:14px;height:14px;border-radius:50%;background:var(--muted);place-self:center;z-index:2}
+.db .h,.db .v{position:relative;cursor:pointer}
+.db .h{width:56px;height:14px}.db .v{width:14px;height:56px}
+.db .h::after,.db .v::after{content:"";position:absolute;background:transparent;border-radius:8px}
+.db .h::after{left:0;top:4px;width:56px;height:6px}
+.db .v::after{left:4px;top:0;width:6px;height:56px}
+.db .h:hover::after,.db .v:hover::after{background:var(--brand);opacity:.45}
+.db .h.on::after,.db .v.on::after{background:var(--brand)}
+.db .box{width:56px;height:56px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800}
+.db .box.p1{color:#e74c3c}.db .box.p2{color:#f1c40f}
+/* ---- Checkers / Reversi / Chess boards ---- */
+.brd{display:grid;gap:0;margin:14px auto;width:max-content;border:2px solid var(--line);border-radius:8px;overflow:hidden}
+.brd .sq{width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:1.9rem;cursor:pointer;position:relative;user-select:none}
+.brd .dk{background:#c9a06c}.brd .lt{background:#f0d9b5}
+[data-theme="dark"] .brd .dk{background:#8b6b45}[data-theme="dark"] .brd .lt{background:#d8c39a}
+.brd .sq.sel{outline:3px solid var(--brand);outline-offset:-3px}
+.brd .sq.hint::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:rgba(26,115,232,.55)}
+.brd .sq.last{box-shadow:inset 0 0 0 3px rgba(26,115,232,.5)}
+.piece{cursor:pointer;line-height:1}
+.piece.w{color:#f8f9fa;text-shadow:0 1px 2px rgba(0,0,0,.7)}
+.piece.b{color:#202124;text-shadow:0 1px 1px rgba(255,255,255,.35)}
+.piece.king{font-size:1.6rem}
+/* ---- Snake & Ladder ---- */
+.sl{display:grid;grid-template-columns:repeat(10,1fr);width:min(480px,100%);margin:14px auto;border:2px solid var(--line);border-radius:10px;overflow:hidden;aspect-ratio:1}
+.sl .c{position:relative;display:flex;align-items:flex-start;justify-content:flex-start;padding:2px 4px;font-size:.68rem;color:var(--muted);border:.5px solid var(--line);background:var(--card)}
+.sl .c:nth-child(odd){background:var(--chip)}
+.sl .tok{position:absolute;bottom:2px;right:3px;font-size:.95rem}
+.sl .c.ladder{background:linear-gradient(135deg,#d9f2e3,#fff)}
+.sl .c.snake{background:linear-gradient(135deg,#fbe3e0,#fff)}
+[data-theme="dark"] .sl .c.ladder{background:linear-gradient(135deg,#14532d,#1e293b)}
+[data-theme="dark"] .sl .c.snake{background:linear-gradient(135deg,#5b2320,#1e293b)}
+/* ---- Sudoku ---- */
+.sud{display:grid;grid-template-columns:repeat(9,1fr);width:min(440px,100%);margin:14px auto;border:2.5px solid #5b5648;border-radius:6px;overflow:hidden;background:#5b5648;gap:1px}
+.sud .c2{aspect-ratio:1;background:var(--card);display:flex;align-items:center;justify-content:center;font-size:1.35rem;font-weight:700;cursor:pointer;position:relative;color:var(--text)}
+.sud .c2.given{color:var(--brand);font-weight:800;cursor:default}
+.sud .c2.related:not(.given){background:#edf4ff}
+.sud .c2.sel{background:#d2e3fc;outline:2px solid var(--brand);outline-offset:-2px;z-index:1}
+[data-theme="dark"] .sud .c2.related:not(.given){background:#253a58}
+[data-theme="dark"] .sud .c2.sel{background:#1e3a5f}
+.sud .c2.err{color:var(--lose);background:#fce8e6}
+.sud .c2:nth-child(3n){border-right:2px solid #5b5648}
+.sud .c2:nth-child(9n+1),.sud .c2:nth-child(9n+2),.sud .c2:nth-child(9n+3){}
+.sud .rbox{border-top:2px solid #5b5648}
+.sud .notes{position:absolute;inset:2px;display:grid;grid-template-columns:repeat(3,1fr);font-size:.52rem;color:var(--muted);font-weight:400;line-height:1.25;padding:1px}
+.numpad{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;max-width:340px;margin:12px auto}
+.numpad button{padding:11px 0;font-size:1.15rem;font-weight:700;border:1px solid var(--line);border-radius:9px;background:var(--chip);color:var(--text);cursor:pointer}
+.numpad button:hover{border-color:var(--brand)}
+/* ---- Quiz (gk / paheli / math / rps / word) ---- */
+.qcard{max-width:640px;margin:14px auto;text-align:left;background:var(--chip);border:1px solid var(--line);border-radius:12px;padding:18px}
+.qtext{font-size:1.12rem;font-weight:700;margin-bottom:12px}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;padding:11px 14px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--text);font-size:1rem;cursor:pointer;font-family:inherit}
+.opt:hover{border-color:var(--brand)}
+.opt.correct{background:#d9f2e3;border-color:var(--win)}
+.opt.wrong{background:#fce8e6;border-color:var(--lose)}
+.opt:disabled{cursor:default}
+[data-theme="dark"] .opt.correct{background:#14532d}[data-theme="dark"] .opt.wrong{background:#5b2320}
+.wg{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;max-width:340px;margin:12px auto}
+.wg .row{display:contents}
+.wg .cell2{aspect-ratio:1;border:2px solid var(--line);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;text-transform:uppercase}
+.wg .g{background:#d9f2e3;border-color:var(--win);color:#145a32}
+.wg .y{background:#fef7e0;border-color:#f9ab00;color:#7a5800}
+.wg .x{background:var(--chip);border-color:var(--line);color:var(--muted)}
+[data-theme="dark"] .wg .g{background:#14532d;color:#a8e6bb}[data-theme="dark"] .wg .y{background:#4d3f14;color:#ffd666}
+.kb{margin:10px auto;display:flex;flex-wrap:wrap;gap:5px;justify-content:center;max-width:480px}
+.kb button{padding:8px 0;flex:1 0 30px;max-width:44px;border:1px solid var(--line);border-radius:7px;background:var(--chip);color:var(--text);font-weight:700;cursor:pointer;font-family:inherit}
+.kb button.correct{background:#d9f2e3;color:#145a32;border-color:var(--win)}
+[data-theme="dark"] .kb button.correct{background:#14532d;color:#a8e6bb}
+.kb button.yellow{background:#fef7e0;color:#7a5800;border-color:#f9ab00}
+[data-theme="dark"] .kb button.yellow{background:#4d3f14;color:#ffd666}
+.rps{display:flex;gap:12px;justify-content:center;margin:14px 0;flex-wrap:wrap}
+.rps button{font-size:2.6rem;padding:16px 22px;border:1px solid var(--line);border-radius:14px;background:var(--chip);cursor:pointer;transition:transform .12s}
+.rps button:hover{border-color:var(--brand)}
+.rps button:active{transform:scale(.9)}
+/* ---- games hub ---- */
+.hub{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:18px 0}
+.hub a{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px;text-decoration:none;color:var(--text);box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+.hub a:hover{transform:translateY(-3px);border-color:var(--brand)}
+.hub .em{font-size:2rem}
+.hub h3{color:var(--brand);font-size:1.02rem;margin:6px 0 2px}
+.hub p{font-size:.85rem;color:var(--muted)}
+.hubsearch{width:min(420px,100%);margin:14px auto;display:block;padding:12px 18px;border-radius:24px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:1rem;font-family:inherit}
+@media(max-width:560px){
+  .game-box{padding:14px}
+  article{padding:18px}
+  .ttt{grid-template-columns:repeat(3,86px);grid-template-rows:repeat(3,86px)}
+  .brd .sq{width:42px;height:42px;font-size:1.55rem}
+  .c4{grid-template-columns:repeat(7,40px)}
+  .c4 .col{grid-template-rows:repeat(6,40px)}
+  .c4 .h,.c4 .r,.c4 .y{width:40px;height:40px}
+  .g2048{grid-template-columns:repeat(4,70px);grid-template-rows:repeat(4,70px)}
+  nav ul{gap:10px}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="index.html">गेम्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+        <li><button class="chipbtn" id="themeBtn" type="button">🌙 डार्क मोड</button></li>
+        <li><button class="chipbtn" id="sndBtn" type="button">🔊 ध्वनि ON</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › <a href="index.html">गेम्स</a> › Sudoku पहेली</p>
+
+  <div class="game-box">
+    <h1>🔢 Sudoku – दिमाग की पहेली</h1>
+    <p class="sub">हर पंक्ति, स्तम्भ और 3×3 box में 1 से 9 तक हर अंक सिर्फ़ एक बार रखें।</p>
+    <div class="stats" id="stats"><span>⏱️ समय: <b id="sTime">00:00</b></span><span>❌ गलतियाँ: <b id="mistakes">0</b></span><span>💡 hints: <b id="hintN">3</b></span></div>
+    <div class="btnrow"><label class="chipbtn">स्तर: <select id="difficulty" onchange="sdkNew()" style="border:0;background:transparent;color:inherit;font:inherit"><option value="easy">आसान</option><option value="medium" selected>मध्यम</option><option value="hard">कठिन</option></select></label> <button class="btn sec" id="noteBtn" onclick="sdkToggleNotes()">✏️ Notes बंद</button></div>
+    <div class="sud" id="sudGrid"></div><div class="numpad" id="numPad"></div>
+    <p id="msg"></p>
+    <div class="btnrow"><button class="btn" onclick="sdkNew()">🔄 नई पहेली</button> <button class="btn sec" onclick="sdkHint()">💡 संकेत</button> <button class="btn sec" onclick="sdkCheck()">✅ जाँचें</button> <button class="btn sec" onclick="sdkSolve()">👀 हल देखें</button> <button class="btn sec" type="button" onclick="gtShare()">📤 game share karein</button></div>
+    <div class="rel"><a href="math-quiz.html">🧠 Math Quiz</a> <a href="word-guess.html">🔤 Word Guess</a> <a href="paheli-game.html">🧩 हिंदी पहेलियां</a> <a href="memory-game.html">🃏 जोड़ी मिलाओ</a></div>
+  </div>
+
+  <article>
+<h2>Sudoku के नियम</h2><p>9×9 grid के खाली खानों में 1 से 9 तक अंक भरें। हर पंक्ति, हर स्तम्भ और हर 3×3 box में कोई अंक दो बार नहीं आना चाहिए। नीले अंक पहले से दिए गए हैं; उन्हें बदला नहीं जा सकता।</p><h2>इस खेल में</h2><ul><li>आसान, मध्यम और कठिन स्तर पर नई पहेली।</li><li>Notes mode में सम्भावित अंकों के छोटे निशान रखें।</li><li>तीन hints किसी खाली खाने का सही अंक बताते हैं।</li><li>मोबाइल number pad या keyboard के 1–9 और Backspace से खेलें।</li></ul><h2>तर्क से हल करने की शुरुआत</h2><p>सबसे भरी हुई पंक्ति, स्तम्भ या box पहले देखें। फिर एक अंक चुनकर जाँचें कि वह खाली खाने में कहाँ आ सकता है। यदि किसी खाने में केवल एक सम्भावना बचे, वही उत्तर है।</p><p>गलत entry, सही अंक, hint और पहेली पूरी होने पर अलग ध्वनि सुनाई देगी। गेम स्थानीय browser में चलता है।</p>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools &amp; Games</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+
+<script defer src="../assets/ads.js"></script>
+<script defer src="../assets/ga.js"></script>
+<script>
+
+/* ===== GyanTools Sound Engine (WebAudio, fully inline - no external audio files) ===== */
+var SND = (function(){
+  var ctx = null, on = true;
+  try { on = localStorage.getItem('gt_sound') !== 'off'; } catch(e){}
+  function C(){ if(!ctx){ var A = window.AudioContext || window.webkitAudioContext; if(A) ctx = new A(); } if(ctx && ctx.state === 'suspended'){ ctx.resume(); } return ctx; }
+  function env(g, t0, peak, dur){ g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(peak, t0 + 0.012); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur); }
+  function tone(f, dur, type, vol, slide, delay){
+    if(!on) return; var c = C(); if(!c) return;
+    var t0 = c.currentTime + (delay || 0), o = c.createOscillator(), g = c.createGain();
+    o.type = type || 'sine'; o.frequency.setValueAtTime(f, t0);
+    if(slide) o.frequency.exponentialRampToValueAtTime(slide, t0 + dur);
+    env(g, t0, vol || 0.16, dur); o.connect(g); g.connect(c.destination);
+    o.start(t0); o.stop(t0 + dur + 0.06);
+  }
+  function noise(dur, vol, cut, delay, slide){
+    if(!on) return; var c = C(); if(!c) return;
+    var t0 = c.currentTime + (delay || 0), n = Math.max(1, Math.floor(c.sampleRate * dur));
+    var buf = c.createBuffer(1, n, c.sampleRate), d = buf.getChannelData(0);
+    for(var i = 0; i < n; i++) d[i] = Math.random() * 2 - 1;
+    var s = c.createBufferSource(); s.buffer = buf;
+    var f = c.createBiquadFilter(); f.type = 'lowpass'; f.frequency.setValueAtTime(cut || 900, t0);
+    if(slide) f.frequency.exponentialRampToValueAtTime(Math.max(60, slide), t0 + dur);
+    var g = c.createGain(); env(g, t0, vol || 0.14, dur);
+    s.connect(f); f.connect(g); g.connect(c.destination); s.start(t0); s.stop(t0 + dur + 0.06);
+  }
+  function buzz(f, dur, vol, delay){
+    if(!on) return; var c = C(); if(!c) return;
+    var t0 = c.currentTime + (delay || 0), o = c.createOscillator(), g = c.createGain(), lp = c.createBiquadFilter();
+    o.type = 'sawtooth'; o.frequency.setValueAtTime(f, t0);
+    lp.type = 'lowpass'; lp.frequency.setValueAtTime(420, t0);
+    env(g, t0, vol || 0.12, dur); o.connect(lp); lp.connect(g); g.connect(c.destination);
+    o.start(t0); o.stop(t0 + dur + 0.06);
+  }
+  function seq(notes, gap, type, vol){
+    for(var i = 0; i < notes.length; i++){
+      var n = notes[i];
+      tone(n[0], n[1], n[2] || type || 'sine', n[3] || vol || 0.18, n[4] || null, i * (gap || 0.09));
+    }
+  }
+  function set(v){ on = !!v; try{ localStorage.setItem('gt_sound', on ? 'on' : 'off'); }catch(e){} try{ if(typeof window.GT_SOUND_CALLBACK === 'function') window.GT_SOUND_CALLBACK(on); }catch(e){} }
+  function toggle(){ set(!on); return on; }
+  function hap(p){ try{ if(navigator.vibrate) navigator.vibrate(p); }catch(e){} }
+  return { tone:tone, noise:noise, buzz:buzz, seq:seq, set:set, toggle:toggle,
+           isOn:function(){ return on; }, hap:hap };
+})();
+/* ===== Dark mode + Sound toggle ===== */
+(function(){
+  var tb = document.getElementById('themeBtn');
+  function paintTheme(){ var d = document.documentElement.getAttribute('data-theme') === 'dark'; tb.textContent = d ? '☀️ लाइट मोड' : '🌙 डार्क मोड'; }
+  tb.onclick = function(){
+    var d = document.documentElement.getAttribute('data-theme') === 'dark';
+    var t = d ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    try{ localStorage.setItem('gt_theme', t); }catch(e){}
+    SND.hap(20); paintTheme();
+  };
+  paintTheme();
+  var sb = document.getElementById('sndBtn');
+  function paintSnd(){ sb.textContent = SND.isOn() ? '🔊 ध्वनि ON' : '🔇 ध्वनि OFF'; }
+  sb.onclick = function(){
+    SND.toggle(); SND.hap(25); paintSnd();
+    if(SND.isOn()) SND.tone(880, 0.09, 'sine', 0.18);
+  };
+  paintSnd();
+})();
+
+function gtShare(){
+  var data={title:document.title,text:'GyanTools par yeh free game khelo – bina login, seedha browser mein!',url:location.href.split('#')[0]};
+  function copied(){var m=document.getElementById('msg');if(m){m.textContent='🔗 Link copy ho gaya – doston ko bhejo!';m.className='win';}SND.seq([[660,.07],[880,.15]],.08,'triangle',.14);}
+  if(navigator.share){navigator.share(data).then(function(){SND.tone(880,.1,'sine',.14);}).catch(function(e){if(e&&e.name!=='AbortError')gtCopy(data.url,copied);});}
+  else gtCopy(data.url,copied);
+}
+function gtCopy(text,done){
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(done).catch(function(){gtFallbackCopy(text,done);});}
+  else gtFallbackCopy(text,done);
+}
+function gtFallbackCopy(text,done){var t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');done();}catch(e){var m=document.getElementById('msg');if(m)m.textContent='Game link: '+text;}t.remove();}
+
+function setMsg(t,cls){var m=document.getElementById('msg');m.textContent=t;m.className=cls||'';}
+var sdkSol=[],sdkPuzzle=[],sdkFixed=[],sdkSel=-1,sdkNotes=[],sdkNoteMode=false,sdkMist=0,sdkHints=3,sdkSec=0,sdkTimer=null,sdkStarted=false;
+function sdkShuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function sdkGenSolution(){var bands=sdkShuffle([0,1,2]),rows=[];bands.forEach(function(b){var inside=sdkShuffle([0,1,2]);inside.forEach(function(x){rows.push(b*3+x);});});var stacks=sdkShuffle([0,1,2]),cols=[];stacks.forEach(function(s){sdkShuffle([0,1,2]).forEach(function(x){cols.push(s*3+x);});});var nums=sdkShuffle([1,2,3,4,5,6,7,8,9]);var base=function(r,c){return (r*3+Math.floor(r/3)+c)%9;};return rows.map(function(r){return cols.map(function(c){return nums[base(r,c)];});});}
+function sdkCandidates(b,r,c){var used={};for(var i=0;i<9;i++){used[b[r][i]]=1;used[b[i][c]]=1;}var br=Math.floor(r/3)*3,bc=Math.floor(c/3)*3;for(var rr=br;rr<br+3;rr++)for(var cc=bc;cc<bc+3;cc++)used[b[rr][cc]]=1;var out=[];for(var n=1;n<=9;n++)if(!used[n])out.push(n);return out;}
+function sdkCountSolutions(b,limit){var best=null,opts=null,min=10;for(var r=0;r<9;r++)for(var c=0;c<9;c++)if(!b[r][c]){var cand=sdkCandidates(b,r,c);if(!cand.length)return 0;if(cand.length<min){min=cand.length;best=[r,c];opts=cand;if(min===1)break;} }if(!best)return 1;var count=0;for(var i=0;i<opts.length;i++){b[best[0]][best[1]]=opts[i];count+=sdkCountSolutions(b,limit-count);b[best[0]][best[1]]=0;if(count>=limit)return count;}return count;}
+function sdkMakePuzzle(){sdkSol=sdkGenSolution();sdkPuzzle=sdkSol.map(function(r){return r.slice();});var target=document.getElementById('difficulty').value==='easy'?34:(document.getElementById('difficulty').value==='hard'?50:43);var ids=sdkShuffle(Array.from({length:81},function(_,i){return i;}));var removed=0;for(var i=0;i<ids.length&&removed<target;i++){var r=Math.floor(ids[i]/9),c=ids[i]%9,val=sdkPuzzle[r][c];sdkPuzzle[r][c]=0;var test=sdkPuzzle.map(function(row){return row.slice();});if(sdkCountSolutions(test,2)===1)removed++;else sdkPuzzle[r][c]=val;}sdkFixed=sdkPuzzle.map(function(row){return row.map(function(v){return v!==0;});});}
+function sdkNew(){clearInterval(sdkTimer);sdkMakePuzzle();sdkSel=-1;sdkNotes=Array.from({length:81},function(){return new Set();});sdkNoteMode=false;sdkMist=0;sdkHints=3;sdkSec=0;sdkStarted=false;document.getElementById('mistakes').textContent=0;document.getElementById('hintN').textContent=3;document.getElementById('noteBtn').textContent='✏️ Notes OFF';document.getElementById('sTime').textContent='00:00';sdkDraw();setMsg('स्तर चुनें, खाना चुनें और अंक भरें।');}
+function sdkDraw(){var g=document.getElementById('sudGrid');g.innerHTML='';for(var i=0;i<81;i++){var r=Math.floor(i/9),c=i%9,cell=document.createElement('div');cell.className='c2';if(sdkFixed[r][c])cell.classList.add('given');if(i===sdkSel)cell.classList.add('sel');if(r===Math.floor(sdkSel/9)||c===sdkSel%9)cell.classList.add('related');if(r%3===0&&r!==0)cell.classList.add('rbox');var val=sdkPuzzle[r][c];if(val)cell.textContent=val;else if(sdkNotes[i].size){var ns=document.createElement('div');ns.className='notes';for(var n=1;n<=9;n++){var x=document.createElement('span');x.textContent=sdkNotes[i].has(n)?n:'';ns.appendChild(x);}cell.appendChild(ns);}if(val&&val!==sdkSol[r][c]&&!sdkFixed[r][c])cell.classList.add('err');(function(idx){cell.onclick=function(){sdkSel=idx;sdkDraw();};})(i);g.appendChild(cell);}sdkBuildPad();}
+function sdkBuildPad(){var p=document.getElementById('numPad');p.innerHTML='';for(var n=1;n<=9;n++){(function(v){var b=document.createElement('button');b.textContent=v;b.onclick=function(){sdkPut(v);};p.appendChild(b);})(n);}var e=document.createElement('button');e.textContent='⌫';e.title='Mitao';e.onclick=function(){sdkPut(0);};p.appendChild(e);}
+function sdkPut(n){if(sdkSel<0){setMsg('पहले कोई खाली खाना चुनें।');return;}var r=Math.floor(sdkSel/9),c=sdkSel%9;if(sdkFixed[r][c]){SND.tone(170,.12,'sawtooth',.1);return;}if(!sdkStarted){sdkStarted=true;sdkTimer=setInterval(function(){sdkSec++;document.getElementById('sTime').textContent=String(Math.floor(sdkSec/60)).padStart(2,'0')+':'+String(sdkSec%60).padStart(2,'0');},1000);}if(sdkNoteMode&&n!==0){if(sdkNotes[sdkSel].has(n))sdkNotes[sdkSel].delete(n);else sdkNotes[sdkSel].add(n);SND.tone(540,.04,'sine',.08);sdkDraw();return;}sdkPuzzle[r][c]=n;sdkNotes[sdkSel].clear();if(n===0){SND.noise(.04,.08,500);setMsg('अंक मिटा दिया।');}else if(n===sdkSol[r][c]){SND.tone(700+n*40,.07,'sine',.14);SND.hap(10);setMsg('✅ सही!');}else{sdkMist++;document.getElementById('mistakes').textContent=sdkMist;SND.buzz(180,.15,.13);SND.hap([35,45]);setMsg('❌ Is khaane ka number sahi nahi – फिर से जाँचें।','lose');}sdkDraw();if(sdkPuzzle.every(function(row,i){return row.every(function(v,j){return v===sdkSol[i][j];});})){clearInterval(sdkTimer);SND.seq([[523,.08],[659,.08],[784,.08],[1047,.3]],.08,'triangle',.2);SND.hap([30,60,30]);setMsg('🏆 Shandaar! '+Math.floor(sdkSec/60)+':'+String(sdkSec%60).padStart(2,'0')+' mein paheli hal!','win');}}
+function sdkToggleNotes(){sdkNoteMode=!sdkNoteMode;document.getElementById('noteBtn').textContent=sdkNoteMode?'✏️ Notes ON':'✏️ Notes OFF';SND.tone(sdkNoteMode?760:420,.06,'sine',.1);}
+function sdkHint(){if(sdkHints<=0){setMsg('इस खेल के तीनों संकेत इस्तेमाल हो चुके हैं। नई पहेली शुरू करें।');return;}var cells=[];for(var r=0;r<9;r++)for(var c=0;c<9;c++)if(!sdkFixed[r][c]&&sdkPuzzle[r][c]!==sdkSol[r][c])cells.push(r*9+c);if(!cells.length)return;var i=cells[Math.floor(Math.random()*cells.length)];sdkSel=i;sdkHints--;document.getElementById('hintN').textContent=sdkHints;sdkPut(sdkSol[Math.floor(i/9)][i%9]);SND.seq([[660,.08],[990,.15]],.08,'triangle',.13);setMsg('💡 Sahi number bhar diya. '+sdkHints+' hints bache.');}
+function sdkCheck(){var bad=0,empty=0;for(var r=0;r<9;r++)for(var c=0;c<9;c++){if(!sdkPuzzle[r][c])empty++;else if(sdkPuzzle[r][c]!==sdkSol[r][c])bad++;}if(bad){setMsg('❌ '+bad+' number galat hain – laal khaane sudhaaro.','lose');SND.buzz(190,.18,.12);}else if(empty){setMsg('✅ Ab tak bhare numbers sahi hain. '+empty+' khaane bache!','win');SND.tone(880,.12,'sine',.15);}else setMsg('🏆 पहेली हल हो गई!','win');}
+function sdkSolve(){for(var r=0;r<9;r++)for(var c=0;c<9;c++)sdkPuzzle[r][c]=sdkSol[r][c];clearInterval(sdkTimer);sdkDraw();setMsg('👀 Hal dikha diya – nayi paheli try karo!');SND.seq([[330,.1],[440,.1],[550,.2]],.1,'sine',.13);}
+document.addEventListener('keydown',function(e){if(e.key>='1'&&e.key<='9'){sdkPut(+e.key);e.preventDefault();}else if(e.key==='Backspace'||e.key==='Delete'){sdkPut(0);e.preventDefault();}else if(e.key==='ArrowLeft'&&sdkSel>=0)sdkSel=Math.max(0,sdkSel-1),sdkDraw();else if(e.key==='ArrowRight'&&sdkSel>=0)sdkSel=Math.min(80,sdkSel+1),sdkDraw();else if(e.key==='ArrowUp'&&sdkSel>=0)sdkSel=Math.max(0,sdkSel-9),sdkDraw();else if(e.key==='ArrowDown'&&sdkSel>=0)sdkSel=Math.min(80,sdkSel+9),sdkDraw();});
+sdkNew();
+
+</script>
+</body>
+</html>

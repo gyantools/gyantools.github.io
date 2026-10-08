@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Electricity Bill Calculator in Hindi – बिजली बिल का हिसाब (Units से)</title>
+<meta name="description" content="बिजली बिल कैलकुलेटर हिंदी में – मीटर की रीडिंग और दर से units, बिजली खर्च और कुल बिल निकालें। 1 unit में कितनी बिजली और बचत के टिप्स समेत। फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Electricity Bill Calculator in Hindi – बिजली बिल">
+<meta property="og:description" content="मीटर रीडिंग से बिजली बिल का अंदाज़ा निकालें।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/electricity-bill-calculator.html">
+<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
+<link rel="apple-touch-icon" href="../images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../images/logo.png">
+<!-- ads -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Electricity Bill Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"बिजली बिल कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/electricity-bill-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "बिजली बिल slabs क्या होती हैं?", "acceptedAnswer": {"@type": "Answer", "text": "जितनी ज़्यादा units, उतनी ऊंची दर – 0–100 सस्ती, 500+ सबसे महंगी। हर राज्य की slabs/rates अलग (DISCOM website पर)।"}}, {"@type": "Question", "name": "AC सबसे ज़्यादा बिजली खाता है?", "acceptedAnswer": {"@type": "Answer", "text": "हां – 1.5T AC ~1.5–2 units/घंटा। 8 घंटे रोज़ = ~400 units/माह! 24–26°C + 5-star inverter = आधी खपत।"}}, {"@type": "Question", "name": "Fixed charge क्या है?", "acceptedAnswer": {"@type": "Answer", "text": "Connection load (kW) पर fixed monthly charge – units zero हों तब भी लगता है। Load कम कराकर घटा सकते हैं।"}}, {"@type": "Question", "name": "स्मार्ट meter से फायदा?", "acceptedAnswer": {"@type": "Answer", "text": "Time-of-day rates – रात में सस्ती बिजली (कुछ राज्यों में)। Heavy काम रात में = बचत।"}}, {"@type": "Question", "name": "Solar से bill zero होगा?", "acceptedAnswer": {"@type": "Answer", "text": "1–3kW rooftop (₹78K तक subsidy) से 150–400 units/माह free। Net-metering से extra units adjust। pm-surya-ghar-guide blog देखें।"}}]}
+</script>
+
+<!-- Google tag (gtag.js) — GyanTools GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KFSJSLG7B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4KFSJSLG7B');
+</script>
+<!-- /Google tag -->
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › बिजली बिल कैलकुलेटर</p>
+  <p style="display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:6px 0 0">✓ स्लैब हर राज्य में अलग – टूल में अपनी DISCOM की दरें डालें · जांच: सितंबर 2026</p>
+
+  <div class="tool-box">
+    <h1>⚡ बिजली बिल कैलकुलेटर</h1>
+    <p>मीटर की दो रीडिंग और अपने बिल की दर डालें – खर्च का अंदाज़ा तैयार।</p>
+    <div class="row">
+      <div>
+        <label for="prev">पिछली मीटर रीडिंग (units)</label>
+        <input type="number" id="prev" placeholder="जैसे: 12500" min="0" step="any">
+      </div>
+      <div>
+        <label for="curr">मौजूदा मीटर रीडिंग (units)</label>
+        <input type="number" id="curr" placeholder="जैसे: 12750" min="0" step="any">
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="rate">दर प्रति यूनिट (₹) – अपने बिल से देखें</label>
+        <input type="number" id="rate" placeholder="जैसे: 7.5" min="0" step="any">
+      </div>
+      <div>
+        <label for="fixed">फिक्स्ड/सेवा चार्ज (₹)</label>
+        <input type="number" id="fixed" placeholder="जैसे: 90" min="0" step="any" value="0">
+      </div>
+    </div>
+    <button onclick="calcBill()">बिल निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>1 यूनिट (unit/kWh) बिजली कितनी होती है?</h2>
+    <p><strong>1 unit = 1000 वाट का उपकरण 1 घंटा चलना</strong> (या 100 वाट का 10 घंटे)। मीटर पर यही गिनता है। उदाहरण:</p>
+    <table>
+      <tr><th>उपकरण</th><th>खपत</th><th>रोज़ 8 घंटे चले तो/दिन</th></tr>
+      <tr><td>LED बल्ब (9W)</td><td>9 वाट</td><td>0.07 unit</td></tr>
+      <tr><td>पंखा (75W)</td><td>75 वाट</td><td>0.6 unit</td></tr>
+      <tr><td>टीवी (100W)</td><td>100 वाट</td><td>0.8 unit</td></tr>
+      <tr><td>फ्रिज (1.5 किलो वाट/दिन)</td><td>~1500W-घंटे</td><td>1.5 unit</td></tr>
+      <tr><td>AC 1.5 टन (1.5kW)</td><td>1500 वाट</td><td>12 unit</td></tr>
+      <tr><td>गीज़र (2kW)</td><td>2000 वाट</td><td>2 unit (1 घंटा)</td></tr>
+    </table>
+    <p>यानी सिर्फ AC की वजह से महीने के 200–360 units हो सकते हैं! ऊपर के उदाहरण से अपने घर का रोज़ का अंदाज़ा खुद बना सकते हैं।</p>
+    <h2>दरें राज्य-राज्य में अलग – और स्लैब में बंटी होती हैं</h2>
+    <p>हर राज्य का बिजली बोर्ड (जैसे राजस्थान में RVPN/वितरण कंपनियां, दिल्ली में BSES/Tata Power) अपनी दरें तय करता है। ज़्यादातर जगह <strong>स्लैब दरें</strong> होती हैं – पहले 100 units सस्ते, फिर बढ़ती दरें (जैसे 0–100 में ₹4, 101–200 में ₹5.5, ऊपर ₹7)। सटीक दर अपने आख़िरी बिल या विभाग की website पर देखें। यह calculator एक दर (average) से अंदाज़ा देता है – बिल थोड़ा ऊपर-नीचे हो सकता है।</p>
+    <h2>बिजली बचाने के 7 तरीके</h2>
+    <ul>
+      <li>AC को 24–26°C पर चलाएं – हर डिग्री कम करने पर खपत ~6% बढ़ती है</li>
+      <li><strong>5-स्टार</strong> रेटिंग वाले उपकरण लें – बिजली 20–30% कम खाते हैं</li>
+      <li>पुराने बल्बों की जगह LED – 10 गुना कम बिजली</li>
+      <li>फ्रिज को दीवार से थोड़ी दूर और गर्म चीज़ें ठंडी करके ही रखें</li>
+      <li>स्टैंडबाय में पड़े टीवी/चार्जर भी बिजली खाते हैं – बिना इस्तेमाल में switch बंद</li>
+      <li>दिन में सूखे कपड़े – ड्रायर सबसे बड़ा बिजली खाने वाला है</li>
+      <li>घर की छत पर गर्मी रोकने का इंतज़ाम (रंग, छत वाला इन्सुलेशन) से AC का बोझ घटता है</li>
+    </ul>
+    <div class="note">🔒 आपकी रीडिंग कहीं नहीं जाती – calculation आपके ब्राउज़र में ही होता है।</div>
+  
+<h2>बिजली बिल कैसे निकालें?</h2>
+<ol>
+<li><strong>पुरानी + नई meter reading</strong> भरें – units = नई − पुरानी।</li>
+<li><strong>State/slab rates</strong> चुनें – 0–100, 101–200, 201–500, 500+ slabs।</li>
+<li><strong>Fixed charges</strong> जुड़ेंगे – load (kW) के हिसाब से।</li>
+<li><strong>Calculate दबाएं</strong> – slab-wise bill + fuel surcharge + duty।</li>
+<li>Bill ज़्यादा आए तो <strong>appliance-cost tool</strong> से कौन सा device दोषी है, पकड़ें!</li>
+</ol>
+<h2>200 Units का हिसाब (उदाहरण slabs – राज्य के हिसाब से बदलें)</h2>
+<table class="gt-table"><tr><th>Slab</th><th>Units</th><th>Rate (उदा.)</th><th>रकम</th></tr><tr><td>0–100</td><td>100</td><td>₹3.50</td><td>₹350</td></tr><tr><td>101–200</td><td>100</td><td>₹5.50</td><td>₹550</td></tr><tr><td>Fixed + duty</td><td>–</td><td>–</td><td>≈ ₹150</td></tr><tr><td><strong>Total</strong></td><td><strong>200</strong></td><td></td><td><strong>≈ ₹1,050</strong></td></tr></table>
+<div class="note">💡 <strong>Slab trap:</strong> 200→201 units होते ही extra unit ऊंची slab (₹7–8) में! महीने के आखिर में heavy appliances (geyser/washing) का इस्तेमाल सोचकर करें। <strong>Solar (PM Surya Ghar: ₹78K subsidy)</strong> से bill ~zero possible!</div>
+<h2>बिजली बचाने के 6 तरीके</h2>
+<ul>
+<li><strong>AC 24–26°C</strong> पर – हर 1° कम = 6% ज़्यादा bill!।</li>
+<li><strong>5-star appliances</strong> – fridge/AC में star = सीधी बचत।</li>
+<li><strong>LED + BLDC fan</strong> – fan 75W→28W, bill आधा!।</li>
+<li><strong>Phantom load</strong> – TV/set-top standby भी खाते हैं, switch off करें।</li>
+<li><strong>Geyser timer</strong> – 15 min पहले ON, नहाकर OFF।</li>
+<li><strong>PM Surya Ghar</strong> – 1–2kW solar पर ₹30–78K subsidy!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>बिजली बिल slabs क्या होती हैं?</summary><p>जितनी ज़्यादा units, उतनी ऊंची दर – 0–100 सस्ती, 500+ सबसे महंगी। हर राज्य की slabs/rates अलग (DISCOM website पर)।</p></details>
+<details><summary>AC सबसे ज़्यादा बिजली खाता है?</summary><p>हां – 1.5T AC ~1.5–2 units/घंटा। 8 घंटे रोज़ = ~400 units/माह! 24–26°C + 5-star inverter = आधी खपत।</p></details>
+<details><summary>Fixed charge क्या है?</summary><p>Connection load (kW) पर fixed monthly charge – units zero हों तब भी लगता है। Load कम कराकर घटा सकते हैं।</p></details>
+<details><summary>स्मार्ट meter से फायदा?</summary><p>Time-of-day rates – रात में सस्ती बिजली (कुछ राज्यों में)। Heavy काम रात में = बचत।</p></details>
+<details><summary>Solar से bill zero होगा?</summary><p>1–3kW rooftop (₹78K तक subsidy) से 150–400 units/माह free। Net-metering से extra units adjust। pm-surya-ghar-guide blog देखें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="discount-calculator.html">🏷️ छूट कैलकुलेटर (Discount Calculator)</a> · <a href="percentage-calculator.html">📊 प्रतिशत कैलकुलेटर (Percentage Calculator)</a> · <a href="currency-converter.html">💱 करेंसी कन्वर्टर (Currency Converter)</a> · <a href="gold-silver-value-calculator.html">🥇 Gold-Silver Value Calculator (हिंदी)</a> · <a href="number-to-words.html">🔢 संख्या को शब्दों में बदलें (Number to Words)</a></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>Pawan Verma · GyanTools</strong><p>यह गाइड Pawan Verma ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+
+<script>
+function calcBill(){
+  var prev = parseFloat(document.getElementById('prev').value);
+  var curr = parseFloat(document.getElementById('curr').value);
+  var rate = parseFloat(document.getElementById('rate').value);
+  var fixed = parseFloat(document.getElementById('fixed').value) || 0;
+  var out = document.getElementById('out');
+  if(isNaN(prev) || isNaN(curr) || isNaN(rate)){ out.style.display='block'; out.innerHTML='⚠️ कृपया रीडिंग और दर भरें।'; return; }
+  if(curr < prev){ out.style.display='block'; out.innerHTML='⚠️ मौजूदा रीडिंग पिछली से कम नहीं हो सकती।'; return; }
+  var units = curr - prev;
+  var energy = units * rate;
+  var total = energy + fixed;
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">अनुमानित बिल: ' + f(total) + '</div>'
+    + '<p>खपत: <strong>' + units + ' units</strong> (' + prev + ' → ' + curr + ')</p>'
+    + '<p>बिजली खर्च: ' + f(energy) + ' (' + units + ' × ₹' + rate + ')' + (fixed > 0 ? ' + फिक्स्ड: ' + f(fixed) : '') + '</p>'
+    + '<p>रोज़ाना औसत: <strong>' + (units/30).toFixed(1) + ' units/दिन</strong> · रोज़ का खर्च ~' + f(total/30) + '</p>';
+}
+</script>
+
+<!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
+<script defer src="../assets/ads.js"></script>
+  <script defer src="../assets/ga.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#out',title:"⚡ बिजली बिल कैलकुलेटर",slug:"electricity-bill-calculator"};</script>
+<script src="../assets/result-image.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>SIP Calculator in Hindi – SIP कैलकुलेटर (म्यूचुअल फंड निवेश की मैच्योरिटी)</title>
+<meta name="description" content="SIP कैलकुलेटर हिंदी में – हर महीने की रकम, अपेक्षित रिटर्न और समय डालकर जानें कितना निवेश करना है और कितना बनेगा। म्यूचुअल फंड SIP की पूरी समझ समेत फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="SIP Calculator in Hindi – SIP कैलकुलेटर">
+<meta property="og:description" content="महीने की SIP से कितना फंड बनेगा – तुरंत जानें।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.github.io/tools/sip-calculator.html">
+<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
+<link rel="apple-touch-icon" href="../images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../images/logo.png">
+<!-- ads -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SIP Calculator Hindi","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"SIP कैलकुलेटर हिंदी में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
+</style>
+<link rel="canonical" href="https://gyantools.github.io/tools/sip-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "SIP में कितना return मिलता है?", "acceptedAnswer": {"@type": "Answer", "text": "Equity SIP में long-term (10+ साल) औसतन 10–12% सालाना का इतिहास है, पर ये guarantee नहीं – बाज़ार के हिसाब से घट-बढ़ होता है। Calculator में 10%, 12%, 15% तीनों डालकर range देखें।"}}, {"@type": "Question", "name": "SIP और lump-sum में क्या बेहतर?", "acceptedAnswer": {"@type": "Answer", "text": "जेब से हर महीने निवेश के लिए SIP; एकमुश्त बड़ी रकम के लिए STP/lump-sum। गिरते बाज़ार में lump-sum जोखिम भरा, SIP safe रहती है।"}}, {"@type": "Question", "name": "क्या SIP बीच में रोक सकते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "हां, कभी भी pause/stop/withdraw – कोई penalty नहीं (ELSS में 3 साल lock-in)। पर बार-बार रोकने से compounding टूटता है।"}}, {"@type": "Question", "name": "SIP पर tax कैसे लगता है?", "acceptedAnswer": {"@type": "Answer", "text": "Equity fund: 1 साल+ पर LTCG – सालाना ₹1.25L तक tax-free, ऊपर 12.5%। 1 साल से पहले STCG 20%। Debt fund: slab rate से tax।"}}, {"@type": "Question", "name": "₹1 करोड़ के लिए कितनी SIP चाहिए?", "acceptedAnswer": {"@type": "Answer", "text": "12% return मानें तो 15 साल के लिए ≈ ₹20,000/माह, 20 साल के लिए ≈ ₹10,000/माह। Goal-planner calculator से अनुमानित आंकड़ा निकालें।"}}]}
+</script>
+
+<!-- Google tag (gtag.js) — GyanTools GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KFSJSLG7B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4KFSJSLG7B');
+</script>
+<!-- /Google tag -->
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">होम</a></li>
+        <li><a href="../index.html#tools">टूल्स</a></li>
+        <li><a href="../blog/index.html">ब्लॉग</a></li>
+        <li><a href="../about.html">हमारे बारे में</a></li>
+        <li><a href="../contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › SIP कैलकुलेटर</p>
+  <p style="display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:6px 0 0">✓ रिटर्न market-linked (गारंटी नहीं) · टैक्स नोट बजट 2024 नियमों पर · स्रोत: <a href="https://www.incometax.gov.in" style="color:#137333">incometax.gov.in</a> · जांच: सितंबर 2026</p>
+
+  <div class="tool-box">
+    <h1>📈 SIP कैलकुलेटर</h1>
+    <p>हर महीने की SIP से कितना फंड बनेगा – तुरंत जानें।</p>
+    <label for="sip">हर महीने की SIP राशि (₹)</label>
+    <input type="number" id="sip" placeholder="जैसे: 5000" min="100" step="any">
+    <div class="row">
+      <div>
+        <label for="ret">अपेक्षित सालाना रिटर्न (%)</label>
+        <input type="number" id="ret" placeholder="जैसे: 12" min="1" max="30" step="any">
+      </div>
+      <div>
+        <label for="yrs">निवेश अवधि (साल)</label>
+        <input type="number" id="yrs" placeholder="जैसे: 15" min="1" max="40" step="1">
+      </div>
+    </div>
+    <button onclick="calcSIP()">मैच्योरिटी राशि निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>SIP क्या है?</h2>
+    <p><strong>SIP (Systematic Investment Plan)</strong> म्यूचुअल फंड में हर महीने एक तय रकम लगाने का तरीका है। एक ही बार में बड़ा निवेश करने की जगह छोटे-छोटे किश्तों में निवेश – जैसे बचत का RD, पर market से जुड़ा।</p>
+    <h2>SIP क्यों अच्छी मानी जाती है?</h2>
+    <ul>
+      <li><strong>चक्रवृद्धि का जादू</strong> – लंबी अवधि में रिटर्न पर भी रिटर्न लगता है (हमारा ब्याज कैलकुलेटर देखें)</li>
+      <li><strong>आदत और अनुशासन</strong> – महीने की शुरुआत में बचत पहले, खर्च बाद में</li>
+      <li><strong>Market का उतार-चढ़ाव औसत हो जाता है</strong> – NAV ऊंचा हो तो कम units, नीचा हो तो ज़्यादा units (rupee cost averaging)</li>
+      <li>₹100–500 से शुरुआत हो सकती है – पैसा कम होना बहाना नहीं</li>
+    </ul>
+    <h2>उदाहरण से समझें (12% औसत रिटर्न मानकर)</h2>
+    <table>
+      <tr><th>मासिक SIP</th><th>10 साल</th><th>15 साल</th><th>20 साल</th></tr>
+      <tr><td>₹2,000</td><td>₹4.6 लाख</td><td>₹10 लाख</td><td>₹20 लाख</td></tr>
+      <tr><td>₹5,000</td><td>₹11.6 लाख</td><td>₹25.2 लाख</td><td>₹50 लाख</td></tr>
+      <tr><td>₹10,000</td><td>₹23.2 लाख</td><td>₹50.5 लाख</td><td>₹1 करोड़</td></tr>
+    </table>
+    <p>देखिए – समय और धैर्य ही असली फंड बनाते हैं। 15 साल में जितना पैसा लगता है, उसका दोगुना से ज़्यादा रिटर्न बन जाता है।</p>
+    <div class="note">⚠️ <strong>ज़रूरी:</strong> म्यूचुअल फंड के रिटर्न तय नहीं होते – market जोखिम रहता है। 12% एक लंबी अवधि का ऐतिहासिक औसत जैसा अनुमान है, गारंटी नहीं। निवेश से पहले scheme-related documents पढ़ें; ज़रूरत हो तो SEBI-registered advisor से सलाह लें। यह tool गणित सिखाता है, सलाह नहीं देता।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  
+<h2>SIP Calculator कैसे इस्तेमाल करें?</h2>
+<ol>
+<li><strong>मासिक SIP राशि</strong> भरें – जैसे ₹5,000 (₹500 से भी शुरुआत हो सकती है)।</li>
+<li><strong>अनुमानित annual return</strong> डालें – equity के लिए 10–12% आम अनुमान है (guarantee नहीं)।</li>
+<li><strong>अवधि (साल)</strong> चुनें – 10, 15, 20 साल डालकर compounding का जादू देखें।</li>
+<li><strong>Calculate दबाएं</strong> – कुल निवेश vs अनुमानित gain vs maturity value साफ दिखेगा।</li>
+<li><strong>अवधि बदलकर compare करें</strong> – 10 साल vs 20 साल में फर्क देखकर हैरान रह जाएंगे!</li>
+<li>लंबी अवधि + <strong>step-up SIP</strong> (हर साल 10% बढ़त) का combo सबसे ताकतवर है।</li>
+</ol>
+<h2>Compounding का जादू – ₹5,000/माह SIP, 12% return</h2>
+<table class="gt-table"><tr><th>अवधि</th><th>कुल निवेश</th><th>अनुमानित Value</th><th>Gain</th></tr><tr><td>5 साल</td><td>₹3.0L</td><td>≈ ₹4.1L</td><td>₹1.1L</td></tr><tr><td>10 साल</td><td>₹6.0L</td><td>≈ ₹11.6L</td><td>₹5.6L</td></tr><tr><td>15 साल</td><td>₹9.0L</td><td>≈ ₹24.9L</td><td>₹15.9L</td></tr><tr><td>20 साल</td><td>₹12.0L</td><td>≈ ₹49.9L</td><td>₹37.9L</td></tr></table>
+<div class="note">💡 <strong>सीख:</strong> 20 साल में gain (₹37.9L) निवेश (₹12L) का <strong>3 गुना से ज़्यादा!</strong> SIP में सबसे बड़ा दोस्त है – समय। जितनी जल्दी शुरू, उतना बड़ा फंड।</div>
+<p>याद रखें – 12% सिर्फ <strong>अनुमान</strong> है। Equity में return घट-बढ़ होता है; 10+ साल की अवधि में औसतन 10–12% का इतिहास रहा है, पर guarantee कोई नहीं देता।</p>
+<h2>SIP के 6 सुनहरे नियम</h2>
+<ul>
+<li><strong>Rupee cost averaging</strong> – बाज़ार गिरे तो ज़्यादा units, चढ़े तो कम – औसत कीमत अपने आप सही।</li>
+<li><strong>गिरावट में SIP न रोकें</strong> – मंदी में खरीदी units ही सबसे ज़्यादा मुनाफा देती हैं।</li>
+<li><strong>Goal से जोड़ें</strong> – बच्चों की पढ़ाई, retirement – हर goal की अलग SIP।</li>
+<li><strong>Review साल में 1 बार</strong> – रोज़ NAV देखना तनाव है, सालाना review सही।</li>
+<li><strong>Step-up ज़रूर करें</strong> – salary बढ़े तो SIP भी 10% बढ़ाएं, crorepati गणित तेज़ होगा।</li>
+<li><strong>Direct plan लें</strong> – agent commission (~1%) बचेगा, 20 साल में लाखों का फर्क!</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>SIP में कितना return मिलता है?</summary><p>Equity SIP में long-term (10+ साल) औसतन 10–12% सालाना का इतिहास है, पर ये guarantee नहीं – बाज़ार के हिसाब से घट-बढ़ होता है। Calculator में 10%, 12%, 15% तीनों डालकर range देखें।</p></details>
+<details><summary>SIP और lump-sum में क्या बेहतर?</summary><p>जेब से हर महीने निवेश के लिए SIP; एकमुश्त बड़ी रकम के लिए STP/lump-sum। गिरते बाज़ार में lump-sum जोखिम भरा, SIP safe रहती है।</p></details>
+<details><summary>क्या SIP बीच में रोक सकते हैं?</summary><p>हां, कभी भी pause/stop/withdraw – कोई penalty नहीं (ELSS में 3 साल lock-in)। पर बार-बार रोकने से compounding टूटता है।</p></details>
+<details><summary>SIP पर tax कैसे लगता है?</summary><p>Equity fund: 1 साल+ पर LTCG – सालाना ₹1.25L तक tax-free, ऊपर 12.5%। 1 साल से पहले STCG 20%। Debt fund: slab rate से tax।</p></details>
+<details><summary>₹1 करोड़ के लिए कितनी SIP चाहिए?</summary><p>12% return मानें तो 15 साल के लिए ≈ ₹20,000/माह, 20 साल के लिए ≈ ₹10,000/माह। Goal-planner calculator से अनुमानित आंकड़ा निकालें।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="stepup-sip-calculator.html">🚀 स्टेप-अप SIP कैलकुलेटर</a> · <a href="ppf-calculator.html">🏦 PPF कैलकुलेटर</a> · <a href="epf-calculator.html">💼 EPF कैलकुलेटर (प्रोविडेंट फंड)</a> · <a href="nps-calculator.html">🏦 NPS कैलकुलेटर (National Pension System)</a> · <a href="ssy-calculator.html">👧 SSY कैलकुलेटर (सुकन्या समृद्धि योजना)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<h2>SIP Date, Pause और ELSS – 3 Confusions Clear</h2>
+<p><strong>1. SIP date matter करती है?</strong> Research: month-start vs month-end का long-term फर्क ~0.1–0.3% ही है। Salary-credit के 2–3 दिन बाद की date रखो (bounce न हो) – बस! <strong>2. Pause vs Stop?</strong> दिक्कत में SIP <strong>pause</strong> करो (3–6 माह), stop नहीं – पुरानी units compounding जारी रखती हैं। <strong>3. ELSS vs normal SIP?</strong> 80C चाहिए तो ELSS (3Y lock-in), flexibility चाहिए तो flexi/large-cap।</p>
+<table class="gt-table"><tr><th></th><th>ELSS SIP</th><th>Normal Equity SIP</th></tr><tr><td>80C छूट</td><td>₹1.5L तक ✓</td><td>नहीं</td></tr><tr><td>Lock-in</td><td>3 साल (हर किस्त!)</td><td>Zero</td></tr><tr><td>Return</td><td>~12% उम्मीद</td><td>~12% उम्मीद</td></tr><tr><td>Best for</td><td>Tax + growth combo</td><td>Goals (flexible)</td></tr></table>
+<div class="note">💡 <strong>ELSS trap:</strong> हर monthly किस्त 3 साल lock होती है – Jan 2026 की SIP Jan 2029 में खुलेगी! Emergency fund ELSS में कभी मत रखो।</div>
+<h2>SIP की 5 बड़ी गलतियां + Fund कैसे चुनें?</h2>
+<ul>
+<li><strong>1. NFO craze:</strong> नई scheme hype में मत कूदो – 5Y+ track-record वाले funds चुनो।</li>
+<li><strong>2. Too many SIPs:</strong> 10 funds = over-diversification। 3–4 काफी (large + flexi + mid + ELSS)।</li>
+<li><strong>3. Returns chasing:</strong> पिछले साल का topper ≠ अगले साल का winner। Consistency (rolling returns) देखो।</li>
+<li><strong>4. No review:</strong> सालाना review – 3 साल lagging fund को बदलो (exit-load + tax देखकर)।</li>
+<li><strong>5. Market-timing:</strong> 'गिरेगा तो लगाऊंगा' = time waste। SIP का मतलब ही timing-risko खत्म करना है!</li>
+</ul>
+<table class="gt-table"><tr><th>Fund Type</th><th>Risk</th><th>किसके लिए</th></tr><tr><td>Large-cap ⭐</td><td>कम</td><td>पहली SIP, stability</td></tr><tr><td>Flexi-cap</td><td>Medium</td><td>Core portfolio</td></tr><tr><td>Mid/Small-cap</td><td>ज़्यादा</td><td>10Y+ horizon, experienced</td></tr><tr><td>Hybrid/Balanced</td><td>कम-medium</td><td>Conservative beginners</td></tr></table>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>Pawan Verma · GyanTools</strong><p>यह गाइड Pawan Verma ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
+    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
+    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  </div>
+</footer>
+
+<script>
+function calcSIP(){
+  var P = parseFloat(document.getElementById('sip').value);
+  var R = parseFloat(document.getElementById('ret').value);
+  var Y = parseInt(document.getElementById('yrs').value);
+  var out = document.getElementById('out');
+  if(!P || P < 100 || isNaN(R) || !Y || Y < 1 || Y > 40){ out.style.display='block'; out.innerHTML='⚠️ कृपया सही SIP राशि, रिटर्न और अवधि भरें (अवधि 1–40 साल)।'; return; }
+  var i = R/1200, n = Y*12, fv;
+  if(i === 0){ fv = P*n; }
+  else { fv = P * ((Math.pow(1+i,n) - 1)/i) * (1+i); }
+  var invested = P*n, gains = fv - invested;
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  var lakh = function(x){ return (x/100000).toFixed(1) + ' लाख'; };
+  out.style.display='block';
+  out.innerHTML = '<div class="big">मैच्योरिटी राशि: ' + f(fv) + ' (' + lakh(fv) + ')</div>'
+    + '<p>आपका निवेश: <strong>' + f(invested) + '</strong> · अर्जित रिटर्न: <strong>' + f(gains) + '</strong></p>'
+    + '<p>रिटर्न निवेश का <strong>' + (invested>0 ? (gains/invested*100).toFixed(0) : 0) + '%</strong> — समय की शक्ति देखिए!</p>';
+}
+</script>
+
+<!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
+<script defer src="../assets/ads.js"></script>
+  <script defer src="../assets/ga.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#out',title:"📈 SIP कैलकुलेटर",slug:"sip-calculator"};</script>
+<script src="../assets/result-image.js"></script>
+</body>
+</html>
