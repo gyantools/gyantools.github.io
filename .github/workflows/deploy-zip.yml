@@ -61,7 +61,8 @@ jobs:
         run: |
           # Ye files DELETE se SAFE hain:
           #  .git, .github (yehi workflow), CNAME (custom domain),
-          #  google*.html (Google Search Console verification), zips, _site
+          #  google*.html (Google Search Console verification), zips, _site,
+          #  aur repo-level docs (README.md, .gitignore, LICENSE, AUDIT-REPORT.md)
           find . -mindepth 1 -maxdepth 1 \
             ! -name '.git' \
             ! -name '.github' \
@@ -69,6 +70,10 @@ jobs:
             ! -name 'google*.html' \
             ! -name '*.zip' \
             ! -name '_site' \
+            ! -name 'README.md' \
+            ! -name '.gitignore' \
+            ! -name 'LICENSE' \
+            ! -name 'AUDIT-REPORT.md' \
             -exec rm -rf {} +
           # Nayi site copy karo
           cp -a _site/. ./
@@ -80,7 +85,7 @@ jobs:
       - name: Sitemap ko actual files se sync karo
         run: |
           python3 - <<'PYEOF'
-          import os, datetime
+          import os, re, datetime
           BASE = 'https://gyantools.github.io/'
           today = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d')
           urls = set()
@@ -90,10 +95,20 @@ jobs:
               for fn in fns:
                   if not fn.endswith('.html'):
                       continue
-                  if fn == '404.html' or fn.startswith('google'):
-                      continue  # noindex/error + verification files sitemap me nahi
-                      rel = os.path.relpath(os.path.join(root, fn)).replace(os.sep, '/')
-                      urls.add(BASE if rel == 'index.html' else BASE + rel)
+                  path = os.path.join(root, fn)
+                  if fn == '404.html':
+                      continue  # error page sitemap me nahi
+                  if os.path.dirname(path) == '.' and fn.startswith('google'):
+                      continue  # Google Search Console verification file (sirf root level)
+                  try:
+                      with open(path, encoding='utf-8', errors='replace') as fh:
+                          head = fh.read(4000)
+                  except OSError:
+                      continue
+                  if re.search(r'<meta[^>]*name=["\']robots["\'][^>]*noindex', head, re.I):
+                      continue  # noindex pages (purane redirect stubs) sitemap me nahi
+                  rel = os.path.relpath(path).replace(os.sep, '/')
+                  urls.add(BASE if rel == 'index.html' else BASE + rel)
           out = ['<?xml version="1.0" encoding="UTF-8"?>',
                  '<!-- Yeh sitemap workflow khud banata hai — haath se edit karne ki zaroorat nahi -->',
                  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -108,6 +123,8 @@ jobs:
           out.append('</urlset>')
           open('sitemap.xml', 'w', encoding='utf-8').write('\n'.join(out) + '\n')
           print('SITEMAP SYNC: total URLs =', len(urls))
+          if len(urls) < 50:
+              raise SystemExit('Sitemap bahut chhota lag raha hai (%d URLs) — rok rahe hain.' % len(urls))
           PYEOF
           if ! grep -q 'Sitemap:' robots.txt 2>/dev/null; then
             printf 'User-agent: *\nAllow: /\n\nSitemap: https://gyantools.github.io/sitemap.xml\n' > robots.txt
