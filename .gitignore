@@ -1,0 +1,20 @@
+# Workflow artifacts (runner par bante hain, repo mein nahi rakhne)
+_site/
+_tmp/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# NOTE: *.zip ko yahan NAHIN daalna — deploy-zip.yml workflow ko
+# trigger karne ke liye root par site.zip push karni hoti hai.
