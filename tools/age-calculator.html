@@ -1,99 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Pawan Verma">
-<meta name="publisher" content="PAWANGAMINGSTUDIO">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
-<title>Age Calculator in Hindi – उम्र कैलकुलेटर (साल, महीने, दिन में)</title>
-<meta name="description" content="जन्म तारीख डालकर अपनी सही उम्र साल, महीने और दिनों में जानें। हमारा फ्री Age Calculator in Hindi इस्तेमाल करें और अगले जन्मदिन तक बचे दिन भी जानें।">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Age Calculator in Hindi – उम्र कैलकुलेटर">
-<meta property="og:description" content="जन्म तारीख डालें और सटीक उम्र जानें – साल, महीने, दिन में।">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://gyantools.github.io/tools/age-calculator.html">
-<meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://gyantools.github.io/images/og-image.png">
-<link rel="apple-touch-icon" href="../images/logo.png">
-<link rel="icon" type="image/png" sizes="512x512" href="../images/logo.png">
-<!-- ads -->
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Age Calculator Hindi","applicationCategory":"UtilityApplication","operatingSystem":"Web","description":"जन्म तारीख से सटीक उम्र कैलकुलेटर – साल, महीने, दिन में","inLanguage":"hi","author":{"@type":"Person","name":"Pawan Verma"},"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}
-</script>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
-header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
-.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
-.logo span{color:#e8710a}
-nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:#3c4043;text-decoration:none;font-weight:500}
-nav a:hover{color:#1a73e8}
-.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
-.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
-label{display:block;font-weight:600;margin:12px 0 6px}
-input,select,textarea{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
-input:focus{outline:2px solid #1a73e8;border-color:transparent}
-button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
-button:hover{background:#1557b0}
-.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
-.result .big{font-size:1.4rem;font-weight:700;color:#1a73e8}
-article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
-article h2{margin:24px 0 10px;color:#1a73e8}
-article p,article li{margin-bottom:10px}
-article ul{padding-left:24px}
-.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
-footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
-footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
-.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
-.breadcrumb a{color:#1a73e8;text-decoration:none}
-
-.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
-.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
-.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
-.gt-table td{border:1px solid #dadce0;padding:10px 12px}
-.gt-table tr:nth-child(even) td{background:#f8f9fa}
-.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
-.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
-.gt-faq details p{margin:8px 0 0}
-.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
-.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
-.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
-.gt-author strong{color:#202124}
-.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
-.gt-related a{color:#1a73e8;font-weight:600}
-.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
-
-</style>
-<link rel="canonical" href="https://gyantools.github.io/tools/age-calculator.html">
-
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Exact उम्र कैसे निकालते हैं?", "acceptedAnswer": {"@type": "Answer", "text": "आज की तारीख − जन्म तारीख (leap years adjust करके)। Calculator साल+महीने+दिन + कुल दिन/घंटे सब बताता है।"}}, {"@type": "Question", "name": "Documents में DOB अलग-अलग हो तो?", "acceptedAnswer": {"@type": "Answer", "text": "10th marksheet वाली DOB सबसे authentic मानी जाती है। Aadhaar/PAN उसी से match कराएं।"}}, {"@type": "Question", "name": "18 साल कब पूरे होंगे?", "acceptedAnswer": {"@type": "Answer", "text": "Calculator में DOB डालें – अगला birthday + कौन सी eligibility (voter/license) कब, सब दिखेगा।"}}, {"@type": "Question", "name": "Aadhaar में DOB कैसे update करें?", "acceptedAnswer": {"@type": "Answer", "text": "mAadhaar/UIDAI portal से (valid proof: 10th marksheet/passport) या Aadhaar center जाकर। aadhaar-card-guide blog में पूरा तरीका है।"}}, {"@type": "Question", "name": "Retirement में कितना समय?", "acceptedAnswer": {"@type": "Answer", "text": "60 − मौजूदा उम्र = बचे साल। जल्दी शुरुआत करने वालों के लिए लंबी अवधि की SIP एक मज़बूत विकल्प मानी जाती है (market जोखिम के साथ) – retirement calculator देखें।"}}]}
-</script>
-
-<!-- Google tag (gtag.js) — GyanTools GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KFSJSLG7B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4KFSJSLG7B');
-</script>
-<!-- /Google tag -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Pawan Verma">
+  <meta name="description" content="जन्मतिथि से अपनी सही उम्र साल, महीने और दिन में निकालें। अगले जन्मदिन तक बचे दिन और कुल दिनों की संख्या जानें। मुफ्त हिंदी Age Calculator।">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#155eef">
+  <link rel="canonical" href="https://gyantools.github.io/tools/age-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Age Calculator in Hindi – उम्र साल, महीने और दिन में | GyanTools">
+  <meta property="og:description" content="जन्मतिथि डालकर उम्र साल, महीने, दिन और अगले जन्मदिन तक बचे दिन जानें।">
+  <meta property="og:url" content="https://gyantools.github.io/tools/age-calculator.html">
+  <meta property="og:image" content="https://gyantools.github.io/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Age Calculator in Hindi | GyanTools">
+  <meta name="twitter:description" content="जन्मतिथि से उम्र साल, महीने और दिन में निकालें।">
+  <title>Age Calculator in Hindi – उम्र साल, महीने और दिन में | GyanTools</title>
+  <link rel="icon" type="image/png" href="../images/logo.png">
+  <link rel="apple-touch-icon" href="../images/logo.png">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"GyanTools Age Calculator",
+    "url":"https://gyantools.github.io/tools/age-calculator.html",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "inLanguage":"hi",
+    "description":"जन्मतिथि से उम्र साल, महीने और दिन में निकालने वाला मुफ्त ऑनलाइन कैलकुलेटर।",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"उम्र साल, महीने और दिन में कैसे निकालें?","acceptedAnswer":{"@type":"Answer","text":"जन्मतिथि चुनें और उम्र निकालें बटन दबाएँ। कैलकुलेटर जन्मतिथि और चुनी गई तारीख के बीच कैलेंडर के अनुसार साल, महीने और दिन का अंतर दिखाता है।"}},
+      {"@type":"Question","name":"क्या यह Age Calculator मुफ्त है?","acceptedAnswer":{"@type":"Answer","text":"हाँ, GyanTools Age Calculator मुफ्त है और इस्तेमाल करने के लिए लॉगिन की जरूरत नहीं है।"}},
+      {"@type":"Question","name":"क्या मेरी जन्मतिथि सर्वर पर भेजी जाती है?","acceptedAnswer":{"@type":"Answer","text":"उम्र की गणना इसी ब्राउज़र में JavaScript से होती है। यह पेज जन्मतिथि को किसी कैलकुलेशन सर्वर पर भेजने के लिए कोड नहीं चलाता।"}},
+      {"@type":"Question","name":"29 फरवरी को जन्मे व्यक्ति का अगला जन्मदिन कैसे गिना जाता है?","acceptedAnswer":{"@type":"Answer","text":"लीप वर्ष में 29 फरवरी तारीख उपलब्ध होती है। गैर-लीप वर्ष में इस कैलकुलेटर में अगला जन्मदिन 1 मार्च माना जाता है।"}}
+    ]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KFSJSLG7B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4KFSJSLG7B');
+  </script>
+  <style>
+    :root{color-scheme:light;--blue:#155eef;--blue-dark:#1249bd;--ink:#172033;--muted:#596579;--line:#dce3ed;--bg:#f4f7fb;--card:#fff;--green:#067647}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Devanagari",sans-serif;line-height:1.7}
+    a{color:var(--blue)}
+    .container{width:min(100% - 32px,1000px);margin-inline:auto}
+    .site-header{background:#fff;border-bottom:1px solid var(--line)}
+    .nav{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .logo{font-weight:850;font-size:1.4rem;text-decoration:none;color:var(--blue);letter-spacing:-.04em}
+    .logo span{color:#e87916}
+    nav ul{display:flex;gap:16px;list-style:none;padding:0;margin:0;flex-wrap:wrap}
+    nav a{text-decoration:none;color:#344054;font-size:.95rem}
+    nav a:hover{text-decoration:underline}
+    .breadcrumb{font-size:.9rem;color:var(--muted);padding-top:18px}
+    .breadcrumb a{text-decoration:none}
+    .hero{padding:12px 0 28px}
+    .eyebrow{display:inline-block;background:#e8efff;color:#1749b8;border-radius:999px;padding:4px 11px;font-size:.82rem;font-weight:750}
+    h1{font-size:clamp(1.7rem,4vw,2.35rem);line-height:1.25;letter-spacing:-.035em;margin:12px 0}
+    .lead{color:var(--muted);max-width:720px;margin:0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,4vw,30px);box-shadow:0 8px 28px rgba(20,40,80,.05);margin:18px 0}
+    .calculator{border-top:4px solid var(--blue)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    label{display:block;font-weight:750;margin-bottom:7px}
+    input[type=date]{width:100%;min-height:49px;border:1px solid #b9c5d6;border-radius:10px;padding:10px 12px;font:inherit;background:#fff;color:var(--ink)}
+    input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #92b4ff;outline-offset:2px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    button{border:0;border-radius:10px;padding:12px 18px;font:inherit;font-weight:750;cursor:pointer}
+    .primary{background:var(--blue);color:white}
+    .primary:hover{background:var(--blue-dark)}
+    .secondary{background:#eef2f7;color:#263449}
+    .result{display:none;margin-top:22px;border:1px solid #b8cdfc;background:#f3f7ff;border-radius:14px;padding:18px}
+    .result h2{font-size:1.2rem;margin:0 0 10px}
+    .age-big{font-size:clamp(1.35rem,4vw,2rem);font-weight:850;color:#1249bd;line-height:1.35}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+    .stat{background:#fff;border:1px solid #d8e3fa;border-radius:10px;padding:12px}
+    .stat span{display:block;font-size:.84rem;color:var(--muted)}
+    .stat strong{font-size:1.05rem;overflow-wrap:anywhere}
+    .message{margin:12px 0 0;color:#9a3412;font-weight:650}
+    .privacy{background:#ecfdf3;border:1px solid #abefc6;border-radius:12px;padding:12px 14px;color:#05603a;margin-top:16px;font-size:.94rem}
+    h2{font-size:1.45rem;line-height:1.35;margin:0 0 12px}
+    h3{font-size:1.08rem;margin:20px 0 6px}
+    .content p{margin:10px 0}
+    .content ul,.content ol{padding-left:24px}
+    .content li{margin:6px 0}
+    .quick-examples{width:100%;border-collapse:collapse;margin:12px 0}
+    .quick-examples th,.quick-examples td{text-align:left;border:1px solid var(--line);padding:10px}
+    .quick-examples th{background:#eef3ff}
+    .faq details{border:1px solid var(--line);border-radius:10px;background:#fff;padding:13px 15px;margin:10px 0}
+    .faq summary{cursor:pointer;font-weight:750}
+    .faq details p{margin:9px 0 0;color:#465267}
+    .related{display:flex;flex-wrap:wrap;gap:10px}
+    .related a{display:inline-block;text-decoration:none;background:#eef3ff;border:1px solid #d9e4ff;border-radius:9px;padding:8px 12px;font-weight:650}
+    .author{border-top:1px solid var(--line);padding-top:16px;margin-top:24px;color:var(--muted);font-size:.94rem}
+    footer{background:#172033;color:#e3e8f1;padding:26px 0;margin-top:38px;font-size:.92rem}
+    footer a{color:#c8d7ff;text-decoration:none}
+    .footer-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px}
+    @media(max-width:600px){.container{width:min(100% - 22px,1000px)}.nav{padding:12px 0}.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.card{border-radius:14px}nav ul{gap:10px}.quick-examples{font-size:.9rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
 </head>
 <body>
-<header>
+<header class="site-header">
   <div class="container nav">
-    <a class="logo" href="../index.html">Gyan<span>Tools</span></a>
-    <nav>
+    <a class="logo" href="../index.html" aria-label="GyanTools होम">Gyan<span>Tools</span></a>
+    <nav aria-label="मुख्य नेविगेशन">
       <ul>
         <li><a href="../index.html">होम</a></li>
         <li><a href="../index.html#tools">टूल्स</a></li>
@@ -105,133 +128,251 @@ footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
   </div>
 </header>
 
-<div class="container">
-  <p class="breadcrumb"><a href="../index.html">होम</a> › उम्र कैलकुलेटर</p>
+<main class="container">
+  <p class="breadcrumb"><a href="../index.html">होम</a> › <span>Age Calculator</span></p>
+  <section class="hero">
+    <span class="eyebrow">मुफ्त · बिना लॉगिन · मोबाइल फ्रेंडली</span>
+    <h1>Age Calculator in Hindi – उम्र साल, महीने और दिन में निकालें</h1>
+    <p class="lead">अपनी जन्मतिथि चुनें और कुछ ही सेकंड में उम्र जानें। चाहें तो किसी दूसरी तारीख तक की उम्र भी निकाल सकते हैं।</p>
+  </section>
 
-  <div class="tool-box">
-    <h1>🎂 उम्र कैलकुलेटर (Age Calculator)</h1>
-    <p>अपनी जन्म तारीख डालें और सटीक उम्र पाएं – साल, महीने और दिन में।</p>
-    <label for="dob">जन्म तारीख (Date of Birth)</label>
-    <input type="date" id="dob">
-    <label for="asof">उम्र किस तारीख तक निकालें</label>
-    <input type="date" id="asof">
-    <button onclick="calcAge()">उम्र निकालें</button>
-    <div class="result" id="out" style="display:none"></div>
-  </div>
+  <section class="card calculator" aria-labelledby="calc-title">
+    <h2 id="calc-title">🎂 अपनी उम्र निकालें</h2>
+    <div class="grid">
+      <div>
+        <label for="dob">जन्मतिथि (Date of Birth)</label>
+        <input type="date" id="dob" autocomplete="bday" required>
+      </div>
+      <div>
+        <label for="asof">किस तारीख तक उम्र निकालें?</label>
+        <input type="date" id="asof" required>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="primary" id="calculate" type="button">उम्र निकालें</button>
+      <button class="secondary" id="reset" type="button">रीसेट करें</button>
+    </div>
+    <p id="error" class="message" role="alert" hidden></p>
+    <div id="out" class="result" aria-live="polite" aria-atomic="true"></div>
+    <div class="privacy">🔒 <strong>प्राइवेसी:</strong> गणना आपके ब्राउज़र में होती है। इस टूल को आपकी जन्मतिथि भेजने के लिए किसी कैलकुलेशन API की जरूरत नहीं है।</div>
+  </section>
 
-  <article>
-    <h2>उम्र कैलकुलेटर कैसे काम करता है?</h2>
-    <p>यह tool आपकी जन्म तारीख और आज की तारीख (या कोई भी चुनी हुई तारीख) के बीच का फर्क निकालकर बताता है कि आपकी उम्र कितने <strong>साल, महीने और दिन</strong> की है। साथ ही यह कुल दिन, कुल हफ़्ते और कुल घंटे भी बताता है।</p>
-    <h2>उम्र की गिनती क्यों ज़रूरी है?</h2>
+  <article class="card content">
+    <h2>Age Calculator क्या है?</h2>
+    <p>Age Calculator यानी उम्र कैलकुलेटर, जन्मतिथि और चुनी गई तारीख के बीच का समय साल, महीने और दिन में बताता है। इससे आप अपनी उम्र या किसी व्यक्ति की उम्र आसानी से निकाल सकते हैं।</p>
+
+    <h2>उम्र कैलकुलेटर इस्तेमाल करने का तरीका</h2>
+    <ol>
+      <li>जन्मतिथि वाले बॉक्स में दिन, महीना और साल चुनें।</li>
+      <li>आमतौर पर दूसरी तारीख आज की तारीख रहती है। जरूरत हो तो इसे बदलें।</li>
+      <li><strong>उम्र निकालें</strong> पर टैप करें।</li>
+      <li>परिणाम में उम्र, कुल दिन और अगले जन्मदिन तक बचे दिन देखें।</li>
+    </ol>
+
+    <h2>उम्र निकालने का उदाहरण</h2>
+    <p>मान लीजिए जन्मतिथि 15 जनवरी 2000 है और उम्र 21 अक्टूबर 2026 तक निकालनी है। कैलकुलेटर दोनों तारीखों के कैलेंडर अंतर के आधार पर उम्र बताएगा। नीचे दिए उदाहरण को अपनी जन्मतिथि डालकर खुद जाँच सकते हैं।</p>
+    <table class="quick-examples">
+      <thead><tr><th>जानकारी</th><th>उदाहरण</th></tr></thead>
+      <tbody>
+        <tr><td>जन्मतिथि</td><td>15 जनवरी 2000</td></tr>
+        <tr><td>गणना की तारीख</td><td>21 अक्टूबर 2026</td></tr>
+        <tr><td>परिणाम</td><td>26 साल, 9 महीने, 6 दिन</td></tr>
+      </tbody>
+    </table>
+
+    <h2>उम्र कैलकुलेटर किन कामों में उपयोगी है?</h2>
     <ul>
-      <li><strong>फॉर्म भरने के लिए</strong> – सरकारी नौकरी, परीक्षा (जैसे UPSC, SSC), पासपोर्ट आदि में सटीक उम्र मांगी जाती है</li>
-      <li><strong>परीक्षा की eligibility</strong> जांचने के लिए – कई exams में age limit 18–30 साल जैसी होती है</li>
-      <li><strong>शादी, बीमा, पेंशन, वोटर ID</strong> जैसे कामों में उम्र का प्रमाण चाहिए</li>
-      <li><strong>स्कूल प्रवेश</strong> – बच्चों के admission में age criteria देखने के लिए</li>
+      <li>अपनी उम्र साल, महीने और दिन में जानने के लिए।</li>
+      <li>जन्मदिन आने में कितने दिन बाकी हैं, यह देखने के लिए।</li>
+      <li>परिवार के सदस्य या बच्चे की उम्र निकालने के लिए।</li>
+      <li>किसी आवेदन की आयु-सीमा समझने में शुरुआती मदद के लिए।</li>
     </ul>
-    <h2>उम्र निकालने का तरीका</h2>
-    <p>अगर आप मैन्युअल रूप से उम्र निकालना चाहें तो जन्म तारीख से आज की तारीख घटाई जाती है। अगर दिन का नंबर कम पड़ जाए तो पिछले महीने से उधार लेकर 30/31 दिन जोड़े जाते हैं। हमारा calculator यही गणित सेकंडों में सटीक तरीके से कर देता है।</p>
-    <div class="note">🔒 <strong>प्राइवेसी:</strong> आपकी तारीख किसी server पर नहीं जाती – calculation आपके ब्राउज़र में ही होता है।</div>
-  
-<h2>उम्र की गणना कैसे होती है?</h2>
-<p>टूल आपकी जन्मतिथि और आज की तारीख के बीच का अंतर निकालता है – <strong>साल, महीने और दिन</strong> तीनों में सटीक। इसमें लीप ईयर, 30-31 दिन वाले महीने – सब अपने आप संभाल लिए जाते हैं।</p>
-<ul>
-  <li><strong>फॉर्म/आवेदन:</strong> कई सरकारी फॉर्म में "आयु वर्षों में" लिखनी होती है – गलती से कटौती का खतरा</li>
-  <li><strong>पात्रता जांच:</strong> नौकरी, परीक्षा, पेंशन, सीनियर सिटीजन लाभ – उम्र सीमा तुरंत पता करें</li>
-  <li><strong>मील के पत्थर:</strong> अगला जन्मदिन कब और कितने दिन बाद</li>
-  <li><strong>बच्चों का रिकॉर्ड:</strong> एडमिशन फॉर्म के लिए स्कूली उम्र</li>
-</ul>
-<p>टिप: जन्मतिथि आधार कार्ड/जन्म प्रमाण पत्र से मिलान करके डालें – फॉर्म में उम्र हमेशा इन्हीं दस्तावेजों से लिखी जाती है।</p>
+    <p><strong>ध्यान दें:</strong> सरकारी नौकरी, परीक्षा, लाइसेंस या किसी योजना की पात्रता के लिए संबंधित विभाग के आधिकारिक नियम और कट-ऑफ तारीख जरूर जाँचें। केवल यह कैलकुलेटर पात्रता की पुष्टि नहीं करता।</p>
 
+    <h2>सटीक उम्र की गणना कैसे होती है?</h2>
+    <p>उम्र की गणना में सिर्फ कुल दिनों को 365 से भाग देना पर्याप्त नहीं होता, क्योंकि महीनों की लंबाई अलग-अलग होती है और लीप वर्ष में फरवरी 29 दिनों की होती है। इसलिए यह टूल कैलेंडर के साल, महीने और दिन के आधार पर अंतर निकालता है।</p>
 
-<h2>Age Calculator कैसे इस्तेमाल करें?</h2>
-<ol>
-<li>अपनी <strong>जन्म तारीख</strong> (date of birth) चुनें – day/month/year।</li>
-<li><strong>Calculate दबाएं</strong> – साल, महीने, दिन में exact उम्र।</li>
-<li><strong>Extra details</strong> देखें – कुल महीने, हफ़्ते, दिन, घंटे तक!</li>
-<li><strong>अगला birthday countdown</strong> – कितने दिन बाकी + कौन सा weekday।</li>
-<li>Documents (Aadhaar/PAN) से <strong>DOB match</strong> करें – फर्क हो तो update कराएं।</li>
-</ol>
-<h2>उम्र से जुड़ी ज़रूरी eligibility (भारत)</h2>
-<table class="gt-table"><tr><th>उम्र</th><th>क्या मिलता है</th></tr><tr><td>10 साल</td><td>SSY account (बेटी के लिए, 10 से पहले)</td></tr><tr><td>18 साल</td><td>Voter ID, driving license, bank account, APY/NPS शुरू</td></tr><tr><td>21 साल</td><td>SSY maturity (बेटी), शादी (लड़का, कानूनी)</td></tr><tr><td>55–60 साल</td><td>SCSS, senior citizen benefits, retirement</td></tr></table>
-<div class="note">💡 <strong>DOB proof ladder:</strong> 10th marksheet &gt; Aadhaar &gt; PAN। Documents में DOB अलग-अलग हो तो <strong>10th certificate वाली</strong> सबसे मज़बूत मानी जाती है – बाकी update करा लें।</div>
-<h2>DOB से जुड़े 5 काम</h2>
-<ul>
-<li><strong>Aadhaar DOB update</strong> – online/center से (proof के साथ)।</li>
-<li><strong>PAN DOB</strong> – 10th marksheet से match कराएं।</li>
-<li><strong>Passport:</strong> DOB proof + ECR/ECNR (10th pass = ECNR)।</li>
-<li><strong>Retirement countdown</strong> – 60 तक कितने साल = planning horizon।</li>
-<li><strong>Horoscope:</strong> सही DOB + time = सही कुंडली (rashi tool देखें)।</li>
-</ul>
-<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
-<div class="gt-faq">
-<details><summary>Exact उम्र कैसे निकालते हैं?</summary><p>आज की तारीख − जन्म तारीख (leap years adjust करके)। Calculator साल+महीने+दिन + कुल दिन/घंटे सब बताता है।</p></details>
-<details><summary>Documents में DOB अलग-अलग हो तो?</summary><p>10th marksheet वाली DOB सबसे authentic मानी जाती है। Aadhaar/PAN उसी से match कराएं।</p></details>
-<details><summary>18 साल कब पूरे होंगे?</summary><p>Calculator में DOB डालें – अगला birthday + कौन सी eligibility (voter/license) कब, सब दिखेगा।</p></details>
-<details><summary>Aadhaar में DOB कैसे update करें?</summary><p>mAadhaar/UIDAI portal से (valid proof: 10th marksheet/passport) या Aadhaar center जाकर। aadhaar-card-guide blog में पूरा तरीका है।</p></details>
-<details><summary>Retirement में कितना समय?</summary><p>60 − मौजूदा उम्र = बचे साल। जल्दी शुरुआत करने वालों के लिए लंबी अवधि की SIP एक मज़बूत विकल्प मानी जाती है (market जोखिम के साथ) – retirement calculator देखें।</p></details>
-</div>
-<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="bmi-calculator.html">⚖️ BMI कैलकुलेटर (बीएमआई)</a> · <a href="calorie-bmr-calculator.html">🔥 रोज़ कितनी कैलोरी चाहिए?</a> · <a href="water-intake-calculator.html">💧 रोज़ कितना पानी पिएं?</a> · <a href="sleep-cycle-calculator.html">😴 कब सोएं, कब उठें?</a> · <a href="pregnancy-due-date-calculator.html">🤰 डिलीवरी की तारीख कैलकुलेटर</a></div>
-<h2>Sarkari Exams Age Limits (2026) + DOB Correction</h2>
-<p>उम्र निकल गई? अब देखो कहां eligible हो:</p>
-<table class="gt-table"><tr><th>Exam/काम</th><th>Age Limit</th><th>Relaxation</th></tr><tr><td>UPSC CSE</td><td>21–32</td><td>OBC +3, SC/ST +5</td></tr><tr><td>SSC CGL/CHSL</td><td>18–32 (post-wise)</td><td>Category-wise</td></tr><tr><td>IBPS PO/Clerk</td><td>20–30 / 20–28</td><td>Category-wise</td></tr><tr><td>Railway (NTPC/Group D)</td><td>18–30/33</td><td>Category-wise</td></tr><tr><td>UP Police/Defence</td><td>18–22/25</td><td>Category-wise</td></tr><tr><td>Driving License</td><td>18+ (16+ gearless)</td><td>–</td></tr></table>
-<p><strong>DOB गलत है documents में?</strong> Priority: <strong>10th marksheet → Birth certificate → Aadhaar → PAN</strong>। Aadhaar update: mAadhaar/UIDAI portal + valid proof (limit: DOB change सिर्फ 1 बार!)। PAN: NSDL/UTI online correction। Passport: re-issue with correct proof। <strong>सबमें same DOB = zero rejection</strong> (job/visa/loan में)! Mismatch पकड़ा गया तो affidavit + newspaper ad भी लग सकता है – जल्दी ठीक कराओ।</p>
-<h2>Generation Chart + Retirement Countdown Strategy</h2>
-<p>तुम कौन सी generation हो?</p>
-<table class="gt-table"><tr><th>Generation</th><th>Born</th><th>पहचान</th></tr><tr><td>Gen X</td><td>1965–1980</td><td>Landline → internet shift</td></tr><tr><td>Millennials (Gen Y)</td><td>1981–1996</td><td>Orkut → smartphone</td></tr><tr><td>Gen Z ⭐</td><td>1997–2012</td><td>Mobile-first, reels!</td></tr><tr><td>Gen Alpha</td><td>2013+</td><td>AI-native kids</td></tr></table>
-<p><strong>Retirement countdown strategy (उम्र के हिसाब से):</strong> <strong>20s:</strong> सिर्फ habit – ₹2K SIP भी चलेगी (time सबसे बड़ा asset!)। <strong>30s:</strong> aggressive – 70% equity + term insurance + health cover। <strong>40s:</strong> peak-earning – max out EPF/NPS/PPF + kids-goals fund। <strong>50s:</strong> protect – equity घटाकर debt/SCSS/MIS shift + health cover ₹25L+। <strong>60+:</strong> income-mode – SWP + SCSS + FD ladder। हर birthday पर 1-hour money-review = richest gift खुद को!</p>
-<div class="note">🎂 <strong>Birthday hack:</strong> हर birthday पर SIP 10% बढ़ाओ (step-up!) – 25 की उम्र में ₹5K से शुरू = 60 तक <strong>₹5Cr+ potential</strong> (12% पर)! Calculator से खुद verify करो।</div>
-<h2>Zodiac Sign + Birthstone (Birthday Fun!)</h2>
-<table class="gt-table"><tr><th>Dates</th><th>Sign</th><th>Birthstone</th></tr><tr><td>Mar 21–Apr 19</td><td>मेष ♈</td><td>हीरा (Diamond)</td></tr><tr><td>Apr 20–May 20</td><td>वृषभ ♉</td><td>पन्ना (Emerald)</td></tr><tr><td>May 21–Jun 20</td><td>मिथुन ♊</td><td>मोती (Pearl)</td></tr><tr><td>Jun 21–Jul 22</td><td>कर्क ♋</td><td>माणिक (Ruby)</td></tr><tr><td>Jul 23–Aug 22</td><td>सिंह ♌</td><td>पुखराज (Topaz)</td></tr><tr><td>Aug 23–Sep 22</td><td>कन्या ♍</td><td>नीलम (Sapphire)</td></tr><tr><td>Sep 23–Oct 22</td><td>तुला ♎</td><td>ओपल (Opal)</td></tr><tr><td>Oct 23–Nov 21</td><td>वृश्चिक ♏</td><td>मूंगा (Coral)</td></tr><tr><td>Nov 22–Dec 21</td><td>धनु ♐</td><td>फिरोज़ा (Turquoise)</td></tr><tr><td>Dec 22–Jan 19</td><td>मकर ♑</td><td>गोमेद (Garnet)</td></tr><tr><td>Jan 20–Feb 18</td><td>कुंभ ♒</td><td>नीलम (Amethyst)</td></tr><tr><td>Feb 19–Mar 20</td><td>मीन ♓</td><td>मोती (Aquamarine)</td></tr></table>
-<p>अपनी DOB डालो → उम्र + sign + stone एक साथ जानो! Birthday-party theme (stone-color!) या gift-idea में काम आएगा। Vedic (rashi) अलग होती है – कुंडली में moon-sign देखो!</p>
-<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>Pawan Verma · GyanTools</strong><p>यह गाइड Pawan Verma ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
-</article>
-</div>
+    <h2>अक्सर पूछे जाने वाले सवाल</h2>
+    <div class="faq">
+      <details><summary>क्या यह Age Calculator मुफ्त है?</summary><p>हाँ, इसे मुफ्त इस्तेमाल किया जा सकता है और लॉगिन करने की जरूरत नहीं है।</p></details>
+      <details><summary>क्या मैं पिछली तारीख तक उम्र निकाल सकता हूँ?</summary><p>हाँ। दूसरी तारीख वाले बॉक्स में वह तारीख चुनें जिस दिन तक उम्र जाननी है। वह जन्मतिथि से पहले की नहीं होनी चाहिए।</p></details>
+      <details><summary>क्या मेरी जन्मतिथि कहीं सेव होती है?</summary><p>उम्र की गणना इस पेज़ के JavaScript से आपके ब्राउज़र में होती है। यह कैलकुलेटर जन्मतिथि को किसी अलग गणना सर्वर पर नहीं भेजता। वेबसाइट के सामान्य analytics या विज्ञापन स्क्रिप्ट की अपनी नीतियाँ हो सकती हैं; अधिक जानकारी के लिए Privacy Policy पढ़ें।</p></details>
+      <details><summary>29 फरवरी को जन्मे व्यक्ति का अगला जन्मदिन कैसे गिना जाता है?</summary><p>लीप वर्ष में 29 फरवरी उपलब्ध होती है। गैर-लीप वर्ष में इस टूल में अगला जन्मदिन 1 मार्च माना जाता है।</p></details>
+      <details><summary>क्या इस परिणाम से सरकारी परीक्षा की पात्रता तय हो जाती है?</summary><p>नहीं। पात्रता संबंधित परीक्षा/विभाग की आधिकारिक अधिसूचना, कट-ऑफ तारीख और आयु-छूट के नियमों पर निर्भर करती है।</p></details>
+    </div>
+
+    <h2>दूसरे उपयोगी टूल्स</h2>
+    <div class="related">
+      <a href="date-difference-calculator.html">Date Difference Calculator</a>
+      <a href="percentage-calculator.html">Percentage Calculator</a>
+      <a href="gst-calculator.html">GST Calculator</a>
+      <a href="../index.html#tools">सभी टूल्स देखें</a>
+    </div>
+
+    <div class="author"><strong>GyanTools टीम</strong><br>यह टूल सामान्य उम्र-गणना के लिए है। किसी आधिकारिक पात्रता या कानूनी निर्णय से पहले संबंधित विभाग की जानकारी जाँचें। सुझाव या गलती बताने के लिए <a href="../contact.html">हमसे संपर्क करें</a>।</div>
+  </article>
+</main>
 
 <footer>
-  <div class="container">
-    <p>© 2026 GyanTools – हिंदी में Free Online Tools</p>
-    <p>🛠️ Developed by <strong>Pawan Verma</strong> · PAWANGAMINGSTUDIO</p>
-    <p><a href="../about.html">हमारे बारे में</a> · <a href="../contact.html">संपर्क</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-conditions.html">नियम व शर्तें</a> · <a href="../disclaimer.html">अस्वीकरण</a></p>
+  <div class="container" style="text-align:center">
+    <p>© 2026 GyanTools – हिंदी में मुफ्त ऑनलाइन टूल्स</p>
+    <div class="footer-links">
+      <a href="../about.html">हमारे बारे में</a>
+      <a href="../contact.html">संपर्क</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../terms-conditions.html">नियम व शर्तें</a>
+      <a href="../disclaimer.html">अस्वीकरण</a>
+    </div>
   </div>
 </footer>
 
 <script>
-var today = new Date().toISOString().split('T')[0];
-document.getElementById('asof').value = today;
-document.getElementById('asof').max = today;
-function calcAge(){
-  var dob = document.getElementById('dob').value;
-  var asof = document.getElementById('asof').value;
-  var out = document.getElementById('out');
-  if(!dob || !asof){ out.style.display='block'; out.innerHTML='⚠️ कृपया जन्म तारीख चुनें।'; return; }
-  var b = new Date(dob), t = new Date(asof);
-  if(b > t){ out.style.display='block'; out.innerHTML='⚠️ जन्म तारीख, दूसरी तारीख से बड़ी नहीं हो सकती।'; return; }
-  var y = t.getFullYear() - b.getFullYear();
-  var m = t.getMonth() - b.getMonth();
-  var d = t.getDate() - b.getDate();
-  if(d < 0){ m--; d += new Date(t.getFullYear(), t.getMonth(), 0).getDate(); }
-  if(m < 0){ y--; m += 12; }
-  var totalDays = Math.floor((t - b) / 86400000);
-  var totalHours = Math.floor((t - b) / 3600000);
-  // अगला जन्मदिन
-  var nb = new Date(t.getFullYear(), b.getMonth(), b.getDate());
-  if(nb <= t) nb = new Date(t.getFullYear()+1, b.getMonth(), b.getDate());
-  var nbDays = Math.ceil((nb - t) / 86400000);
-  var nbDate = nb.toLocaleDateString('hi-IN', {day:'numeric', month:'long', year:'numeric'});
-  out.style.display = 'block';
-  out.innerHTML = '<div class="big">आपकी उम्र: ' + y + ' साल, ' + m + ' महीने, ' + d + ' दिन</div>'
-    + '<p>कुल दिन: <strong>' + totalDays.toLocaleString('hi-IN') + '</strong> दिन · कुल हफ़्ते: <strong>' + Math.floor(totalDays/7).toLocaleString('hi-IN') + '</strong> · कुल घंटे: <strong>' + totalHours.toLocaleString('hi-IN') + '</strong></p>'
-    + '<p>🎂 अगला जन्मदिन: <strong>' + nbDate + '</strong> (' + nbDays + ' दिन बाद)</p>';
-}
+(function () {
+  "use strict";
+  const dobInput = document.getElementById("dob");
+  const asofInput = document.getElementById("asof");
+  const output = document.getElementById("out");
+  const error = document.getElementById("error");
+  const calculateButton = document.getElementById("calculate");
+  const resetButton = document.getElementById("reset");
+
+  // Local date avoids the UTC date shift that can occur with toISOString().
+  function localDateString(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, "0");
+    const d = String(date.getDate()).padStart(2, "0");
+    return `${y}-${m}-${d}`;
+  }
+  function parseDate(value) {
+    if (!value) return null;
+    const parts = value.split("-").map(Number);
+    if (parts.length !== 3 || parts.some(Number.isNaN)) return null;
+    const date = new Date(parts[0], parts[1] - 1, parts[2], 12);
+    if (date.getFullYear() !== parts[0] || date.getMonth() !== parts[1] - 1 || date.getDate() !== parts[2]) return null;
+    return date;
+  }
+  function daysInMonth(year, monthIndex) {
+    return new Date(year, monthIndex + 1, 0, 12).getDate();
+  }
+  function addYearsClamped(date, years) {
+    const year = date.getFullYear() + years;
+    const month = date.getMonth();
+    const day = Math.min(date.getDate(), daysInMonth(year, month));
+    return new Date(year, month, day, 12);
+  }
+  function addMonthsClamped(date, months) {
+    const first = new Date(date.getFullYear(), date.getMonth() + months, 1, 12);
+    const day = Math.min(date.getDate(), daysInMonth(first.getFullYear(), first.getMonth()));
+    return new Date(first.getFullYear(), first.getMonth(), day, 12);
+  }
+  function diffCalendar(birth, end) {
+    let years = end.getFullYear() - birth.getFullYear();
+    let cursor = addYearsClamped(birth, years);
+    if (cursor > end) {
+      years--;
+      cursor = addYearsClamped(birth, years);
+    }
+    let months = (end.getFullYear() - cursor.getFullYear()) * 12 + end.getMonth() - cursor.getMonth();
+    let afterMonths = addMonthsClamped(cursor, months);
+    if (afterMonths > end) {
+      months--;
+      afterMonths = addMonthsClamped(cursor, months);
+    }
+    const days = Math.round((end - afterMonths) / 86400000);
+    return { years, months, days };
+  }
+  function dayCount(start, end) {
+    return Math.round((end - start) / 86400000);
+  }
+  function nextBirthday(birth, asOf) {
+    let year = asOf.getFullYear();
+    let month = birth.getMonth();
+    let day = birth.getDate();
+    // For Feb 29 birthdays, use March 1 in non-leap years.
+    if (month === 1 && day === 29 && daysInMonth(year, 1) < 29) {
+      month = 2;
+      day = 1;
+    }
+    let next = new Date(year, month, day, 12);
+    if (next <= asOf) {
+      year++;
+      month = birth.getMonth();
+      day = birth.getDate();
+      if (month === 1 && day === 29 && daysInMonth(year, 1) < 29) {
+        month = 2;
+        day = 1;
+      }
+      next = new Date(year, month, day, 12);
+    }
+    return next;
+  }
+  function formatDate(date) {
+    return new Intl.DateTimeFormat("hi-IN", { day: "numeric", month: "long", year: "numeric" }).format(date);
+  }
+  function numberHi(n) {
+    return n.toLocaleString("hi-IN");
+  }
+  function showError(message) {
+    error.textContent = message;
+    error.hidden = false;
+    output.style.display = "none";
+  }
+  function calculate() {
+    error.hidden = true;
+    const birth = parseDate(dobInput.value);
+    const end = parseDate(asofInput.value);
+    if (!birth) return showError("कृपया सही जन्मतिथि चुनें।");
+    if (!end) return showError("कृपया उम्र निकालने की तारीख चुनें।");
+    if (birth > end) return showError("जन्मतिथि, उम्र निकालने की तारीख से बाद की नहीं हो सकती।");
+
+    const age = diffCalendar(birth, end);
+    const totalDays = dayCount(birth, end);
+    const birthday = nextBirthday(birth, end);
+    const daysLeft = dayCount(end, birthday);
+    const totalWeeks = Math.floor(totalDays / 7);
+    const totalMonthsApprox = age.years * 12 + age.months;
+
+    output.innerHTML = `
+      <h2>आपकी उम्र का परिणाम</h2>
+      <div class="age-big">${numberHi(age.years)} साल, ${numberHi(age.months)} महीने, ${numberHi(age.days)} दिन</div>
+      <div class="stats">
+        <div class="stat"><span>कुल दिन</span><strong>${numberHi(totalDays)}</strong></div>
+        <div class="stat"><span>पूरे हफ़्ते</span><strong>${numberHi(totalWeeks)}</strong></div>
+        <div class="stat"><span>पूरे महीने (साल × 12 + महीने)</span><strong>${numberHi(totalMonthsApprox)}</strong></div>
+      </div>
+      <p>🎂 अगला जन्मदिन: <strong>${formatDate(birthday)}</strong> — ${numberHi(daysLeft)} दिन बाकी।</p>
+      <p style="margin-bottom:0;color:#596579;font-size:.9rem">गणना की तारीख: ${formatDate(end)}</p>
+    `;
+    output.style.display = "block";
+    output.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  const today = new Date();
+  asofInput.value = localDateString(today);
+  asofInput.max = localDateString(today);
+  dobInput.max = localDateString(today);
+  calculateButton.addEventListener("click", calculate);
+  resetButton.addEventListener("click", function () {
+    dobInput.value = "";
+    asofInput.value = localDateString(new Date());
+    error.hidden = true;
+    output.style.display = "none";
+    dobInput.focus();
+  });
+  dobInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") calculate();
+  });
+  asofInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") calculate();
+  });
+})();
 </script>
 
-<!-- GyanTools Ads (Adsterra) – popunder + banner + social bar -->
+<!-- Keep the site's existing ad and analytics assets. -->
 <script defer src="../assets/ads.js"></script>
-  <script defer src="../assets/ga.js"></script>
-
-<!-- GyanTools: result ko image mein download karo -->
-<script>window.GT_RESULT_IMAGE={target:'#out',title:"🎂 उम्र कैलकुलेटर",slug:"age-calculator"};</script>
-<script src="../assets/result-image.js"></script>
+<script defer src="../assets/ga.js"></script>
+<script>window.GT_RESULT_IMAGE={target:"#out",title:"उम्र कैलकुलेटर",slug:"age-calculator"};</script>
+<script defer src="../assets/result-image.js"></script>
 </body>
-</html>
+  </html>
+  
