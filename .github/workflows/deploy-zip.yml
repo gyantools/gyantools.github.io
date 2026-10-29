@@ -54,6 +54,18 @@ jobs:
           # bot-commit bhi shaamil ho aur push me conflict na aaye (runs ek-ek karke chalte hain)
           ref: ${{ github.ref_name }}
 
+      - name: Workflow file poori hai? (copy-paste kat to nahi gaya)
+        env:
+          WORKFLOW_REF: ${{ github.workflow_ref }}
+        run: |
+          f=$(printf '%s' "$WORKFLOW_REF" | sed -E 's#^[^/]+/[^/]+/##; s#@.*$##')
+          [ -f "$f" ] || f=.github/workflows/deploy-zip.yml
+          if ! grep -q '^# gt:workflow-end' "$f"; then
+            echo "::error::$f ADHOORI hai - copy-paste beech me kat gaya (mobile par ~20,000 akshar ki limit hoti hai). Copy-paste mat karo: poori deploy-zip.yml file ko 'Add file > Upload files' se .github/workflows/ folder me upload karo."
+            exit 1
+          fi
+          echo "Workflow file poori hai: $f"
+
       - name: Is push me badli files yaad rakho (IndexNow ke liye)
         env:
           BEFORE: ${{ github.event.before }}
@@ -398,4 +410,89 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git -c core.quotepath=off status --porcelain --untracked
+          git -c core.quotepath=off status --porcelain --untracked-files=all | sed 's/^...//; s/^"//; s/"$//; s/.* -> //' > /tmp/bot_files.txt
+          git add -A
+          PAGES=$(find . -name '*.html' -not -path './.git/*' | wc -l)
+          if git diff --cached --quiet; then
+            echo "Koi change nahi — site pehle se updated hai."
+            echo "### ✅ Site pehle se updated hai ($PAGES pages) — koi naya commit nahi chahiye" >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "Auto-deploy: site sync ($PAGES pages, $SITE_DOMAIN) [skip ci]"
+            ok=0
+            for i in 1 2 3; do
+              if git push; then ok=1; break; fi
+              echo "Push fail — rebase karke dobara try ($i)"
+              git pull --rebase || true
+            done
+            if [ "$ok" != 1 ]; then
+              echo "::error::Site ka commit push NAHI hua. Settings > Actions > General > Workflow permissions > 'Read and write permissions' > Save, phir is run par 'Re-run all jobs' dabao."
+              exit 1
+            fi
+            echo "### ✅ Nayi site push ho gayi ($PAGES pages) — GitHub Pages 1-3 minute me live karega" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: IndexNow ping (Bing, Yandex, Naver, Seznam, Yep) — Google is support nahi karta
+        if: steps.zip.outputs.ready == 'true'
+        continue-on-error: true
+        env:
+          INDEXNOW_KEY: ${{ steps.inkey.outputs.key }}
+          INDEXNOW_ALL: ${{ github.event.inputs.indexnow_all }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, re, json, time, urllib.request, urllib.error
+          D = os.environ['SITE_DOMAIN']; BASE = 'https://%s/' % D
+          key = os.environ['INDEXNOW_KEY']
+          urls = set()
+          if (os.environ.get('INDEXNOW_ALL') or '').lower() == 'true':
+              sm = open('sitemap.xml', encoding='utf-8').read() if os.path.exists('sitemap.xml') else ''
+              urls.update(re.findall(r'<loc>([^<]+)</loc>', sm))
+          files = set()
+          for f in ('/tmp/pushed_files.txt', '/tmp/bot_files.txt'):
+              if os.path.exists(f):
+                  files.update(l.strip() for l in open(f, encoding='utf-8') if l.strip())
+          for rel in files:
+              if not rel.endswith('.html') or rel == '404.html' or not os.path.exists(rel):
+                  continue
+              if '/' not in rel and rel.startswith('google'):
+                  continue
+              head = open(rel, encoding='utf-8', errors='replace').read(12000)
+              if re.search(r'<meta[^>]*name=["\']robots["\'][^>]*noindex', head, re.I):
+                  continue
+              m = re.search(r'<link[^>]*rel=["\']canonical["\'][^>]*href=["\']([^"\']+)["\']', head, re.I)
+              u = m.group(1) if m and m.group(1).startswith(BASE) else (BASE if rel == 'index.html' else BASE + rel)
+              urls.add(u)
+          urls = sorted(urls)[:10000]
+          if not urls:
+              print('IndexNow: koi naya/badla page nahi — ping ki zarurat nahi.')
+              raise SystemExit(0)
+          key_url = BASE + key + '.txt'
+          print('IndexNow: %d URLs. Key file live hone ka intezaar: %s' % (len(urls), key_url))
+          live = False
+          for i in range(20):  # ~10 minute tak (GitHub Pages deploy me 1-3 minute lagte hain)
+              time.sleep(30)
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(key_url, headers={'Cache-Control': 'no-cache'}), timeout=20) as r:
+                      if r.read().decode('utf-8', 'replace').strip() == key:
+                          live = True
+                          break
+              except Exception as e:
+                  print('  abhi live nahi (%s) — 30 sec baad dobara...' % e)
+          if not live:
+              print('::warning::IndexNow key file live nahi hui — is baar ping skip. Agle deploy par apne aap ho jayega.')
+              raise SystemExit(0)
+          time.sleep(30)  # badle pages bhi deploy ho jayein
+          body = json.dumps({'host': D, 'key': key, 'keyLocation': key_url, 'urlList': urls}).encode('utf-8')
+          req = urllib.request.Request('https://api.indexnow.org/indexnow', data=body, method='POST',
+                                       headers={'Content-Type': 'application/json; charset=utf-8'})
+          try:
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  print('IndexNow response:', r.status, '(200/202 = mil gaya)')
+          except urllib.error.HTTPError as e:
+              print('::warning::IndexNow HTTP %s: %s' % (e.code, e.read()[:300]))
+          for u in urls[:30]:
+              print('  ', u)
+          if len(urls) > 30:
+              print('   ... aur %d' % (len(urls) - 30))
+          PYEOF
+
+# gt:workflow-end (yeh file ki AAKHRI line hai. GitHub par yeh line na dikhe to file adhoori copy hui hai — poori file upload karo)
