@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pawan Verma">
+<meta name="publisher" content="PAWANGAMINGSTUDIO">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a73e8'/%3E%3Ctext x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E">
+<title>Gratuity Calculator in Hindi – ग्रेच्युटी कैलकुलेटर (Formula, ₹20 लाख नियम)</title>
+<meta name="description" content="Gratuity कैलकुलेटर हिंदी में – आख़िरी Basic+DA और सेवा वर्षों से ग्रेच्युटी राशि निकालें। 15/26 फॉर्मूला, 5 साल का नियम, ₹20 लाख टैक्स-फ्री सीमा की पूरी जानकारी। फ्री टूल।">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Gratuity Calculator in Hindi – ग्रेच्युटी">
+<meta property="og:description" content="सेवा वर्षों से ग्रेच्युटी का हिसाब निकालें।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gyantools.in/tools/gratuity-calculator.html">
+<meta property="og:image" content="https://gyantools.in/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GyanTools – हिंदी में Free Online Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gyantools.in/images/og-image.png">
+<link rel="apple-touch-icon" href="../images/logo.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans Devanagari',sans-serif;background:#f8f9fa;color:#202124;line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
+.logo{font-size:1.4rem;font-weight:700;color:#1a73e8;text-decoration:none}
+.logo span{color:#e8710a}
+nav ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#3c4043;text-decoration:none;font-weight:500}
+nav a:hover{color:#1a73e8}
+.tool-box{background:#fff;border-radius:12px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+.tool-box h1{font-size:1.7rem;color:#1a73e8;margin-bottom:6px}
+label{display:block;font-weight:600;margin:12px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid #dadce0;border-radius:8px;font-size:1rem;font-family:inherit;background:#fff}
+input:focus,select:focus{outline:2px solid #1a73e8;border-color:transparent}
+button{background:#1a73e8;color:#fff;border:none;padding:12px 32px;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:16px}
+button:hover{background:#1557b0}
+.result{background:#e8f0fe;border-radius:8px;padding:16px;margin-top:16px;font-size:1.05rem}
+.result .big{font-size:1.5rem;font-weight:700;color:#1a73e8}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.row{grid-template-columns:1fr}}
+article{background:#fff;border-radius:12px;padding:30px;box-shadow:0 1px 3px rgba(0,0,0,.1);margin:30px 0}
+article h2{margin:24px 0 10px;color:#1a73e8}
+article p,article li{margin-bottom:10px}
+article ul{padding-left:24px}
+.note{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0}
+footer{background:#202124;color:#9aa0a6;padding:30px 0;margin-top:50px;text-align:center;font-size:.9rem}
+footer a{color:#8ab4f8;text-decoration:none;margin:0 8px}
+.breadcrumb{font-size:.9rem;color:#5f6368;margin:20px 0 0}
+.breadcrumb a{color:#1a73e8;text-decoration:none}
+table{width:100%;border-collapse:collapse;margin-top:14px}
+td,th{border:1px solid #dadce0;padding:10px;text-align:left}
+th{background:#e8f0fe;color:#1a73e8}
+
+.gt-updated{display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:14px 0 0}
+.gt-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+.gt-table th{background:#1a73e8;color:#fff;padding:10px 12px;text-align:left}
+.gt-table td{border:1px solid #dadce0;padding:10px 12px}
+.gt-table tr:nth-child(even) td{background:#f8f9fa}
+.gt-faq details{background:#fff;border:1px solid #dadce0;border-radius:8px;margin:10px 0;padding:12px 16px}
+.gt-faq summary{font-weight:700;color:#1a73e8;cursor:pointer}
+.gt-faq details p{margin:8px 0 0}
+.gt-author{display:flex;gap:14px;align-items:center;background:#f8f9fa;border:1px solid #dadce0;border-radius:12px;padding:16px;margin:26px 0 10px}
+.gt-author .ava{width:52px;height:52px;border-radius:50%;background:#1a73e8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;flex-shrink:0}
+.gt-author p{margin:0;font-size:.92rem;color:#5f6368}
+.gt-author strong{color:#202124}
+.gt-related{background:#e8f0fe;border-radius:12px;padding:18px 20px;margin:20px 0}
+.gt-related a{color:#1a73e8;font-weight:600}
+.gt-disc{background:#fef7e0;border-left:4px solid #e8710a;padding:12px 16px;border-radius:4px;margin:16px 0;font-size:.92rem}
+
+</style>
+<link rel="canonical" href="https://gyantools.in/tools/gratuity-calculator.html">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Gratuity कब मिलती है?", "acceptedAnswer": {"@type": "Answer", "text": "स्थायी कर्मचारी को एक ही employer के पास लगातार 5 साल पूरे करने पर (कई हाईकोर्ट फैसलों के अनुसार 4 साल 240 दिन भी) – resignation, retirement या termination पर। नए Labour Code (21 नवंबर 2025 से) में fixed-term कर्मचारियों को 1 साल बाद ही gratuity मिलती है। मृत्यु/अपंगता में कोई न्यूनतम सेवा शर्त नहीं।"}}, {"@type": "Question", "name": "क्या gratuity पर tax लगता है?", "acceptedAnswer": {"@type": "Answer", "text": "Private कर्मचारियों को ₹20 लाख तक tax-free। सरकारी कर्मचारियों की पूरी gratuity tax-free है। सीमा से ऊपर की रकम salary की तरह taxable।"}}, {"@type": "Question", "name": "15/26 फॉर्मूले का मतलब?", "acceptedAnswer": {"@type": "Answer", "text": "हर सेवा-वर्ष के लिए 15 दिन का वेतन; 26 = महीने के working days (रविवार घटाकर)। Govt कर्मचारियों का फॉर्मूला अलग (1/4 × salary × छमाही अवधि) है।"}}, {"@type": "Question", "name": "Contract/fixed-term वालों को gratuity?", "acceptedAnswer": {"@type": "Answer", "text": "हाँ। Code on Social Security, 2020 (21 नवंबर 2025 से लागू) के तहत fixed-term कर्मचारियों को 1 साल की लगातार सेवा के बाद ही आनुपातिक (pro-rata) gratuity मिलती है – फॉर्मूला वही 15/26 वाला।"}}, {"@type": "Question", "name": "Employer gratuity न दे तो क्या करें?", "acceptedAnswer": {"@type": "Answer", "text": "30 दिन के बाद Controlling Authority (Assistant Labour Commissioner) को Form N में complaint करें – ये प्रक्रिया मुफ़्त है और ब्याज समेत payment का आदेश होता है।"}}]}
+</script>
+
+<!-- Google tag (gtag.js) — GyanTools GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KFSJSLG7B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Consent Mode v2 – default config se PEHLE: EEA/UK/CH me denied (bina consent banner), baaki jagah granted
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'],wait_for_update:500});
+  gtag('consent','default',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});
+  gtag('js', new Date());
+
+  gtag('config', 'G-4KFSJSLG7B');
+</script>
+<!-- /Google tag -->
+<style id="gt-mfix">h1,h2,h3,h4,p,li,dd,blockquote,figcaption,summary,label{overflow-wrap:break-word}.gt-tw{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}img,video,iframe{max-width:100%}@media(max-width:700px){#out table,.result table,table.res-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}}</style>
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json" data-gt="page">{"@context":"https://schema.org","@type":"WebPage","name":"Gratuity Calculator in Hindi – ग्रेच्युटी कैलकुलेटर (Formula, ₹20 लाख नियम)","description":"Gratuity कैलकुलेटर हिंदी में – आख़िरी Basic+DA और सेवा वर्षों से ग्रेच्युटी राशि निकालें। 15/26 फॉर्मूला, 5 साल का नियम, ₹20 लाख टैक्स-फ्री सीमा की पूरी जानकारी। फ्री टूल।","url":"https://gyantools.in/tools/gratuity-calculator.html","inLanguage":"hi","isPartOf":{"@type":"WebSite","name":"GyanTools","url":"https://gyantools.in/"},"publisher":{"@type":"Organization","name":"GyanTools","url":"https://gyantools.in/","logo":{"@type":"ImageObject","url":"https://gyantools.in/images/logo.png","width":512,"height":512}}}</script>
+<script type="application/ld+json" data-gt="crumb">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"होम","item":"https://gyantools.in/"},{"@type":"ListItem","position":2,"name":"टूल्स","item":"https://gyantools.in/tools/"},{"@type":"ListItem","position":3,"name":"Gratuity कैलकुलेटर","item":"https://gyantools.in/tools/gratuity-calculator.html"}]}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="gt-nav">
+    <a class="logo" href="/" aria-label="GyanTools – होम"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#1a73e8"/><text x="16" y="23" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#fff">G</text><rect x="10" y="26" width="12" height="2" rx="1" fill="#e8710a"/></svg><b>Gyan<span>Tools</span></b></a>
+    <nav aria-label="मुख्य मेन्यू">
+      <ul>
+        <li><a href="/">होम</a></li>
+        <li><a href="/tools/" aria-current="true">टूल्स</a></li>
+        <li><a href="/blog/">ब्लॉग</a></li>
+        <li><a href="/games/">गेम्स</a></li>
+        <li><a href="/about.html">हमारे बारे में</a></li>
+        <li><a href="/contact.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <p class="breadcrumb"><a href="/">होम</a> › <a href="/tools/">टूल्स</a> › Gratuity कैलकुलेटर</p>
+  <p style="display:inline-block;background:#e6f4ea;color:#137333;padding:4px 14px;border-radius:20px;font-size:.82rem;font-weight:600;margin:6px 0 0">✓ फॉर्मूला (15 ÷ 26) + ₹20L tax-free सीमा · जांच: अक्टूबर 2026 – असली हिसाब employer से मिलाएं</p>
+
+  <div class="tool-box">
+    <h1>💼 Gratuity कैलकुलेटर (ग्रेच्युटी)</h1>
+    <p>नौकरी छोड़ते/रिटायर होते समय मिलने वाली ग्रेच्युटी का हिसाब लगाएं।</p>
+    <label for="etype">कर्मचारी का प्रकार</label>
+    <select id="etype">
+      <option value="perm">स्थायी (Permanent) – 5 साल की सेवा ज़रूरी</option>
+      <option value="fixed">Fixed-term (तय अवधि का कॉन्ट्रैक्ट) – 1 साल बाद (नया Labour Code)</option>
+    </select>
+    <label for="sal">आख़िरी वेतन – Basic + DA (मासिक ₹)</label>
+    <input type="number" id="sal" placeholder="जैसे: 50000" min="1000" step="any">
+    <label for="grossm">कुल मासिक वेतन/CTC ÷ 12 (वैकल्पिक – नए 50% wage नियम के लिए)</label>
+    <input type="number" id="grossm" placeholder="जैसे: 100000 (खाली भी छोड़ सकते हैं)" min="0" step="any">
+    <div class="row">
+      <div>
+        <label for="yrs">कुल सेवा अवधि (साल – 9.6 जैसा भी लिखें)</label>
+        <input type="number" id="yrs" placeholder="जैसे: 9.6" min="0" step="any">
+      </div>
+      <div>
+        <label for="act">कंपनी Payment of Gratuity Act में शामिल है?</label>
+        <select id="act">
+          <option value="26">हाँ (10+ कर्मचारी – सामान्य केस)</option>
+          <option value="30">नहीं / पता नहीं (÷30 वाला हिसाब)</option>
+        </select>
+      </div>
+    </div>
+    <button onclick="calcG()">Gratuity निकालें</button>
+    <div class="result" id="out" style="display:none"></div>
+  </div>
+
+  <article>
+    <h2>Gratuity क्या है?</h2>
+    <p><strong>ग्रेच्युटी</strong> नौकरी में लंबी सेवा का इनाम है – कंपनी द्वारा <strong>5 साल से ज़्यादा</strong> लगातार काम करने पर मिलने वाली एकमुश्त राशि (Payment of Gratuity Act, 1972 के तहत)। मौत या स्थायी अपाहिजता की स्थिति में 5 साल की शर्त हट जाती है। <strong>नया नियम (21 नवंबर 2025 से):</strong> Code on Social Security के तहत fixed-term कर्मचारियों को सिर्फ <strong>1 साल</strong> की सेवा पर gratuity मिलती है, और नए 50% wage नियम से कई लोगों की gratuity बढ़ी है (भत्ते कुल वेतन के 50% से ज़्यादा हों तो अतिरिक्त हिस्सा wages में जुड़ता है)।</p>
+    <h2>फॉर्मूला (Act से जुड़ी कंपनियों के लिए)</h2>
+    <p><strong>Gratuity = (आख़िरी Basic + DA) × 15 ÷ 26 × पूरे किए गए सेवा वर्ष</strong></p>
+    <ul>
+      <li>15 = हर साल सेवा के बदले 15 दिन का वेतन</li>
+      <li>26 = महीने के कार्य दिवस</li>
+      <li>सेवा वर्ष गिनती में <strong>6 महीने से ज़्यादा</strong> बचे हों तो अगला पूरा साल गिना जाता है (यह calculator अपने आप करता है)</li>
+      <li>HRA, बोनस, भत्ते गिनती में नहीं आते – सिर्फ Basic + DA</li>
+    </ul>
+    <p><strong>उदाहरण:</strong> आख़िरी Basic+DA ₹50,000, सेवा 9 साल (7 महीने ज़्यादा) → 50,000 × 15 ÷ 26 × 9 = <strong>₹2,59,615</strong></p>
+    <h2>टैक्स का नियम</h2>
+    <div class="gt-tw"><table>
+      <tr><th>स्थिति</th><th>टैक्स-फ्री सीमा</th></tr>
+      <tr><td>निजी कंपनी (Act के तहत)</td><td>अधिकतम <strong>₹20 लाख तक पूरी तरह टैक्स-फ्री</strong> (जीवन भर की कुल ग्रेच्युटी में); ऊपर वाली रकम slab के हिसाब से taxable</td></tr>
+      <tr><td>मौत/अपाहिजता</td><td>पूरी राशि टैक्स-फ्री (सीमा के बावजूद)</td></tr>
+      <tr><td>सरकारी कर्मचारी</td><td>नियम अलग – पूरी तरह छूट</td></tr>
+    </table></div>
+    <div class="note">⚠️ यह calculator मानक फॉर्मूला से अंदाज़ा देता है। कंपनी की नीति, सेवा के अंतराल और अंतिम वेतन संरचना से असली रकम थोड़ी अलग हो सकती है – HR/payroll से पुष्टि करें।</div>
+    <div class="note">🔒 आपका डेटा कहीं नहीं जाता – calculation आपके ब्राउज़र में ही होता है।</div>
+  
+<h2>Gratuity कैसे निकालें?</h2>
+<ol>
+<li>अपनी <strong>last drawn basic + DA (मासिक)</strong> भरें।</li>
+<li><strong>सेवा के साल</strong> भरें (जैसे 9.6) – Act वाली कंपनी में 6 महीने से ज़्यादा बचे हों तो अगला साल गिना जाता है।</li>
+<li><strong>Calculate दबाएं</strong> – (15/26) × salary × years फॉर्मूले से रकम।</li>
+<li><strong>₹20 लाख की सीमा</strong> याद रखें – private कर्मचारियों के लिए tax-free gratuity max ₹20 लाख।</li>
+<li>स्थायी कर्मचारी ने 5 साल से पहले नौकरी छोड़ी तो gratuity <strong>नहीं मिलती</strong> (मृत्यु/अपंगता अपवाद); <strong>fixed-term</strong> वालों के लिए 1 साल का नियम है।</li>
+</ol>
+<h2>Gratuity फॉर्मूला + उदाहरण</h2>
+<p><strong>Gratuity = (15 ÷ 26) × अंतिम Basic+DA × सेवा वर्ष</strong> — 15 दिन का वेतन हर पूरे साल के लिए, 26 = महीने के working days।</p>
+<div class="note">💡 <strong>उदाहरण:</strong> अंतिम basic ₹60,000, सेवा 8 साल → (15/26) × 60,000 × 8 = <strong>₹2,76,923</strong>। पूरी रकम tax-free (₹20L सीमा के अंदर)। नए Labour Code (21 नवंबर 2025 से) में fixed-term कर्मचारियों को 1 साल बाद ही gratuity मिलती है।</div>
+<h2>Gratuity के ज़रूरी नियम</h2>
+<ul>
+<li><strong>5 साल की शर्त</strong> – स्थायी कर्मचारी के लिए एक ही employer के पास लगातार सेवा (अदालती फैसलों में 4 साल 240 दिन भी मान्य); fixed-term कर्मचारी के लिए सिर्फ 1 साल।</li>
+<li><strong>₹20 लाख तक tax-free</strong> (private) – सरकारी कर्मचारियों को पूरी छूट।</li>
+<li><strong>Nominee ज़रूर बनाएं</strong> – Form F भरकर HR को दें।</li>
+<li><strong>30 दिन में payment</strong> – देरी पर employer को ब्याज देना पड़ता है।</li>
+<li><strong>न मिले तो शिकायत</strong> – Controlling Authority (Labour Dept) में free complaint होती है।</li>
+</ul>
+<h2>अक्सर पूछे जाने वाले सवाल (FAQ)</h2>
+<div class="gt-faq">
+<details><summary>Gratuity कब मिलती है?</summary><p>स्थायी कर्मचारी को एक ही employer के पास लगातार 5 साल पूरे करने पर (कई हाईकोर्ट फैसलों के अनुसार 4 साल 240 दिन भी) – resignation, retirement या termination पर। नए Labour Code (21 नवंबर 2025 से) में fixed-term कर्मचारियों को 1 साल बाद ही gratuity मिलती है। मृत्यु/अपंगता में कोई न्यूनतम सेवा शर्त नहीं।</p></details>
+<details><summary>क्या gratuity पर tax लगता है?</summary><p>Private कर्मचारियों को ₹20 लाख तक tax-free। सरकारी कर्मचारियों की पूरी gratuity tax-free है। सीमा से ऊपर की रकम salary की तरह taxable।</p></details>
+<details><summary>15/26 फॉर्मूले का मतलब?</summary><p>हर सेवा-वर्ष के लिए 15 दिन का वेतन; 26 = महीने के working days (रविवार घटाकर)। Govt कर्मचारियों का फॉर्मूला अलग (1/4 × salary × छमाही अवधि) है।</p></details>
+<details><summary>Contract/fixed-term वालों को gratuity?</summary><p>हाँ। Code on Social Security, 2020 (21 नवंबर 2025 से लागू) के तहत fixed-term कर्मचारियों को 1 साल की लगातार सेवा के बाद ही आनुपातिक (pro-rata) gratuity मिलती है – फॉर्मूला वही 15/26 वाला।</p></details>
+<details><summary>Employer gratuity न दे तो क्या करें?</summary><p>30 दिन के बाद Controlling Authority (Assistant Labour Commissioner) को Form N में complaint करें – ये प्रक्रिया मुफ़्त है और ब्याज समेत payment का आदेश होता है।</p></details>
+</div>
+<div class="gt-related">🔗 <strong>संबंधित टूल्स:</strong> <a href="income-tax-calculator.html">🧾 Income Tax कैलकुलेटर – FY 2026-27 (नई रजिम)</a> · <a href="old-vs-new-tax-regime-calculator.html">⚖️ Old vs New Tax Regime Calculator (FY 2026-27) – कौन सी रेजीम में कि</a> · <a href="hra-calculator.html">🏠 HRA छूट कैलकुलेटर (HRA Exemption Calculator)</a> · <a href="inhand-salary-calculator.html">💰 In-Hand Salary कैलकुलेटर (CTC से)</a> · <a href="salary-hike-calculator.html">📈 सैलरी हाइक कैलकुलेटर (Salary Hike Calculator)</a></div>
+<div class="gt-disc">⚠️ <strong>ध्यान दें:</strong> यह calculator अनुमानित नतीजे देता है – असली आंकड़े बैंक/सरकारी नियमों पर निर्भर करते हैं। कोई भी आर्थिक फैसला लेने से पहले अपने बैंक या वित्तीय सलाहकार से पुष्टि करें। पूरा <a href="../disclaimer.html">अस्वीकरण यहां पढ़ें</a>।</div>
+<div class="gt-sources" data-gt="sources"><strong>📌 आधिकारिक स्रोत – ताज़ा नियम यहीं देखें</strong><p>सरकारी नियम, ब्याज दरें, फीस और तारीखें समय-समय पर बदलती रहती हैं। कोई भी फ़ैसला लेने से पहले नीचे दी गई आधिकारिक वेबसाइट पर ताज़ा जानकारी ज़रूर जांच लें:</p><ul><li><a href="https://labour.gov.in/" target="_blank" rel="noopener">श्रम एवं रोज़गार मंत्रालय – labour.gov.in</a></li></ul></div>
+<div class="gt-author"><div class="ava">ज्ञा</div><div><strong>Pawan Verma · GyanTools</strong><p>यह गाइड Pawan Verma ने आधिकारिक स्रोतों से मिलान करके हिंदी में लिखी है। गलती दिखे तो <a href="../contact.html">संपर्क पेज</a> पर ज़रूर बताएं।</p></div></div>
+</article>
+</div>
+
+<footer class="site-footer">
+  <div class="f-wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="f-logo" href="/">Gyan<span>Tools</span></a>
+        <p>हिंदी में मुफ़्त ऑनलाइन कैलकुलेटर, आसान गाइड और ब्राउज़र गेम्स। कोई लॉगिन नहीं – सारे हिसाब आपके अपने ब्राउज़र में होते हैं।</p>
+      </div>
+      <div>
+        <p class="f-h">लोकप्रिय टूल्स</p>
+        <ul>
+          <li><a href="/tools/emi-calculator.html">EMI कैलकुलेटर</a></li>
+          <li><a href="/tools/income-tax-calculator.html">इनकम टैक्स कैलकुलेटर</a></li>
+          <li><a href="/tools/sip-calculator.html">SIP कैलकुलेटर</a></li>
+          <li><a href="/tools/ppf-calculator.html">PPF कैलकुलेटर</a></li>
+          <li><a href="/tools/age-calculator.html">उम्र कैलकुलेटर</a></li>
+          <li><a href="/tools/">सभी टूल्स →</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="f-h">लोकप्रिय गाइड्स</p>
+        <ul>
+          <li><a href="/blog/income-tax-guide.html">इनकम टैक्स गाइड</a></li>
+          <li><a href="/blog/post-office-schemes.html">डाकघर बचत योजनाएं</a></li>
+          <li><a href="/blog/online-fraud-se-bachav.html">ऑनलाइन फ्रॉड से बचाव</a></li>
+          <li><a href="/blog/aadhaar-card-guide.html">आधार कार्ड गाइड</a></li>
+          <li><a href="/blog/">सभी गाइड्स →</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="f-h">GyanTools</p>
+        <ul>
+          <li><a href="/about.html">हमारे बारे में</a></li>
+          <li><a href="/contact.html">संपर्क करें</a></li>
+          <li><a href="/editorial-policy.html">संपादकीय नीति</a></li>
+          <li><a href="/privacy-policy.html">गोपनीयता नीति (Privacy)</a></li>
+          <li><a href="/terms-conditions.html">नियम व शर्तें</a></li>
+          <li><a href="/disclaimer.html">अस्वीकरण</a></li>
+          <li><a href="/sitemap.html">साइटमैप</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© <span class="gt-year">2026</span> GyanTools · सर्वाधिकार सुरक्षित</span>
+      <span>Pawan Verma (PAWANGAMINGSTUDIO) द्वारा बनाया और संचालित</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function calcG(){
+  var S = parseFloat(document.getElementById('sal').value);
+  var Y = parseFloat(document.getElementById('yrs').value);
+  var d = parseInt(document.getElementById('act').value, 10);
+  var et = document.getElementById('etype').value;
+  var gm = parseFloat(document.getElementById('grossm').value) || 0;
+  var out = document.getElementById('out');
+  var f = function(x){ return '₹' + Math.round(x).toLocaleString('en-IN'); };
+  if(!S || S < 1000 || isNaN(Y) || Y <= 0){ out.style.display='block'; out.innerHTML='⚠️ कृपया वेतन और सेवा अवधि भरें।'; return; }
+  var notes = [];
+  // नया Code on Wages: भत्ते कुल वेतन के 50% से ज़्यादा हों तो अतिरिक्त हिस्सा "wages" में जुड़ता है
+  var W = S;
+  if (gm > 0 && S < gm * 0.5) { W = gm * 0.5; notes.push('ℹ️ नया 50% wage नियम: Basic+DA (' + f(S) + ') कुल वेतन के 50% से कम है, इसलिए gratuity ' + f(W) + ' (50%) पर गिनी गई।'); }
+  var minYears = et === 'fixed' ? 1 : 5;
+  var full = Math.floor(Y + 1e-9);
+  var frac = Y - full;
+  if (Y < minYears) {
+    // स्थायी कर्मचारी: कई हाईकोर्ट फैसलों में 4 साल + 240 दिन की सेवा को 5 साल माना गया है
+    if (et === 'perm' && Y >= 4 + 240/365) {
+      notes.push('⚖️ सेवा 4 साल 240 दिन से ज़्यादा है – कई हाईकोर्ट फैसलों में इसे 5 साल की लगातार सेवा माना गया है। Employer/Labour office से पुष्टि करें।');
+    } else {
+      out.style.display='block';
+      out.innerHTML = et === 'fixed'
+        ? '⚠️ Fixed-term कर्मचारी को कम से कम 1 साल की लगातार सेवा पर gratuity मिलती है (नया Labour Code, 21 नवंबर 2025 से)।'
+        : '⚠️ स्थायी कर्मचारी को 5 साल से कम सेवा पर ग्रेच्युटी नहीं मिलती (मृत्यु/अपंगता की स्थिति छोड़कर)। अगर आप fixed-term कॉन्ट्रैक्ट पर थे तो ऊपर "Fixed-term" चुनें – उनके लिए 1 साल का नियम है।';
+      return;
+    }
+  }
+  // Act वाले केस (÷26): 6 महीने से ज़्यादा = अगला साल। Act से बाहर (÷30): सिर्फ पूरे साल।
+  var years = d === 26 ? (frac > 0.5 ? full + 1 : full) : full;
+  if (years < 1) years = 1;
+  var G = W * 15 / d * years;
+  var taxNote = G > 2000000 ? '<p>⚠️ ₹20 लाख से ऊपर की रकम taxable होगी (slab के हिसाब से)।</p>' : '<p>✅ ₹20 लाख की टैक्स-फ्री सीमा के भीतर।</p>';
+  out.style.display='block';
+  out.innerHTML = '<div class="big">अनुमानित ग्रेच्युटी: ' + f(G) + '</div>'
+    + '<p>गिने गए सेवा वर्ष: <strong>' + years + '</strong> (' + full + ' पूरे साल' + (d === 26 && frac > 0.5 ? ' + ' + Math.round(frac*12) + ' महीने → अगला साल गिना गया' : '') + ')</p>'
+    + '<p>हिसाब: ' + f(W) + ' × 15 ÷ ' + d + ' × ' + years + '</p>' + taxNote
+    + (notes.length ? '<p>' + notes.join('<br>') + '</p>' : '');
+}
+</script>
+
+  <script defer src="../assets/ga.js"></script>
+
+<!-- GyanTools: result ko image mein download karo -->
+<script>window.GT_RESULT_IMAGE={target:'#out',title:"💼 Gratuity कैलकुलेटर",slug:"gratuity-calculator"};</script>
+<script src="../assets/result-image.js"></script>
+<script defer src="/assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# ads.txt – gyantools.in
+#
+# Abhi is site par koi ad network authorized NAHI hai (saare purane ads hata diye gaye hain).
+#
+# Google AdSense ke liye apply karte waqt:
+#   GitHub repo -> Settings -> Secrets and variables -> Actions -> Variables tab
+#   -> New repository variable:  ADSENSE_PUB_ID = pub-XXXXXXXXXXXXXXXX
+# Phir Actions tab se workflow chalayein. Workflow apne aap yahan Google ki line jod dega:
+#   google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+# aur har page ke <head> me AdSense code + verification meta tag laga dega.
