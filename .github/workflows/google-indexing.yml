@@ -1,0 +1,109 @@
+name: (Optional) Google Indexing API – manual URL submit
+
+# ⚠️ ZAROORI — PEHLE PADHEIN (Google ki official documentation, Oct 2026):
+#   Google Indexing API officially SIRF un pages ke liye hai jin par JobPosting ya
+#   BroadcastEvent (VideoObject ke andar) structured data ho. GyanTools ke tools/blog pages
+#   is category me NAHI aate. Google kehta hai ki saare submissions par spam-detection hota hai,
+#   aur galat istemal par API access cancel kiya ja sakta hai. 200 OK ka matlab sirf
+#   "request mil gayi" hai — indexing ki koi guarantee NAHI.
+#   Recommended tarika: Search Console me sitemap submit + URL Inspection -> "Request indexing".
+#   Isliye ye workflow kabhi apne aap nahi chalta — sirf aap Actions tab se haath se chalayenge,
+#   aur ek run me zyada se zyada 20 URLs hi bhejta hai.
+#
+# Setup (ek baar):
+#   1) Google Cloud project me "Web Search Indexing API" enable ho.
+#   2) Service account ki JSON key (poori file ka text) ko GitHub repo me SECRET banayein:
+#        Settings -> Secrets and variables -> Actions -> Secrets -> New repository secret
+#        Name: GOOGLE_INDEXING_KEY     Value: JSON file ka poora content paste
+#      ❌ JSON file ko kabhi repo/zip me upload mat karna — ye public repo hai!
+#   3) Service account ka email (JSON ka "client_email", ...iam.gserviceaccount.com) Search Console
+#      ki https://gyantools.in property me "Owner" ho.
+#
+# Chalane ka tarika: Actions -> "(Optional) Google Indexing API – manual URL submit" -> Run workflow
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "URLs (space ya comma se alag). Khali chhodein = homepage + 3 hub pages"
+        required: false
+        default: ""
+      action:
+        description: "URL_UPDATED (naya/badla page) ya URL_DELETED (page hata diya)"
+        type: choice
+        options: [URL_UPDATED, URL_DELETED]
+        default: URL_UPDATED
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Python libraries
+        run: pip install --quiet google-auth requests
+
+      - name: URLs Google Indexing API ko bhejo (max 20)
+        env:
+          GOOGLE_INDEXING_KEY: ${{ secrets.GOOGLE_INDEXING_KEY }}
+          URLS: ${{ github.event.inputs.urls }}
+          ACTION: ${{ github.event.inputs.action }}
+          SITE: https://gyantools.in/
+        run: |
+          python3 - <<'PYEOF'
+          import os, re, json, sys
+          key = (os.environ.get('GOOGLE_INDEXING_KEY') or '').strip()
+          if not key:
+              print('::error::Secret GOOGLE_INDEXING_KEY nahi mila. Settings -> Secrets and variables -> Actions -> Secrets me service-account JSON paste karein.')
+              sys.exit(1)
+          try:
+              info = json.loads(key)
+          except Exception:
+              print('::error::GOOGLE_INDEXING_KEY valid JSON nahi hai. Poori .json file ka content paste karein (API key "AIza..." yahan kaam nahi karti).')
+              sys.exit(1)
+          if info.get('type') != 'service_account':
+              print('::error::Ye service-account JSON key nahi lag rahi (type=%r).' % info.get('type'))
+              sys.exit(1)
+          print('Service account:', info.get('client_email'))
+          site = os.environ['SITE']
+          raw = os.environ.get('URLS') or ''
+          urls = [u.strip() for u in re.split(r'[\s,]+', raw) if u.strip()]
+          if not urls:
+              urls = [site, site + 'tools/', site + 'blog/', site + 'games/']
+          bad = [u for u in urls if not u.startswith(site)]
+          if bad:
+              print('::error::Sirf %s ke URLs allowed hain. Galat: %s' % (site, bad))
+              sys.exit(1)
+          urls = list(dict.fromkeys(urls))
+          if len(urls) > 20:
+              print('::warning::Ek run me max 20 URLs — pehle 20 bheje ja rahe hain.')
+              urls = urls[:20]
+          from google.oauth2 import service_account
+          from google.auth.transport.requests import AuthorizedSession
+          creds = service_account.Credentials.from_service_account_info(info, scopes=['https://www.googleapis.com/auth/indexing'])
+          s = AuthorizedSession(creds)
+          from google.auth.exceptions import RefreshError, TransportError
+          ok = 0
+          for u in urls:
+              try:
+                  r = s.post('https://indexing.googleapis.com/v3/urlNotifications:publish',
+                             json={'url': u, 'type': os.environ.get('ACTION') or 'URL_UPDATED'}, timeout=30)
+              except RefreshError as e:
+                  print('::error::Google ne service-account key se login mana kar diya (%s). Key delete/disable to nahi hui? Nayi JSON key banakar secret update karein.' % str(e)[:200])
+                  sys.exit(1)
+              except TransportError as e:
+                  print('::error::Network/transport error: %s' % str(e)[:200])
+                  sys.exit(1)
+              if r.status_code == 200:
+                  ok += 1
+                  print('200 OK  ', u)
+              else:
+                  msg = r.text[:300].replace('\n', ' ')
+                  print('%s FAIL  %s  %s' % (r.status_code, u, msg))
+                  if r.status_code == 403:
+                      print('   -> 403: (a) service account email Search Console property (https://gyantools.in/) me Owner nahi hai, ya (b) Cloud project me "Web Search Indexing API" enable nahi hai, ya (c) Google ne is project ka access band/limit kar diya hai.')
+                  if r.status_code == 429:
+                      print('   -> 429: quota khatam (default ~200 publish requests/din). Kal dobara try karein.')
+                      break
+          print('Done: %d/%d accepted. Yaad rakhein: accepted != indexed. Search Console -> URL Inspection se status dekhein.' % (ok, len(urls)))
+          PYEOF
