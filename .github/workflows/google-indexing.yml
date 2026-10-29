@@ -1,109 +1,696 @@
-name: (Optional) Google Indexing API – manual URL submit
+name: Google Indexing (manual) – crawl request + index status
+run-name: "Google Indexing · ${{ inputs.task }} · ${{ inputs.batch }}"
 
-# ⚠️ ZAROORI — PEHLE PADHEIN (Google ki official documentation, Oct 2026):
-#   Google Indexing API officially SIRF un pages ke liye hai jin par JobPosting ya
-#   BroadcastEvent (VideoObject ke andar) structured data ho. GyanTools ke tools/blog pages
-#   is category me NAHI aate. Google kehta hai ki saare submissions par spam-detection hota hai,
-#   aur galat istemal par API access cancel kiya ja sakta hai. 200 OK ka matlab sirf
-#   "request mil gayi" hai — indexing ki koi guarantee NAHI.
-#   Recommended tarika: Search Console me sitemap submit + URL Inspection -> "Request indexing".
-#   Isliye ye workflow kabhi apne aap nahi chalta — sirf aap Actions tab se haath se chalayenge,
-#   aur ek run me zyada se zyada 20 URLs hi bhejta hai.
+# Ye workflow kabhi apne aap nahi chalta. Sirf aap Actions tab se "Run workflow" dabakar chalate hain.
+#
+# 2 kaam:
+#   index-request → Google Indexing API ko "is page ko crawl karo" request (ek run me max 20 URLs)
+#   status-check  → Search Console URL Inspection API se dekho ki kaun sa page Google me index hua
+#
+# ⚠️ Sach (Google docs, Oct 2026): Indexing API officially sirf JobPosting / BroadcastEvent pages ke liye hai.
+#    200 OK = "request mil gayi, Google jaldi crawl kar sakta hai" — index hone ki guarantee nahi.
+#    Spam policies is API par bhi lagti hain. Isliye kam aur sirf zaroori URLs: Din 1 top-20, Din 2 next-20.
+#    Baaki pages Google sitemap.xml se khud crawl karta hai.
 #
 # Setup (ek baar):
-#   1) Google Cloud project me "Web Search Indexing API" enable ho.
-#   2) Service account ki JSON key (poori file ka text) ko GitHub repo me SECRET banayein:
-#        Settings -> Secrets and variables -> Actions -> Secrets -> New repository secret
-#        Name: GOOGLE_INDEXING_KEY     Value: JSON file ka poora content paste
-#      ❌ JSON file ko kabhi repo/zip me upload mat karna — ye public repo hai!
-#   3) Service account ka email (JSON ka "client_email", ...iam.gserviceaccount.com) Search Console
-#      ki https://gyantools.in property me "Owner" ho.
+#   1) GitHub repo → Settings → Secrets and variables → Actions → Secrets → New repository secret
+#        Name: GOOGLE_INDEXING_KEY   Secret: service-account .json file ka poora text
+#      ❌ JSON file kabhi repo / zip me upload mat karna — ye public repo hai.
+#   2) Search Console → https://gyantools.in/ property → Settings → Users and permissions → Add user
+#        → JSON ka "client_email" (…iam.gserviceaccount.com) → Permission: Owner
+#   3) Google Cloud (wahi project): "Web Search Indexing API" enabled ho.
+#      status-check ke liye "Google Search Console API" bhi enable karein (ek click).
 #
-# Chalane ka tarika: Actions -> "(Optional) Google Indexing API – manual URL submit" -> Run workflow
+# Chalana: Actions → "Google Indexing (manual)" → Run workflow → task + batch chuno → Run.
+# Result: run kholo → "Summary" me table.
+
 on:
   workflow_dispatch:
     inputs:
+      task:
+        description: "Kaam — index-request: Google ko crawl request · status-check: index hua ya nahi"
+        type: choice
+        options: [index-request, status-check]
+        default: index-request
+      batch:
+        description: "URLs — top-20: sabse zaroori 20 (Din 1) · next-20: agle 20 (Din 2) · all-sitemap: saare (sirf status-check) · custom: neeche likhe"
+        type: choice
+        options: [top-20, next-20, all-sitemap, custom]
+        default: top-20
       urls:
-        description: "URLs (space ya comma se alag). Khali chhodein = homepage + 3 hub pages"
+        description: "Sirf custom ke liye: URLs space/comma se alag (index-request me max 20). Baaki ke liye khali chhodo"
         required: false
         default: ""
-      action:
-        description: "URL_UPDATED (naya/badla page) ya URL_DELETED (page hata diya)"
-        type: choice
-        options: [URL_UPDATED, URL_DELETED]
-        default: URL_UPDATED
 
 permissions:
   contents: read
 
-jobs:
-  submit:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Python libraries
-        run: pip install --quiet google-auth requests
+concurrency:
+  group: google-indexing
+  cancel-in-progress: false
 
-      - name: URLs Google Indexing API ko bhejo (max 20)
+jobs:
+  indexing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Self-check (workflow file poori upload hui?)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.raw" \
+               "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/.github/workflows/google-indexing.yml?ref=$GITHUB_SHA" -o /tmp/wf.yml; then
+            echo "::warning::Self-check skip (file fetch nahi hui) — aage badh rahe hain."
+            exit 0
+          fi
+          if ! tail -n 3 /tmp/wf.yml | grep -q 'gt:indexing-workflow-end'; then
+            echo "::error::google-indexing.yml adhoori hai (copy-paste me kat gayi). Repo → .github/workflows → Add file → Upload files se poori file daalo."
+            exit 1
+          fi
+          echo "OK: workflow file poori hai ($(wc -l < /tmp/wf.yml) lines)"
+
+      - name: Python libraries
+        run: |
+          python3 -m pip install --quiet --disable-pip-version-check "google-auth>=2.20,<3" "requests>=2.28,<3" \
+            || python3 -m pip install --quiet --disable-pip-version-check --break-system-packages "google-auth>=2.20,<3" "requests>=2.28,<3"
+
+      - name: Google Indexing — ${{ inputs.task }} (${{ inputs.batch }})
         env:
           GOOGLE_INDEXING_KEY: ${{ secrets.GOOGLE_INDEXING_KEY }}
-          URLS: ${{ github.event.inputs.urls }}
-          ACTION: ${{ github.event.inputs.action }}
+          TASK: ${{ inputs.task }}
+          BATCH: ${{ inputs.batch }}
+          URLS: ${{ inputs.urls }}
           SITE: https://gyantools.in/
         run: |
           python3 - <<'PYEOF'
-          import os, re, json, sys
-          key = (os.environ.get('GOOGLE_INDEXING_KEY') or '').strip()
-          if not key:
-              print('::error::Secret GOOGLE_INDEXING_KEY nahi mila. Settings -> Secrets and variables -> Actions -> Secrets me service-account JSON paste karein.')
-              sys.exit(1)
-          try:
-              info = json.loads(key)
-          except Exception:
-              print('::error::GOOGLE_INDEXING_KEY valid JSON nahi hai. Poori .json file ka content paste karein (API key "AIza..." yahan kaam nahi karti).')
-              sys.exit(1)
-          if info.get('type') != 'service_account':
-              print('::error::Ye service-account JSON key nahi lag rahi (type=%r).' % info.get('type'))
-              sys.exit(1)
-          print('Service account:', info.get('client_email'))
-          site = os.environ['SITE']
-          raw = os.environ.get('URLS') or ''
-          urls = [u.strip() for u in re.split(r'[\s,]+', raw) if u.strip()]
-          if not urls:
-              urls = [site, site + 'tools/', site + 'blog/', site + 'games/']
-          bad = [u for u in urls if not u.startswith(site)]
-          if bad:
-              print('::error::Sirf %s ke URLs allowed hain. Galat: %s' % (site, bad))
-              sys.exit(1)
-          urls = list(dict.fromkeys(urls))
-          if len(urls) > 20:
-              print('::warning::Ek run me max 20 URLs — pehle 20 bheje ja rahe hain.')
-              urls = urls[:20]
-          from google.oauth2 import service_account
-          from google.auth.transport.requests import AuthorizedSession
-          creds = service_account.Credentials.from_service_account_info(info, scopes=['https://www.googleapis.com/auth/indexing'])
-          s = AuthorizedSession(creds)
-          from google.auth.exceptions import RefreshError, TransportError
-          ok = 0
-          for u in urls:
+          import os, re, sys, json, time, datetime, base64
+          from urllib.parse import urljoin
+          import requests
+
+          SITE = (os.environ.get('SITE') or 'https://gyantools.in/').strip()
+          if not SITE.endswith('/'):
+              SITE += '/'
+          HOST = SITE.split('://', 1)[1].strip('/').lower()
+          TASK = (os.environ.get('TASK') or 'index-request').strip()
+          BATCH = (os.environ.get('BATCH') or 'top-20').strip()
+          RAW = (os.environ.get('URLS') or '').strip()
+          SUMMARY = os.environ.get('GITHUB_STEP_SUMMARY') or os.devnull
+          MAX_SUBMIT = 20      # index-request: ek run me max URLs (Google quota: 200/din/project)
+          MAX_STATUS = 300     # status-check: ek run me max URLs (quota: 2000/din/property)
+          UA = {'User-Agent': 'GyanTools-indexing-workflow/2.0 (+https://gyantools.in/)'}
+          IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
+          PUBLISH = 'https://indexing.googleapis.com/v3/urlNotifications:publish'
+          INSPECT = 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect'
+          SITES = 'https://www.googleapis.com/webmasters/v3/sites'
+          LEVEL = {'siteOwner': 'Owner', 'siteFullUser': 'Full', 'siteRestrictedUser': 'Restricted',
+                   'siteUnverifiedUser': 'Unverified (access nahi)'}
+
+          # Din 1: sabse zaroori 20 pages (homepage + hubs + sabse zyada search hone wale tools/guides)
+          TOP20 = [
+              '', 'tools/', 'blog/', 'games/',
+              'tools/emi-calculator.html', 'tools/income-tax-calculator.html',
+              'tools/sip-calculator.html', 'tools/age-calculator.html',
+              'tools/ppf-calculator.html', 'tools/gst-calculator.html',
+              'tools/percentage-calculator.html', 'tools/fd-calculator.html',
+              'tools/old-vs-new-tax-regime-calculator.html', 'tools/inhand-salary-calculator.html',
+              'tools/rd-calculator.html', 'tools/epf-calculator.html', 'tools/hra-calculator.html',
+              'blog/income-tax-slabs-2026-27.html', 'blog/8th-pay-commission-2026-guide.html',
+              'blog/epf-pf-guide.html',
+          ]
+          # Din 2: agle 20 (baaki ~150 pages Google sitemap.xml se khud uthata hai)
+          NEXT20 = [
+              'tools/nps-calculator.html', 'tools/gratuity-calculator.html',
+              'tools/home-loan-tax.html', 'tools/stepup-sip-calculator.html',
+              'tools/ssy-calculator.html', 'tools/gold-loan-calculator.html',
+              'tools/gold-silver-value-calculator.html', 'tools/bmi-calculator.html',
+              'tools/marks-percentage-calculator.html', 'tools/cgpa-calculator.html',
+              'tools/electricity-bill-calculator.html', 'tools/loan-eligibility-calculator.html',
+              'tools/retirement-calculator.html', 'tools/typing-speed-test.html',
+              'blog/pm-kisan-samman-nidhi-guide.html', 'blog/repo-rate-guide-2026.html',
+              'blog/bank-fd-interest-rates-2026.html', 'blog/post-office-fd-rates-2026.html',
+              'blog/sukanya-samriddhi-yojana-2026-guide.html', 'blog/cibil-credit-score-guide.html',
+          ]
+
+          EMAIL = ''
+          PROJECT = ''
+
+
+          def now_ist():
+              return datetime.datetime.now(IST).strftime('%d %b %Y, %I:%M %p IST')
+
+
+          def md(text=''):
               try:
-                  r = s.post('https://indexing.googleapis.com/v3/urlNotifications:publish',
-                             json={'url': u, 'type': os.environ.get('ACTION') or 'URL_UPDATED'}, timeout=30)
-              except RefreshError as e:
-                  print('::error::Google ne service-account key se login mana kar diya (%s). Key delete/disable to nahi hui? Nayi JSON key banakar secret update karein.' % str(e)[:200])
-                  sys.exit(1)
-              except TransportError as e:
-                  print('::error::Network/transport error: %s' % str(e)[:200])
-                  sys.exit(1)
-              if r.status_code == 200:
-                  ok += 1
-                  print('200 OK  ', u)
+                  with open(SUMMARY, 'a', encoding='utf-8') as f:
+                      f.write(text + '\n')
+              except OSError:
+                  pass
+
+
+          def short(s, n=300):
+              return ' '.join(str(s).split())[:n]
+
+
+          def cell(s):
+              return short(s, 500).replace('|', '\\|')
+
+
+          def fail(msg, hints=()):
+              print('::error::' + short(msg, 500))
+              for h in hints:
+                  print('   -> ' + h)
+              md('')
+              md('### ❌ ' + msg)
+              for h in hints:
+                  md('- ' + h)
+              sys.exit(1)
+
+
+          def warn(msg):
+              print('::warning::' + short(msg, 500))
+              md('> ⚠️ ' + msg)
+              md('')
+
+
+          def ist(ts):
+              if not ts:
+                  return '—'
+              try:
+                  t = str(ts).strip().rstrip('Z').split('.')[0]
+                  dt = datetime.datetime.strptime(t, '%Y-%m-%dT%H:%M:%S').replace(tzinfo=datetime.timezone.utc)
+                  return dt.astimezone(IST).strftime('%d %b %Y, %I:%M %p IST')
+              except Exception:
+                  return str(ts)
+
+
+          def rel(u):
+              return '/' + u[len(SITE):] if u.startswith(SITE) else u
+
+
+          # ---------- 1) JSON key ----------
+          QUOTES = str.maketrans({'\u201c': '"', '\u201d': '"', '\u201e': '"', '\u201f': '"', '\u2033': '"',
+                                  '\u2018': "'", '\u2019': "'"})
+
+
+          def parse_key(raw):
+              """Poori JSON padho. Chhoti paste-galtiyan (aage/peeche extra text, curly quotes,
+              { } bracket chhoot gaye, asli line-break, base64) khud sambhal leta hai. Kuch print nahi karta."""
+              tries = []
+              bases = [raw]
+              fixed = raw.translate(QUOTES)
+              if fixed != raw:
+                  bases.append(fixed)
+              for t in bases:
+                  tries.append(t)
+                  a, b = t.find('{'), t.rfind('}')
+                  if a != -1 and b > a and (a > 0 or b < len(t) - 1):
+                      tries.append(t[a:b + 1])
+                  core = t.strip().rstrip(',').strip()
+                  if not core.startswith('{') and 'client_email' in core:
+                      tries.append('{' + core + ('' if core.endswith('}') else '}'))
+                  elif core.startswith('{') and not core.endswith('}'):
+                      tries.append(core + '}')
+              compact = re.sub(r'\s+', '', raw)
+              if '{' not in raw and len(compact) >= 100 and re.fullmatch(r'[A-Za-z0-9+/=_-]+', compact):
+                  try:
+                      b64 = compact.replace('-', '+').replace('_', '/')
+                      tries.append(base64.b64decode(b64 + '=' * (-len(b64) % 4)).decode('utf-8').strip())
+                  except Exception:
+                      pass
+              first = None
+              for t in tries:
+                  for strict in (True, False):
+                      try:
+                          return json.loads(t, strict=strict), None
+                      except ValueError as e:
+                          first = first or e
+              return None, first
+
+
+          def mask_private_key(pk):
+              # GitHub sirf poore secret ko exact match par chhupata hai; JSON se nikli key ki har line
+              # bhi alag se mask kar dete hain (GitHub docs: transformed secret ko bhi register karo).
+              for line in str(pk).splitlines():
+                  line = line.strip()
+                  if len(line) >= 16 and 'PRIVATE KEY' not in line:
+                      print('::add-mask::' + line)
+
+
+          def load_key():
+              raw = (os.environ.get('GOOGLE_INDEXING_KEY') or '').strip().lstrip('\ufeff').strip()
+              if raw.startswith('```'):
+                  raw = raw.strip('`').strip()
+                  if raw[:4].lower() == 'json':
+                      raw = raw[4:].strip()
+              if not raw:
+                  fail('Secret GOOGLE_INDEXING_KEY nahi mila (ya khali hai).', [
+                      'Repo → Settings → Secrets and variables → Actions → "Secrets" tab → New repository secret',
+                      'Name: GOOGLE_INDEXING_KEY  ·  Secret: service-account .json file ka poora text (pehle character se aakhri tak)',
+                      '"Variables" tab me nahi — "Secrets" tab me daalna hai.'])
+              if raw.startswith('AIza'):
+                  fail('Ye "API key" (AIza...) hai — yahan service-account ki JSON key chahiye.', [
+                      'Google Cloud → IAM & Admin → Service accounts → apna account → Keys → Add key → Create new key → JSON',
+                      'Download hui .json file ka poora text secret me paste karein.'])
+              if 'PRIVATE KEY-----' in raw and '{' not in raw and 'client_email' not in raw:
+                  fail('Sirf private key paste hui hai — poori JSON file ka text chahiye.', [
+                      'File me client_email, token_uri jaisi baaki lines bhi zaroori hain. Pehle character se aakhri character tak sab copy karein.'])
+              info, err = parse_key(raw)
+              if info is None and raw.startswith('{') and not raw.endswith('}'):
+                  fail('JSON adhoori paste hui hai — file ka aakhri hissa (closing bracket tak) nahi aaya.', [
+                      'Text editor me Select all karke poora copy karein; paste ke baad box me sabse neeche tak scroll karke dekh lein.',
+                      'Secret kholo → Update → poora text paste → Update secret.'])
+              if info is None:
+                  pos = ''
+                  if getattr(err, 'lineno', None):
+                      pos = ' (line %s, column %s ke paas)' % (err.lineno, err.colno)
+                  fail('GOOGLE_INDEXING_KEY sahi JSON nahi hai%s.' % pos, [
+                      '.json file ka poora text paste karein — pehle character se aakhri character tak, beech me kuch na chhoote.',
+                      'Secret kholo → Update → naya text paste → Update secret. (Purana value dikhta nahi, seedha naya paste karo.)'])
+              if not isinstance(info, dict) or info.get('type') != 'service_account':
+                  t = info.get('type') if isinstance(info, dict) else type(info).__name__
+                  fail('Ye service-account JSON key nahi hai (type = %s).' % short(t, 40), [
+                      'OAuth "client_secret" wali JSON nahi chalegi — service account ki key chahiye.',
+                      'Google Cloud → IAM & Admin → Service accounts → Keys → Add key → Create new key → JSON'])
+              pk = info.get('private_key')
+              if isinstance(pk, str) and '\\n' in pk and '\n' not in pk:
+                  info['private_key'] = pk = pk.replace('\\n', '\n')
+              if pk:
+                  mask_private_key(pk)
+              missing = [k for k in ('client_email', 'private_key', 'token_uri') if not info.get(k)]
+              if missing:
+                  fail('JSON key adhoori hai — ye fields nahi mile: %s' % ', '.join(missing), [
+                      '.json file ka poora text dobara paste karein.'])
+              return info
+
+
+          # ---------- 2) URLs ----------
+          def norm(tok):
+              u = tok.strip().strip('\'"<>')
+              if not u:
+                  return None
+              low = u.lower()
+              if low.startswith(('http://', 'https://')):
+                  rest = u.split('://', 1)[1]
+              elif low.startswith('www.') or low.startswith(HOST):
+                  rest = u
               else:
-                  msg = r.text[:300].replace('\n', ' ')
-                  print('%s FAIL  %s  %s' % (r.status_code, u, msg))
-                  if r.status_code == 403:
-                      print('   -> 403: (a) service account email Search Console property (https://gyantools.in/) me Owner nahi hai, ya (b) Cloud project me "Web Search Indexing API" enable nahi hai, ya (c) Google ne is project ka access band/limit kar diya hai.')
-                  if r.status_code == 429:
-                      print('   -> 429: quota khatam (default ~200 publish requests/din). Kal dobara try karein.')
-                      break
-          print('Done: %d/%d accepted. Yaad rakhein: accepted != indexed. Search Console -> URL Inspection se status dekhein.' % (ok, len(urls)))
+                  return SITE + u.lstrip('/')          # sirf path likha hai, jaise tools/emi-calculator.html
+              host, _, path = rest.partition('/')
+              host = host.lower()
+              if host.startswith('www.'):
+                  host = host[4:]
+              if host != HOST:
+                  return 'BAD:' + u
+              return SITE + path
+
+
+          def sitemap_urls():
+              try:
+                  r = requests.get(SITE + 'sitemap.xml', headers=UA, timeout=30)
+              except requests.RequestException as e:
+                  fail('sitemap.xml download nahi hua: ' + short(e, 150))
+              if r.status_code != 200:
+                  fail('%ssitemap.xml ka status %s aaya (200 chahiye).' % (SITE, r.status_code))
+              locs = [l.strip().replace('&amp;', '&') for l in re.findall(r'<loc>\s*([^<]+?)\s*</loc>', r.text)]
+              locs = [l for l in locs if l.startswith(SITE)]
+              if not locs:
+                  fail('sitemap.xml me ' + SITE + ' ka koi URL nahi mila.')
+              return locs
+
+
+          def pick_urls():
+              toks = [t for t in re.split(r'[\s,]+', RAW) if t.strip()]
+              if toks:
+                  if BATCH != 'custom':
+                      print('::notice::URLs box bhara hai, isliye "%s" ki jagah aapke likhe URLs use ho rahe hain.' % BATCH)
+                  urls = [norm(t) for t in toks]
+                  bad = [u[4:] for u in urls if u and u.startswith('BAD:')]
+                  if bad:
+                      fail('Sirf %s ke URLs chal sakte hain. Galat: %s' % (SITE, short(', '.join(bad), 200)))
+                  return 'custom', [u for u in urls if u]
+              if BATCH == 'custom':
+                  fail('batch = custom chuna, par URLs box khali hai.', [
+                      'URLs box me URLs likhein (space ya comma se alag), ya batch me top-20 / next-20 chunein.'])
+              if BATCH == 'next-20':
+                  return 'next-20', [SITE + p for p in NEXT20]
+              if BATCH == 'all-sitemap':
+                  if TASK == 'index-request':
+                      fail('all-sitemap sirf status-check ke liye hai.', [
+                          'index-request ek run me max %d URLs bhejta hai: aaj top-20, kal next-20.' % MAX_SUBMIT,
+                          'Baaki pages Google sitemap.xml se khud crawl karega — unhe API se bhejne ki zarurat nahi.'])
+                  return 'all-sitemap', sitemap_urls()
+              return 'top-20', [SITE + p for p in TOP20]
+
+
+          # ---------- 3) Google API helpers ----------
+          def gerr(r):
+              msg, reason = r.text, ''
+              try:
+                  e = r.json().get('error') or {}
+                  if isinstance(e, dict):
+                      msg = e.get('message') or msg
+                      for d in (e.get('details') or []) + (e.get('errors') or []):
+                          if isinstance(d, dict) and d.get('reason'):
+                              reason = d['reason']
+                              break
+                  elif isinstance(e, str):
+                      msg = e
+              except Exception:
+                  pass
+              return short(msg, 400), reason
+
+
+          def api_disabled(msg, reason):
+              return (reason in ('SERVICE_DISABLED', 'accessNotConfigured')
+                      or 'has not been used in project' in msg or 'it is disabled' in msg)
+
+
+          def enable_link(msg, api):
+              m = re.search(r'https://console\.(?:developers|cloud)\.google\.com/\S+', msg)
+              if m:
+                  return m.group(0).rstrip('.,)')
+              return 'https://console.cloud.google.com/apis/library/' + api + ('?project=' + PROJECT if PROJECT else '')
+
+
+          def owner_steps():
+              return [
+                  'search.google.com/search-console → upar property me "https://gyantools.in/" chunein (github.io wali nahi)',
+                  'Settings → Users and permissions → ADD USER → email: %s → Permission: Owner → Add' % EMAIL,
+                  'Owner option na dikhe to: google.com/webmasters/verification/home → gyantools.in → "Add an owner" → yahi email',
+                  'Phir yeh workflow dobara chalayein.']
+
+
+          def make_session(info):
+              from google.oauth2 import service_account
+              from google.auth.transport.requests import AuthorizedSession
+              scopes = ['https://www.googleapis.com/auth/indexing',
+                        'https://www.googleapis.com/auth/webmasters.readonly']
+              try:
+                  creds = service_account.Credentials.from_service_account_info(info, scopes=scopes)
+              except Exception as e:
+                  fail('JSON key load nahi hui (%s) — private_key adhoori/kharab paste hui lagti hai.' % type(e).__name__, [
+                      '.json file ka poora text dobara paste karein (secret → Update).'])
+              return AuthorizedSession(creds)
+
+
+          def call(S, method, url, **kw):
+              from google.auth.exceptions import RefreshError, TransportError
+              last = None
+              for attempt in range(3):
+                  try:
+                      r = S.request(method, url, timeout=60, **kw)
+                  except RefreshError as e:
+                      fail('Google ne is service-account key se login mana kar diya.', [
+                          'Wajah: key delete/disable ho gayi, service account delete ho gaya, ya galat/purani key paste hui.',
+                          'Google Cloud → IAM & Admin → Service accounts → Keys → Add key → Create new key → JSON → secret Update karein.',
+                          'Google ka jawab: ' + short(e, 200)])
+                  except (TransportError, requests.RequestException) as e:
+                      last = e
+                      time.sleep(3 * (attempt + 1))
+                      continue
+                  if r.status_code >= 500 and attempt < 2:
+                      time.sleep(3 * (attempt + 1))
+                      continue
+                  return r
+              fail('Google se connect nahi ho paya (network): ' + short(last, 200), ['Thodi der baad workflow dobara chalayein.'])
+
+
+          def gsc_check(S):
+              r = call(S, 'GET', SITES)
+              if r.status_code != 200:
+                  msg, reason = gerr(r)
+                  return {'ok': False, 'code': r.status_code, 'msg': msg, 'reason': reason}
+              try:
+                  entries = r.json().get('siteEntry') or []
+              except Exception:
+                  entries = []
+              perms = {}
+              for e in entries:
+                  if isinstance(e, dict) and e.get('siteUrl'):
+                      perms[e['siteUrl']] = e.get('permissionLevel', '')
+              mine = [(p, perms[p]) for p in (SITE, 'sc-domain:' + HOST)
+                      if p in perms and perms[p] != 'siteUnverifiedUser']
+              owner = next((p for p, lv in mine if lv == 'siteOwner'), None)
+              return {'ok': True, 'perms': perms, 'mine': mine, 'owner': owner}
+
+
+          def props_text(g):
+              if not g.get('perms'):
+                  return 'koi property nahi'
+              return ', '.join('%s (%s)' % (p, LEVEL.get(lv, lv)) for p, lv in g['perms'].items())
+
+
+          # ---------- 4) index-request ----------
+          def canonical_of(html):
+              for tag in re.findall(r'<link\b[^>]*>', html, re.I):
+                  if re.search(r'rel\s*=\s*["\']?canonical', tag, re.I):
+                      m = re.search(r'href\s*=\s*["\']([^"\']+)', tag, re.I)
+                      if m:
+                          return m.group(1).strip()
+              return None
+
+
+          def preflight(u):
+              try:
+                  r = requests.get(u, headers=UA, timeout=30, allow_redirects=False)
+              except requests.RequestException as e:
+                  return 'live check fail: ' + short(e, 80)
+              if r.status_code in (301, 302, 303, 307, 308):
+                  return 'redirect (%s) → %s — final URL likhein' % (r.status_code, short(r.headers.get('location', ''), 100))
+              if r.status_code != 200:
+                  return 'page ka status %s (200 chahiye)' % r.status_code
+              html = r.text[:400000]
+              if re.search(r'<meta[^>]+name\s*=\s*["\']robots["\'][^>]*noindex', html, re.I):
+                  return 'page par noindex hai'
+              can = canonical_of(html)
+              if can and urljoin(u, can) != u:
+                  return 'canonical alag hai: ' + short(can, 100)
+              return None
+
+
+          def run_submit(S, label, urls):
+              g = gsc_check(S)
+              md('## 🚀 Google Indexing API — crawl request')
+              md('%s · batch: **%s** · %d URLs' % (now_ist(), label, len(urls)))
+              md('')
+              md('Service account: `%s`' % EMAIL)
+              md('')
+              if g['ok'] and g['owner']:
+                  line = '✅ GSC: service account `%s` ka **Owner** hai.' % g['owner']
+              elif g['ok'] and g['mine']:
+                  line = '⚠️ GSC: service account property me hai par permission **%s** hai — Indexing API ke liye **Owner** chahiye.' % LEVEL.get(g['mine'][0][1], g['mine'][0][1])
+              elif g['ok']:
+                  line = '⚠️ GSC: service account gyantools.in property me nahi dikha. Abhi: %s' % props_text(g)
+              elif api_disabled(g['msg'], g['reason']):
+                  line = 'ℹ️ GSC property-check skip (Google Search Console API enable nahi — ye sirf status-check ke liye zaroori hai).'
+              else:
+                  line = 'ℹ️ GSC property-check nahi ho paya (%s).' % g['code']
+              print(line.replace('**', '').replace('`', ''))
+              md(line)
+              md('')
+
+              rows, ok, api_err, stop = [], 0, 0, None
+              for u in urls:
+                  why = preflight(u)
+                  if why:
+                      rows.append((u, '⏭️ skip — ' + why, ''))
+                      print('SKIP      %s  (%s)' % (u, why))
+                      continue
+                  r = call(S, 'POST', PUBLISH, json={'url': u, 'type': 'URL_UPDATED'})
+                  if r.status_code == 200:
+                      ok += 1
+                      t = ''
+                      try:
+                          t = r.json()['urlNotificationMetadata']['latestUpdate']['notifyTime']
+                      except Exception:
+                          pass
+                      rows.append((u, '✅ 200 accepted', ist(t)))
+                      print('200 OK    ' + u)
+                  else:
+                      api_err += 1
+                      msg, reason = gerr(r)
+                      rows.append((u, '❌ %s — %s' % (r.status_code, short(msg, 120)), ''))
+                      print('%s FAIL  %s  %s' % (r.status_code, u, msg))
+                      if r.status_code in (401, 403, 429):
+                          stop = (r.status_code, msg, reason)
+                          break
+                  time.sleep(0.4)
+
+              md('| # | URL | Result | Google ko mila (IST) |')
+              md('|---|---|---|---|')
+              for i, (u, res, t) in enumerate(rows, 1):
+                  md('| %d | %s | %s | %s |' % (i, cell(rel(u)), cell(res), t))
+              md('')
+              md('**Accepted: %d / %d**' % (ok, len(urls)))
+              md('')
+              md('> 200 = Google ne request le li ("jaldi crawl kar sakta hai"). Index karna ya na karna Google ka faisla hai. '
+                 'Google ke docs ke hisaab se Indexing API officially JobPosting/BroadcastEvent pages ke liye hai — isliye kam aur sirf zaroori URLs bhejein.')
+              print('Done: %d/%d accepted (accepted ≠ indexed).' % (ok, len(urls)))
+
+              if stop:
+                  code, msg, reason = stop
+                  if code == 429:
+                      fail('Aaj ka Indexing API quota khatam (429).', [
+                          'Default quota 200 requests/din/project hai. Roz Pacific midnight par reset hota hai (India me lagbhag dopahar 12:30–1:30).',
+                          'Kal dobara chalayein. Jo URLs 200 ho chuke unhe dobara bhejne ki zarurat nahi.'])
+                  if api_disabled(msg, reason):
+                      fail('Google Cloud project me "Web Search Indexing API" enable nahi hai.', [
+                          'Ye link kholo (JSON wale Google account se) → ENABLE: ' + enable_link(msg, 'indexing.googleapis.com'),
+                          '2–5 minute baad workflow dobara chalayein.'])
+                  if code == 403:
+                      hints = owner_steps()
+                      if g['ok']:
+                          hints.insert(0, 'Service account abhi in properties me hai: ' + props_text(g))
+                          if g['owner']:
+                              hints.insert(1, 'Owner abhi-abhi add kiya hai to 30–60 minute ruk kar dobara try karein.')
+                      fail('Permission denied — service account gyantools.in property ka Owner nahi hai (403).', hints)
+                  fail('Login/permission error (%s): %s' % (code, short(msg, 150)), [
+                      'Nayi JSON key banakar secret Update karein, phir dobara chalayein.'])
+              if ok == 0:
+                  fail('Koi URL nahi bheja gaya — upar table me "skip" ki wajah dekhein.')
+              if api_err:
+                  fail('%d URL(s) par Google ne error diya — upar table dekhein.' % api_err)
+              md('')
+              md('### Aage kya')
+              md('- 24–48 ghante baad: isi workflow ko **status-check** ke saath chalao (ya GSC → URL Inspection).')
+              if label == 'top-20':
+                  md('- Kal: **index-request + next-20** chalao.')
+              md('- Same URLs roz-roz dobara mat bhejo — fayda nahi hota, spam jaisa lagta hai. Page badle tabhi dobara bhejo.')
+
+
+          # ---------- 5) status-check ----------
+          def meaning(verdict, cov):
+              c = (cov or '').lower()
+              if verdict == 'PASS':
+                  return '✅ Google me hai'
+              if 'unknown to google' in c:
+                  return '⏳ Google ne abhi dekha nahi — sitemap / Request indexing ke baad aata hai'
+              if 'discovered' in c:
+                  return '⏳ Google ko pata hai, crawl baaki hai'
+              if 'crawled' in c:
+                  return '⏳ Crawl ho gaya, index abhi nahi — naye domain par normal (1–4 hafte)'
+              if 'redirect' in c:
+                  return 'ℹ️ Redirect wala URL (normal)'
+              if 'noindex' in c:
+                  return '❌ noindex tag'
+              if 'robots' in c:
+                  return '❌ robots.txt block'
+              if '404' in c or 'not found' in c:
+                  return '❌ Page nahi mila'
+              if 'server' in c:
+                  return '❌ Server error'
+              if 'duplicate' in c or 'canonical' in c:
+                  return '⚠️ Google ne doosra canonical chuna'
+              return ''
+
+
+          def run_status(S, label, urls):
+              g = gsc_check(S)
+              if not g['ok']:
+                  if api_disabled(g['msg'], g['reason']):
+                      fail('status-check ke liye "Google Search Console API" ek baar enable karni hogi.', [
+                          'Ye link kholo (JSON wale Google account se, wahi project) → ENABLE: '
+                          + enable_link(g['msg'], 'searchconsole.googleapis.com'),
+                          '2–5 minute baad workflow dobara chalayein.',
+                          '(index-request ko iski zarurat nahi — wo iske bina bhi chalta hai.)'])
+                  fail('Search Console API error %s: %s' % (g['code'], short(g['msg'], 200)))
+              site_url = g['owner'] or (g['mine'][0][0] if g['mine'] else None)
+              if not site_url:
+                  fail('Service account gyantools.in property me add nahi hai.',
+                       ['Abhi in properties me hai: ' + props_text(g)] + owner_steps())
+
+              md('## 📊 Google index status — %s' % HOST)
+              md('%s · property: `%s` · batch: **%s** · %d URLs' % (now_ist(), site_url, label, len(urls)))
+              md('')
+              print('Property: %s · URLs: %d' % (site_url, len(urls)))
+
+              rows, counts, indexed, errs, stop = [], {}, 0, 0, None
+              for u in urls:
+                  r = call(S, 'POST', INSPECT, json={'inspectionUrl': u, 'siteUrl': site_url, 'languageCode': 'en-US'})
+                  if r.status_code == 200:
+                      try:
+                          res = r.json().get('inspectionResult') or {}
+                      except Exception:
+                          res = {}
+                      ix = res.get('indexStatusResult') or {}
+                      verdict = ix.get('verdict') or 'VERDICT_UNSPECIFIED'
+                      cov = ix.get('coverageState') or '—'
+                      if verdict == 'PASS':
+                          indexed += 1
+                      key = (cov, meaning(verdict, cov))
+                      counts[key] = counts.get(key, 0) + 1
+                      rows.append((u, verdict, cov, ist(ix.get('lastCrawlTime')), res.get('inspectionResultLink') or ''))
+                      print('%-8s %s | %s | last crawl: %s' % (verdict, u, cov, ist(ix.get('lastCrawlTime'))))
+                  else:
+                      errs += 1
+                      msg, reason = gerr(r)
+                      rows.append((u, 'ERROR', '%s: %s' % (r.status_code, short(msg, 100)), '—', ''))
+                      print('ERROR %s  %s  %s' % (r.status_code, u, msg))
+                      if r.status_code in (401, 403, 429):
+                          stop = (r.status_code, msg)
+                          break
+                  time.sleep(0.15)
+
+              checked = len(rows) - errs
+              md('### ✅ Indexed: %d / %d' % (indexed, checked))
+              md('')
+              if counts:
+                  md('| Google status | Pages | Matlab |')
+                  md('|---|---|---|')
+                  for (cov, mean), n in sorted(counts.items(), key=lambda x: -x[1]):
+                      md('| %s | %d | %s |' % (cell(cov), n, cell(mean)))
+                  md('')
+              md('<details><summary>Har URL ka status (%d)</summary>' % len(rows))
+              md('')
+              md('| URL | Verdict | Status | Last crawl (IST) | GSC |')
+              md('|---|---|---|---|---|')
+              for u, v, cov, t, link in rows:
+                  md('| %s | %s | %s | %s | %s |' % (cell(rel(u)), v, cell(cov), t, ('[kholo](%s)' % link) if link else ''))
+              md('')
+              md('</details>')
+              md('')
+              md('> Naye domain par pehle 1–2 hafte "URL is unknown" / "Discovered" dikhna normal hai. '
+                 'GSC → Pages report me "Indexed" ki ginti dheere-dheere badhegi.')
+              md('')
+              md('### Aage kya')
+              md('- ⏳ wale pages ke liye kuch extra nahi karna — Google time leta hai, sitemap se khud aayenge.')
+              md('- Sabse zaroori ⏳ pages: table ka **kholo** link → GSC → **Request indexing** (roz ~10).')
+              md('- status-check hafte me 1–2 baar kaafi hai.')
+              print('Indexed: %d/%d' % (indexed, checked))
+              if stop:
+                  code, msg = stop
+                  if code == 429:
+                      fail('URL Inspection quota khatam (429) — kal dobara chalayein.')
+                  fail('Permission error (%s): %s' % (code, short(msg, 150)),
+                       ['Service account ko gyantools.in property me Owner (ya Full) user banayein.'] + owner_steps()[1:2])
+              if errs and errs == len(rows):
+                  fail('Ek bhi URL check nahi ho paya — upar errors dekhein.')
+              if errs:
+                  warn('%d URL(s) check nahi ho paye (table me ERROR).' % errs)
+
+
+          def main():
+              global EMAIL, PROJECT
+              if TASK not in ('index-request', 'status-check'):
+                  fail('task galat hai: %s (index-request ya status-check chunein)' % short(TASK, 40))
+              info = load_key()
+              EMAIL = info['client_email']
+              PROJECT = info.get('project_id') or ''
+              print('Task: %s · batch: %s · site: %s' % (TASK, BATCH, SITE))
+              print('Service account: %s' % EMAIL)
+              label, urls = pick_urls()
+              urls = list(dict.fromkeys(urls))
+              cap = MAX_SUBMIT if TASK == 'index-request' else MAX_STATUS
+              if len(urls) > cap:
+                  warn('Ek run me max %d URLs — pehle %d liye, baaki agle run me.' % (cap, cap))
+                  urls = urls[:cap]
+              S = make_session(info)
+              if TASK == 'index-request':
+                  run_submit(S, label, urls)
+              else:
+                  run_status(S, label, urls)
+
+
+          main()
           PYEOF
+# gt:indexing-workflow-end (yeh line file ki aakhri line honi chahiye)
